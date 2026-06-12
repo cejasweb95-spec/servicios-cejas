@@ -1,6 +1,16 @@
+"use client";
+
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { getWhatsAppUrl, INSTAGRAM_URL } from "@/lib/config";
+import {
+  fadeInUp,
+  revealTransition,
+  staggerContainer,
+} from "@/lib/motion";
+import { FadeInView } from "./fade-in-view";
 import { InstagramIcon, WhatsAppIcon } from "./icons";
+import { MotionButton } from "./motion-button";
 
 const whatsappUrl = getWhatsAppUrl();
 
@@ -70,22 +80,40 @@ export function LandingPage() {
       <main id="contenido-principal">
         <section className="hero" aria-labelledby="hero-title">
           <div className="container">
-            <div className="hero__content">
-              <p className="hero__tag">
+            <motion.div
+              className="hero__content motion-reveal"
+              variants={staggerContainer}
+              initial="hidden"
+              animate="visible"
+            >
+              <motion.p className="hero__tag" variants={fadeInUp}>
                 Micropigmentación estética · Cejas · Labios · Mirada
-              </p>
-              <h1 id="hero-title" className="hero__title">
+              </motion.p>
+              <motion.h1
+                id="hero-title"
+                className="hero__title"
+                variants={fadeInUp}
+                transition={revealTransition(0.05)}
+              >
                 Próximamente: <em>micropigmentación</em> que realza tu belleza
                 natural
-              </h1>
-              <p className="hero__subtitle">
+              </motion.h1>
+              <motion.p
+                className="hero__subtitle"
+                variants={fadeInUp}
+                transition={revealTransition(0.1)}
+              >
                 <strong>Cejas Internacionales</strong> abre muy pronto su nueva
                 web. Mientras tanto, reserva tu valoración o consulta próximas
                 fechas por WhatsApp con una especialista internacional en cejas,
                 labios y mirada en España, Europa y Colombia.
-              </p>
-              <div className="hero__actions btn-group">
-                <a
+              </motion.p>
+              <motion.div
+                className="hero__actions btn-group"
+                variants={fadeInUp}
+                transition={revealTransition(0.15)}
+              >
+                <MotionButton
                   href={whatsappUrl}
                   className="btn btn--primary"
                   target="_blank"
@@ -93,22 +121,26 @@ export function LandingPage() {
                 >
                   <WhatsAppIcon />
                   Reservar por WhatsApp
-                </a>
-                <a href="#servicios" className="btn btn--secondary">
+                </MotionButton>
+                <MotionButton href="#servicios" className="btn btn--secondary">
                   Ver tratamientos
-                </a>
-              </div>
-              <p className="hero__urgency">
+                </MotionButton>
+              </motion.div>
+              <motion.p
+                className="hero__urgency"
+                variants={fadeInUp}
+                transition={revealTransition(0.2)}
+              >
                 Plazas limitadas en jornadas internacionales — escríbenos hoy.
-              </p>
-            </div>
+              </motion.p>
+            </motion.div>
             <div className="hero__accent" aria-hidden="true" />
           </div>
         </section>
 
         <section className="section" aria-labelledby="coming-title">
           <div className="container">
-            <div className="coming-soon reveal">
+            <FadeInView className="coming-soon motion-reveal">
               <p className="section__label">Próximamente online</p>
               <h2 id="coming-title" className="section__title">
                 Estamos creando una web a la altura de tu transformación
@@ -133,7 +165,7 @@ export function LandingPage() {
                   <span />
                 </span>
               </div>
-            </div>
+            </FadeInView>
           </div>
         </section>
 
@@ -143,7 +175,7 @@ export function LandingPage() {
           aria-labelledby="services-title"
         >
           <div className="container">
-            <header className="section__header reveal">
+            <FadeInView as="header" className="section__header motion-reveal">
               <p className="section__label">Tratamientos</p>
               <h2 id="services-title" className="section__title">
                 Micropigmentación y belleza facial profesional
@@ -152,26 +184,26 @@ export function LandingPage() {
                 Técnicas especializadas en cejas, labios y mirada con resultados
                 naturales y personalizados.
               </p>
-            </header>
+            </FadeInView>
 
             <div className="services-grid">
               <ServiceGroup
                 letter="A"
                 title="Micropigmentación de cejas"
                 services={eyebrowServices}
-                delayClass="reveal-delay-1"
+                delay={0.1}
               />
               <ServiceGroup
                 letter="B"
                 title="Micropigmentación labial"
                 services={lipServices}
-                delayClass="reveal-delay-2"
+                delay={0.2}
               />
               <ServiceGroup
                 letter="C"
                 title="Mirada y pestañas"
                 services={eyeServices}
-                delayClass="reveal-delay-3"
+                delay={0.3}
               />
             </div>
           </div>
@@ -179,36 +211,37 @@ export function LandingPage() {
 
         <section className="section" aria-labelledby="trust-title">
           <div className="container">
-            <header className="section__header reveal">
+            <FadeInView as="header" className="section__header motion-reveal">
               <p className="section__label">Por qué elegirnos</p>
               <h2 id="trust-title" className="section__title">
                 Especialista internacional en belleza facial
               </h2>
-            </header>
+            </FadeInView>
 
             <div className="trust-grid">
               <TrustCard
                 number="01"
                 title="Atención personalizada"
                 text="Cada rostro es único. Diseñamos cejas, labios y mirada según tu estilo y rasgos."
-                delayClass="reveal-delay-1"
+                delay={0.1}
               />
               <TrustCard
                 number="02"
                 title="Resultados naturales"
                 text="Micropigmentación estética con acabado suave, elegante y sin exagerar."
-                delayClass="reveal-delay-2"
+                delay={0.2}
               />
               <TrustCard
                 number="03"
                 title="Agenda internacional"
                 text="Jornadas en España, Europa y Colombia. Consulta disponibilidad por WhatsApp."
-                delayClass="reveal-delay-3"
+                delay={0.3}
               />
               <TrustCard
                 number="04"
                 title="Técnica y experiencia"
                 text="Formación continua en las últimas técnicas de micropigmentación y diseño facial."
+                delay={0.4}
               />
             </div>
           </div>
@@ -216,7 +249,7 @@ export function LandingPage() {
 
         <section className="section" aria-labelledby="cta-title">
           <div className="container">
-            <div className="cta reveal">
+            <FadeInView className="cta motion-reveal">
               <h2 id="cta-title" className="cta__title">
                 Reserva ahora por WhatsApp
               </h2>
@@ -225,15 +258,15 @@ export function LandingPage() {
                 y te informamos sobre próximas fechas, ciudades y disponibilidad
                 de agenda.
               </p>
-              <a
+              <MotionButton
                 href={whatsappUrl}
                 className="btn btn--gold"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 Escribir por WhatsApp
-              </a>
-            </div>
+              </MotionButton>
+            </FadeInView>
           </div>
         </section>
       </main>
@@ -276,16 +309,21 @@ export function LandingPage() {
         </div>
       </footer>
 
-      <a
+      <motion.a
         href={whatsappUrl}
-        className="whatsapp-float"
+        className="whatsapp-float motion-reveal"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Reservar micropigmentación por WhatsApp"
+        initial={{ opacity: 0, scale: 0.85, y: 16 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        transition={{ delay: 0.9, duration: 0.45, ease: [0.4, 0, 0.2, 1] }}
+        whileHover={{ scale: 1.06 }}
+        whileTap={{ scale: 0.94 }}
       >
         <WhatsAppIcon size={28} />
         <span className="whatsapp-float__label">Reservar</span>
-      </a>
+      </motion.a>
     </>
   );
 }
@@ -294,15 +332,15 @@ function ServiceGroup({
   letter,
   title,
   services,
-  delayClass = "",
+  delay = 0,
 }: {
   letter: string;
   title: string;
   services: string[];
-  delayClass?: string;
+  delay?: number;
 }) {
   return (
-    <article className={`service-group reveal ${delayClass}`.trim()}>
+    <FadeInView as="article" className="service-group motion-reveal" delay={delay}>
       <h3 className="service-group__title">
         <span className="service-group__icon" aria-hidden="true">
           {letter}
@@ -316,7 +354,7 @@ function ServiceGroup({
           </span>
         ))}
       </div>
-    </article>
+    </FadeInView>
   );
 }
 
@@ -324,20 +362,20 @@ function TrustCard({
   number,
   title,
   text,
-  delayClass = "",
+  delay = 0,
 }: {
   number: string;
   title: string;
   text: string;
-  delayClass?: string;
+  delay?: number;
 }) {
   return (
-    <article className={`trust-card reveal ${delayClass}`.trim()}>
+    <FadeInView as="article" className="trust-card motion-reveal" delay={delay}>
       <p className="trust-card__number" aria-hidden="true">
         {number}
       </p>
       <h3 className="trust-card__title">{title}</h3>
       <p className="trust-card__text">{text}</p>
-    </article>
+    </FadeInView>
   );
 }

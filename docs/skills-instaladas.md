@@ -51,6 +51,13 @@ Instaladas desde [skills.sh](https://skills.sh) el 12/06/2026.
 |-------|----------|-----|
 | [accessibility](https://skills.sh/addyosmani/web-quality-skills/accessibility) | 27K+ | WCAG 2.1, contraste, teclado, screen readers |
 
+### Animaciones (Framer Motion)
+
+| Skill | Installs | Uso |
+|-------|----------|-----|
+| [nextjs-framer-motion-animations](https://skills.sh/tristanmanchester/agent-skills/nextjs-framer-motion-animations) | — | RSC + client boundaries, `whileInView`, variants |
+| [framer-motion-animator](https://skills.sh/patricio0312rev/skills/framer-motion-animator) | — | Patrones de animación, hover/tap, stagger |
+
 ## Comandos de reinstalación
 
 ```bash

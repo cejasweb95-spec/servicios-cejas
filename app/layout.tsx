@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Outfit } from "next/font/google";
-import { RevealOnScroll } from "@/components/reveal-on-scroll";
+import { MotionProvider } from "@/components/motion-provider";
 import { SITE_NAME, SITE_URL } from "@/lib/config";
 import { getStructuredData, META_DESCRIPTION } from "@/lib/seo";
 import "./globals.css";
@@ -67,7 +67,7 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      className={`no-js ${display.variable} ${body.variable}`}
+      className={`${display.variable} ${body.variable}`}
       suppressHydrationWarning
     >
       <body>
@@ -78,8 +78,7 @@ export default function RootLayout({
         <a href="#contenido-principal" className="skip-link">
           Saltar al contenido principal
         </a>
-        {children}
-        <RevealOnScroll />
+        <MotionProvider>{children}</MotionProvider>
       </body>
     </html>
   );

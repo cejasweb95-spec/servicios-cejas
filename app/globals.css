@@ -50,9 +50,12 @@ html {
   -webkit-font-smoothing: antialiased;
 }
 
-html.no-js .reveal {
-  opacity: 1;
-  transform: none;
+/* Fallback: contenido visible sin JS o con movimiento reducido */
+@media (scripting: none), (prefers-reduced-motion: reduce) {
+  .motion-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
 
 /* ── Skip link (accessibility) ──────────────────────────── */
@@ -126,22 +129,6 @@ button {
   border: 0;
 }
 
-/* ── Reveal animation (solo con JS activo) ──────────────── */
-html.js .reveal {
-  opacity: 0;
-  transform: translateY(1.5rem);
-  transition: opacity 0.8s var(--transition), transform 0.8s var(--transition);
-}
-
-html.js .reveal.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.reveal-delay-1 { transition-delay: 0.1s; }
-.reveal-delay-2 { transition-delay: 0.2s; }
-.reveal-delay-3 { transition-delay: 0.3s; }
-
 /* ── Background shapes ────────────────────────────────────── */
 .bg-shapes {
   position: fixed;
@@ -210,6 +197,10 @@ html.js .reveal.is-visible {
 }
 
 .logo {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: 0.25rem 0;
   font-family: var(--font-display);
   font-size: clamp(1.15rem, 3vw, 1.45rem);
   font-weight: 500;
@@ -333,7 +324,6 @@ html.js .reveal.is-visible {
   border-radius: var(--radius-full);
   background: rgba(255, 253, 251, 0.6);
   margin-bottom: var(--space-md);
-  animation: fadeInDown 0.8s ease both;
 }
 
 .hero__title {
@@ -343,7 +333,6 @@ html.js .reveal.is-visible {
   line-height: 1.1;
   color: var(--color-brown-dark);
   margin-bottom: var(--space-md);
-  animation: fadeInUp 0.8s ease 0.1s both;
 }
 
 .hero__title em {
@@ -356,19 +345,16 @@ html.js .reveal.is-visible {
   color: var(--color-text-muted);
   margin-bottom: var(--space-lg);
   max-width: 36rem;
-  animation: fadeInUp 0.8s ease 0.2s both;
 }
 
 .hero__actions {
   margin-bottom: var(--space-md);
-  animation: fadeInUp 0.8s ease 0.3s both;
 }
 
 .hero__urgency {
   font-size: 0.8rem;
   color: var(--color-text-light);
   letter-spacing: 0.06em;
-  animation: fadeInUp 0.8s ease 0.4s both;
 }
 
 .hero__urgency::before {
@@ -409,16 +395,6 @@ html.js .reveal.is-visible {
   inset: 3rem;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(201, 168, 124, 0.12) 0%, transparent 70%);
-}
-
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(1.25rem); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeInDown {
-  from { opacity: 0; transform: translateY(-0.75rem); }
-  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes pulse {
@@ -692,6 +668,11 @@ html.js .reveal.is-visible {
 }
 
 .footer__phone a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: 0.5rem 0.75rem;
   color: var(--color-brown-dark);
   font-weight: 500;
   transition: var(--transition);
@@ -712,8 +693,8 @@ html.js .reveal.is-visible {
 /* ── WhatsApp flotante (móvil) ───────────────────────────── */
 .whatsapp-float {
   position: fixed;
-  bottom: 1.25rem;
-  right: 1.25rem;
+  bottom: max(1.25rem, env(safe-area-inset-bottom, 0px));
+  right: max(1.25rem, env(safe-area-inset-right, 0px));
   z-index: 200;
   display: flex;
   align-items: center;
@@ -752,20 +733,35 @@ html.js .reveal.is-visible {
 }
 
 /* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 639px) {
+  .section {
+    padding: var(--space-lg) 0;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: var(--space-md) 0 var(--space-lg);
+  }
+
+  .cta {
+    padding: var(--space-lg) var(--space-sm);
+  }
+}
+
 @media (min-width: 640px) {
   .trust-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
   }
 }
 
 @media (min-width: 768px) {
   .hero__accent {
     display: block;
-  }
-
-  .services-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-md);
   }
 
   .service-group {
@@ -777,6 +773,10 @@ html.js .reveal.is-visible {
 }
 
 @media (min-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
   .trust-grid {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -791,8 +791,4 @@ html.js .reveal.is-visible {
     transition-duration: 0.01ms !important;
   }
 
-  html.js .reveal {
-    opacity: 1;
-    transform: none;
-  }
 }
