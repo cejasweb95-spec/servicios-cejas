@@ -1,0 +1,13 @@
+---
+description: Puerto fijo 3010 para desarrollo y producción local
+alwaysApply: true
+---
+
+# Puerto local 3010
+
+Siempre arrancar la web en **http://localhost:3010**.
+
+- `npm run dev` → `next dev --port 3010`
+- `npm run start` → `next start --port 3010`
+
+No usar el puerto 3000 por defecto. Si 3010 está ocupado, liberar el proceso antes de iniciar otro servidor.

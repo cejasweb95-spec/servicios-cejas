@@ -1,0 +1,121 @@
+{
+  "meta": {
+    "title": "Cejas Internacionales | Eyebrow, Lip & Eye Micropigmentation",
+    "description": "International specialist in eyebrow, lip and eye micropigmentation. Spain, Europe and Colombia. Book via WhatsApp — full website coming soon.",
+    "ogDescription": "Coming soon: professional eyebrow, lip and eye micropigmentation. Book your appointment on WhatsApp. Spain · Europe · Colombia.",
+    "twitterTitle": "Cejas Internacionales | Aesthetic Micropigmentation",
+    "twitterDescription": "Coming soon: brows, lips and eyes with international technique. Book on WhatsApp."
+  },
+  "common": {
+    "skipToContent": "Skip to main content",
+    "logoAria": "Cejas Internacionales — Home",
+    "navSocial": "Contact and social media",
+    "brandName": "Cejas Internacionales",
+    "regions": "Spain · Europe · Colombia",
+    "phone": "+34 603 80 48 37"
+  },
+  "language": {
+    "label": "Language",
+    "es": "Español",
+    "en": "English",
+    "switchTo": "Switch language to {language}"
+  },
+  "whatsapp": {
+    "prefill": "Hello, I would like to book or request information about micropigmentation at Cejas Internacionales.",
+    "reserve": "Book on WhatsApp",
+    "write": "Message on WhatsApp",
+    "reserveAria": "Book on WhatsApp",
+    "floatAria": "Book micropigmentation on WhatsApp",
+    "floatLabel": "Book"
+  },
+  "instagram": {
+    "follow": "Follow us on Instagram",
+    "view": "View on Instagram",
+    "followAria": "Follow Cejas Internacionales on Instagram, @{handle}",
+    "iconAria": "Instagram @{handle}"
+  },
+  "hero": {
+    "tag": "Aesthetic micropigmentation · Brows · Lips · Eyes",
+    "title": "Coming soon: <em>micropigmentation</em> that enhances your natural beauty",
+    "subtitle": "<strong>Cejas Internacionales</strong> is launching a brand-new website very soon. In the meantime, book your consultation or ask about upcoming dates on WhatsApp with an international specialist in brows, lips and eyes across Spain, Europe and Colombia.",
+    "viewServices": "View treatments",
+    "urgency": "Limited slots on international tour dates — message us today."
+  },
+  "coming": {
+    "label": "Coming online soon",
+    "title": "We are building a website worthy of your transformation",
+    "text": "Very soon you will be able to explore all our <strong>eyebrow micropigmentation</strong>, <strong>lip micropigmentation</strong> and <strong>eye design</strong> treatments. Today you can already book or request information on WhatsApp for upcoming appointments in Spain and Europe.",
+    "badge": "Official launch very soon",
+    "badgeAria": "Official launch coming soon"
+  },
+  "services": {
+    "label": "Treatments",
+    "title": "Professional micropigmentation and facial beauty",
+    "text": "Specialised techniques for brows, lips and eyes with natural, personalised results.",
+    "eyebrows": {
+      "title": "Eyebrow micropigmentation",
+      "items": [
+        "Eyebrow micropigmentation",
+        "Powder brows",
+        "Hair-stroke brows",
+        "Makeup-effect brows",
+        "Henna shading",
+        "Brow lamination",
+        "Brow lift"
+      ]
+    },
+    "lips": {
+      "title": "Lip micropigmentation",
+      "items": [
+        "Lip micropigmentation",
+        "Lip neutralisation",
+        "Lip hydration",
+        "Microlips",
+        "Scar assessment"
+      ]
+    },
+    "eyes": {
+      "title": "Eyes and lashes",
+      "items": [
+        "Lash lift",
+        "Eye liner",
+        "Lash line enhancement"
+      ]
+    }
+  },
+  "trust": {
+    "label": "Why choose us",
+    "title": "International facial beauty specialist",
+    "cards": {
+      "01": {
+        "title": "Personalised care",
+        "text": "Every face is unique. We design brows, lips and eyes to suit your style and features."
+      },
+      "02": {
+        "title": "Natural results",
+        "text": "Aesthetic micropigmentation with a soft, elegant finish — never overdone."
+      },
+      "03": {
+        "title": "International schedule",
+        "text": "Tour dates in Spain, Europe and Colombia. Check availability on WhatsApp."
+      },
+      "04": {
+        "title": "Skill and experience",
+        "text": "Ongoing training in the latest micropigmentation and facial design techniques."
+      }
+    }
+  },
+  "cta": {
+    "title": "Book now on WhatsApp",
+    "text": "Interested in eyebrow, lip or eye micropigmentation? Message us for upcoming dates, cities and availability."
+  },
+  "footer": {
+    "tagline": "International aesthetic micropigmentation",
+    "note": "Website under construction. Bookings and information available on WhatsApp. Full service catalogue and aftercare coming soon."
+  },
+  "notFound": {
+    "title": "Page not found",
+    "text": "The page you are looking for does not exist or is not available yet.",
+    "back": "Back to home"
+  }
+}

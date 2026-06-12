@@ -18,7 +18,7 @@ export const INSTAGRAM_URL =
 
 export const INSTAGRAM_HANDLE = "cejasinternacionales";
 
-export function getWhatsAppUrl(): string {
-  const text = encodeURIComponent(WHATSAPP_MESSAGE);
+export function getWhatsAppUrl(message: string = WHATSAPP_MESSAGE): string {
+  const text = encodeURIComponent(message);
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${text}`;
 }

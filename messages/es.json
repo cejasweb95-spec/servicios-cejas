@@ -1,0 +1,121 @@
+{
+  "meta": {
+    "title": "Cejas Internacionales | Micropigmentación Cejas, Labios y Mirada",
+    "description": "Especialista internacional en micropigmentación de cejas, labios y mirada. España, Europa y Colombia. Reserva por WhatsApp — web completa muy pronto.",
+    "ogDescription": "Próximamente: micropigmentación profesional de cejas, labios y mirada. Reserva tu cita por WhatsApp. España · Europa · Colombia.",
+    "twitterTitle": "Cejas Internacionales | Micropigmentación estética",
+    "twitterDescription": "Próximamente: cejas, labios y mirada con técnica internacional. Reserva por WhatsApp."
+  },
+  "common": {
+    "skipToContent": "Saltar al contenido principal",
+    "logoAria": "Cejas Internacionales — Inicio",
+    "navSocial": "Contacto y redes sociales",
+    "brandName": "Cejas Internacionales",
+    "regions": "España · Europa · Colombia",
+    "phone": "+34 603 80 48 37"
+  },
+  "language": {
+    "label": "Idioma",
+    "es": "Español",
+    "en": "English",
+    "switchTo": "Cambiar idioma a {language}"
+  },
+  "whatsapp": {
+    "prefill": "Hola, quiero reservar o pedir información sobre micropigmentación en Cejas Internacionales.",
+    "reserve": "Reservar por WhatsApp",
+    "write": "Escribir por WhatsApp",
+    "reserveAria": "Reservar por WhatsApp",
+    "floatAria": "Reservar micropigmentación por WhatsApp",
+    "floatLabel": "Reservar"
+  },
+  "instagram": {
+    "follow": "Síguenos en Instagram",
+    "view": "Ver en Instagram",
+    "followAria": "Seguir a Cejas Internacionales en Instagram, @{handle}",
+    "iconAria": "Instagram @{handle}"
+  },
+  "hero": {
+    "tag": "Micropigmentación estética · Cejas · Labios · Mirada",
+    "title": "Próximamente: <em>micropigmentación</em> que realza tu belleza natural",
+    "subtitle": "<strong>Cejas Internacionales</strong> abre muy pronto su nueva web. Mientras tanto, reserva tu valoración o consulta próximas fechas por WhatsApp con una especialista internacional en cejas, labios y mirada en España, Europa y Colombia.",
+    "viewServices": "Ver tratamientos",
+    "urgency": "Plazas limitadas en jornadas internacionales — escríbenos hoy."
+  },
+  "coming": {
+    "label": "Próximamente online",
+    "title": "Estamos creando una web a la altura de tu transformación",
+    "text": "Muy pronto podrás explorar todos nuestros tratamientos de <strong>micropigmentación de cejas</strong>, <strong>micropigmentación labial</strong> y <strong>diseño de mirada</strong>. Hoy ya puedes reservar o pedir información por WhatsApp sobre próximas citas en España y Europa.",
+    "badge": "Lanzamiento oficial muy pronto",
+    "badgeAria": "Lanzamiento oficial próximamente"
+  },
+  "services": {
+    "label": "Tratamientos",
+    "title": "Micropigmentación y belleza facial profesional",
+    "text": "Técnicas especializadas en cejas, labios y mirada con resultados naturales y personalizados.",
+    "eyebrows": {
+      "title": "Micropigmentación de cejas",
+      "items": [
+        "Micropigmentación de cejas",
+        "Cejas efecto polvo",
+        "Cejas pelo a pelo",
+        "Cejas efecto maquillaje",
+        "Sombreado en henna",
+        "Laminado de cejas",
+        "Lifting de cejas"
+      ]
+    },
+    "lips": {
+      "title": "Micropigmentación labial",
+      "items": [
+        "Micropigmentación labial",
+        "Neutralización labial",
+        "Hidratación labial",
+        "Microlips",
+        "Valoración de cicatrizados"
+      ]
+    },
+    "eyes": {
+      "title": "Mirada y pestañas",
+      "items": [
+        "Lifting de pestañas",
+        "Delineado de ojos",
+        "Realce de línea de pestañas"
+      ]
+    }
+  },
+  "trust": {
+    "label": "Por qué elegirnos",
+    "title": "Especialista internacional en belleza facial",
+    "cards": {
+      "01": {
+        "title": "Atención personalizada",
+        "text": "Cada rostro es único. Diseñamos cejas, labios y mirada según tu estilo y rasgos."
+      },
+      "02": {
+        "title": "Resultados naturales",
+        "text": "Micropigmentación estética con acabado suave, elegante y sin exagerar."
+      },
+      "03": {
+        "title": "Agenda internacional",
+        "text": "Jornadas en España, Europa y Colombia. Consulta disponibilidad por WhatsApp."
+      },
+      "04": {
+        "title": "Técnica y experiencia",
+        "text": "Formación continua en las últimas técnicas de micropigmentación y diseño facial."
+      }
+    }
+  },
+  "cta": {
+    "title": "Reserva ahora por WhatsApp",
+    "text": "¿Quieres micropigmentación de cejas, labios o mirada? Escríbenos y te informamos sobre próximas fechas, ciudades y disponibilidad de agenda."
+  },
+  "footer": {
+    "tagline": "Micropigmentación estética internacional",
+    "note": "Web en construcción. Reservas e información disponibles por WhatsApp. Catálogo completo de servicios y cuidados post-tratamiento próximamente."
+  },
+  "notFound": {
+    "title": "Página no encontrada",
+    "text": "La página que buscas no existe o aún no está disponible.",
+    "back": "Volver al inicio"
+  }
+}

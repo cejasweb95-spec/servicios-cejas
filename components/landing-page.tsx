@@ -1,41 +1,30 @@
 "use client";
 
-import Link from "next/link";
+import type { ReactNode } from "react";
 import { motion } from "framer-motion";
-import { getWhatsAppUrl, INSTAGRAM_URL } from "@/lib/config";
+import { useTranslations } from "next-intl";
 import { FadeInView } from "./fade-in-view";
 import { InstagramInvite } from "./instagram-invite";
 import { InstagramIcon, WhatsAppIcon } from "./icons";
+import { LanguageSwitcher } from "./language-switcher";
 import { MotionButton } from "./motion-button";
 import { SocialLinks } from "./social-links";
+import { Link } from "@/i18n/navigation";
+import { getWhatsAppUrl, INSTAGRAM_URL } from "@/lib/config";
 
-const whatsappUrl = getWhatsAppUrl();
-
-const eyebrowServices = [
-  "Micropigmentación de cejas",
-  "Cejas efecto polvo",
-  "Cejas pelo a pelo",
-  "Cejas efecto maquillaje",
-  "Sombreado en henna",
-  "Laminado de cejas",
-  "Lifting de cejas",
-];
-
-const lipServices = [
-  "Micropigmentación labial",
-  "Neutralización labial",
-  "Hidratación labial",
-  "Microlips",
-  "Valoración de cicatrizados",
-];
-
-const eyeServices = [
-  "Lifting de pestañas",
-  "Delineado de ojos",
-  "Realce de línea de pestañas",
-];
+const richTags = {
+  em: (chunks: ReactNode) => <em>{chunks}</em>,
+  strong: (chunks: ReactNode) => <strong>{chunks}</strong>,
+};
 
 export function LandingPage() {
+  const t = useTranslations();
+  const whatsappUrl = getWhatsAppUrl(t("whatsapp.prefill"));
+
+  const eyebrowServices = t.raw("services.eyebrows.items") as string[];
+  const lipServices = t.raw("services.lips.items") as string[];
+  const eyeServices = t.raw("services.eyes.items") as string[];
+
   return (
     <>
       <div className="bg-shapes" aria-hidden="true">
@@ -46,12 +35,15 @@ export function LandingPage() {
 
       <header className="header">
         <div className="container header__inner">
-          <Link href="/" className="logo" aria-label="Cejas Internacionales — Inicio">
+          <Link href="/" className="logo" aria-label={t("common.logoAria")}>
             Cejas <span>Internacionales</span>
           </Link>
-          <nav aria-label="Contacto y redes sociales">
-            <SocialLinks whatsappUrl={whatsappUrl} />
-          </nav>
+          <div className="header__actions">
+            <LanguageSwitcher />
+            <nav aria-label={t("common.navSocial")}>
+              <SocialLinks whatsappUrl={whatsappUrl} />
+            </nav>
+          </div>
         </div>
       </header>
 
@@ -59,18 +51,12 @@ export function LandingPage() {
         <section className="hero" aria-labelledby="hero-title">
           <div className="container">
             <div className="hero__content">
-              <p className="hero__tag">
-                Micropigmentación estética · Cejas · Labios · Mirada
-              </p>
+              <p className="hero__tag">{t("hero.tag")}</p>
               <h1 id="hero-title" className="hero__title">
-                Próximamente: <em>micropigmentación</em> que realza tu belleza
-                natural
+                {t.rich("hero.title", richTags)}
               </h1>
               <p className="hero__subtitle">
-                <strong>Cejas Internacionales</strong> abre muy pronto su nueva
-                web. Mientras tanto, reserva tu valoración o consulta próximas
-                fechas por WhatsApp con una especialista internacional en cejas,
-                labios y mirada en España, Europa y Colombia.
+                {t.rich("hero.subtitle", richTags)}
               </p>
               <div className="hero__actions btn-group">
                 <MotionButton
@@ -80,15 +66,13 @@ export function LandingPage() {
                   rel="noopener noreferrer"
                 >
                   <WhatsAppIcon />
-                  Reservar por WhatsApp
+                  {t("whatsapp.reserve")}
                 </MotionButton>
                 <MotionButton href="#servicios" className="btn btn--secondary">
-                  Ver tratamientos
+                  {t("hero.viewServices")}
                 </MotionButton>
               </div>
-              <p className="hero__urgency">
-                Plazas limitadas en jornadas internacionales — escríbenos hoy.
-              </p>
+              <p className="hero__urgency">{t("hero.urgency")}</p>
               <div className="hero__social">
                 <InstagramInvite compact />
               </div>
@@ -100,24 +84,19 @@ export function LandingPage() {
         <section className="section" aria-labelledby="coming-title">
           <div className="container">
             <FadeInView className="coming-soon motion-reveal">
-              <p className="section__label">Próximamente online</p>
+              <p className="section__label">{t("coming.label")}</p>
               <h2 id="coming-title" className="section__title">
-                Estamos creando una web a la altura de tu transformación
+                {t("coming.title")}
               </h2>
               <p className="section__text">
-                Muy pronto podrás explorar todos nuestros tratamientos de{" "}
-                <strong>micropigmentación de cejas</strong>,{" "}
-                <strong>micropigmentación labial</strong> y{" "}
-                <strong>diseño de mirada</strong>. Hoy ya puedes reservar o
-                pedir información por WhatsApp sobre próximas citas en España y
-                Europa.
+                {t.rich("coming.text", richTags)}
               </p>
               <div
                 className="coming-soon__badge"
                 role="status"
-                aria-label="Lanzamiento oficial próximamente"
+                aria-label={t("coming.badgeAria")}
               >
-                <span>Lanzamiento oficial muy pronto</span>
+                <span>{t("coming.badge")}</span>
                 <span className="coming-soon__dots" aria-hidden="true">
                   <span />
                   <span />
@@ -136,32 +115,29 @@ export function LandingPage() {
         >
           <div className="container">
             <FadeInView as="header" className="section__header motion-reveal">
-              <p className="section__label">Tratamientos</p>
+              <p className="section__label">{t("services.label")}</p>
               <h2 id="services-title" className="section__title">
-                Micropigmentación y belleza facial profesional
+                {t("services.title")}
               </h2>
-              <p className="section__text">
-                Técnicas especializadas en cejas, labios y mirada con resultados
-                naturales y personalizados.
-              </p>
+              <p className="section__text">{t("services.text")}</p>
             </FadeInView>
 
             <div className="services-grid">
               <ServiceGroup
                 letter="A"
-                title="Micropigmentación de cejas"
+                title={t("services.eyebrows.title")}
                 services={eyebrowServices}
                 delay={0.1}
               />
               <ServiceGroup
                 letter="B"
-                title="Micropigmentación labial"
+                title={t("services.lips.title")}
                 services={lipServices}
                 delay={0.2}
               />
               <ServiceGroup
                 letter="C"
-                title="Mirada y pestañas"
+                title={t("services.eyes.title")}
                 services={eyeServices}
                 delay={0.3}
               />
@@ -172,37 +148,22 @@ export function LandingPage() {
         <section className="section" aria-labelledby="trust-title">
           <div className="container">
             <FadeInView as="header" className="section__header motion-reveal">
-              <p className="section__label">Por qué elegirnos</p>
+              <p className="section__label">{t("trust.label")}</p>
               <h2 id="trust-title" className="section__title">
-                Especialista internacional en belleza facial
+                {t("trust.title")}
               </h2>
             </FadeInView>
 
             <div className="trust-grid">
-              <TrustCard
-                number="01"
-                title="Atención personalizada"
-                text="Cada rostro es único. Diseñamos cejas, labios y mirada según tu estilo y rasgos."
-                delay={0.1}
-              />
-              <TrustCard
-                number="02"
-                title="Resultados naturales"
-                text="Micropigmentación estética con acabado suave, elegante y sin exagerar."
-                delay={0.2}
-              />
-              <TrustCard
-                number="03"
-                title="Agenda internacional"
-                text="Jornadas en España, Europa y Colombia. Consulta disponibilidad por WhatsApp."
-                delay={0.3}
-              />
-              <TrustCard
-                number="04"
-                title="Técnica y experiencia"
-                text="Formación continua en las últimas técnicas de micropigmentación y diseño facial."
-                delay={0.4}
-              />
+              {(["01", "02", "03", "04"] as const).map((id, index) => (
+                <TrustCard
+                  key={id}
+                  number={id}
+                  title={t(`trust.cards.${id}.title`)}
+                  text={t(`trust.cards.${id}.text`)}
+                  delay={0.1 * (index + 1)}
+                />
+              ))}
             </div>
           </div>
         </section>
@@ -211,13 +172,9 @@ export function LandingPage() {
           <div className="container">
             <FadeInView className="cta motion-reveal">
               <h2 id="cta-title" className="cta__title">
-                Reserva ahora por WhatsApp
+                {t("cta.title")}
               </h2>
-              <p className="cta__text">
-                ¿Quieres micropigmentación de cejas, labios o mirada? Escríbenos
-                y te informamos sobre próximas fechas, ciudades y disponibilidad
-                de agenda.
-              </p>
+              <p className="cta__text">{t("cta.text")}</p>
               <div className="cta__actions btn-group">
                 <MotionButton
                   href={whatsappUrl}
@@ -225,7 +182,7 @@ export function LandingPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Escribir por WhatsApp
+                  {t("whatsapp.write")}
                 </MotionButton>
                 <MotionButton
                   href={INSTAGRAM_URL}
@@ -234,7 +191,7 @@ export function LandingPage() {
                   rel="noopener noreferrer"
                 >
                   <InstagramIcon />
-                  Ver en Instagram
+                  {t("instagram.view")}
                 </MotionButton>
               </div>
             </FadeInView>
@@ -244,18 +201,14 @@ export function LandingPage() {
 
       <footer className="footer">
         <div className="container">
-          <p className="footer__brand">Cejas Internacionales</p>
-          <p className="footer__tagline">Micropigmentación estética internacional</p>
-          <p className="footer__regions">España · Europa · Colombia</p>
+          <p className="footer__brand">{t("common.brandName")}</p>
+          <p className="footer__tagline">{t("footer.tagline")}</p>
+          <p className="footer__regions">{t("common.regions")}</p>
           <p className="footer__phone">
-            <a href="tel:+34603804837">+34 603 80 48 37</a>
+            <a href="tel:+34603804837">{t("common.phone")}</a>
           </p>
           <SocialLinks whatsappUrl={whatsappUrl} variant="footer" />
-          <p className="footer__note">
-            Web en construcción. Reservas e información disponibles por WhatsApp.
-            Catálogo completo de servicios y cuidados post-tratamiento
-            próximamente.
-          </p>
+          <p className="footer__note">{t("footer.note")}</p>
         </div>
       </footer>
 
@@ -264,7 +217,7 @@ export function LandingPage() {
         className="whatsapp-float motion-reveal"
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Reservar micropigmentación por WhatsApp"
+        aria-label={t("whatsapp.floatAria")}
         initial={{ opacity: 0, scale: 0.85, y: 16 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ delay: 0.9, duration: 0.45, ease: [0.4, 0, 0.2, 1] }}
@@ -272,7 +225,7 @@ export function LandingPage() {
         whileTap={{ scale: 0.94 }}
       >
         <WhatsAppIcon size={28} />
-        <span className="whatsapp-float__label">Reservar</span>
+        <span className="whatsapp-float__label">{t("whatsapp.floatLabel")}</span>
       </motion.a>
     </>
   );

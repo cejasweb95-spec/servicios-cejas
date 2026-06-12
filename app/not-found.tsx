@@ -1,17 +1,21 @@
 import Link from "next/link";
 
-export default function NotFound() {
+export default function GlobalNotFound() {
   return (
-    <main className="section" style={{ textAlign: "center", minHeight: "60vh" }}>
-      <div className="container">
-        <h1 className="section__title">Página no encontrada</h1>
-        <p className="section__text" style={{ marginBottom: "1.5rem" }}>
-          La página que buscas no existe o aún no está disponible.
+    <html lang="es">
+      <body
+        style={{
+          fontFamily: "system-ui, sans-serif",
+          padding: "2rem",
+          textAlign: "center",
+        }}
+      >
+        <h1>Página no encontrada / Page not found</h1>
+        <p style={{ margin: "1rem 0" }}>
+          <Link href="/">Volver al inicio</Link> ·{" "}
+          <Link href="/en">Back to home</Link>
         </p>
-        <Link href="/" className="btn btn--primary">
-          Volver al inicio
-        </Link>
-      </div>
-    </main>
+      </body>
+    </html>
   );
 }
