@@ -19,3 +19,6 @@ Thumbs.db
 # IDE
 .vscode/
 .idea/
+
+# Agent skills (restaurar con: npx skills experimental_install)
+.agents/
