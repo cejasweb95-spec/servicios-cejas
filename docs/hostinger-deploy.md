@@ -1,36 +1,57 @@
-# Publicar en Hostinger (rama main)
+# Publicar en Hostinger con Next.js
 
-## Requisitos
+Dominio: `https://cejasinternacionales.com`  
+Repo: `cejasweb95-spec/servicios-cejas` · Rama: `main`
 
-- Repositorio GitHub: `cejasweb95-spec/servicios-cejas`
-- Rama: `main`
-- Hostinger con Git deployment activado
+---
 
-## Antes del primer deploy
+## Configuración en Hostinger (Frontend web app)
 
-1. Dominio configurado: `https://cejasinternacionales.com`
-2. Opcional: `INSTAGRAM_URL` en `js/config.js` cuando tengas el perfil
+1. **Websites** → **Add Website** → **Frontend web app**
+2. **Connect GitHub** → autoriza y elige `cejasweb95-spec/servicios-cejas`
+3. Configura así:
 
-## En Hostinger
+| Campo | Valor |
+|-------|--------|
+| **Framework** | **Next.js** |
+| **Rama** | `main` |
+| **Install command** | `npm install` |
+| **Build command** | `npm run build` |
+| **Start command** | `npm start` |
+| **Node version** | 20.x (o la más reciente disponible) |
 
-1. **Websites** → tu dominio → **Git**
-2. Conecta el repositorio de GitHub
-3. Rama: `main`
-4. Directorio de publicación: raíz `/` (donde está `index.html`)
-5. Deploy automático en cada push a `main`
+4. Variables de entorno (opcional, ya hay valores por defecto):
 
-## Reservas
+```
+NEXT_PUBLIC_SITE_URL=https://cejasinternacionales.com
+NEXT_PUBLIC_WHATSAPP_NUMBER=34603804837
+```
 
-Solo WhatsApp por ahora. El botón abre chat con mensaje prellenado.
+5. Pulsa **Deploy** y activa **Auto-deployment**
+
+---
+
+## Desarrollo local
+
+```bash
+cd C:\servicios-cejas
+npm install
+npm run dev
+```
+
+Abre http://localhost:3000
+
+Build de producción:
+
+```bash
+npm run build
+npm start
+```
+
+---
 
 ## Después del deploy
 
-1. Activa SSL (HTTPS) en Hostinger
-2. Registra el sitio en [Google Search Console](https://search.google.com/search-console)
-3. Envía el sitemap: `https://tudominio.com/sitemap.xml`
-
-## Pendiente para más adelante
-
-- Sanity CMS (contenido editable)
-- Resend (emails de contacto)
-- Web completa con Next.js (opcional)
+1. Probar https://cejasinternacionales.com
+2. Probar WhatsApp en móvil
+3. Google Search Console → sitemap: `https://cejasinternacionales.com/sitemap.xml`

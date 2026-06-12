@@ -13,8 +13,8 @@
   --color-text-muted: #8a7b72;
   --color-text-light: #a89890;
 
-  --font-display: "Cormorant Garamond", Georgia, "Times New Roman", serif;
-  --font-body: "Outfit", system-ui, -apple-system, sans-serif;
+  --font-display: var(--font-display-next), Georgia, "Times New Roman", serif;
+  --font-body: var(--font-body-next), system-ui, -apple-system, sans-serif;
 
   --radius-sm: 0.5rem;
   --radius-md: 1rem;

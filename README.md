@@ -1,40 +1,38 @@
 # Cejas Internacionales
 
-Landing page de **Próximamente** para micropigmentación estética internacional.
+Landing **Próximamente** — Next.js + React para micropigmentación estética internacional.
 
-## Estado actual
+## Stack
 
-Página estática publicada en la rama `main`.
+- **Next.js 15** (App Router)
+- **React 19** + TypeScript
+- Hosting: **Hostinger** (Git → rama `main`, framework **Next.js**)
 
-## Configuración antes de publicar
+## Desarrollo local
 
-Edita `js/config.js`:
+```bash
+npm install
+npm run dev
+```
 
-- `SITE_URL` — tu dominio en Hostinger (ej. `https://cejasinternacionales.com`)
-- `WHATSAPP_NUMBER` — número sin espacios (ej. `34603804837`)
-- `WHATSAPP_MESSAGE` — mensaje prellenado de WhatsApp
-- `INSTAGRAM_URL` — cuando tengas perfil (opcional)
+http://localhost:3000
 
-También actualiza `robots.txt` y `sitemap.xml` con tu dominio real.
+## Configuración
 
-## Hosting
+Copia `.env.example` a `.env.local` o edita las variables:
 
-Hostinger conectado a GitHub, rama `main`. Ver `docs/hostinger-deploy.md`.
+- `NEXT_PUBLIC_SITE_URL` — https://cejasinternacionales.com
+- `NEXT_PUBLIC_WHATSAPP_NUMBER` — 34603804837
+- `NEXT_PUBLIC_INSTAGRAM_URL` — (opcional)
 
-## Vista local
+También puedes editar valores por defecto en `lib/config.ts`.
 
-Abre `index.html` en el navegador o sirve la carpeta con un servidor estático.
+## Hostinger
+
+Ver **`docs/hostinger-deploy.md`** — framework **Next.js**, build `npm run build`, start `npm start`.
 
 ## Documentación
 
-- `docs/landing-proximamente-prompt.md` — Brief original de la landing
-- `docs/stack-recomendado.md` — Stack para la web completa (Next.js + Sanity)
-- `docs/skills-instaladas.md` — Skills de skills.sh instaladas en el proyecto
-
-## Skills del agente
-
-15 skills instaladas (diseño, responsive, SEO, Next.js). Restaurar en otro PC:
-
-```bash
-npx skills experimental_install -y
-```
+- `docs/roadmap-web-completa.md` — Sanity, Resend, web completa
+- `docs/hostinger-deploy.md` — Deploy en Hostinger
+- `docs/skills-instaladas.md` — Agent skills
