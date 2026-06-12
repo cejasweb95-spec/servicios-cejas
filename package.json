@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "cross-env ESLINT_USE_FLAT_CONFIG=false eslint . --max-warnings 0",
     "typecheck": "tsc --noEmit",
-    "qa": "npm run typecheck && npm run lint && npm run build"
+    "qa": "npm run typecheck && npm run lint && npm run build",
+    "hostinger:audit": "node scripts/hostinger-audit.mjs"
   },
   "engines": {
     "node": ">=18.18.0"
