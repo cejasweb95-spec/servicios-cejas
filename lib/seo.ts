@@ -33,6 +33,13 @@ export function getStructuredData() {
           { "@type": "Country", name: "Colombia" },
           { "@type": "Place", name: "Europa" },
         ],
+        knowsAbout: [
+          "Micropigmentación de cejas",
+          "Micropigmentación labial",
+          "Diseño de cejas",
+          "Lifting de pestañas",
+          "Delineado de ojos",
+        ],
         contactPoint: {
           "@type": "ContactPoint",
           telephone: `+${WHATSAPP_NUMBER}`,

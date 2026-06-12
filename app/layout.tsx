@@ -1,9 +1,15 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Outfit } from "next/font/google";
 import { RevealOnScroll } from "@/components/reveal-on-scroll";
 import { SITE_NAME, SITE_URL } from "@/lib/config";
 import { getStructuredData, META_DESCRIPTION } from "@/lib/seo";
 import "./globals.css";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#faf7f4",
+};
 
 const display = Cormorant_Garamond({
   subsets: ["latin"],
@@ -45,8 +51,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
-  other: {
-    "theme-color": "#faf7f4",
+  applicationName: SITE_NAME,
+  formatDetection: {
+    telephone: true,
   },
 };
 
@@ -58,12 +65,19 @@ export default function RootLayout({
   const structuredData = getStructuredData();
 
   return (
-    <html lang="es" className={`${display.variable} ${body.variable}`}>
+    <html
+      lang="es"
+      className={`no-js ${display.variable} ${body.variable}`}
+      suppressHydrationWarning
+    >
       <body>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
+        <a href="#contenido-principal" className="skip-link">
+          Saltar al contenido principal
+        </a>
         {children}
         <RevealOnScroll />
       </body>

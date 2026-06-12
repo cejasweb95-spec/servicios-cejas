@@ -4,6 +4,9 @@ import { useEffect } from "react";
 
 export function RevealOnScroll() {
   useEffect(() => {
+    document.documentElement.classList.remove("no-js");
+    document.documentElement.classList.add("js");
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {

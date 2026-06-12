@@ -67,7 +67,7 @@ export function LandingPage() {
         </div>
       </header>
 
-      <main>
+      <main id="contenido-principal">
         <section className="hero" aria-labelledby="hero-title">
           <div className="container">
             <div className="hero__content">
