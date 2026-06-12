@@ -1,0 +1,21 @@
+# Variables de entorno (contiene tokens)
+.env
+.env.local
+.env.*.local
+
+# Dependencias
+node_modules/
+
+# Build
+.next/
+out/
+dist/
+build/
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
