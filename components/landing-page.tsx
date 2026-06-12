@@ -3,14 +3,11 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { getWhatsAppUrl, INSTAGRAM_URL } from "@/lib/config";
-import {
-  fadeInUp,
-  revealTransition,
-  staggerContainer,
-} from "@/lib/motion";
 import { FadeInView } from "./fade-in-view";
+import { InstagramInvite } from "./instagram-invite";
 import { InstagramIcon, WhatsAppIcon } from "./icons";
 import { MotionButton } from "./motion-button";
+import { SocialLinks } from "./social-links";
 
 const whatsappUrl = getWhatsAppUrl();
 
@@ -52,27 +49,8 @@ export function LandingPage() {
           <Link href="/" className="logo" aria-label="Cejas Internacionales — Inicio">
             Cejas <span>Internacionales</span>
           </Link>
-          <nav className="header__social" aria-label="Contacto">
-            {INSTAGRAM_URL ? (
-              <a
-                href={INSTAGRAM_URL}
-                className="icon-link"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram de Cejas Internacionales"
-              >
-                <InstagramIcon />
-              </a>
-            ) : null}
-            <a
-              href={whatsappUrl}
-              className="icon-link"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Reservar por WhatsApp"
-            >
-              <WhatsAppIcon />
-            </a>
+          <nav aria-label="Contacto y redes sociales">
+            <SocialLinks whatsappUrl={whatsappUrl} />
           </nav>
         </div>
       </header>
@@ -80,39 +58,21 @@ export function LandingPage() {
       <main id="contenido-principal">
         <section className="hero" aria-labelledby="hero-title">
           <div className="container">
-            <motion.div
-              className="hero__content motion-reveal"
-              variants={staggerContainer}
-              initial="hidden"
-              animate="visible"
-            >
-              <motion.p className="hero__tag" variants={fadeInUp}>
+            <div className="hero__content">
+              <p className="hero__tag">
                 Micropigmentación estética · Cejas · Labios · Mirada
-              </motion.p>
-              <motion.h1
-                id="hero-title"
-                className="hero__title"
-                variants={fadeInUp}
-                transition={revealTransition(0.05)}
-              >
+              </p>
+              <h1 id="hero-title" className="hero__title">
                 Próximamente: <em>micropigmentación</em> que realza tu belleza
                 natural
-              </motion.h1>
-              <motion.p
-                className="hero__subtitle"
-                variants={fadeInUp}
-                transition={revealTransition(0.1)}
-              >
+              </h1>
+              <p className="hero__subtitle">
                 <strong>Cejas Internacionales</strong> abre muy pronto su nueva
                 web. Mientras tanto, reserva tu valoración o consulta próximas
                 fechas por WhatsApp con una especialista internacional en cejas,
                 labios y mirada en España, Europa y Colombia.
-              </motion.p>
-              <motion.div
-                className="hero__actions btn-group"
-                variants={fadeInUp}
-                transition={revealTransition(0.15)}
-              >
+              </p>
+              <div className="hero__actions btn-group">
                 <MotionButton
                   href={whatsappUrl}
                   className="btn btn--primary"
@@ -125,15 +85,14 @@ export function LandingPage() {
                 <MotionButton href="#servicios" className="btn btn--secondary">
                   Ver tratamientos
                 </MotionButton>
-              </motion.div>
-              <motion.p
-                className="hero__urgency"
-                variants={fadeInUp}
-                transition={revealTransition(0.2)}
-              >
+              </div>
+              <p className="hero__urgency">
                 Plazas limitadas en jornadas internacionales — escríbenos hoy.
-              </motion.p>
-            </motion.div>
+              </p>
+              <div className="hero__social">
+                <InstagramInvite compact />
+              </div>
+            </div>
             <div className="hero__accent" aria-hidden="true" />
           </div>
         </section>
@@ -165,6 +124,7 @@ export function LandingPage() {
                   <span />
                 </span>
               </div>
+              <InstagramInvite />
             </FadeInView>
           </div>
         </section>
@@ -258,14 +218,25 @@ export function LandingPage() {
                 y te informamos sobre próximas fechas, ciudades y disponibilidad
                 de agenda.
               </p>
-              <MotionButton
-                href={whatsappUrl}
-                className="btn btn--gold"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Escribir por WhatsApp
-              </MotionButton>
+              <div className="cta__actions btn-group">
+                <MotionButton
+                  href={whatsappUrl}
+                  className="btn btn--gold"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Escribir por WhatsApp
+                </MotionButton>
+                <MotionButton
+                  href={INSTAGRAM_URL}
+                  className="btn btn--instagram"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <InstagramIcon />
+                  Ver en Instagram
+                </MotionButton>
+              </div>
             </FadeInView>
           </div>
         </section>
@@ -279,28 +250,7 @@ export function LandingPage() {
           <p className="footer__phone">
             <a href="tel:+34603804837">+34 603 80 48 37</a>
           </p>
-          <div className="footer__links">
-            {INSTAGRAM_URL ? (
-              <a
-                href={INSTAGRAM_URL}
-                className="icon-link"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-              >
-                <InstagramIcon />
-              </a>
-            ) : null}
-            <a
-              href={whatsappUrl}
-              className="icon-link"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="WhatsApp"
-            >
-              <WhatsAppIcon />
-            </a>
-          </div>
+          <SocialLinks whatsappUrl={whatsappUrl} variant="footer" />
           <p className="footer__note">
             Web en construcción. Reservas e información disponibles por WhatsApp.
             Catálogo completo de servicios y cuidados post-tratamiento

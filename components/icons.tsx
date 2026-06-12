@@ -12,11 +12,11 @@ export function WhatsAppIcon({ size = 18 }: { size?: number }) {
   );
 }
 
-export function InstagramIcon() {
+export function InstagramIcon({ size = 18 }: { size?: number }) {
   return (
     <svg
-      width="18"
-      height="18"
+      width={size}
+      height={size}
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"

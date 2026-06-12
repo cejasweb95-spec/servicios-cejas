@@ -244,6 +244,155 @@ button {
   display: none;
 }
 
+.icon-link--instagram:hover {
+  background: linear-gradient(
+    135deg,
+    #c9a87c 0%,
+    #d4a574 45%,
+    #b8956a 100%
+  );
+  border-color: transparent;
+  color: var(--color-warm-white);
+}
+
+.social-links--footer {
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-sm);
+}
+
+.social-links__handle {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--color-brown);
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(201, 168, 124, 0.35);
+  transition: var(--transition);
+}
+
+.social-links__handle:hover {
+  color: var(--color-brown-dark);
+  border-color: var(--color-gold);
+  background: rgba(255, 253, 251, 0.8);
+}
+
+.instagram-invite {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  max-width: 100%;
+  margin-top: var(--space-md);
+  padding: 0.85rem 1.15rem;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(201, 168, 124, 0.4);
+  background: rgba(255, 253, 251, 0.75);
+  color: var(--color-brown-dark);
+  text-align: left;
+  transition: var(--transition);
+  box-shadow: var(--shadow-soft);
+}
+
+.instagram-invite:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-gold);
+  box-shadow: var(--shadow-card);
+  background: var(--color-warm-white);
+}
+
+.instagram-invite--compact {
+  margin-top: var(--space-sm);
+  padding: 0.55rem 1rem;
+  gap: 0.65rem;
+  box-shadow: none;
+  background: rgba(255, 253, 251, 0.55);
+}
+
+.instagram-invite--compact .instagram-invite__label {
+  font-size: 0.72rem;
+}
+
+.instagram-invite--compact .instagram-invite__handle {
+  font-size: 0.82rem;
+}
+
+.instagram-invite--compact .instagram-invite__arrow {
+  display: none;
+}
+
+.instagram-invite--dark {
+  background: rgba(255, 253, 251, 0.08);
+  border-color: rgba(255, 253, 251, 0.22);
+  color: var(--color-warm-white);
+}
+
+.instagram-invite--dark:hover {
+  background: rgba(255, 253, 251, 0.14);
+  border-color: rgba(201, 168, 124, 0.55);
+}
+
+.instagram-invite__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--radius-full);
+  background: linear-gradient(
+    145deg,
+    rgba(201, 168, 124, 0.25) 0%,
+    rgba(240, 230, 220, 0.5) 100%
+  );
+  color: var(--color-brown-dark);
+}
+
+.instagram-invite--compact .instagram-invite__icon {
+  width: 2.15rem;
+  height: 2.15rem;
+}
+
+.instagram-invite__copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  min-width: 0;
+}
+
+.instagram-invite__label {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+.instagram-invite__handle {
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.instagram-invite__arrow {
+  margin-left: auto;
+  font-size: 1.1rem;
+  color: var(--color-gold);
+  transition: transform 0.2s ease;
+}
+
+.instagram-invite:hover .instagram-invite__arrow {
+  transform: translateX(3px);
+}
+
+.hero__social {
+  animation: fadeInUp 0.8s ease 0.5s both;
+}
+
 /* ── Buttons ────────────────────────────────────────────── */
 .btn {
   display: inline-flex;
@@ -293,6 +442,23 @@ button {
   box-shadow: var(--shadow-card);
 }
 
+.btn--instagram {
+  background: rgba(255, 253, 251, 0.12);
+  color: var(--color-warm-white);
+  border: 1px solid rgba(255, 253, 251, 0.35);
+}
+
+.btn--instagram:hover {
+  background: rgba(255, 253, 251, 0.2);
+  border-color: rgba(201, 168, 124, 0.65);
+  transform: translateY(-2px);
+}
+
+.cta__actions {
+  justify-content: center;
+  position: relative;
+}
+
 .btn-group {
   display: flex;
   flex-wrap: wrap;
@@ -324,6 +490,7 @@ button {
   border-radius: var(--radius-full);
   background: rgba(255, 253, 251, 0.6);
   margin-bottom: var(--space-md);
+  animation: fadeInDown 0.8s ease both;
 }
 
 .hero__title {
@@ -333,6 +500,7 @@ button {
   line-height: 1.1;
   color: var(--color-brown-dark);
   margin-bottom: var(--space-md);
+  animation: fadeInUp 0.8s ease 0.1s both;
 }
 
 .hero__title em {
@@ -345,16 +513,19 @@ button {
   color: var(--color-text-muted);
   margin-bottom: var(--space-lg);
   max-width: 36rem;
+  animation: fadeInUp 0.8s ease 0.2s both;
 }
 
 .hero__actions {
   margin-bottom: var(--space-md);
+  animation: fadeInUp 0.8s ease 0.3s both;
 }
 
 .hero__urgency {
   font-size: 0.8rem;
   color: var(--color-text-light);
   letter-spacing: 0.06em;
+  animation: fadeInUp 0.8s ease 0.4s both;
 }
 
 .hero__urgency::before {
@@ -395,6 +566,16 @@ button {
   inset: 3rem;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(201, 168, 124, 0.12) 0%, transparent 70%);
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(1.25rem); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-0.75rem); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes pulse {
@@ -723,13 +904,6 @@ button {
   .whatsapp-float__label {
     display: inline;
   }
-}
-
-.footer__links {
-  display: flex;
-  justify-content: center;
-  gap: var(--space-sm);
-  margin-top: var(--space-sm);
 }
 
 /* ── Responsive ───────────────────────────────────────────── */

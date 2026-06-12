@@ -1,4 +1,5 @@
 import {
+  INSTAGRAM_URL,
   SITE_NAME,
   SITE_URL,
   WHATSAPP_DISPLAY,
@@ -28,6 +29,7 @@ export function getStructuredData() {
           "Micropigmentación estética de cejas, labios y mirada. Especialista internacional con jornadas en España, Europa y Colombia.",
         url: SITE_URL,
         telephone: WHATSAPP_DISPLAY,
+        sameAs: [INSTAGRAM_URL],
         areaServed: [
           { "@type": "Country", name: "España" },
           { "@type": "Country", name: "Colombia" },

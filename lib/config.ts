@@ -12,7 +12,11 @@ export const WHATSAPP_MESSAGE =
   process.env.NEXT_PUBLIC_WHATSAPP_MESSAGE ??
   "Hola, quiero reservar o pedir información sobre micropigmentación en Cejas Internacionales.";
 
-export const INSTAGRAM_URL = process.env.NEXT_PUBLIC_INSTAGRAM_URL ?? "";
+export const INSTAGRAM_URL =
+  process.env.NEXT_PUBLIC_INSTAGRAM_URL ??
+  "https://www.instagram.com/cejasinternacionales";
+
+export const INSTAGRAM_HANDLE = "cejasinternacionales";
 
 export function getWhatsAppUrl(): string {
   const text = encodeURIComponent(WHATSAPP_MESSAGE);
