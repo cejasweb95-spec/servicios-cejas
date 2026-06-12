@@ -37,9 +37,31 @@ Fecha: junio 2026
 | Auditoría WCAG formal | accessibility | Requiere herramienta automatizada |
 | `impeccable` script | impeccable | Auditoría visual en navegador |
 
+## QA final automatizado
+
+```bash
+npm run qa
+```
+
+Ejecuta en cadena: `typecheck` → `lint` → `build`
+
+### Resultado última ejecución
+
+| Check | Estado |
+|-------|--------|
+| `tsc --noEmit` | ✅ 0 errores |
+| `eslint` (Next.js core-web-vitals) | ✅ 0 errores |
+| `next build` | ✅ 6 páginas estáticas |
+| HTTP `/` | ✅ 200 + SEO + WhatsApp + JSON-LD |
+| HTTP `/robots.txt` | ✅ 200 |
+| HTTP `/sitemap.xml` | ✅ 200 |
+| HTTP 404 | ✅ not-found.tsx |
+| `.env.local` en git | ✅ ignorado |
+
 ## Comandos de verificación
 
 ```bash
-npm run build
+npm run qa
 npm run dev
+npm start
 ```

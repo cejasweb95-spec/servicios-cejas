@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "cross-env ESLINT_USE_FLAT_CONFIG=false eslint . --max-warnings 0",
+    "typecheck": "tsc --noEmit",
+    "qa": "npm run typecheck && npm run lint && npm run build"
   },
   "engines": {
     "node": ">=18.18.0"
@@ -17,9 +19,13 @@
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.3.5",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "cross-env": "^10.1.0",
+    "eslint": "^9.39.4",
+    "eslint-config-next": "^15.5.19",
     "typescript": "^5"
   }
 }
