@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { MessageCircle } from "lucide-react";
 
 import { MobileNav } from "@/components/layout/mobile-nav";
@@ -21,9 +22,17 @@ type WhatsAppTarget = {
   defaultMessage: string;
 };
 
+type SiteLogo = {
+  alt: string;
+  height: number;
+  src: string;
+  width: number;
+};
+
 type SiteHeaderProps = {
   contactLabel: string;
   currentLocale: Locale;
+  logo: SiteLogo | null;
   labels: {
     closeMenu: string;
     language: string;
@@ -43,6 +52,7 @@ type SiteHeaderProps = {
 export function SiteHeader({
   contactLabel,
   currentLocale,
+  logo,
   labels,
   navItems,
   whatsapp,
@@ -51,10 +61,25 @@ export function SiteHeader({
     <header className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/88">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-4 sm:px-8">
         <Link
-          className="font-display text-xl text-foreground focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/40"
+          aria-label={logo?.alt ?? siteConfig.name}
+          className="inline-flex items-center rounded-md focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/40"
           href="/"
         >
-          {siteConfig.name}
+          {logo ? (
+            <Image
+              alt={logo.alt}
+              className="h-9 w-auto sm:h-10"
+              height={logo.height}
+              priority
+              sizes="220px"
+              src={logo.src}
+              width={logo.width}
+            />
+          ) : (
+            <span className="font-display text-xl text-foreground">
+              {siteConfig.name}
+            </span>
+          )}
         </Link>
         <nav
           aria-label={labels.mainNavigation}

@@ -15,6 +15,7 @@ import {
   getLegalProfile,
   getAnalyticsSettings,
   getCookieCategories,
+  getMediaAssets,
   getSeoEntry,
   getSocialLinks,
   getWhatsAppTargets,
@@ -106,6 +107,15 @@ export default async function LocaleLayout({
     targets: whatsappTargets,
     title: whatsappT("title"),
   };
+  const logoAsset = getMediaAssets().find((item) => item.id === "logo-oficial");
+  const logo = logoAsset
+    ? {
+        alt: logoAsset.alt[locale],
+        height: logoAsset.height ?? 949,
+        src: logoAsset.publicPath ?? "/images/brand/logo-oficial-sin-fondo.png",
+        width: logoAsset.width ?? 2095,
+      }
+    : null;
 
   return (
     <html
@@ -121,6 +131,7 @@ export default async function LocaleLayout({
               <SiteHeader
                 contactLabel={shellT("contactCta")}
                 currentLocale={locale}
+                logo={logo}
                 labels={{
                   closeMenu: shellT("closeMenu"),
                   language: shellT("languageNavigation"),
@@ -133,6 +144,7 @@ export default async function LocaleLayout({
               />
               <div id="contenido">{children}</div>
               <SiteFooter
+                logo={logo}
                 labels={{
                   contact: footerT("contact"),
                   cookiePreferences: footerT("cookiePreferences"),

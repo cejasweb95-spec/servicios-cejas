@@ -78,7 +78,7 @@ src/lib/whatsapp/
 
 ## Checklist header
 
-- [ ] Logo con alt localizado.
+- [x] Logo con alt localizado.
 - [x] Nav desktop visible.
 - [x] Menu movil con `Sheet`.
 - [x] CTA `Contacta conmigo` / `Contact me`.

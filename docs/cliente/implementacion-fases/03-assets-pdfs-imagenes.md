@@ -103,8 +103,8 @@ Regla critica:
 - [x] Logo negro monocromo disponible.
 - [x] No exigir SVG/AI a la clienta.
 - [ ] Usar logo blanco sobre fondos oscuros.
-- [ ] Usar logo negro o original segun contraste.
-- [ ] Coral del logo no se convierte en color UI.
+- [x] Usar logo negro o original segun contraste. (header y footer usan el logo original sobre fondo claro)
+- [x] Coral del logo no se convierte en color UI. (UI usa --primary #b76e79; coral solo en el asset del logo)
 
 ---
 

@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import { Link } from "@/i18n/navigation";
 import { siteConfig } from "@/config/site";
 import { CookiePreferencesLink } from "@/components/layout/cookie-preferences-link";
@@ -28,6 +30,13 @@ type WhatsAppTarget = {
   phoneE164: string;
 };
 
+type FooterLogo = {
+  alt: string;
+  height: number;
+  src: string;
+  width: number;
+};
+
 type SiteFooterProps = {
   labels: {
     contact: string;
@@ -40,6 +49,7 @@ type SiteFooterProps = {
     studioNote: string;
     tagline: string;
   };
+  logo: FooterLogo | null;
   legalItems: FooterNavItem[];
   legalProfile: LegalProfile;
   navItems: FooterNavItem[];
@@ -49,6 +59,7 @@ type SiteFooterProps = {
 
 export function SiteFooter({
   labels,
+  logo,
   legalItems,
   legalProfile,
   navItems,
@@ -61,7 +72,20 @@ export function SiteFooter({
     <footer className="border-t border-border bg-surface-muted">
       <div className="mx-auto grid max-w-7xl gap-10 px-5 py-12 sm:px-8 lg:grid-cols-[1.2fr_0.8fr_0.8fr_0.8fr]">
         <div className="max-w-xl">
-          <p className="font-display text-2xl text-foreground">{siteConfig.name}</p>
+          {logo ? (
+            <Image
+              alt={logo.alt}
+              className="h-11 w-auto"
+              height={logo.height}
+              sizes="240px"
+              src={logo.src}
+              width={logo.width}
+            />
+          ) : (
+            <p className="font-display text-2xl text-foreground">
+              {siteConfig.name}
+            </p>
+          )}
           <p className="mt-4 text-sm leading-6 text-muted-foreground">
             {labels.tagline}
           </p>
