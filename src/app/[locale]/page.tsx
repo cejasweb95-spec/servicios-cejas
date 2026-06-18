@@ -159,6 +159,7 @@ export default async function HomePage({ params }: HomePageProps) {
       <Section id="mercados" spacing="loose">
         <Container className="grid gap-8">
           <div className="max-w-3xl">
+            <Eyebrow className="mb-3">{t("marketEyebrow")}</Eyebrow>
             <h2 className="font-display text-4xl leading-tight text-foreground">
               {t("marketTitle")}
             </h2>
@@ -182,6 +183,7 @@ export default async function HomePage({ params }: HomePageProps) {
       <Section id="servicios-destacados" spacing="loose" tone="muted">
         <Container className="grid gap-8">
           <div className="max-w-3xl">
+            <Eyebrow className="mb-3">{t("featuredEyebrow")}</Eyebrow>
             <h2 className="font-display text-4xl leading-tight text-foreground">
               {t("featuredTitle")}
             </h2>
@@ -248,6 +250,7 @@ export default async function HomePage({ params }: HomePageProps) {
         <Container className="grid gap-8 lg:grid-cols-[0.86fr_1.14fr] lg:items-start">
           <Reveal>
             <div className="max-w-3xl">
+              <Eyebrow className="mb-3">{t("journeysEyebrow")}</Eyebrow>
               <h2 className="font-display text-4xl leading-tight text-foreground">
                 {t("journeysTitle")}
               </h2>
@@ -354,6 +357,7 @@ export default async function HomePage({ params }: HomePageProps) {
       <Section id="formaciones" spacing="loose">
         <Container className="grid gap-8">
           <div className="max-w-3xl">
+            <Eyebrow className="mb-3">{t("coursesEyebrow")}</Eyebrow>
             <h2 className="font-display text-4xl leading-tight text-foreground">
               {t("coursesTitle")}
             </h2>
