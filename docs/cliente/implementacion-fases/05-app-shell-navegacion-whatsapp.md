@@ -83,7 +83,7 @@ src/lib/whatsapp/
 - [x] Menu movil con `Sheet`.
 - [x] CTA `Contacta conmigo` / `Contact me`.
 - [x] CTA abre `WhatsAppChooser` en contexto global.
-- [ ] Locale switcher conserva pagina equivalente si existe.
+- [x] Locale switcher conserva pagina equivalente si existe. (verificado: /es/servicios/colombia/laminado-cejas -> /en/services/colombia/brow-lamination)
 - [x] Header no tapa contenido con anchors.
 - [x] Header no ocupa demasiado en movil.
 
