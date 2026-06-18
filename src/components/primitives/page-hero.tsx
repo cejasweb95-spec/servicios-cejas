@@ -23,7 +23,12 @@ export function PageHero({
 }: PageHeroProps) {
   return (
     <header className={cn("border-b border-border bg-surface-strong", className)}>
-      <Container className="grid min-h-[52dvh] content-center gap-10 py-14 sm:py-20 lg:grid-cols-[1.08fr_0.92fr]">
+      <Container
+        className={cn(
+          "grid min-h-[52dvh] content-center gap-10 py-14 sm:py-20",
+          aside && "lg:grid-cols-[1.08fr_0.92fr]",
+        )}
+      >
         <div className="max-w-3xl">
           {eyebrow ? <Eyebrow className="mb-4">{eyebrow}</Eyebrow> : null}
           <h1 className="text-balance font-display text-5xl leading-[1.02] text-foreground sm:text-6xl lg:text-7xl">
