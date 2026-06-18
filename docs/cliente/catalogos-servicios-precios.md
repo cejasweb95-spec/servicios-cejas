@@ -1,10 +1,15 @@
 # Catálogos de Servicios y Precios — Cejas Internacionales Studio de Belleza
 
-Extraídos de los dos catálogos digitales oficiales del cliente.
+Extraídos de los catálogos digitales oficiales del cliente.
 - **Catálogo 1** → Precios en € (España / Europa)
 - **Catálogo 2** → Precios en $ COP (Colombia)
+- **Catálogo 3** → Precios en CHF (Suiza)
 
-> ✅ **DECIDIDO (cliente):** la web mostrará **ambos mercados** → precios en **€ (Europa)** y en **$COP (Colombia)**. Hay que prever un selector o doble visualización de precios/moneda (probablemente ligado al selector de idioma/región).
+> ✅ **DECIDIDO (cliente):** la web mostrará mercados/monedas por región → precios en **€ (España/Europa)**, **CHF (Suiza)** y **$COP (Colombia)**. Hay que prever selector o visualización por región/moneda.
+
+> ✅ **DECIDIDO (cliente):** cada servicio se mostrará solo en el mercado donde aplica. España/Europa no debe mostrar como disponibles los servicios exclusivos de Colombia.
+
+> ℹ️ El catálogo de Suiza no coincide al 100% con España: incluye cejas, labios, mirada y lifting. Por audio del 17/06/2026 queda confirmado que HidraLips y depilaciones no se ofrecen en Suiza, y que el refuerzo de cejas híbridas cuesta 150 CHF. Ver [catalogo-suiza-chf.md](catalogo-suiza-chf.md).
 
 > ℹ️ La **duración de la cita** de cada servicio (distinta de la duración del resultado que aparece en las tablas) está en [duracion-sesiones.md](duracion-sesiones.md).
 
@@ -14,55 +19,55 @@ Extraídos de los dos catálogos digitales oficiales del cliente.
 
 ## CEJAS
 
-| Servicio | Descripción | Precio ES (€) | Precio CO ($COP) |
-|---|---|---|---|
-| Laminado de cejas | Planchado, diseño, depilación y sombreado en henna. Duración hasta 1 mes. | 45€ | $80.000 |
-| Sombreado en henna | Diseño bajo medidas faciales, tonos ideales para cada gusto y piel. | 27€ | $43.000 |
-| Depilación con cera | Diseño bajo medidas faciales. El vello tarda en salir de 15 a 20 días. | 9€ | $25.000 |
-| Depilación con cuchilla | Diseño bajo medidas faciales. El vello tarda en salir de 4 a 5 días. | 7€ | $20.000 |
+| Servicio | Descripción | Precio ES (€) | Precio CH (CHF) | Precio CO ($COP) |
+|---|---|---:|---:|---:|
+| Laminado de cejas | Planchado, diseño, depilación y sombreado en henna. Duración hasta 1 mes. | 45€ | 95 CHF | $80.000 |
+| Sombreado en henna | Diseño bajo medidas faciales, tonos ideales para cada gusto y piel. | 27€ | 50 CHF | $43.000 |
+| Depilación con cera | Diseño bajo medidas faciales. El vello tarda en salir de 15 a 20 días. | 9€ | — | $25.000 |
+| Depilación con cuchilla | Diseño bajo medidas faciales. El vello tarda en salir de 4 a 5 días. | 7€ | — | $20.000 |
 
 ---
 
 ## MICROPIGMENTACIÓN — CEJAS
 
-| Servicio | Descripción | Precio ES (€) | Precio CO ($COP) |
-|---|---|---|---|
-| Efecto polvo | Técnica con puntos de luz para un cicatrizado más natural. Duración 10 meses a 1 año. | 250€ | $350.000 |
-| Efecto maquillaje | Técnica más definida para ceja marcada pero natural. Duración 1 año a 1,5 años. | 250€ | $350.000 |
-| Cejas híbridas | Pelo a pelo combinado con sombras. Resultado muy natural. Ideal pieles sin procedimiento previo, secas o mixtas. Duración hasta 12 meses. | 330€ | $400.000 |
-| Corrección de cejas | Procedimiento sobre cejas previamente tatuadas o mal micropigmentadas. Neutraliza tonos, rediseña la forma. Técnica avanzada. | 280€ | — |
-| Refuerzo cejas | Retoque/mantenimiento del procedimiento. | 100€ | $150.000 |
-| Refuerzo cejas híbridas | Retoque/mantenimiento de cejas híbridas. | 150€ | $150.000 |
+| Servicio | Descripción | Precio ES (€) | Precio CH (CHF) | Precio CO ($COP) |
+|---|---|---:|---:|---:|
+| Efecto polvo | Técnica con puntos de luz para un cicatrizado más natural. Duración 10 meses a 1 año. | 250€ | 260 CHF | $350.000 |
+| Efecto maquillaje | Técnica más definida para ceja marcada pero natural. Duración 1 año a 1,5 años. | 250€ | 260 CHF | $350.000 |
+| Cejas híbridas | Pelo a pelo combinado con sombras. Resultado muy natural. Ideal pieles sin procedimiento previo, secas o mixtas. Duración hasta 12 meses. | 330€ | 300 CHF | $400.000 |
+| Corrección de cejas | Procedimiento sobre cejas previamente tatuadas o mal micropigmentadas. Neutraliza tonos, rediseña la forma. Técnica avanzada. | 280€ | — | — |
+| Refuerzo cejas | Retoque/mantenimiento del procedimiento. | 100€ | 150 CHF | $150.000 |
+| Refuerzo cejas híbridas | Retoque/mantenimiento de cejas híbridas. | 150€ | 150 CHF | $150.000 |
 
 ---
 
 ## MICROPIGMENTACIÓN — LABIOS
 
-| Servicio | Descripción | Precio ES (€) | Precio CO ($COP) |
-|---|---|---|---|
-| Neutralización | Ideal para labios oscuros, manchados o violáceos. Brinda tono rosa natural. Duración hasta 3 años. | 300€ | $420.000 |
-| Microlips | Ideal para labios pálidos sin definición. Da luminosidad y color natural. Duración 2 a 3 años. | 300€ | $420.000 |
-| HidraLips (3 sesiones) | Hidratación con ácido hialurónico. Rejuvenece, elimina células muertas, promueve colágeno. Ideal labios resecos o cuarteados. | 150€ | $220.000 |
-| HidraLips (1 sesión) | — | 60€ | $90.000 |
-| Refuerzo Microlips | Retoque/mantenimiento. | 150€ | $190.000 |
+| Servicio | Descripción | Precio ES (€) | Precio CH (CHF) | Precio CO ($COP) |
+|---|---|---:|---:|---:|
+| Neutralización | Ideal para labios oscuros, manchados o violáceos. Brinda tono rosa natural. Duración hasta 3 años. | 300€ | 300 CHF | $420.000 |
+| Microlips | Ideal para labios pálidos sin definición. Da luminosidad y color natural. Duración 2 a 3 años. | 300€ | 300 CHF | $420.000 |
+| HidraLips (3 sesiones) | Hidratación con ácido hialurónico. Rejuvenece, elimina células muertas, promueve colágeno. Ideal labios resecos o cuarteados. | 150€ | — | $220.000 |
+| HidraLips (1 sesión) | — | 60€ | — | $90.000 |
+| Refuerzo Microlips | Retoque/mantenimiento. | 150€ | 180 CHF | $190.000 |
 
 ---
 
 ## MICROPIGMENTACIÓN — MIRADA / OJOS
 
-| Servicio | Descripción | Precio ES (€) | Precio CO ($COP) |
-|---|---|---|---|
-| Línea de ojos (eyeliner) | Ideal para párpados amplios. Se realiza diseño antes de iniciar. Duración hasta 1 año. | 200€ | $220.000 |
-| Relleno de pestañas | Para apariencia de más pestañas y línea de agua maquillada. Duración hasta 1 año. | 120€ | $150.000 |
-| Refuerzo línea de ojos | Retoque/mantenimiento. | 90€ | $85.000 |
+| Servicio | Descripción | Precio ES (€) | Precio CH (CHF) | Precio CO ($COP) |
+|---|---|---:|---:|---:|
+| Línea de ojos (eyeliner) | Ideal para párpados amplios. Se realiza diseño antes de iniciar. Duración hasta 1 año. | 200€ | 200 CHF | $220.000 |
+| Relleno de pestañas | Para apariencia de más pestañas y línea de agua maquillada. Duración hasta 1 año. | 120€ | 180 CHF | $150.000 |
+| Refuerzo línea de ojos | Retoque/mantenimiento. | 90€ | 100 CHF | $85.000 |
 
 ---
 
 ## LIFTING DE PESTAÑAS
 
-| Servicio | Descripción | Precio ES (€) | Precio CO ($COP) |
-|---|---|---|---|
-| Lifting de pestañas | Ondulamiento de la pestaña natural. Incluye tinte de pestañas. Duración hasta 2 meses. | 45€ | $85.000 |
+| Servicio | Descripción | Precio ES (€) | Precio CH (CHF) | Precio CO ($COP) |
+|---|---|---:|---:|---:|
+| Lifting de pestañas | Ondulamiento de la pestaña natural. Incluye tinte de pestañas. Duración hasta 2 meses. | 45€ | 75 CHF | $85.000 |
 
 ---
 
@@ -72,10 +77,10 @@ Los 9 sets, según el panel visual del catálogo (pág. 10):
 
 | Servicio | Precio CO | Retoque 15 días | Retoque 20 días |
 |---|---|---|---|
-| Set rímel | $145.000 | $80.000 | $100.000 |
-| Volumen ligero | $95.000 | $50.000 | $65.000 |
+| Set rímel | $95.000 | $50.000 | $65.000 |
+| Volumen ligero | $120.000 | $60.000 | $80.000 |
 | Wispy | $120.000 | $60.000 | $80.000 |
-| Volumen ruso 2D | $140.000 | $70.000 | $90.000 |
+| Volumen ruso 2D | $145.000 | $80.000 | $100.000 |
 | Mega volumen | $160.000 | $90.000 | $110.000 |
 | Volumen aura 2D | $140.000 | $70.000 | $90.000 |
 | Volumen aura 5D | $150.000 | $80.000 | $100.000 |
@@ -88,14 +93,14 @@ Los 9 sets, según el panel visual del catálogo (pág. 10):
 
 ---
 
-## DEPILACIÓN CORPORAL *(ambos catálogos)*
+## DEPILACIÓN CORPORAL *(España/Colombia; confirmado: no se ofrece en Suiza)*
 
-| Servicio | Descripción | Precio ES (€) | Precio CO ($COP) |
-|---|---|---|---|
-| Depilación axilas | Ayuda a disminuir manchas. El vello tarda 20 días en salir. | 18€ | $25.000 |
-| Depilación bigote/bozo | Piel desmanchada y sin irritación. Vello tarda hasta 20 días. | 5€ | $18.000 |
-| Depilación nariz | Vello tarda hasta 20 días en salir. | 7€ | $8.000 |
-| Depilación media pierna | Piel desmanchada y sin irritación. Vello tarda hasta 20 días. | — | $35.000 |
+| Servicio | Descripción | Precio ES (€) | Precio CH (CHF) | Precio CO ($COP) |
+|---|---|---:|---:|---:|
+| Depilación axilas | Ayuda a disminuir manchas. El vello tarda 20 días en salir. | 18€ | — | $25.000 |
+| Depilación bigote/bozo | Piel desmanchada y sin irritación. Vello tarda hasta 20 días. | 5€ | — | $18.000 |
+| Depilación nariz | Vello tarda hasta 20 días en salir. | 7€ | — | $8.000 |
+| Depilación media pierna | Piel desmanchada y sin irritación. Vello tarda hasta 20 días. | — | — | $35.000 |
 
 ---
 
@@ -153,3 +158,9 @@ Los 9 sets, según el panel visual del catálogo (pág. 10):
 - Uñas (manicure, acrílico, semipermanente)
 - Peinados y maquillaje social
 - Depilación corporal
+
+**Criterio por mercado para la web:**
+- **España / Europa:** mostrar servicios con precio EUR y disponibilidad real para Europa.
+- **Suiza:** mostrar servicios con precio CHF solo cuando aparecen en el catálogo Suiza o estén confirmados por la clienta. No mostrar HidraLips ni depilaciones en Suiza; refuerzo de cejas híbridas confirmado a 150 CHF.
+- **Colombia:** mostrar servicios con precio COP, incluyendo extensiones de pestañas, uñas, peinados, maquillaje social y servicios propios del estudio de Cali.
+- Cuando un servicio no aplique a un mercado, no mostrarlo como disponible en ese selector/región.

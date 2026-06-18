@@ -50,5 +50,6 @@ Micropigmentación labial (microlips / neutralización):
 
 - **Para galería:** priorizar las fotos limpias (sin barra de estado del móvil ni texto superpuesto).
 - Las capturas de stories sirven como prueba social pero hay que recortarlas.
-- Pedir a la cliente, si es posible, las **fotos originales en alta resolución** (las de WhatsApp vienen comprimidas).
+- La clienta perdió los originales en alta resolución. Trabajar con estas fotos disponibles como material definitivo.
+- Optimizar y recortar las capturas de menor calidad para que funcionen mejor en web.
 - El **video** puede usarse en el hero o en un bloque "proceso" (revisar contenido y duración).

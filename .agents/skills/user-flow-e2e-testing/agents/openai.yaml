@@ -1,0 +1,4 @@
+interface:
+  display_name: "User Flow E2E Testing"
+  short_description: "End-user journey test workflow"
+  default_prompt: "Use $user-flow-e2e-testing to test user journeys for Cejas Internacionales."

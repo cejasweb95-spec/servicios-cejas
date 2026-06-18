@@ -15,10 +15,12 @@ Composición:
 | Versión | Estado |
 |---|---|
 | **Logo oficial PNG sin fondo (alta resolución, 2095×949)** | ✅ `assets-extraidos/logo-oficial-sin-fondo.png` ← **usar esta** |
-| Logo vectorial (SVG/AI) | ⏳ Pendiente — pedir a la cliente (ideal para escalado perfecto) |
-| Versión monocroma (todo negro / todo blanco) para fondos oscuros | ⏳ Recomendado crear a partir del PNG |
+| Logo vectorial (SVG/AI) | No disponible. No se pedirá; se usará el PNG transparente oficial. |
+| Versión monocroma negra | ✅ `assets-extraidos/logo-oficial-negro-monocromo.png` |
+| Versión monocroma blanca | ✅ `assets-extraidos/logo-oficial-blanco.png` |
+| Previsualización interna de variantes | ✅ `assets-extraidos/logo-variantes-monocromo-preview.png` |
 
-> El logo oficial es PNG transparente de alta resolución → sirve perfectamente para web. La versión vectorial (SVG) sigue siendo deseable pero no bloquea.
+> El logo oficial es PNG transparente de alta resolución → sirve perfectamente para web. El SVG/AI deja de ser pendiente.
 
 ---
 
@@ -26,34 +28,42 @@ Composición:
 
 > "Palo de rosa, blanco y negro"
 
-| Color | Rol | Hex | Uso sugerido |
+### Decisión actualizada
+
+La clienta quiere que la paleta sea **palo de rosa, blanco y negro**. Esa debe ser la paleta visible de la web.
+
+El coral `#EE5164` aparece en la firma del logo actual. Se respeta dentro del logo, pero **no se tratará como color principal ni secundario de la interfaz** salvo que se necesite un microdetalle directamente vinculado al asset del logo.
+
+| Color | Rol | Hex candidato | Uso sugerido |
 |---|---|---|---|
-| **Rosa de marca** (firma del logo) | Acento principal | **`#EE5164`** ✅ *(muestreado del logo oficial)* | Botones, acentos, hover, líneas decorativas, firma |
-| **Negro** | Texto / contraste | `#1A1A1A` | Titulares, texto principal, logo |
-| **Blanco cálido** | Fondo base | `#FFFFFF` / `#FAF7F5` | Fondos, espacios en blanco |
+| **Palo de rosa clásico** | Principal | **`#B76E79`** | Botones principales, detalles de mapa, enlaces activos, llamadas visuales |
+| **Palo de rosa profundo** | Contraste / hover | `#7F3F4A` | Hover, texto sobre fondos claros, acentos sobrios |
+| **Rosa empolvado** | Fondo suave | `#E8C7CC` | Bandas suaves, fondos de módulos, estados calmados |
+| **Coral del logo** | Solo asset/microdetalle | `#EE5164` | Respetar en el logo existente; no usar como paleta de interfaz |
+| **Negro tinta** | Texto / contraste | `#1A1A1A` | Titulares, texto principal, navegación |
+| **Blanco limpio** | Fondo base | `#FFFFFF` / `#FBF8F7` | Fondos y respiración visual |
 
-> ✅ **DECIDIDO (cliente):** se mantiene el **coral del logo `#EE5164`** como color de marca. Es el acento principal de la web (botones, hover, detalles, firma). Los tonos de apoyo de abajo solo para fondos/profundidad, sin sustituir al coral.
+> Nota de diseño: evitar que la web se vuelva solo rosa. El palo de rosa debe sentirse elegante y controlado, acompañado de blanco, negro, fotografía real y neutrales derivados para bordes/sombras.
 
-### Tonos de apoyo recomendados (derivados, para profundidad)
-Para que la web no se vea plana, manteniéndonos dentro de la paleta:
-- Rosa claro / nude (fondos suaves, tarjetas): `#F8E5E7`
-- Palo de rosa empolvado (alternativa suave): `#C99DA3`
-- Rosa de marca oscuro (hover/énfasis): `#C13E4E`
-- Gris cálido (texto secundario): `#6B6B6B`
+### Sistema de tokens de color
+
+La implementación debe usar tokens semánticos. Así, si en el futuro se cambia el palo de rosa o el contraste del negro, se actualiza en un único sitio y se aplica a botones, bordes, fondos, gradientes, focus rings y estados.
+
+Regla: los componentes no deben usar hexadecimales sueltos. Deben usar tokens como `primary`, `primary-hover`, `surface`, `foreground`, `border`, `ring`, `gradient-brand` o equivalentes.
 
 ---
 
-## Tipografía (a definir, inspirada en el logo)
+## Tipografía recomendada
 
-El logo combina dos estilos que conviene reflejar en la web:
+Decisión actual para la propuesta web:
 
-| Elemento | Estilo en logo | Sugerencia web |
+| Uso | Fuente | Motivo |
 |---|---|---|
-| Títulos / acentos elegantes | Caligrafía manuscrita ("Cejas", firma) | Fuente script para detalles puntuales (ej. *Great Vibes*, *Allura*, *Parisienne*) |
-| Títulos principales | Sans-serif condensada en mayúsculas | Sans-serif elegante (ej. *Montserrat*, *Poppins*, *Jost*) |
-| Cuerpo de texto | — | Sans-serif legible y limpia |
+| Titulares / display | **Marcellus** | Elegante, limpia y femenina sin parecer plantilla editorial. Da presencia premium y encaja con belleza/micropigmentación. |
+| Cuerpo / UI | **Manrope** | Muy legible para catálogo, precios, tablas, botones, filtros y textos largos. Moderna sin robar protagonismo al logo. |
+| Script | Solo el logo | Evitar otra fuente manuscrita para no competir con "Cejas" y la firma "Xiomy Sanchez". |
 
-> No abusar de la fuente manuscrita: solo para toques de marca (no para párrafos).
+> Implementación recomendada: `next/font/google`, cargando solo subsets/weights necesarios para evitar saltos visuales y peso innecesario.
 
 ---
 

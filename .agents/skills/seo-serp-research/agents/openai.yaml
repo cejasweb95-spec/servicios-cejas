@@ -1,0 +1,4 @@
+interface:
+  display_name: "SEO SERP Research"
+  short_description: "Competitor SERP SEO workflow"
+  default_prompt: "Use $seo-serp-research to research SERPs and SEO strategy for Cejas Internacionales."

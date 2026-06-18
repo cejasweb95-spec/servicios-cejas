@@ -36,4 +36,5 @@ Resultados de micropigmentación **ya curados** (cómo queda el trabajo tras la 
 ---
 
 ## Nota técnica
-- Fotos de WhatsApp → comprimidas. Pedir a la cliente las **originales de la sesión en alta resolución** (las profesionales merecen calidad máxima en la web).
+- Fotos de WhatsApp → comprimidas, pero la clienta perdió los originales. Estas fotos son el material definitivo disponible para la web.
+- Para web: seleccionar las mejores, optimizar, recortar si hace falta y evitar ampliar demasiado las capturas con menor resolución.

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Image Asset Pipeline"
+  short_description: "Image selection and optimization"
+  default_prompt: "Use $image-asset-pipeline to prepare optimized images for Cejas Internacionales."

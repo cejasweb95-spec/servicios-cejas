@@ -1,0 +1,4 @@
+interface:
+  display_name: "Schema Structured Data"
+  short_description: "JSON-LD schema for SEO"
+  default_prompt: "Use $schema-structured-data to add JSON-LD schema to Cejas Internacionales."

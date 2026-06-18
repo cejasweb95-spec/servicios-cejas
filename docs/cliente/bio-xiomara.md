@@ -18,6 +18,18 @@ Además, participo regularmente en jornadas y eventos internacionales en diferen
 - **Especialidad:** Micropigmentación
 - **Experiencia:** Más de 5 años
 - **Procedimientos realizados:** ~2.000
-- **Países de actividad:** Colombia y España (+ jornadas internacionales)
+- **Países de actividad:** Colombia, España y Suiza
+- **Sede física:** Cali, Valle del Cauca, Colombia
+- **Jornadas / ciudades a destacar:** Restrepo, Valle del Cauca; Madrid; Palma de Mallorca; Puerto de Sagunto, Valencia; y Ginebra, Suiza
 - **Valores de marca:** precisión · seguridad · personalización · naturalidad · excelencia
 - **Diferencial:** Actualización constante en tendencias internacionales
+
+---
+
+## Enfoque de trayectoria para la web
+
+Destacar que Cejas Internacionales tiene su sede física en Colombia y realiza jornadas en distintas ciudades:
+
+- **Colombia:** Cali, Valle del Cauca y Restrepo, Valle del Cauca.
+- **España:** Madrid, Palma de Mallorca y Puerto de Sagunto, Valencia.
+- **Suiza:** Ginebra.

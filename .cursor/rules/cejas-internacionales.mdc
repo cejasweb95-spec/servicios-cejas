@@ -1,0 +1,39 @@
+---
+description: Cejas Internacionales project rules for design, frontend, SEO, i18n, QA, content, and future Supabase architecture.
+globs:
+  - "**/*"
+alwaysApply: true
+---
+
+# Cejas Internacionales Rules
+
+Read `AGENTS.md` first. It is the shared rule source for Codex, Cursor, Claude Code, and other coding agents.
+
+For implementation, follow `docs/cliente/implementacion-fases/README.md` and update the relevant phase checklist instead of working from memory.
+
+Critical rules:
+
+- Do not touch `main` unless Jeffrey explicitly says so.
+- Use `develop` by default.
+- Do not edit generated artifacts as source.
+- V1 is informative only: no store, checkout, cart, booking form, or admin.
+- Main CTA is `Contacta conmigo`.
+- Reservation/contact is WhatsApp only.
+- Colombia WhatsApp: `573167742299`.
+- Spain/Europe/Switzerland WhatsApp: `34603804837`.
+- Physical/legal address only Cali, Colombia.
+- Do not invent Spain or Switzerland offices.
+- Do not mix services between markets.
+- Public website must be bilingual: Spanish and international English.
+- Add Spanish and English content together for every new public page/component/metadata/CTA/schema/alt text.
+- SEO starts from architecture: crawlable HTML, clean URLs, metadata, schema, sitemap, robots, hreflang and Core Web Vitals.
+- QA follows `docs/cliente/implementacion-fases/QA-SENIOR-MATRIZ-PRUEBAS-WEB.md`: smoke, regression, E2E, visual regression, WAVE/axe, Lighthouse, links, i18n and security headers.
+- GA4 requires cookie banner, cookie policy and Consent Mode; do not load analytics before analytics consent.
+- Legal notice, privacy and cookies pages are required in Spanish and English.
+- Palette: palo de rosa `#B76E79`, white, black. Use semantic tokens, no raw hex in components.
+- Typography: Marcellus headings, Manrope body/UI.
+- Buttons use natural width by default; no full-width card CTAs unless justified.
+- Hover must have focus/tap/click equivalents.
+- No generic AI UI: no nested cards, no orbs/blobs, no gradient text, no endless identical card grids, no carousel as primary content.
+- Future DB/admin is Supabase; V1 uses typed local data and query functions.
+- If running localhost, use `3000` if free, otherwise next available port and report the URL.

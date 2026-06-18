@@ -1,0 +1,465 @@
+{
+  "Meta": {
+    "title": "Cejas Internacionales | Micropigmentación y formaciones",
+    "description": "Cejas Internacionales ofrece micropigmentación, belleza especializada y formaciones con sede en Cali y jornadas por disponibilidad en Colombia, España y Suiza."
+  },
+  "Home": {
+    "heroEyebrow": "Cejas Internacionales",
+    "title": "Belleza especializada con sede en Cali y jornadas internacionales",
+    "intro": "Micropigmentación, cejas, labios, pestañas y formación profesional con servicios organizados por Colombia, España/Europa y Suiza.",
+    "primaryCta": "Contacta conmigo",
+    "secondaryCta": "Ver servicios",
+    "marketTitle": "Elige el mercado correcto antes de comparar",
+    "marketDescription": "Cada mercado mantiene su moneda, catálogo y número de WhatsApp. La sede física está en Cali; España y Suiza funcionan por jornadas próximas según disponibilidad.",
+    "marketSelectorLabel": "Mercados de Cejas Internacionales",
+    "marketCta": "Ver servicios",
+    "featuredTitle": "Servicios destacados por mercado",
+    "featuredDescription": "La home no mezcla precios ni disponibilidad. Primero eliges el mercado y después ves servicios, tiempos, PDFs y contacto correcto.",
+    "featuredEmpty": "Servicios en preparación",
+    "assessmentTitle": "Valoración gratuita por foto",
+    "assessmentCopy": "Puedes enviar una foto por WhatsApp para orientar el servicio antes de reservar. La cita y la reserva se gestionan solo por WhatsApp.",
+    "journeysTitle": "Sede en Cali y jornadas internacionales",
+    "journeysDescription": "Estas ubicaciones quedan documentadas como próximas jornadas por disponibilidad, no como sedes fijas fuera de Colombia.",
+    "journeysLinkLabel": "Ver mapa de jornadas",
+    "studioLabel": "Sede física",
+    "journeyLabel": "Jornada por disponibilidad",
+    "resultsTitle": "Resultados reales, sin promesas vacías",
+    "resultsCopy": "La web usará las fotos reales disponibles de la clienta. El objetivo es mostrar técnica, cicatrizados y confianza sin inventar testimonios ni garantías.",
+    "aboutTitle": "Xiomara, técnica y formadora",
+    "aboutCopy": "Cejas Internacionales combina servicios de belleza especializada, formación profesional y jornadas en distintas ciudades, siempre con la sede física y legal ubicada en Cali.",
+    "coursesTitle": "Formaciones y masterclass",
+    "coursesDescription": "Cursos con PDF descargable, duración confirmada y CTA para consultar próxima fecha o próxima jornada por WhatsApp.",
+    "courseDownloadLabel": "Descargar PDF",
+    "coursesCta": "Consultar próxima fecha",
+    "coursesLinkLabel": "Ver formaciones",
+    "downloadsTitle": "Catálogos y PDFs oficiales",
+    "downloadsDescription": "{catalogCount} catálogos por mercado y {courseCount} programas de formación están listos para descargar desde una sección única.",
+    "downloadsCta": "Ver descargas",
+    "finalTitle": "¿Quieres confirmar servicio, ciudad o próxima fecha?",
+    "finalCopy": "Escríbele por WhatsApp al número de Colombia o al de España/Europa/Suiza y continúa la conversación con el canal correcto."
+  },
+  "Services": {
+    "metaTitle": "Servicios de micropigmentación y belleza | Cejas Internacionales",
+    "metaDescription": "Consulta servicios por mercado: Colombia, España/Europa y Suiza, con precios, tiempos confirmados y contacto por WhatsApp.",
+    "breadcrumbsLabel": "Migas de pan",
+    "homeLabel": "Inicio",
+    "eyebrow": "Servicios por mercado",
+    "title": "Elige el mercado para ver servicios, precios y tiempos",
+    "description": "Cada catálogo mantiene su propia moneda, disponibilidad y WhatsApp de contacto. Colombia usa la sede física de Cali; España/Europa y Suiza funcionan por jornadas próximas según disponibilidad.",
+    "selectorLabel": "Selecciona un mercado"
+  },
+  "MarketServices": {
+    "metaTitle": "Servicios en {market} | Cejas Internacionales",
+    "metaDescription": "Servicios confirmados de Cejas Internacionales para {market}, con precios, duración de cita y catálogo descargable.",
+    "breadcrumbsLabel": "Migas de pan",
+    "homeLabel": "Inicio",
+    "servicesLabel": "Servicios",
+    "heroEyebrow": "Servicios confirmados",
+    "heroTitle": "Servicios en {market}",
+    "selectorLabel": "Cambiar mercado",
+    "serviceDetailLabel": "Ver detalle",
+    "allMarketsLabel": "Ver todos los mercados",
+    "catalogBannerTitle": "Catálogo oficial del mercado",
+    "catalogBannerDescription": "La descarga aparece una sola vez para evitar repetir el PDF en cada servicio. Los servicios de abajo se muestran filtrados por este mercado.",
+    "catalogDownloadLabel": "Descargar catálogo PDF",
+    "contactLabel": "Contacta conmigo",
+    "emptyTitle": "Sin servicios publicados",
+    "emptyDescription": "Todavía no hay servicios confirmados para este mercado."
+  },
+  "Downloads": {
+    "metaTitle": "Descargas de catálogos y formaciones | Cejas Internacionales",
+    "metaDescription": "Descarga los catálogos por mercado y PDFs de formaciones oficiales de Cejas Internacionales.",
+    "breadcrumbsLabel": "Migas de pan",
+    "homeLabel": "Inicio",
+    "eyebrow": "Descargas",
+    "title": "Catálogos y PDFs oficiales",
+    "description": "Los catálogos se agrupan por mercado y los PDFs de formación se descargan desde una única sección para mantener la web clara y ordenada.",
+    "catalogLabel": "Catálogos por mercado",
+    "courseLabel": "Formaciones",
+    "actionLabel": "Descargar PDF"
+  },
+  "Training": {
+    "metaTitle": "Formaciones profesionales | Cejas Internacionales",
+    "metaDescription": "Cursos y masterclass de Cejas Internacionales con temario, duraciones confirmadas, PDFs descargables y consulta de fechas por WhatsApp.",
+    "breadcrumbsLabel": "Migas de pan",
+    "homeLabel": "Inicio",
+    "eyebrow": "Formaciones",
+    "title": "Cursos profesionales y masterclass",
+    "description": "Programas transcritos desde los PDFs oficiales. Las fechas, cupos y ciudades se consultan por WhatsApp para no publicar datos no confirmados.",
+    "courseDetailLabel": "Ver temario",
+    "downloadLabel": "Descargar PDF",
+    "nextDateLabel": "Consultar próxima fecha"
+  },
+  "Journeys": {
+    "metaTitle": "Jornadas por ciudad | Cejas Internacionales",
+    "metaDescription": "Consulta la sede física de Cali y las próximas jornadas por disponibilidad en Colombia, España y Suiza. Reservas solo por WhatsApp.",
+    "breadcrumbsLabel": "Migas de pan",
+    "homeLabel": "Inicio",
+    "eyebrow": "Jornadas internacionales",
+    "title": "Sede en Cali y próximas jornadas por ciudad",
+    "description": "Cejas Internacionales tiene sede física y dirección legal en Cali, Colombia. Restrepo, Madrid, Palma de Mallorca, Puerto de Sagunto y Ginebra se muestran como jornadas próximas por disponibilidad, sin publicar fechas no confirmadas.",
+    "primaryCta": "Ver mapa de jornadas",
+    "mapTitle": "Mapa de disponibilidad",
+    "mapAriaLabel": "Mapa editorial con la sede física en Cali y ciudades de próximas jornadas por disponibilidad.",
+    "listTitle": "Ubicaciones confirmadas",
+    "selectedLocationLabel": "Detalle de ubicación seleccionada",
+    "selectLocationLabel": "Seleccionar ubicación",
+    "physicalStudioLabel": "Sede física",
+    "physicalStudioDescription": "La sede física y la dirección legal de la web están únicamente en Cali, Valle del Cauca, Colombia.",
+    "journeyLabel": "Jornada por disponibilidad",
+    "addressLabel": "Dirección",
+    "contactLabel": "Contacta conmigo",
+    "availabilityTitle": "Cómo se consultan las jornadas",
+    "availabilityDescription": "Las ciudades se preparan para publicar fecha, cupos y estado cuando la clienta los confirme. Mientras tanto, la consulta y la reserva se gestionan por WhatsApp.",
+    "noFixedStudioTitle": "Sin sedes fijas fuera de Cali",
+    "noFixedStudioDescription": "España, Suiza y Restrepo aparecen como ciudades de atención por jornada. No deben leerse como oficinas, locales o sedes permanentes.",
+    "whatsappMessage": "Hola, quiero información sobre jornadas o servicios en {location}. Me gustaría consultar disponibilidad por WhatsApp."
+  },
+  "ResultsPage": {
+    "metaTitle": "Resultados reales | Cejas Internacionales",
+    "metaDescription": "Galería base de resultados reales y trabajos cicatrizados disponibles de Cejas Internacionales, sin promesas ni testimonios inventados.",
+    "breadcrumbsLabel": "Migas de pan",
+    "homeLabel": "Inicio",
+    "eyebrow": "Resultados reales",
+    "title": "Resultados disponibles de Cejas Internacionales",
+    "description": "La web trabaja con el material real que conserva la clienta: resultados de cejas, labios y sesión profesional. No usamos stock ni promesas de resultados garantizados.",
+    "contactLabel": "Contacta conmigo",
+    "healingLabel": "Cicatrizados y trabajos reales",
+    "galleryTitle": "Galería base para mostrar confianza",
+    "galleryNote": "Esta primera versión usa las imágenes confirmadas y deja preparada la sección para ampliar la galería cuando existan más fotos optimizadas.",
+    "openResultLabel": "Abrir resultado",
+    "closeLightboxLabel": "Cerrar galería",
+    "previousResultLabel": "Anterior",
+    "nextResultLabel": "Siguiente",
+    "imageCountLabel": "Imagen {current} de {total}",
+    "emptyGalleryLabel": "La galería está preparada, pero todavía no hay imágenes publicadas."
+  },
+  "AboutPage": {
+    "metaTitle": "Sobre Xiomara | Cejas Internacionales",
+    "metaDescription": "Conoce a Xiomara Andrea Sánchez Noreña, especialista en micropigmentación, formadora y fundadora de Cejas Internacionales.",
+    "breadcrumbsLabel": "Migas de pan",
+    "homeLabel": "Inicio",
+    "eyebrow": "Sobre Xiomara",
+    "title": "Xiomara Andrea Sánchez Noreña",
+    "description": "Especialista en micropigmentación, técnica y formadora, con sede física en Cali y jornadas por disponibilidad en distintas ciudades.",
+    "contactLabel": "Contacta conmigo",
+    "trajectoryTitle": "Trayectoria internacional con sede en Colombia",
+    "trajectoryText": "Cejas Internacionales mantiene su sede física en Cali y realiza jornadas por disponibilidad en Restrepo, Madrid, Palma de Mallorca, Puerto de Sagunto y Ginebra.",
+    "certificationTitle": "Formación y actualización profesional",
+    "bio": [
+      "Soy Xiomara Andrea Sánchez Noreña, especialista en micropigmentación con más de cinco años de experiencia profesional ayudando a realzar la belleza natural de mis clientas a través de técnicas precisas, seguras y personalizadas.",
+      "A lo largo de mi trayectoria he realizado cerca de 2.000 procedimientos en Colombia y España, perfeccionando constantemente mi técnica para ofrecer resultados elegantes, naturales y adaptados a cada rostro.",
+      "Además, participo regularmente en jornadas y eventos internacionales en diferentes países, lo que me permite mantenerme actualizada con las últimas tendencias y técnicas del sector."
+    ],
+    "stats": [
+      { "value": "+5", "label": "años de experiencia" },
+      { "value": "2.000", "label": "procedimientos aproximados" },
+      { "value": "3", "label": "países documentados" }
+    ],
+    "certifications": [
+      "Cejas pelo a pelo con termógrafo - Maxicejas, Medellín.",
+      "Neutralización y acuarela en labios - Lips Academia y Maxicejas, Medellín.",
+      "Micropigmentación efecto polvo - Maxicejas, Medellín.",
+      "Eyeliner y técnica correctiva en labios - academias especializadas de Colombia.",
+      "Revitalización folicular - Academia Dani Osorio, Medellín."
+    ]
+  },
+  "ContactPage": {
+    "metaTitle": "Contacto | Cejas Internacionales",
+    "metaDescription": "Contacta con Cejas Internacionales por WhatsApp Colombia, WhatsApp España/Europa/Suiza, email o redes sociales.",
+    "breadcrumbsLabel": "Migas de pan",
+    "homeLabel": "Inicio",
+    "eyebrow": "Contacto",
+    "title": "Contacto y reservas por WhatsApp",
+    "description": "La cita, la reserva y las consultas se gestionan únicamente por WhatsApp. La dirección física y legal publicada corresponde solo a Cali, Colombia.",
+    "whatsappLabel": "Elige el WhatsApp correcto",
+    "noFormNote": "No hay formulario de reserva, tienda, carrito ni checkout. Escríbele al número de Colombia o al de España/Europa/Suiza según tu ciudad o mercado.",
+    "emailLabel": "Email oficial",
+    "addressLabel": "Dirección física y legal",
+    "socialLabel": "Redes sociales"
+  },
+  "AftercarePage": {
+    "metaTitle": "Cuidados de micropigmentación | Cejas Internacionales",
+    "metaDescription": "Cuidados antes y después de micropigmentación de cejas y labios, con recomendaciones confirmadas y consulta por WhatsApp.",
+    "breadcrumbsLabel": "Migas de pan",
+    "homeLabel": "Inicio",
+    "eyebrow": "Cuidados",
+    "title": "Cuidados antes y después de tu micropigmentación",
+    "description": "Guía práctica para preparar la piel y cuidar cejas o labios después del procedimiento. Si tienes dudas personales, consúltalas por WhatsApp antes de la cita.",
+    "beforeTitle": "Antes de la cita",
+    "afterTitle": "Después del procedimiento",
+    "browsLabel": "Cejas",
+    "lipsLabel": "Labios",
+    "contactLabel": "Consultar por WhatsApp",
+    "noteTitle": "Cada caso se confirma por WhatsApp",
+    "note": "Estas recomendaciones se basan en contenido oficial de Cejas Internacionales y no sustituyen una indicación médica. Informa siempre sobre alergias, embarazo, lactancia, enfermedades o medicación.",
+    "beforeBrows": [
+      {
+        "title": "7 días antes",
+        "items": [
+          "Evita exposición intensa al sol y quemaduras solares.",
+          "No realices peelings químicos, microdermoabrasión ni tratamientos exfoliantes en la zona.",
+          "Suspende retinoides en la zona de cejas salvo indicación médica.",
+          "Evita depilar o diseñar excesivamente las cejas antes de la valoración."
+        ]
+      },
+      {
+        "title": "48-72 horas antes",
+        "items": [
+          "Evita alcohol.",
+          "Reduce cafeína y bebidas energéticas.",
+          "No tomes anticoagulantes o antiinflamatorios sin autorización médica."
+        ]
+      },
+      {
+        "title": "El día de la cita",
+        "items": [
+          "Acude con la piel limpia y sin maquillaje en las cejas.",
+          "Evita cremas, aceites o cosméticos en la zona.",
+          "Descansa bien y come algo ligero antes de la sesión.",
+          "Informa sobre alergias, enfermedades, embarazo, lactancia o medicación."
+        ]
+      }
+    ],
+    "beforeLips": [
+      {
+        "title": "7 días antes",
+        "items": [
+          "Mantén los labios hidratados con bálsamo labial.",
+          "Exfolia suavemente una o dos veces durante la semana.",
+          "Evita quemaduras solares y exposición excesiva al sol.",
+          "No realices peelings químicos ni tratamientos agresivos en la zona peribucal."
+        ]
+      },
+      {
+        "title": "48-72 horas antes",
+        "items": [
+          "Evita alcohol.",
+          "Reduce cafeína y bebidas energéticas.",
+          "Evita anticoagulantes o antiinflamatorios sin autorización médica."
+        ]
+      }
+    ],
+    "afterBrows": [
+      "Protégete del sol durante los siguientes 8 días.",
+      "Aplica la vitamina sugerida durante 15 días, mañana y noche, una gota pequeña en cada ceja.",
+      "No consumas bebidas alcohólicas, comidas picantes ni mariscos.",
+      "No piscinas, saunas ni ríos.",
+      "Evita actividad física y sudoración.",
+      "No retires la micro costra; déjala caer sola.",
+      "No apliques cremas, bloqueador, maquillaje ni jabón encima de las cejas."
+    ],
+    "afterLips": [
+      "Protégete del sol durante los siguientes 8 días.",
+      "No fumar y evitar besos durante la fase indicada.",
+      "No consumas bebidas alcohólicas, comidas picantes, calientes, ácidas ni mariscos.",
+      "Evita bebidas oscuras.",
+      "No uses labiales ni tintas durante un mes.",
+      "Mantén hidratación constante durante 20 días con el producto indicado.",
+      "No retires los cueritos durante la cicatrización; caerán solos.",
+      "No piscinas, saunas ni ríos."
+    ]
+  },
+  "LegalNoticePage": {
+    "metaTitle": "Aviso legal | Cejas Internacionales",
+    "metaDescription": "Aviso legal de Cejas Internacionales: titular, finalidad informativa, contacto, propiedad intelectual y límites de uso.",
+    "breadcrumbsLabel": "Migas de pan",
+    "homeLabel": "Inicio",
+    "title": "Aviso legal",
+    "description": "Información del titular de la web, finalidad del sitio y condiciones generales de uso. Texto preparado para revisión legal antes de publicación definitiva.",
+    "detailsTitle": "Datos confirmados",
+    "cookiePreferencesLabel": "Cambiar preferencias de cookies",
+    "reviewNote": "Este texto es una base informativa y debe revisarse legalmente antes de publicar la web.",
+    "sections": [
+      {
+        "title": "Finalidad del sitio",
+        "items": [
+          "La web informa sobre servicios de belleza especializada, micropigmentación, jornadas por disponibilidad, formaciones y descargas oficiales.",
+          "La cita y la reserva se gestionan únicamente por WhatsApp.",
+          "No existe tienda online, carrito, checkout ni formulario de reserva en V1."
+        ]
+      },
+      {
+        "title": "Sedes y jornadas",
+        "items": [
+          "La sede física y dirección legal publicada corresponde únicamente a Cali, Colombia.",
+          "España, Suiza y otras ciudades se muestran como jornadas por disponibilidad, no como oficinas o sedes permanentes.",
+          "Precios, fechas, cupos y disponibilidad se confirman por WhatsApp."
+        ]
+      },
+      {
+        "title": "Propiedad intelectual y enlaces externos",
+        "items": [
+          "La marca, textos, imágenes, logotipos, PDFs y contenidos pertenecen a Cejas Internacionales o se usan con autorización.",
+          "La web puede enlazar a WhatsApp, Instagram, Facebook, TikTok u otros servicios externos bajo sus propias condiciones.",
+          "La información puede actualizarse cuando cambien servicios, jornadas, precios o disponibilidad."
+        ]
+      }
+    ]
+  },
+  "PrivacyPage": {
+    "metaTitle": "Política de privacidad | Cejas Internacionales",
+    "metaDescription": "Política de privacidad y tratamiento de datos para consultas por WhatsApp, email, hosting y analítica con consentimiento.",
+    "breadcrumbsLabel": "Migas de pan",
+    "homeLabel": "Inicio",
+    "title": "Política de privacidad",
+    "description": "Resumen del tratamiento de datos personales en una web informativa con contacto por WhatsApp, email y analítica solo con consentimiento.",
+    "detailsTitle": "Responsable",
+    "cookiePreferencesLabel": "Cambiar preferencias de cookies",
+    "reviewNote": "La política cubre Colombia, España/UE y Suiza a nivel informativo; debe revisarse legalmente antes de publicar.",
+    "sections": [
+      {
+        "title": "Datos que pueden tratarse",
+        "items": [
+          "Datos que la usuaria envíe voluntariamente por WhatsApp o email.",
+          "Datos técnicos de navegación gestionados por el hosting.",
+          "Datos analíticos de GA4 solo si la usuaria acepta cookies analíticas.",
+          "Eventos no sensibles como clics en WhatsApp, descargas PDF, cambio de idioma, selección de mercado o ubicación del mapa."
+        ]
+      },
+      {
+        "title": "Finalidades",
+        "items": [
+          "Responder consultas y gestionar citas o reservas por WhatsApp.",
+          "Facilitar descargas de catálogos y PDFs de formación.",
+          "Medir rendimiento de la web y mejorar SEO/UX solo con consentimiento analítico.",
+          "Cumplir obligaciones legales cuando aplique."
+        ]
+      },
+      {
+        "title": "Derechos y proveedores",
+        "items": [
+          "Puedes solicitar acceso, actualización, rectificación, supresión u otros derechos aplicables escribiendo al email oficial.",
+          "Pueden intervenir proveedores como Hostinger, Google Analytics si hay consentimiento, WhatsApp/Meta si la usuaria abre WhatsApp y redes sociales si hace clic.",
+          "No se envían a GA4 nombres, teléfonos, emails, fotos, mensajes escritos ni datos sensibles."
+        ]
+      }
+    ]
+  },
+  "CookiesPage": {
+    "metaTitle": "Política de cookies | Cejas Internacionales",
+    "metaDescription": "Política de cookies de Cejas Internacionales: categorías, consentimiento, GA4 y retirada de preferencias.",
+    "breadcrumbsLabel": "Migas de pan",
+    "homeLabel": "Inicio",
+    "title": "Política de cookies",
+    "description": "Explicación de cookies necesarias, analíticas y preferencias. GA4 solo se activa si aceptas analíticas.",
+    "detailsTitle": "Preferencias",
+    "cookiePreferencesLabel": "Cambiar preferencias de cookies",
+    "reviewNote": "Puedes aceptar, rechazar o configurar cookies no necesarias. Las analíticas están desactivadas por defecto.",
+    "sections": [
+      {
+        "title": "Cómo usamos cookies",
+        "items": [
+          "Las cookies necesarias permiten el funcionamiento básico de la web.",
+          "Las cookies analíticas ayudan a medir visitas y clics solo si hay consentimiento.",
+          "No se usa remarketing ni Google Ads en V1 salvo decisión futura."
+        ]
+      },
+      {
+        "title": "Google Analytics 4",
+        "items": [
+          "GA4 no se carga antes de aceptar analíticas.",
+          "Los eventos permitidos no incluyen datos personales identificables.",
+          "Puedes retirar o cambiar tu consentimiento desde el enlace permanente del footer."
+        ]
+      }
+    ]
+  },
+  "LegalContent": {
+    "brandLabel": "Marca",
+    "ownerLabel": "Titular",
+    "taxIdLabel": "NIT",
+    "emailLabel": "Email",
+    "addressLabel": "Dirección",
+    "cookieCategoriesTitle": "Cookies y preferencias"
+  },
+  "ServiceDetail": {
+    "metaTitle": "{service} en {market} | Cejas Internacionales",
+    "metaDescription": "Consulta {service} en {market}: precio, duración de cita, duración del resultado y contacto por WhatsApp.",
+    "breadcrumbsLabel": "Migas de pan",
+    "homeLabel": "Inicio",
+    "servicesLabel": "Servicios",
+    "heroEyebrow": "Ficha de servicio",
+    "heroTitle": "{service} en {market}",
+    "priceLabel": "Precio",
+    "appointmentDurationLabel": "Duración de cita",
+    "resultDurationLabel": "Duración del resultado",
+    "marketLabel": "Mercado",
+    "categoryLabel": "Categoría",
+    "descriptionTitle": "Descripción del servicio",
+    "detailsTitle": "Datos rápidos",
+    "sourceNoteLabel": "Nota",
+    "contactLabel": "Contacta conmigo",
+    "backToMarketLabel": "Volver al mercado",
+    "assessmentTitle": "Valoración gratuita por foto",
+    "assessmentDescription": "Si tienes un procedimiento previo o dudas sobre qué técnica elegir, puedes enviar una foto sin maquillaje por WhatsApp para recibir orientación antes de reservar.",
+    "assessmentLabel": "Pedir valoración",
+    "relatedTitle": "Servicios relacionados",
+    "relatedDescription": "Opciones del mismo mercado y categoría que pueden ayudarte a comparar técnica, precio y duración.",
+    "relatedActionLabel": "Ver detalle",
+    "whatsappMessage": "Hola, quiero información sobre {service} en {market}. Me gustaría consultar disponibilidad por WhatsApp."
+  },
+  "CourseDetail": {
+    "metaTitle": "{course} | Formación Cejas Internacionales",
+    "metaDescription": "Consulta temario, duración, modalidades, precios confirmados y PDF descargable de {course}. Fechas y cupos se consultan por WhatsApp.",
+    "breadcrumbsLabel": "Migas de pan",
+    "homeLabel": "Inicio",
+    "trainingLabel": "Formaciones",
+    "heroEyebrow": "Ficha de formación",
+    "durationLabel": "Duración",
+    "certificationLabel": "Certificación",
+    "modalitiesLabel": "Modalidades",
+    "marketsLabel": "Mercados",
+    "modulesTitle": "Temario",
+    "includesTitle": "Incluye",
+    "pricingTitle": "Precios confirmados",
+    "downloadTitle": "PDF oficial del curso",
+    "downloadDescription": "El PDF se descarga desde la sección pública de archivos. El contenido clave también queda visible en HTML para lectura y SEO.",
+    "downloadLabel": "Descargar PDF",
+    "nextDateTitle": "Fechas y cupos por WhatsApp",
+    "nextDateDescription": "No publicamos fechas ni cupos sin confirmación. Escribe por WhatsApp para consultar próxima fecha, ciudad o modalidad disponible.",
+    "nextDateLabel": "Consultar próxima fecha",
+    "backLabel": "Volver a formaciones",
+    "priceWithKitLabel": "Con kit",
+    "priceWithoutKitLabel": "Sin kit",
+    "notSpecifiedLabel": "No especificado",
+    "whatsappMessage": "Hola, quiero información sobre {course}. Me gustaría consultar próxima fecha, ciudad y cupos por WhatsApp."
+  },
+  "Shell": {
+    "skipToContent": "Saltar al contenido",
+    "mainNavigation": "Navegación principal",
+    "languageNavigation": "Cambiar idioma",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú",
+    "mobileMenuTitle": "Menú principal",
+    "contactCta": "Contacta conmigo",
+    "cookiesTitle": "Privacidad y cookies",
+    "cookiesDescription": "Usamos cookies necesarias para que la web funcione. Las analíticas de GA4 solo se activan si aceptas; puedes rechazar o configurar sin perder acceso.",
+    "cookiesAccept": "Aceptar analíticas",
+    "cookiesReject": "Rechazar",
+    "cookiesConfigure": "Configurar",
+    "cookiesSave": "Guardar preferencias",
+    "cookiesUnavailable": "Esta categoría no está disponible en V1."
+  },
+  "WhatsApp": {
+    "title": "Elige el WhatsApp de contacto",
+    "description": "Puedes escribir al número de Colombia o al de España para jornadas en Europa y Suiza.",
+    "close": "Cerrar selector de WhatsApp"
+  },
+  "Footer": {
+    "tagline": "Micropigmentación, belleza especializada, formaciones y jornadas internacionales por disponibilidad.",
+    "legalData": "Datos legales",
+    "contact": "Contacto",
+    "social": "Redes sociales",
+    "navigation": "Navegación",
+    "legal": "Legal",
+    "cookiePreferences": "Cambiar preferencias de cookies",
+    "studioNote": "Sede física y dirección legal únicamente en Cali, Colombia.",
+    "rights": "Todos los derechos reservados."
+  },
+  "NotFound": {
+    "title": "Página no encontrada",
+    "description": "La ruta solicitada no existe o todavía no está publicada.",
+    "cta": "Volver al inicio"
+  }
+}

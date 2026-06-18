@@ -1,0 +1,4 @@
+interface:
+  display_name: "Supabase Next.js Admin"
+  short_description: "Supabase Auth, data, and admin"
+  default_prompt: "Use $supabase-nextjs-admin to plan Supabase data, auth, storage, and admin for Cejas Internacionales."

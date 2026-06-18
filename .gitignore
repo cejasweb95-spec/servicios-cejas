@@ -16,6 +16,11 @@ build/
 *.log
 npm-debug.log*
 
+# Tests / QA reports
+coverage/
+playwright-report/
+test-results/
+
 # Sistema
 .DS_Store
 Thumbs.db

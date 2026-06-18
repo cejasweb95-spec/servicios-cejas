@@ -1,0 +1,4 @@
+interface:
+  display_name: "Core Web Vitals Performance"
+  short_description: "Lighthouse and Core Web Vitals QA"
+  default_prompt: "Use $core-web-vitals-performance to optimize Core Web Vitals for Cejas Internacionales."

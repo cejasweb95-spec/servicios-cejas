@@ -1,0 +1,4 @@
+interface:
+  display_name: "Cejas Internacionales Guardrails"
+  short_description: "Project-specific web build guardrails"
+  default_prompt: "Use $cejas-internacionales-guardrails before designing or building Cejas Internacionales."

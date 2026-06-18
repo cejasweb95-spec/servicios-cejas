@@ -1,0 +1,4 @@
+interface:
+  display_name: "Cross Browser Device QA"
+  short_description: "Browser and device QA workflow"
+  default_prompt: "Use $cross-browser-device-qa to test Cejas Internacionales across browsers and devices."

@@ -2,6 +2,8 @@
 
 Títulos de formación obtenidos por la cliente en academias especializadas de Colombia.
 
+> Para los cursos/masterclasses que **Cejas Internacionales ofrece a alumnas**, ver [cursos-masterclass.md](cursos-masterclass.md).
+
 ---
 
 ## 1. Cejas pelo a pelo con termógrafo

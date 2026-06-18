@@ -2,6 +2,8 @@
 
 Dos webs que la cliente pasó como referencia visual / estructura / contenido. Quiere tomar cosas de una y de otra (decisión final en reunión).
 
+Análisis ampliado y planteamiento web: [analisis-referencias-planteamiento-web.md](analisis-referencias-planteamiento-web.md).
+
 ---
 
 ## 1. Bauri Barcelona — https://www.bauribarcelona.com/
