@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import { CourseCard } from "@/components/domain/course-card";
+import { EventMap, type EventMapLocation } from "@/components/domain/event-map";
 import { MarketSelector } from "@/components/domain/market-selector";
 import { WhatsAppChooser } from "@/components/domain/whatsapp-chooser";
 import { Reveal } from "@/components/motion/reveal";
@@ -19,12 +20,15 @@ import {
   getDownloads,
   getLegalProfile,
   getLocations,
+  getMarketById,
   getMarkets,
   getMediaAssets,
   getServicesByMarket,
   getSocialLinks,
+  getWhatsAppTarget,
   getWhatsAppTargets,
 } from "@/lib/content/queries";
+import { buildWhatsAppHref } from "@/lib/whatsapp/build-whatsapp-url";
 import { courseBasePath } from "@/lib/routes/course-routes";
 import { journeyBasePath } from "@/lib/routes/journey-routes";
 import { buildMarketPath, serviceBasePath } from "@/lib/routes/service-routes";
@@ -66,6 +70,7 @@ export default async function HomePage({ params }: HomePageProps) {
 
   const t = await getTranslations({ locale, namespace: "Home" });
   const whatsappT = await getTranslations({ locale, namespace: "WhatsApp" });
+  const journeysT = await getTranslations({ locale, namespace: "Journeys" });
   const markets = getMarkets(locale);
   const whatsappTargets = getWhatsAppTargets(locale);
   const downloads = getDownloads(locale);
@@ -76,6 +81,36 @@ export default async function HomePage({ params }: HomePageProps) {
   );
   const courses = getCourses(locale).slice(0, 3);
   const locations = getLocations(locale);
+  const eventMapLocations = locations.map((location): EventMapLocation => {
+    const market = getMarketById(location.marketId, locale);
+    const target = market
+      ? getWhatsAppTarget(market.whatsappTargetId, locale)
+      : null;
+    const label = [location.city, location.region, location.country]
+      .filter(Boolean)
+      .join(", ");
+
+    return {
+      address: location.address,
+      city: location.city,
+      country: location.country,
+      href: target
+        ? buildWhatsAppHref(
+            target.phoneE164,
+            journeysT("whatsappMessage", { location: label }),
+          )
+        : "https://wa.me/573167742299",
+      id: location.id,
+      notes: location.notes,
+      region: location.region,
+      statusLabel:
+        location.type === "physical_studio"
+          ? journeysT("physicalStudioLabel")
+          : journeysT("journeyLabel"),
+      type: location.type,
+      whatsappLabel: target?.label ?? journeysT("contactLabel"),
+    };
+  });
   const heroImage = getRequiredMedia("xiomara-hero-escritorio", locale);
   const studioImage = getRequiredMedia("estudio-cabina-certificados", locale);
   const resultsImage = getRequiredMedia("resultados-cejas-labios-pared", locale);
@@ -245,51 +280,38 @@ export default async function HomePage({ params }: HomePageProps) {
       </Section>
 
       <Section id="jornadas" spacing="loose">
-        <Container className="grid gap-8 lg:grid-cols-[0.86fr_1.14fr] lg:items-start">
+        <Container className="grid gap-8">
           <Reveal>
-            <div className="max-w-3xl">
-              <h2 className="font-display text-4xl leading-tight text-foreground">
-                {t("journeysTitle")}
-              </h2>
-              <p className="mt-4 text-base leading-8 text-muted-foreground">
-                {t("journeysDescription")}
-              </p>
-              <ButtonLink
-                className="mt-6"
-                href={journeyBasePath[locale]}
-                variant="outline"
-              >
+            <div className="flex flex-wrap items-end justify-between gap-4">
+              <div className="max-w-3xl">
+                <h2 className="font-display text-4xl leading-tight text-foreground">
+                  {t("journeysTitle")}
+                </h2>
+                <p className="mt-4 text-base leading-8 text-muted-foreground">
+                  {t("journeysDescription")}
+                </p>
+              </div>
+              <ButtonLink href={journeyBasePath[locale]} variant="outline">
                 {t("journeysLinkLabel")}
               </ButtonLink>
             </div>
           </Reveal>
-          <StaggerList className="grid gap-3 sm:grid-cols-2">
-            {locations.map((location) => (
-              <StaggerListItem key={location.id}>
-                <article className="rounded-lg border border-border bg-surface p-5">
-                  <div className="flex flex-wrap items-start justify-between gap-3">
-                    <h3 className="font-display text-2xl leading-tight text-foreground">
-                      {location.region
-                        ? `${location.city}, ${location.region}`
-                        : `${location.city}, ${location.country}`}
-                    </h3>
-                    <Badge
-                      variant={
-                        location.type === "physical_studio" ? "default" : "outline"
-                      }
-                    >
-                      {location.type === "physical_studio"
-                        ? t("studioLabel")
-                        : t("journeyLabel")}
-                    </Badge>
-                  </div>
-                  <p className="mt-3 text-sm leading-6 text-muted-foreground">
-                    {location.notes}
-                  </p>
-                </article>
-              </StaggerListItem>
-            ))}
-          </StaggerList>
+          <Reveal delay={0.05}>
+            <EventMap
+              copy={{
+                addressLabel: journeysT("addressLabel"),
+                contactLabel: journeysT("contactLabel"),
+                journeyLabel: journeysT("journeyLabel"),
+                listTitle: journeysT("listTitle"),
+                mapAriaLabel: journeysT("mapAriaLabel"),
+                mapTitle: journeysT("mapTitle"),
+                physicalStudioLabel: journeysT("physicalStudioLabel"),
+                selectLocationLabel: journeysT("selectLocationLabel"),
+                selectedLocationLabel: journeysT("selectedLocationLabel"),
+              }}
+              locations={eventMapLocations}
+            />
+          </Reveal>
         </Container>
       </Section>
 
@@ -372,6 +394,7 @@ export default async function HomePage({ params }: HomePageProps) {
                     downloadHref={download?.publicPath}
                     downloadLabel={download ? t("courseDownloadLabel") : undefined}
                     duration={course.duration.label}
+                    image={getRequiredMedia(course.imageId, locale)}
                     summary={course.summary}
                     title={course.name}
                   />
