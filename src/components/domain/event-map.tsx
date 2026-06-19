@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useMemo, useState } from "react";
 import { motion, useReducedMotion } from "motion/react";
 
@@ -40,14 +41,39 @@ type EventMapProps = {
   locations: EventMapLocation[];
 };
 
-const mapPositions: Record<string, { x: number; y: number }> = {
-  cali: { x: 17, y: 72 },
-  "restrepo-valle": { x: 19, y: 62 },
-  madrid: { x: 62, y: 39 },
-  "palma-mallorca": { x: 83, y: 68 },
-  "puerto-sagunto": { x: 70, y: 54 },
-  ginebra: { x: 84, y: 27 },
+type Point = { x: number; y: number };
+
+// Posición geográfica REAL de cada ciudad sobre el mapa mundial punteado.
+// Proyección equirectangular igual que el SVG (viewBox 1100x560, lat -90..90):
+//   x% = (lon + 180) / 360 * 100 ; y% = (90 - lat) / 180 * 100
+// Aquí están los puntos exactos: a ellos llegan las líneas de conexión.
+const geoPositions: Record<string, Point> = {
+  cali: { x: 28.8, y: 48.1 }, // -76.5, 3.4
+  "restrepo-valle": { x: 27.4, y: 45.6 }, // mismo Valle del Cauca, leve offset
+  madrid: { x: 49.0, y: 27.6 }, // -3.7, 40.4
+  "puerto-sagunto": { x: 49.9, y: 28.0 }, // -0.27, 39.6
+  "palma-mallorca": { x: 50.7, y: 28.0 }, // 2.65, 39.5
+  ginebra: { x: 51.7, y: 24.3 }, // 6.14, 46.2
 };
+
+// Las ciudades europeas quedan casi superpuestas a escala mundial, así que la
+// ETIQUETA numerada se despliega con una línea guía hacia su punto real.
+const labelPositions: Record<string, Point> = {
+  cali: { x: 20.5, y: 53 },
+  "restrepo-valle": { x: 16.5, y: 41 },
+  madrid: { x: 40, y: 33 },
+  "puerto-sagunto": { x: 45, y: 40 },
+  "palma-mallorca": { x: 58, y: 34 },
+  ginebra: { x: 60, y: 18 },
+};
+
+function getGeo(id: string): Point {
+  return geoPositions[id] ?? { x: 50, y: 50 };
+}
+
+function getLabelPoint(id: string): Point {
+  return labelPositions[id] ?? getGeo(id);
+}
 
 function getLocationLabel(location: EventMapLocation) {
   return [location.city, location.region, location.country]
@@ -84,7 +110,7 @@ export function EventMap({ copy, locations }: EventMapProps) {
   const origin = locations.find(
     (location) => location.type === "physical_studio",
   );
-  const originPoint = origin ? mapPositions[origin.id] : undefined;
+  const originPoint = origin ? getGeo(origin.id) : undefined;
 
   const routes = useMemo(() => {
     if (!origin || !originPoint) {
@@ -93,17 +119,10 @@ export function EventMap({ copy, locations }: EventMapProps) {
 
     return locations
       .filter((location) => location.id !== origin.id)
-      .map((location) => {
-        const point = mapPositions[location.id];
-
-        return point
-          ? {
-              id: location.id,
-              d: buildCurve(originPoint, point),
-            }
-          : null;
-      })
-      .filter(Boolean) as { id: string; d: string }[];
+      .map((location) => ({
+        id: location.id,
+        d: buildCurve(originPoint, getGeo(location.id)),
+      }));
   }, [locations, origin, originPoint]);
 
   if (!selectedLocation) {
@@ -126,9 +145,24 @@ export function EventMap({ copy, locations }: EventMapProps) {
 
         <div
           aria-label={copy.mapAriaLabel}
-          className="relative min-h-[23rem] overflow-hidden rounded-xl border border-border bg-surface-strong shadow-soft sm:min-h-[30rem]"
-          role="group"
+          className="overflow-x-auto pb-2"
+          data-slot="event-map-scroll-region"
+          role="region"
+          tabIndex={0}
         >
+          <div
+            className="relative aspect-[1100/560] min-w-[43rem] overflow-hidden rounded-xl border border-border bg-surface-strong shadow-soft"
+            role="group"
+          >
+          <Image
+            alt=""
+            aria-hidden="true"
+            className="pointer-events-none object-contain"
+            fill
+            sizes="(min-width: 1024px) 58vw, 92vw"
+            src="/images/mapa/mapa-mundial-puntos.svg"
+            unoptimized
+          />
           <svg
             aria-hidden="true"
             className="absolute inset-0 size-full text-primary"
@@ -136,34 +170,6 @@ export function EventMap({ copy, locations }: EventMapProps) {
             preserveAspectRatio="none"
             viewBox="0 0 100 100"
           >
-            <defs>
-              <pattern
-                height="10"
-                id="event-map-grid"
-                patternUnits="userSpaceOnUse"
-                width="10"
-              >
-                <path
-                  className="stroke-border/70"
-                  d="M 10 0 L 0 0 0 10"
-                  fill="none"
-                  strokeWidth="0.35"
-                />
-              </pattern>
-            </defs>
-            <rect className="fill-background" height="100" width="100" />
-            <rect
-              className="fill-surface-muted/70"
-              height="100"
-              width="100"
-            />
-            <rect fill="url(#event-map-grid)" height="100" width="100" />
-            <path
-              className="fill-none stroke-foreground/10"
-              d="M12 78 C 26 58, 31 72, 39 54 S 58 46, 68 51 S 78 41, 87 26"
-              strokeLinecap="round"
-              strokeWidth="12"
-            />
             {routes.map((route, index) => {
               const isSelected = selectedLocation.id === route.id;
 
@@ -191,10 +197,45 @@ export function EventMap({ copy, locations }: EventMapProps) {
                 />
               );
             })}
+            {locations.map((location) => {
+              const geo = getGeo(location.id);
+              const labelPoint = getLabelPoint(location.id);
+              const isSelected = selectedLocation.id === location.id;
+              const hasLeader =
+                Math.abs(geo.x - labelPoint.x) > 0.5 ||
+                Math.abs(geo.y - labelPoint.y) > 0.5;
+
+              return (
+                <g key={`pin-${location.id}`}>
+                  {hasLeader ? (
+                    <line
+                      className={cn(
+                        "stroke-current",
+                        isSelected ? "text-primary" : "text-primary/40",
+                      )}
+                      strokeWidth={isSelected ? "0.45" : "0.28"}
+                      x1={geo.x}
+                      x2={labelPoint.x}
+                      y1={geo.y}
+                      y2={labelPoint.y}
+                    />
+                  ) : null}
+                  <circle
+                    className={cn(
+                      "fill-current",
+                      isSelected ? "text-primary" : "text-primary/70",
+                    )}
+                    cx={geo.x}
+                    cy={geo.y}
+                    r={isSelected ? "1.4" : "0.95"}
+                  />
+                </g>
+              );
+            })}
           </svg>
 
-          {locations.map((location, index) => {
-            const point = mapPositions[location.id] ?? { x: 50, y: 50 };
+            {locations.map((location, index) => {
+            const point = getLabelPoint(location.id);
             const isSelected = selectedLocation.id === location.id;
             const typeLabel = getLocationTypeLabel(location, copy);
             const label = getLocationLabel(location);
@@ -223,6 +264,7 @@ export function EventMap({ copy, locations }: EventMapProps) {
                     shouldReduceMotion ? false : { opacity: 0, scale: 0.94, y: 8 }
                   }
                   onClick={() => setSelectedId(location.id)}
+                  title={label}
                   transition={{
                     delay: shouldReduceMotion ? 0 : index * 0.04,
                     duration: motionDurations.panel,
@@ -235,22 +277,13 @@ export function EventMap({ copy, locations }: EventMapProps) {
                 >
                   <span aria-hidden="true">{index + 1}</span>
                 </motion.button>
-                <span
-                  className={cn(
-                    "pointer-events-none absolute left-1/2 top-[calc(100%+0.5rem)] hidden -translate-x-1/2 whitespace-nowrap rounded-full border px-3 py-1 text-xs font-medium shadow-soft sm:block",
-                    isSelected
-                      ? "border-primary bg-primary text-primary-foreground"
-                      : "border-border bg-background text-muted-foreground",
-                  )}
-                >
-                  {location.city}
-                </span>
                 <span className="sr-only" id={`event-location-${location.id}`}>
                   {typeLabel}
                 </span>
               </div>
             );
-          })}
+            })}
+          </div>
         </div>
       </div>
 
