@@ -76,7 +76,7 @@ export default async function HomePage({ params }: HomePageProps) {
   );
   const courses = getCourses(locale).slice(0, 3);
   const locations = getLocations(locale);
-  const heroImage = getRequiredMedia("xiomara-foto-profesional", locale);
+  const heroImage = getRequiredMedia("xiomara-hero-escritorio", locale);
   const studioImage = getRequiredMedia("estudio-cabina-certificados", locale);
   const resultsImage = getRequiredMedia("resultados-cejas-labios-pared", locale);
   const logo = getRequiredMedia("logo-oficial", locale);
@@ -131,10 +131,10 @@ export default async function HomePage({ params }: HomePageProps) {
           </div>
 
           <div className="relative mx-auto w-full max-w-[34rem] lg:mr-0">
-            <div className="relative aspect-[4/5] overflow-hidden rounded-lg border border-border bg-surface">
+            <div className="relative aspect-[5/4] overflow-hidden rounded-lg border border-border bg-surface sm:aspect-square lg:aspect-[5/6]">
               <Image
                 alt={heroImage.alt}
-                className="h-full w-full object-cover"
+                className="h-full w-full object-cover object-top"
                 height={heroImage.height}
                 priority
                 sizes="(min-width: 1024px) 42vw, 90vw"

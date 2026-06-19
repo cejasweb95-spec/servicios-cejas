@@ -49,6 +49,19 @@ export const mediaAssets = mediaAssetSchema.array().parse([
     height: 1867,
   },
   {
+    id: "xiomara-hero-escritorio",
+    type: "photo",
+    sourcePath:
+      "docs/cliente/assets-extraidos/xiomara-sesion-profesional/xiomara-sesion-profesional-02.jpeg",
+    publicPath: "/images/xiomara/xiomara-hero-escritorio.jpg",
+    alt: l(
+      "Xiomara Sánchez, especialista de Cejas Internacionales, en su estudio",
+      "Xiomara Sánchez, Cejas Internacionales specialist, in her studio",
+    ),
+    width: 1400,
+    height: 1329,
+  },
+  {
     id: "xiomara-uniforme-dermografo",
     type: "photo",
     sourcePath: "docs/cliente/assets-extraidos/xiomara-uniforme-dermografo.jpg",
