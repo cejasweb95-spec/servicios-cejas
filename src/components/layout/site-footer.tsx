@@ -1,8 +1,10 @@
 import Image from "next/image";
+import { Mail } from "lucide-react";
 
 import { Link } from "@/i18n/navigation";
 import { siteConfig } from "@/config/site";
 import { CookiePreferencesLink } from "@/components/layout/cookie-preferences-link";
+import { WhatsAppIcon, brandIcons } from "@/components/icons/brand-icons";
 
 type FooterNavItem = {
   id: string;
@@ -115,42 +117,54 @@ export function SiteFooter({
         </nav>
         <div>
           <h2 className="text-sm font-bold text-foreground">{labels.contact}</h2>
-          <ul className="mt-4 grid gap-2 text-sm text-muted-foreground">
+          <ul className="mt-4 grid gap-3 text-sm text-muted-foreground">
             <li>
               <a
-                className="hover:text-primary-text focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/40"
+                className="group/contact inline-flex items-center gap-2.5 hover:text-primary-text focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/40"
                 href={`mailto:${legalProfile.email}`}
               >
+                <span className="grid size-9 place-items-center rounded-full border border-border bg-surface text-primary-text transition-colors group-hover/contact:border-primary group-hover/contact:bg-surface-muted">
+                  <Mail aria-hidden="true" className="size-4" />
+                </span>
                 {legalProfile.email}
               </a>
             </li>
             {whatsappTargets.map((target) => (
               <li key={target.id}>
                 <a
-                  className="hover:text-primary-text focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/40"
+                  className="group/contact inline-flex items-center gap-2.5 hover:text-primary-text focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/40"
                   href={`https://wa.me/${target.phoneE164}`}
                   rel="noreferrer"
                   target="_blank"
                 >
-                  {target.label}: +{target.phoneE164}
+                  <span className="grid size-9 place-items-center rounded-full border border-border bg-surface text-primary-text transition-colors group-hover/contact:border-primary group-hover/contact:bg-surface-muted">
+                    <WhatsAppIcon className="size-4" />
+                  </span>
+                  {target.label}
                 </a>
               </li>
             ))}
           </ul>
           <h2 className="mt-6 text-sm font-bold text-foreground">{labels.social}</h2>
-          <ul className="mt-4 grid gap-2">
-            {socialLinks.map((item) => (
-              <li key={item.id}>
-                <a
-                  className="text-sm text-muted-foreground hover:text-primary-text focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/40"
-                  href={item.href}
-                  rel="noreferrer"
-                  target="_blank"
-                >
-                  {item.label}
-                </a>
-              </li>
-            ))}
+          <ul className="mt-4 flex flex-wrap gap-2.5">
+            {socialLinks.map((item) => {
+              const Icon = brandIcons[item.id as keyof typeof brandIcons];
+
+              return (
+                <li key={item.id}>
+                  <a
+                    aria-label={item.label}
+                    className="grid size-11 place-items-center rounded-full border border-border bg-surface text-foreground shadow-soft transition-all hover:-translate-y-0.5 hover:border-primary hover:bg-primary hover:text-primary-foreground focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/40 motion-reduce:transform-none"
+                    href={item.href}
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    {Icon ? <Icon className="size-5" /> : item.label}
+                    <span className="sr-only">{item.label}</span>
+                  </a>
+                </li>
+              );
+            })}
           </ul>
         </div>
         <div>
