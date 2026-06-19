@@ -103,6 +103,8 @@ export type CourseOffer = z.infer<typeof courseOfferSchema>;
 
 export const courseSchema = z.object({
   id: z.string().min(1),
+  imageId: z.string().min(1),
+  kind: z.enum(["professional", "masterclass"]),
   slug: localizedStringSchema,
   name: localizedStringSchema,
   summary: localizedStringSchema,

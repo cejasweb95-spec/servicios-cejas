@@ -49,6 +49,8 @@ const commonMentoringIncludes = [
 export const courses = courseSchema.array().parse([
   {
     id: "curso-micropigmentacion-cejas",
+    imageId: "curso-cejas-pigmentos",
+    kind: "professional",
     slug: l("curso-micropigmentacion-cejas", "brow-micropigmentation-course"),
     name: l(
       "Curso profesional de micropigmentacion de cejas",
@@ -94,6 +96,8 @@ export const courses = courseSchema.array().parse([
   },
   {
     id: "curso-micropigmentacion-labios",
+    imageId: "curso-labios-demostracion",
+    kind: "professional",
     slug: l("curso-micropigmentacion-labios", "lip-micropigmentation-course"),
     name: l(
       "Curso profesional de micropigmentacion y neutralizacion labial",
@@ -139,6 +143,8 @@ export const courses = courseSchema.array().parse([
   },
   {
     id: "masterclass-laminado-cejas",
+    imageId: "curso-laminado-cejas",
+    kind: "masterclass",
     slug: l("masterclass-laminado-cejas", "brow-lamination-masterclass"),
     name: l("Master Class Laminado de Cejas", "Brow Lamination Master Class"),
     summary: l(
@@ -173,6 +179,8 @@ export const courses = courseSchema.array().parse([
   },
   {
     id: "masterclass-lifting-pestanas",
+    imageId: "curso-lifting-pestanas",
+    kind: "masterclass",
     slug: l("masterclass-lifting-pestanas", "lash-lift-masterclass"),
     name: l("Master Class Lifting de Pestañas", "Lash Lift Master Class"),
     summary: l(
@@ -206,6 +214,8 @@ export const courses = courseSchema.array().parse([
   },
   {
     id: "masterclass-cejas-henna",
+    imageId: "curso-cejas-henna",
+    kind: "masterclass",
     slug: l("masterclass-cejas-henna", "henna-brows-masterclass"),
     name: l("Master Class Cejas en Henna", "Henna Brows Master Class"),
     summary: l(

@@ -231,6 +231,10 @@ test.describe("professional training", () => {
       page.getByText(/Las fechas, cupos y ciudades se consultan por WhatsApp/).first(),
     ).toBeVisible();
     await expect(page.getByText(/cupo disponible el/i)).toHaveCount(0);
+
+    const courseCards = page.locator('[data-slot="course-card"]');
+    await expect(courseCards).toHaveCount(5);
+    await expect(courseCards.locator('[data-slot="course-image"]')).toHaveCount(5);
   });
 
   test("serves course detail with syllabus, prices, schema and language equivalent", async ({
@@ -253,6 +257,7 @@ test.describe("professional training", () => {
       "href",
       /curso-micropigmentacion-cejas\.pdf$/,
     );
+    await expect(page.locator("main img").first()).toBeVisible();
 
     const courseSchema = await page
       .locator('script[type="application/ld+json"]')
@@ -267,6 +272,7 @@ test.describe("professional training", () => {
       "@type": "Course",
       name: "Curso profesional de micropigmentacion de cejas",
     });
+    expect(courseSchema.image).toMatch(/curso-cejas-pigmentos\.jpg$/);
 
     await page
       .getByRole("button", { name: "Consultar próxima fecha" })
@@ -324,6 +330,33 @@ test.describe("results gallery", () => {
     await page.keyboard.press("Escape");
     await expect(page.getByRole("dialog")).toBeHidden();
     await expect(firstTile).toBeFocused();
+  });
+});
+
+test.describe("confirmed contact channels", () => {
+  test("publishes both WhatsApp targets, official email and social profiles", async ({
+    page,
+  }) => {
+    await page.goto("/es/contacto");
+
+    const main = page.locator("main");
+    await expect(main.locator('a[href*="573167742299"]')).toHaveCount(1);
+    await expect(main.locator('a[href*="34603804837"]')).toHaveCount(1);
+    await expect(
+      main.getByRole("link", { name: "contacto@cejasinternacionales.com" }),
+    ).toHaveAttribute("href", "mailto:contacto@cejasinternacionales.com");
+    await expect(main.getByRole("link", { name: /Instagram/ })).toHaveAttribute(
+      "href",
+      "https://www.instagram.com/cejasinternacionales/",
+    );
+    await expect(main.getByRole("link", { name: /Facebook/ })).toHaveAttribute(
+      "href",
+      /facebook\.com\/share\/1G425xaA7s/,
+    );
+    await expect(main.getByRole("link", { name: /TikTok/ })).toHaveAttribute(
+      "href",
+      /tiktok\.com\/@cejasinternacionales/,
+    );
   });
 });
 
@@ -391,6 +424,16 @@ test.describe("journeys and animated map", () => {
     await page.setViewportSize({ width: 390, height: 844 });
     await page.goto("/es/jornadas");
     await expectNoHorizontalOverflow(page);
+
+    const mapScrollRegion = page.locator(
+      '[data-slot="event-map-scroll-region"]',
+    );
+    await expect(mapScrollRegion).toBeVisible();
+    expect(
+      await mapScrollRegion.evaluate(
+        (element) => element.scrollWidth > element.clientWidth,
+      ),
+    ).toBe(true);
 
     const madridPin = page
       .getByRole("button", { name: /Seleccionar ubicación: Madrid/ })

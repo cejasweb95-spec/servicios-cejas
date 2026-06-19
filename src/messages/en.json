@@ -88,6 +88,10 @@
     "description": "Programs transcribed from the official PDFs. Dates, spots and cities are handled through WhatsApp so unconfirmed details are not published.",
     "courseDetailLabel": "View syllabus",
     "downloadLabel": "Download PDF",
+    "professionalTitle": "Professional courses",
+    "professionalDescription": "Intensive three-day programs combining theory, practice and work with a real model.",
+    "masterclassTitle": "Specialist masterclasses",
+    "masterclassDescription": "One-day training focused on a specific technique, materials, practice and professional development.",
     "nextDateLabel": "Ask for next date"
   },
   "Journeys": {

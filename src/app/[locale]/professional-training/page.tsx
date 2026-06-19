@@ -59,7 +59,11 @@ export default async function TrainingPage({ params }: TrainingPageProps) {
         downloadLabel: t("downloadLabel"),
         eyebrow: t("eyebrow"),
         homeLabel: t("homeLabel"),
+        masterclassDescription: t("masterclassDescription"),
+        masterclassTitle: t("masterclassTitle"),
         nextDateLabel: t("nextDateLabel"),
+        professionalDescription: t("professionalDescription"),
+        professionalTitle: t("professionalTitle"),
         title: t("title"),
       }}
       locale={locale}

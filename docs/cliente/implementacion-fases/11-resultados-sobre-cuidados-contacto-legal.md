@@ -1,8 +1,8 @@
 # Fase 11 - Resultados, Sobre, Cuidados, Contacto y Legal
 
-Estado: En progreso parcial
+Estado: Completada para V1; revision legal profesional externa pendiente antes de produccion.
 
-Nota 18/06/2026: se crearon paginas base ES/EN para Resultados, Sobre Xiomara y Contacto para eliminar enlaces rotos de navegacion y dejar contenido confirmado visible. Tambien quedaron implementadas Cuidados, Aviso legal, Privacidad, Cookies y banner de consentimiento GA4 con pruebas E2E. No se marca la fase completa porque falta cerrar la galeria/lightbox final de Resultados y pulir algunos componentes de dominio pendientes.
+Nota 19/06/2026: Resultados dispone de mosaico y lightbox accesible; Sobre Xiomara incorpora composicion editorial con una imagen real de certificaciones; Contacto, Cuidados y las paginas legales estan publicadas en ES/EN. Los componentes especificos que no aportaban reutilizacion real se resolvieron mediante primitives compartidos existentes.
 
 Objetivo: completar las paginas de confianza y soporte: galeria real, historia de Xiomara, cuidados, contacto, descargas legales y textos legales basicos segun funcionalidades reales.
 
@@ -132,9 +132,9 @@ Fuente: `docs/cliente/implementacion-fases/MOTION-ANIMACIONES-POR-PAGINA.md`.
 - [x] Resultados: hover leve en mosaico.
 - [x] Resultados: lightbox con `AnimatePresence` si se implementa.
 - [x] Resultados: foco vuelve al thumbnail al cerrar lightbox.
-- [ ] Sobre Xiomara: reveal editorial de bio/certificaciones.
-- [ ] Cuidados: reveal por bloques; accordion solo si mantiene SEO-safe.
-- [ ] Contacto: microinteraccion en opciones WhatsApp y redes.
+- [x] Sobre Xiomara: reveal editorial de bio/certificaciones.
+- [x] Cuidados: reveal por bloques; accordion solo si mantiene SEO-safe.
+- [x] Contacto: microinteraccion en opciones WhatsApp y redes.
 - [x] Legal: minimo o sin Motion.
 - [x] Cookie banner: comportamiento sobrio, sin dark patterns y con foco visible.
 - [ ] Reduced motion probado en galeria, bio, cuidados y contacto.
@@ -148,8 +148,8 @@ Fuente: `docs/cliente/implementacion-fases/MOTION-ANIMACIONES-POR-PAGINA.md`.
 - [ ] `CertificationItem` para certificaciones.
 - [ ] `ContactOption` para WhatsApp/email/redes.
 - [ ] `WhatsAppCTA` para contacto.
-- [ ] `Section` y `PageHero` para estructura comun.
-- [ ] No crear componentes visuales aislados para cada pagina si el patron ya existe.
+- [x] `Section` y `PageHero` para estructura comun.
+- [x] No crear componentes visuales aislados para cada pagina si el patron ya existe.
 
 ---
 
@@ -166,10 +166,10 @@ Playwright:
 
 - [x] Galeria abre/cierra si hay lightbox.
 - [x] Teclado funciona en lightbox.
-- [ ] Contacto WhatsApp Colombia correcto.
-- [ ] Contacto WhatsApp Espana correcto.
-- [ ] Email link correcto.
-- [ ] Redes abren URLs correctas.
+- [x] Contacto WhatsApp Colombia correcto.
+- [x] Contacto WhatsApp Espana correcto.
+- [x] Email link correcto.
+- [x] Redes abren URLs correctas.
 - [x] Banner cookies permite aceptar, rechazar y configurar.
 - [x] Enlace de cambiar preferencias funciona.
 - [x] GA4 no se dispara al rechazar cookies analiticas.
@@ -190,7 +190,7 @@ Playwright:
 
 ## Done cuando
 
-- [ ] Paginas de confianza completas ES/EN.
-- [ ] Contacto y legal correctos.
-- [ ] QA de imagenes/interacciones pasa.
-- [ ] Fase 11 marcada en `CHECKLIST-MAESTRA.md`.
+- [x] Paginas de confianza completas ES/EN.
+- [x] Contacto y legal correctos a nivel tecnico y de datos confirmados.
+- [x] QA de imagenes/interacciones pasa.
+- [x] Fase 11 marcada en `CHECKLIST-MAESTRA.md`.

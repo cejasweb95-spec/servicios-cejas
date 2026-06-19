@@ -1,6 +1,8 @@
 # Fase 09 - Formaciones y cursos
 
-Estado: Completa - implementada y validada el 18/06/2026.
+Estado: Completa - implementada y validada; mejora visual aplicada el 19/06/2026.
+
+Nota 19/06/2026: cada curso dispone de imagen real localizada mediante `imageId`; el listado separa formaciones profesionales de masterclasses y reutiliza `CourseCard`. Los detalles muestran imagen, datos rapidos, temario, precios, descarga y CTA. El schema `Course` incorpora la imagen confirmada.
 
 Objetivo: publicar formaciones/cursos con contenido de PDFs, duraciones confirmadas, descargas por curso, CTA de WhatsApp para fechas/cupos y estructura preparada para futuras fechas o jornadas.
 
@@ -109,6 +111,9 @@ V1:
 ## UI/UX
 
 - [x] Listado de cursos escaneable.
+- [x] Hero editorial con imagen real de Xiomara como formadora.
+- [x] Formaciones profesionales y masterclasses diferenciadas visual y semanticamente.
+- [x] Imagen real estable en cada `CourseCard` y detalle.
 - [x] No carrusel como principal.
 - [x] PDF por curso permitido.
 - [x] Cards con CTA natural, no full-width desktop.

@@ -4,6 +4,8 @@ Estado: Completada
 
 Nota de cierre 18/06/2026: implementada pagina bilingue `/es/jornadas` y `/en/appointments-by-city` con mapa editorial animado, lista accesible, CTAs por ciudad y schema sin eventos ficticios ni sedes fuera de Cali.
 
+Mejora visual 19/06/2026: el mapa usa un recurso mundial optimizado mediante `next/image`, numeros de referencia sin etiquetas superpuestas y una lista HTML equivalente. En movil, el mapa se desplaza dentro de su propia region sin provocar overflow horizontal de pagina.
+
 Objetivo: construir una pagina y seccion de mapa elegante, llamativa y accesible para mostrar sede fisica en Cali y proximas jornadas por disponibilidad en Colombia, Espana y Suiza.
 
 ---

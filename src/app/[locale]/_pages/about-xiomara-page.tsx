@@ -51,8 +51,8 @@ export function AboutXiomaraPage({
   const portrait = getMediaAssets().find(
     (asset) => asset.id === "xiomara-foto-profesional",
   );
-  const studio = getMediaAssets().find(
-    (asset) => asset.id === "estudio-cabina-certificados",
+  const certificationsImage = getMediaAssets().find(
+    (asset) => asset.id === "xiomara-certificaciones-estudio",
   );
   const breadcrumbJsonLd = buildBreadcrumbListJsonLd([
     { name: copy.homeLabel, path: `/${locale}` },
@@ -140,33 +140,42 @@ export function AboutXiomaraPage({
                   {copy.trajectoryText}
                 </p>
               </section>
-              <section className="rounded-xl border border-border bg-background p-5">
-                <h3 className="font-display text-2xl leading-tight text-foreground">
-                  {copy.certificationTitle}
-                </h3>
-                <ul className="mt-4 grid gap-2 text-sm leading-6 text-muted-foreground">
-                  {copy.certifications.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </section>
             </div>
           </div>
         </Container>
       </Section>
-      {studio?.publicPath ? (
+      {certificationsImage?.publicPath ? (
         <Section tone="muted">
-          <Container>
-            <div className="relative aspect-[16/9] overflow-hidden rounded-xl border border-border bg-surface sm:aspect-[21/9]">
+          <Container className="grid gap-8 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-lg border border-border bg-surface sm:aspect-[3/4]">
               <Image
-                alt={studio.alt[locale]}
+                alt={certificationsImage.alt[locale]}
                 className="h-full w-full object-cover"
-                height={studio.height}
-                sizes="92vw"
-                src={studio.publicPath}
-                width={studio.width}
+                height={certificationsImage.height}
+                sizes="(min-width: 1024px) 42vw, 92vw"
+                src={certificationsImage.publicPath}
+                width={certificationsImage.width}
               />
             </div>
+            <section aria-labelledby="about-certifications">
+              <Badge variant="outline">{copy.trajectoryTitle}</Badge>
+              <h2
+                className="mt-4 text-balance font-display text-4xl leading-tight text-foreground"
+                id="about-certifications"
+              >
+                {copy.certificationTitle}
+              </h2>
+              <ul className="mt-6 divide-y divide-border border-y border-border">
+                {copy.certifications.map((item) => (
+                  <li
+                    className="py-4 text-sm leading-7 text-muted-foreground"
+                    key={item}
+                  >
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </section>
           </Container>
         </Section>
       ) : null}

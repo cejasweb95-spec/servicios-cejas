@@ -1,6 +1,8 @@
 # Fase 03 - Assets, PDFs e imagenes
 
-Estado: En progreso - PDFs y media base preparados
+Estado: Completada para V1 - PDFs, media real y derivados web preparados y conectados.
+
+Nota de cierre 19/06/2026: se prepararon derivados reales para Home, Resultados, Formaciones, detalles de curso, Sobre Xiomara/certificaciones y mapa editorial. Los originales se conservan intactos y todos los recursos publicos quedan registrados en datos localizados.
 
 Objetivo: preparar catalogos, PDFs de cursos, logos, imagenes reales, video y metadatos visuales para que la web use activos reales optimizados sin romper rendimiento ni SEO.
 
@@ -74,8 +76,8 @@ public/
 
 Regla critica:
 
-- [ ] Catalogo de mercado aparece una vez en pagina de mercado.
-- [ ] Catalogo de mercado aparece en `/descargas`.
+- [x] Catalogo de mercado aparece una vez en pagina de mercado.
+- [x] Catalogo de mercado aparece en `/descargas`.
 - [ ] Catalogo de mercado puede aparecer en footer como enlace secundario.
 - [x] Catalogo de mercado no aparece dentro de cada `ServiceCard`.
 
@@ -90,9 +92,9 @@ Regla critica:
 - [x] Copiar PDF masterclass lifting.
 - [x] Registrar cada PDF en `downloads.ts`.
 - [x] Asociar cada PDF con su `courseId`.
-- [ ] Permitir descarga por `CourseCard`.
-- [ ] Permitir descarga en pagina detalle del curso.
-- [ ] Permitir descarga en pagina `/descargas`.
+- [x] Permitir descarga por `CourseCard`.
+- [x] Permitir descarga en pagina detalle del curso.
+- [x] Permitir descarga en pagina `/descargas`.
 
 ---
 
@@ -117,10 +119,10 @@ Regla critica:
 - [ ] Seleccionar miniaturas para servicios prioritarios.
 - [ ] Crear derivados WebP/AVIF cuando se implemente optimizacion.
 - [x] Mantener dimensiones estables.
-- [ ] Definir `sizes` de `next/image`.
+- [x] Definir `sizes` de `next/image`.
 - [x] Crear alt text ES/EN no generico.
-- [ ] Evitar fotos repetidas sin proposito.
-- [ ] Evitar stock o imagenes atmosfericas genericas.
+- [x] Evitar fotos repetidas sin proposito.
+- [x] Evitar stock o imagenes atmosfericas genericas.
 
 ---
 
@@ -167,4 +169,4 @@ Tests recomendados:
 - [x] PDFs y media estan en `public/`.
 - [x] Downloads y media estan registrados en datos.
 - [x] Links y assets pasan QA basico.
-- [ ] Fase 03 marcada en `CHECKLIST-MAESTRA.md`.
+- [x] Fase 03 marcada en `CHECKLIST-MAESTRA.md`.

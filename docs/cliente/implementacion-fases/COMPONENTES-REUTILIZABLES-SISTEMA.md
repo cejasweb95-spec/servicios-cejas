@@ -1,6 +1,6 @@
 # Sistema de componentes reutilizables
 
-Ultima actualizacion: 18/06/2026.
+Ultima actualizacion: 19/06/2026.
 
 Objetivo: que la web se sienta homogenea, premium y mantenible. Cada boton, tabla/lista, card, CTA, tab, dialog, descarga, servicio, curso y bloque de contacto debe salir de componentes reutilizables, no de estilos inventados pagina por pagina.
 
@@ -96,6 +96,12 @@ Componentes de dominio:
 - [x] `LocationCard` cubierto por lista seleccionable dentro de `EventMap`.
 - [ ] `ContactOption`.
 - [ ] `CertificationItem`.
+
+Implementacion 19/06/2026:
+
+- `CourseCard` recibe contenido e imagen estructurados, y se reutiliza en Home y Formaciones.
+- `EventMap` combina mapa visual optimizado, pins numerados y lista accesible; en movil contiene su propio desplazamiento horizontal.
+- Certificaciones usa una composicion editorial unica sobre `Section`, `StaggerList` e imagen registrada; no se creo `CertificationItem` porque no existe un segundo patron repetido que justifique esa abstraccion.
 
 Reglas:
 

@@ -270,6 +270,7 @@ type CourseOfferJsonLdInput = {
 type CourseJsonLdInput = {
   name: string;
   description: string;
+  image?: string;
   url: string;
   timeRequired: string;
   courseMode: string[];
@@ -279,6 +280,7 @@ type CourseJsonLdInput = {
 export function buildCourseJsonLd({
   courseMode,
   description,
+  image,
   name,
   offers,
   timeRequired,
@@ -289,6 +291,9 @@ export function buildCourseJsonLd({
     "@type": "Course",
     name,
     description,
+    ...(image
+      ? { image: new URL(image, siteConfig.url).toString() }
+      : {}),
     provider: {
       "@type": "Organization",
       name: siteConfig.name,

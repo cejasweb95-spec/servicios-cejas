@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import Image from "next/image";
 
 import { CourseModuleList } from "@/components/domain/course-module-list";
 import {
@@ -22,6 +23,7 @@ import {
   getCourseBySlug,
   getDownloads,
   getMarketById,
+  getMediaAssetById,
 } from "@/lib/content/queries";
 import { formatCurrency } from "@/lib/format/currency";
 import { buildCoursePath, courseBasePath } from "@/lib/routes/course-routes";
@@ -162,6 +164,16 @@ export function CourseDetailPage({
     notFound();
   }
 
+  const courseImage = getMediaAssetById(course.imageId, locale);
+
+  if (
+    !courseImage?.publicPath ||
+    !courseImage.width ||
+    !courseImage.height
+  ) {
+    notFound();
+  }
+
   const coursePath = buildCoursePath(locale, course.slug);
   const courseWhatsAppTargets = whatsapp.targets.map((target) => ({
     ...target,
@@ -190,6 +202,7 @@ export function CourseDetailPage({
       new Set(course.offers.map((offer) => modalityLabels[offer.modality][locale])),
     ),
     description: course.summary,
+    image: courseImage.publicPath,
     name: course.name,
     offers: buildSchemaOffers(course.name, course.slug, locale),
     timeRequired: course.duration.label,
@@ -221,14 +234,27 @@ export function CourseDetailPage({
           </>
         }
         aside={
-          <ResponsiveDataList
-            items={[
-              { label: copy.durationLabel, value: course.duration.label },
-              { label: copy.certificationLabel, value: course.certification },
-              { label: copy.modalitiesLabel, value: modalities },
-              { label: copy.marketsLabel, value: markets },
-            ]}
-          />
+          <div className="grid gap-4">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-lg border border-border bg-surface">
+              <Image
+                alt={courseImage.alt}
+                className="h-full w-full object-cover"
+                height={courseImage.height}
+                priority
+                sizes="(min-width: 1024px) 34vw, 92vw"
+                src={courseImage.publicPath}
+                width={courseImage.width}
+              />
+            </div>
+            <ResponsiveDataList
+              items={[
+                { label: copy.durationLabel, value: course.duration.label },
+                { label: copy.certificationLabel, value: course.certification },
+                { label: copy.modalitiesLabel, value: modalities },
+                { label: copy.marketsLabel, value: markets },
+              ]}
+            />
+          </div>
         }
         description={course.summary}
         eyebrow={copy.heroEyebrow}

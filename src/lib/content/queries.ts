@@ -245,6 +245,17 @@ export function getMediaAssets() {
   return mediaAssets;
 }
 
+export function getMediaAssetById(id: string, locale: Locale) {
+  const asset = mediaAssets.find((item) => item.id === id);
+
+  return asset
+    ? {
+        ...asset,
+        alt: text(asset.alt, locale),
+      }
+    : null;
+}
+
 export function getSocialLinks() {
   return socialLinks;
 }

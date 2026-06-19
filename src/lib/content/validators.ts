@@ -75,6 +75,7 @@ function assertReferences() {
   const serviceIds = new Set(services.map((service) => service.id));
   const courseIds = new Set(courses.map((course) => course.id));
   const downloadIds = new Set(downloads.map((download) => download.id));
+  const mediaIds = new Set(mediaAssets.map((asset) => asset.id));
   const locationIds = new Set(locations.map((location) => location.id));
   const whatsappTargetIds = new Set(whatsappTargets.map((target) => target.id));
 
@@ -101,6 +102,10 @@ function assertReferences() {
   }
 
   for (const course of courses) {
+    if (!mediaIds.has(course.imageId)) {
+      throw new Error(`Course ${course.id} references missing media ${course.imageId}`);
+    }
+
     if (!downloadIds.has(course.downloadId)) {
       throw new Error(`Course ${course.id} references missing download ${course.downloadId}`);
     }

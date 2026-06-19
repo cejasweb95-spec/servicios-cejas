@@ -1,6 +1,6 @@
 # Checklist maestra de implementacion V1
 
-Ultima actualizacion: 18/06/2026.
+Ultima actualizacion: 19/06/2026.
 
 Esta checklist resume las fases. El detalle operativo vive en cada MD de `docs/cliente/implementacion-fases/`.
 
@@ -11,7 +11,7 @@ Esta checklist resume las fases. El detalle operativo vive en cada MD de `docs/c
 - [x] 00 - QA y auditoria preimplementacion.
 - [x] 01 - Scaffold Next.js + i18n.
 - [x] 02 - Modelado de datos + query layer.
-- [ ] 03 - Assets, PDFs e imagenes.
+- [x] 03 - Assets, PDFs e imagenes.
 - [x] 04 - Sistema de diseno, shadcn y tokens.
 - [ ] 05 - App shell, navegacion, WhatsApp e i18n.
 - [x] 06 - Vertical slice Colombia + Descargas.

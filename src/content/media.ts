@@ -62,6 +62,97 @@ export const mediaAssets = mediaAssetSchema.array().parse([
     height: 1329,
   },
   {
+    id: "xiomara-formadora-tablet",
+    type: "course",
+    sourcePath:
+      "docs/cliente/assets-extraidos/xiomara-sesion-profesional/xiomara-sesion-profesional-13.jpeg",
+    publicPath: "/images/formaciones/xiomara-formadora-tablet.jpg",
+    alt: l(
+      "Xiomara Sanchez preparando material de formacion profesional con una tableta",
+      "Xiomara Sanchez preparing professional training material with a tablet",
+    ),
+    width: 1050,
+    height: 1400,
+  },
+  {
+    id: "xiomara-certificaciones-estudio",
+    type: "photo",
+    sourcePath:
+      "docs/cliente/assets-extraidos/xiomara-sesion-profesional/xiomara-sesion-profesional-07.jpeg",
+    publicPath: "/images/xiomara/xiomara-certificaciones-estudio.jpg",
+    alt: l(
+      "Xiomara en su estudio de Cali frente a su pared de certificaciones profesionales",
+      "Xiomara at her Cali studio in front of her professional certification wall",
+    ),
+    width: 1000,
+    height: 1500,
+  },
+  {
+    id: "curso-cejas-pigmentos",
+    type: "course",
+    sourcePath:
+      "docs/cliente/assets-extraidos/xiomara-sesion-profesional/xiomara-sesion-profesional-08.jpeg",
+    publicPath: "/images/formaciones/curso-cejas-pigmentos.jpg",
+    alt: l(
+      "Xiomara mostrando pigmentos utilizados en la formacion profesional de cejas",
+      "Xiomara presenting pigments used in professional brow training",
+    ),
+    width: 1200,
+    height: 900,
+  },
+  {
+    id: "curso-labios-demostracion",
+    type: "course",
+    sourcePath:
+      "docs/cliente/assets-extraidos/xiomara-sesion-profesional/xiomara-sesion-profesional-05.jpeg",
+    publicPath: "/images/formaciones/curso-labios-demostracion.jpg",
+    alt: l(
+      "Xiomara mostrando un resultado labial durante una demostracion profesional",
+      "Xiomara presenting a lip result during a professional demonstration",
+    ),
+    width: 1200,
+    height: 900,
+  },
+  {
+    id: "curso-laminado-cejas",
+    type: "course",
+    sourcePath:
+      "docs/cliente/assets-extraidos/fotos-instagram/cejas/cejas-05.jpeg",
+    publicPath: "/images/formaciones/curso-laminado-cejas.jpg",
+    alt: l(
+      "Detalle de ceja utilizado en la Master Class de laminado de cejas",
+      "Brow detail used in the brow lamination masterclass",
+    ),
+    width: 992,
+    height: 744,
+  },
+  {
+    id: "curso-lifting-pestanas",
+    type: "course",
+    sourcePath:
+      "docs/cliente/assets-extraidos/formaciones-pdfs/master-class-lifting/page-02-image-01.jpg",
+    publicPath: "/images/formaciones/curso-lifting-pestanas.jpg",
+    alt: l(
+      "Detalle de pestanas utilizado en la Master Class de lifting",
+      "Lash detail used in the lash lift masterclass",
+    ),
+    width: 992,
+    height: 744,
+  },
+  {
+    id: "curso-cejas-henna",
+    type: "course",
+    sourcePath:
+      "docs/cliente/assets-extraidos/fotos-instagram/cejas/cejas-10.jpeg",
+    publicPath: "/images/formaciones/curso-cejas-henna.jpg",
+    alt: l(
+      "Detalle de diseno de cejas utilizado en la Master Class de henna",
+      "Brow design detail used in the henna brow masterclass",
+    ),
+    width: 992,
+    height: 744,
+  },
+  {
     id: "xiomara-uniforme-dermografo",
     type: "photo",
     sourcePath: "docs/cliente/assets-extraidos/xiomara-uniforme-dermografo.jpg",
@@ -167,7 +258,7 @@ export const mediaAssets = mediaAssetSchema.array().parse([
       "Micropigmented brows with a very natural hair-stroke finish",
     ),
     width: 1000,
-    height: 1778,
+    height: 1333,
   },
   {
     id: "result-cejas-04",

@@ -88,6 +88,10 @@
     "description": "Programas transcritos desde los PDFs oficiales. Las fechas, cupos y ciudades se consultan por WhatsApp para no publicar datos no confirmados.",
     "courseDetailLabel": "Ver temario",
     "downloadLabel": "Descargar PDF",
+    "professionalTitle": "Cursos profesionales",
+    "professionalDescription": "Programas intensivos de tres días con teoría, práctica y trabajo con modelo real.",
+    "masterclassTitle": "Masterclass de especialización",
+    "masterclassDescription": "Formaciones de un día centradas en una técnica concreta, materiales, práctica y desarrollo profesional.",
     "nextDateLabel": "Consultar próxima fecha"
   },
   "Journeys": {
