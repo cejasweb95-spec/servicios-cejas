@@ -5,8 +5,15 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { CourseCard } from "@/components/domain/course-card";
 import { EventMap, type EventMapLocation } from "@/components/domain/event-map";
 import { MarketSelector } from "@/components/domain/market-selector";
+import { CountryFlag } from "@/components/primitives/country-flag";
 import { WhatsAppChooser } from "@/components/domain/whatsapp-chooser";
 import { Reveal } from "@/components/motion/reveal";
+import {
+  HeroItem,
+  HeroMedia,
+  HeroParallax,
+  HeroStage,
+} from "@/components/motion/hero-reveal";
 import { StaggerList, StaggerListItem } from "@/components/motion/stagger-list";
 import { Container } from "@/components/primitives/container";
 import { Eyebrow } from "@/components/primitives/eyebrow";
@@ -21,6 +28,7 @@ import {
   getLegalProfile,
   getLocations,
   getMarketById,
+  getMarketMediaAsset,
   getMarkets,
   getMediaAssets,
   getServicesByMarket,
@@ -101,6 +109,7 @@ export default async function HomePage({ params }: HomePageProps) {
           )
         : "https://wa.me/573167742299",
       id: location.id,
+      marketId: location.marketId,
       notes: location.notes,
       region: location.region,
       statusLabel:
@@ -112,12 +121,14 @@ export default async function HomePage({ params }: HomePageProps) {
     };
   });
   const heroImage = getRequiredMedia("xiomara-hero-escritorio", locale);
+  const journeysImage = getRequiredMedia("jornadas-globo", locale);
   const studioImage = getRequiredMedia("estudio-cabina-certificados", locale);
   const resultsImage = getRequiredMedia("resultados-cejas-labios-pared", locale);
   const logo = getRequiredMedia("logo-oficial", locale);
   const legalProfile = getLegalProfile(locale);
   const serviceHighlights = markets.map((market) => ({
     href: buildMarketPath(locale, market.slug),
+    image: getMarketMediaAsset(market.id, locale),
     market,
     services: getServicesByMarket(market.id, locale)
       .filter((service) => service.featured)
@@ -145,50 +156,52 @@ export default async function HomePage({ params }: HomePageProps) {
       ))}
 
       <header className="border-b border-border bg-surface-strong">
-        <Container className="grid min-h-[calc(88dvh-5rem)] items-center gap-10 py-12 sm:py-16 lg:grid-cols-[1fr_0.92fr] lg:py-20">
-          <div className="max-w-3xl">
-            <Eyebrow className="mb-4">{t("heroEyebrow")}</Eyebrow>
-            <h1 className="text-balance font-display text-5xl leading-[1.04] text-foreground sm:text-6xl lg:text-7xl">
-              {t("title")}
-            </h1>
-            <p className="mt-6 max-w-2xl text-pretty text-lg leading-8 text-muted-foreground">
-              {t("intro")}
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <WhatsAppChooser
-                {...whatsappProps}
-                triggerLabel={t("primaryCta")}
-              />
-              <ButtonLink href={serviceBasePath[locale]} variant="outline">
-                {t("secondaryCta")}
-              </ButtonLink>
-            </div>
-          </div>
+        <HeroStage>
+          <Container className="grid min-h-[calc(88dvh-5rem)] items-center gap-10 py-12 sm:py-16 lg:grid-cols-[1fr_0.92fr] lg:py-20">
+            <HeroItem className="max-w-3xl">
+              <Eyebrow className="mb-4">{t("heroEyebrow")}</Eyebrow>
+              <h1 className="text-balance font-display text-5xl leading-[1.04] text-foreground sm:text-6xl lg:text-7xl">
+                {t("title")}
+              </h1>
+              <p className="mt-6 max-w-2xl text-pretty text-lg leading-8 text-muted-foreground">
+                {t("intro")}
+              </p>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <WhatsAppChooser
+                  {...whatsappProps}
+                  triggerLabel={t("primaryCta")}
+                />
+                <ButtonLink href={serviceBasePath[locale]} variant="outline">
+                  {t("secondaryCta")}
+                </ButtonLink>
+              </div>
+            </HeroItem>
 
-          <div className="relative mx-auto w-full max-w-[34rem] lg:mr-0">
-            <div className="relative aspect-[5/4] overflow-hidden rounded-lg border border-border bg-surface sm:aspect-square lg:aspect-[5/6]">
-              <Image
-                alt={heroImage.alt}
-                className="h-full w-full object-cover object-top"
-                height={heroImage.height}
-                priority
-                sizes="(min-width: 1024px) 42vw, 90vw"
-                src={heroImage.src}
-                width={heroImage.width}
-              />
-            </div>
-            <div className="absolute -bottom-5 -left-5 hidden w-44 overflow-hidden rounded-lg border border-border bg-surface sm:block lg:w-52">
-              <Image
-                alt=""
-                className="aspect-[4/5] h-full w-full object-cover"
-                height={resultsImage.height}
-                sizes="14rem"
-                src={resultsImage.src}
-                width={resultsImage.width}
-              />
-            </div>
-          </div>
-        </Container>
+            <HeroMedia className="relative mx-auto w-full max-w-[34rem] lg:mr-0">
+              <HeroParallax className="relative aspect-[5/4] overflow-hidden rounded-lg border border-border bg-surface sm:aspect-square lg:aspect-[5/6]">
+                <Image
+                  alt={heroImage.alt}
+                  className="h-full w-full object-cover object-top"
+                  height={heroImage.height}
+                  priority
+                  sizes="(min-width: 1024px) 42vw, 90vw"
+                  src={heroImage.src}
+                  width={heroImage.width}
+                />
+              </HeroParallax>
+              <div className="absolute -bottom-5 -left-5 hidden w-44 overflow-hidden rounded-lg border border-border bg-surface shadow-soft sm:block lg:w-52">
+                <Image
+                  alt=""
+                  className="aspect-[4/5] h-full w-full object-cover transition-transform duration-500 motion-reduce:transition-none hover:scale-[1.025]"
+                  height={resultsImage.height}
+                  sizes="14rem"
+                  src={resultsImage.src}
+                  width={resultsImage.width}
+                />
+              </div>
+            </HeroMedia>
+          </Container>
+        </HeroStage>
       </header>
 
       <Section id="mercados" spacing="loose">
@@ -224,40 +237,60 @@ export default async function HomePage({ params }: HomePageProps) {
               {t("featuredDescription")}
             </p>
           </div>
-          <div className="grid gap-5">
-            {serviceHighlights.map((group) => (
+          <div className="grid gap-12 sm:gap-14">
+            {serviceHighlights.map((group, index) => (
               <Reveal key={group.market.id}>
-                <article className="grid gap-5 border-t border-border py-6 lg:grid-cols-[0.48fr_1fr_auto] lg:items-center">
+                <article className="grid items-center gap-6 border-t border-border pt-10 sm:gap-8 lg:grid-cols-2 lg:gap-12">
+                  {group.image?.publicPath ? (
+                    <div
+                      className={
+                        index % 2 === 1
+                          ? "relative aspect-[16/11] overflow-hidden rounded-xl border border-border bg-surface lg:order-last lg:aspect-[4/3]"
+                          : "relative aspect-[16/11] overflow-hidden rounded-xl border border-border bg-surface lg:aspect-[4/3]"
+                      }
+                    >
+                      <Image
+                        alt={group.image.alt}
+                        className="object-cover object-center transition-transform duration-700 motion-reduce:transition-none hover:scale-[1.03]"
+                        fill
+                        sizes="(min-width: 1024px) 46vw, 92vw"
+                        src={group.image.publicPath}
+                      />
+                    </div>
+                  ) : null}
                   <div>
                     <div className="flex flex-wrap items-center gap-3">
+                      <CountryFlag className="h-5 w-7" market={group.market.id} />
                       <h3 className="font-display text-3xl leading-tight text-foreground">
                         {group.market.name}
                       </h3>
                       <Badge variant="outline">{group.market.currency}</Badge>
                     </div>
-                    <p className="mt-2 text-sm leading-6 text-muted-foreground">
+                    <p className="mt-3 text-base leading-7 text-muted-foreground">
                       {group.market.description}
                     </p>
-                  </div>
-                  <ul className="grid gap-2 sm:grid-cols-3">
-                    {group.services.length > 0 ? (
-                      group.services.map((service) => (
-                        <li
-                          className="rounded-md border border-border bg-surface px-4 py-3 text-sm font-semibold leading-6 text-foreground"
-                          key={service.id}
-                        >
-                          {service.name}
+                    <ul className="mt-5 flex flex-wrap gap-2">
+                      {group.services.length > 0 ? (
+                        group.services.map((service) => (
+                          <li
+                            className="rounded-full border border-border bg-surface px-4 py-2 text-sm font-semibold leading-6 text-foreground"
+                            key={service.id}
+                          >
+                            {service.name}
+                          </li>
+                        ))
+                      ) : (
+                        <li className="text-sm leading-6 text-muted-foreground">
+                          {t("featuredEmpty")}
                         </li>
-                      ))
-                    ) : (
-                      <li className="text-sm leading-6 text-muted-foreground">
-                        {t("featuredEmpty")}
-                      </li>
-                    )}
-                  </ul>
-                  <ButtonLink href={group.href} size="sm" variant="outline">
-                    {t("marketCta")}
-                  </ButtonLink>
+                      )}
+                    </ul>
+                    <div className="mt-6">
+                      <ButtonLink href={group.href} variant="outline">
+                        {t("marketCta")}
+                      </ButtonLink>
+                    </div>
+                  </div>
                 </article>
               </Reveal>
             ))}
@@ -280,20 +313,42 @@ export default async function HomePage({ params }: HomePageProps) {
       </Section>
 
       <Section id="jornadas" spacing="loose">
-        <Container className="grid gap-8">
+        <Container className="grid gap-10">
           <Reveal>
-            <div className="flex flex-wrap items-end justify-between gap-4">
-              <div className="max-w-3xl">
+            <div className="grid items-center gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:gap-12">
+              <div className="relative mx-auto aspect-[4/5] w-full max-w-[26rem] overflow-hidden rounded-xl border border-border bg-surface lg:mx-0">
+                <Image
+                  alt={journeysImage.alt}
+                  className="object-cover object-center"
+                  fill
+                  sizes="(min-width: 1024px) 34vw, 88vw"
+                  src={journeysImage.src}
+                />
+              </div>
+              <div className="max-w-2xl">
                 <h2 className="font-display text-4xl leading-tight text-foreground">
                   {t("journeysTitle")}
                 </h2>
                 <p className="mt-4 text-base leading-8 text-muted-foreground">
                   {t("journeysDescription")}
                 </p>
+                <ul className="mt-6 flex flex-wrap gap-2">
+                  {markets.map((market) => (
+                    <li
+                      className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-3 py-1.5 text-sm font-semibold text-foreground"
+                      key={market.id}
+                    >
+                      <CountryFlag className="h-3.5 w-5" market={market.id} />
+                      {market.shortName}
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-6">
+                  <ButtonLink href={journeyBasePath[locale]} variant="outline">
+                    {t("journeysLinkLabel")}
+                  </ButtonLink>
+                </div>
               </div>
-              <ButtonLink href={journeyBasePath[locale]} variant="outline">
-                {t("journeysLinkLabel")}
-              </ButtonLink>
             </div>
           </Reveal>
           <Reveal delay={0.05}>

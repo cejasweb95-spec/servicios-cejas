@@ -168,13 +168,23 @@ Resultado Lighthouse local 18/06/2026 sobre `http://localhost:3000`:
 | Jornadas ES | 85 | 100 | 100 | 100 |
 | Resultados ES | 86 | 100 | 100 | 100 |
 
+Revalidacion tras pase visual premium 19/06/2026:
+
+| Pagina | Performance | Accessibility | Best Practices | SEO | CLS |
+|---|---:|---:|---:|---:|---:|
+| Home ES | 86 | 100 | 100 | 100 | 0 |
+| Servicios Colombia ES | 83 | 100 | 100 | 100 | 0 |
+| Detalle efecto polvo ES | 85 | 100 | 100 | 100 | 0 |
+| Formaciones ES | 84 | 100 | 100 | 100 | 0 |
+| Jornadas ES | 86 | 100 | 100 | 100 | 0 |
+
 Notas:
 
 - CLS es 0 en las paginas auditadas.
 - FCP ronda 1.3-1.4s.
 - El cuello de botella local es LCP/TBT bajo throttling movil de Lighthouse y JavaScript no usado asociado a Next/client components/Motion/shadcn.
 - No se detectan fallos de SEO tecnico tras auditar con `localhost`; usando `127.0.0.1` Lighthouse marca canonical invalido por diferencia artificial de host.
-- Queda como mejora de performance de fase 13/14 revisar division de client components, Motion y presupuesto JS si se quiere empujar Performance movil hacia 95+.
+- Queda como mejora de performance de fase 14 revisar division de client components, Motion y presupuesto JS si se quiere empujar Performance movil hacia 95+; el pase premium mantiene CLS 0 y 100 en A11y/Best Practices/SEO.
 
 ---
 
@@ -201,6 +211,13 @@ Checks:
 - [x] Validar hreflang.
 - [ ] Validar no hay imagenes enormes innecesarias.
 - [x] Validar enlaces internos/PDFs con link checker si existe.
+
+Auditoria completa 19/06/2026:
+
+- [x] `npm run test:seo:all` rastrea las 210 URLs del sitemap.
+- [x] HTTP 200, title, description, canonical, lang, H1 y hreflang ES/EN/x-default en todas.
+- [x] Cero titles o descriptions duplicados.
+- [x] Cero advertencias de longitud tras compactar metadata dinamica sin cambiar H1 ni nombres oficiales.
 
 ---
 

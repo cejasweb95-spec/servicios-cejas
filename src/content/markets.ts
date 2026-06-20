@@ -12,7 +12,7 @@ export const markets = marketSchema.array().parse([
     currency: "COP",
     whatsappTargetId: "colombia",
     description: l(
-      "Sede fisica en Cali y servicios del catalogo Colombia.",
+      "Sede física en Cali y servicios del catálogo de Colombia.",
       "Physical studio in Cali and services from the Colombia catalog.",
     ),
   },
@@ -26,7 +26,7 @@ export const markets = marketSchema.array().parse([
     whatsappTargetId: "europa",
     description: l(
       "Jornadas por disponibilidad y servicios con precios en euros.",
-      "Availability-based sessions and services priced in euros.",
+      "Appointments subject to availability, with services priced in euros.",
     ),
   },
   {
@@ -39,7 +39,7 @@ export const markets = marketSchema.array().parse([
     whatsappTargetId: "europa",
     description: l(
       "Jornadas por disponibilidad en Ginebra y servicios confirmados en CHF.",
-      "Availability-based sessions in Geneva and confirmed CHF services.",
+      "Appointments in Geneva subject to availability, with confirmed CHF services.",
     ),
   },
 ] satisfies Market[]);

@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import Image from "next/image";
 
 import { ServiceCard } from "@/components/domain/service-card";
 import { WhatsAppCTA } from "@/components/domain/whatsapp-cta";
@@ -17,6 +18,7 @@ import {
   getServiceBySlug,
   getServiceCategories,
   getServiceCategoryById,
+  getServiceCategoryMediaAsset,
   getServicesByMarket,
   getWhatsAppTarget,
 } from "@/lib/content/queries";
@@ -27,6 +29,7 @@ import {
   buildServicePath,
   serviceBasePath,
 } from "@/lib/routes/service-routes";
+import { aftercareBasePath } from "@/lib/routes/static-routes";
 import {
   buildBreadcrumbListJsonLd,
   buildServiceJsonLd,
@@ -39,8 +42,12 @@ type ServiceDetailCopy = {
   assessmentDescription: string;
   assessmentLabel: string;
   assessmentTitle: string;
+  afterCareLabel: string;
   backToMarketLabel: string;
+  beforeCareLabel: string;
   breadcrumbsLabel: string;
+  careDescription: string;
+  careTitle: string;
   categoryLabel: string;
   contactLabel: string;
   descriptionTitle: string;
@@ -107,6 +114,7 @@ export function ServiceDetailPage({
     getServiceCategoryById(service.categoryId, locale) ??
     getServiceCategories(locale)[0];
   const whatsappTarget = getWhatsAppTarget(market.whatsappTargetId, locale);
+  const serviceImage = getServiceCategoryMediaAsset(service.categoryId, locale);
 
   if (!whatsappTarget) {
     notFound();
@@ -125,6 +133,12 @@ export function ServiceDetailPage({
       (item) => item.id !== service.id && item.categoryId === service.categoryId,
     )
     .slice(0, 3);
+  const careAnchors =
+    service.careGuide === "micropigmentation-brows"
+      ? { before: "before-brows", after: "after-brows" }
+      : service.careGuide === "micropigmentation-lips"
+        ? { before: "before-lips", after: "after-lips" }
+        : null;
   const dataItems = [
     { label: copy.priceLabel, value: formattedOffer.price },
     { label: copy.appointmentDurationLabel, value: formattedOffer.duration },
@@ -143,6 +157,7 @@ export function ServiceDetailPage({
   const serviceJsonLd = buildServiceJsonLd({
     name: service.name,
     description: service.longDescription ?? service.shortDescription,
+    image: serviceImage?.publicPath,
     areaServed: market.name,
     price: offer.price.amount,
     priceCurrency: offer.price.currency,
@@ -169,7 +184,24 @@ export function ServiceDetailPage({
             </ButtonLink>
           </>
         }
-        aside={<ResponsiveDataList items={dataItems} />}
+        aside={
+          <div className="grid gap-4">
+            {serviceImage?.publicPath && serviceImage.width && serviceImage.height ? (
+              <div className="relative aspect-[4/3] overflow-hidden rounded-lg border border-border bg-surface">
+                <Image
+                  alt={serviceImage.alt}
+                  className="h-full w-full object-cover"
+                  height={serviceImage.height}
+                  priority
+                  sizes="(min-width: 1024px) 34vw, 92vw"
+                  src={serviceImage.publicPath}
+                  width={serviceImage.width}
+                />
+              </div>
+            ) : null}
+            <ResponsiveDataList items={dataItems} />
+          </div>
+        }
         description={service.shortDescription}
         eyebrow={`${copy.heroEyebrow} · ${category.name}`}
         title={title}
@@ -228,6 +260,41 @@ export function ServiceDetailPage({
               </aside>
             </Reveal>
           </div>
+
+          {careAnchors ? (
+            <Reveal>
+              <section
+                aria-labelledby="service-care-guide"
+                className="grid gap-5 border-y border-border py-7 md:grid-cols-[1fr_auto] md:items-center"
+              >
+                <div className="max-w-3xl">
+                  <h2
+                    className="font-display text-3xl leading-tight text-foreground"
+                    id="service-care-guide"
+                  >
+                    {copy.careTitle}
+                  </h2>
+                  <p className="mt-3 text-sm leading-7 text-muted-foreground">
+                    {copy.careDescription}
+                  </p>
+                </div>
+                <div className="flex flex-wrap gap-3">
+                  <ButtonLink
+                    href={`${aftercareBasePath[locale]}#${careAnchors.before}`}
+                    variant="outline"
+                  >
+                    {copy.beforeCareLabel}
+                  </ButtonLink>
+                  <ButtonLink
+                    href={`${aftercareBasePath[locale]}#${careAnchors.after}`}
+                    variant="outline"
+                  >
+                    {copy.afterCareLabel}
+                  </ButtonLink>
+                </div>
+              </section>
+            </Reveal>
+          ) : null}
 
           <section
             aria-labelledby="free-assessment"

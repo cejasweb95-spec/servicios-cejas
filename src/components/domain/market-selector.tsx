@@ -1,5 +1,6 @@
 "use client";
 
+import { CountryFlag } from "@/components/primitives/country-flag";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "@/i18n/navigation";
 import type { MarketId } from "@/lib/content/schema";
@@ -44,7 +45,10 @@ export function MarketSelector({ activeId, items, label }: MarketSelectorProps) 
             ) : null}
             <span className="relative z-10 block">
               <span className="flex items-start justify-between gap-3">
-                <span className="font-semibold text-foreground">{item.name}</span>
+                <span className="flex items-center gap-2 font-semibold text-foreground">
+                  <CountryFlag market={item.id} />
+                  {item.name}
+                </span>
                 <Badge variant="outline">{item.currency}</Badge>
               </span>
               <span className="mt-2 block text-sm leading-6 text-muted-foreground">

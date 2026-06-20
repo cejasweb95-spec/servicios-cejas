@@ -11,6 +11,7 @@ import {
 } from "@/lib/content/queries";
 import { buildCoursePath, courseBasePath } from "@/lib/routes/course-routes";
 import { buildPageMetadata } from "@/lib/seo/build-page-metadata";
+import { fitMetadataTitle } from "@/lib/seo/fit-metadata-title";
 
 type CoursePageProps = {
   params: Promise<{ locale: string; course: string }>;
@@ -43,7 +44,7 @@ export async function generateMetadata({
 
   return buildPageMetadata({
     locale,
-    title: t("metaTitle", { course: course.name }),
+    title: fitMetadataTitle(t("metaTitle", { course: course.name })),
     description: t("metaDescription", { course: course.name }),
     path: buildCoursePath(locale, course.slug),
     alternates: {

@@ -39,8 +39,8 @@ export const cookieCategories = cookieCategorySchema.array().parse([
     enabledByDefault: false,
     title: l("Marketing", "Marketing"),
     description: l(
-      "No se usan en V1. Quedan bloqueadas hasta nueva decisión.",
-      "Not used in V1. They remain blocked until a future decision.",
+      "Actualmente no se utilizan cookies de marketing.",
+      "Marketing cookies are not currently used.",
     ),
   },
 ] satisfies CookieCategory[]);

@@ -1,34 +1,34 @@
 {
   "Meta": {
     "title": "Cejas Internacionales | Micropigmentation and training",
-    "description": "Cejas Internacionales offers micropigmentation, specialized beauty services and professional training from Cali, with international sessions by availability in Colombia, Spain and Switzerland."
+    "description": "Cejas Internacionales offers micropigmentation, specialized beauty services and professional training from Cali, with appointments in selected cities across Colombia, Spain and Switzerland."
   },
   "Home": {
     "heroEyebrow": "Cejas Internacionales",
-    "title": "Specialized beauty from Cali with international sessions",
+    "title": "Specialized beauty from Cali, with international appointments",
     "intro": "Micropigmentation, brows, lips, lashes and professional training organized by market for Colombia, Spain/Europe and Switzerland.",
     "primaryCta": "Contact me",
     "secondaryCta": "View services",
     "marketTitle": "Choose the right market before comparing",
-    "marketDescription": "Each market keeps its own currency, catalog and WhatsApp number. The physical studio is in Cali; Spain and Switzerland work through upcoming sessions by availability.",
+    "marketDescription": "Each market has its own currency, catalog and WhatsApp number. The studio is in Cali, with appointments in Spain and Switzerland subject to availability.",
     "marketSelectorLabel": "Cejas Internacionales markets",
     "marketCta": "View services",
     "featuredTitle": "Featured services by market",
-    "featuredDescription": "The home page does not mix prices or availability. First choose the market, then view services, timings, PDFs and the correct contact.",
+    "featuredDescription": "Choose your market to view services, prices, appointment times, catalogs and the appropriate WhatsApp contact.",
     "featuredEmpty": "Services in preparation",
     "assessmentTitle": "Free photo assessment",
-    "assessmentCopy": "You can send a photo on WhatsApp to get orientation before booking. Appointments and reservations are handled only through WhatsApp.",
-    "journeysTitle": "Cali studio and international sessions",
-    "journeysDescription": "These locations are documented as upcoming sessions by availability, not as fixed studios outside Colombia.",
-    "journeysLinkLabel": "View session map",
+    "assessmentCopy": "Send a photo on WhatsApp to receive guidance before booking. Appointments and reservations are handled exclusively through WhatsApp.",
+    "journeysTitle": "Cali studio and international appointments",
+    "journeysDescription": "Appointments in these cities are subject to availability; they are not permanent studios outside Colombia.",
+    "journeysLinkLabel": "View locations map",
     "studioLabel": "Physical studio",
-    "journeyLabel": "Session by availability",
-    "resultsTitle": "Real results, no empty promises",
-    "resultsCopy": "The website will use the real photos the client still has. The goal is to show technique, healed work and trust without inventing testimonials or guarantees.",
+    "journeyLabel": "Appointments subject to availability",
+    "resultsTitle": "Real results that inspire confidence",
+    "resultsCopy": "Explore real brow, lip and eye-area work, including healed results, without stock imagery or guaranteed-outcome claims.",
     "aboutTitle": "Xiomara, specialist and trainer",
-    "aboutCopy": "Cejas Internacionales brings together specialized beauty services, professional training and sessions in different cities, with the physical and legal studio located in Cali.",
+    "aboutCopy": "Cejas Internacionales brings together specialized beauty services, professional training and appointments in selected cities, with its only physical and legal studio in Cali.",
     "coursesTitle": "Training and masterclasses",
-    "coursesDescription": "Courses with downloadable PDFs, confirmed duration and a WhatsApp CTA to ask about the next date or next city session.",
+    "coursesDescription": "Courses with downloadable PDFs, confirmed duration and direct WhatsApp enquiries for the next date or visit to your city.",
     "courseDownloadLabel": "Download PDF",
     "coursesCta": "Ask for next date",
     "coursesLinkLabel": "View training",
@@ -45,7 +45,7 @@
     "homeLabel": "Home",
     "eyebrow": "Services by market",
     "title": "Choose a market to view services, prices and timing",
-    "description": "Each catalog keeps its own currency, availability and WhatsApp contact. Colombia uses the physical studio in Cali; Spain/Europe and Switzerland work through upcoming sessions by availability.",
+    "description": "Each catalog has its own currency, availability and WhatsApp contact. Colombia is served from the Cali studio; appointments in Spain/Europe and Switzerland are subject to availability.",
     "selectorLabel": "Select a market"
   },
   "MarketServices": {
@@ -60,7 +60,7 @@
     "serviceDetailLabel": "View details",
     "allMarketsLabel": "View all markets",
     "catalogBannerTitle": "Official market catalog",
-    "catalogBannerDescription": "The download appears only once to avoid repeating the PDF on every service. The services below are filtered for this market.",
+    "catalogBannerDescription": "Browse the services available in this market and download the official catalog with the corresponding prices.",
     "catalogDownloadLabel": "Download catalog PDF",
     "contactLabel": "Contact me",
     "emptyTitle": "No services published",
@@ -73,7 +73,7 @@
     "homeLabel": "Home",
     "eyebrow": "Downloads",
     "title": "Official catalogs and PDFs",
-    "description": "Catalogs are grouped by market and training PDFs are downloaded from a single section to keep the website clear and easy to scan.",
+    "description": "Find the official catalog for each market and the complete training programs available to download.",
     "catalogLabel": "Market catalogs",
     "courseLabel": "Training programs",
     "actionLabel": "Download PDF"
@@ -85,7 +85,7 @@
     "homeLabel": "Home",
     "eyebrow": "Training",
     "title": "Professional courses and masterclasses",
-    "description": "Programs transcribed from the official PDFs. Dates, spots and cities are handled through WhatsApp so unconfirmed details are not published.",
+    "description": "Official training programs with confirmed syllabuses and durations. Ask on WhatsApp about upcoming dates, places and cities.",
     "courseDetailLabel": "View syllabus",
     "downloadLabel": "Download PDF",
     "professionalTitle": "Professional courses",
@@ -96,41 +96,41 @@
   },
   "Journeys": {
     "metaTitle": "Appointments by city | Cejas Internacionales",
-    "metaDescription": "View the physical studio in Cali and upcoming sessions by availability in Colombia, Spain and Switzerland. Booking is handled only by WhatsApp.",
+    "metaDescription": "View the Cali studio and appointments in selected cities across Colombia, Spain and Switzerland. Availability and booking are confirmed through WhatsApp.",
     "breadcrumbsLabel": "Breadcrumbs",
     "homeLabel": "Home",
-    "eyebrow": "International sessions",
-    "title": "Cali studio and upcoming appointments by city",
-    "description": "Cejas Internacionales has its physical studio and legal address in Cali, Colombia. Restrepo, Madrid, Palma de Mallorca, Puerto de Sagunto and Geneva are shown as upcoming sessions by availability, without publishing unconfirmed dates.",
-    "primaryCta": "View session map",
+    "eyebrow": "International appointments",
+    "title": "Cali studio and appointments in selected cities",
+    "description": "Cejas Internacionales has its physical studio and legal address in Cali, Colombia. Appointments in Restrepo, Madrid, Palma de Mallorca, Puerto de Sagunto and Geneva are scheduled subject to availability; ask for dates on WhatsApp.",
+    "primaryCta": "View locations map",
     "mapTitle": "Availability map",
-    "mapAriaLabel": "Editorial map showing the physical studio in Cali and cities for upcoming sessions by availability.",
+    "mapAriaLabel": "Editorial map showing the physical studio in Cali and cities where appointments are available by prior arrangement.",
     "listTitle": "Confirmed locations",
     "selectedLocationLabel": "Selected location details",
     "selectLocationLabel": "Select location",
     "physicalStudioLabel": "Physical studio",
-    "physicalStudioDescription": "The physical studio and legal address for the website are only in Cali, Valle del Cauca, Colombia.",
-    "journeyLabel": "Session by availability",
+    "physicalStudioDescription": "The only physical studio and legal address are in Cali, Valle del Cauca, Colombia.",
+    "journeyLabel": "Appointments subject to availability",
     "addressLabel": "Address",
     "contactLabel": "Contact me",
-    "availabilityTitle": "How city sessions are confirmed",
-    "availabilityDescription": "The cities are ready to show date, spots and status once the client confirms them. Until then, enquiries and reservations are handled by WhatsApp.",
+    "availabilityTitle": "How city appointments are confirmed",
+    "availabilityDescription": "Dates and places are announced once confirmed. In the meantime, you can check availability and book through WhatsApp.",
     "noFixedStudioTitle": "No fixed studios outside Cali",
-    "noFixedStudioDescription": "Spain, Switzerland and Restrepo are listed as session cities. They should not be read as offices, salons or permanent locations.",
-    "whatsappMessage": "Hello, I would like information about sessions or services in {location}. I would like to check availability by WhatsApp."
+    "noFixedStudioDescription": "Spain, Switzerland and Restrepo are appointment locations, not offices, salons or permanent studios.",
+    "whatsappMessage": "Hello, I would like information about appointments or services in {location}. I would like to check availability by WhatsApp."
   },
   "ResultsPage": {
     "metaTitle": "Real results | Cejas Internacionales",
-    "metaDescription": "A first gallery of real available results and healed work from Cejas Internacionales, without invented promises or testimonials.",
+    "metaDescription": "A gallery of real Cejas Internacionales results and healed work across brows, lips and the eye area.",
     "breadcrumbsLabel": "Breadcrumbs",
     "homeLabel": "Home",
     "eyebrow": "Real results",
-    "title": "Available Cejas Internacionales results",
-    "description": "The website uses the real material the client still has: brow and lip results plus professional brand photography. No stock imagery or guaranteed-result claims.",
+    "title": "Real results by Cejas Internacionales",
+    "description": "Real brow, lip and eye-area work by Cejas Internacionales, including procedure results and healed outcomes.",
     "contactLabel": "Contact me",
     "healingLabel": "Healed and real work",
-    "galleryTitle": "A trust-focused gallery base",
-    "galleryNote": "This first version uses confirmed imagery and keeps the section ready to expand when more optimized photos are available.",
+    "galleryTitle": "Details that inspire confidence",
+    "galleryNote": "Open each image to examine the finish, definition and available results in greater detail.",
     "openResultLabel": "Open result",
     "closeLightboxLabel": "Close gallery",
     "previousResultLabel": "Previous",
@@ -140,18 +140,18 @@
   },
   "AboutPage": {
     "metaTitle": "About Xiomara | Cejas Internacionales",
-    "metaDescription": "Meet Xiomara Andrea Sanchez Norena, micropigmentation specialist, trainer and founder of Cejas Internacionales.",
+    "metaDescription": "Meet Xiomara Andrea Sánchez Noreña, micropigmentation specialist, trainer and founder of Cejas Internacionales.",
     "breadcrumbsLabel": "Breadcrumbs",
     "homeLabel": "Home",
     "eyebrow": "About Xiomara",
-    "title": "Xiomara Andrea Sanchez Norena",
-    "description": "Micropigmentation specialist, technician and trainer, with a physical studio in Cali and availability-based sessions in different cities.",
+    "title": "Xiomara Andrea Sánchez Noreña",
+    "description": "Micropigmentation specialist, technician and trainer, with a physical studio in Cali and appointments in selected cities.",
     "contactLabel": "Contact me",
     "trajectoryTitle": "International trajectory with a Colombian studio",
-    "trajectoryText": "Cejas Internacionales keeps its physical studio in Cali and runs availability-based sessions in Restrepo, Madrid, Palma de Mallorca, Puerto de Sagunto and Geneva.",
+    "trajectoryText": "Cejas Internacionales is based in Cali and offers appointments, subject to availability, in Restrepo, Madrid, Palma de Mallorca, Puerto de Sagunto and Geneva.",
     "certificationTitle": "Professional training and continuous development",
     "bio": [
-      "I am Xiomara Andrea Sanchez Norena, a micropigmentation specialist with more than five years of professional experience helping clients enhance their natural beauty through precise, safe and personalized techniques.",
+      "I am Xiomara Andrea Sánchez Noreña, a micropigmentation specialist with more than five years of professional experience helping clients enhance their natural beauty through precise, safe and personalized techniques.",
       "Throughout my career I have carried out around 2,000 procedures in Colombia and Spain, continually refining my technique to deliver elegant, natural results adapted to each face.",
       "I also regularly take part in international sessions and events in different countries, which helps me stay up to date with the latest trends and techniques in the field."
     ],
@@ -180,6 +180,10 @@
     "noFormNote": "There is no booking form, online store, cart or checkout. Message the Colombia number or the Spain/Europe/Switzerland number depending on your city or market.",
     "emailLabel": "Official email",
     "addressLabel": "Physical and legal address",
+    "mapTitle": "Find the Cali studio",
+    "mapLoadLabel": "View the map",
+    "mapHint": "Tapping this will load Google Maps",
+    "mapDirectionsLabel": "Open in Google Maps",
     "socialLabel": "Social media"
   },
   "AftercarePage": {
@@ -194,6 +198,8 @@
     "afterTitle": "After the procedure",
     "browsLabel": "Brows",
     "lipsLabel": "Lips",
+    "beforeBrowsIntro": "Preparing the skin before brow micropigmentation supports pigment retention and helps reduce bleeding or sensitivity during the appointment.",
+    "beforeLipsIntro": "Preparing the lips correctly supports healing, comfort during the procedure and better pigment retention.",
     "contactLabel": "Ask on WhatsApp",
     "noteTitle": "Every case is confirmed on WhatsApp",
     "note": "These recommendations are based on official Cejas Internacionales content and do not replace medical advice. Always share allergies, pregnancy, breastfeeding, health conditions or medication before your appointment.",
@@ -278,16 +284,16 @@
       {
         "title": "Purpose of the site",
         "items": [
-          "The website provides information about specialized beauty services, micropigmentation, availability-based sessions, training and official downloads.",
+          "The website provides information about specialized beauty services, micropigmentation, appointments in selected cities, training and official downloads.",
           "Appointments and reservations are handled only through WhatsApp.",
-          "V1 does not include an online store, cart, checkout or booking form."
+          "The website does not include an online store, cart, online payment or booking form."
         ]
       },
       {
-        "title": "Studio and city sessions",
+        "title": "Studio and city appointments",
         "items": [
           "The published physical studio and legal address correspond only to Cali, Colombia.",
-          "Spain, Switzerland and other cities are shown as availability-based sessions, not permanent offices or studios.",
+          "Spain, Switzerland and other cities are listed for appointments by prior arrangement, not as permanent offices or studios.",
           "Prices, dates, spots and availability are confirmed through WhatsApp."
         ]
       },
@@ -296,7 +302,7 @@
         "items": [
           "The brand, texts, images, logos, PDFs and content belong to Cejas Internacionales or are used with authorization.",
           "The website may link to WhatsApp, Instagram, Facebook, TikTok or other external services under their own terms.",
-          "Information may be updated when services, sessions, prices or availability change."
+          "Information may be updated when services, appointments, prices or availability change."
         ]
       }
     ]
@@ -356,7 +362,7 @@
         "items": [
           "Necessary cookies support the basic operation of the website.",
           "Analytics cookies help measure visits and clicks only with consent.",
-          "V1 does not use remarketing or Google Ads unless a future decision changes this."
+          "Remarketing and Google Ads advertising are not currently used."
         ]
       },
       {
@@ -401,11 +407,15 @@
     "relatedTitle": "Related services",
     "relatedDescription": "Options from the same market and category to compare technique, price and timing.",
     "relatedActionLabel": "View details",
+    "careTitle": "Prepare beforehand and protect your result",
+    "careDescription": "Read the confirmed guidance for preparing the area before your appointment and caring for it after micropigmentation.",
+    "beforeCareLabel": "View pre-appointment preparation",
+    "afterCareLabel": "View aftercare guidance",
     "whatsappMessage": "Hello, I would like information about {service} in {market}. I would like to check availability by WhatsApp."
   },
   "CourseDetail": {
     "metaTitle": "{course} | Cejas Internacionales training",
-    "metaDescription": "View syllabus, duration, modalities, confirmed prices and downloadable PDF for {course}. Dates and spots are confirmed on WhatsApp.",
+    "metaDescription": "View the syllabus, duration, formats, prices and PDF for {course}. Ask about dates and places on WhatsApp.",
     "breadcrumbsLabel": "Breadcrumbs",
     "homeLabel": "Home",
     "trainingLabel": "Training",
@@ -418,7 +428,7 @@
     "includesTitle": "Includes",
     "pricingTitle": "Confirmed prices",
     "downloadTitle": "Official course PDF",
-    "downloadDescription": "The PDF downloads from the public files section. The key content is also visible in HTML for reading and SEO.",
+    "downloadDescription": "Download the official course program with its syllabus and the available training information.",
     "downloadLabel": "Download PDF",
     "nextDateTitle": "Dates and spots by WhatsApp",
     "nextDateDescription": "Dates and spots are not published without confirmation. Message on WhatsApp to ask about the next date, city or available modality.",
@@ -443,15 +453,15 @@
     "cookiesReject": "Reject",
     "cookiesConfigure": "Configure",
     "cookiesSave": "Save preferences",
-    "cookiesUnavailable": "This category is not available in V1."
+    "cookiesUnavailable": "This category is not currently used."
   },
   "WhatsApp": {
     "title": "Choose a WhatsApp contact",
-    "description": "You can message the Colombia number or the Spain number for Europe and Switzerland sessions.",
+    "description": "Message the Colombia number or the Spain number for appointments in Europe and Switzerland.",
     "close": "Close WhatsApp selector"
   },
   "Footer": {
-    "tagline": "Micropigmentation, specialized beauty services, professional training and international sessions by availability.",
+    "tagline": "Micropigmentation, specialized beauty services, professional training and international appointments by prior arrangement.",
     "legalData": "Legal details",
     "contact": "Contact",
     "social": "Social media",

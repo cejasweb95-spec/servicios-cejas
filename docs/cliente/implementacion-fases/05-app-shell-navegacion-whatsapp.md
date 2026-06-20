@@ -1,6 +1,8 @@
 # Fase 05 - App shell, navegacion, WhatsApp e i18n
 
-Estado: En progreso - header, footer, selector de idioma y WhatsApp chooser base implementados el 18/06/2026.
+Estado: Completada - shell global y pase quirurgico responsive/a11y validados el 19/06/2026.
+
+Nota 19/06/2026: header desktop depurado con estado activo, menu movil y selector ES/EN con targets de 44 px, footer con enlaces tactiles, telefonos formateados y `WhatsAppChooser` corregido. Dialog/Sheet reservan espacio para una X de 44 px, admiten texto largo, respetan altura movil y quedan por encima del banner de cookies.
 
 Objetivo: crear la estructura global de la web: header, menu movil, footer, cambio de idioma, chooser de WhatsApp, rutas principales y estados de navegacion.
 
@@ -58,6 +60,7 @@ src/lib/whatsapp/
 - [x] Jornadas
 - [x] Resultados
 - [x] Sobre Xiomara
+- [x] Cuidados
 - [x] Contacto
 - [x] Descargas
 
@@ -71,6 +74,7 @@ src/lib/whatsapp/
 - [x] Appointments by city
 - [x] Results
 - [x] About Xiomara
+- [x] Aftercare
 - [x] Contact
 - [x] Downloads
 
@@ -102,7 +106,7 @@ src/lib/whatsapp/
 - [x] TikTok.
 - [x] Enlaces a descargas.
 - [x] Enlaces legales.
-- [ ] Enlace para cambiar preferencias de cookies.
+- [x] Enlace para cambiar preferencias de cookies.
 - [x] No crear sedes en Espana ni Suiza.
 
 ---
@@ -119,6 +123,10 @@ src/lib/whatsapp/
 - [x] Cierra con Escape.
 - [x] Cierra con boton.
 - [x] Focus vuelve al disparador.
+- [x] X separada de titulo/descripcion con espacio reservado estable.
+- [x] Opciones de 64 px, wrapping seguro e iconos sin solape en 390/430.
+- [x] Numeros visibles formateados; href conserva E.164.
+- [x] Dialog queda por encima del banner de cookies.
 
 Comportamiento por contexto:
 
@@ -126,8 +134,8 @@ Comportamiento por contexto:
 - [x] Pagina Colombia: Colombia destacado o directo Colombia.
 - [x] Pagina Espana/Europa: directo Espana/Europa.
 - [x] Pagina Suiza: directo Espana/Europa/Suiza.
-- [ ] Curso: chooser salvo si se define mercado.
-- [ ] Contacto: dos opciones visibles.
+- [x] Curso: chooser salvo si se define mercado.
+- [x] Contacto: dos opciones visibles.
 
 ---
 
@@ -154,31 +162,31 @@ npm run test:e2e
 
 Playwright:
 
-- [ ] Desktop: abrir menu principal.
+- [x] Desktop: navegacion principal visible; no necesita menu desplegable.
 - [x] Mobile 390: abrir/cerrar menu.
-- [ ] Tab keyboard por header.
+- [x] Tab keyboard por header.
 - [x] Abrir WhatsApp chooser.
 - [x] Seleccionar Colombia.
 - [x] Seleccionar Espana/Europa/Suiza.
 - [x] Cambiar ES -> EN.
-- [ ] Cambiar EN -> ES.
-- [ ] Footer links no son 404.
+- [x] Cambiar EN -> ES.
+- [x] Footer links no son 404.
 
 ---
 
 ## No avanzar si
 
-- [ ] WhatsApp esta hardcodeado en varios componentes.
-- [ ] Header o footer mezclan idiomas.
-- [ ] Menu movil no es accesible.
-- [ ] Se crea direccion de Espana/Suiza.
+- [x] Validado: WhatsApp no esta hardcodeado en varios componentes.
+- [x] Validado: header y footer no mezclan idiomas.
+- [x] Validado: menu movil es accesible.
+- [x] Validado: no se crea direccion de Espana/Suiza.
 
 ---
 
 ## Done cuando
 
-- [ ] Shell global completo.
-- [ ] WhatsApp centralizado.
-- [ ] Navegacion ES/EN lista.
-- [ ] QA de header/footer/menu/chooser pasa.
-- [ ] Fase 05 marcada en `CHECKLIST-MAESTRA.md`.
+- [x] Shell global completo.
+- [x] WhatsApp centralizado.
+- [x] Navegacion ES/EN lista.
+- [x] QA de header/footer/menu/chooser pasa.
+- [x] Fase 05 marcada en `CHECKLIST-MAESTRA.md`.

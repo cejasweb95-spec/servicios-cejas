@@ -1,6 +1,8 @@
 # Fase 08 - Home editorial y conversion
 
-Estado: Completa - implementada y validada el 18/06/2026.
+Estado: Completa - implementada y validada; pase premium aplicado el 19/06/2026.
+
+Nota 19/06/2026: hero con entrada escalonada y parallax sutil, mapa mundial interactivo integrado, contenido critico visible sin JS, header desktop depurado y selector de idioma mejorado. Inicio se resuelve con el logo y Descargas permanece en movil/footer para reducir ruido visual en desktop.
 
 Objetivo: construir una home elegante, comercial y rastreable, que comunique Cejas Internacionales, Xiomara, mercados, servicios, jornadas, resultados, formaciones y contacto sin convertirse en una landing generica.
 

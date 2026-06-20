@@ -7,7 +7,7 @@ export const downloads = downloadSchema.array().parse([
     id: "catalogo-colombia-cop",
     type: "catalog",
     marketId: "colombia",
-    title: l("Catalogo Colombia", "Colombia catalog"),
+    title: l("Catálogo de Colombia", "Colombia catalog"),
     description: l(
       "PDF oficial con servicios y precios en pesos colombianos.",
       "Official PDF with services and prices in Colombian pesos.",
@@ -20,7 +20,7 @@ export const downloads = downloadSchema.array().parse([
     id: "catalogo-espana-eur",
     type: "catalog",
     marketId: "espana-europa",
-    title: l("Catalogo España / Europa", "Spain / Europe catalog"),
+    title: l("Catálogo de España / Europa", "Spain / Europe catalog"),
     description: l(
       "PDF oficial con servicios y precios en euros.",
       "Official PDF with services and prices in euros.",
@@ -33,7 +33,7 @@ export const downloads = downloadSchema.array().parse([
     id: "catalogo-suiza-chf",
     type: "catalog",
     marketId: "suiza",
-    title: l("Catalogo Suiza", "Switzerland catalog"),
+    title: l("Catálogo de Suiza", "Switzerland catalog"),
     description: l(
       "PDF oficial con servicios y precios confirmados en francos suizos.",
       "Official PDF with confirmed services and prices in Swiss francs.",
@@ -47,11 +47,11 @@ export const downloads = downloadSchema.array().parse([
     type: "course_pdf",
     courseId: "curso-micropigmentacion-cejas",
     title: l(
-      "PDF curso profesional de micropigmentacion de cejas",
+      "PDF del curso profesional de micropigmentación de cejas",
       "Professional brow micropigmentation course PDF",
     ),
     description: l(
-      "Programa descargable del curso profesional de micropigmentacion de cejas.",
+      "Programa descargable del curso profesional de micropigmentación de cejas.",
       "Downloadable program for the professional brow micropigmentation course.",
     ),
     publicPath: "/descargas/formaciones/curso-micropigmentacion-cejas.pdf",
@@ -64,11 +64,11 @@ export const downloads = downloadSchema.array().parse([
     type: "course_pdf",
     courseId: "curso-micropigmentacion-labios",
     title: l(
-      "PDF curso profesional de micropigmentacion y neutralizacion labial",
+      "PDF del curso profesional de micropigmentación y neutralización labial",
       "Professional lip micropigmentation and neutralization course PDF",
     ),
     description: l(
-      "Programa descargable del curso profesional de micropigmentacion y neutralizacion labial.",
+      "Programa descargable del curso profesional de micropigmentación y neutralización labial.",
       "Downloadable program for the professional lip micropigmentation and neutralization course.",
     ),
     publicPath: "/descargas/formaciones/curso-micropigmentacion-labios.pdf",

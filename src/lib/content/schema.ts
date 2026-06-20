@@ -88,6 +88,7 @@ export const serviceSchema = z.object({
   longDescription: localizedStringSchema.optional(),
   resultDuration: localizedStringSchema.optional(),
   sourceNote: localizedStringSchema.optional(),
+  careGuide: z.enum(["micropigmentation-brows", "micropigmentation-lips"]).optional(),
   featured: z.boolean().default(false),
   offers: z.array(serviceOfferSchema).min(1),
 });

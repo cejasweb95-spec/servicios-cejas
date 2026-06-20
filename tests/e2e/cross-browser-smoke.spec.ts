@@ -18,7 +18,20 @@ const criticalRoutes = [
   "/es/formaciones",
   "/es/jornadas",
   "/es/resultados",
+  "/es/cuidados",
   "/es/contacto",
+  "/es/aviso-legal",
+  "/es/servicios/colombia/efecto-polvo",
+  "/es/formaciones/curso-micropigmentacion-cejas",
+  "/en/services/colombia",
+  "/en/professional-training",
+  "/en/appointments-by-city",
+  "/en/results",
+  "/en/aftercare",
+  "/en/contact",
+  "/en/legal-notice",
+  "/en/services/colombia/powder-brows",
+  "/en/professional-training/brow-micropigmentation-course",
 ] as const;
 
 async function seedRejectedConsent(page: Page) {

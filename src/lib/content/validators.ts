@@ -6,7 +6,7 @@ import { events } from "@/content/events";
 import { legalPages } from "@/content/legal-pages";
 import { locations } from "@/content/locations";
 import { markets } from "@/content/markets";
-import { mediaAssets } from "@/content/media";
+import { mediaAssets, serviceCategoryMediaIds } from "@/content/media";
 import { seoEntries } from "@/content/seo";
 import { serviceCategories } from "@/content/service-categories";
 import { services } from "@/content/services";
@@ -79,6 +79,16 @@ function assertReferences() {
   const locationIds = new Set(locations.map((location) => location.id));
   const whatsappTargetIds = new Set(whatsappTargets.map((target) => target.id));
 
+  for (const [categoryId, mediaId] of Object.entries(serviceCategoryMediaIds)) {
+    if (!categoryIds.has(categoryId)) {
+      throw new Error(`Unknown service category media key: ${categoryId}`);
+    }
+
+    if (!mediaIds.has(mediaId)) {
+      throw new Error(`Unknown service category media asset: ${mediaId}`);
+    }
+  }
+
   for (const market of markets) {
     if (!whatsappTargetIds.has(market.whatsappTargetId)) {
       throw new Error(`Market ${market.id} references missing WhatsApp target`);
@@ -92,6 +102,20 @@ function assertReferences() {
   for (const service of services) {
     if (!categoryIds.has(service.categoryId)) {
       throw new Error(`Service ${service.id} references missing category ${service.categoryId}`);
+    }
+
+    if (
+      service.careGuide === "micropigmentation-brows" &&
+      service.categoryId !== "micropigmentacion-cejas"
+    ) {
+      throw new Error(`Service ${service.id} has an invalid brow care guide`);
+    }
+
+    if (
+      service.careGuide === "micropigmentation-lips" &&
+      service.categoryId !== "labios"
+    ) {
+      throw new Error(`Service ${service.id} has an invalid lip care guide`);
     }
 
     for (const offer of service.offers) {

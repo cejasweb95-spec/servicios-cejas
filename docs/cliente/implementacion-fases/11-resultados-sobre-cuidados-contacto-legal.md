@@ -4,6 +4,8 @@ Estado: Completada para V1; revision legal profesional externa pendiente antes d
 
 Nota 19/06/2026: Resultados dispone de mosaico y lightbox accesible; Sobre Xiomara incorpora composicion editorial con una imagen real de certificaciones; Contacto, Cuidados y las paginas legales estan publicadas en ES/EN. Los componentes especificos que no aportaban reutilizacion real se resolvieron mediante primitives compartidos existentes.
 
+Pase premium 19/06/2026: Resultados incorpora reveal escalonado; Sobre Xiomara usa narrativa con entradas laterales y stats escalonadas; Cuidados y Contacto incorporan imagen real, stagger y microinteracciones con reduced motion.
+
 Objetivo: completar las paginas de confianza y soporte: galeria real, historia de Xiomara, cuidados, contacto, descargas legales y textos legales basicos segun funcionalidades reales.
 
 ---
@@ -91,6 +93,10 @@ Uso: reforzar confianza con contenido real, sin claims no confirmados y con acce
 
 - [x] Cuidados antes/despues de cejas si estan confirmados.
 - [x] Cuidados antes/despues de labios si estan confirmados.
+- [x] Introduccion contextual visible antes de la preparacion de cejas y labios.
+- [x] `Cuidados` / `Aftercare` visible en navegacion principal, movil y footer.
+- [x] Anclas estables `before-brows`, `before-lips`, `after-brows` y `after-lips`, compensadas para el header fijo.
+- [x] Enlaces internos desde cada detalle de micropigmentacion aplicable hacia su preparacion y cuidados posteriores.
 - [x] Redaccion clara, no medica.
 - [x] Aviso de resolver dudas por WhatsApp.
 - [x] No publicar contraindicaciones no confirmadas como si fueran politica oficial.

@@ -18,8 +18,10 @@ import { cn } from "@/lib/utils";
 
 type ResultImage = {
   alt: string;
+  height?: number;
   id: string;
   src: string;
+  width?: number;
 };
 
 type ResultMosaicCopy = {
@@ -80,9 +82,7 @@ export function ResultMosaic({ copy, images }: ResultMosaicProps) {
   }
 
   function closeLightbox() {
-    const trigger = triggerRefs.current[lastTriggerIndex.current ?? 0];
     setActiveIndex(null);
-    window.requestAnimationFrame(() => trigger?.focus());
   }
 
   return (
@@ -94,38 +94,41 @@ export function ResultMosaic({ copy, images }: ResultMosaicProps) {
         }
       }}
     >
-      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="gap-3 [column-fill:balance] columns-2 sm:gap-4 xl:columns-3 [&>*]:mb-3 sm:[&>*]:mb-4">
         {images.map((image, index) => (
           <DialogTrigger asChild key={image.id}>
             <motion.button
-              className={cn(
-                "group relative aspect-[4/5] overflow-hidden rounded-xl border border-border bg-surface text-left outline-none focus-visible:ring-3 focus-visible:ring-ring/40",
-                index === 0 && images.length > 1
-                  ? "sm:col-span-2 lg:row-span-2"
-                  : "",
-              )}
+              className="group relative block w-full break-inside-avoid overflow-hidden rounded-xl border border-border bg-surface text-left outline-none focus-visible:ring-3 focus-visible:ring-ring/40"
               data-slot="result-tile"
               onClick={() => openLightbox(index)}
               ref={(node) => {
                 triggerRefs.current[index] = node;
               }}
+              initial={shouldReduceMotion ? false : { opacity: 0, y: 14 }}
+              transition={{
+                delay: shouldReduceMotion ? 0 : Math.min(index * 0.03, 0.21),
+                duration: shouldReduceMotion ? 0 : 0.3,
+              }}
               type="button"
-              whileHover={shouldReduceMotion ? undefined : { y: -2 }}
-              whileTap={shouldReduceMotion ? undefined : { scale: 0.99 }}
+              viewport={{ once: true, margin: "-8%" }}
+              whileInView={{ opacity: 1, y: 0 }}
+              whileHover={shouldReduceMotion ? undefined : { y: -3 }}
+              whileTap={shouldReduceMotion ? undefined : { scale: 0.995 }}
             >
               <Image
                 alt={image.alt}
-                className="object-cover transition-transform duration-200 group-hover:scale-[1.025]"
-                fill
-                sizes={
-                  index === 0
-                    ? "(min-width: 1024px) 56vw, 92vw"
-                    : "(min-width: 1024px) 26vw, 46vw"
-                }
+                className="h-auto w-full object-cover transition-transform duration-300 motion-reduce:transition-none group-hover:scale-[1.03]"
+                height={image.height ?? 1000}
+                sizes="(min-width: 1280px) 22vw, (min-width: 640px) 30vw, 46vw"
                 src={image.src}
+                width={image.width ?? 800}
               />
-              <span className="absolute inset-x-0 bottom-0 flex items-center justify-between gap-3 bg-foreground/75 p-4 text-sm font-semibold text-background">
-                <span>{image.alt}</span>
+              <span
+                className={cn(
+                  "pointer-events-none absolute inset-x-0 bottom-0 flex translate-y-full items-center justify-between gap-3 bg-gradient-to-t from-foreground/90 via-foreground/60 to-transparent p-4 pt-10 text-sm font-semibold text-background opacity-0 transition duration-300 group-hover:translate-y-0 group-hover:opacity-100 group-focus-visible:translate-y-0 group-focus-visible:opacity-100 motion-reduce:transition-none",
+                )}
+              >
+                <span className="line-clamp-2">{image.alt}</span>
                 <Maximize2 aria-hidden="true" className="size-4 shrink-0" />
               </span>
               <span className="sr-only">
@@ -137,16 +140,20 @@ export function ResultMosaic({ copy, images }: ResultMosaicProps) {
       </div>
 
       <DialogContent
-        className="max-w-5xl gap-0 overflow-hidden p-0 sm:max-w-5xl"
+        className="max-w-3xl gap-0 overflow-hidden p-0 sm:max-w-3xl"
         closeLabel={copy.closeLabel}
+        onCloseAutoFocus={(event) => {
+          event.preventDefault();
+          triggerRefs.current[lastTriggerIndex.current ?? 0]?.focus();
+        }}
       >
         {activeImage ? (
-          <div className="grid gap-0 lg:grid-cols-[1fr_20rem]">
-            <div className="relative aspect-[4/5] min-h-[320px] bg-foreground sm:aspect-[5/4] lg:min-h-[620px]">
+          <div className="overflow-hidden rounded-xl">
+            <div className="relative flex max-h-[78dvh] min-h-[280px] items-center justify-center bg-foreground">
               <AnimatePresence mode="wait">
                 <motion.div
                   animate={{ opacity: 1 }}
-                  className="absolute inset-0"
+                  className="flex max-h-[78dvh] items-center justify-center"
                   exit={{ opacity: shouldReduceMotion ? 1 : 0 }}
                   initial={{ opacity: shouldReduceMotion ? 1 : 0 }}
                   key={activeImage.id}
@@ -154,34 +161,45 @@ export function ResultMosaic({ copy, images }: ResultMosaicProps) {
                 >
                   <Image
                     alt={activeImage.alt}
-                    className="object-contain"
-                    fill
+                    className="max-h-[78dvh] w-auto object-contain"
+                    height={activeImage.height ?? 1200}
                     sizes="(min-width: 1024px) 70vw, 92vw"
                     src={activeImage.src}
+                    width={activeImage.width ?? 900}
                   />
                 </motion.div>
               </AnimatePresence>
-            </div>
-            <div className="grid gap-5 p-5">
-              <DialogHeader>
-                <DialogTitle className="font-display text-2xl leading-tight">
-                  {activeImage.alt}
-                </DialogTitle>
-                <DialogDescription>{activeCount}</DialogDescription>
-              </DialogHeader>
               {images.length > 1 ? (
-                <div className="flex flex-wrap gap-2">
-                  <Button onClick={() => move(-1)} type="button" variant="outline">
-                    <ChevronLeft aria-hidden="true" data-icon="inline-start" />
-                    {copy.previousLabel}
+                <>
+                  <Button
+                    aria-label={copy.previousLabel}
+                    className="absolute left-3 top-1/2 -translate-y-1/2 bg-background/90 shadow-soft hover:bg-background"
+                    onClick={() => move(-1)}
+                    size="icon"
+                    type="button"
+                    variant="outline"
+                  >
+                    <ChevronLeft aria-hidden="true" />
                   </Button>
-                  <Button onClick={() => move(1)} type="button" variant="outline">
-                    {copy.nextLabel}
-                    <ChevronRight aria-hidden="true" data-icon="inline-end" />
+                  <Button
+                    aria-label={copy.nextLabel}
+                    className="absolute right-3 top-1/2 -translate-y-1/2 bg-background/90 shadow-soft hover:bg-background"
+                    onClick={() => move(1)}
+                    size="icon"
+                    type="button"
+                    variant="outline"
+                  >
+                    <ChevronRight aria-hidden="true" />
                   </Button>
-                </div>
+                </>
               ) : null}
             </div>
+            <DialogHeader className="gap-1 bg-popover px-5 py-4">
+              <DialogTitle className="font-display text-lg leading-tight sm:text-xl">
+                {activeImage.alt}
+              </DialogTitle>
+              <DialogDescription>{activeCount}</DialogDescription>
+            </DialogHeader>
           </div>
         ) : null}
       </DialogContent>

@@ -13,6 +13,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { buildWhatsAppHref } from "@/lib/whatsapp/build-whatsapp-url";
+import { formatPhoneNumber } from "@/lib/format/phone";
 
 type WhatsAppChooserTarget = {
   id: string;
@@ -53,11 +54,11 @@ export function WhatsAppChooser({
           <DialogTitle>{title}</DialogTitle>
           <DialogDescription>{description}</DialogDescription>
         </DialogHeader>
-        <div className="grid gap-3">
+        <div className="grid gap-3" data-slot="whatsapp-options">
           {targets.map((target) => (
             <Button
               asChild
-              className="min-h-14 w-full justify-start whitespace-normal rounded-lg px-4 py-3"
+              className="min-h-16 w-full justify-start gap-3 whitespace-normal rounded-lg px-4 py-3 text-left"
               key={target.id}
               variant={target.id === "colombia" ? "outline" : "whatsapp"}
             >
@@ -67,13 +68,17 @@ export function WhatsAppChooser({
                 target="_blank"
               >
                 <MessageCircle aria-hidden="true" data-icon="inline-start" />
-                <span className="flex flex-col items-start gap-0.5">
-                  <span>{target.label}</span>
-                  <span className="text-xs font-medium opacity-80">
-                    +{target.phoneE164}
+                <span className="flex min-w-0 flex-1 flex-col items-start gap-0.5">
+                  <span className="break-words leading-5">{target.label}</span>
+                  <span className="text-sm font-medium opacity-80">
+                    {formatPhoneNumber(target.phoneE164)}
                   </span>
                 </span>
-                <ExternalLink aria-hidden="true" data-icon="inline-end" />
+                <ExternalLink
+                  aria-hidden="true"
+                  className="ml-auto shrink-0"
+                  data-icon="inline-end"
+                />
               </a>
             </Button>
           ))}

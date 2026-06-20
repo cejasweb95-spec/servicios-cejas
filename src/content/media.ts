@@ -42,11 +42,23 @@ export const mediaAssets = mediaAssetSchema.array().parse([
     sourcePath: "docs/cliente/assets-extraidos/xiomara-foto-profesional.jpg",
     publicPath: "/images/xiomara/xiomara-foto-profesional.jpg",
     alt: l(
-      "Xiomara Sanchez, especialista de Cejas Internacionales",
-      "Xiomara Sanchez, Cejas Internacionales specialist",
+      "Xiomara Sánchez, especialista de Cejas Internacionales",
+      "Xiomara Sánchez, Cejas Internacionales specialist",
     ),
     width: 1339,
     height: 1867,
+  },
+  {
+    id: "xiomara-retrato-rosa",
+    type: "photo",
+    sourcePath: "docs/cliente/assets-extraidos/xiomara-foto-profesional.jpg",
+    publicPath: "/images/xiomara/xiomara-retrato-rosa.jpg",
+    alt: l(
+      "Xiomara Sánchez, especialista de Cejas Internacionales, sobre fondo claro",
+      "Xiomara Sánchez, Cejas Internacionales specialist, on a light background",
+    ),
+    width: 1200,
+    height: 1673,
   },
   {
     id: "xiomara-hero-escritorio",
@@ -68,8 +80,8 @@ export const mediaAssets = mediaAssetSchema.array().parse([
       "docs/cliente/assets-extraidos/xiomara-sesion-profesional/xiomara-sesion-profesional-13.jpeg",
     publicPath: "/images/formaciones/xiomara-formadora-tablet.jpg",
     alt: l(
-      "Xiomara Sanchez preparando material de formacion profesional con una tableta",
-      "Xiomara Sanchez preparing professional training material with a tablet",
+      "Xiomara Sánchez preparando material de formación profesional con una tableta",
+      "Xiomara Sánchez preparing professional training material with a tablet",
     ),
     width: 1050,
     height: 1400,
@@ -94,7 +106,7 @@ export const mediaAssets = mediaAssetSchema.array().parse([
       "docs/cliente/assets-extraidos/xiomara-sesion-profesional/xiomara-sesion-profesional-08.jpeg",
     publicPath: "/images/formaciones/curso-cejas-pigmentos.jpg",
     alt: l(
-      "Xiomara mostrando pigmentos utilizados en la formacion profesional de cejas",
+      "Xiomara mostrando pigmentos utilizados en la formación profesional de cejas",
       "Xiomara presenting pigments used in professional brow training",
     ),
     width: 1200,
@@ -133,7 +145,7 @@ export const mediaAssets = mediaAssetSchema.array().parse([
       "docs/cliente/assets-extraidos/formaciones-pdfs/master-class-lifting/page-02-image-01.jpg",
     publicPath: "/images/formaciones/curso-lifting-pestanas.jpg",
     alt: l(
-      "Detalle de pestanas utilizado en la Master Class de lifting",
+      "Detalle de pestañas utilizado en la Master Class de lifting",
       "Lash detail used in the lash lift masterclass",
     ),
     width: 992,
@@ -146,7 +158,7 @@ export const mediaAssets = mediaAssetSchema.array().parse([
       "docs/cliente/assets-extraidos/fotos-instagram/cejas/cejas-10.jpeg",
     publicPath: "/images/formaciones/curso-cejas-henna.jpg",
     alt: l(
-      "Detalle de diseno de cejas utilizado en la Master Class de henna",
+      "Detalle de diseño de cejas utilizado en la Master Class de henna",
       "Brow design detail used in the henna brow masterclass",
     ),
     width: 992,
@@ -158,7 +170,7 @@ export const mediaAssets = mediaAssetSchema.array().parse([
     sourcePath: "docs/cliente/assets-extraidos/xiomara-uniforme-dermografo.jpg",
     publicPath: "/images/xiomara/xiomara-uniforme-dermografo.jpg",
     alt: l(
-      "Xiomara con uniforme de Cejas Internacionales y dermografo",
+      "Xiomara con uniforme de Cejas Internacionales y dermógrafo",
       "Xiomara wearing the Cejas Internacionales uniform and holding a dermograph",
     ),
     width: 576,
@@ -190,7 +202,7 @@ export const mediaAssets = mediaAssetSchema.array().parse([
   },
   {
     id: "sets-pestanas-panel",
-    type: "gallery",
+    type: "photo",
     sourcePath: "docs/cliente/assets-extraidos/sets-pestanas-panel.jpg",
     publicPath: "/images/servicios/sets-pestanas-panel.jpg",
     alt: l(
@@ -263,14 +275,14 @@ export const mediaAssets = mediaAssetSchema.array().parse([
   {
     id: "result-cejas-04",
     type: "gallery",
-    sourcePath: "docs/cliente/assets-extraidos/fotos-instagram/cejas/cejas-11.jpeg",
+    sourcePath: "docs/cliente/assets-extraidos/fotos-trabajos/es_pag8_2.jpg",
     publicPath: "/images/resultados/result-cejas-04.jpg",
     alt: l(
-      "Detalle de cejas con técnica de micropigmentación definida",
-      "Brow detail with a defined micropigmentation technique",
+      "Resultado de cejas y labios micropigmentados con efecto natural",
+      "Brow and lip micropigmentation result with a natural effect",
     ),
-    width: 1000,
-    height: 1778,
+    width: 630,
+    height: 595,
   },
   {
     id: "result-mirada-01",
@@ -287,13 +299,151 @@ export const mediaAssets = mediaAssetSchema.array().parse([
   {
     id: "result-pestanas-01",
     type: "gallery",
-    sourcePath: "docs/cliente/assets-extraidos/fotos-instagram/mirada/mirada-03.jpeg",
+    sourcePath: "docs/cliente/assets-extraidos/fotos-trabajos/es_pag7_1.jpg",
     publicPath: "/images/resultados/result-pestanas-01.jpg",
     alt: l(
-      "Resultado de lifting de pestañas con curvatura natural",
-      "Lash lift result with a natural curl",
+      "Resultado de micropigmentación labial con tono definido",
+      "Lip micropigmentation result with a defined tone",
+    ),
+    width: 462,
+    height: 611,
+  },
+  {
+    id: "mercado-colombia",
+    type: "photo",
+    sourcePath:
+      "docs/cliente/assets-extraidos/xiomara-sesion-profesional/xiomara-sesion-profesional-11.jpeg",
+    publicPath: "/images/mercados/mercado-colombia.jpg",
+    alt: l(
+      "Cabina del estudio físico de Cejas Internacionales en Cali, Colombia",
+      "Treatment room at the Cejas Internacionales studio in Cali, Colombia",
+    ),
+    width: 1200,
+    height: 1600,
+  },
+  {
+    id: "mercado-espana-europa",
+    type: "photo",
+    sourcePath:
+      "docs/cliente/assets-extraidos/xiomara-sesion-profesional/xiomara-sesion-profesional-01.jpeg",
+    publicPath: "/images/mercados/mercado-espana.jpg",
+    alt: l(
+      "Xiomara Sánchez, especialista de Cejas Internacionales para jornadas en España y Europa",
+      "Xiomara Sánchez, Cejas Internacionales specialist for appointments across Spain and Europe",
+    ),
+    width: 1000,
+    height: 1499,
+  },
+  {
+    id: "mercado-suiza",
+    type: "photo",
+    sourcePath:
+      "docs/cliente/assets-extraidos/xiomara-sesion-profesional/xiomara-sesion-profesional-04.jpeg",
+    publicPath: "/images/mercados/mercado-suiza.jpg",
+    alt: l(
+      "Xiomara Sánchez preparando una jornada profesional para clientas en Suiza",
+      "Xiomara Sánchez preparing for professional appointments in Switzerland",
+    ),
+    width: 1000,
+    height: 1395,
+  },
+  {
+    id: "jornadas-globo",
+    type: "photo",
+    sourcePath:
+      "docs/cliente/assets-extraidos/xiomara-sesion-profesional/xiomara-sesion-profesional-12.jpeg",
+    publicPath: "/images/jornadas/jornadas-globo.jpg",
+    alt: l(
+      "Xiomara Sánchez sosteniendo un globo terráqueo, símbolo de las jornadas internacionales",
+      "Xiomara Sánchez holding a globe, symbol of international appointments",
+    ),
+    width: 1200,
+    height: 1799,
+  },
+  {
+    id: "result-cejas-05",
+    type: "gallery",
+    sourcePath: "docs/cliente/assets-extraidos/fotos-trabajos/co_pag16_2.jpg",
+    publicPath: "/images/resultados/result-cejas-05.jpg",
+    alt: l(
+      "Detalle de cejas micropigmentadas y mirada definida",
+      "Detail of micropigmented brows and a defined gaze",
+    ),
+    width: 540,
+    height: 594,
+  },
+  {
+    id: "result-cejas-06",
+    type: "gallery",
+    sourcePath: "docs/cliente/assets-extraidos/cicatrizados/cicatrizados-02.jpeg",
+    publicPath: "/images/resultados/result-cejas-06.jpg",
+    alt: l(
+      "Diseño de cejas pelo a pelo en detalle",
+      "Hair-stroke brow design in detail",
+    ),
+    width: 943,
+    height: 2048,
+  },
+  {
+    id: "result-labios-03",
+    type: "gallery",
+    sourcePath: "docs/cliente/assets-extraidos/fotos-trabajos/es_pag5_2.jpg",
+    publicPath: "/images/resultados/result-labios-03.jpg",
+    alt: l(
+      "Micropigmentación labial con tono natural y acabado luminoso",
+      "Lip micropigmentation with a natural tone and luminous finish",
+    ),
+    width: 491,
+    height: 638,
+  },
+  {
+    id: "result-mirada-02",
+    type: "gallery",
+    sourcePath: "docs/cliente/assets-extraidos/fotos-instagram/mirada/mirada-01.jpeg",
+    publicPath: "/images/resultados/result-mirada-02.jpg",
+    alt: l(
+      "Resultado de realce de mirada con cejas y pestañas definidas",
+      "Enhanced-gaze result with defined brows and lashes",
     ),
     width: 1000,
     height: 1778,
   },
+  {
+    id: "result-cicatrizado-cejas",
+    type: "gallery",
+    sourcePath: "docs/cliente/assets-extraidos/cicatrizados/cicatrizados-04.jpeg",
+    publicPath: "/images/resultados/result-cicatrizado-cejas.jpg",
+    alt: l(
+      "Cejas micropigmentadas ya cicatrizadas con resultado natural y estable",
+      "Healed micropigmented brows with a natural, stable result",
+    ),
+    width: 900,
+    height: 1955,
+  },
+  {
+    id: "result-cicatrizado-labios",
+    type: "gallery",
+    sourcePath: "docs/cliente/assets-extraidos/fotos-trabajos/es_pag6_1.jpg",
+    publicPath: "/images/resultados/result-cicatrizado-labios.jpg",
+    alt: l(
+      "Resultado labial con tono uniforme y acabado natural",
+      "Lip result with an even tone and natural finish",
+    ),
+    width: 484,
+    height: 638,
+  },
 ]);
+
+export const marketMediaIds: Record<string, string> = {
+  colombia: "mercado-colombia",
+  "espana-europa": "mercado-espana-europa",
+  suiza: "mercado-suiza",
+};
+
+export const serviceCategoryMediaIds: Record<string, string> = {
+  cejas: "result-cejas-01",
+  "micropigmentacion-cejas": "result-cejas-03",
+  labios: "result-labios-01",
+  "mirada-pestanas": "result-mirada-01",
+  "extensiones-pestanas": "sets-pestanas-panel",
+};

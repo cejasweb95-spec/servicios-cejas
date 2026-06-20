@@ -1,7 +1,10 @@
+import Image from "next/image";
+
 import { EventMap, type EventMapLocation } from "@/components/domain/event-map";
 import { WhatsAppChooser } from "@/components/domain/whatsapp-chooser";
 import { Breadcrumbs } from "@/components/navigation/breadcrumbs";
 import { Container } from "@/components/primitives/container";
+import { CountryFlag } from "@/components/primitives/country-flag";
 import { PageHero } from "@/components/primitives/page-hero";
 import { Section } from "@/components/primitives/section";
 import { JsonLd } from "@/components/seo/json-ld";
@@ -13,6 +16,8 @@ import {
   getLegalProfile,
   getLocations,
   getMarketById,
+  getMarkets,
+  getMediaAssetById,
   getMediaAssets,
   getWhatsAppTarget,
   getWhatsAppTargets,
@@ -79,6 +84,8 @@ function locationLabel(location: {
 
 export function JourneysPage({ copy, locale, whatsapp }: JourneysPageProps) {
   const locations = getLocations(locale);
+  const markets = getMarkets(locale);
+  const globeImage = getMediaAssetById("jornadas-globo", locale);
   const eventsByLocation = new Map(
     getEvents(locale).map((event) => [event.locationId, event]),
   );
@@ -118,6 +125,7 @@ export function JourneysPage({ copy, locale, whatsapp }: JourneysPageProps) {
         ? buildWhatsAppHref(target.phoneE164, message)
         : "https://wa.me/573167742299",
       id: location.id,
+      marketId: location.marketId,
       notes: location.notes,
       region: location.region,
       statusLabel:
@@ -153,15 +161,47 @@ export function JourneysPage({ copy, locale, whatsapp }: JourneysPageProps) {
           </>
         }
         aside={
-          <div className="rounded-xl border border-border bg-background p-5 shadow-soft">
-            <Badge variant="outline">{copy.physicalStudioLabel}</Badge>
-            <p className="mt-4 font-display text-3xl leading-tight text-foreground">
-              Cali, Valle del Cauca
-            </p>
-            <p className="mt-3 text-sm leading-6 text-muted-foreground">
-              {copy.physicalStudioDescription}
-            </p>
-          </div>
+          globeImage?.publicPath ? (
+            <div className="relative mx-auto w-full max-w-[26rem] overflow-hidden rounded-xl border border-border bg-surface shadow-soft lg:mx-0">
+              <div className="relative aspect-[4/5]">
+                <Image
+                  alt={globeImage.alt}
+                  className="object-cover object-center"
+                  fill
+                  priority
+                  sizes="(min-width: 1024px) 34vw, 90vw"
+                  src={globeImage.publicPath}
+                />
+                <span
+                  aria-hidden="true"
+                  className="absolute inset-0 bg-gradient-to-t from-foreground/90 via-foreground/25 to-transparent"
+                />
+                <div className="absolute inset-x-0 bottom-0 p-5">
+                  <ul className="flex flex-wrap gap-2">
+                    {markets.map((market) => (
+                      <li
+                        className="inline-flex items-center gap-2 rounded-full bg-background/90 px-3 py-1.5 text-sm font-semibold text-foreground shadow-soft"
+                        key={market.id}
+                      >
+                        <CountryFlag className="h-3.5 w-5" market={market.id} />
+                        {market.shortName}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          ) : (
+            <div className="rounded-xl border border-border bg-background p-5 shadow-soft">
+              <Badge variant="outline">{copy.physicalStudioLabel}</Badge>
+              <p className="mt-4 font-display text-3xl leading-tight text-foreground">
+                Cali, Valle del Cauca
+              </p>
+              <p className="mt-3 text-sm leading-6 text-muted-foreground">
+                {copy.physicalStudioDescription}
+              </p>
+            </div>
+          )
         }
         description={copy.description}
         eyebrow={copy.eyebrow}

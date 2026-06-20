@@ -102,11 +102,11 @@ export function SiteFooter({
         </div>
         <nav aria-label={labels.navigation}>
           <h2 className="text-sm font-bold text-foreground">{labels.navigation}</h2>
-          <ul className="mt-4 grid gap-2">
+          <ul className="mt-3 grid gap-0 lg:gap-1">
             {navItems.map((item) => (
               <li key={item.id}>
                 <Link
-                  className="text-sm text-muted-foreground hover:text-primary-text focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/40"
+                  className="inline-flex min-h-11 items-center text-sm text-muted-foreground hover:text-primary-text focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/40 lg:min-h-9"
                   href={item.href}
                 >
                   {item.label}
@@ -120,24 +120,24 @@ export function SiteFooter({
           <ul className="mt-4 grid gap-3 text-sm text-muted-foreground">
             <li>
               <a
-                className="group/contact inline-flex items-center gap-2.5 hover:text-primary-text focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/40"
+                className="group/contact inline-flex min-h-11 min-w-0 items-center gap-2.5 hover:text-primary-text focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/40"
                 href={`mailto:${legalProfile.email}`}
               >
-                <span className="grid size-9 place-items-center rounded-full border border-border bg-surface text-primary-text transition-colors group-hover/contact:border-primary group-hover/contact:bg-surface-muted">
+                <span className="grid size-11 shrink-0 place-items-center rounded-full border border-border bg-surface text-primary-text transition-colors group-hover/contact:border-primary group-hover/contact:bg-surface-muted">
                   <Mail aria-hidden="true" className="size-4" />
                 </span>
-                {legalProfile.email}
+                <span className="break-all">{legalProfile.email}</span>
               </a>
             </li>
             {whatsappTargets.map((target) => (
               <li key={target.id}>
                 <a
-                  className="group/contact inline-flex items-center gap-2.5 hover:text-primary-text focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/40"
+                  className="group/contact inline-flex min-h-11 items-center gap-2.5 hover:text-primary-text focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/40"
                   href={`https://wa.me/${target.phoneE164}`}
                   rel="noreferrer"
                   target="_blank"
                 >
-                  <span className="grid size-9 place-items-center rounded-full border border-border bg-surface text-primary-text transition-colors group-hover/contact:border-primary group-hover/contact:bg-surface-muted">
+                  <span className="grid size-11 shrink-0 place-items-center rounded-full border border-border bg-surface text-primary-text transition-colors group-hover/contact:border-primary group-hover/contact:bg-surface-muted">
                     <WhatsAppIcon className="size-4" />
                   </span>
                   {target.label}
@@ -169,11 +169,11 @@ export function SiteFooter({
         </div>
         <div>
           <h2 className="text-sm font-bold text-foreground">{labels.legal}</h2>
-          <ul className="mt-4 grid gap-2">
+          <ul className="mt-3 grid gap-0 lg:gap-1">
             {legalItems.map((item) => (
               <li key={item.id}>
                 <Link
-                  className="text-sm text-muted-foreground hover:text-primary-text focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/40"
+                  className="inline-flex min-h-11 items-center text-sm text-muted-foreground hover:text-primary-text focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/40 lg:min-h-9"
                   href={item.href}
                 >
                   {item.label}

@@ -14,6 +14,8 @@
     "test:a11y": "playwright test tests/a11y",
     "test:crossbrowser": "playwright test -c playwright.crossbrowser.config.ts",
     "test:seo": "playwright test tests/e2e/seo.spec.ts",
+    "test:seo:all": "node scripts/audit-seo.mjs",
+    "test:responsive:all": "node scripts/audit-responsive.mjs",
     "test:visual": "playwright test tests/visual",
     "test:links": "node scripts/check-links.mjs",
     "test:lighthouse": "echo \"Lighthouse/PageSpeed se ejecutara cuando existan pantallas finales.\""

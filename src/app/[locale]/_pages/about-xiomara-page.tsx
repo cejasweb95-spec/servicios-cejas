@@ -2,6 +2,8 @@ import Image from "next/image";
 
 import { WhatsAppChooser } from "@/components/domain/whatsapp-chooser";
 import { Breadcrumbs } from "@/components/navigation/breadcrumbs";
+import { Reveal } from "@/components/motion/reveal";
+import { StaggerList, StaggerListItem } from "@/components/motion/stagger-list";
 import { Container } from "@/components/primitives/container";
 import { PageHero } from "@/components/primitives/page-hero";
 import { Section } from "@/components/primitives/section";
@@ -49,7 +51,7 @@ export function AboutXiomaraPage({
   whatsapp,
 }: AboutXiomaraPageProps) {
   const portrait = getMediaAssets().find(
-    (asset) => asset.id === "xiomara-foto-profesional",
+    (asset) => asset.id === "xiomara-retrato-rosa",
   );
   const certificationsImage = getMediaAssets().find(
     (asset) => asset.id === "xiomara-certificaciones-estudio",
@@ -105,7 +107,8 @@ export function AboutXiomaraPage({
             label={copy.breadcrumbsLabel}
           />
           <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
-            <section aria-labelledby="about-bio">
+            <Reveal direction="left">
+              <section aria-labelledby="about-bio">
               <h2
                 className="font-display text-4xl leading-tight text-foreground"
                 id="about-bio"
@@ -117,47 +120,52 @@ export function AboutXiomaraPage({
                   <p key={paragraph}>{paragraph}</p>
                 ))}
               </div>
-            </section>
-            <div className="grid gap-4">
-              <div className="grid gap-3 sm:grid-cols-3">
+              </section>
+            </Reveal>
+            <Reveal delay={0.04} direction="right">
+              <div className="grid gap-4">
+              <StaggerList className="grid gap-3 sm:grid-cols-3">
                 {copy.stats.map((stat) => (
-                  <div
-                    className="rounded-xl border border-border bg-surface p-4"
-                    key={stat.label}
-                  >
-                    <p className="font-display text-3xl text-foreground">
-                      {stat.value}
-                    </p>
-                    <p className="mt-1 text-xs font-semibold text-muted-foreground">
-                      {stat.label}
-                    </p>
-                  </div>
+                  <StaggerListItem key={stat.label}>
+                    <div className="rounded-xl border border-border bg-surface p-4">
+                      <p className="font-display text-3xl text-foreground">
+                        {stat.value}
+                      </p>
+                      <p className="mt-1 text-xs font-semibold text-muted-foreground">
+                        {stat.label}
+                      </p>
+                    </div>
+                  </StaggerListItem>
                 ))}
-              </div>
+              </StaggerList>
               <section className="rounded-xl border border-border bg-surface-muted p-5">
                 <Badge variant="outline">{copy.trajectoryTitle}</Badge>
                 <p className="mt-4 text-sm leading-7 text-muted-foreground">
                   {copy.trajectoryText}
                 </p>
               </section>
-            </div>
+              </div>
+            </Reveal>
           </div>
         </Container>
       </Section>
       {certificationsImage?.publicPath ? (
         <Section tone="muted">
           <Container className="grid gap-8 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
-            <div className="relative aspect-[4/5] overflow-hidden rounded-lg border border-border bg-surface sm:aspect-[3/4]">
-              <Image
-                alt={certificationsImage.alt[locale]}
-                className="h-full w-full object-cover"
-                height={certificationsImage.height}
-                sizes="(min-width: 1024px) 42vw, 92vw"
-                src={certificationsImage.publicPath}
-                width={certificationsImage.width}
-              />
-            </div>
-            <section aria-labelledby="about-certifications">
+            <Reveal direction="left">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-lg border border-border bg-surface sm:aspect-[3/4]">
+                <Image
+                  alt={certificationsImage.alt[locale]}
+                  className="h-full w-full object-cover"
+                  height={certificationsImage.height}
+                  sizes="(min-width: 1024px) 42vw, 92vw"
+                  src={certificationsImage.publicPath}
+                  width={certificationsImage.width}
+                />
+              </div>
+            </Reveal>
+            <Reveal delay={0.04} direction="right">
+              <section aria-labelledby="about-certifications">
               <Badge variant="outline">{copy.trajectoryTitle}</Badge>
               <h2
                 className="mt-4 text-balance font-display text-4xl leading-tight text-foreground"
@@ -175,7 +183,8 @@ export function AboutXiomaraPage({
                   </li>
                 ))}
               </ul>
-            </section>
+              </section>
+            </Reveal>
           </Container>
         </Section>
       ) : null}

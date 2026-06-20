@@ -43,6 +43,19 @@ describe("content data layer", () => {
     );
   });
 
+  it("assigns care guides only to matching micropigmentation services", () => {
+    const colombiaServices = getServicesByMarket("colombia", "es");
+    const byId = new Map(colombiaServices.map((service) => [service.id, service]));
+
+    expect(byId.get("efecto-polvo")?.careGuide).toBe(
+      "micropigmentation-brows",
+    );
+    expect(byId.get("microlips")?.careGuide).toBe(
+      "micropigmentation-lips",
+    );
+    expect(byId.get("hidralips-una-sesion")?.careGuide).toBeUndefined();
+  });
+
   it("fails validation if HidraLips is added to Switzerland", () => {
     const invalidService: Service = {
       id: "hidralips-tres-sesiones",

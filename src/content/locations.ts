@@ -16,8 +16,8 @@ export const locations = locationSchema.array().parse([
     ),
     coordinates: { lat: 3.4516, lng: -76.532 },
     notes: l(
-      "Sede fisica y direccion legal de la web.",
-      "Physical studio and legal address for the website.",
+      "Sede física y dirección legal.",
+      "Physical studio and legal address.",
     ),
   },
   {
@@ -29,8 +29,8 @@ export const locations = locationSchema.array().parse([
     type: "journey_availability",
     coordinates: { lat: 3.822, lng: -76.522 },
     notes: l(
-      "Proxima jornada por disponibilidad. No es sede fija.",
-      "Upcoming session by availability. It is not a fixed studio.",
+      "Próxima jornada por disponibilidad. No es una sede fija.",
+      "Appointments are subject to availability. This is not a permanent studio.",
     ),
   },
   {
@@ -41,8 +41,8 @@ export const locations = locationSchema.array().parse([
     type: "journey_availability",
     coordinates: { lat: 40.4168, lng: -3.7038 },
     notes: l(
-      "Proxima jornada por disponibilidad. No hay sede fisica fija en España.",
-      "Upcoming session by availability. There is no fixed physical studio in Spain.",
+      "Próxima jornada por disponibilidad. No hay sede física fija en España.",
+      "Appointments are subject to availability. There is no permanent studio in Spain.",
     ),
   },
   {
@@ -53,8 +53,8 @@ export const locations = locationSchema.array().parse([
     type: "journey_availability",
     coordinates: { lat: 39.5696, lng: 2.6502 },
     notes: l(
-      "Proxima jornada por disponibilidad. No es sede fija.",
-      "Upcoming session by availability. It is not a fixed studio.",
+      "Próxima jornada por disponibilidad. No es una sede fija.",
+      "Appointments are subject to availability. This is not a permanent studio.",
     ),
   },
   {
@@ -66,8 +66,8 @@ export const locations = locationSchema.array().parse([
     type: "journey_availability",
     coordinates: { lat: 39.659, lng: -0.2202 },
     notes: l(
-      "Proxima jornada por disponibilidad. No es sede fija.",
-      "Upcoming session by availability. It is not a fixed studio.",
+      "Próxima jornada por disponibilidad. No es una sede fija.",
+      "Appointments are subject to availability. This is not a permanent studio.",
     ),
   },
   {
@@ -78,8 +78,8 @@ export const locations = locationSchema.array().parse([
     type: "journey_availability",
     coordinates: { lat: 46.2044, lng: 6.1432 },
     notes: l(
-      "Proxima jornada por disponibilidad en Suiza. No es sede fija.",
-      "Upcoming session by availability in Switzerland. It is not a fixed studio.",
+      "Próxima jornada por disponibilidad en Suiza. No es una sede fija.",
+      "Appointments in Switzerland are subject to availability. This is not a permanent studio.",
     ),
   },
 ] satisfies Location[]);

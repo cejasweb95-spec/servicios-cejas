@@ -6,6 +6,7 @@ import { Section } from "@/components/primitives/section";
 import { JsonLd } from "@/components/seo/json-ld";
 import { Badge } from "@/components/ui/badge";
 import type { Locale } from "@/i18n/routing";
+import { formatPhoneNumber } from "@/lib/format/phone";
 import {
   getCookieCategories,
   getLegalProfile,
@@ -125,7 +126,7 @@ export function LegalContentPage({
                 <ul className="mt-5 grid gap-2 text-sm text-muted-foreground">
                   {whatsappTargets.map((target) => (
                     <li key={target.id}>
-                      {target.label}: +{target.phoneE164}
+                      {target.label}: {formatPhoneNumber(target.phoneE164)}
                     </li>
                   ))}
                 </ul>

@@ -95,7 +95,7 @@ export const services = serviceSchema.array().parse([
     categoryId: "cejas",
     name: l("Laminado de cejas", "Brow lamination"),
     shortDescription: l(
-      "Planchado, diseño, depilacion y sombreado en henna.",
+      "Planchado, diseño, depilación y sombreado en henna.",
       "Brow lamination with design, hair removal and henna shading.",
     ),
     resultDuration: l("Resultado hasta 1 mes.", "Result lasts up to 1 month."),
@@ -125,12 +125,12 @@ export const services = serviceSchema.array().parse([
     id: "depilacion-cejas-cera",
     slug: l("depilacion-cejas-cera", "brow-waxing"),
     categoryId: "cejas",
-    name: l("Depilacion de cejas con cera", "Brow waxing"),
+    name: l("Depilación de cejas con cera", "Brow waxing"),
     shortDescription: l(
-      "Diseño bajo medidas faciales. El vello tarda de 15 a 20 dias en salir.",
+      "Diseño bajo medidas faciales. El vello tarda de 15 a 20 días en salir.",
       "Facial-measure brow design. Hair regrowth takes 15 to 20 days.",
     ),
-    resultDuration: l("15 a 20 dias.", "15 to 20 days."),
+    resultDuration: l("15 a 20 días.", "15 to 20 days."),
     offers: [
       offer("colombia", 25000, "COP", d.browWax),
       offer("espana-europa", 9, "EUR", d.browWax),
@@ -140,12 +140,12 @@ export const services = serviceSchema.array().parse([
     id: "depilacion-cejas-cuchilla",
     slug: l("depilacion-cejas-cuchilla", "brow-razor-shaping"),
     categoryId: "cejas",
-    name: l("Depilacion de cejas con cuchilla", "Brow razor shaping"),
+    name: l("Depilación de cejas con cuchilla", "Brow razor shaping"),
     shortDescription: l(
-      "Diseño bajo medidas faciales. El vello tarda de 4 a 5 dias en salir.",
+      "Diseño bajo medidas faciales. El vello tarda de 4 a 5 días en salir.",
       "Facial-measure brow design. Hair regrowth takes 4 to 5 days.",
     ),
-    resultDuration: l("4 a 5 dias.", "4 to 5 days."),
+    resultDuration: l("4 a 5 días.", "4 to 5 days."),
     offers: [
       offer("colombia", 20000, "COP", d.browWax),
       offer("espana-europa", 7, "EUR", d.browWax),
@@ -155,9 +155,10 @@ export const services = serviceSchema.array().parse([
     id: "efecto-polvo",
     slug: l("efecto-polvo", "powder-brows"),
     categoryId: "micropigmentacion-cejas",
+    careGuide: "micropigmentation-brows",
     name: l("Efecto polvo", "Powder brows"),
     shortDescription: l(
-      "Tecnica con puntos de luz para un cicatrizado mas natural.",
+      "Técnica con puntos de luz para un cicatrizado más natural.",
       "Light-dot technique designed for a more natural healed result.",
     ),
     resultDuration: l("10 meses a 1 año.", "10 months to 1 year."),
@@ -172,9 +173,10 @@ export const services = serviceSchema.array().parse([
     id: "efecto-maquillaje",
     slug: l("efecto-maquillaje", "makeup-effect-brows"),
     categoryId: "micropigmentacion-cejas",
+    careGuide: "micropigmentation-brows",
     name: l("Efecto maquillaje", "Makeup-effect brows"),
     shortDescription: l(
-      "Tecnica mas definida para una ceja marcada pero natural.",
+      "Técnica más definida para una ceja marcada pero natural.",
       "A more defined technique for shaped brows that still look natural.",
     ),
     resultDuration: l("1 año a 1 año y medio.", "1 to 1.5 years."),
@@ -189,7 +191,8 @@ export const services = serviceSchema.array().parse([
     id: "cejas-hibridas",
     slug: l("cejas-hibridas", "hybrid-brows"),
     categoryId: "micropigmentacion-cejas",
-    name: l("Cejas hibridas", "Hybrid brows"),
+    careGuide: "micropigmentation-brows",
+    name: l("Cejas híbridas", "Hybrid brows"),
     shortDescription: l(
       "Pelo a pelo combinado con sombras para un resultado muy natural.",
       "Hair-stroke technique combined with shading for a very natural result.",
@@ -206,14 +209,15 @@ export const services = serviceSchema.array().parse([
     id: "correccion-cejas",
     slug: l("correccion-cejas", "brow-correction"),
     categoryId: "micropigmentacion-cejas",
-    name: l("Correccion de cejas", "Brow correction"),
+    careGuide: "micropigmentation-brows",
+    name: l("Corrección de cejas", "Brow correction"),
     shortDescription: l(
-      "Tecnica avanzada para neutralizar tonos y rediseñar cejas con trabajos previos.",
+      "Técnica avanzada para neutralizar tonos y rediseñar cejas con trabajos previos.",
       "Advanced technique to neutralize tones and redesign brows with previous work.",
     ),
     sourceNote: l(
-      "Disponible en catalogo España/Europa. Mantener fuera de Suiza salvo confirmacion futura.",
-      "Available in the Spain/Europe catalog. Keep out of Switzerland unless later confirmed.",
+      "Disponible en el catálogo de España/Europa.",
+      "Available in the Spain/Europe catalog.",
     ),
     offers: [offer("espana-europa", 280, "EUR", d.twoHours)],
   },
@@ -221,6 +225,7 @@ export const services = serviceSchema.array().parse([
     id: "refuerzo-cejas",
     slug: l("refuerzo-cejas", "brow-touch-up"),
     categoryId: "micropigmentacion-cejas",
+    careGuide: "micropigmentation-brows",
     name: l("Refuerzo cejas", "Brow touch-up"),
     shortDescription: l(
       "Retoque o mantenimiento del procedimiento de cejas.",
@@ -236,9 +241,10 @@ export const services = serviceSchema.array().parse([
     id: "refuerzo-cejas-hibridas",
     slug: l("refuerzo-cejas-hibridas", "hybrid-brow-touch-up"),
     categoryId: "micropigmentacion-cejas",
-    name: l("Refuerzo cejas hibridas", "Hybrid brow touch-up"),
+    careGuide: "micropigmentation-brows",
+    name: l("Refuerzo cejas híbridas", "Hybrid brow touch-up"),
     shortDescription: l(
-      "Retoque o mantenimiento de cejas hibridas.",
+      "Retoque o mantenimiento de cejas híbridas.",
       "Touch-up or maintenance for hybrid brows.",
     ),
     offers: [
@@ -251,9 +257,10 @@ export const services = serviceSchema.array().parse([
     id: "neutralizacion-labios",
     slug: l("neutralizacion-labios", "lip-neutralization"),
     categoryId: "labios",
-    name: l("Neutralizacion", "Lip neutralization"),
+    careGuide: "micropigmentation-lips",
+    name: l("Neutralización", "Lip neutralization"),
     shortDescription: l(
-      "Ideal para labios oscuros, manchados o violaceos.",
+      "Ideal para labios oscuros, manchados o violáceos.",
       "Designed for dark, stained or violet-toned lips.",
     ),
     resultDuration: l("Hasta 3 años.", "Up to 3 years."),
@@ -268,9 +275,10 @@ export const services = serviceSchema.array().parse([
     id: "microlips",
     slug: l("microlips", "microlips"),
     categoryId: "labios",
+    careGuide: "micropigmentation-lips",
     name: l("Microlips", "Microlips"),
     shortDescription: l(
-      "Aporta luminosidad y color natural a labios palidos o sin definicion.",
+      "Aporta luminosidad y color natural a labios pálidos o sin definición.",
       "Adds brightness and natural color to pale or undefined lips.",
     ),
     resultDuration: l("2 a 3 años.", "2 to 3 years."),
@@ -287,21 +295,21 @@ export const services = serviceSchema.array().parse([
     categoryId: "labios",
     name: l("HidraLips (3 sesiones)", "HidraLips (3 sessions)"),
     shortDescription: l(
-      "Hidratacion labial con acido hialuronico en tres sesiones.",
+      "Hidratación labial con ácido hialurónico en tres sesiones.",
       "Lip hydration with hyaluronic acid over three sessions.",
     ),
     offers: [
-      offer("colombia", 220000, "COP", d.oneHour, l("1 hora por sesion.", "1 hour per session.")),
-      offer("espana-europa", 150, "EUR", d.oneHour, l("1 hora por sesion.", "1 hour per session.")),
+      offer("colombia", 220000, "COP", d.oneHour, l("1 hora por sesión.", "1 hour per session.")),
+      offer("espana-europa", 150, "EUR", d.oneHour, l("1 hora por sesión.", "1 hour per session.")),
     ],
   },
   {
     id: "hidralips-una-sesion",
     slug: l("hidralips-una-sesion", "hidralips-one-session"),
     categoryId: "labios",
-    name: l("HidraLips (1 sesion)", "HidraLips (1 session)"),
+    name: l("HidraLips (1 sesión)", "HidraLips (1 session)"),
     shortDescription: l(
-      "Sesion individual de hidratacion labial.",
+      "Sesión individual de hidratación labial.",
       "Single lip hydration session.",
     ),
     offers: [
@@ -313,6 +321,7 @@ export const services = serviceSchema.array().parse([
     id: "refuerzo-microlips",
     slug: l("refuerzo-microlips", "microlips-touch-up"),
     categoryId: "labios",
+    careGuide: "micropigmentation-lips",
     name: l("Refuerzo Microlips", "Microlips touch-up"),
     shortDescription: l(
       "Retoque o mantenimiento de Microlips.",
@@ -328,9 +337,9 @@ export const services = serviceSchema.array().parse([
     id: "linea-ojos",
     slug: l("linea-ojos", "eyeliner"),
     categoryId: "mirada-pestanas",
-    name: l("Linea de ojos", "Eyeliner"),
+    name: l("Línea de ojos", "Eyeliner"),
     shortDescription: l(
-      "Diseño previo para parpados amplios y definicion de la mirada.",
+      "Diseño previo para párpados amplios y definición de la mirada.",
       "Pre-designed eyeliner for broader eyelids and eye definition.",
     ),
     resultDuration: l("Hasta 1 año.", "Up to 1 year."),
@@ -346,7 +355,7 @@ export const services = serviceSchema.array().parse([
     categoryId: "mirada-pestanas",
     name: l("Relleno de pestañas", "Lash line enhancement"),
     shortDescription: l(
-      "Apariencia de mas pestañas y linea de agua maquillada.",
+      "Apariencia de más pestañas y línea de agua maquillada.",
       "Creates the look of fuller lashes and a naturally defined lash line.",
     ),
     resultDuration: l("Hasta 1 año.", "Up to 1 year."),
@@ -360,9 +369,9 @@ export const services = serviceSchema.array().parse([
     id: "refuerzo-linea-ojos",
     slug: l("refuerzo-linea-ojos", "eyeliner-touch-up"),
     categoryId: "mirada-pestanas",
-    name: l("Refuerzo linea de ojos", "Eyeliner touch-up"),
+    name: l("Refuerzo línea de ojos", "Eyeliner touch-up"),
     shortDescription: l(
-      "Retoque o mantenimiento de linea de ojos.",
+      "Retoque o mantenimiento de línea de ojos.",
       "Touch-up or maintenance for eyeliner.",
     ),
     offers: [
@@ -391,9 +400,9 @@ export const services = serviceSchema.array().parse([
     id: "depilacion-axilas",
     slug: l("depilacion-axilas", "underarm-waxing"),
     categoryId: "depilacion-corporal",
-    name: l("Depilacion axilas", "Underarm waxing"),
+    name: l("Depilación de axilas", "Underarm waxing"),
     shortDescription: l(
-      "Ayuda a disminuir manchas. El vello tarda hasta 20 dias en salir.",
+      "Ayuda a disminuir manchas. El vello tarda hasta 20 días en salir.",
       "Helps reduce dark spots. Hair regrowth takes up to 20 days.",
     ),
     offers: [
@@ -405,9 +414,9 @@ export const services = serviceSchema.array().parse([
     id: "depilacion-bigote-bozo",
     slug: l("depilacion-bigote-bozo", "upper-lip-waxing"),
     categoryId: "depilacion-corporal",
-    name: l("Depilacion bigote / bozo", "Upper lip waxing"),
+    name: l("Depilación de bigote / bozo", "Upper lip waxing"),
     shortDescription: l(
-      "Piel desmanchada y sin irritacion. Vello hasta 20 dias.",
+      "Piel desmanchada y sin irritación. El vello tarda hasta 20 días en salir.",
       "Clearer skin with less irritation. Hair regrowth up to 20 days.",
     ),
     offers: [
@@ -419,9 +428,9 @@ export const services = serviceSchema.array().parse([
     id: "depilacion-nariz",
     slug: l("depilacion-nariz", "nose-waxing"),
     categoryId: "depilacion-corporal",
-    name: l("Depilacion nariz", "Nose waxing"),
+    name: l("Depilación de nariz", "Nose waxing"),
     shortDescription: l(
-      "Depilacion de nariz con duracion aproximada del vello hasta 20 dias.",
+      "Depilación de nariz con una duración aproximada de hasta 20 días.",
       "Nose hair removal with regrowth in up to approximately 20 days.",
     ),
     offers: [
@@ -433,9 +442,9 @@ export const services = serviceSchema.array().parse([
     id: "depilacion-media-pierna",
     slug: l("depilacion-media-pierna", "half-leg-waxing"),
     categoryId: "depilacion-corporal",
-    name: l("Depilacion media pierna", "Half-leg waxing"),
+    name: l("Depilación de media pierna", "Half-leg waxing"),
     shortDescription: l(
-      "Servicio de depilacion corporal del catalogo Colombia.",
+      "Servicio de depilación corporal del catálogo de Colombia.",
       "Body waxing service from the Colombia catalog.",
     ),
     offers: [offer("colombia", 35000, "COP", d.browWax)],
@@ -444,15 +453,15 @@ export const services = serviceSchema.array().parse([
     id: "set-rimel",
     slug: l("set-rimel", "mascara-look-set"),
     categoryId: "extensiones-pestanas",
-    name: l("Set rimel", "Mascara-look set"),
+    name: l("Set rímel", "Mascara-look lash set"),
     shortDescription: l(
       "Set de extensiones de pestañas disponible en Colombia.",
       "Lash extension set available in Colombia.",
     ),
     offers: [
       offer("colombia", 95000, "COP", d.ninety, undefined, [
-        addon("retoque-15-dias", l("Retoque 15 dias", "15-day refill"), 50000, "COP"),
-        addon("retoque-20-dias", l("Retoque 20 dias", "20-day refill"), 65000, "COP"),
+        addon("retoque-15-dias", l("Retoque a los 15 días", "15-day refill"), 50000, "COP"),
+        addon("retoque-20-dias", l("Retoque a los 20 días", "20-day refill"), 65000, "COP"),
       ]),
     ],
   },
@@ -462,13 +471,13 @@ export const services = serviceSchema.array().parse([
     categoryId: "extensiones-pestanas",
     name: l("Volumen ligero", "Light volume"),
     shortDescription: l(
-      "Set de volumen ligero del catalogo Colombia.",
+      "Set de volumen ligero del catálogo de Colombia.",
       "Light volume lash set from the Colombia catalog.",
     ),
     offers: [
       offer("colombia", 120000, "COP", d.twoHours, undefined, [
-        addon("retoque-15-dias", l("Retoque 15 dias", "15-day refill"), 60000, "COP"),
-        addon("retoque-20-dias", l("Retoque 20 dias", "20-day refill"), 80000, "COP"),
+        addon("retoque-15-dias", l("Retoque a los 15 días", "15-day refill"), 60000, "COP"),
+        addon("retoque-20-dias", l("Retoque a los 20 días", "20-day refill"), 80000, "COP"),
       ]),
     ],
   },
@@ -477,11 +486,11 @@ export const services = serviceSchema.array().parse([
     slug: l("wispy", "wispy-lashes"),
     categoryId: "extensiones-pestanas",
     name: l("Wispy", "Wispy"),
-    shortDescription: l("Set wispy del catalogo Colombia.", "Wispy lash set from the Colombia catalog."),
+    shortDescription: l("Set wispy del catálogo de Colombia.", "Wispy lash set from the Colombia catalog."),
     offers: [
       offer("colombia", 120000, "COP", d.ninety, undefined, [
-        addon("retoque-15-dias", l("Retoque 15 dias", "15-day refill"), 60000, "COP"),
-        addon("retoque-20-dias", l("Retoque 20 dias", "20-day refill"), 80000, "COP"),
+        addon("retoque-15-dias", l("Retoque a los 15 días", "15-day refill"), 60000, "COP"),
+        addon("retoque-20-dias", l("Retoque a los 20 días", "20-day refill"), 80000, "COP"),
       ]),
     ],
   },
@@ -491,13 +500,13 @@ export const services = serviceSchema.array().parse([
     categoryId: "extensiones-pestanas",
     name: l("Volumen ruso 2D", "Russian volume 2D"),
     shortDescription: l(
-      "Set volumen ruso 2D del catalogo Colombia.",
+      "Set volumen ruso 2D del catálogo de Colombia.",
       "Russian volume 2D lash set from the Colombia catalog.",
     ),
     offers: [
       offer("colombia", 145000, "COP", d.twoHours, undefined, [
-        addon("retoque-15-dias", l("Retoque 15 dias", "15-day refill"), 80000, "COP"),
-        addon("retoque-20-dias", l("Retoque 20 dias", "20-day refill"), 100000, "COP"),
+        addon("retoque-15-dias", l("Retoque a los 15 días", "15-day refill"), 80000, "COP"),
+        addon("retoque-20-dias", l("Retoque a los 20 días", "20-day refill"), 100000, "COP"),
       ]),
     ],
   },
@@ -507,13 +516,13 @@ export const services = serviceSchema.array().parse([
     categoryId: "extensiones-pestanas",
     name: l("Mega volumen", "Mega volume"),
     shortDescription: l(
-      "Set mega volumen del catalogo Colombia.",
+      "Set mega volumen del catálogo de Colombia.",
       "Mega volume lash set from the Colombia catalog.",
     ),
     offers: [
       offer("colombia", 160000, "COP", d.twoHours, undefined, [
-        addon("retoque-15-dias", l("Retoque 15 dias", "15-day refill"), 90000, "COP"),
-        addon("retoque-20-dias", l("Retoque 20 dias", "20-day refill"), 110000, "COP"),
+        addon("retoque-15-dias", l("Retoque a los 15 días", "15-day refill"), 90000, "COP"),
+        addon("retoque-20-dias", l("Retoque a los 20 días", "20-day refill"), 110000, "COP"),
       ]),
     ],
   },
@@ -523,13 +532,13 @@ export const services = serviceSchema.array().parse([
     categoryId: "extensiones-pestanas",
     name: l("Volumen aura 2D", "Aura volume 2D"),
     shortDescription: l(
-      "Set volumen aura 2D del catalogo Colombia.",
+      "Set volumen aura 2D del catálogo de Colombia.",
       "Aura volume 2D lash set from the Colombia catalog.",
     ),
     offers: [
       offer("colombia", 140000, "COP", d.ninety, undefined, [
-        addon("retoque-15-dias", l("Retoque 15 dias", "15-day refill"), 70000, "COP"),
-        addon("retoque-20-dias", l("Retoque 20 dias", "20-day refill"), 90000, "COP"),
+        addon("retoque-15-dias", l("Retoque a los 15 días", "15-day refill"), 70000, "COP"),
+        addon("retoque-20-dias", l("Retoque a los 20 días", "20-day refill"), 90000, "COP"),
       ]),
     ],
   },
@@ -539,13 +548,13 @@ export const services = serviceSchema.array().parse([
     categoryId: "extensiones-pestanas",
     name: l("Volumen aura 5D", "Aura volume 5D"),
     shortDescription: l(
-      "Set volumen aura 5D del catalogo Colombia.",
+      "Set volumen aura 5D del catálogo de Colombia.",
       "Aura volume 5D lash set from the Colombia catalog.",
     ),
     offers: [
       offer("colombia", 150000, "COP", d.ninety, undefined, [
-        addon("retoque-15-dias", l("Retoque 15 dias", "15-day refill"), 80000, "COP"),
-        addon("retoque-20-dias", l("Retoque 20 dias", "20-day refill"), 100000, "COP"),
+        addon("retoque-15-dias", l("Retoque a los 15 días", "15-day refill"), 80000, "COP"),
+        addon("retoque-20-dias", l("Retoque a los 20 días", "20-day refill"), 100000, "COP"),
       ]),
     ],
   },
@@ -555,13 +564,13 @@ export const services = serviceSchema.array().parse([
     categoryId: "extensiones-pestanas",
     name: l("Volumen griego 3D", "Greek volume 3D"),
     shortDescription: l(
-      "Set volumen griego 3D del catalogo Colombia.",
+      "Set volumen griego 3D del catálogo de Colombia.",
       "Greek volume 3D lash set from the Colombia catalog.",
     ),
     offers: [
       offer("colombia", 140000, "COP", d.ninety, undefined, [
-        addon("retoque-15-dias", l("Retoque 15 dias", "15-day refill"), 70000, "COP"),
-        addon("retoque-20-dias", l("Retoque 20 dias", "20-day refill"), 90000, "COP"),
+        addon("retoque-15-dias", l("Retoque a los 15 días", "15-day refill"), 70000, "COP"),
+        addon("retoque-20-dias", l("Retoque a los 20 días", "20-day refill"), 90000, "COP"),
       ]),
     ],
   },
@@ -571,13 +580,13 @@ export const services = serviceSchema.array().parse([
     categoryId: "extensiones-pestanas",
     name: l("Volumen griego 5D", "Greek volume 5D"),
     shortDescription: l(
-      "Nombre confirmado por la clienta; corrige la etiqueta erronea del panel visual.",
-      "Client-confirmed name; corrects the mislabeled visual panel.",
+      "Set de pestañas con volumen griego 5D, disponible en Colombia.",
+      "Greek volume 5D lash set, available in Colombia.",
     ),
     offers: [
       offer("colombia", 150000, "COP", d.ninety, undefined, [
-        addon("retoque-15-dias", l("Retoque 15 dias", "15-day refill"), 80000, "COP"),
-        addon("retoque-20-dias", l("Retoque 20 dias", "20-day refill"), 100000, "COP"),
+        addon("retoque-15-dias", l("Retoque a los 15 días", "15-day refill"), 80000, "COP"),
+        addon("retoque-20-dias", l("Retoque a los 20 días", "20-day refill"), 100000, "COP"),
       ]),
     ],
   },
@@ -587,7 +596,7 @@ export const services = serviceSchema.array().parse([
     categoryId: "extensiones-pestanas",
     name: l("Por punto efecto volumen", "Volume clusters"),
     shortDescription: l(
-      "Grupos de pestañas con duracion de 8 a 10 dias.",
+      "Grupos de pestañas con duración de 8 a 10 días.",
       "Lash clusters that last 8 to 10 days.",
     ),
     offers: [offer("colombia", 40000, "COP", d.fifteenMax)],
@@ -609,7 +618,7 @@ export const services = serviceSchema.array().parse([
     categoryId: "unas",
     name: l("Manicure tradicional", "Traditional manicure"),
     shortDescription: l("Esmaltado tradicional.", "Traditional nail polish service."),
-    resultDuration: l("8 a 10 dias.", "8 to 10 days."),
+    resultDuration: l("8 a 10 días.", "8 to 10 days."),
     offers: [offer("colombia", 22000, "COP", d.oneHour)],
   },
   {
@@ -618,7 +627,7 @@ export const services = serviceSchema.array().parse([
     categoryId: "unas",
     name: l("Pedicure tradicional", "Traditional pedicure"),
     shortDescription: l("Pedicure tradicional.", "Traditional pedicure."),
-    resultDuration: l("10 a 15 dias.", "10 to 15 days."),
+    resultDuration: l("10 a 15 días.", "10 to 15 days."),
     offers: [offer("colombia", 27000, "COP", d.pedicureRange)],
   },
   {
@@ -641,7 +650,7 @@ export const services = serviceSchema.array().parse([
       "Semipermanente con secado inmediato y brillo.",
       "Gel manicure with instant curing and shine.",
     ),
-    resultDuration: l("20 a 25 dias.", "20 to 25 days."),
+    resultDuration: l("20 a 25 días.", "20 to 25 days."),
     offers: [offer("colombia", 55000, "COP", d.semiRange)],
   },
   {
@@ -653,7 +662,7 @@ export const services = serviceSchema.array().parse([
       "Pedicure semipermanente con secado inmediato.",
       "Gel pedicure with instant curing.",
     ),
-    resultDuration: l("20 a 25 dias.", "20 to 25 days."),
+    resultDuration: l("20 a 25 días.", "20 to 25 days."),
     offers: [offer("colombia", 55000, "COP", d.semiRange)],
   },
   {
@@ -662,7 +671,7 @@ export const services = serviceSchema.array().parse([
     categoryId: "unas",
     name: l("Base rubber", "Rubber base"),
     shortDescription: l(
-      "Base que ayuda a tener una uña mas gruesa y resistente.",
+      "Base que ayuda a tener una uña más gruesa y resistente.",
       "Base that helps create a thicker, stronger natural nail.",
     ),
     offers: [offer("colombia", 67000, "COP", d.semiRange)],
@@ -673,7 +682,7 @@ export const services = serviceSchema.array().parse([
     categoryId: "unas",
     name: l("Dipping", "Dipping powder"),
     shortDescription: l(
-      "Capas delgadas de polvo acrilico sobre la uña natural.",
+      "Capas delgadas de polvo acrílico sobre la uña natural.",
       "Thin acrylic powder layers over the natural nail.",
     ),
     offers: [offer("colombia", 75000, "COP", d.twoHours)],
@@ -697,9 +706,9 @@ export const services = serviceSchema.array().parse([
     id: "acrilico-esculpido",
     slug: l("acrilico-esculpido", "sculpted-acrylic"),
     categoryId: "unas",
-    name: l("Acrilico esculpido", "Sculpted acrylic"),
+    name: l("Acrílico esculpido", "Sculpted acrylic"),
     shortDescription: l(
-      "Acrilico para alargar y evitar que se quiebren las uñas.",
+      "Acrílico para alargar y evitar que se quiebren las uñas.",
       "Acrylic system to lengthen and help prevent nail breakage.",
     ),
     offers: [
@@ -712,9 +721,9 @@ export const services = serviceSchema.array().parse([
     id: "acrilico-cubrimiento",
     slug: l("acrilico-cubrimiento", "acrylic-overlay"),
     categoryId: "unas",
-    name: l("Acrilico cubrimiento", "Acrylic overlay"),
+    name: l("Acrílico cubrimiento", "Acrylic overlay"),
     shortDescription: l(
-      "Cubrimiento acrilico sobre la uña.",
+      "Cubrimiento acrílico sobre la uña.",
       "Acrylic overlay over the nail.",
     ),
     offers: [
@@ -727,8 +736,8 @@ export const services = serviceSchema.array().parse([
     id: "retiro-acrilico",
     slug: l("retiro-acrilico", "acrylic-removal"),
     categoryId: "unas",
-    name: l("Retiro acrilico", "Acrylic removal"),
-    shortDescription: l("Retiro de sistema acrilico.", "Acrylic system removal."),
+    name: l("Retiro de acrílico", "Acrylic removal"),
+    shortDescription: l("Retiro de sistema acrílico.", "Acrylic system removal."),
     offers: [offer("colombia", 25000, "COP", d.oneHour)],
   },
   {
@@ -775,7 +784,7 @@ export const services = serviceSchema.array().parse([
     categoryId: "peinados-maquillaje",
     name: l("Trenzas", "Braids"),
     shortDescription: l(
-      "Servicio segun referencia y diseño.",
+      "Servicio según referencia y diseño.",
       "Service based on the reference and design.",
     ),
     offers: [
@@ -784,7 +793,7 @@ export const services = serviceSchema.array().parse([
         15000,
         "COP",
         d.braidsRange,
-        l("Cotizar segun referencia.", "Quote according to reference."),
+      l("Cotizar según referencia.", "Quote according to reference."),
       ),
     ],
   },

@@ -102,6 +102,12 @@ Implementacion 19/06/2026:
 - `CourseCard` recibe contenido e imagen estructurados, y se reutiliza en Home y Formaciones.
 - `EventMap` combina mapa visual optimizado, pins numerados y lista accesible; en movil contiene su propio desplazamiento horizontal.
 - Certificaciones usa una composicion editorial unica sobre `Section`, `StaggerList` e imagen registrada; no se creo `CertificationItem` porque no existe un segundo patron repetido que justifique esa abstraccion.
+- `EditorialImagePair` en `components/primitives`: composicion de dos imagenes reales con dimensiones estables; se usa en Servicios, mercados, Cuidados y Contacto.
+- `DesktopNav` en `components/layout`: navegacion desktop localizada con estado activo Motion; recibe items y locale, sin conocer contenido de negocio.
+- `HeroStage`, `HeroItem`, `HeroMedia` y `HeroParallax` en `components/motion`: entrada y desplazamiento sutil del hero con transform y reduced motion.
+- `Reveal` admite direcciones `up`, `left` y `right` para evitar una animacion repetitiva sin multiplicar componentes.
+- `Dialog` y `Sheet` comparten cierre tactil de 44 px, espacio reservado en header, altura segura con `100dvh` y capa superior al banner de cookies.
+- `WhatsAppChooser` reutiliza ese Dialog, formatea telefonos solo para presentacion y conserva E.164 en los enlaces.
 
 Reglas:
 

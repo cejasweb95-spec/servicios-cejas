@@ -38,6 +38,11 @@ export const mainNavigation = [
     href: { es: "/sobre-xiomara", en: "/about-xiomara" },
   },
   {
+    id: "aftercare",
+    label: { es: "Cuidados", en: "Aftercare" },
+    href: { es: "/cuidados", en: "/aftercare" },
+  },
+  {
     id: "contact",
     label: { es: "Contacto", en: "Contact" },
     href: { es: "/contacto", en: "/contact" },

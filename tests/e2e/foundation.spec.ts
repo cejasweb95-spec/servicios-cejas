@@ -57,15 +57,47 @@ test.describe("localized foundation", () => {
     await page.goto("/es");
     await page.getByRole("button", { name: "Contacta conmigo" }).first().click();
 
-    await expect(
-      page.getByRole("dialog", { name: "Elige el WhatsApp de contacto" }),
-    ).toBeVisible();
+    const dialog = page.getByRole("dialog", {
+      name: "Elige el WhatsApp de contacto",
+    });
+    await expect(dialog).toBeVisible();
     await expect(
       page.getByRole("link", { name: /WhatsApp Colombia/ }),
     ).toHaveAttribute("href", /573167742299/);
     await expect(
       page.getByRole("link", { name: /WhatsApp España/ }),
     ).toHaveAttribute("href", /34603804837/);
+
+    await page.waitForTimeout(200);
+
+    const closeButton = dialog.getByRole("button", { name: "Cerrar" });
+    const closeBox = await closeButton.boundingBox();
+    const optionBox = await dialog
+      .getByRole("link", { name: /WhatsApp Colombia/ })
+      .boundingBox();
+    const headerPadding = await dialog
+      .locator('[data-slot="dialog-header"]')
+      .evaluate((element) =>
+        Number.parseFloat(getComputedStyle(element).paddingRight),
+      );
+
+    expect(closeBox?.width).toBeGreaterThanOrEqual(44);
+    expect(closeBox?.height).toBeGreaterThanOrEqual(44);
+    expect(optionBox?.height).toBeGreaterThanOrEqual(64);
+    expect(headerPadding).toBeGreaterThanOrEqual(56);
+
+    const cookieBanner = page.locator(
+      '[aria-labelledby="cookie-consent-title"]',
+    );
+    if (await cookieBanner.isVisible()) {
+      const [dialogZIndex, bannerZIndex] = await Promise.all([
+        dialog.evaluate((element) => Number(getComputedStyle(element).zIndex)),
+        cookieBanner.evaluate((element) =>
+          Number(getComputedStyle(element).zIndex),
+        ),
+      ]);
+      expect(dialogZIndex).toBeGreaterThan(bannerZIndex);
+    }
 
     await page.keyboard.press("Escape");
     await expect(

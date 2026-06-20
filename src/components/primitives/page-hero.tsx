@@ -5,7 +5,7 @@ import { Eyebrow } from "@/components/primitives/eyebrow";
 import { cn } from "@/lib/utils";
 
 type PageHeroProps = {
-  eyebrow?: string;
+  eyebrow?: ReactNode;
   title: string;
   description?: string;
   actions?: ReactNode;
@@ -29,9 +29,9 @@ export function PageHero({
           aside && "lg:grid-cols-[1.08fr_0.92fr]",
         )}
       >
-        <div className="max-w-3xl">
+        <div className="min-w-0 max-w-3xl">
           {eyebrow ? <Eyebrow className="mb-4">{eyebrow}</Eyebrow> : null}
-          <h1 className="text-balance font-display text-5xl leading-[1.02] text-foreground sm:text-6xl lg:text-7xl">
+          <h1 className="text-balance font-display text-4xl leading-[1.08] text-foreground sm:text-6xl sm:leading-[1.02] lg:text-7xl">
             {title}
           </h1>
           {description ? (
@@ -41,7 +41,7 @@ export function PageHero({
           ) : null}
           {actions ? <div className="mt-8 flex flex-wrap gap-3">{actions}</div> : null}
         </div>
-        {aside ? <div className="self-end">{aside}</div> : null}
+        {aside ? <div className="min-w-0 self-end">{aside}</div> : null}
       </Container>
     </header>
   );

@@ -16,7 +16,7 @@ export const events = eventAvailabilitySchema.array().parse([
   locationId,
   status: "by_availability",
   label: l(
-    "Proxima jornada por disponibilidad",
-    "Upcoming session by availability",
+    "Próxima jornada por disponibilidad",
+    "Upcoming appointments subject to availability",
   ),
 })) satisfies EventAvailability[]);

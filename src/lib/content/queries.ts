@@ -1,4 +1,5 @@
 import { localContentProvider } from "@/lib/content/provider";
+import { marketMediaIds, serviceCategoryMediaIds } from "@/content/media";
 import type {
   Course,
   Download,
@@ -254,6 +255,21 @@ export function getMediaAssetById(id: string, locale: Locale) {
         alt: text(asset.alt, locale),
       }
     : null;
+}
+
+export function getServiceCategoryMediaAsset(
+  categoryId: string,
+  locale: Locale,
+) {
+  const mediaId = serviceCategoryMediaIds[categoryId];
+
+  return mediaId ? getMediaAssetById(mediaId, locale) : null;
+}
+
+export function getMarketMediaAsset(marketId: string, locale: Locale) {
+  const mediaId = marketMediaIds[marketId];
+
+  return mediaId ? getMediaAssetById(mediaId, locale) : null;
 }
 
 export function getSocialLinks() {

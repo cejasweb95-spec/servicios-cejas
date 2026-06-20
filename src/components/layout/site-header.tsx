@@ -2,6 +2,7 @@ import Image from "next/image";
 import { MessageCircle } from "lucide-react";
 
 import { MobileNav } from "@/components/layout/mobile-nav";
+import { DesktopNav } from "@/components/layout/desktop-nav";
 import { LocaleSwitcher } from "@/components/layout/locale-switcher";
 import { WhatsAppChooser } from "@/components/domain/whatsapp-chooser";
 import { Button } from "@/components/ui/button";
@@ -57,9 +58,13 @@ export function SiteHeader({
   navItems,
   whatsapp,
 }: SiteHeaderProps) {
+  const desktopNavItems = navItems.filter(
+    (item) => item.id !== "home" && item.id !== "downloads",
+  );
+
   return (
-    <header className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/88">
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-4 sm:px-8">
+    <header className="sticky top-0 z-40 border-b border-border bg-background/92 shadow-soft backdrop-blur-xl supports-backdrop-filter:bg-background/86">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-3 sm:px-8">
         <Link
           aria-label={logo?.alt ?? siteConfig.name}
           className="inline-flex items-center rounded-md focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/40"
@@ -68,7 +73,7 @@ export function SiteHeader({
           {logo ? (
             <Image
               alt={logo.alt}
-              className="h-9 w-auto sm:h-10"
+              className="h-10 w-auto transition-transform duration-300 motion-reduce:transition-none sm:h-11"
               height={logo.height}
               priority
               sizes="220px"
@@ -81,20 +86,11 @@ export function SiteHeader({
             </span>
           )}
         </Link>
-        <nav
-          aria-label={labels.mainNavigation}
-          className="hidden items-center gap-1 xl:flex"
-        >
-          {navItems.map((item) => (
-            <Link
-              className="rounded-full px-3 py-2 text-sm font-semibold text-muted-foreground transition-colors hover:bg-muted hover:text-primary-text focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/40"
-              href={item.href}
-              key={item.id}
-            >
-              {item.label}
-            </Link>
-          ))}
-        </nav>
+        <DesktopNav
+          currentLocale={currentLocale}
+          items={desktopNavItems}
+          label={labels.mainNavigation}
+        />
         <div className="hidden items-center gap-2 xl:flex">
           <LocaleSwitcher currentLocale={currentLocale} label={labels.language} />
           <WhatsAppChooser

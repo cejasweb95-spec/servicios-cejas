@@ -5,8 +5,10 @@ import { useMemo, useState } from "react";
 import { motion, useReducedMotion } from "motion/react";
 
 import { motionDurations, motionEasing } from "@/components/motion/motion-tokens";
+import { CountryFlag } from "@/components/primitives/country-flag";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import type { MarketId } from "@/lib/content/schema";
 import { cn } from "@/lib/utils";
 
 type EventMapLocationType = "physical_studio" | "journey_availability";
@@ -17,6 +19,7 @@ export type EventMapLocation = {
   city: string;
   country: string;
   href: string;
+  marketId: MarketId;
   notes: string;
   region?: string;
   statusLabel: string;
@@ -295,7 +298,8 @@ export function EventMap({ copy, locations }: EventMapProps) {
           <Badge variant="outline">
             {getLocationTypeLabel(selectedLocation, copy)}
           </Badge>
-          <h3 className="mt-4 font-display text-3xl leading-tight text-foreground">
+          <h3 className="mt-4 flex items-center gap-2.5 font-display text-3xl leading-tight text-foreground">
+            <CountryFlag className="h-5 w-7" market={selectedLocation.marketId} />
             {getLocationLabel(selectedLocation)}
           </h3>
           <p className="mt-3 text-sm leading-6 text-muted-foreground">
@@ -340,10 +344,14 @@ export function EventMap({ copy, locations }: EventMapProps) {
                     onClick={() => setSelectedId(location.id)}
                     type="button"
                   >
-                    <span className="text-sm font-semibold">
+                    <span className="flex items-center gap-2 text-sm font-semibold">
+                      <CountryFlag
+                        className="h-3.5 w-5"
+                        market={location.marketId}
+                      />
                       {getLocationLabel(location)}
                     </span>
-                    <span className="text-xs text-muted-foreground">
+                    <span className="pl-7 text-xs text-muted-foreground">
                       {location.statusLabel}
                     </span>
                   </button>

@@ -13,6 +13,7 @@ import {
 } from "@/lib/content/queries";
 import { buildServicePath } from "@/lib/routes/service-routes";
 import { buildPageMetadata } from "@/lib/seo/build-page-metadata";
+import { fitMetadataTitle } from "@/lib/seo/fit-metadata-title";
 
 type ServicePageProps = {
   params: Promise<{ locale: string; market: string; service: string }>;
@@ -54,7 +55,9 @@ export async function generateMetadata({
 
   return buildPageMetadata({
     locale,
-    title: t("metaTitle", { service: service.name, market: market.name }),
+    title: fitMetadataTitle(
+      t("metaTitle", { service: service.name, market: market.name }),
+    ),
     description: t("metaDescription", {
       service: service.name,
       market: market.name,
@@ -87,8 +90,12 @@ export default async function ServicePage({ params }: ServicePageProps) {
         assessmentDescription: t("assessmentDescription"),
         assessmentLabel: t("assessmentLabel"),
         assessmentTitle: t("assessmentTitle"),
+        afterCareLabel: t("afterCareLabel"),
         backToMarketLabel: t("backToMarketLabel"),
+        beforeCareLabel: t("beforeCareLabel"),
         breadcrumbsLabel: t("breadcrumbsLabel"),
+        careDescription: t("careDescription"),
+        careTitle: t("careTitle"),
         categoryLabel: t("categoryLabel"),
         contactLabel: t("contactLabel"),
         descriptionTitle: t("descriptionTitle"),

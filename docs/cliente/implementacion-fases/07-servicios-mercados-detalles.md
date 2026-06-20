@@ -114,6 +114,9 @@ Uso: construir paginas de servicios con contenido confirmado, copy localizado pr
 - [x] Precio/duracion visible.
 - [x] Que incluye si esta confirmado; no se inventan bloques si el catalogo no lo trae.
 - [x] Cuidados relacionados si existen; no se inventan cuidados no documentados.
+- [x] Servicios de micropigmentacion aplicables declaran `careGuide` en datos estructurados, no dentro del componente visual.
+- [x] El detalle muestra accesos directos a preparacion y cuidados posteriores con el ancla correcta para cejas o labios.
+- [x] HidraLips y servicios no relacionados no muestran el bloque de cuidados de micropigmentacion.
 - [x] CTA WhatsApp contextual.
 - [x] Servicios relacionados del mismo mercado.
 - [x] No claims sensibles sin confirmar.
@@ -171,6 +174,7 @@ Tests recomendados:
 - [x] Cada CTA WhatsApp usa numero correcto.
 - [x] Cambio idioma mantiene mercado equivalente.
 - [x] Mobile 390/430 sin overflow.
+- [x] Los CTA de cuidados aparecen en micropigmentacion de cejas y Microlips, apuntan al ancla correcta y no aparecen en HidraLips.
 
 Validacion ejecutada el 18/06/2026:
 

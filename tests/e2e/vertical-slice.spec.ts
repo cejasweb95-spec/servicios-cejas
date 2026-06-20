@@ -208,6 +208,42 @@ test.describe("services by market", () => {
       }),
     ).toBeVisible();
   });
+
+  test("links confirmed micropigmentation care without applying it to HidraLips", async ({
+    page,
+  }) => {
+    await page.goto("/es/servicios/colombia/efecto-polvo");
+
+    const beforeBrows = page.getByRole("link", {
+      name: "Ver preparación antes de la cita",
+    });
+    await expect(beforeBrows).toHaveAttribute(
+      "href",
+      "/es/cuidados#before-brows",
+    );
+    await expect(
+      page.getByRole("link", { name: "Ver cuidados posteriores" }),
+    ).toHaveAttribute("href", "/es/cuidados#after-brows");
+
+    await beforeBrows.click();
+    await page.waitForURL(/\/es\/cuidados#before-brows$/);
+    const browHeading = page.getByRole("heading", { level: 3, name: "Cejas" }).first();
+    await expect(browHeading).toBeVisible();
+    const browBox = await browHeading.boundingBox();
+    expect(browBox?.y).toBeGreaterThanOrEqual(70);
+
+    await page.goto("/es/servicios/colombia/microlips");
+    await expect(
+      page.getByRole("link", { name: "Ver preparación antes de la cita" }),
+    ).toHaveAttribute("href", "/es/cuidados#before-lips");
+
+    await page.goto("/es/servicios/colombia/hidralips-una-sesion");
+    await expect(
+      page.getByRole("heading", {
+        name: "Prepárate antes y protege el resultado",
+      }),
+    ).toHaveCount(0);
+  });
 });
 
 test.describe("professional training", () => {
@@ -228,7 +264,7 @@ test.describe("professional training", () => {
     );
     await expect(page.getByText("Consultar próxima fecha").first()).toBeVisible();
     await expect(
-      page.getByText(/Las fechas, cupos y ciudades se consultan por WhatsApp/).first(),
+      page.getByText(/Consulta por WhatsApp próximas fechas, cupos y ciudades/).first(),
     ).toBeVisible();
     await expect(page.getByText(/cupo disponible el/i)).toHaveCount(0);
 
@@ -245,11 +281,11 @@ test.describe("professional training", () => {
     await expect(
       page.getByRole("heading", {
         level: 1,
-        name: "Curso profesional de micropigmentacion de cejas",
+        name: "Curso profesional de micropigmentación de cejas",
       }),
     ).toBeVisible();
     await expect(page.getByRole("heading", { name: "Temario" })).toBeVisible();
-    await expect(page.getByText("3 dias").first()).toBeVisible();
+    await expect(page.getByText("3 días").first()).toBeVisible();
     await expect(page.getByText("Doble certificado").first()).toBeVisible();
     await expect(
       page.getByRole("link", { name: "Descargar PDF" }).first(),
@@ -270,7 +306,7 @@ test.describe("professional training", () => {
     expect(courseSchema).toMatchObject({
       "@context": "https://schema.org",
       "@type": "Course",
-      name: "Curso profesional de micropigmentacion de cejas",
+      name: "Curso profesional de micropigmentación de cejas",
     });
     expect(courseSchema.image).toMatch(/curso-cejas-pigmentos\.jpg$/);
 
@@ -280,7 +316,10 @@ test.describe("professional training", () => {
       .click();
     await expect(
       page.getByRole("link", { name: /WhatsApp España/ }),
-    ).toHaveAttribute("href", /Curso%20profesional%20de%20micropigmentacion/);
+    ).toHaveAttribute(
+      "href",
+      /Curso%20profesional%20de%20micropigmentaci%C3%B3n/,
+    );
     await page.keyboard.press("Escape");
 
     const viewport = page.viewportSize();
@@ -456,7 +495,7 @@ test.describe("journeys and animated map", () => {
     await expect(
       page.getByRole("heading", {
         level: 1,
-        name: "Cali studio and upcoming appointments by city",
+        name: "Cali studio and appointments in selected cities",
       }),
     ).toBeVisible();
   });

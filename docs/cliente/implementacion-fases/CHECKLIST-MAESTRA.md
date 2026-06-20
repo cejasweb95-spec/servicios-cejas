@@ -13,7 +13,7 @@ Esta checklist resume las fases. El detalle operativo vive en cada MD de `docs/c
 - [x] 02 - Modelado de datos + query layer.
 - [x] 03 - Assets, PDFs e imagenes.
 - [x] 04 - Sistema de diseno, shadcn y tokens.
-- [ ] 05 - App shell, navegacion, WhatsApp e i18n.
+- [x] 05 - App shell, navegacion, WhatsApp e i18n.
 - [x] 06 - Vertical slice Colombia + Descargas.
 - [x] 07 - Servicios por mercado y detalles.
 - [x] 08 - Home editorial y conversion.
@@ -32,6 +32,7 @@ Esta checklist resume las fases. El detalle operativo vive en cada MD de `docs/c
 - [x] `main` no tocada.
 - [x] No hay edits en artefactos generados.
 - [x] Cada pagina publica creada hasta ahora tiene ES y EN.
+- [x] Paridad profunda ES/EN, placeholders y rutas equivalentes verificados por tests unitarios.
 - [x] Cada pagina publica creada hasta ahora tiene metadata localizada.
 - [x] Cada pagina publica creada hasta ahora tiene un solo H1.
 - [x] Cada imagen publica tiene dimensiones estables y alt localizado.
@@ -52,7 +53,7 @@ Esta checklist resume las fases. El detalle operativo vive en cada MD de `docs/c
 - [x] Hover nunca es la unica forma de acceder a informacion; foco/tap/click equivalente probado.
 - [x] Paginas principales tienen keyword map, metadata, schema y auditoria final.
 - [x] Formularios de reserva, carrito, checkout y tienda no existen en V1.
-- [x] Lighthouse objetivo: SEO/A11y/Best Practices 100; Performance movil local 82-89 con justificacion y mejora posterior documentada.
+- [x] Lighthouse objetivo: SEO/A11y/Best Practices 100; Performance movil local post-pase premium 83-86 con justificacion y mejora posterior documentada.
 
 ---
 
@@ -64,6 +65,7 @@ Esta checklist resume las fases. El detalle operativo vive en cada MD de `docs/c
 - [x] Tablet 768px.
 - [x] Mobile 430px.
 - [x] Mobile 390px.
+- [x] Auditoria automatizada integral: 210 URLs x 390/430/768/1024/1440/1920 sin incidencias.
 - [x] Chromium.
 - [x] Firefox.
 - [x] WebKit/Safari.

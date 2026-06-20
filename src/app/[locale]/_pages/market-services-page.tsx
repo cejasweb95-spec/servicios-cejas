@@ -9,9 +9,11 @@ import {
 import { Container } from "@/components/primitives/container";
 import { EmptyState } from "@/components/primitives/empty-state";
 import { MarketSelector } from "@/components/domain/market-selector";
+import { CountryFlag } from "@/components/primitives/country-flag";
 import { Reveal } from "@/components/motion/reveal";
 import { Breadcrumbs } from "@/components/navigation/breadcrumbs";
 import { PageHero } from "@/components/primitives/page-hero";
+import { EditorialImagePair } from "@/components/primitives/editorial-image-pair";
 import { Section } from "@/components/primitives/section";
 import { JsonLd } from "@/components/seo/json-ld";
 import type { Locale } from "@/i18n/routing";
@@ -19,7 +21,9 @@ import type { MarketId, ServiceOffer } from "@/lib/content/schema";
 import {
   getDownloadsByMarket,
   getMarketBySlug,
+  getMarketMediaAsset,
   getMarkets,
+  getMediaAssetById,
   getServiceCategories,
   getServicesByMarket,
   getWhatsAppTarget,
@@ -123,6 +127,10 @@ export function MarketServicesPage({
   }
 
   const markets = getMarkets(locale);
+  const primaryImage =
+    getMarketMediaAsset(market.id, locale) ??
+    getMediaAssetById("result-cejas-01", locale);
+  const secondaryImage = getMediaAssetById("result-labios-01", locale);
   const groups = buildGroups(
     market.id,
     market.slug,
@@ -161,8 +169,22 @@ export function MarketServicesPage({
       <JsonLd data={pageJsonLd} />
       <JsonLd data={breadcrumbJsonLd} />
       <PageHero
+        aside={
+          primaryImage?.publicPath && secondaryImage?.publicPath ? (
+            <EditorialImagePair
+              primary={primaryImage}
+              priority
+              secondary={secondaryImage}
+            />
+          ) : undefined
+        }
         description={market.description}
-        eyebrow={copy.heroEyebrow}
+        eyebrow={
+          <span className="inline-flex items-center gap-2">
+            <CountryFlag className="h-3.5 w-5" market={market.id} />
+            {copy.heroEyebrow}
+          </span>
+        }
         title={title}
       />
       <Section>

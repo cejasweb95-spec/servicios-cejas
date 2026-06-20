@@ -1,4 +1,15 @@
-# Próxima sesión — Pase visual PREMIUM con Framer Motion
+# Pase visual PREMIUM con Motion
+
+Estado: Ejecutado el 19/06/2026; conservar como registro, no como tarea pendiente.
+
+Implementado:
+
+- Hero de Home con entrada escalonada sin ocultar contenido y parallax sutil con reduced motion.
+- Header desktop depurado, estado activo animado y selector de idioma segmentado.
+- Servicios, Cuidados y Contacto con composiciones editoriales de imagen real.
+- Imagen por categoria en detalles de servicio solo cuando existe material confirmado.
+- Stagger/reveals diferenciados en servicios, formaciones, resultados, Sobre Xiomara, cuidados y contacto.
+- Mapa animado preservado con coordenadas reales, lineas guia y lista accesible.
 
 Brief de arranque para retomar en sesión fresca. Objetivo: impacto visual TOP/premium
 en toda la web con motion, **sin romper** reglas de marca, SEO ni PageSpeed.
@@ -13,7 +24,7 @@ en toda la web con motion, **sin romper** reglas de marca, SEO ni PageSpeed.
 - Footer con iconos de marca (WhatsApp, IG, FB, TikTok) — `src/components/icons/brand-icons.tsx`.
 - Formaciones/cursos y certificaciones: upgrade de ChatGPT ya integrado.
 
-## Qué hacer (página por página, con `nextjs-framer-motion-animations`)
+## Alcance ejecutado (página por página, con `nextjs-framer-motion-animations`)
 1. **Home** — entrada en escena del hero (texto + foto), parallax sutil, reveals diferenciados por sección (no todas igual). Animar el mapa: puntos aparecen + líneas se dibujan (ya hay base con `pathLength`).
 2. **Servicios / detalle** — stagger de tarjetas, microinteracción en precio/chips, hover premium.
 3. **Formaciones / curso** — entrada de tarjetas + temario animado.

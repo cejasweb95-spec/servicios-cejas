@@ -8,7 +8,7 @@ export const serviceCategories = serviceCategorySchema.array().parse([
     slug: l("cejas", "brows"),
     name: l("Cejas", "Brows"),
     description: l(
-      "Diseño, henna, laminado y depilacion de cejas.",
+      "Diseño, henna, laminado y depilación de cejas.",
       "Brow design, henna, lamination and brow hair removal.",
     ),
     order: 10,
@@ -16,7 +16,7 @@ export const serviceCategories = serviceCategorySchema.array().parse([
   {
     id: "micropigmentacion-cejas",
     slug: l("micropigmentacion-cejas", "brow-micropigmentation"),
-    name: l("Micropigmentacion de cejas", "Brow micropigmentation"),
+    name: l("Micropigmentación de cejas", "Brow micropigmentation"),
     description: l(
       "Tecnicas de cejas semipermanentes y refuerzos.",
       "Semi-permanent brow techniques and touch-ups.",
@@ -28,7 +28,7 @@ export const serviceCategories = serviceCategorySchema.array().parse([
     slug: l("labios", "lips"),
     name: l("Labios", "Lips"),
     description: l(
-      "Micropigmentacion, neutralizacion e hidratacion labial.",
+      "Micropigmentación, neutralización e hidratación labial.",
       "Lip micropigmentation, neutralization and hydration.",
     ),
     order: 30,
@@ -38,7 +38,7 @@ export const serviceCategories = serviceCategorySchema.array().parse([
     slug: l("mirada-pestanas", "eyes-lashes"),
     name: l("Mirada y pestañas", "Eyes and lashes"),
     description: l(
-      "Linea de ojos, relleno, lifting y servicios de pestañas.",
+      "Línea de ojos, relleno, lifting y servicios de pestañas.",
       "Eyeliner, lash line enhancement, lifting and lash services.",
     ),
     order: 40,
@@ -46,9 +46,9 @@ export const serviceCategories = serviceCategorySchema.array().parse([
   {
     id: "depilacion-corporal",
     slug: l("depilacion-corporal", "body-waxing"),
-    name: l("Depilacion corporal", "Body waxing"),
+    name: l("Depilación corporal", "Body waxing"),
     description: l(
-      "Servicios de depilacion disponibles segun mercado.",
+      "Servicios de depilación disponibles según el mercado.",
       "Hair removal services available by market.",
     ),
     order: 50,
@@ -68,7 +68,7 @@ export const serviceCategories = serviceCategorySchema.array().parse([
     slug: l("unas", "nails"),
     name: l("Uñas", "Nails"),
     description: l(
-      "Manicure, pedicure y sistemas de uñas del catalogo Colombia.",
+      "Manicure, pedicure y sistemas de uñas del catálogo de Colombia.",
       "Manicure, pedicure and nail systems from the Colombia catalog.",
     ),
     order: 70,

@@ -75,7 +75,7 @@ export function MobileNav({
         <nav aria-label={navLabel} className="grid gap-1 px-4">
           {navItems.map((item) => (
             <Link
-              className="rounded-md px-3 py-2 text-base font-semibold text-foreground hover:bg-muted hover:text-primary-text focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/40"
+              className="flex min-h-11 items-center rounded-md px-3 py-2 text-base font-semibold text-foreground hover:bg-muted hover:text-primary-text focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/40"
               href={item.href}
               key={item.id}
               onClick={() => setOpen(false)}

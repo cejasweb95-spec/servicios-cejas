@@ -14,7 +14,7 @@
     "marketSelectorLabel": "Mercados de Cejas Internacionales",
     "marketCta": "Ver servicios",
     "featuredTitle": "Servicios destacados por mercado",
-    "featuredDescription": "La home no mezcla precios ni disponibilidad. Primero eliges el mercado y después ves servicios, tiempos, PDFs y contacto correcto.",
+    "featuredDescription": "Elige tu mercado para consultar servicios, precios, duración, catálogos y el contacto de WhatsApp correspondiente.",
     "featuredEmpty": "Servicios en preparación",
     "assessmentTitle": "Valoración gratuita por foto",
     "assessmentCopy": "Puedes enviar una foto por WhatsApp para orientar el servicio antes de reservar. La cita y la reserva se gestionan solo por WhatsApp.",
@@ -23,8 +23,8 @@
     "journeysLinkLabel": "Ver mapa de jornadas",
     "studioLabel": "Sede física",
     "journeyLabel": "Jornada por disponibilidad",
-    "resultsTitle": "Resultados reales, sin promesas vacías",
-    "resultsCopy": "La web usará las fotos reales disponibles de la clienta. El objetivo es mostrar técnica, cicatrizados y confianza sin inventar testimonios ni garantías.",
+    "resultsTitle": "Resultados reales que inspiran confianza",
+    "resultsCopy": "Explora trabajos reales de cejas, labios y mirada, incluidos resultados cicatrizados, sin imágenes de stock ni promesas garantizadas.",
     "aboutTitle": "Xiomara, técnica y formadora",
     "aboutCopy": "Cejas Internacionales combina servicios de belleza especializada, formación profesional y jornadas en distintas ciudades, siempre con la sede física y legal ubicada en Cali.",
     "coursesTitle": "Formaciones y masterclass",
@@ -60,7 +60,7 @@
     "serviceDetailLabel": "Ver detalle",
     "allMarketsLabel": "Ver todos los mercados",
     "catalogBannerTitle": "Catálogo oficial del mercado",
-    "catalogBannerDescription": "La descarga aparece una sola vez para evitar repetir el PDF en cada servicio. Los servicios de abajo se muestran filtrados por este mercado.",
+    "catalogBannerDescription": "Consulta los servicios disponibles para este mercado y descarga el catálogo oficial con sus precios correspondientes.",
     "catalogDownloadLabel": "Descargar catálogo PDF",
     "contactLabel": "Contacta conmigo",
     "emptyTitle": "Sin servicios publicados",
@@ -73,7 +73,7 @@
     "homeLabel": "Inicio",
     "eyebrow": "Descargas",
     "title": "Catálogos y PDFs oficiales",
-    "description": "Los catálogos se agrupan por mercado y los PDFs de formación se descargan desde una única sección para mantener la web clara y ordenada.",
+    "description": "Encuentra los catálogos oficiales de cada mercado y los programas completos de formación disponibles para descargar.",
     "catalogLabel": "Catálogos por mercado",
     "courseLabel": "Formaciones",
     "actionLabel": "Descargar PDF"
@@ -85,7 +85,7 @@
     "homeLabel": "Inicio",
     "eyebrow": "Formaciones",
     "title": "Cursos profesionales y masterclass",
-    "description": "Programas transcritos desde los PDFs oficiales. Las fechas, cupos y ciudades se consultan por WhatsApp para no publicar datos no confirmados.",
+    "description": "Formaciones basadas en los programas oficiales, con temario y duración confirmados. Consulta por WhatsApp próximas fechas, cupos y ciudades.",
     "courseDetailLabel": "Ver temario",
     "downloadLabel": "Descargar PDF",
     "professionalTitle": "Cursos profesionales",
@@ -101,7 +101,7 @@
     "homeLabel": "Inicio",
     "eyebrow": "Jornadas internacionales",
     "title": "Sede en Cali y próximas jornadas por ciudad",
-    "description": "Cejas Internacionales tiene sede física y dirección legal en Cali, Colombia. Restrepo, Madrid, Palma de Mallorca, Puerto de Sagunto y Ginebra se muestran como jornadas próximas por disponibilidad, sin publicar fechas no confirmadas.",
+    "description": "Cejas Internacionales tiene sede física y dirección legal en Cali, Colombia. Las jornadas en Restrepo, Madrid, Palma de Mallorca, Puerto de Sagunto y Ginebra se programan según disponibilidad; consulta fechas por WhatsApp.",
     "primaryCta": "Ver mapa de jornadas",
     "mapTitle": "Mapa de disponibilidad",
     "mapAriaLabel": "Mapa editorial con la sede física en Cali y ciudades de próximas jornadas por disponibilidad.",
@@ -109,28 +109,28 @@
     "selectedLocationLabel": "Detalle de ubicación seleccionada",
     "selectLocationLabel": "Seleccionar ubicación",
     "physicalStudioLabel": "Sede física",
-    "physicalStudioDescription": "La sede física y la dirección legal de la web están únicamente en Cali, Valle del Cauca, Colombia.",
+    "physicalStudioDescription": "La única sede física y dirección legal se encuentran en Cali, Valle del Cauca, Colombia.",
     "journeyLabel": "Jornada por disponibilidad",
     "addressLabel": "Dirección",
     "contactLabel": "Contacta conmigo",
     "availabilityTitle": "Cómo se consultan las jornadas",
-    "availabilityDescription": "Las ciudades se preparan para publicar fecha, cupos y estado cuando la clienta los confirme. Mientras tanto, la consulta y la reserva se gestionan por WhatsApp.",
+    "availabilityDescription": "Las fechas y los cupos se anuncian cuando están confirmados. Mientras tanto, puedes consultar disponibilidad y reservar por WhatsApp.",
     "noFixedStudioTitle": "Sin sedes fijas fuera de Cali",
     "noFixedStudioDescription": "España, Suiza y Restrepo aparecen como ciudades de atención por jornada. No deben leerse como oficinas, locales o sedes permanentes.",
     "whatsappMessage": "Hola, quiero información sobre jornadas o servicios en {location}. Me gustaría consultar disponibilidad por WhatsApp."
   },
   "ResultsPage": {
     "metaTitle": "Resultados reales | Cejas Internacionales",
-    "metaDescription": "Galería base de resultados reales y trabajos cicatrizados disponibles de Cejas Internacionales, sin promesas ni testimonios inventados.",
+    "metaDescription": "Galería de resultados reales y trabajos cicatrizados de Cejas Internacionales en cejas, labios y mirada.",
     "breadcrumbsLabel": "Migas de pan",
     "homeLabel": "Inicio",
     "eyebrow": "Resultados reales",
-    "title": "Resultados disponibles de Cejas Internacionales",
-    "description": "La web trabaja con el material real que conserva la clienta: resultados de cejas, labios y sesión profesional. No usamos stock ni promesas de resultados garantizados.",
+    "title": "Resultados reales de Cejas Internacionales",
+    "description": "Trabajos reales de cejas, labios y mirada realizados por Cejas Internacionales, con imágenes de resultados y procedimientos cicatrizados.",
     "contactLabel": "Contacta conmigo",
     "healingLabel": "Cicatrizados y trabajos reales",
-    "galleryTitle": "Galería base para mostrar confianza",
-    "galleryNote": "Esta primera versión usa las imágenes confirmadas y deja preparada la sección para ampliar la galería cuando existan más fotos optimizadas.",
+    "galleryTitle": "Detalles que inspiran confianza",
+    "galleryNote": "Abre cada imagen para observar el acabado, la definición y los resultados disponibles con mayor detalle.",
     "openResultLabel": "Abrir resultado",
     "closeLightboxLabel": "Cerrar galería",
     "previousResultLabel": "Anterior",
@@ -180,6 +180,10 @@
     "noFormNote": "No hay formulario de reserva, tienda, carrito ni checkout. Escríbele al número de Colombia o al de España/Europa/Suiza según tu ciudad o mercado.",
     "emailLabel": "Email oficial",
     "addressLabel": "Dirección física y legal",
+    "mapTitle": "Cómo llegar al estudio de Cali",
+    "mapLoadLabel": "Ver el mapa",
+    "mapHint": "Al pulsar se cargará Google Maps",
+    "mapDirectionsLabel": "Abrir en Google Maps",
     "socialLabel": "Redes sociales"
   },
   "AftercarePage": {
@@ -194,6 +198,8 @@
     "afterTitle": "Después del procedimiento",
     "browsLabel": "Cejas",
     "lipsLabel": "Labios",
+    "beforeBrowsIntro": "Antes de una micropigmentación de cejas, es importante preparar la piel adecuadamente para obtener una mejor retención del pigmento y reducir el riesgo de sangrado o sensibilidad.",
+    "beforeLipsIntro": "Una correcta preparación de los labios ayuda a mejorar la cicatrización, la comodidad durante el procedimiento y la retención del pigmento.",
     "contactLabel": "Consultar por WhatsApp",
     "noteTitle": "Cada caso se confirma por WhatsApp",
     "note": "Estas recomendaciones se basan en contenido oficial de Cejas Internacionales y no sustituyen una indicación médica. Informa siempre sobre alergias, embarazo, lactancia, enfermedades o medicación.",
@@ -280,7 +286,7 @@
         "items": [
           "La web informa sobre servicios de belleza especializada, micropigmentación, jornadas por disponibilidad, formaciones y descargas oficiales.",
           "La cita y la reserva se gestionan únicamente por WhatsApp.",
-          "No existe tienda online, carrito, checkout ni formulario de reserva en V1."
+          "El sitio no incluye tienda online, carrito, pago en línea ni formulario de reserva."
         ]
       },
       {
@@ -356,7 +362,7 @@
         "items": [
           "Las cookies necesarias permiten el funcionamiento básico de la web.",
           "Las cookies analíticas ayudan a medir visitas y clics solo si hay consentimiento.",
-          "No se usa remarketing ni Google Ads en V1 salvo decisión futura."
+          "Actualmente no se utiliza remarketing ni publicidad de Google Ads."
         ]
       },
       {
@@ -401,11 +407,15 @@
     "relatedTitle": "Servicios relacionados",
     "relatedDescription": "Opciones del mismo mercado y categoría que pueden ayudarte a comparar técnica, precio y duración.",
     "relatedActionLabel": "Ver detalle",
+    "careTitle": "Prepárate antes y protege el resultado",
+    "careDescription": "Consulta las recomendaciones confirmadas para preparar la zona antes de la cita y cuidarla después de la micropigmentación.",
+    "beforeCareLabel": "Ver preparación antes de la cita",
+    "afterCareLabel": "Ver cuidados posteriores",
     "whatsappMessage": "Hola, quiero información sobre {service} en {market}. Me gustaría consultar disponibilidad por WhatsApp."
   },
   "CourseDetail": {
     "metaTitle": "{course} | Formación Cejas Internacionales",
-    "metaDescription": "Consulta temario, duración, modalidades, precios confirmados y PDF descargable de {course}. Fechas y cupos se consultan por WhatsApp.",
+    "metaDescription": "Temario, duración, modalidades, precios y PDF de {course}. Consulta fechas y cupos por WhatsApp.",
     "breadcrumbsLabel": "Migas de pan",
     "homeLabel": "Inicio",
     "trainingLabel": "Formaciones",
@@ -418,7 +428,7 @@
     "includesTitle": "Incluye",
     "pricingTitle": "Precios confirmados",
     "downloadTitle": "PDF oficial del curso",
-    "downloadDescription": "El PDF se descarga desde la sección pública de archivos. El contenido clave también queda visible en HTML para lectura y SEO.",
+    "downloadDescription": "Descarga el programa oficial del curso con el temario y la información disponible de la formación.",
     "downloadLabel": "Descargar PDF",
     "nextDateTitle": "Fechas y cupos por WhatsApp",
     "nextDateDescription": "No publicamos fechas ni cupos sin confirmación. Escribe por WhatsApp para consultar próxima fecha, ciudad o modalidad disponible.",
@@ -443,7 +453,7 @@
     "cookiesReject": "Rechazar",
     "cookiesConfigure": "Configurar",
     "cookiesSave": "Guardar preferencias",
-    "cookiesUnavailable": "Esta categoría no está disponible en V1."
+    "cookiesUnavailable": "Esta categoría no se utiliza actualmente."
   },
   "WhatsApp": {
     "title": "Elige el WhatsApp de contacto",

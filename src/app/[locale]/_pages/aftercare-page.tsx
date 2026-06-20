@@ -1,12 +1,15 @@
 import { WhatsAppChooser } from "@/components/domain/whatsapp-chooser";
 import { Breadcrumbs } from "@/components/navigation/breadcrumbs";
+import { Reveal } from "@/components/motion/reveal";
+import { StaggerList, StaggerListItem } from "@/components/motion/stagger-list";
 import { Container } from "@/components/primitives/container";
 import { PageHero } from "@/components/primitives/page-hero";
+import { EditorialImagePair } from "@/components/primitives/editorial-image-pair";
 import { Section } from "@/components/primitives/section";
 import { JsonLd } from "@/components/seo/json-ld";
 import { Badge } from "@/components/ui/badge";
 import type { Locale } from "@/i18n/routing";
-import { getWhatsAppTargets } from "@/lib/content/queries";
+import { getMediaAssetById, getWhatsAppTargets } from "@/lib/content/queries";
 import {
   buildBreadcrumbListJsonLd,
   buildWebPageJsonLd,
@@ -19,6 +22,8 @@ type CareBlock = {
 
 type AftercareCopy = {
   beforeTitle: string;
+  beforeBrowsIntro: string;
+  beforeLipsIntro: string;
   breadcrumbsLabel: string;
   browsLabel: string;
   contactLabel: string;
@@ -51,23 +56,22 @@ type AftercarePageProps = {
 
 function CareTimeline({ blocks }: { blocks: CareBlock[] }) {
   return (
-    <div className="grid gap-4">
+    <StaggerList className="grid gap-4">
       {blocks.map((block) => (
-        <section
-          className="rounded-xl border border-border bg-background p-5"
-          key={block.title}
-        >
-          <h3 className="font-display text-2xl leading-tight text-foreground">
-            {block.title}
-          </h3>
-          <ul className="mt-4 grid gap-2 text-sm leading-6 text-muted-foreground">
-            {block.items.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-        </section>
+        <StaggerListItem key={block.title}>
+          <section className="rounded-xl border border-border bg-background p-5">
+            <h3 className="font-display text-2xl leading-tight text-foreground">
+              {block.title}
+            </h3>
+            <ul className="mt-4 grid gap-2 text-sm leading-6 text-muted-foreground">
+              {block.items.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </section>
+        </StaggerListItem>
       ))}
-    </div>
+    </StaggerList>
   );
 }
 
@@ -89,6 +93,8 @@ export function AftercarePage({
   path,
   whatsapp,
 }: AftercarePageProps) {
+  const browsImage = getMediaAssetById("result-cejas-03", locale);
+  const lipsImage = getMediaAssetById("result-labios-02", locale);
   const breadcrumbJsonLd = buildBreadcrumbListJsonLd([
     { name: copy.homeLabel, path: `/${locale}` },
     { name: copy.title, path: `/${locale}${path}` },
@@ -114,6 +120,15 @@ export function AftercarePage({
             triggerLabel={copy.contactLabel}
           />
         }
+        aside={
+          browsImage?.publicPath && lipsImage?.publicPath ? (
+            <EditorialImagePair
+              primary={browsImage}
+              priority
+              secondary={lipsImage}
+            />
+          ) : undefined
+        }
         description={copy.description}
         eyebrow={copy.eyebrow}
         title={copy.title}
@@ -124,7 +139,8 @@ export function AftercarePage({
             items={[{ label: copy.homeLabel, href: "/" }, { label: copy.title }]}
             label={copy.breadcrumbsLabel}
           />
-          <section aria-labelledby="before-care" className="grid gap-6">
+          <Reveal>
+            <section aria-labelledby="before-care" className="grid gap-6">
             <div>
               <Badge variant="outline">{copy.beforeTitle}</Badge>
               <h2
@@ -137,26 +153,34 @@ export function AftercarePage({
             <div className="grid gap-6 lg:grid-cols-2">
               <section aria-labelledby="before-brows">
                 <h3
-                  className="mb-4 font-display text-3xl leading-tight text-foreground"
+                  className="mb-4 scroll-mt-28 font-display text-3xl leading-tight text-foreground"
                   id="before-brows"
                 >
                   {copy.browsLabel}
                 </h3>
+                <p className="mb-5 max-w-prose text-sm leading-7 text-muted-foreground">
+                  {copy.beforeBrowsIntro}
+                </p>
                 <CareTimeline blocks={copy.beforeBrows} />
               </section>
               <section aria-labelledby="before-lips">
                 <h3
-                  className="mb-4 font-display text-3xl leading-tight text-foreground"
+                  className="mb-4 scroll-mt-28 font-display text-3xl leading-tight text-foreground"
                   id="before-lips"
                 >
                   {copy.lipsLabel}
                 </h3>
+                <p className="mb-5 max-w-prose text-sm leading-7 text-muted-foreground">
+                  {copy.beforeLipsIntro}
+                </p>
                 <CareTimeline blocks={copy.beforeLips} />
               </section>
             </div>
-          </section>
+            </section>
+          </Reveal>
 
-          <section aria-labelledby="after-care" className="grid gap-6">
+          <Reveal direction="right">
+            <section aria-labelledby="after-care" className="grid gap-6">
             <div>
               <Badge variant="outline">{copy.afterTitle}</Badge>
               <h2
@@ -169,7 +193,7 @@ export function AftercarePage({
             <div className="grid gap-6 lg:grid-cols-2">
               <section aria-labelledby="after-brows">
                 <h3
-                  className="mb-4 font-display text-3xl leading-tight text-foreground"
+                  className="mb-4 scroll-mt-28 font-display text-3xl leading-tight text-foreground"
                   id="after-brows"
                 >
                   {copy.browsLabel}
@@ -178,7 +202,7 @@ export function AftercarePage({
               </section>
               <section aria-labelledby="after-lips">
                 <h3
-                  className="mb-4 font-display text-3xl leading-tight text-foreground"
+                  className="mb-4 scroll-mt-28 font-display text-3xl leading-tight text-foreground"
                   id="after-lips"
                 >
                   {copy.lipsLabel}
@@ -186,7 +210,8 @@ export function AftercarePage({
                 <CareList items={copy.afterLips} />
               </section>
             </div>
-          </section>
+            </section>
+          </Reveal>
         </Container>
       </Section>
       <Section tone="muted">

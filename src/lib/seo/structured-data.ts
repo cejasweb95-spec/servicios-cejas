@@ -88,6 +88,7 @@ export function buildImageObjectJsonLd({
 type ServiceJsonLdInput = {
   name: string;
   description: string;
+  image?: string;
   url: string;
   areaServed: string;
   price?: number;
@@ -97,6 +98,7 @@ type ServiceJsonLdInput = {
 export function buildServiceJsonLd({
   areaServed,
   description,
+  image,
   name,
   price,
   priceCurrency,
@@ -107,6 +109,7 @@ export function buildServiceJsonLd({
     "@type": "Service",
     name,
     description,
+    ...(image ? { image: new URL(image, siteConfig.url).toString() } : {}),
     areaServed: {
       "@type": "Place",
       name: areaServed,

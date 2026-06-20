@@ -68,12 +68,41 @@ npm run test:lighthouse
 - [x] `npm run test:links` pasa: 36 rutas locales revisadas.
 - [x] `npm run test:lighthouse` ejecutado; el script actual documenta que PageSpeed/Lighthouse final queda para pantallas finales/URL real. Lighthouse local detallado vive en fase 12.
 
+### Revalidacion quirurgica 19/06/2026
+
+- [x] `npm run test` pasa: 16 tests unitarios.
+- [x] `npm run test:e2e` pasa: 142/142 en desktop y mobile.
+- [x] `npm run test:seo:all` pasa: 210 URLs, 0 issues y 0 advertencias de longitud.
+- [x] `npm run test:a11y` pasa: 52/52.
+- [x] `npm run test:crossbrowser` pasa: 31 ejecutados y 9 skips esperados.
+
+### Auditoria bilingue y responsive exhaustiva 20/06/2026
+
+- [x] Diccionarios ES/EN: 366 valores por idioma, paridad profunda completa, sin claves ni valores vacios.
+- [x] Placeholders de traduccion verificados recursivamente para evitar variables perdidas entre idiomas.
+- [x] Rutas equivalentes verificadas para navegacion, mercados, servicios y cursos.
+- [x] Copy interno eliminado de la UI publica: no se muestran referencias a `V1`, "la clienta", "primera version" ni decisiones de implementacion.
+- [x] Ortografia publica espanola normalizada en servicios, cursos, categorias, descargas, alt text y datos legales.
+- [x] Localizacion inglesa revisada para usar lenguaje natural de citas por disponibilidad, sin calcos como `sessions by availability`.
+- [x] `npm run test:responsive:all` pasa: 1.260 renderizados, 210 URLs x 6 viewports, 0 incidencias.
+- [x] `npm run test:e2e` pasa: 142/142 tras actualizar expectativas con ortografia corregida.
+- [x] `npm run test:crossbrowser -- --workers=4` pasa: 31 ejecutados y 9 skips esperados.
+- [x] `npm run test:seo:all` pasa: 210 URLs, 0 incidencias y 0 advertencias de longitud.
+- [x] `npm run test:links` pasa: 36 definiciones de rutas locales.
+
 Incidencias encontradas y corregidas:
 
 - [x] Header desktop provocaba overflow a 1024px; se cambio el breakpoint desktop a `xl`.
 - [x] El menu movil quedaba abierto tras navegar; `MobileNav` y `LocaleSwitcher` ahora cierran el Sheet al navegar.
 - [x] Se agregaron cabeceras basicas: `X-Content-Type-Options`, `Referrer-Policy`, `Permissions-Policy`, `X-Frame-Options`.
 - [x] Firefox/WebKit de Playwright instalados localmente para ejecutar la matriz real.
+- [x] Dialog y Sheet reservan 56 px para cierre y una X tactil de 44 px.
+- [x] WhatsApp chooser probado con opciones de 64 px, textos largos y banner de cookies abierto.
+- [x] Selector de idioma, menu movil, botones pequenos y enlaces principales del footer alcanzan 44 px en movil.
+- [x] Se eliminaron hovers de bloques no interactivos que parecian pulsables.
+- [x] Rastreo integral SEO de 210 URLs añadido como `npm run test:seo:all`.
+- [x] Rastreo responsive integral de 210 URLs y seis anchos añadido como `npm run test:responsive:all`.
+- [x] Lightbox devuelve foco mediante `onCloseAutoFocus` de Radix, sin competir con timers.
 
 ---
 
