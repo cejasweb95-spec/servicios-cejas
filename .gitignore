@@ -32,3 +32,6 @@ tsconfig.tsbuildinfo
 # Editor
 .vscode/
 .idea/
+
+# Adjuntos scratch de sesiones de agente (capturas de referencia móvil)
+.codex-remote-attachments/
