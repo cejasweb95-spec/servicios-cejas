@@ -58,8 +58,11 @@ export function SiteHeader({
   navItems,
   whatsapp,
 }: SiteHeaderProps) {
-  const desktopNavItems = navItems.filter(
-    (item) => item.id !== "home" && item.id !== "downloads",
+  // Menú principal reducido a 5 destinos de cliente; cuidados, contacto y
+  // descargas quedan en el footer y en el CTA de WhatsApp.
+  const primaryNavIds = ["services", "training", "journeys", "results", "about"];
+  const primaryNavItems = navItems.filter((item) =>
+    primaryNavIds.includes(item.id),
   );
 
   return (
@@ -88,7 +91,7 @@ export function SiteHeader({
         </Link>
         <DesktopNav
           currentLocale={currentLocale}
-          items={desktopNavItems}
+          items={primaryNavItems}
           label={labels.mainNavigation}
         />
         <div className="hidden items-center gap-2 xl:flex">
@@ -112,7 +115,7 @@ export function SiteHeader({
             contactLabel={contactLabel}
             currentLocale={currentLocale}
             languageLabel={labels.language}
-            navItems={navItems}
+            navItems={primaryNavItems}
             navLabel={labels.mainNavigation}
             openLabel={labels.openMenu}
             title={labels.mobileMenuTitle}

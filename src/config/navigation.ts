@@ -24,7 +24,7 @@ export const mainNavigation = [
   },
   {
     id: "journeys",
-    label: { es: "Jornadas", en: "Cities" },
+    label: { es: "Dónde me encuentras", en: "Where to find me" },
     href: { es: "/jornadas", en: "/appointments-by-city" },
   },
   {

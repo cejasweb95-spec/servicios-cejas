@@ -160,7 +160,7 @@ export default async function HomePage({ params }: HomePageProps) {
           <Container className="grid min-h-[calc(88dvh-5rem)] items-center gap-10 py-12 sm:py-16 lg:grid-cols-[1fr_0.92fr] lg:py-20">
             <HeroItem className="max-w-3xl">
               <Eyebrow className="mb-4">{t("heroEyebrow")}</Eyebrow>
-              <h1 className="text-balance font-display text-5xl leading-[1.04] text-foreground sm:text-6xl lg:text-7xl">
+              <h1 className="text-balance hyphens-auto break-words font-display text-4xl leading-[1.08] text-foreground sm:text-5xl lg:text-7xl">
                 {t("title")}
               </h1>
               <p className="mt-6 max-w-2xl text-pretty text-lg leading-8 text-muted-foreground">
@@ -189,16 +189,6 @@ export default async function HomePage({ params }: HomePageProps) {
                   width={heroImage.width}
                 />
               </HeroParallax>
-              <div className="absolute -bottom-5 -left-5 hidden w-44 overflow-hidden rounded-lg border border-border bg-surface shadow-soft sm:block lg:w-52">
-                <Image
-                  alt=""
-                  className="aspect-[4/5] h-full w-full object-cover transition-transform duration-500 motion-reduce:transition-none hover:scale-[1.025]"
-                  height={resultsImage.height}
-                  sizes="14rem"
-                  src={resultsImage.src}
-                  width={resultsImage.width}
-                />
-              </div>
             </HeroMedia>
           </Container>
         </HeroStage>
