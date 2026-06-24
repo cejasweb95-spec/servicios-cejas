@@ -73,6 +73,7 @@ En Vercel `NEXT_PUBLIC_SITE_URL` no está definido → cae al fallback `localhos
 - **A11y:** `SkipLink` ✓, `<html lang>` ✓, `motion-reduce` en imágenes ✓. Menor: hero usa `<header>` dentro de `<main>` además del header global (doble landmark `banner`).
 - **Marca:** tokens de color, Marcellus/Manrope, WhatsApp CO `573167742299` / EU `34603804837` correctos ✓.
 - **A unificar:** dirección entre [site.ts:11](../../../src/config/site.ts#L11) (*"Calle 9 # 32 A 16…"*) y la mostrada en la web/footer (*"Cl. 5 #15A-118…"*). Posible doble fuente.
+- **Mapa (dato OK):** las **6 ubicaciones ya existen** en [locations.ts](../../../src/content/locations.ts), incluida **Palma de Mallorca** (`palma-mallorca`). El cambio del mapa es de **presentación** (pines tipo ubicación + nombre al pulsar + renombrar a "Dónde me encuentras"), no de datos.
 
 ## No verificable sin navegador real
 

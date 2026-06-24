@@ -15,12 +15,41 @@ Aquí está el **orden de ejecución**. Un commit verificable por fase, en `deve
 - Bilingüe ES/EN en el mismo cambio. Foto real antes que icono. Sin disponibilidad en la web.
 - No empezar por animaciones/colores: primero jerarquía, copy y fotos correctas.
 
+## Norte de diseño (anti "look IA")
+
+Reducir a **3 tipos de superficie** en toda la web y dejar que el **color** dé el ritmo, no los bordes:
+1. **Sección editorial** — texto + foto real, sin borde de tarjeta (reutiliza `split-feature`/`editorial-image-pair`/`page-hero`).
+2. **Ficha de datos** — precio/duración sobre `surface-strong`/`primary-soft`.
+3. **Banda CTA** — fondo `ink`, acento rosa.
+
+Se elimina la "tarjeta para cada idea" y las rejillas repetidas. Menos piezas, más intención = "hecho por un pro", no por IA.
+
+### Lo que YA existe (no reinventar)
+- **Tokens de palo de rosa** en [src/config/brand.ts](../../../src/config/brand.ts) y [globals.css](../../../src/app/globals.css) (`--primary #b76e79`, `--primary-soft`, `--surface-strong`). El color usa tokens; sin hex crudo.
+- **Primitivas editoriales**: `split-feature`, `editorial-image-pair`, `page-hero`, `service-list`, `result-mosaic`. El de-carding las reutiliza.
+- **Palma de Mallorca** ya está en [src/content/locations.ts](../../../src/content/locations.ts) (6 ubicaciones); el mapa solo cambia de presentación.
+
+## Skills por fase
+
+| Skill | Fase |
+|---|---|
+| `cejas-internacionales-guardrails` | Todas (cumplir AGENTS.md) |
+| `design-taste-frontend`, `frontend-design`, `impeccable` (detector anti-IA) | 2, 6 |
+| `cejas-i18n-localization` | Todas (ES/EN) |
+| `copywriting` | 1 |
+| `image-asset-pipeline` | 1, 5 |
+| `framer-motion-animator` | 6 |
+| `accessibility` | 2, 3, 7 |
+| `core-web-vitals-performance`, `cross-browser-device-qa` | 7 |
+| CLI `run`/`verify`, `code-review`, `simplify` | Todas |
+| **No**: `imagegen`, `docx`/`xlsx`/`pptx` | — |
+
 ## Bloqueantes de cliente (resolver antes de las fases que los usan)
 
 | # | Bloqueante | Bloquea |
 |---|---|---|
 | B1 | Foto de **apertura** del hero (la "de más abajo") | Fase 2 (hero) |
-| B2 | Foto/dirección/comentarios y autorización del **punto físico España** | Fase 4 (España) |
+| B2 | Foto/dirección/comentarios y autorización del **punto físico España** — además **visto bueno de Jeffrey** (la regla "dirección solo Cali" prohíbe publicar oficinas en España/Suiza) | Fase 4 (España) |
 | B3 | Archivo exacto de la **foto de cursos** y de los **recortes** señalados | Fases 2/5 |
 | B4 | Lista final de **pines del mapa** y etiqueta de cada uno (¿Mallorca sustituye o suma?) | Fase 3 |
 | B5 | Nombre público exacto: `Xiomara Sánchez` vs `Xiomy Sanchez` (logo) | Fases 1/2 |

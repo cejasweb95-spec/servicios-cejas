@@ -52,6 +52,12 @@ El resultado debe ser elegante y editorial, no decorativo:
 | Fotografía | Solo material real de Xiomara, resultados, formación o espacios. Cada foto debe tener propósito y relación con su texto. |
 | Borde / radio | Borde fino y radio sobrio solo donde se delimita una unidad interactiva o una foto. Las secciones no se encierran como tarjetas. |
 
+### Lo que YA existe en el código (no reinventar)
+
+- Los tokens de esta tabla **ya están definidos** en [src/config/brand.ts](../../../src/config/brand.ts) y [src/app/globals.css](../../../src/app/globals.css) (`--primary #b76e79`, `--primary-soft`, `--surface-strong`, `--surface-muted`, `--secondary`/ink). El pase de color **usa estos tokens**; no se añaden hex.
+- El componente `Section` ya soporta `tone="default|muted|ink"`; basta **añadir `tone="rose"`** para las bandas rosadas.
+- Para el de-carding hay primitivas editoriales listas: `split-feature`, `editorial-image-pair`, `page-hero`, `service-list`, `result-mosaic`. **Reutilizarlas**, no crear componentes nuevos.
+
 ## Referencias: qué tomar y qué descartar
 
 ### De `animate.style`
