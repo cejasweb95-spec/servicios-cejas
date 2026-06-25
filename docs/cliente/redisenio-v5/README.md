@@ -1,6 +1,8 @@
 # Rediseño V5 — punto de entrada (handoff)
 
 > Lee esto primero al retomar el trabajo (incluido en **otro PC**: `git pull origin develop`).
+>
+> **¿Continúas en otra máquina?** Pega el prompt de [PROMPT-CONTINUACION.md](PROMPT-CONTINUACION.md) en una sesión nueva.
 
 ## Estado (2026-06-24)
 
@@ -13,7 +15,8 @@
 
 1. **[05-qa-y-hallazgos-video.md](05-qa-y-hallazgos-video.md)** — evidencia: QA del sitio + lo que pidió la clienta (con minutos) + inventario de fotos.
 2. **[06-plan-implementacion-por-fases.md](06-plan-implementacion-por-fases.md)** — qué hacer y en qué orden (Fases 0–7, skills por fase, bloqueantes).
-3. Spec de detalle: [00 dirección/motion](00-auditoria-direccion-visual-y-motion.md) · [01 home/nav](01-home-y-navegacion.md) · [02 páginas interiores](02-paginas-interiores-por-ruta.md) · [03 reglas/responsive](03-reglas-implementacion-responsive-y-skills.md) · [04 servicios (catálogo real)](04-servicios-detalle.md).
+3. **[07-direccion-senior-y-qa-integral.md](07-direccion-senior-y-qa-integral.md)** — dirección de diseño senior de toda la web (incl. footer) + QA integral.
+4. Spec de detalle: [00 dirección/motion](00-auditoria-direccion-visual-y-motion.md) · [01 home/nav](01-home-y-navegacion.md) · [02 páginas interiores](02-paginas-interiores-por-ruta.md) · [03 reglas/responsive](03-reglas-implementacion-responsive-y-skills.md) · [04 servicios (catálogo real)](04-servicios-detalle.md).
 
 ## Lo más urgente (independiente del rediseño)
 
