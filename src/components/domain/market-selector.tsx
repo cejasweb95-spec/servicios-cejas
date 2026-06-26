@@ -19,7 +19,7 @@ type MarketSelectorProps = {
 
 export function MarketSelector({ activeId, items, label }: MarketSelectorProps) {
   return (
-    <nav aria-label={label} className="flex flex-wrap gap-2.5">
+    <nav aria-label={label} className="flex flex-wrap gap-2.5" data-slot="market-selector">
       {items.map((item) => {
         const isActive = item.id === activeId;
 
@@ -27,7 +27,7 @@ export function MarketSelector({ activeId, items, label }: MarketSelectorProps) 
           <Link
             aria-current={isActive ? "page" : undefined}
             className={cn(
-              "inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50 focus-visible:ring-offset-2",
+              "inline-flex min-h-11 items-center gap-2 rounded-full border px-4 py-2 text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50 focus-visible:ring-offset-2",
               isActive
                 ? "border-primary bg-primary text-primary-foreground"
                 : "border-border bg-surface text-foreground hover:border-primary hover:text-primary-text",

@@ -103,14 +103,32 @@ export function ResultsPage({
         eyebrow={copy.eyebrow}
         title={copy.title}
       />
-      <Section>
+      <Section tone="muted">
         <Container className="grid gap-8">
           <Breadcrumbs
             items={[{ label: copy.homeLabel, href: "/" }, { label: copy.title }]}
             label={copy.breadcrumbsLabel}
           />
           <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
-            <ResultMosaic
+            <section
+              aria-labelledby="results-gallery-title"
+              className="order-1 lg:order-2 lg:sticky lg:top-24"
+            >
+              <Eyebrow className="uppercase tracking-[0.14em]">
+                {copy.healingLabel}
+              </Eyebrow>
+              <h2
+                className="mt-3 font-display text-3xl leading-tight text-foreground sm:text-4xl"
+                id="results-gallery-title"
+              >
+                {copy.galleryTitle}
+              </h2>
+              <p className="mt-4 text-base leading-8 text-muted-foreground">
+                {copy.galleryNote}
+              </p>
+            </section>
+            <div className="order-2 lg:order-1">
+              <ResultMosaic
               copy={{
                 closeLabel: copy.closeLightboxLabel,
                 emptyLabel: copy.emptyGalleryLabel,
@@ -121,20 +139,7 @@ export function ResultsPage({
               }}
               images={galleryImages}
             />
-            <section aria-labelledby="results-gallery-title" className="lg:sticky lg:top-24">
-              <Eyebrow className="uppercase tracking-[0.14em]">
-                {copy.healingLabel}
-              </Eyebrow>
-              <h2
-                className="mt-3 font-display text-4xl leading-tight text-foreground"
-                id="results-gallery-title"
-              >
-                {copy.galleryTitle}
-              </h2>
-              <p className="mt-4 text-base leading-8 text-muted-foreground">
-                {copy.galleryNote}
-              </p>
-            </section>
+            </div>
           </div>
         </Container>
       </Section>

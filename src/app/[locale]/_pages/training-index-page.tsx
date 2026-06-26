@@ -193,7 +193,7 @@ export function TrainingIndexPage({
                 {copy.masterclassDescription}
               </p>
             </div>
-            <StaggerList className="mt-7 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+            <StaggerList className="mt-7 grid gap-5 lg:grid-cols-2">
               {masterclasses.map((course) => (
                 <StaggerListItem key={course.id}>
                   {renderCourseCard(course)}

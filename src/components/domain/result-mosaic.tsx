@@ -98,7 +98,7 @@ export function ResultMosaic({ copy, images }: ResultMosaicProps) {
         {images.map((image, index) => (
           <DialogTrigger asChild key={image.id}>
             <button
-              className="group relative block w-full break-inside-avoid overflow-hidden rounded-2xl bg-surface-muted text-left outline-none transition-transform duration-200 hover:-translate-y-0.5 focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:ring-offset-2 motion-reduce:transform-none motion-reduce:transition-none"
+              className="group relative block min-h-11 w-full break-inside-avoid overflow-hidden rounded-2xl border border-primary/10 bg-surface-muted text-left outline-none transition-transform duration-200 hover:-translate-y-0.5 focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:ring-offset-2 motion-reduce:transform-none motion-reduce:transition-none"
               data-slot="result-tile"
               onClick={() => openLightbox(index)}
               ref={(node) => {
@@ -116,7 +116,11 @@ export function ResultMosaic({ copy, images }: ResultMosaicProps) {
               />
               <span
                 className={cn(
-                  "pointer-events-none absolute inset-x-0 bottom-0 flex translate-y-full items-center justify-between gap-3 bg-gradient-to-t from-foreground/90 via-foreground/60 to-transparent p-4 pt-10 text-sm font-semibold text-background opacity-0 transition duration-300 group-hover:translate-y-0 group-hover:opacity-100 group-focus-visible:translate-y-0 group-focus-visible:opacity-100 motion-reduce:transition-none",
+                  "pointer-events-none absolute inset-x-0 bottom-0 flex items-center justify-between gap-3 bg-gradient-to-t from-foreground/90 via-foreground/55 to-transparent p-3 pt-8 text-xs font-semibold text-background sm:p-4 sm:pt-10 sm:text-sm",
+                  "translate-y-0 opacity-100",
+                  "lg:translate-y-full lg:opacity-0 lg:transition lg:duration-300",
+                  "lg:group-hover:translate-y-0 lg:group-hover:opacity-100 lg:group-focus-visible:translate-y-0 lg:group-focus-visible:opacity-100",
+                  "motion-reduce:transition-none",
                 )}
               >
                 <span className="line-clamp-2">{image.alt}</span>

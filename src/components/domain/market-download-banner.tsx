@@ -19,7 +19,7 @@ export function MarketDownloadBanner({
   whatsappLabel,
 }: MarketDownloadBannerProps) {
   return (
-    <aside className="rounded-lg border border-border bg-surface-muted p-5">
+    <aside className="rounded-2xl border border-primary/20 bg-primary-soft p-5 sm:p-6">
       <div className="grid gap-5 lg:grid-cols-[1fr_auto] lg:items-center">
         <div>
           <h2 className="font-display text-2xl text-foreground">{title}</h2>

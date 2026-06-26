@@ -187,7 +187,7 @@ export function MarketServicesPage({
         }
         title={title}
       />
-      <Section>
+      <Section tone="muted">
         <Container className="grid gap-10">
           <Breadcrumbs
             items={[

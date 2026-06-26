@@ -187,7 +187,7 @@ export function ServiceDetailPage({
         aside={
           <div className="grid gap-4">
             {serviceImage?.publicPath && serviceImage.width && serviceImage.height ? (
-              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-surface">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-primary/15 bg-surface">
                 <Image
                   alt={serviceImage.alt}
                   className="h-full w-full object-cover"
@@ -199,15 +199,16 @@ export function ServiceDetailPage({
                 />
               </div>
             ) : null}
-            <ResponsiveDataList items={dataItems} />
+            <ResponsiveDataList className="hidden lg:grid" items={dataItems} />
           </div>
         }
         description={service.shortDescription}
         eyebrow={`${copy.heroEyebrow} · ${category.name}`}
+        mobileAsideFirst={false}
         title={title}
       />
 
-      <Section>
+      <Section tone="muted">
         <Container className="grid gap-12">
           <Breadcrumbs
             items={[
@@ -330,7 +331,7 @@ export function ServiceDetailPage({
                   {copy.relatedDescription}
                 </p>
               </div>
-              <div className="mt-6 grid gap-4 md:grid-cols-3">
+              <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                 {relatedServices.map((item) => {
                   const relatedOffer = item.offers[0];
                   const formatted = relatedOffer

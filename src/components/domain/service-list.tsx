@@ -50,7 +50,7 @@ export function ServiceList({ groups }: ServiceListProps) {
 
               return (
                 <StaggerListItem key={service.id}>
-                  <article className="group border-b border-border/60">
+                  <article className="group border-b border-primary/15" data-slot="service-row">
                     <div className="flex flex-col gap-2 py-5 md:flex-row md:items-baseline md:justify-between md:gap-8">
                       <div className="md:flex-1">
                         <h3 className="font-display text-xl leading-snug text-foreground">
@@ -75,7 +75,7 @@ export function ServiceList({ groups }: ServiceListProps) {
                               ) : null}
                               <ArrowUpRight
                                 aria-hidden="true"
-                                className="size-4 -translate-x-1 opacity-0 transition group-hover:translate-x-0 group-hover:opacity-100 motion-reduce:transition-none"
+                                className="size-4 shrink-0 opacity-70 transition group-hover:translate-x-0 group-hover:opacity-100 motion-reduce:transition-none md:-translate-x-1 md:opacity-0"
                               />
                             </Link>
                           ) : (
