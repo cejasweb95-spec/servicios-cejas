@@ -86,7 +86,7 @@ export function ContactPage({ copy, locale, path }: ContactPageProps) {
         eyebrow={copy.eyebrow}
         title={copy.title}
       />
-      <Section>
+      <Section tone="muted">
         <Container className="grid gap-8">
           <Breadcrumbs
             items={[{ label: copy.homeLabel, href: "/" }, { label: copy.title }]}

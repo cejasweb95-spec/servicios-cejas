@@ -78,7 +78,7 @@ export function ServicesIndexPage({ copy, locale }: ServicesIndexPageProps) {
         eyebrow={copy.eyebrow}
         title={copy.title}
       />
-      <Section>
+      <Section tone="muted">
         <Container className="grid gap-8">
           <Breadcrumbs
             items={[
@@ -93,7 +93,7 @@ export function ServicesIndexPage({ copy, locale }: ServicesIndexPageProps) {
                 {markets.map((market) => (
                   <StaggerListItem key={market.id}>
                     <Link
-                      className="group relative block aspect-[4/5] overflow-hidden rounded-2xl bg-surface outline-none focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:ring-offset-2"
+                      className="group relative block aspect-[4/5] overflow-hidden rounded-2xl border border-primary/15 bg-surface outline-none focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:ring-offset-2"
                       href={`${servicesPath}/${market.slug}`}
                     >
                       {market.image?.publicPath ? (

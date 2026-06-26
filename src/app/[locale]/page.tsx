@@ -1,5 +1,6 @@
 import { type ReactNode } from "react";
 import Image from "next/image";
+import { MapPin } from "lucide-react";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
@@ -7,17 +8,18 @@ import { CourseCard } from "@/components/domain/course-card";
 import { EventMap, type EventMapLocation } from "@/components/domain/event-map";
 import { CountryFlag } from "@/components/primitives/country-flag";
 import { WhatsAppChooser } from "@/components/domain/whatsapp-chooser";
-import { Reveal } from "@/components/motion/reveal";
 import {
   HeroItem,
   HeroMedia,
   HeroParallax,
   HeroStage,
 } from "@/components/motion/hero-reveal";
+import { Reveal } from "@/components/motion/reveal";
 import { StaggerList, StaggerListItem } from "@/components/motion/stagger-list";
 import { Container } from "@/components/primitives/container";
 import { Eyebrow } from "@/components/primitives/eyebrow";
 import { ButtonLink } from "@/components/primitives/button-link";
+import { RoseWash } from "@/components/primitives/rose-wash";
 import { Section } from "@/components/primitives/section";
 import { JsonLd } from "@/components/seo/json-ld";
 import { Badge } from "@/components/ui/badge";
@@ -39,6 +41,7 @@ import {
 import { buildWhatsAppHref } from "@/lib/whatsapp/build-whatsapp-url";
 import { courseBasePath } from "@/lib/routes/course-routes";
 import { journeyBasePath } from "@/lib/routes/journey-routes";
+import { aboutBasePath, contactBasePath, resultsBasePath } from "@/lib/routes/static-routes";
 import { buildMarketPath, serviceBasePath } from "@/lib/routes/service-routes";
 import { buildHomeJsonLd } from "@/lib/seo/structured-data";
 
@@ -85,6 +88,13 @@ export default async function HomePage({ params }: HomePageProps) {
   const journeysT = await getTranslations({ locale, namespace: "Journeys" });
   const markets = getMarkets(locale);
   const whatsappTargets = getWhatsAppTargets(locale);
+  const colombiaWhatsapp = getWhatsAppTarget("colombia", locale);
+  const studioWhatsappHref = colombiaWhatsapp
+    ? buildWhatsAppHref(
+        colombiaWhatsapp.phoneE164,
+        colombiaWhatsapp.defaultMessage,
+      )
+    : "https://wa.me/573167742299";
   const downloads = getDownloads(locale);
   const catalogDownloads = downloads.filter((download) => download.type === "catalog");
   const courseDownloads = downloads.filter((download) => download.type === "course_pdf");
@@ -93,6 +103,7 @@ export default async function HomePage({ params }: HomePageProps) {
   );
   const courses = getCourses(locale).slice(0, 3);
   const locations = getLocations(locale);
+  const caliStudio = locations.find((location) => location.id === "cali");
   const eventMapLocations = locations.map((location): EventMapLocation => {
     const market = getMarketById(location.marketId, locale);
     const target = market
@@ -159,48 +170,122 @@ export default async function HomePage({ params }: HomePageProps) {
         <JsonLd data={data} key={index} />
       ))}
 
-      <header className="border-b border-border bg-surface-strong">
-        <HeroStage>
-          <Container className="grid min-h-[calc(88dvh-5rem)] items-center gap-10 py-12 sm:py-16 lg:grid-cols-[1fr_0.92fr] lg:py-20">
-            <HeroItem className="max-w-3xl">
-              <Eyebrow className="mb-4">{t("heroEyebrow")}</Eyebrow>
-              <h1 className="text-balance font-display text-[2rem] leading-[1.1] text-foreground sm:text-5xl lg:text-7xl">
-                {t("title")}
-              </h1>
-              <p className="mt-6 max-w-2xl text-pretty text-lg leading-8 text-muted-foreground">
-                {t("intro")}
-              </p>
-              <div className="mt-8 flex flex-wrap gap-3">
-                <WhatsAppChooser
-                  {...whatsappProps}
-                  triggerLabel={t("primaryCta")}
-                />
-                <ButtonLink href={serviceBasePath[locale]} variant="outline">
-                  {t("secondaryCta")}
-                </ButtonLink>
-              </div>
-            </HeroItem>
+      <header className="border-b border-primary/20 bg-surface-strong">
+        <RoseWash accent="corner">
+          <HeroStage>
+            <Container className="grid min-h-[calc(88dvh-5rem)] items-center gap-10 py-12 sm:py-16 lg:grid-cols-[1fr_0.92fr] lg:py-20">
+              <HeroItem className="max-w-3xl">
+                <Eyebrow className="mb-4">{t("heroEyebrow")}</Eyebrow>
+                <h1 className="text-balance font-display text-[2rem] leading-[1.1] text-foreground sm:text-5xl lg:text-7xl">
+                  {t("title")}
+                </h1>
+                <p className="mt-5 max-w-2xl text-pretty text-lg leading-8 text-muted-foreground">
+                  {t("heroBio")}
+                </p>
+                <p className="mt-4 max-w-2xl text-pretty text-base leading-7 text-foreground/80">
+                  {t("intro")}
+                </p>
+                <div className="mt-6">
+                  <p className="text-xs font-bold uppercase tracking-[0.14em] text-primary-text">
+                    {t("heroMarketsLabel")}
+                  </p>
+                  <ul className="mt-3 flex flex-wrap gap-2">
+                    {markets.map((market) => (
+                      <li
+                        className="inline-flex items-center gap-2 rounded-full border border-primary/25 bg-surface px-3 py-1.5 text-sm font-semibold text-foreground"
+                        key={market.id}
+                      >
+                        <CountryFlag className="h-3.5 w-5" market={market.id} />
+                        {market.shortName}
+                        <span className="text-xs text-muted-foreground">
+                          {market.currency}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="mt-8 flex flex-wrap gap-3">
+                  <WhatsAppChooser
+                    {...whatsappProps}
+                    triggerLabel={t("primaryCta")}
+                  />
+                  <ButtonLink href={serviceBasePath[locale]} variant="outline">
+                    {t("secondaryCta")}
+                  </ButtonLink>
+                </div>
+              </HeroItem>
 
-            <HeroMedia className="relative mx-auto w-full max-w-[34rem] lg:mr-0">
-              <HeroParallax className="relative aspect-[5/4] overflow-hidden rounded-lg border border-border bg-surface sm:aspect-square lg:aspect-[5/6]">
-                <Image
-                  alt={heroImage.alt}
-                  className="h-full w-full object-cover object-top"
-                  height={heroImage.height}
-                  priority
-                  sizes="(min-width: 1024px) 42vw, 90vw"
-                  src={heroImage.src}
-                  width={heroImage.width}
-                />
-              </HeroParallax>
-            </HeroMedia>
-          </Container>
-        </HeroStage>
+              <HeroMedia className="relative mx-auto w-full max-w-[34rem] lg:mr-0">
+                <HeroParallax className="relative aspect-[5/4] overflow-hidden rounded-lg border border-primary/20 bg-surface sm:aspect-square lg:aspect-[5/6]">
+                  <Image
+                    alt={heroImage.alt}
+                    className="h-full w-full object-cover object-top"
+                    height={heroImage.height}
+                    priority
+                    sizes="(min-width: 1024px) 42vw, 90vw"
+                    src={heroImage.src}
+                    width={heroImage.width}
+                  />
+                </HeroParallax>
+              </HeroMedia>
+            </Container>
+          </HeroStage>
+        </RoseWash>
       </header>
 
-      <Section id="servicios-por-pais" spacing="loose" tone="rose">
+      <Section id="jornadas" spacing="loose" tone="muted">
+        <Container className="grid gap-10">
+          <Reveal>
+            <div className="grid items-center gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:gap-12">
+              <div className="relative mx-auto aspect-[4/5] w-full max-w-[26rem] overflow-hidden rounded-2xl border border-primary/15 bg-surface lg:mx-0">
+                <Image
+                  alt={journeysImage.alt}
+                  className="object-cover object-center"
+                  fill
+                  sizes="(min-width: 1024px) 34vw, 88vw"
+                  src={journeysImage.src}
+                />
+              </div>
+              <div className="max-w-2xl">
+                <Eyebrow className="mb-3 uppercase tracking-[0.14em]">
+                  {t("journeysEyebrow")}
+                </Eyebrow>
+                <h2 className="font-display text-4xl leading-tight text-foreground">
+                  {t.rich("journeysTitle", { i: italicAccent })}
+                </h2>
+                <p className="mt-4 text-base leading-8 text-muted-foreground">
+                  {t("journeysDescription")}
+                </p>
+                <div className="mt-6">
+                  <ButtonLink href={journeyBasePath[locale]} variant="outline">
+                    {t("journeysLinkLabel")}
+                  </ButtonLink>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+          <Reveal delay={0.05}>
+            <EventMap
+              copy={{
+                addressLabel: journeysT("addressLabel"),
+                contactLabel: journeysT("contactLabel"),
+                journeyLabel: journeysT("journeyLabel"),
+                listTitle: journeysT("listTitle"),
+                mapAriaLabel: journeysT("mapAriaLabel"),
+                mapTitle: journeysT("mapTitle"),
+                physicalStudioLabel: journeysT("physicalStudioLabel"),
+                selectLocationLabel: journeysT("selectLocationLabel"),
+                selectedLocationLabel: journeysT("selectedLocationLabel"),
+              }}
+              locations={eventMapLocations}
+            />
+          </Reveal>
+        </Container>
+      </Section>
+
+      <Section id="servicios-por-pais" spacing="loose">
         <Container className="grid gap-12">
-          <div className="max-w-3xl">
+          <div className="max-w-3xl border-l-4 border-primary pl-5">
             <Eyebrow className="mb-3 uppercase tracking-[0.14em]">
               {t("servicesEyebrow")}
             </Eyebrow>
@@ -219,8 +304,8 @@ export default async function HomePage({ params }: HomePageProps) {
                     <div
                       className={
                         index % 2 === 1
-                          ? "relative aspect-[16/11] overflow-hidden rounded-2xl bg-surface lg:order-last lg:aspect-[3/2]"
-                          : "relative aspect-[16/11] overflow-hidden rounded-2xl bg-surface lg:aspect-[3/2]"
+                          ? "relative aspect-[16/11] overflow-hidden rounded-2xl border border-primary/10 bg-surface lg:order-last lg:aspect-[3/2]"
+                          : "relative aspect-[16/11] overflow-hidden rounded-2xl border border-primary/10 bg-surface lg:aspect-[3/2]"
                       }
                     >
                       <Image
@@ -254,143 +339,68 @@ export default async function HomePage({ params }: HomePageProps) {
         </Container>
       </Section>
 
-      <Section spacing="compact" tone="ink">
-        <Container className="grid gap-6 py-2 md:grid-cols-[1fr_auto] md:items-center">
-          <div className="max-w-3xl">
-            <h2 className="font-display text-4xl leading-tight">
-              {t("assessmentTitle")}
-            </h2>
-            <p className="mt-4 text-base leading-8 text-secondary-foreground/80">
-              {t("assessmentCopy")}
-            </p>
-          </div>
-          <WhatsAppChooser {...whatsappProps} triggerLabel={t("primaryCta")} />
-        </Container>
-      </Section>
-
-      <Section id="jornadas" spacing="loose" tone="muted">
-        <Container className="grid gap-10">
-          <Reveal>
-            <div className="grid items-center gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:gap-12">
-              <div className="relative mx-auto aspect-[4/5] w-full max-w-[26rem] overflow-hidden rounded-2xl bg-surface lg:mx-0">
-                <Image
-                  alt={journeysImage.alt}
-                  className="object-cover object-center"
-                  fill
-                  sizes="(min-width: 1024px) 34vw, 88vw"
-                  src={journeysImage.src}
-                />
-              </div>
-              <div className="max-w-2xl">
-                <Eyebrow className="mb-3 uppercase tracking-[0.14em]">
-                  {t("journeysEyebrow")}
-                </Eyebrow>
-                <h2 className="font-display text-4xl leading-tight text-foreground">
-                  {t.rich("journeysTitle", { i: italicAccent })}
-                </h2>
-                <p className="mt-4 text-base leading-8 text-muted-foreground">
-                  {t("journeysDescription")}
-                </p>
-                <ul className="mt-6 flex flex-wrap gap-2">
-                  {markets.map((market) => (
-                    <li
-                      className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-3 py-1.5 text-sm font-semibold text-foreground"
-                      key={market.id}
-                    >
-                      <CountryFlag className="h-3.5 w-5" market={market.id} />
-                      {market.shortName}
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-6">
-                  <ButtonLink href={journeyBasePath[locale]} variant="outline">
-                    {t("journeysLinkLabel")}
-                  </ButtonLink>
+      {caliStudio ? (
+        <Section id="punto-fisico" spacing="loose" tone="rose">
+          <RoseWash accent="band-left">
+            <Container className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
+              <Reveal>
+                <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-primary/20 bg-surface">
+                  <Image
+                    alt={studioImage.alt}
+                    className="h-full w-full object-cover"
+                    height={studioImage.height}
+                    sizes="(min-width: 1024px) 42vw, 92vw"
+                    src={studioImage.src}
+                    width={studioImage.width}
+                  />
                 </div>
-              </div>
-            </div>
-          </Reveal>
-          <Reveal delay={0.05}>
-            <EventMap
-              copy={{
-                addressLabel: journeysT("addressLabel"),
-                contactLabel: journeysT("contactLabel"),
-                journeyLabel: journeysT("journeyLabel"),
-                listTitle: journeysT("listTitle"),
-                mapAriaLabel: journeysT("mapAriaLabel"),
-                mapTitle: journeysT("mapTitle"),
-                physicalStudioLabel: journeysT("physicalStudioLabel"),
-                selectLocationLabel: journeysT("selectLocationLabel"),
-                selectedLocationLabel: journeysT("selectedLocationLabel"),
-              }}
-              locations={eventMapLocations}
-            />
-          </Reveal>
-        </Container>
-      </Section>
+              </Reveal>
+              <Reveal delay={0.05}>
+                <div className="max-w-xl">
+                  <Eyebrow className="mb-3 uppercase tracking-[0.14em]">
+                    {t("studioEyebrow")}
+                  </Eyebrow>
+                  <h2 className="font-display text-4xl leading-tight text-foreground">
+                    {t.rich("studioTitle", { i: italicAccent })}
+                  </h2>
+                  <p className="mt-4 text-base leading-8 text-foreground/85">
+                    {t("studioCopy")}
+                  </p>
+                  <div className="mt-6 flex items-start gap-3 rounded-xl border border-primary/25 bg-surface/80 p-4">
+                    <MapPin
+                      aria-hidden="true"
+                      className="mt-0.5 size-5 shrink-0 text-primary-text"
+                    />
+                    <div>
+                      <p className="font-semibold text-foreground">
+                        {caliStudio.city}, {caliStudio.country}
+                      </p>
+                      {caliStudio.address ? (
+                        <p className="mt-1 text-sm leading-6 text-muted-foreground">
+                          {caliStudio.address}
+                        </p>
+                      ) : null}
+                      <p className="mt-2 text-xs font-semibold text-primary-text">
+                        {legalProfile.note}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="mt-7 flex flex-wrap gap-3">
+                    <ButtonLink href={studioWhatsappHref}>
+                      {t("studioCta")}
+                    </ButtonLink>
+                    <ButtonLink href={contactBasePath[locale]} variant="outline">
+                      {t("studioContactLabel")}
+                    </ButtonLink>
+                  </div>
+                </div>
+              </Reveal>
+            </Container>
+          </RoseWash>
+        </Section>
+      ) : null}
 
-      <Section spacing="loose">
-        <Container className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
-          <Reveal>
-            <div className="grid gap-4 sm:grid-cols-[0.84fr_1fr]">
-              <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-surface-muted">
-                <Image
-                  alt={resultsImage.alt}
-                  className="h-full w-full object-cover"
-                  height={resultsImage.height}
-                  sizes="(min-width: 1024px) 28vw, 90vw"
-                  src={resultsImage.src}
-                  width={resultsImage.width}
-                />
-              </div>
-              <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-surface-muted sm:mt-10">
-                <Image
-                  alt={studioImage.alt}
-                  className="h-full w-full object-cover"
-                  height={studioImage.height}
-                  sizes="(min-width: 1024px) 30vw, 90vw"
-                  src={studioImage.src}
-                  width={studioImage.width}
-                />
-              </div>
-            </div>
-          </Reveal>
-          <Reveal delay={0.05}>
-            <div className="grid gap-8">
-              <section aria-labelledby="home-results-title">
-                <Eyebrow className="mb-3 uppercase tracking-[0.14em]">
-                  {t("resultsEyebrow")}
-                </Eyebrow>
-                <h2
-                  className="font-display text-4xl leading-tight text-foreground"
-                  id="home-results-title"
-                >
-                  {t.rich("resultsTitle", { i: italicAccent })}
-                </h2>
-                <p className="mt-4 text-base leading-8 text-muted-foreground">
-                  {t("resultsCopy")}
-                </p>
-              </section>
-              <section
-                aria-labelledby="home-about-title"
-                className="border-t border-primary/30 pt-8"
-              >
-                <h2
-                  className="font-display text-4xl leading-tight text-foreground"
-                  id="home-about-title"
-                >
-                  {t.rich("aboutTitle", { i: italicAccent })}
-                </h2>
-                <p className="mt-4 text-base leading-8 text-muted-foreground">
-                  {t("aboutCopy")}
-                </p>
-              </section>
-            </div>
-          </Reveal>
-        </Container>
-      </Section>
-
-      <Section id="formaciones" spacing="loose" tone="muted">
+      <Section id="formaciones" spacing="loose">
         <Container className="grid gap-8">
           <div className="max-w-3xl">
             <Eyebrow className="mb-3 uppercase tracking-[0.14em]">
@@ -403,21 +413,30 @@ export default async function HomePage({ params }: HomePageProps) {
               {t("coursesDescription")}
             </p>
           </div>
-          <StaggerList className="grid gap-4 lg:grid-cols-3">
-            {courses.map((course) => {
+          <StaggerList className="grid gap-8">
+            {courses.map((course, index) => {
               const download = courseDownloadById.get(course.downloadId);
 
               return (
                 <StaggerListItem key={course.id}>
-                  <CourseCard
-                    certification={course.certification}
-                    downloadHref={download?.publicPath}
-                    downloadLabel={download ? t("courseDownloadLabel") : undefined}
-                    duration={course.duration.label}
-                    image={getRequiredMedia(course.imageId, locale)}
-                    summary={course.summary}
-                    title={course.name}
-                  />
+                  <div
+                    className={
+                      index % 2 === 1
+                        ? "grid items-center gap-6 border-t border-primary/25 pt-8 lg:grid-cols-[1fr_1.05fr]"
+                        : "grid items-center gap-6 border-t border-primary/25 pt-8 lg:grid-cols-[1.05fr_1fr]"
+                    }
+                  >
+                    <CourseCard
+                      certification={course.certification}
+                      className={index % 2 === 1 ? "lg:order-last" : undefined}
+                      downloadHref={download?.publicPath}
+                      downloadLabel={download ? t("courseDownloadLabel") : undefined}
+                      duration={course.duration.label}
+                      image={getRequiredMedia(course.imageId, locale)}
+                      summary={course.summary}
+                      title={course.name}
+                    />
+                  </div>
                 </StaggerListItem>
               );
             })}
@@ -428,6 +447,44 @@ export default async function HomePage({ params }: HomePageProps) {
               {t("coursesLinkLabel")}
             </ButtonLink>
           </div>
+        </Container>
+      </Section>
+
+      <Section spacing="loose" tone="muted">
+        <Container className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+          <Reveal>
+            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-primary/15 bg-surface">
+              <Image
+                alt={resultsImage.alt}
+                className="h-full w-full object-cover"
+                height={resultsImage.height}
+                sizes="(min-width: 1024px) 42vw, 90vw"
+                src={resultsImage.src}
+                width={resultsImage.width}
+              />
+            </div>
+          </Reveal>
+          <Reveal delay={0.05}>
+            <div>
+              <Eyebrow className="mb-3 uppercase tracking-[0.14em]">
+                {t("resultsEyebrow")}
+              </Eyebrow>
+              <h2 className="font-display text-4xl leading-tight text-foreground">
+                {t.rich("resultsTitle", { i: italicAccent })}
+              </h2>
+              <p className="mt-4 text-base leading-8 text-muted-foreground">
+                {t("resultsCopy")}
+              </p>
+              <div className="mt-7 flex flex-wrap gap-3">
+                <ButtonLink href={resultsBasePath[locale]}>
+                  {t("resultsCta")}
+                </ButtonLink>
+                <ButtonLink href={aboutBasePath[locale]} variant="outline">
+                  {t("aboutLinkLabel")}
+                </ButtonLink>
+              </div>
+            </div>
+          </Reveal>
         </Container>
       </Section>
 
@@ -451,22 +508,27 @@ export default async function HomePage({ params }: HomePageProps) {
       </Section>
 
       <Section spacing="loose" tone="ink">
-        <Container className="grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
-          <div className="max-w-3xl">
-            <h2 className="font-display text-4xl leading-tight">
-              {t("finalTitle")}
-            </h2>
-            <p className="mt-4 text-base leading-8 text-secondary-foreground/80">
-              {t("finalCopy")}
-            </p>
-          </div>
-          <div className="flex flex-wrap gap-3">
-            <WhatsAppChooser {...whatsappProps} triggerLabel={t("primaryCta")} />
-            <ButtonLink href={serviceBasePath[locale]} variant="outline">
-              {t("secondaryCta")}
-            </ButtonLink>
-          </div>
-        </Container>
+        <RoseWash accent="band-right">
+          <Container className="grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
+            <div className="max-w-3xl">
+              <h2 className="font-display text-4xl leading-tight">
+                {t("assessmentTitle")}
+              </h2>
+              <p className="mt-4 text-base leading-8 text-secondary-foreground/85">
+                {t("assessmentCopy")}
+              </p>
+              <p className="mt-4 text-sm leading-7 text-secondary-foreground/70">
+                {t("finalCopy")}
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-3">
+              <WhatsAppChooser {...whatsappProps} triggerLabel={t("primaryCta")} />
+              <ButtonLink href={serviceBasePath[locale]} variant="outline">
+                {t("secondaryCta")}
+              </ButtonLink>
+            </div>
+          </Container>
+        </RoseWash>
       </Section>
     </main>
   );

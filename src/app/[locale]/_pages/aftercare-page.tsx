@@ -221,9 +221,9 @@ export function AftercarePage({
           </Reveal>
         </Container>
       </Section>
-      <Section tone="muted">
+      <Section tone="rose">
         <Container>
-          <div className="grid gap-5 rounded-2xl bg-background p-6 md:grid-cols-[1fr_auto] md:items-center">
+          <div className="grid gap-5 rounded-2xl border border-primary/25 bg-surface/70 p-6 md:grid-cols-[1fr_auto] md:items-center">
             <div>
               <h2 className="font-display text-3xl leading-tight text-foreground">
                 {copy.noteTitle}

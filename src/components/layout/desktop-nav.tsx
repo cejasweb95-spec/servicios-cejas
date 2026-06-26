@@ -29,7 +29,7 @@ export function DesktopNav({ currentLocale, items, label }: DesktopNavProps) {
   return (
     <nav
       aria-label={label}
-      className="hidden rounded-full border border-border bg-surface/90 p-1 shadow-soft xl:block"
+      className="hidden rounded-full border border-primary/20 bg-surface/90 p-1 shadow-soft xl:block"
     >
       <ul className="flex items-center">
         {items.map((item) => {

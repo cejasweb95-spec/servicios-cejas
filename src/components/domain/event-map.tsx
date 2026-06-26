@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useMemo, useState } from "react";
+import { MapPin } from "lucide-react";
 import { motion, useReducedMotion } from "motion/react";
 
 import { motionDurations, motionEasing } from "@/components/motion/motion-tokens";
@@ -148,13 +149,13 @@ export function EventMap({ copy, locations }: EventMapProps) {
 
         <div
           aria-label={copy.mapAriaLabel}
-          className="overflow-x-auto pb-2"
+          className="overflow-x-auto pb-2 lg:overflow-visible"
           data-slot="event-map-scroll-region"
           role="region"
           tabIndex={0}
         >
           <div
-            className="relative aspect-[1100/560] min-w-[43rem] overflow-hidden rounded-xl border border-border bg-surface-strong shadow-soft"
+            className="relative aspect-[1100/560] min-w-[43rem] w-full overflow-hidden rounded-xl border border-primary/20 bg-surface-strong shadow-soft lg:min-w-0"
             role="group"
           >
           <Image
@@ -237,11 +238,12 @@ export function EventMap({ copy, locations }: EventMapProps) {
             })}
           </svg>
 
-            {locations.map((location, index) => {
+            {locations.map((location) => {
             const point = getLabelPoint(location.id);
             const isSelected = selectedLocation.id === location.id;
             const typeLabel = getLocationTypeLabel(location, copy);
             const label = getLocationLabel(location);
+            const isStudio = location.type === "physical_studio";
 
             return (
               <div
@@ -254,14 +256,14 @@ export function EventMap({ copy, locations }: EventMapProps) {
                 }}
               >
                 <motion.button
-                  aria-label={`${index + 1}. ${copy.selectLocationLabel}: ${label}`}
+                  aria-label={`${copy.selectLocationLabel}: ${label}`}
                   aria-pressed={isSelected}
                   aria-describedby={`event-location-${location.id}`}
                   className={cn(
-                    "grid min-h-12 min-w-12 place-items-center rounded-full border text-sm font-semibold shadow-soft outline-none transition-colors focus-visible:ring-3 focus-visible:ring-ring/40",
+                    "grid min-h-11 min-w-11 place-items-center rounded-full border shadow-soft outline-none transition-colors focus-visible:ring-3 focus-visible:ring-ring/40",
                     isSelected
                       ? "border-primary bg-primary text-primary-foreground"
-                      : "border-border bg-background text-foreground hover:border-primary hover:text-primary-text",
+                      : "border-border bg-background text-primary-text hover:border-primary hover:bg-surface-muted",
                   )}
                   initial={
                     shouldReduceMotion ? false : { opacity: 0, scale: 0.94, y: 8 }
@@ -269,16 +271,19 @@ export function EventMap({ copy, locations }: EventMapProps) {
                   onClick={() => setSelectedId(location.id)}
                   title={label}
                   transition={{
-                    delay: shouldReduceMotion ? 0 : index * 0.04,
+                    delay: shouldReduceMotion ? 0 : 0.04,
                     duration: motionDurations.panel,
                     ease: motionEasing,
                   }}
                   whileHover={shouldReduceMotion ? undefined : { y: -2 }}
                   whileTap={shouldReduceMotion ? undefined : { scale: 0.98 }}
-                  animate={{ opacity: 1, scale: isSelected ? 1.04 : 1, y: 0 }}
+                  animate={{ opacity: 1, scale: isSelected ? 1.06 : 1, y: 0 }}
                   type="button"
                 >
-                  <span aria-hidden="true">{index + 1}</span>
+                  <MapPin
+                    aria-hidden="true"
+                    className={cn("size-4", isStudio && "fill-current")}
+                  />
                 </motion.button>
                 <span className="sr-only" id={`event-location-${location.id}`}>
                   {typeLabel}
@@ -293,7 +298,7 @@ export function EventMap({ copy, locations }: EventMapProps) {
       <aside className="grid gap-4" aria-label={copy.selectedLocationLabel}>
         <div
           aria-live="polite"
-          className="rounded-xl border border-border bg-background p-5 shadow-soft"
+          className="rounded-xl border border-primary/20 bg-background p-5 shadow-soft"
         >
           <Badge variant="outline">
             {getLocationTypeLabel(selectedLocation, copy)}

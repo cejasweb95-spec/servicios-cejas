@@ -2,6 +2,7 @@ import { type ReactNode } from "react";
 
 import { Container } from "@/components/primitives/container";
 import { Eyebrow } from "@/components/primitives/eyebrow";
+import { RoseWash } from "@/components/primitives/rose-wash";
 import { cn } from "@/lib/utils";
 
 type PageHeroProps = {
@@ -22,8 +23,9 @@ export function PageHero({
   title,
 }: PageHeroProps) {
   return (
-    <header className={cn("border-b border-border bg-surface-strong", className)}>
-      <Container
+    <header className={cn("border-b border-primary/20 bg-surface-strong", className)}>
+      <RoseWash accent="corner">
+        <Container
         className={cn(
           "grid min-h-[52dvh] content-center gap-10 py-14 sm:py-20",
           aside && "lg:grid-cols-[1.08fr_0.92fr]",
@@ -42,7 +44,8 @@ export function PageHero({
           {actions ? <div className="mt-8 flex flex-wrap gap-3">{actions}</div> : null}
         </div>
         {aside ? <div className="min-w-0 self-end">{aside}</div> : null}
-      </Container>
+        </Container>
+      </RoseWash>
     </header>
   );
 }

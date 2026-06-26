@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 
 type SectionProps = ComponentPropsWithoutRef<"section"> & {
   spacing?: "compact" | "default" | "loose";
-  tone?: "default" | "muted" | "ink" | "rose";
+  tone?: "default" | "muted" | "ink" | "rose" | "strong";
 };
 
 const spacingMap = {
@@ -17,6 +17,7 @@ const toneMap = {
   default: "bg-background text-foreground",
   muted: "bg-surface-muted text-foreground",
   rose: "bg-primary-soft text-foreground",
+  strong: "bg-surface-strong text-foreground",
   ink: "bg-secondary text-secondary-foreground",
 };
 

@@ -29,8 +29,8 @@ export const locations = locationSchema.array().parse([
     type: "journey_availability",
     coordinates: { lat: 3.822, lng: -76.522 },
     notes: l(
-      "Próxima jornada por disponibilidad. No es una sede fija.",
-      "Appointments are subject to availability. This is not a permanent studio.",
+      "Atención internacional por cita previa vía WhatsApp.",
+      "International appointments by prior contact via WhatsApp.",
     ),
   },
   {
@@ -41,8 +41,8 @@ export const locations = locationSchema.array().parse([
     type: "journey_availability",
     coordinates: { lat: 40.4168, lng: -3.7038 },
     notes: l(
-      "Próxima jornada por disponibilidad. No hay sede física fija en España.",
-      "Appointments are subject to availability. There is no permanent studio in Spain.",
+      "Atención internacional por cita previa vía WhatsApp.",
+      "International appointments by prior contact via WhatsApp.",
     ),
   },
   {
@@ -53,8 +53,8 @@ export const locations = locationSchema.array().parse([
     type: "journey_availability",
     coordinates: { lat: 39.5696, lng: 2.6502 },
     notes: l(
-      "Próxima jornada por disponibilidad. No es una sede fija.",
-      "Appointments are subject to availability. This is not a permanent studio.",
+      "Atención internacional por cita previa vía WhatsApp.",
+      "International appointments by prior contact via WhatsApp.",
     ),
   },
   {
@@ -66,8 +66,8 @@ export const locations = locationSchema.array().parse([
     type: "journey_availability",
     coordinates: { lat: 39.659, lng: -0.2202 },
     notes: l(
-      "Próxima jornada por disponibilidad. No es una sede fija.",
-      "Appointments are subject to availability. This is not a permanent studio.",
+      "Atención internacional por cita previa vía WhatsApp.",
+      "International appointments by prior contact via WhatsApp.",
     ),
   },
   {
@@ -78,8 +78,8 @@ export const locations = locationSchema.array().parse([
     type: "journey_availability",
     coordinates: { lat: 46.2044, lng: 6.1432 },
     notes: l(
-      "Próxima jornada por disponibilidad en Suiza. No es una sede fija.",
-      "Appointments in Switzerland are subject to availability. This is not a permanent studio.",
+      "Atención internacional por cita previa vía WhatsApp.",
+      "International appointments by prior contact via WhatsApp.",
     ),
   },
 ] satisfies Location[]);

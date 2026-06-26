@@ -153,7 +153,7 @@ export function TrainingIndexPage({
         title={copy.title}
       />
 
-      <Section>
+      <Section tone="muted">
         <Container className="grid gap-8">
           <Breadcrumbs
             items={[{ label: copy.homeLabel, href: "/" }, { label: copy.title }]}

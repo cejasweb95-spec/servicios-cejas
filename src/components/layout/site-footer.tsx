@@ -71,7 +71,7 @@ export function SiteFooter({
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-border bg-surface-muted">
+    <footer className="border-t-4 border-t-primary bg-surface-muted">
       <div className="mx-auto grid max-w-7xl gap-10 px-5 py-12 sm:px-8 lg:grid-cols-[1.2fr_0.8fr_0.8fr_0.8fr]">
         <div className="max-w-xl">
           {logo ? (
