@@ -63,16 +63,22 @@ export default async function JourneysRoute({ params }: JourneysRouteProps) {
         journeyLabel: t("journeyLabel"),
         listTitle: t("listTitle"),
         mapAriaLabel: t("mapAriaLabel"),
+        mapInteractionHint: t("mapInteractionHint"),
+        mapLegendHint: t("mapLegendHint"),
         mapTitle: t("mapTitle"),
+        mapZoomControlsLabel: t("mapZoomControlsLabel"),
         noFixedStudioDescription: t("noFixedStudioDescription"),
         noFixedStudioTitle: t("noFixedStudioTitle"),
         physicalStudioDescription: t("physicalStudioDescription"),
         physicalStudioLabel: t("physicalStudioLabel"),
         primaryCta: t("primaryCta"),
+        resetZoomLabel: t("resetZoomLabel"),
         selectLocationLabel: t("selectLocationLabel"),
         selectedLocationLabel: t("selectedLocationLabel"),
         title: t("title"),
         whatsappMessage: t.raw("whatsappMessage"),
+        zoomInLabel: t("zoomInLabel"),
+        zoomOutLabel: t("zoomOutLabel"),
       }}
       locale={locale}
       whatsapp={{

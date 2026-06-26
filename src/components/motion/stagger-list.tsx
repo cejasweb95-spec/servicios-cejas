@@ -3,15 +3,17 @@
 import { motion, type HTMLMotionProps, useReducedMotion } from "motion/react";
 
 import { motionEasing } from "@/components/motion/motion-tokens";
+import { useClientMotionReady } from "@/components/motion/use-client-motion-ready";
 
 type StaggerListProps = HTMLMotionProps<"div">;
 
 export function StaggerList(props: StaggerListProps) {
   const reduceMotion = useReducedMotion();
+  const motionReady = useClientMotionReady();
 
   return (
     <motion.div
-      initial="hidden"
+      initial={motionReady ? "hidden" : false}
       variants={{
         hidden: {},
         show: {

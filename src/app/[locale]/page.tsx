@@ -116,6 +116,7 @@ export default async function HomePage({ params }: HomePageProps) {
     return {
       address: location.address,
       city: location.city,
+      coordinates: location.coordinates ?? { lat: 0, lng: 0 },
       country: location.country,
       href: target
         ? buildWhatsAppHref(
@@ -277,10 +278,16 @@ export default async function HomePage({ params }: HomePageProps) {
                 journeyLabel: journeysT("journeyLabel"),
                 listTitle: journeysT("listTitle"),
                 mapAriaLabel: journeysT("mapAriaLabel"),
+                mapInteractionHint: journeysT("mapInteractionHint"),
+                mapLegendHint: journeysT("mapLegendHint"),
                 mapTitle: journeysT("mapTitle"),
+                mapZoomControlsLabel: journeysT("mapZoomControlsLabel"),
                 physicalStudioLabel: journeysT("physicalStudioLabel"),
+                resetZoomLabel: journeysT("resetZoomLabel"),
                 selectLocationLabel: journeysT("selectLocationLabel"),
                 selectedLocationLabel: journeysT("selectedLocationLabel"),
+                zoomInLabel: journeysT("zoomInLabel"),
+                zoomOutLabel: journeysT("zoomOutLabel"),
               }}
               locations={eventMapLocations}
               showHeading={false}

@@ -1,11 +1,13 @@
-import { writeFileSync } from "node:fs";
-import { geoPath, geoEquirectangular } from "d3-geo";
-import { feature } from "topojson-client";
-import { readFileSync } from "node:fs";
-import { fileURLToPath } from "node:url";
+import { writeFileSync, readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
+import { geoEquirectangular, geoPath } from "d3-geo";
+import { feature } from "topojson-client";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
+
+const ANTARCTICA_ID = "010";
+
 const land = feature(
   JSON.parse(
     readFileSync(
@@ -16,26 +18,37 @@ const land = feature(
   "countries",
 );
 
-const width = 1100;
-const height = 560;
+const filteredFeatures = land.features.filter(
+  (f) => String(f.id) !== ANTARCTICA_ID,
+);
 
-const projection = geoEquirectangular()
-  .fitExtent(
-    [
-      [8, 8],
-      [width - 8, height - 8],
-    ],
-    land,
-  );
+const landFiltered = {
+  type: "FeatureCollection",
+  features: filteredFeatures,
+};
+
+const width = 1100;
+const height = 480;
+
+const projection = geoEquirectangular().fitExtent(
+  [
+    [8, 8],
+    [width - 8, height - 8],
+  ],
+  landFiltered,
+);
 
 const path = geoPath(projection);
-const landPaths = land.features
-  .map((f) => path(f))
+const landPaths = filteredFeatures
+  .map((f) => {
+    const d = path(f);
+    return d ? `<path d="${d}"/>` : "";
+  })
   .filter(Boolean)
   .join("\n    ");
 
 const svg = `<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} ${height}" role="img" aria-hidden="true">
+<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" role="img" aria-hidden="true">
   <defs>
     <linearGradient id="ocean" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#fff8f9"/>
@@ -43,12 +56,8 @@ const svg = `<?xml version="1.0" encoding="UTF-8"?>
     </linearGradient>
   </defs>
   <rect width="${width}" height="${height}" fill="url(#ocean)"/>
-  <g fill="#e8c7cc" stroke="#b76e79" stroke-opacity="0.35" stroke-width="0.6" fill-opacity="0.92">
+  <g fill="#ddb8be" stroke="#b76e79" stroke-opacity="0.55" stroke-width="0.75" fill-opacity="0.98">
     ${landPaths}
-  </g>
-  <g fill="none" stroke="#b76e79" stroke-opacity="0.12" stroke-width="0.5">
-    <line x1="0" y1="${height / 2}" x2="${width}" y2="${height / 2}"/>
-    <ellipse cx="${width / 2}" cy="${height / 2}" rx="${width / 2 - 12}" ry="${height / 2 - 12}"/>
   </g>
 </svg>
 `;
@@ -59,4 +68,26 @@ writeFileSync(
   "utf8",
 );
 
-console.log("Wrote mapa-mundial-clasico.svg", land.features.length, "countries");
+const cities = {
+  cali: [-76.532, 3.4516],
+  "restrepo-valle": [-76.522, 3.822],
+  madrid: [-3.7038, 40.4168],
+  "puerto-sagunto": [-0.2202, 39.659],
+  "palma-mallorca": [2.6502, 39.5696],
+  ginebra: [6.1432, 46.2044],
+};
+
+console.log("Wrote mapa-mundial-clasico.svg", filteredFeatures.length, "countries");
+console.log("Projection constants (copy to world-map-projection.ts if changed):");
+console.log("SCALE", projection.scale());
+console.log("TRANSLATE_X", projection.translate()[0]);
+console.log("TRANSLATE_Y", projection.translate()[1]);
+console.log("Sample % positions from locations.ts:");
+for (const [id, coords] of Object.entries(cities)) {
+  const projected = projection(coords);
+  if (!projected) continue;
+  const [x, y] = projected;
+  console.log(
+    `  ${id}: { x: ${((x / width) * 100).toFixed(1)}, y: ${((y / height) * 100).toFixed(1)} },`,
+  );
+}

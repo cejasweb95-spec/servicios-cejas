@@ -41,7 +41,10 @@ type JourneysCopy = {
   journeyLabel: string;
   listTitle: string;
   mapAriaLabel: string;
+  mapInteractionHint: string;
+  mapLegendHint: string;
   mapTitle: string;
+  mapZoomControlsLabel: string;
   noFixedStudioDescription: string;
   noFixedStudioTitle: string;
   physicalStudioDescription: string;
@@ -49,8 +52,11 @@ type JourneysCopy = {
   primaryCta: string;
   selectLocationLabel: string;
   selectedLocationLabel: string;
+  resetZoomLabel: string;
   title: string;
   whatsappMessage: string;
+  zoomInLabel: string;
+  zoomOutLabel: string;
 };
 
 type WhatsAppCopy = {
@@ -120,6 +126,7 @@ export function JourneysPage({ copy, locale, whatsapp }: JourneysPageProps) {
     return {
       address: location.address,
       city: location.city,
+      coordinates: location.coordinates ?? { lat: 0, lng: 0 },
       country: location.country,
       href: target
         ? buildWhatsAppHref(target.phoneE164, message)
@@ -221,10 +228,16 @@ export function JourneysPage({ copy, locale, whatsapp }: JourneysPageProps) {
               journeyLabel: copy.journeyLabel,
               listTitle: copy.listTitle,
               mapAriaLabel: copy.mapAriaLabel,
+              mapInteractionHint: copy.mapInteractionHint,
+              mapLegendHint: copy.mapLegendHint,
               mapTitle: copy.mapTitle,
+              mapZoomControlsLabel: copy.mapZoomControlsLabel,
               physicalStudioLabel: copy.physicalStudioLabel,
+              resetZoomLabel: copy.resetZoomLabel,
               selectLocationLabel: copy.selectLocationLabel,
               selectedLocationLabel: copy.selectedLocationLabel,
+              zoomInLabel: copy.zoomInLabel,
+              zoomOutLabel: copy.zoomOutLabel,
             }}
             locations={eventMapLocations}
           />

@@ -10,6 +10,7 @@ import {
 } from "motion/react";
 
 import { motionEasing } from "@/components/motion/motion-tokens";
+import { useClientMotionReady } from "@/components/motion/use-client-motion-ready";
 
 /**
  * Entrada premium en carga para el hero. Sólo anima transform (y/scale),
@@ -18,11 +19,12 @@ import { motionEasing } from "@/components/motion/motion-tokens";
  */
 export function HeroStage(props: HTMLMotionProps<"div">) {
   const reduceMotion = useReducedMotion();
+  const motionReady = useClientMotionReady();
 
   return (
     <motion.div
       animate="show"
-      initial="hidden"
+      initial={motionReady ? "hidden" : false}
       variants={{
         hidden: {},
         show: {

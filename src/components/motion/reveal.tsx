@@ -3,6 +3,7 @@
 import { motion, type HTMLMotionProps, useReducedMotion } from "motion/react";
 
 import { motionDurations, motionEasing } from "@/components/motion/motion-tokens";
+import { useClientMotionReady } from "@/components/motion/use-client-motion-ready";
 
 type RevealProps = HTMLMotionProps<"div"> & {
   delay?: number;
@@ -11,6 +12,7 @@ type RevealProps = HTMLMotionProps<"div"> & {
 
 export function Reveal({ delay = 0, direction = "up", ...props }: RevealProps) {
   const reduceMotion = useReducedMotion();
+  const motionReady = useClientMotionReady();
   const offset = reduceMotion
     ? {}
     : direction === "left"
@@ -21,7 +23,7 @@ export function Reveal({ delay = 0, direction = "up", ...props }: RevealProps) {
 
   return (
     <motion.div
-      initial={offset}
+      initial={motionReady ? offset : false}
       transition={{ duration: motionDurations.reveal, ease: motionEasing, delay }}
       viewport={{ once: true, margin: "-10%" }}
       whileInView={{ x: 0, y: 0 }}
