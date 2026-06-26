@@ -162,7 +162,7 @@ export function JourneysPage({ copy, locale, whatsapp }: JourneysPageProps) {
         }
         aside={
           globeImage?.publicPath ? (
-            <div className="relative mx-auto w-full max-w-[26rem] overflow-hidden rounded-xl border border-border bg-surface shadow-soft lg:mx-0">
+            <div className="relative mx-auto w-full max-w-[26rem] overflow-hidden rounded-xl border border-primary/15 bg-surface shadow-soft lg:mx-0">
               <div className="relative aspect-[4/5]">
                 <Image
                   alt={globeImage.alt}
@@ -208,7 +208,7 @@ export function JourneysPage({ copy, locale, whatsapp }: JourneysPageProps) {
         title={copy.title}
       />
 
-      <Section id="mapa-jornadas">
+      <Section id="mapa-jornadas" tone="muted">
         <Container className="grid gap-8">
           <Breadcrumbs
             items={[{ label: copy.homeLabel, href: "/" }, { label: copy.title }]}
@@ -244,7 +244,7 @@ export function JourneysPage({ copy, locale, whatsapp }: JourneysPageProps) {
               </p>
             </div>
             <div className="grid gap-4 md:grid-cols-2">
-              <section className="rounded-xl border border-border bg-background p-5">
+              <section className="rounded-xl border border-primary/15 bg-background p-5">
                 <h3 className="font-display text-2xl leading-tight text-foreground">
                   {copy.noFixedStudioTitle}
                 </h3>
@@ -252,7 +252,7 @@ export function JourneysPage({ copy, locale, whatsapp }: JourneysPageProps) {
                   {copy.noFixedStudioDescription}
                 </p>
               </section>
-              <section className="rounded-xl border border-border bg-background p-5">
+              <section className="rounded-xl border border-primary/15 bg-background p-5">
                 <h3 className="font-display text-2xl leading-tight text-foreground">
                   {copy.contactLabel}
                 </h3>

@@ -113,6 +113,7 @@
 html {
   scroll-behavior: smooth;
   text-rendering: optimizeLegibility;
+  overflow-x: clip;
 }
 
 @media (prefers-reduced-motion: reduce) {

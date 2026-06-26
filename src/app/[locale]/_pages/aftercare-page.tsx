@@ -142,7 +142,7 @@ export function AftercarePage({
         eyebrow={copy.eyebrow}
         title={copy.title}
       />
-      <Section>
+      <Section tone="muted">
         <Container className="grid gap-10">
           <Breadcrumbs
             items={[{ label: copy.homeLabel, href: "/" }, { label: copy.title }]}

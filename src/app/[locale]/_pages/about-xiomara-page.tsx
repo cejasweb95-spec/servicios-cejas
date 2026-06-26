@@ -83,7 +83,7 @@ export function AboutXiomaraPage({
         }
         aside={
           portrait?.publicPath ? (
-            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-surface">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-primary/15 bg-surface">
               <Image
                 alt={portrait.alt[locale]}
                 className="h-full w-full object-cover"
@@ -124,11 +124,11 @@ export function AboutXiomaraPage({
             </Reveal>
             <Reveal delay={0.04} direction="right">
               <div className="grid gap-8">
-              <StaggerList className="grid grid-cols-3 gap-4 border-y border-primary/25 py-6">
+              <StaggerList className="grid grid-cols-2 gap-4 border-y border-primary/25 py-6 sm:grid-cols-3">
                 {copy.stats.map((stat) => (
                   <StaggerListItem key={stat.label}>
-                    <div>
-                      <p className="font-display text-4xl leading-none text-primary-text">
+                    <div className="min-w-0">
+                      <p className="font-display text-3xl leading-none text-primary-text sm:text-4xl">
                         {stat.value}
                       </p>
                       <p className="mt-2 text-xs font-semibold uppercase tracking-[0.08em] text-muted-foreground">
