@@ -23,6 +23,7 @@ playwright-report/
 test-results/
 output/
 lighthouse/
+qa-screenshots/
 *.report.html
 
 # Sistema
