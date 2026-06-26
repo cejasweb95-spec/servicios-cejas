@@ -38,6 +38,11 @@ se extrajeron patrones por contenido). Fuentes: [makeup-artist-websites — site
 - **Jerarquía:** un solo H1 por página; eyebrow (Manrope, mayúsculas, `primary-text`) sobre H2 (Marcellus). No usar Marcellus para párrafos largos.
 - Senior: aumentar el salto de tamaño H1↔body y el aire sobre/bajo titulares; menos pesos, más tamaño.
 
+#### Refinamiento de elegancia (feedback cliente, 2026-06-25)
+- **Acento en cursiva**: en cada título de sección, una **palabra clave en cursiva** (Marcellus itálica) para dar aire editorial elegante (p. ej. «Servicios por *país*», «Resultados *reales*»). Se implementa con `t.rich` + `<i>` en las traducciones para mantener ES/EN. No añadir una 3ª fuente (regla de marca): se usa la itálica de Marcellus.
+- **Compactar en desktop**: las bandas editoriales (empezando por «Servicios por país» en la home) tenían demasiado aire vertical y huecos en desktop. Reducir gaps de fila, acercar columnas imagen↔texto y ratios de imagen más bajos para una composición más densa y elegante.
+- **Sin guionado feo**: quitar `hyphens-auto` de titulares grandes (el H1 partía «Micropigmenta-ción»); permitir el salto natural por palabra.
+
 ### Color y ritmo tonal (matar el "muy blanco/plano")
 
 Tokens existentes (no inventar): `--background #fff`, `--surface-muted #fbf8f7`, `--surface-strong #fff8f9`,

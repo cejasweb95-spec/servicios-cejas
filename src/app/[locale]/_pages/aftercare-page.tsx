@@ -7,7 +7,6 @@ import { PageHero } from "@/components/primitives/page-hero";
 import { EditorialImagePair } from "@/components/primitives/editorial-image-pair";
 import { Section } from "@/components/primitives/section";
 import { JsonLd } from "@/components/seo/json-ld";
-import { Badge } from "@/components/ui/badge";
 import type { Locale } from "@/i18n/routing";
 import { getMediaAssetById, getWhatsAppTargets } from "@/lib/content/queries";
 import {
@@ -54,36 +53,46 @@ type AftercarePageProps = {
   whatsapp: WhatsAppCopy;
 };
 
+function CareList({ items }: { items: string[] }) {
+  return (
+    <ul className="grid gap-2.5 text-sm leading-6 text-muted-foreground">
+      {items.map((item) => (
+        <li className="flex gap-2.5" key={item}>
+          <span
+            aria-hidden="true"
+            className="mt-2 size-1.5 shrink-0 rounded-full bg-primary"
+          />
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
 function CareTimeline({ blocks }: { blocks: CareBlock[] }) {
   return (
-    <StaggerList className="grid gap-4">
+    <StaggerList className="grid gap-7">
       {blocks.map((block) => (
         <StaggerListItem key={block.title}>
-          <section className="rounded-xl border border-border bg-background p-5">
-            <h3 className="font-display text-2xl leading-tight text-foreground">
+          <section className="border-l-2 border-primary/40 pl-5">
+            <h4 className="font-display text-xl leading-tight text-foreground">
               {block.title}
-            </h3>
-            <ul className="mt-4 grid gap-2 text-sm leading-6 text-muted-foreground">
+            </h4>
+            <ul className="mt-3 grid gap-2 text-sm leading-6 text-muted-foreground">
               {block.items.map((item) => (
-                <li key={item}>{item}</li>
+                <li className="flex gap-2.5" key={item}>
+                  <span
+                    aria-hidden="true"
+                    className="mt-2 size-1.5 shrink-0 rounded-full bg-primary"
+                  />
+                  <span>{item}</span>
+                </li>
               ))}
             </ul>
           </section>
         </StaggerListItem>
       ))}
     </StaggerList>
-  );
-}
-
-function CareList({ items }: { items: string[] }) {
-  return (
-    <ul className="grid gap-3 text-sm leading-6 text-muted-foreground">
-      {items.map((item) => (
-        <li className="rounded-lg border border-border bg-background p-4" key={item}>
-          {item}
-        </li>
-      ))}
-    </ul>
   );
 }
 
@@ -142,9 +151,8 @@ export function AftercarePage({
           <Reveal>
             <section aria-labelledby="before-care" className="grid gap-6">
             <div>
-              <Badge variant="outline">{copy.beforeTitle}</Badge>
               <h2
-                className="mt-4 font-display text-4xl leading-tight text-foreground"
+                className="font-display text-4xl leading-tight text-foreground"
                 id="before-care"
               >
                 {copy.beforeTitle}
@@ -182,9 +190,8 @@ export function AftercarePage({
           <Reveal direction="right">
             <section aria-labelledby="after-care" className="grid gap-6">
             <div>
-              <Badge variant="outline">{copy.afterTitle}</Badge>
               <h2
-                className="mt-4 font-display text-4xl leading-tight text-foreground"
+                className="font-display text-4xl leading-tight text-foreground"
                 id="after-care"
               >
                 {copy.afterTitle}
@@ -216,7 +223,7 @@ export function AftercarePage({
       </Section>
       <Section tone="muted">
         <Container>
-          <div className="grid gap-5 rounded-xl border border-border bg-background p-5 md:grid-cols-[1fr_auto] md:items-center">
+          <div className="grid gap-5 rounded-2xl bg-background p-6 md:grid-cols-[1fr_auto] md:items-center">
             <div>
               <h2 className="font-display text-3xl leading-tight text-foreground">
                 {copy.noteTitle}

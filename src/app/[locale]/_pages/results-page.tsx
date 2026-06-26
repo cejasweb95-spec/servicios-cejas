@@ -2,10 +2,10 @@ import { ResultMosaic } from "@/components/domain/result-mosaic";
 import { WhatsAppChooser } from "@/components/domain/whatsapp-chooser";
 import { Breadcrumbs } from "@/components/navigation/breadcrumbs";
 import { Container } from "@/components/primitives/container";
+import { Eyebrow } from "@/components/primitives/eyebrow";
 import { PageHero } from "@/components/primitives/page-hero";
 import { Section } from "@/components/primitives/section";
 import { JsonLd } from "@/components/seo/json-ld";
-import { Badge } from "@/components/ui/badge";
 import type { Locale } from "@/i18n/routing";
 import { getMediaAssets, getWhatsAppTargets } from "@/lib/content/queries";
 import {
@@ -122,9 +122,11 @@ export function ResultsPage({
               images={galleryImages}
             />
             <section aria-labelledby="results-gallery-title" className="lg:sticky lg:top-24">
-              <Badge variant="outline">{copy.healingLabel}</Badge>
+              <Eyebrow className="uppercase tracking-[0.14em]">
+                {copy.healingLabel}
+              </Eyebrow>
               <h2
-                className="mt-4 font-display text-4xl leading-tight text-foreground"
+                className="mt-3 font-display text-4xl leading-tight text-foreground"
                 id="results-gallery-title"
               >
                 {copy.galleryTitle}

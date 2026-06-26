@@ -135,8 +135,8 @@ export function ContactPage({ copy, locale, path }: ContactPageProps) {
               </section>
             </Reveal>
             <Reveal delay={0.04} direction="right">
-              <aside className="grid gap-4">
-              <section className="rounded-xl border border-border bg-surface p-5">
+              <aside className="overflow-hidden rounded-2xl bg-surface-muted">
+              <section className="border-b border-primary/15 p-6">
                 <h2 className="flex items-center gap-2 text-sm font-bold text-foreground">
                   <Mail aria-hidden="true" className="size-4" />
                   {copy.emailLabel}
@@ -148,7 +148,7 @@ export function ContactPage({ copy, locale, path }: ContactPageProps) {
                   {legalProfile.email}
                 </a>
               </section>
-              <section className="grid gap-4 rounded-xl border border-border bg-surface p-5">
+              <section className="grid gap-4 border-b border-primary/15 p-6">
                 <div>
                   <h2 className="flex items-center gap-2 text-sm font-bold text-foreground">
                     <MapPin aria-hidden="true" className="size-4" />
@@ -172,7 +172,7 @@ export function ContactPage({ copy, locale, path }: ContactPageProps) {
                   title={copy.mapTitle}
                 />
               </section>
-              <section className="rounded-xl border border-border bg-surface p-5">
+              <section className="p-6">
                 <h2 className="text-sm font-bold text-foreground">
                   {copy.socialLabel}
                 </h2>

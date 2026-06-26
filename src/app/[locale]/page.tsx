@@ -1,10 +1,10 @@
+import { type ReactNode } from "react";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import { CourseCard } from "@/components/domain/course-card";
 import { EventMap, type EventMapLocation } from "@/components/domain/event-map";
-import { MarketSelector } from "@/components/domain/market-selector";
 import { CountryFlag } from "@/components/primitives/country-flag";
 import { WhatsAppChooser } from "@/components/domain/whatsapp-chooser";
 import { Reveal } from "@/components/motion/reveal";
@@ -45,6 +45,10 @@ import { buildHomeJsonLd } from "@/lib/seo/structured-data";
 type HomePageProps = {
   params: Promise<{ locale: string }>;
 };
+
+const italicAccent = (chunks: ReactNode) => (
+  <i className="font-display italic">{chunks}</i>
+);
 
 const downloadsBasePath: Record<Locale, `/${string}`> = {
   es: "/descargas",
@@ -160,7 +164,7 @@ export default async function HomePage({ params }: HomePageProps) {
           <Container className="grid min-h-[calc(88dvh-5rem)] items-center gap-10 py-12 sm:py-16 lg:grid-cols-[1fr_0.92fr] lg:py-20">
             <HeroItem className="max-w-3xl">
               <Eyebrow className="mb-4">{t("heroEyebrow")}</Eyebrow>
-              <h1 className="text-balance hyphens-auto break-words font-display text-4xl leading-[1.08] text-foreground sm:text-5xl lg:text-7xl">
+              <h1 className="text-balance font-display text-[2rem] leading-[1.1] text-foreground sm:text-5xl lg:text-7xl">
                 {t("title")}
               </h1>
               <p className="mt-6 max-w-2xl text-pretty text-lg leading-8 text-muted-foreground">
@@ -194,49 +198,29 @@ export default async function HomePage({ params }: HomePageProps) {
         </HeroStage>
       </header>
 
-      <Section id="mercados" spacing="loose">
-        <Container className="grid gap-8">
+      <Section id="servicios-por-pais" spacing="loose" tone="rose">
+        <Container className="grid gap-12">
           <div className="max-w-3xl">
-            <h2 className="font-display text-4xl leading-tight text-foreground">
-              {t("marketTitle")}
+            <Eyebrow className="mb-3 uppercase tracking-[0.14em]">
+              {t("servicesEyebrow")}
+            </Eyebrow>
+            <h2 className="font-display text-balance text-4xl leading-tight text-foreground sm:text-5xl">
+              {t.rich("marketTitle", { i: italicAccent })}
             </h2>
-            <p className="mt-4 text-base leading-8 text-muted-foreground">
+            <p className="mt-4 max-w-2xl text-base leading-8 text-foreground/80">
               {t("marketDescription")}
             </p>
           </div>
-          <MarketSelector
-            items={markets.map((market) => ({
-              currency: market.currency,
-              description: market.description,
-              href: buildMarketPath(locale, market.slug),
-              id: market.id,
-              name: market.name,
-            }))}
-            label={t("marketSelectorLabel")}
-          />
-        </Container>
-      </Section>
-
-      <Section id="servicios-destacados" spacing="loose" tone="muted">
-        <Container className="grid gap-8">
-          <div className="max-w-3xl">
-            <h2 className="font-display text-4xl leading-tight text-foreground">
-              {t("featuredTitle")}
-            </h2>
-            <p className="mt-4 text-base leading-8 text-muted-foreground">
-              {t("featuredDescription")}
-            </p>
-          </div>
-          <div className="grid gap-12 sm:gap-14">
+          <div className="grid gap-10 sm:gap-12">
             {serviceHighlights.map((group, index) => (
               <Reveal key={group.market.id}>
-                <article className="grid items-center gap-6 border-t border-border pt-10 sm:gap-8 lg:grid-cols-2 lg:gap-12">
+                <article className="grid items-center gap-6 border-t border-primary/30 pt-9 lg:grid-cols-[1.1fr_1fr] lg:gap-12">
                   {group.image?.publicPath ? (
                     <div
                       className={
                         index % 2 === 1
-                          ? "relative aspect-[16/11] overflow-hidden rounded-xl border border-border bg-surface lg:order-last lg:aspect-[4/3]"
-                          : "relative aspect-[16/11] overflow-hidden rounded-xl border border-border bg-surface lg:aspect-[4/3]"
+                          ? "relative aspect-[16/11] overflow-hidden rounded-2xl bg-surface lg:order-last lg:aspect-[3/2]"
+                          : "relative aspect-[16/11] overflow-hidden rounded-2xl bg-surface lg:aspect-[3/2]"
                       }
                     >
                       <Image
@@ -256,29 +240,11 @@ export default async function HomePage({ params }: HomePageProps) {
                       </h3>
                       <Badge variant="outline">{group.market.currency}</Badge>
                     </div>
-                    <p className="mt-3 text-base leading-7 text-muted-foreground">
+                    <p className="mt-4 max-w-prose text-base leading-7 text-foreground/75">
                       {group.market.description}
                     </p>
-                    <ul className="mt-5 flex flex-wrap gap-2">
-                      {group.services.length > 0 ? (
-                        group.services.map((service) => (
-                          <li
-                            className="rounded-full border border-border bg-surface px-4 py-2 text-sm font-semibold leading-6 text-foreground"
-                            key={service.id}
-                          >
-                            {service.name}
-                          </li>
-                        ))
-                      ) : (
-                        <li className="text-sm leading-6 text-muted-foreground">
-                          {t("featuredEmpty")}
-                        </li>
-                      )}
-                    </ul>
-                    <div className="mt-6">
-                      <ButtonLink href={group.href} variant="outline">
-                        {t("marketCta")}
-                      </ButtonLink>
+                    <div className="mt-7">
+                      <ButtonLink href={group.href}>{t("marketCta")}</ButtonLink>
                     </div>
                   </div>
                 </article>
@@ -302,11 +268,11 @@ export default async function HomePage({ params }: HomePageProps) {
         </Container>
       </Section>
 
-      <Section id="jornadas" spacing="loose">
+      <Section id="jornadas" spacing="loose" tone="muted">
         <Container className="grid gap-10">
           <Reveal>
             <div className="grid items-center gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:gap-12">
-              <div className="relative mx-auto aspect-[4/5] w-full max-w-[26rem] overflow-hidden rounded-xl border border-border bg-surface lg:mx-0">
+              <div className="relative mx-auto aspect-[4/5] w-full max-w-[26rem] overflow-hidden rounded-2xl bg-surface lg:mx-0">
                 <Image
                   alt={journeysImage.alt}
                   className="object-cover object-center"
@@ -316,8 +282,11 @@ export default async function HomePage({ params }: HomePageProps) {
                 />
               </div>
               <div className="max-w-2xl">
+                <Eyebrow className="mb-3 uppercase tracking-[0.14em]">
+                  {t("journeysEyebrow")}
+                </Eyebrow>
                 <h2 className="font-display text-4xl leading-tight text-foreground">
-                  {t("journeysTitle")}
+                  {t.rich("journeysTitle", { i: italicAccent })}
                 </h2>
                 <p className="mt-4 text-base leading-8 text-muted-foreground">
                   {t("journeysDescription")}
@@ -360,11 +329,11 @@ export default async function HomePage({ params }: HomePageProps) {
         </Container>
       </Section>
 
-      <Section spacing="loose" tone="muted">
+      <Section spacing="loose">
         <Container className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
           <Reveal>
             <div className="grid gap-4 sm:grid-cols-[0.84fr_1fr]">
-              <div className="relative aspect-[4/5] overflow-hidden rounded-lg border border-border bg-surface">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-surface-muted">
                 <Image
                   alt={resultsImage.alt}
                   className="h-full w-full object-cover"
@@ -374,7 +343,7 @@ export default async function HomePage({ params }: HomePageProps) {
                   width={resultsImage.width}
                 />
               </div>
-              <div className="relative aspect-[4/5] overflow-hidden rounded-lg border border-border bg-surface sm:mt-10">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-surface-muted sm:mt-10">
                 <Image
                   alt={studioImage.alt}
                   className="h-full w-full object-cover"
@@ -389,11 +358,14 @@ export default async function HomePage({ params }: HomePageProps) {
           <Reveal delay={0.05}>
             <div className="grid gap-8">
               <section aria-labelledby="home-results-title">
+                <Eyebrow className="mb-3 uppercase tracking-[0.14em]">
+                  {t("resultsEyebrow")}
+                </Eyebrow>
                 <h2
                   className="font-display text-4xl leading-tight text-foreground"
                   id="home-results-title"
                 >
-                  {t("resultsTitle")}
+                  {t.rich("resultsTitle", { i: italicAccent })}
                 </h2>
                 <p className="mt-4 text-base leading-8 text-muted-foreground">
                   {t("resultsCopy")}
@@ -401,13 +373,13 @@ export default async function HomePage({ params }: HomePageProps) {
               </section>
               <section
                 aria-labelledby="home-about-title"
-                className="border-t border-border pt-8"
+                className="border-t border-primary/30 pt-8"
               >
                 <h2
                   className="font-display text-4xl leading-tight text-foreground"
                   id="home-about-title"
                 >
-                  {t("aboutTitle")}
+                  {t.rich("aboutTitle", { i: italicAccent })}
                 </h2>
                 <p className="mt-4 text-base leading-8 text-muted-foreground">
                   {t("aboutCopy")}
@@ -418,11 +390,14 @@ export default async function HomePage({ params }: HomePageProps) {
         </Container>
       </Section>
 
-      <Section id="formaciones" spacing="loose">
+      <Section id="formaciones" spacing="loose" tone="muted">
         <Container className="grid gap-8">
           <div className="max-w-3xl">
+            <Eyebrow className="mb-3 uppercase tracking-[0.14em]">
+              {t("coursesEyebrow")}
+            </Eyebrow>
             <h2 className="font-display text-4xl leading-tight text-foreground">
-              {t("coursesTitle")}
+              {t.rich("coursesTitle", { i: italicAccent })}
             </h2>
             <p className="mt-4 text-base leading-8 text-muted-foreground">
               {t("coursesDescription")}
@@ -456,7 +431,7 @@ export default async function HomePage({ params }: HomePageProps) {
         </Container>
       </Section>
 
-      <Section spacing="compact" tone="muted">
+      <Section spacing="compact">
         <Container className="grid gap-5 md:grid-cols-[1fr_auto] md:items-center">
           <div className="max-w-3xl">
             <h2 className="font-display text-3xl leading-tight text-foreground">

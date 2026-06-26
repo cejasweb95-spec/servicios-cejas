@@ -93,7 +93,7 @@ export function ServicesIndexPage({ copy, locale }: ServicesIndexPageProps) {
                 {markets.map((market) => (
                   <StaggerListItem key={market.id}>
                     <Link
-                      className="group relative block aspect-[4/5] overflow-hidden rounded-xl border border-border bg-surface outline-none transition-transform duration-300 hover:-translate-y-1 focus-visible:ring-3 focus-visible:ring-ring/40 motion-reduce:transform-none"
+                      className="group relative block aspect-[4/5] overflow-hidden rounded-2xl bg-surface outline-none focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:ring-offset-2"
                       href={`${servicesPath}/${market.slug}`}
                     >
                       {market.image?.publicPath ? (

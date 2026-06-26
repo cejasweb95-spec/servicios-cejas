@@ -97,23 +97,14 @@ export function ResultMosaic({ copy, images }: ResultMosaicProps) {
       <div className="gap-3 [column-fill:balance] columns-2 sm:gap-4 xl:columns-3 [&>*]:mb-3 sm:[&>*]:mb-4">
         {images.map((image, index) => (
           <DialogTrigger asChild key={image.id}>
-            <motion.button
-              className="group relative block w-full break-inside-avoid overflow-hidden rounded-xl border border-border bg-surface text-left outline-none focus-visible:ring-3 focus-visible:ring-ring/40"
+            <button
+              className="group relative block w-full break-inside-avoid overflow-hidden rounded-2xl bg-surface-muted text-left outline-none transition-transform duration-200 hover:-translate-y-0.5 focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:ring-offset-2 motion-reduce:transform-none motion-reduce:transition-none"
               data-slot="result-tile"
               onClick={() => openLightbox(index)}
               ref={(node) => {
                 triggerRefs.current[index] = node;
               }}
-              initial={shouldReduceMotion ? false : { opacity: 0, y: 14 }}
-              transition={{
-                delay: shouldReduceMotion ? 0 : Math.min(index * 0.03, 0.21),
-                duration: shouldReduceMotion ? 0 : 0.3,
-              }}
               type="button"
-              viewport={{ once: true, margin: "-8%" }}
-              whileInView={{ opacity: 1, y: 0 }}
-              whileHover={shouldReduceMotion ? undefined : { y: -3 }}
-              whileTap={shouldReduceMotion ? undefined : { scale: 0.995 }}
             >
               <Image
                 alt={image.alt}
@@ -134,7 +125,7 @@ export function ResultMosaic({ copy, images }: ResultMosaicProps) {
               <span className="sr-only">
                 {copy.openLabel}: {image.alt}
               </span>
-            </motion.button>
+            </button>
           </DialogTrigger>
         ))}
       </div>

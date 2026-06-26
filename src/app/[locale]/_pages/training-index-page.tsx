@@ -136,7 +136,7 @@ export function TrainingIndexPage({
           />
         }
         aside={
-          <div className="relative aspect-[3/4] overflow-hidden rounded-lg border border-border bg-surface">
+          <div className="relative aspect-[3/4] overflow-hidden rounded-2xl bg-surface">
             <Image
               alt={heroImage.alt}
               className="h-full w-full object-cover object-top"
@@ -182,7 +182,7 @@ export function TrainingIndexPage({
           </section>
 
           <section aria-labelledby="masterclass-training-title">
-            <div className="max-w-3xl border-t border-border pt-8">
+            <div className="max-w-3xl border-t border-primary/30 pt-8">
               <h2
                 className="font-display text-4xl leading-tight text-foreground"
                 id="masterclass-training-title"
@@ -204,7 +204,7 @@ export function TrainingIndexPage({
 
           <section
             aria-labelledby="training-next-date"
-            className="rounded-lg border border-border bg-surface-muted p-5"
+            className="rounded-2xl bg-primary-soft p-6"
           >
             <div className="grid gap-5 md:grid-cols-[1fr_auto] md:items-center">
               <div>

@@ -38,12 +38,9 @@ export function CourseCard({
   return (
     <article
       data-slot="course-card"
-      className={cn(
-        "group flex h-full flex-col overflow-hidden rounded-lg border border-border bg-surface transition-colors hover:border-primary focus-within:border-primary",
-        className,
-      )}
+      className={cn("group flex h-full flex-col", className)}
     >
-      <div className="relative aspect-[4/3] overflow-hidden bg-surface-muted">
+      <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-surface-muted">
         <Image
           data-slot="course-image"
           alt={image.alt}
@@ -54,7 +51,7 @@ export function CourseCard({
           width={image.width}
         />
       </div>
-      <div className="flex flex-1 flex-col p-5">
+      <div className="flex flex-1 flex-col pt-4">
         <div className="flex flex-wrap gap-2">
           <Badge>{duration}</Badge>
           <Badge variant="outline">{certification}</Badge>

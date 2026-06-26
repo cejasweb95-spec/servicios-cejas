@@ -1,11 +1,7 @@
-"use client";
-
 import { CountryFlag } from "@/components/primitives/country-flag";
-import { Badge } from "@/components/ui/badge";
 import { Link } from "@/i18n/navigation";
 import type { MarketId } from "@/lib/content/schema";
 import { cn } from "@/lib/utils";
-import { LayoutGroup, motion } from "motion/react";
 
 type MarketSelectorItem = {
   id: MarketId;
@@ -23,41 +19,35 @@ type MarketSelectorProps = {
 
 export function MarketSelector({ activeId, items, label }: MarketSelectorProps) {
   return (
-    <nav aria-label={label} className="grid gap-3 md:grid-cols-3">
-      <LayoutGroup id={`market-selector-${label}`}>
-        {items.map((item) => (
+    <nav aria-label={label} className="flex flex-wrap gap-2.5">
+      {items.map((item) => {
+        const isActive = item.id === activeId;
+
+        return (
           <Link
-            aria-current={item.id === activeId ? "page" : undefined}
+            aria-current={isActive ? "page" : undefined}
             className={cn(
-              "relative isolate rounded-lg border border-border bg-surface p-4 transition-[background-color,border-color,box-shadow,transform] duration-200 hover:-translate-y-0.5 hover:border-primary hover:bg-surface-muted hover:shadow-soft focus-visible:border-primary focus-visible:shadow-soft motion-reduce:transform-none",
-              item.id === activeId && "border-primary bg-surface-muted",
+              "inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50 focus-visible:ring-offset-2",
+              isActive
+                ? "border-primary bg-primary text-primary-foreground"
+                : "border-border bg-surface text-foreground hover:border-primary hover:text-primary-text",
             )}
             href={item.href}
             key={item.id}
           >
-            {item.id === activeId ? (
-              <motion.span
-                aria-hidden="true"
-                className="pointer-events-none absolute inset-0 rounded-lg border border-primary bg-surface-muted shadow-soft"
-                layoutId="active-market"
-                transition={{ type: "spring", stiffness: 420, damping: 34 }}
-              />
-            ) : null}
-            <span className="relative z-10 block">
-              <span className="flex items-start justify-between gap-3">
-                <span className="flex items-center gap-2 font-semibold text-foreground">
-                  <CountryFlag market={item.id} />
-                  {item.name}
-                </span>
-                <Badge variant="outline">{item.currency}</Badge>
-              </span>
-              <span className="mt-2 block text-sm leading-6 text-muted-foreground">
-                {item.description}
-              </span>
+            <CountryFlag className="h-3.5 w-5" market={item.id} />
+            {item.name}
+            <span
+              className={cn(
+                "text-xs font-normal uppercase tracking-wide",
+                isActive ? "text-primary-foreground/80" : "text-muted-foreground",
+              )}
+            >
+              {item.currency}
             </span>
           </Link>
-        ))}
-      </LayoutGroup>
+        );
+      })}
     </nav>
   );
 }

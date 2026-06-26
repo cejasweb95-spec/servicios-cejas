@@ -42,7 +42,7 @@ export function EditorialImagePair({
           width={primary.width}
         />
       </div>
-      <div className="absolute bottom-0 right-0 w-[42%] overflow-hidden rounded-lg border border-border bg-surface shadow-soft">
+      <div className="absolute bottom-0 right-0 w-[42%] overflow-hidden rounded-lg bg-surface ring-[6px] ring-background">
         <Image
           alt={secondary.alt}
           className="aspect-[4/5] h-full w-full object-cover transition-transform duration-500 motion-reduce:transition-none hover:scale-[1.025]"

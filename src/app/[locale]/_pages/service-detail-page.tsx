@@ -187,7 +187,7 @@ export function ServiceDetailPage({
         aside={
           <div className="grid gap-4">
             {serviceImage?.publicPath && serviceImage.width && serviceImage.height ? (
-              <div className="relative aspect-[4/3] overflow-hidden rounded-lg border border-border bg-surface">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-surface">
                 <Image
                   alt={serviceImage.alt}
                   className="h-full w-full object-cover"
@@ -245,7 +245,7 @@ export function ServiceDetailPage({
             <Reveal delay={0.04}>
               <aside
                 aria-labelledby="service-quick-details"
-                className="rounded-lg border border-border bg-surface-muted p-5"
+                className="rounded-2xl bg-primary-soft p-6"
               >
                 <h2
                   className="font-display text-2xl text-foreground"
@@ -265,7 +265,7 @@ export function ServiceDetailPage({
             <Reveal>
               <section
                 aria-labelledby="service-care-guide"
-                className="grid gap-5 border-y border-border py-7 md:grid-cols-[1fr_auto] md:items-center"
+                className="grid gap-5 border-y border-primary/25 py-7 md:grid-cols-[1fr_auto] md:items-center"
               >
                 <div className="max-w-3xl">
                   <h2
@@ -296,11 +296,8 @@ export function ServiceDetailPage({
             </Reveal>
           ) : null}
 
-          <section
-            aria-labelledby="free-assessment"
-            className="rounded-lg border border-border bg-surface p-5"
-          >
-            <div className="grid gap-5 lg:grid-cols-[1fr_auto] lg:items-center">
+          <section aria-labelledby="free-assessment">
+            <div className="grid gap-5 border-y border-primary/25 py-7 lg:grid-cols-[1fr_auto] lg:items-center">
               <div>
                 <h2
                   className="font-display text-3xl leading-tight text-foreground"

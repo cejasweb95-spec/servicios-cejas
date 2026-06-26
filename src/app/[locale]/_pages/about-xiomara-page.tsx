@@ -5,10 +5,10 @@ import { Breadcrumbs } from "@/components/navigation/breadcrumbs";
 import { Reveal } from "@/components/motion/reveal";
 import { StaggerList, StaggerListItem } from "@/components/motion/stagger-list";
 import { Container } from "@/components/primitives/container";
+import { Eyebrow } from "@/components/primitives/eyebrow";
 import { PageHero } from "@/components/primitives/page-hero";
 import { Section } from "@/components/primitives/section";
 import { JsonLd } from "@/components/seo/json-ld";
-import { Badge } from "@/components/ui/badge";
 import type { Locale } from "@/i18n/routing";
 import { getMediaAssets, getWhatsAppTargets } from "@/lib/content/queries";
 import {
@@ -83,7 +83,7 @@ export function AboutXiomaraPage({
         }
         aside={
           portrait?.publicPath ? (
-            <div className="relative aspect-[4/5] overflow-hidden rounded-xl border border-border bg-surface">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-surface">
               <Image
                 alt={portrait.alt[locale]}
                 className="h-full w-full object-cover"
@@ -123,24 +123,26 @@ export function AboutXiomaraPage({
               </section>
             </Reveal>
             <Reveal delay={0.04} direction="right">
-              <div className="grid gap-4">
-              <StaggerList className="grid gap-3 sm:grid-cols-3">
+              <div className="grid gap-8">
+              <StaggerList className="grid grid-cols-3 gap-4 border-y border-primary/25 py-6">
                 {copy.stats.map((stat) => (
                   <StaggerListItem key={stat.label}>
-                    <div className="rounded-xl border border-border bg-surface p-4">
-                      <p className="font-display text-3xl text-foreground">
+                    <div>
+                      <p className="font-display text-4xl leading-none text-primary-text">
                         {stat.value}
                       </p>
-                      <p className="mt-1 text-xs font-semibold text-muted-foreground">
+                      <p className="mt-2 text-xs font-semibold uppercase tracking-[0.08em] text-muted-foreground">
                         {stat.label}
                       </p>
                     </div>
                   </StaggerListItem>
                 ))}
               </StaggerList>
-              <section className="rounded-xl border border-border bg-surface-muted p-5">
-                <Badge variant="outline">{copy.trajectoryTitle}</Badge>
-                <p className="mt-4 text-sm leading-7 text-muted-foreground">
+              <section>
+                <Eyebrow className="mb-3 uppercase tracking-[0.14em]">
+                  {copy.trajectoryTitle}
+                </Eyebrow>
+                <p className="text-base leading-8 text-muted-foreground">
                   {copy.trajectoryText}
                 </p>
               </section>
@@ -153,7 +155,7 @@ export function AboutXiomaraPage({
         <Section tone="muted">
           <Container className="grid gap-8 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
             <Reveal direction="left">
-              <div className="relative aspect-[4/5] overflow-hidden rounded-lg border border-border bg-surface sm:aspect-[3/4]">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-surface sm:aspect-[3/4]">
                 <Image
                   alt={certificationsImage.alt[locale]}
                   className="h-full w-full object-cover"
@@ -166,14 +168,16 @@ export function AboutXiomaraPage({
             </Reveal>
             <Reveal delay={0.04} direction="right">
               <section aria-labelledby="about-certifications">
-              <Badge variant="outline">{copy.trajectoryTitle}</Badge>
+              <Eyebrow className="uppercase tracking-[0.14em]">
+                {copy.trajectoryTitle}
+              </Eyebrow>
               <h2
-                className="mt-4 text-balance font-display text-4xl leading-tight text-foreground"
+                className="mt-3 text-balance font-display text-4xl leading-tight text-foreground"
                 id="about-certifications"
               >
                 {copy.certificationTitle}
               </h2>
-              <ul className="mt-6 divide-y divide-border border-y border-border">
+              <ul className="mt-6 divide-y divide-primary/20 border-y border-primary/20">
                 {copy.certifications.map((item) => (
                   <li
                     className="py-4 text-sm leading-7 text-muted-foreground"
