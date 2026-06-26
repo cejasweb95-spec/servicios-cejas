@@ -409,7 +409,7 @@ test.describe("journeys and animated map", () => {
     await expect(
       page.getByRole("heading", {
         level: 1,
-        name: "Sede en Cali y próximas jornadas por ciudad",
+        name: "Dónde me encuentras",
       }),
     ).toBeVisible();
     await expect(page.locator("html")).toHaveAttribute("lang", "es");
@@ -468,11 +468,14 @@ test.describe("journeys and animated map", () => {
       '[data-slot="event-map-scroll-region"]',
     );
     await expect(mapScrollRegion).toBeVisible();
+    await expect(
+      page.locator('img[src*="mapa-mundial-clasico"]'),
+    ).toBeVisible();
     expect(
       await mapScrollRegion.evaluate(
         (element) => element.scrollWidth > element.clientWidth,
       ),
-    ).toBe(true);
+    ).toBe(false);
 
     const madridPin = page
       .getByRole("button", { name: /Seleccionar ubicación: Madrid/ })

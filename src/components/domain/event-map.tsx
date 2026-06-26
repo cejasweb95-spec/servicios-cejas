@@ -48,29 +48,28 @@ type EventMapProps = {
 
 type Point = { x: number; y: number };
 
-// Posición geográfica REAL de cada ciudad sobre el mapa mundial punteado.
-// Proyección equirectangular igual que el SVG (viewBox 1100x560, lat -90..90):
-//   x% = (lon + 180) / 360 * 100 ; y% = (90 - lat) / 180 * 100
-// Aquí están los puntos exactos: a ellos llegan las líneas de conexión.
+// Posición geográfica sobre mapa equirectangular (viewBox 1100×560, fitExtent 8px).
+// x% = proyección(lon,lat).x / 1100 * 100 ; y% idem con 560.
 const geoPositions: Record<string, Point> = {
-  cali: { x: 28.8, y: 48.1 }, // -76.5, 3.4
-  "restrepo-valle": { x: 27.4, y: 45.6 }, // mismo Valle del Cauca, leve offset
-  madrid: { x: 49.0, y: 27.6 }, // -3.7, 40.4
-  "puerto-sagunto": { x: 49.9, y: 28.0 }, // -0.27, 39.6
-  "palma-mallorca": { x: 50.7, y: 28.0 }, // 2.65, 39.5
-  ginebra: { x: 51.7, y: 24.3 }, // 6.14, 46.2
+  cali: { x: 29.1, y: 46.4 },
+  "restrepo-valle": { x: 29.1, y: 46.2 },
+  madrid: { x: 49.0, y: 26.6 },
+  "puerto-sagunto": { x: 49.9, y: 27.0 },
+  "palma-mallorca": { x: 50.7, y: 27.0 },
+  ginebra: { x: 51.7, y: 23.4 },
 };
 
-// Las ciudades europeas quedan casi superpuestas a escala mundial, así que la
-// ETIQUETA numerada se despliega con una línea guía hacia su punto real.
+// En Europa los pines quedan muy juntos: se desplazan los botones táctiles con línea guía.
 const labelPositions: Record<string, Point> = {
-  cali: { x: 20.5, y: 53 },
-  "restrepo-valle": { x: 16.5, y: 41 },
-  madrid: { x: 40, y: 33 },
-  "puerto-sagunto": { x: 45, y: 40 },
-  "palma-mallorca": { x: 58, y: 34 },
-  ginebra: { x: 60, y: 18 },
+  cali: { x: 22, y: 52 },
+  "restrepo-valle": { x: 17, y: 42 },
+  madrid: { x: 40, y: 32 },
+  "puerto-sagunto": { x: 44, y: 40 },
+  "palma-mallorca": { x: 58, y: 33 },
+  ginebra: { x: 62, y: 17 },
 };
+
+const WORLD_MAP_SRC = "/images/mapa/mapa-mundial-clasico.svg";
 
 function getGeo(id: string): Point {
   return geoPositions[id] ?? { x: 50, y: 50 };
@@ -231,21 +230,21 @@ export function EventMap({
 
         <div
           aria-label={copy.mapAriaLabel}
-          className="w-full overflow-hidden"
+          className="w-full max-w-full overflow-x-clip"
           data-slot="event-map-scroll-region"
           role="region"
         >
           <div
-            className="relative aspect-[1100/560] w-full overflow-hidden rounded-xl border border-primary/20 bg-surface-strong shadow-soft"
+            className="relative aspect-[1100/560] w-full max-w-full overflow-hidden rounded-xl border border-primary/25 bg-gradient-to-b from-surface-strong to-muted shadow-soft"
             role="group"
           >
           <Image
             alt=""
             aria-hidden="true"
-            className="pointer-events-none object-contain"
+            className="pointer-events-none object-cover object-center"
             fill
             sizes="(min-width: 1024px) 58vw, 92vw"
-            src="/images/mapa/mapa-mundial-puntos.svg"
+            src={WORLD_MAP_SRC}
             unoptimized
           />
           <svg
@@ -325,10 +324,11 @@ export function EventMap({
             const typeLabel = getLocationTypeLabel(location, copy);
             const label = getLocationLabel(location);
             const isStudio = location.type === "physical_studio";
+            const shortLabel = [location.city, location.country].filter(Boolean).join(", ");
 
             return (
               <div
-                className="absolute z-10"
+                className="absolute z-10 max-w-[min(44vw,11rem)] sm:max-w-[min(36vw,12rem)]"
                 key={location.id}
                 style={{
                   left: `${point.x}%`,
@@ -341,7 +341,7 @@ export function EventMap({
                   aria-pressed={isSelected}
                   aria-describedby={`event-location-${location.id}`}
                   className={cn(
-                    "grid min-h-11 min-w-11 place-items-center rounded-full border shadow-soft outline-none transition-colors focus-visible:ring-3 focus-visible:ring-ring/40",
+                    "group/pin relative grid min-h-11 min-w-11 place-items-center rounded-full border shadow-soft outline-none transition-colors focus-visible:ring-3 focus-visible:ring-ring/40",
                     isSelected
                       ? "border-primary bg-primary text-primary-foreground"
                       : "border-border bg-background text-primary-text hover:border-primary hover:bg-surface-muted",
@@ -366,6 +366,17 @@ export function EventMap({
                     className={cn("size-4", isStudio && "fill-current")}
                   />
                 </motion.button>
+                <span
+                  aria-hidden={!isSelected}
+                  className={cn(
+                    "pointer-events-none absolute left-1/2 top-[calc(100%+0.35rem)] w-max max-w-[min(44vw,11rem)] -translate-x-1/2 rounded-full border px-2.5 py-1 text-center text-[10px] font-semibold leading-tight shadow-soft sm:text-xs",
+                    isSelected
+                      ? "border-primary/30 bg-background text-foreground"
+                      : "sr-only",
+                  )}
+                >
+                  {shortLabel}
+                </span>
                 <span className="sr-only" id={`event-location-${location.id}`}>
                   {typeLabel}
                 </span>
