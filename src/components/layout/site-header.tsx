@@ -60,10 +60,16 @@ export function SiteHeader({
 }: SiteHeaderProps) {
   // Menú principal reducido a 5 destinos de cliente; cuidados, contacto y
   // descargas quedan en el footer y en el CTA de WhatsApp.
-  const primaryNavIds = ["services", "journeys", "training", "results", "about"];
-  const primaryNavItems = navItems.filter((item) =>
-    primaryNavIds.includes(item.id),
-  );
+  const primaryNavOrder = [
+    "services",
+    "journeys",
+    "training",
+    "results",
+    "about",
+  ] as const;
+  const primaryNavItems = primaryNavOrder
+    .map((id) => navItems.find((item) => item.id === id))
+    .filter((item): item is ShellNavItem => Boolean(item));
 
   return (
     <header className="sticky top-0 z-40 border-b border-primary/15 bg-background/92 shadow-soft backdrop-blur-xl supports-backdrop-filter:bg-background/86">

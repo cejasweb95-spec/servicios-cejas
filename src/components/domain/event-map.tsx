@@ -43,6 +43,7 @@ type EventMapCopy = {
 type EventMapProps = {
   copy: EventMapCopy;
   locations: EventMapLocation[];
+  showHeading?: boolean;
 };
 
 type Point = { x: number; y: number };
@@ -104,7 +105,11 @@ function buildCurve(
   return `M ${start.x} ${start.y} Q ${midX} ${midY} ${end.x} ${end.y}`;
 }
 
-export function EventMap({ copy, locations }: EventMapProps) {
+export function EventMap({
+  copy,
+  locations,
+  showHeading = true,
+}: EventMapProps) {
   const [selectedId, setSelectedId] = useState(locations[0]?.id);
   const shouldReduceMotion = useReducedMotion();
 
@@ -135,27 +140,103 @@ export function EventMap({ copy, locations }: EventMapProps) {
 
   return (
     <div className="grid gap-6 lg:grid-cols-[minmax(0,1.18fr)_minmax(22rem,0.82fr)] lg:items-start">
-      <div className="grid gap-4">
-        <div className="flex flex-wrap items-end justify-between gap-3">
-          <div>
-            <h2 className="font-display text-3xl leading-tight text-foreground">
-              {copy.mapTitle}
-            </h2>
-            <p className="mt-2 max-w-2xl text-sm leading-6 text-muted-foreground">
-              {copy.mapAriaLabel}
+      <aside
+        aria-label={copy.selectedLocationLabel}
+        className="order-1 grid gap-4 lg:order-2"
+      >
+        <div
+          aria-live="polite"
+          className="rounded-xl border border-primary/20 bg-background p-5 shadow-soft"
+        >
+          <Badge variant="outline">
+            {getLocationTypeLabel(selectedLocation, copy)}
+          </Badge>
+          <h3 className="mt-4 flex items-center gap-2.5 font-display text-2xl leading-tight text-foreground sm:text-3xl">
+            <CountryFlag className="h-5 w-7" market={selectedLocation.marketId} />
+            {getLocationLabel(selectedLocation)}
+          </h3>
+          <p className="mt-3 text-sm leading-6 text-muted-foreground">
+            {selectedLocation.notes}
+          </p>
+          {selectedLocation.address ? (
+            <p className="mt-4 text-sm leading-6 text-foreground">
+              <span className="font-semibold">{copy.addressLabel}: </span>
+              {selectedLocation.address}
             </p>
+          ) : null}
+          <div className="mt-5 flex flex-wrap gap-3">
+            <Button asChild className="min-h-12" variant="whatsapp">
+              <a href={selectedLocation.href} rel="noreferrer" target="_blank">
+                {copy.contactLabel}
+              </a>
+            </Button>
           </div>
         </div>
 
+        <section aria-labelledby="event-location-list">
+          <h2
+            className="font-display text-2xl leading-tight text-foreground"
+            id="event-location-list"
+          >
+            {copy.listTitle}
+          </h2>
+          <ul className="mt-4 grid gap-2">
+            {locations.map((location) => {
+              const isSelected = selectedLocation.id === location.id;
+
+              return (
+                <li key={location.id}>
+                  <button
+                    aria-pressed={isSelected}
+                    className={cn(
+                      "grid min-h-14 w-full gap-1 rounded-lg border px-4 py-3 text-left outline-none transition-colors focus-visible:ring-3 focus-visible:ring-ring/40",
+                      isSelected
+                        ? "border-primary bg-primary-soft/45 text-foreground"
+                        : "border-border bg-background text-foreground hover:border-primary",
+                    )}
+                    onClick={() => setSelectedId(location.id)}
+                    type="button"
+                  >
+                    <span className="flex items-center gap-2 text-sm font-semibold">
+                      <CountryFlag
+                        className="h-3.5 w-5"
+                        market={location.marketId}
+                      />
+                      {getLocationLabel(location)}
+                    </span>
+                    <span className="pl-7 text-xs text-muted-foreground">
+                      {location.statusLabel}
+                    </span>
+                  </button>
+                </li>
+              );
+            })}
+          </ul>
+        </section>
+      </aside>
+
+      <div className="order-2 grid gap-4 lg:order-1">
+        {showHeading ? (
+          <div className="flex flex-wrap items-end justify-between gap-3">
+            <div>
+              <h2 className="font-display text-3xl leading-tight text-foreground">
+                {copy.mapTitle}
+              </h2>
+              <p className="mt-2 max-w-2xl text-sm leading-6 text-muted-foreground">
+                {copy.mapAriaLabel}
+              </p>
+            </div>
+          </div>
+        ) : null}
+
         <div
           aria-label={copy.mapAriaLabel}
-          className="overflow-x-auto pb-2 lg:overflow-visible"
+          className="w-full overflow-hidden"
           data-slot="event-map-scroll-region"
           role="region"
-          tabIndex={0}
         >
           <div
-            className="relative aspect-[1100/560] min-w-[43rem] w-full overflow-hidden rounded-xl border border-primary/20 bg-surface-strong shadow-soft lg:min-w-0"
+            className="relative aspect-[1100/560] w-full overflow-hidden rounded-xl border border-primary/20 bg-surface-strong shadow-soft"
             role="group"
           >
           <Image
@@ -294,78 +375,6 @@ export function EventMap({ copy, locations }: EventMapProps) {
           </div>
         </div>
       </div>
-
-      <aside className="grid gap-4" aria-label={copy.selectedLocationLabel}>
-        <div
-          aria-live="polite"
-          className="rounded-xl border border-primary/20 bg-background p-5 shadow-soft"
-        >
-          <Badge variant="outline">
-            {getLocationTypeLabel(selectedLocation, copy)}
-          </Badge>
-          <h3 className="mt-4 flex items-center gap-2.5 font-display text-3xl leading-tight text-foreground">
-            <CountryFlag className="h-5 w-7" market={selectedLocation.marketId} />
-            {getLocationLabel(selectedLocation)}
-          </h3>
-          <p className="mt-3 text-sm leading-6 text-muted-foreground">
-            {selectedLocation.notes}
-          </p>
-          {selectedLocation.address ? (
-            <p className="mt-4 text-sm leading-6 text-foreground">
-              <span className="font-semibold">{copy.addressLabel}: </span>
-              {selectedLocation.address}
-            </p>
-          ) : null}
-          <div className="mt-5 flex flex-wrap gap-3">
-            <Button asChild variant="whatsapp">
-              <a href={selectedLocation.href} rel="noreferrer" target="_blank">
-                {copy.contactLabel}
-              </a>
-            </Button>
-          </div>
-        </div>
-
-        <section aria-labelledby="event-location-list">
-          <h2
-            className="font-display text-2xl leading-tight text-foreground"
-            id="event-location-list"
-          >
-            {copy.listTitle}
-          </h2>
-          <ul className="mt-4 grid gap-2">
-            {locations.map((location) => {
-              const isSelected = selectedLocation.id === location.id;
-
-              return (
-                <li key={location.id}>
-                  <button
-                    aria-pressed={isSelected}
-                    className={cn(
-                      "grid min-h-14 w-full gap-1 rounded-lg border px-4 py-3 text-left outline-none transition-colors focus-visible:ring-3 focus-visible:ring-ring/40",
-                      isSelected
-                        ? "border-primary bg-surface-muted text-foreground"
-                        : "border-border bg-background text-foreground hover:border-primary",
-                    )}
-                    onClick={() => setSelectedId(location.id)}
-                    type="button"
-                  >
-                    <span className="flex items-center gap-2 text-sm font-semibold">
-                      <CountryFlag
-                        className="h-3.5 w-5"
-                        market={location.marketId}
-                      />
-                      {getLocationLabel(location)}
-                    </span>
-                    <span className="pl-7 text-xs text-muted-foreground">
-                      {location.statusLabel}
-                    </span>
-                  </button>
-                </li>
-              );
-            })}
-          </ul>
-        </section>
-      </aside>
     </div>
   );
 }

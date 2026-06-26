@@ -8,9 +8,9 @@ type SectionProps = ComponentPropsWithoutRef<"section"> & {
 };
 
 const spacingMap = {
-  compact: "py-10 sm:py-12",
-  default: "py-14 sm:py-18",
-  loose: "py-18 sm:py-24",
+  compact: "py-8 sm:py-12",
+  default: "py-12 sm:py-18",
+  loose: "py-14 sm:py-20 lg:py-24",
 };
 
 const toneMap = {

@@ -6,6 +6,7 @@ import { getMessages, getTranslations, setRequestLocale } from "next-intl/server
 
 import { AppProviders } from "@/components/providers/app-providers";
 import { CookieConsentBanner } from "@/components/domain/cookie-consent-banner";
+import { MobileStickyContact } from "@/components/layout/mobile-sticky-contact";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SkipLink } from "@/components/layout/skip-link";
@@ -142,7 +143,9 @@ export default async function LocaleLayout({
                 navItems={navItems}
                 whatsapp={whatsapp}
               />
-              <div id="contenido">{children}</div>
+              <div className="pb-20 xl:pb-0" id="contenido">
+                {children}
+              </div>
               <SiteFooter
                 logo={logo}
                 labels={{
@@ -161,6 +164,10 @@ export default async function LocaleLayout({
                 navItems={navItems}
                 socialLinks={getSocialLinks()}
                 whatsappTargets={whatsappTargets}
+              />
+              <MobileStickyContact
+                contactLabel={shellT("contactCta")}
+                whatsapp={whatsapp}
               />
               <CookieConsentBanner
                 categories={getCookieCategories(locale)}

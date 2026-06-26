@@ -170,13 +170,32 @@ export default async function HomePage({ params }: HomePageProps) {
         <JsonLd data={data} key={index} />
       ))}
 
-      <header className="border-b border-primary/20 bg-surface-strong">
+      <Section
+        className="border-b border-primary/20"
+        id="apertura"
+        spacing="loose"
+        tone="strong"
+      >
         <RoseWash accent="corner">
           <HeroStage>
-            <Container className="grid min-h-[calc(88dvh-5rem)] items-center gap-10 py-12 sm:py-16 lg:grid-cols-[1fr_0.92fr] lg:py-20">
-              <HeroItem className="max-w-3xl">
+            <Container className="grid min-h-0 items-center gap-8 py-10 sm:gap-10 sm:py-16 lg:min-h-[calc(88dvh-5rem)] lg:grid-cols-[1fr_0.92fr] lg:py-20">
+              <HeroMedia className="relative order-first mx-auto w-full max-w-[20rem] sm:max-w-[26rem] lg:order-none lg:mr-0 lg:max-w-[34rem]">
+                <HeroParallax className="relative aspect-[4/5] overflow-hidden rounded-lg border border-primary/20 bg-surface lg:aspect-[5/6]">
+                  <Image
+                    alt={heroImage.alt}
+                    className="h-full w-full object-cover object-top"
+                    height={heroImage.height}
+                    priority
+                    sizes="(min-width: 1024px) 42vw, 90vw"
+                    src={heroImage.src}
+                    width={heroImage.width}
+                  />
+                </HeroParallax>
+              </HeroMedia>
+
+              <HeroItem className="order-last max-w-3xl lg:order-none">
                 <Eyebrow className="mb-4">{t("heroEyebrow")}</Eyebrow>
-                <h1 className="text-balance font-display text-[2rem] leading-[1.1] text-foreground sm:text-5xl lg:text-7xl">
+                <h1 className="text-balance font-display text-[1.7rem] leading-[1.12] text-foreground sm:text-5xl lg:text-7xl">
                   {t("title")}
                 </h1>
                 <p className="mt-5 max-w-2xl text-pretty text-lg leading-8 text-muted-foreground">
@@ -192,7 +211,7 @@ export default async function HomePage({ params }: HomePageProps) {
                   <ul className="mt-3 flex flex-wrap gap-2">
                     {markets.map((market) => (
                       <li
-                        className="inline-flex items-center gap-2 rounded-full border border-primary/25 bg-surface px-3 py-1.5 text-sm font-semibold text-foreground"
+                        className="inline-flex min-h-11 items-center gap-2 rounded-full border border-primary/25 bg-surface px-3.5 py-2 text-sm font-semibold text-foreground"
                         key={market.id}
                       >
                         <CountryFlag className="h-3.5 w-5" market={market.id} />
@@ -214,30 +233,16 @@ export default async function HomePage({ params }: HomePageProps) {
                   </ButtonLink>
                 </div>
               </HeroItem>
-
-              <HeroMedia className="relative mx-auto w-full max-w-[34rem] lg:mr-0">
-                <HeroParallax className="relative aspect-[5/4] overflow-hidden rounded-lg border border-primary/20 bg-surface sm:aspect-square lg:aspect-[5/6]">
-                  <Image
-                    alt={heroImage.alt}
-                    className="h-full w-full object-cover object-top"
-                    height={heroImage.height}
-                    priority
-                    sizes="(min-width: 1024px) 42vw, 90vw"
-                    src={heroImage.src}
-                    width={heroImage.width}
-                  />
-                </HeroParallax>
-              </HeroMedia>
             </Container>
           </HeroStage>
         </RoseWash>
-      </header>
+      </Section>
 
       <Section id="jornadas" spacing="loose" tone="muted">
         <Container className="grid gap-10">
           <Reveal>
             <div className="grid items-center gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:gap-12">
-              <div className="relative mx-auto aspect-[4/5] w-full max-w-[26rem] overflow-hidden rounded-2xl border border-primary/15 bg-surface lg:mx-0">
+              <div className="relative mx-auto hidden aspect-[4/5] w-full max-w-[26rem] overflow-hidden rounded-2xl border border-primary/15 bg-surface md:block lg:mx-0">
                 <Image
                   alt={journeysImage.alt}
                   className="object-cover object-center"
@@ -278,6 +283,7 @@ export default async function HomePage({ params }: HomePageProps) {
                 selectedLocationLabel: journeysT("selectedLocationLabel"),
               }}
               locations={eventMapLocations}
+              showHeading={false}
             />
           </Reveal>
         </Container>

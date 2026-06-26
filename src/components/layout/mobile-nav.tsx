@@ -95,8 +95,10 @@ export function MobileNav({
               <Link
                 aria-current={active ? "page" : undefined}
                 className={cn(
-                  "group flex items-center justify-between gap-4 border-b border-primary/12 py-4 font-display text-2xl leading-tight transition-colors last:border-b-0 hover:text-primary-text focus-visible:text-primary-text focus-visible:outline-none",
-                  active ? "text-primary-text" : "text-foreground",
+                  "group flex items-center justify-between gap-4 border-b border-primary/12 py-4 pl-3 font-display text-2xl leading-tight transition-colors last:border-b-0 hover:text-primary-text focus-visible:text-primary-text focus-visible:outline-none",
+                  active
+                    ? "border-l-4 border-l-primary text-primary-text"
+                    : "border-l-4 border-l-transparent text-foreground",
                 )}
                 href={item.href}
                 key={item.id}

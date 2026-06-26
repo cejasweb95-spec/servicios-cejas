@@ -230,18 +230,18 @@ export function CookieConsentBanner({
       aria-describedby="cookie-consent-description"
       aria-labelledby="cookie-consent-title"
       aria-live="polite"
-      className="fixed inset-x-0 bottom-0 z-50 border-t border-border bg-background/98 px-4 py-4 shadow-soft backdrop-blur"
+      className="fixed inset-x-0 bottom-0 z-50 border-t border-primary/20 bg-background/98 px-4 py-3 shadow-soft backdrop-blur sm:py-4"
       role="region"
     >
       <div className="mx-auto grid max-w-7xl gap-4 md:grid-cols-[1fr_auto] md:items-end">
         <div>
           <h2
-            className="font-display text-2xl leading-tight text-foreground"
+            className="font-display text-xl leading-tight text-foreground sm:text-2xl"
             id="cookie-consent-title"
           >
             {copy.bannerTitle}
           </h2>
-          <p className="mt-2 max-w-3xl text-sm leading-6 text-muted-foreground">
+          <p className="mt-1.5 max-w-3xl text-xs leading-5 text-muted-foreground sm:mt-2 sm:text-sm sm:leading-6">
             <span id="cookie-consent-description">
               {copy.bannerDescription}
             </span>
@@ -300,11 +300,18 @@ export function CookieConsentBanner({
             </div>
           ) : null}
         </div>
-        <div className="flex flex-wrap gap-2">
-          <Button onClick={() => commit({ ...emptyConsent(), analytics: true })}>
+        <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap">
+          <Button
+            className="min-h-11"
+            onClick={() => commit({ ...emptyConsent(), analytics: true })}
+          >
             {copy.acceptLabel}
           </Button>
-          <Button onClick={() => commit(emptyConsent())} variant="outline">
+          <Button
+            className="min-h-11"
+            onClick={() => commit(emptyConsent())}
+            variant="outline"
+          >
             {copy.rejectLabel}
           </Button>
           {isConfiguring ? (
