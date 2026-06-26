@@ -1,0 +1,10 @@
+﻿
+> cejas-internacionales@0.1.0 lint
+> eslint
+
+
+C:\servicios-cejas\src\app\[locale]\_pages\training-index-page.tsx
+  2:10  warning  'ArrowUpRight' is defined but never used  @typescript-eslint/no-unused-vars
+
+Ô£û 1 problem (0 errors, 1 warning)
+

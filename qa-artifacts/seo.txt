@@ -1,0 +1,77 @@
+﻿
+> cejas-internacionales@0.1.0 test:seo
+> playwright test tests/e2e/seo.spec.ts
+
+
+Running 38 tests using 6 workers
+
+node.exe : (node:17608) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+En línea: 1 Carácter: 1
++ & "C:\Program Files\nodejs/node.exe" "C:\Program Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ((node:17608) Wa... env being set.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:27504) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:13488) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:36032) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:40276) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:19692) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  5 [chromium-desktop] ÔÇ║ tests\e2e\seo.spec.ts:44:9 ÔÇ║ SEO technical foundation ÔÇ║ /en/services/colombia/powder-brows has indexable localized metadata (3.4s)
+  ok  4 [chromium-desktop] ÔÇ║ tests\e2e\seo.spec.ts:44:9 ÔÇ║ SEO technical foundation ÔÇ║ /es has indexable localized metadata (3.5s)
+  ok  3 [chromium-desktop] ÔÇ║ tests\e2e\seo.spec.ts:44:9 ÔÇ║ SEO technical foundation ÔÇ║ /en has indexable localized metadata (3.5s)
+  ok  6 [chromium-desktop] ÔÇ║ tests\e2e\seo.spec.ts:44:9 ÔÇ║ SEO technical foundation ÔÇ║ /es/servicios/colombia/efecto-polvo has indexable localized metadata (3.5s)
+  ok  2 [chromium-desktop] ÔÇ║ tests\e2e\seo.spec.ts:44:9 ÔÇ║ SEO technical foundation ÔÇ║ /en/services/colombia has indexable localized metadata (3.8s)
+  ok  1 [chromium-desktop] ÔÇ║ tests\e2e\seo.spec.ts:44:9 ÔÇ║ SEO technical foundation ÔÇ║ /es/servicios/colombia has indexable localized metadata (3.9s)
+  ok  7 [chromium-desktop] ÔÇ║ tests\e2e\seo.spec.ts:44:9 ÔÇ║ SEO technical foundation ÔÇ║ /es/formaciones has indexable localized metadata (1.3s)
+  ok  8 [chromium-desktop] ÔÇ║ tests\e2e\seo.spec.ts:44:9 ÔÇ║ SEO technical foundation ÔÇ║ /en/professional-training has indexable localized metadata (1.4s)
+  ok  9 [chromium-desktop] ÔÇ║ tests\e2e\seo.spec.ts:44:9 ÔÇ║ SEO technical foundation ÔÇ║ /es/formaciones/curso-micropigmentacion-cejas has indexable localized metadata (1.5s)
+  ok 10 [chromium-desktop] ÔÇ║ tests\e2e\seo.spec.ts:44:9 ÔÇ║ SEO technical foundation ÔÇ║ /en/professional-training/brow-micropigmentation-course has indexable localized metadata (2.1s)
+  ok 11 [chromium-desktop] ÔÇ║ tests\e2e\seo.spec.ts:44:9 ÔÇ║ SEO technical foundation ÔÇ║ /es/resultados has indexable localized metadata (1.9s)
+  ok 12 [chromium-desktop] ÔÇ║ tests\e2e\seo.spec.ts:44:9 ÔÇ║ SEO technical foundation ÔÇ║ /en/results has indexable localized metadata (1.9s)
+  ok 13 [chromium-desktop] ÔÇ║ tests\e2e\seo.spec.ts:44:9 ÔÇ║ SEO technical foundation ÔÇ║ /es/contacto has indexable localized metadata (2.2s)
+  ok 14 [chromium-desktop] ÔÇ║ tests\e2e\seo.spec.ts:44:9 ÔÇ║ SEO technical foundation ÔÇ║ /en/contact has indexable localized metadata (2.1s)
+  ok 15 [chromium-desktop] ÔÇ║ tests\e2e\seo.spec.ts:44:9 ÔÇ║ SEO technical foundation ÔÇ║ /es/cookies has indexable localized metadata (2.0s)
+  ok 17 [chromium-desktop] ÔÇ║ tests\e2e\seo.spec.ts:86:7 ÔÇ║ SEO technical foundation ÔÇ║ home schema uses only the confirmed Cali studio address (1.6s)
+  ok 18 [chromium-desktop] ÔÇ║ tests\e2e\seo.spec.ts:103:7 ÔÇ║ SEO technical foundation ÔÇ║ results exposes selected real images as ImageObject schema (1.7s)
+  ok 16 [chromium-desktop] ÔÇ║ tests\e2e\seo.spec.ts:44:9 ÔÇ║ SEO technical foundation ÔÇ║ /en/cookies has indexable localized metadata (2.1s)
+  ok 19 [chromium-desktop] ÔÇ║ tests\e2e\seo.spec.ts:120:7 ÔÇ║ SEO technical foundation ÔÇ║ robots, sitemap, manifest and social/icon assets respond (1.2s)
+(node:27784) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:22224) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:29340) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:1648) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:34284) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:12216) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 21 [mobile-chrome] ÔÇ║ tests\e2e\seo.spec.ts:44:9 ÔÇ║ SEO technical foundation ÔÇ║ /en has indexable localized metadata (2.0s)
+  ok 20 [mobile-chrome] ÔÇ║ tests\e2e\seo.spec.ts:44:9 ÔÇ║ SEO technical foundation ÔÇ║ /es has indexable localized metadata (2.1s)
+  ok 22 [mobile-chrome] ÔÇ║ tests\e2e\seo.spec.ts:44:9 ÔÇ║ SEO technical foundation ÔÇ║ /es/servicios/colombia has indexable localized metadata (2.5s)
+  ok 23 [mobile-chrome] ÔÇ║ tests\e2e\seo.spec.ts:44:9 ÔÇ║ SEO technical foundation ÔÇ║ /en/services/colombia has indexable localized metadata (2.5s)
+  ok 24 [mobile-chrome] ÔÇ║ tests\e2e\seo.spec.ts:44:9 ÔÇ║ SEO technical foundation ÔÇ║ /es/servicios/colombia/efecto-polvo has indexable localized metadata (2.1s)
+  ok 25 [mobile-chrome] ÔÇ║ tests\e2e\seo.spec.ts:44:9 ÔÇ║ SEO technical foundation ÔÇ║ /en/services/colombia/powder-brows has indexable localized metadata (2.3s)
+  ok 26 [mobile-chrome] ÔÇ║ tests\e2e\seo.spec.ts:44:9 ÔÇ║ SEO technical foundation ÔÇ║ /es/formaciones has indexable localized metadata (1.7s)
+  ok 27 [mobile-chrome] ÔÇ║ tests\e2e\seo.spec.ts:44:9 ÔÇ║ SEO technical foundation ÔÇ║ /en/professional-training has indexable localized metadata (1.8s)
+  ok 30 [mobile-chrome] ÔÇ║ tests\e2e\seo.spec.ts:44:9 ÔÇ║ SEO technical foundation ÔÇ║ /es/resultados has indexable localized metadata (1.5s)
+  ok 28 [mobile-chrome] ÔÇ║ tests\e2e\seo.spec.ts:44:9 ÔÇ║ SEO technical foundation ÔÇ║ /es/formaciones/curso-micropigmentacion-cejas has indexable localized metadata (1.6s)
+  ok 29 [mobile-chrome] ÔÇ║ tests\e2e\seo.spec.ts:44:9 ÔÇ║ SEO technical foundation ÔÇ║ /en/professional-training/brow-micropigmentation-course has indexable localized metadata (1.8s)
+  ok 31 [mobile-chrome] ÔÇ║ tests\e2e\seo.spec.ts:44:9 ÔÇ║ SEO technical foundation ÔÇ║ /en/results has indexable localized metadata (1.6s)
+  ok 32 [mobile-chrome] ÔÇ║ tests\e2e\seo.spec.ts:44:9 ÔÇ║ SEO technical foundation ÔÇ║ /es/contacto has indexable localized metadata (1.7s)
+  ok 34 [mobile-chrome] ÔÇ║ tests\e2e\seo.spec.ts:44:9 ÔÇ║ SEO technical foundation ÔÇ║ /es/cookies has indexable localized metadata (1.4s)
+  ok 35 [mobile-chrome] ÔÇ║ tests\e2e\seo.spec.ts:44:9 ÔÇ║ SEO technical foundation ÔÇ║ /en/cookies has indexable localized metadata (1.4s)
+  ok 33 [mobile-chrome] ÔÇ║ tests\e2e\seo.spec.ts:44:9 ÔÇ║ SEO technical foundation ÔÇ║ /en/contact has indexable localized metadata (1.8s)
+  ok 38 [mobile-chrome] ÔÇ║ tests\e2e\seo.spec.ts:120:7 ÔÇ║ SEO technical foundation ÔÇ║ robots, sitemap, manifest and social/icon assets respond (439ms)
+  ok 36 [mobile-chrome] ÔÇ║ tests\e2e\seo.spec.ts:86:7 ÔÇ║ SEO technical foundation ÔÇ║ home schema uses only the confirmed Cali studio address (1.5s)
+  ok 37 [mobile-chrome] ÔÇ║ tests\e2e\seo.spec.ts:103:7 ÔÇ║ SEO technical foundation ÔÇ║ results exposes selected real images as ImageObject schema (1.0s)
+
+  38 passed (37.1s)

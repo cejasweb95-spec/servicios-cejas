@@ -1,0 +1,5 @@
+﻿
+> cejas-internacionales@0.1.0 test:links
+> node scripts/check-links.mjs
+
+Checked 36 local route definitions.

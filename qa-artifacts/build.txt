@@ -1,0 +1,110 @@
+﻿
+> cejas-internacionales@0.1.0 build
+> next build
+
+Ôû▓ Next.js 16.2.9 (Turbopack)
+- Environments: .env.local
+
+  Creating an optimized production build ...
+Ô£ô Compiled successfully in 4.8s
+  Running TypeScript ...
+  Finished TypeScript in 5.4s ...
+  Collecting page data using 11 workers ...
+  Generating static pages using 11 workers (0/218) ...
+  Generating static pages using 11 workers (54/218) 
+  Generating static pages using 11 workers (108/218) 
+  Generating static pages using 11 workers (163/218) 
+Ô£ô Generating static pages using 11 workers (218/218) in 2.7s
+  Finalizing page optimization ...
+
+Route (app)
+Ôöî Ôùï /_not-found
+Ôö£ ÔùÅ /[locale]
+Ôöé Ôö£ /es
+Ôöé Ôöö /en
+Ôö£ ÔùÅ /[locale]/about-xiomara
+Ôöé Ôöö /en/about-xiomara
+Ôö£ ÔùÅ /[locale]/aftercare
+Ôöé Ôöö /en/aftercare
+Ôö£ ÔùÅ /[locale]/appointments-by-city
+Ôöé Ôöö /en/appointments-by-city
+Ôö£ ÔùÅ /[locale]/aviso-legal
+Ôöé Ôöö /es/aviso-legal
+Ôö£ ÔùÅ /[locale]/contact
+Ôöé Ôöö /en/contact
+Ôö£ ÔùÅ /[locale]/contacto
+Ôöé Ôöö /es/contacto
+Ôö£ ÔùÅ /[locale]/cookies
+Ôöé Ôö£ /es/cookies
+Ôöé Ôöö /en/cookies
+Ôö£ ÔùÅ /[locale]/cuidados
+Ôöé Ôöö /es/cuidados
+Ôö£ ÔùÅ /[locale]/descargas
+Ôöé Ôöö /es/descargas
+Ôö£ ÔùÅ /[locale]/downloads
+Ôöé Ôöö /en/downloads
+Ôö£ ÔùÅ /[locale]/formaciones
+Ôöé Ôöö /es/formaciones
+Ôö£ ÔùÅ /[locale]/formaciones/[course]
+Ôöé Ôö£ /es/formaciones/curso-micropigmentacion-cejas
+Ôöé Ôö£ /es/formaciones/curso-micropigmentacion-labios
+Ôöé Ôö£ /es/formaciones/masterclass-laminado-cejas
+Ôöé Ôöö [+2 more paths]
+Ôö£ ÔùÅ /[locale]/jornadas
+Ôöé Ôöö /es/jornadas
+Ôö£ ÔùÅ /[locale]/legal-notice
+Ôöé Ôöö /en/legal-notice
+Ôö£ ãÆ /-/opengraph-image
+Ôö£ ÔùÅ /[locale]/privacidad
+Ôöé Ôöö /es/privacidad
+Ôö£ ÔùÅ /[locale]/privacy
+Ôöé Ôöö /en/privacy
+Ôö£ ÔùÅ /[locale]/professional-training
+Ôöé Ôöö /en/professional-training
+Ôö£ ÔùÅ /[locale]/professional-training/[course]
+Ôöé Ôö£ /en/professional-training/brow-micropigmentation-course
+Ôöé Ôö£ /en/professional-training/lip-micropigmentation-course
+Ôöé Ôö£ /en/professional-training/brow-lamination-masterclass
+Ôöé Ôöö [+2 more paths]
+Ôö£ ÔùÅ /[locale]/resultados
+Ôöé Ôöö /es/resultados
+Ôö£ ÔùÅ /[locale]/results
+Ôöé Ôöö /en/results
+Ôö£ ÔùÅ /[locale]/services
+Ôöé Ôöö /en/services
+Ôö£ ÔùÅ /[locale]/services/[market]
+Ôöé Ôö£ /en/services/colombia
+Ôöé Ôö£ /en/services/spain-europe
+Ôöé Ôöö /en/services/switzerland
+Ôö£ ÔùÅ /[locale]/services/[market]/[service]
+Ôöé Ôö£ /en/services/colombia/brow-lamination
+Ôöé Ôö£ /en/services/colombia/henna-brows
+Ôöé Ôö£ /en/services/colombia/brow-waxing
+Ôöé Ôöö [+82 more paths]
+Ôö£ ÔùÅ /[locale]/servicios
+Ôöé Ôöö /es/servicios
+Ôö£ ÔùÅ /[locale]/servicios/[market]
+Ôöé Ôö£ /es/servicios/colombia
+Ôöé Ôö£ /es/servicios/espana-europa
+Ôöé Ôöö /es/servicios/suiza
+Ôö£ ÔùÅ /[locale]/servicios/[market]/[service]
+Ôöé Ôö£ /es/servicios/colombia/laminado-cejas
+Ôöé Ôö£ /es/servicios/colombia/sombreado-henna
+Ôöé Ôö£ /es/servicios/colombia/depilacion-cejas-cera
+Ôöé Ôöö [+82 more paths]
+Ôö£ ÔùÅ /[locale]/sobre-xiomara
+Ôöé Ôöö /es/sobre-xiomara
+Ôö£ ãÆ /-/twitter-image
+Ôö£ Ôùï /apple-icon.png
+Ôö£ Ôùï /icon.png
+Ôö£ Ôùï /manifest.webmanifest
+Ôö£ Ôùï /robots.txt
+Ôöö Ôùï /sitemap.xml
+
+
+ãÆ Proxy (Middleware)
+
+Ôùï  (Static)   prerendered as static content
+ÔùÅ  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ãÆ  (Dynamic)  server-rendered on demand
+

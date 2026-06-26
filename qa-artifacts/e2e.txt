@@ -1,0 +1,1154 @@
+﻿
+> cejas-internacionales@0.1.0 test:e2e
+> playwright test
+
+
+Running 158 tests using 6 workers
+
+node.exe : (node:40928) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+En línea: 1 Carácter: 1
++ & "C:\Program Files\nodejs/node.exe" "C:\Program Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ((node:40928) Wa... env being set.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:23868) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:13948) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:30332) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:35060) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:13936) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok   2 [chromium-desktop] ÔÇ║ tests\a11y\home.spec.ts:41:9 ÔÇ║ accessibility smoke ÔÇ║ Spanish training has no serious axe violations (8.1s)
+  ok   6 [chromium-desktop] ÔÇ║ tests\a11y\home.spec.ts:41:9 ÔÇ║ accessibility smoke ÔÇ║ Spanish service detail has no serious axe violations (8.1s)
+  ok   1 [chromium-desktop] ÔÇ║ tests\a11y\home.spec.ts:41:9 ÔÇ║ accessibility smoke ÔÇ║ English home has no serious axe violations (8.4s)
+  ok   5 [chromium-desktop] ÔÇ║ tests\a11y\home.spec.ts:41:9 ÔÇ║ accessibility smoke ÔÇ║ Spanish home has no serious axe violations (8.5s)
+  x    3 [chromium-desktop] ÔÇ║ tests\a11y\home.spec.ts:41:9 ÔÇ║ accessibility smoke ÔÇ║ English Colombia services has no serious axe violations (10.0s)
+  x    4 [chromium-desktop] ÔÇ║ tests\a11y\home.spec.ts:41:9 ÔÇ║ accessibility smoke ÔÇ║ Spanish Colombia services has no serious axe violations (10.2s)
+  ok   8 [chromium-desktop] ÔÇ║ tests\a11y\home.spec.ts:41:9 ÔÇ║ accessibility smoke ÔÇ║ Spanish course detail has no serious axe violations (3.1s)
+  ok  10 [chromium-desktop] ÔÇ║ tests\a11y\home.spec.ts:41:9 ÔÇ║ accessibility smoke ÔÇ║ English journeys has no serious axe violations (2.8s)
+(node:30396) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok   7 [chromium-desktop] ÔÇ║ tests\a11y\home.spec.ts:41:9 ÔÇ║ accessibility smoke ÔÇ║ English training has no serious axe violations (3.2s)
+(node:24288) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok   9 [chromium-desktop] ÔÇ║ tests\a11y\home.spec.ts:41:9 ÔÇ║ accessibility smoke ÔÇ║ Spanish journeys has no serious axe violations (2.9s)
+  ok  11 [chromium-desktop] ÔÇ║ tests\a11y\home.spec.ts:41:9 ÔÇ║ accessibility smoke ÔÇ║ Spanish about has no serious axe violations (3.0s)
+  ok  12 [chromium-desktop] ÔÇ║ tests\a11y\home.spec.ts:41:9 ÔÇ║ accessibility smoke ÔÇ║ English about has no serious axe violations (3.0s)
+  ok  13 [chromium-desktop] ÔÇ║ tests\a11y\home.spec.ts:41:9 ÔÇ║ accessibility smoke ÔÇ║ Spanish aftercare has no serious axe violations (3.5s)
+  ok  14 [chromium-desktop] ÔÇ║ tests\a11y\home.spec.ts:41:9 ÔÇ║ accessibility smoke ÔÇ║ English aftercare has no serious axe violations (3.6s)
+  ok  15 [chromium-desktop] ÔÇ║ tests\a11y\home.spec.ts:41:9 ÔÇ║ accessibility smoke ÔÇ║ English results has no serious axe violations (3.8s)
+  ok  16 [chromium-desktop] ÔÇ║ tests\a11y\home.spec.ts:41:9 ÔÇ║ accessibility smoke ÔÇ║ Spanish results has no serious axe violations (3.9s)
+  ok  17 [chromium-desktop] ÔÇ║ tests\a11y\home.spec.ts:41:9 ÔÇ║ accessibility smoke ÔÇ║ Spanish contact has no serious axe violations (2.7s)
+  ok  18 [chromium-desktop] ÔÇ║ tests\a11y\home.spec.ts:41:9 ÔÇ║ accessibility smoke ÔÇ║ English contact has no serious axe violations (2.7s)
+  ok  19 [chromium-desktop] ÔÇ║ tests\a11y\home.spec.ts:41:9 ÔÇ║ accessibility smoke ÔÇ║ Spanish downloads has no serious axe violations (2.5s)
+  ok  20 [chromium-desktop] ÔÇ║ tests\a11y\home.spec.ts:41:9 ÔÇ║ accessibility smoke ÔÇ║ English downloads has no serious axe violations (2.7s)
+  ok  22 [chromium-desktop] ÔÇ║ tests\a11y\home.spec.ts:41:9 ÔÇ║ accessibility smoke ÔÇ║ English legal notice has no serious axe violations (2.6s)
+  ok  21 [chromium-desktop] ÔÇ║ tests\a11y\home.spec.ts:41:9 ÔÇ║ accessibility smoke ÔÇ║ Spanish legal notice has no serious axe violations (2.9s)
+  ok  23 [chromium-desktop] ÔÇ║ tests\a11y\home.spec.ts:41:9 ÔÇ║ accessibility smoke ÔÇ║ Spanish privacy has no serious axe violations (2.9s)
+  ok  24 [chromium-desktop] ÔÇ║ tests\a11y\home.spec.ts:41:9 ÔÇ║ accessibility smoke ÔÇ║ English privacy has no serious axe violations (3.0s)
+  ok  26 [chromium-desktop] ÔÇ║ tests\a11y\home.spec.ts:41:9 ÔÇ║ accessibility smoke ÔÇ║ English cookies has no serious axe violations (2.8s)
+  ok  25 [chromium-desktop] ÔÇ║ tests\a11y\home.spec.ts:41:9 ÔÇ║ accessibility smoke ÔÇ║ Spanish cookies has no serious axe violations (3.1s)
+  ok  28 [chromium-desktop] ÔÇ║ tests\e2e\event-map-zoom.spec.ts:69:7 ÔÇ║ event map zoom QA ÔÇ║ filters pins to the visible region when zoomed into Spain (2.4s)
+  ok  27 [chromium-desktop] ÔÇ║ tests\e2e\event-map-zoom.spec.ts:28:7 ÔÇ║ event map zoom QA ÔÇ║ allows deep zoom up to 8x via SVG transform (vector, no CSS scale) (2.9s)
+  ok  29 [chromium-desktop] ÔÇ║ tests\e2e\event-map-zoom.spec.ts:102:7 ÔÇ║ event map zoom QA ÔÇ║ keeps leader arrows and geo dots visible when zoomed in (2.0s)
+  ok  30 [chromium-desktop] ÔÇ║ tests\e2e\event-map-zoom.spec.ts:115:7 ÔÇ║ event map zoom QA ÔÇ║ uses an inline (vector) SVG map for crisp zoom (2.0s)
+  ok  31 [chromium-desktop] ÔÇ║ tests\e2e\event-map-zoom.spec.ts:126:7 ÔÇ║ event map zoom QA ÔÇ║ has no hydration mismatch on home map section (2.6s)
+  ok  32 [chromium-desktop] ÔÇ║ tests\e2e\event-map-zoom.spec.ts:144:7 ÔÇ║ event map zoom QA ÔÇ║ selected pin label stacks above other pins (2.6s)
+  ok  33 [chromium-desktop] ÔÇ║ tests\e2e\event-map-zoom.spec.ts:193:7 ÔÇ║ event map zoom QA ÔÇ║ zoom controls stay usable at 390px (1.9s)
+  ok  34 [chromium-desktop] ÔÇ║ tests\e2e\foundation.spec.ts:4:7 ÔÇ║ localized foundation ÔÇ║ redirects the root route to the default Spanish locale (1.9s)
+  ok  36 [chromium-desktop] ÔÇ║ tests\e2e\foundation.spec.ts:43:7 ÔÇ║ localized foundation ÔÇ║ does not create horizontal overflow at 390px (1.4s)
+  ok  41 [chromium-desktop] ÔÇ║ tests\e2e\security-headers.spec.ts:4:7 ÔÇ║ security headers ÔÇ║ public routes include baseline safe headers (217ms)
+  ok  40 [chromium-desktop] ÔÇ║ tests\e2e\legal-cookies.spec.ts:53:7 ÔÇ║ legal, aftercare and cookie consent ÔÇ║ cookie banner rejects, configures and reopens preferences from footer (1.8s)
+  ok  39 [chromium-desktop] ÔÇ║ tests\e2e\legal-cookies.spec.ts:14:7 ÔÇ║ legal, aftercare and cookie consent ÔÇ║ serves aftercare and legal pages in both locales (2.1s)
+  ok  37 [chromium-desktop] ÔÇ║ tests\e2e\foundation.spec.ts:54:7 ÔÇ║ localized foundation ÔÇ║ opens the WhatsApp chooser with Colombia and Spain options (2.5s)
+  ok  42 [chromium-desktop] ÔÇ║ tests\e2e\seo.spec.ts:44:9 ÔÇ║ SEO technical foundation ÔÇ║ /es has indexable localized metadata (2.0s)
+  ok  43 [chromium-desktop] ÔÇ║ tests\e2e\seo.spec.ts:44:9 ÔÇ║ SEO technical foundation ÔÇ║ /en has indexable localized metadata (1.3s)
+  ok  44 [chromium-desktop] ÔÇ║ tests\e2e\seo.spec.ts:44:9 ÔÇ║ SEO technical foundation ÔÇ║ /es/servicios/colombia has indexable localized metadata (1.3s)
+  ok  45 [chromium-desktop] ÔÇ║ tests\e2e\seo.spec.ts:44:9 ÔÇ║ SEO technical foundation ÔÇ║ /en/services/colombia has indexable localized metadata (1.2s)
+  ok  46 [chromium-desktop] ÔÇ║ tests\e2e\seo.spec.ts:44:9 ÔÇ║ SEO technical foundation ÔÇ║ /es/servicios/colombia/efecto-polvo has indexable localized metadata (1.2s)
+  ok  47 [chromium-desktop] ÔÇ║ tests\e2e\seo.spec.ts:44:9 ÔÇ║ SEO technical foundation ÔÇ║ /en/services/colombia/powder-brows has indexable localized metadata (1.1s)
+  ok  48 [chromium-desktop] ÔÇ║ tests\e2e\seo.spec.ts:44:9 ÔÇ║ SEO technical foundation ÔÇ║ /es/formaciones has indexable localized metadata (1.1s)
+  ok  49 [chromium-desktop] ÔÇ║ tests\e2e\seo.spec.ts:44:9 ÔÇ║ SEO technical foundation ÔÇ║ /en/professional-training has indexable localized metadata (1.2s)
+  ok  50 [chromium-desktop] ÔÇ║ tests\e2e\seo.spec.ts:44:9 ÔÇ║ SEO technical foundation ÔÇ║ /es/formaciones/curso-micropigmentacion-cejas has indexable localized metadata (1.1s)
+  ok  51 [chromium-desktop] ÔÇ║ tests\e2e\seo.spec.ts:44:9 ÔÇ║ SEO technical foundation ÔÇ║ /en/professional-training/brow-micropigmentation-course has indexable localized metadata (1.2s)
+  ok  52 [chromium-desktop] ÔÇ║ tests\e2e\seo.spec.ts:44:9 ÔÇ║ SEO technical foundation ÔÇ║ /es/resultados has indexable localized metadata (1.2s)
+  x   35 [chromium-desktop] ÔÇ║ tests\e2e\foundation.spec.ts:11:7 ÔÇ║ localized foundation ÔÇ║ serves the Spanish home and language switcher (7.4s)
+  ok  53 [chromium-desktop] ÔÇ║ tests\e2e\seo.spec.ts:44:9 ÔÇ║ SEO technical foundation ÔÇ║ /en/results has indexable localized metadata (1.3s)
+  ok  54 [chromium-desktop] ÔÇ║ tests\e2e\seo.spec.ts:44:9 ÔÇ║ SEO technical foundation ÔÇ║ /es/contacto has indexable localized metadata (1.3s)
+  ok  56 [chromium-desktop] ÔÇ║ tests\e2e\seo.spec.ts:44:9 ÔÇ║ SEO technical foundation ÔÇ║ /es/cookies has indexable localized metadata (1.2s)
+  ok  55 [chromium-desktop] ÔÇ║ tests\e2e\seo.spec.ts:44:9 ÔÇ║ SEO technical foundation ÔÇ║ /en/contact has indexable localized metadata (1.3s)
+(node:33504) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x   38 [chromium-desktop] ÔÇ║ tests\e2e\foundation.spec.ts:108:7 ÔÇ║ localized foundation ÔÇ║ preserves routed pages through browser back and forward (7.4s)
+  ok  57 [chromium-desktop] ÔÇ║ tests\e2e\seo.spec.ts:86:7 ÔÇ║ SEO technical foundation ÔÇ║ home schema uses only the confirmed Cali studio address (1.3s)
+  ok  58 [chromium-desktop] ÔÇ║ tests\e2e\seo.spec.ts:103:7 ÔÇ║ SEO technical foundation ÔÇ║ results exposes selected real images as ImageObject schema (1.3s)
+  ok  59 [chromium-desktop] ÔÇ║ tests\e2e\seo.spec.ts:120:7 ÔÇ║ SEO technical foundation ÔÇ║ robots, sitemap, manifest and social/icon assets respond (1.4s)
+(node:3444) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  63 [chromium-desktop] ÔÇ║ tests\e2e\vertical-slice.spec.ts:94:7 ÔÇ║ Colombia vertical slice ÔÇ║ does not create horizontal overflow on mobile service and downloads pages (1.4s)
+  ok  62 [chromium-desktop] ÔÇ║ tests\e2e\vertical-slice.spec.ts:75:7 ÔÇ║ Colombia vertical slice ÔÇ║ lists market catalogs and training PDFs in downloads (1.4s)
+  ok  61 [chromium-desktop] ÔÇ║ tests\e2e\seo.spec.ts:44:9 ÔÇ║ SEO technical foundation ÔÇ║ /en/cookies has indexable localized metadata (1.5s)
+  ok  64 [chromium-desktop] ÔÇ║ tests\e2e\vertical-slice.spec.ts:108:7 ÔÇ║ services by market ÔÇ║ keeps Spain / Europe services in EUR and direct WhatsApp Spain (1.6s)
+  ok  65 [chromium-desktop] ÔÇ║ tests\e2e\vertical-slice.spec.ts:58:7 ÔÇ║ Colombia vertical slice ÔÇ║ serves Colombia services in English with localized URL (1.5s)
+  ok  67 [chromium-desktop] ÔÇ║ tests\e2e\vertical-slice.spec.ts:161:7 ÔÇ║ services by market ÔÇ║ serves service detail with contextual data, schema and equivalent language switch (1.8s)
+  ok  68 [chromium-desktop] ÔÇ║ tests\e2e\vertical-slice.spec.ts:212:7 ÔÇ║ services by market ÔÇ║ links confirmed micropigmentation care without applying it to HidraLips (2.8s)
+  ok  70 [chromium-desktop] ÔÇ║ tests\e2e\vertical-slice.spec.ts:276:7 ÔÇ║ professional training ÔÇ║ serves course detail with syllabus, prices, schema and language equivalent (1.8s)
+  ok  71 [chromium-desktop] ÔÇ║ tests\e2e\vertical-slice.spec.ts:349:7 ÔÇ║ results gallery ÔÇ║ opens the results lightbox and returns focus to the tile (1.8s)
+  ok  72 [chromium-desktop] ÔÇ║ tests\e2e\vertical-slice.spec.ts:376:7 ÔÇ║ confirmed contact channels ÔÇ║ publishes both WhatsApp targets, official email and social profiles (944ms)
+  ok  73 [chromium-desktop] ÔÇ║ tests\e2e\vertical-slice.spec.ts:403:7 ÔÇ║ journeys and animated map ÔÇ║ serves the Spanish journeys page with correct city WhatsApp targets (1.8s)
+  x   60 [chromium-desktop] ÔÇ║ tests\e2e\vertical-slice.spec.ts:12:7 ÔÇ║ Colombia vertical slice ÔÇ║ serves Colombia services in Spanish with one catalog download and Colombia WhatsApp (7.5s)
+(node:20764) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  75 [chromium-desktop] ÔÇ║ tests\visual\visual-smoke.spec.ts:47:9 ÔÇ║ local visual smoke ÔÇ║ home-es can be captured for manual visual review (2.3s)
+  x   66 [chromium-desktop] ÔÇ║ tests\e2e\vertical-slice.spec.ts:132:7 ÔÇ║ services by market ÔÇ║ keeps Switzerland services in CHF and excludes non-confirmed services (6.5s)
+  ok  76 [chromium-desktop] ÔÇ║ tests\visual\visual-smoke.spec.ts:47:9 ÔÇ║ local visual smoke ÔÇ║ services-colombia-es can be captured for manual visual review (1.6s)
+(node:14940) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  78 [chromium-desktop] ÔÇ║ tests\visual\visual-smoke.spec.ts:47:9 ÔÇ║ local visual smoke ÔÇ║ journeys-es can be captured for manual visual review (1.3s)
+(node:27328) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x   69 [chromium-desktop] ÔÇ║ tests\e2e\vertical-slice.spec.ts:250:7 ÔÇ║ professional training ÔÇ║ lists courses with PDFs and WhatsApp date CTA (6.9s)
+  ok  77 [chromium-desktop] ÔÇ║ tests\visual\visual-smoke.spec.ts:47:9 ÔÇ║ local visual smoke ÔÇ║ training-es can be captured for manual visual review (1.8s)
+(node:17436) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:35400) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  79 [chromium-desktop] ÔÇ║ tests\visual\visual-smoke.spec.ts:47:9 ÔÇ║ local visual smoke ÔÇ║ contact-es can be captured for manual visual review (1.2s)
+(node:38388) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:25524) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x   74 [chromium-desktop] ÔÇ║ tests\e2e\vertical-slice.spec.ts:460:7 ÔÇ║ journeys and animated map ÔÇ║ keeps journeys responsive, keyboard usable and language-equivalent (6.8s)
+  ok  80 [mobile-chrome] ÔÇ║ tests\a11y\home.spec.ts:41:9 ÔÇ║ accessibility smoke ÔÇ║ Spanish home has no serious axe violations (3.5s)
+(node:25972) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  81 [mobile-chrome] ÔÇ║ tests\a11y\home.spec.ts:41:9 ÔÇ║ accessibility smoke ÔÇ║ English home has no serious axe violations (3.2s)
+  ok  84 [mobile-chrome] ÔÇ║ tests\a11y\home.spec.ts:41:9 ÔÇ║ accessibility smoke ÔÇ║ Spanish service detail has no serious axe violations (3.1s)
+  x   82 [mobile-chrome] ÔÇ║ tests\a11y\home.spec.ts:41:9 ÔÇ║ accessibility smoke ÔÇ║ Spanish Colombia services has no serious axe violations (4.5s)
+  x   83 [mobile-chrome] ÔÇ║ tests\a11y\home.spec.ts:41:9 ÔÇ║ accessibility smoke ÔÇ║ English Colombia services has no serious axe violations (4.6s)
+  ok  85 [mobile-chrome] ÔÇ║ tests\a11y\home.spec.ts:41:9 ÔÇ║ accessibility smoke ÔÇ║ English training has no serious axe violations (3.1s)
+(node:22932) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  87 [mobile-chrome] ÔÇ║ tests\a11y\home.spec.ts:41:9 ÔÇ║ accessibility smoke ÔÇ║ Spanish course detail has no serious axe violations (2.9s)
+  ok  86 [mobile-chrome] ÔÇ║ tests\a11y\home.spec.ts:41:9 ÔÇ║ accessibility smoke ÔÇ║ Spanish training has no serious axe violations (2.9s)
+(node:11640) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  88 [mobile-chrome] ÔÇ║ tests\a11y\home.spec.ts:41:9 ÔÇ║ accessibility smoke ÔÇ║ Spanish journeys has no serious axe violations (3.1s)
+  ok  89 [mobile-chrome] ÔÇ║ tests\a11y\home.spec.ts:41:9 ÔÇ║ accessibility smoke ÔÇ║ English results has no serious axe violations (2.8s)
+  ok  91 [mobile-chrome] ÔÇ║ tests\a11y\home.spec.ts:41:9 ÔÇ║ accessibility smoke ÔÇ║ Spanish about has no serious axe violations (3.0s)
+  ok  92 [mobile-chrome] ÔÇ║ tests\a11y\home.spec.ts:41:9 ÔÇ║ accessibility smoke ÔÇ║ English about has no serious axe violations (3.0s)
+  ok  90 [mobile-chrome] ÔÇ║ tests\a11y\home.spec.ts:41:9 ÔÇ║ accessibility smoke ÔÇ║ English journeys has no serious axe violations (3.5s)
+  ok  93 [mobile-chrome] ÔÇ║ tests\a11y\home.spec.ts:41:9 ÔÇ║ accessibility smoke ÔÇ║ Spanish results has no serious axe violations (3.0s)
+  ok  94 [mobile-chrome] ÔÇ║ tests\a11y\home.spec.ts:41:9 ÔÇ║ accessibility smoke ÔÇ║ Spanish aftercare has no serious axe violations (3.1s)
+  ok  96 [mobile-chrome] ÔÇ║ tests\a11y\home.spec.ts:41:9 ÔÇ║ accessibility smoke ÔÇ║ Spanish contact has no serious axe violations (2.4s)
+  ok  95 [mobile-chrome] ÔÇ║ tests\a11y\home.spec.ts:41:9 ÔÇ║ accessibility smoke ÔÇ║ English aftercare has no serious axe violations (3.0s)
+  ok  97 [mobile-chrome] ÔÇ║ tests\a11y\home.spec.ts:41:9 ÔÇ║ accessibility smoke ÔÇ║ English contact has no serious axe violations (2.5s)
+  ok  98 [mobile-chrome] ÔÇ║ tests\a11y\home.spec.ts:41:9 ÔÇ║ accessibility smoke ÔÇ║ Spanish downloads has no serious axe violations (2.4s)
+  ok  99 [mobile-chrome] ÔÇ║ tests\a11y\home.spec.ts:41:9 ÔÇ║ accessibility smoke ÔÇ║ English downloads has no serious axe violations (2.5s)
+  ok 100 [mobile-chrome] ÔÇ║ tests\a11y\home.spec.ts:41:9 ÔÇ║ accessibility smoke ÔÇ║ Spanish legal notice has no serious axe violations (2.4s)
+  ok 101 [mobile-chrome] ÔÇ║ tests\a11y\home.spec.ts:41:9 ÔÇ║ accessibility smoke ÔÇ║ English legal notice has no serious axe violations (2.5s)
+  ok 103 [mobile-chrome] ÔÇ║ tests\a11y\home.spec.ts:41:9 ÔÇ║ accessibility smoke ÔÇ║ English privacy has no serious axe violations (2.6s)
+  ok 102 [mobile-chrome] ÔÇ║ tests\a11y\home.spec.ts:41:9 ÔÇ║ accessibility smoke ÔÇ║ Spanish privacy has no serious axe violations (2.8s)
+  ok 104 [mobile-chrome] ÔÇ║ tests\a11y\home.spec.ts:41:9 ÔÇ║ accessibility smoke ÔÇ║ Spanish cookies has no serious axe violations (2.5s)
+  ok 105 [mobile-chrome] ÔÇ║ tests\a11y\home.spec.ts:41:9 ÔÇ║ accessibility smoke ÔÇ║ English cookies has no serious axe violations (2.5s)
+  ok 106 [mobile-chrome] ÔÇ║ tests\e2e\event-map-zoom.spec.ts:28:7 ÔÇ║ event map zoom QA ÔÇ║ allows deep zoom up to 8x via SVG transform (vector, no CSS scale) (2.3s)
+  ok 108 [mobile-chrome] ÔÇ║ tests\e2e\event-map-zoom.spec.ts:102:7 ÔÇ║ event map zoom QA ÔÇ║ keeps leader arrows and geo dots visible when zoomed in (1.9s)
+  ok 107 [mobile-chrome] ÔÇ║ tests\e2e\event-map-zoom.spec.ts:69:7 ÔÇ║ event map zoom QA ÔÇ║ filters pins to the visible region when zoomed into Spain (2.3s)
+  ok 109 [mobile-chrome] ÔÇ║ tests\e2e\event-map-zoom.spec.ts:115:7 ÔÇ║ event map zoom QA ÔÇ║ uses an inline (vector) SVG map for crisp zoom (2.1s)
+  ok 110 [mobile-chrome] ÔÇ║ tests\e2e\event-map-zoom.spec.ts:126:7 ÔÇ║ event map zoom QA ÔÇ║ has no hydration mismatch on home map section (2.0s)
+  ok 111 [mobile-chrome] ÔÇ║ tests\e2e\event-map-zoom.spec.ts:144:7 ÔÇ║ event map zoom QA ÔÇ║ selected pin label stacks above other pins (2.0s)
+  ok 112 [mobile-chrome] ÔÇ║ tests\e2e\event-map-zoom.spec.ts:193:7 ÔÇ║ event map zoom QA ÔÇ║ zoom controls stay usable at 390px (1.9s)
+  ok 113 [mobile-chrome] ÔÇ║ tests\e2e\foundation.spec.ts:4:7 ÔÇ║ localized foundation ÔÇ║ redirects the root route to the default Spanish locale (1.6s)
+  ok 115 [mobile-chrome] ÔÇ║ tests\e2e\foundation.spec.ts:43:7 ÔÇ║ localized foundation ÔÇ║ does not create horizontal overflow at 390px (1.6s)
+  ok 120 [mobile-chrome] ÔÇ║ tests\e2e\security-headers.spec.ts:4:7 ÔÇ║ security headers ÔÇ║ public routes include baseline safe headers (74ms)
+  ok 118 [mobile-chrome] ÔÇ║ tests\e2e\legal-cookies.spec.ts:14:7 ÔÇ║ legal, aftercare and cookie consent ÔÇ║ serves aftercare and legal pages in both locales (1.7s)
+  ok 119 [mobile-chrome] ÔÇ║ tests\e2e\legal-cookies.spec.ts:53:7 ÔÇ║ legal, aftercare and cookie consent ÔÇ║ cookie banner rejects, configures and reopens preferences from footer (1.5s)
+  ok 121 [mobile-chrome] ÔÇ║ tests\e2e\seo.spec.ts:44:9 ÔÇ║ SEO technical foundation ÔÇ║ /es has indexable localized metadata (1.3s)
+  ok 122 [mobile-chrome] ÔÇ║ tests\e2e\seo.spec.ts:44:9 ÔÇ║ SEO technical foundation ÔÇ║ /en has indexable localized metadata (1.1s)
+  ok 123 [mobile-chrome] ÔÇ║ tests\e2e\seo.spec.ts:44:9 ÔÇ║ SEO technical foundation ÔÇ║ /es/servicios/colombia has indexable localized metadata (1.2s)
+  ok 124 [mobile-chrome] ÔÇ║ tests\e2e\seo.spec.ts:44:9 ÔÇ║ SEO technical foundation ÔÇ║ /en/services/colombia has indexable localized metadata (1.2s)
+  ok 125 [mobile-chrome] ÔÇ║ tests\e2e\seo.spec.ts:44:9 ÔÇ║ SEO technical foundation ÔÇ║ /es/servicios/colombia/efecto-polvo has indexable localized metadata (1.1s)
+  ok 126 [mobile-chrome] ÔÇ║ tests\e2e\seo.spec.ts:44:9 ÔÇ║ SEO technical foundation ÔÇ║ /en/services/colombia/powder-brows has indexable localized metadata (1.1s)
+  ok 127 [mobile-chrome] ÔÇ║ tests\e2e\seo.spec.ts:44:9 ÔÇ║ SEO technical foundation ÔÇ║ /es/formaciones has indexable localized metadata (1.0s)
+  ok 128 [mobile-chrome] ÔÇ║ tests\e2e\seo.spec.ts:44:9 ÔÇ║ SEO technical foundation ÔÇ║ /en/professional-training has indexable localized metadata (1.0s)
+  ok 129 [mobile-chrome] ÔÇ║ tests\e2e\seo.spec.ts:44:9 ÔÇ║ SEO technical foundation ÔÇ║ /es/formaciones/curso-micropigmentacion-cejas has indexable localized metadata (1.0s)
+  ok 130 [mobile-chrome] ÔÇ║ tests\e2e\seo.spec.ts:44:9 ÔÇ║ SEO technical foundation ÔÇ║ /en/professional-training/brow-micropigmentation-course has indexable localized metadata (1.1s)
+  x  114 [mobile-chrome] ÔÇ║ tests\e2e\foundation.spec.ts:11:7 ÔÇ║ localized foundation ÔÇ║ serves the Spanish home and language switcher (6.8s)
+  ok 131 [mobile-chrome] ÔÇ║ tests\e2e\seo.spec.ts:44:9 ÔÇ║ SEO technical foundation ÔÇ║ /es/resultados has indexable localized metadata (968ms)
+  ok 132 [mobile-chrome] ÔÇ║ tests\e2e\seo.spec.ts:44:9 ÔÇ║ SEO technical foundation ÔÇ║ /en/results has indexable localized metadata (983ms)
+(node:448) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 134 [mobile-chrome] ÔÇ║ tests\e2e\seo.spec.ts:44:9 ÔÇ║ SEO technical foundation ÔÇ║ /es/cookies has indexable localized metadata (899ms)
+  ok 133 [mobile-chrome] ÔÇ║ tests\e2e\seo.spec.ts:44:9 ÔÇ║ SEO technical foundation ÔÇ║ /es/contacto has indexable localized metadata (1.1s)
+  ok 135 [mobile-chrome] ÔÇ║ tests\e2e\seo.spec.ts:44:9 ÔÇ║ SEO technical foundation ÔÇ║ /en/cookies has indexable localized metadata (977ms)
+  x  117 [mobile-chrome] ÔÇ║ tests\e2e\foundation.spec.ts:108:7 ÔÇ║ localized foundation ÔÇ║ preserves routed pages through browser back and forward (7.2s)
+  ok 139 [mobile-chrome] ÔÇ║ tests\e2e\seo.spec.ts:120:7 ÔÇ║ SEO technical foundation ÔÇ║ robots, sitemap, manifest and social/icon assets respond (430ms)
+  ok 138 [mobile-chrome] ÔÇ║ tests\e2e\seo.spec.ts:103:7 ÔÇ║ SEO technical foundation ÔÇ║ results exposes selected real images as ImageObject schema (1.0s)
+  ok 137 [mobile-chrome] ÔÇ║ tests\e2e\seo.spec.ts:86:7 ÔÇ║ SEO technical foundation ÔÇ║ home schema uses only the confirmed Cali studio address (1.3s)
+(node:33000) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 136 [mobile-chrome] ÔÇ║ tests\e2e\seo.spec.ts:44:9 ÔÇ║ SEO technical foundation ÔÇ║ /en/contact has indexable localized metadata (1.4s)
+  ok 141 [mobile-chrome] ÔÇ║ tests\e2e\vertical-slice.spec.ts:75:7 ÔÇ║ Colombia vertical slice ÔÇ║ lists market catalogs and training PDFs in downloads (1.2s)
+  ok 140 [mobile-chrome] ÔÇ║ tests\e2e\vertical-slice.spec.ts:58:7 ÔÇ║ Colombia vertical slice ÔÇ║ serves Colombia services in English with localized URL (1.5s)
+  ok 142 [mobile-chrome] ÔÇ║ tests\e2e\vertical-slice.spec.ts:94:7 ÔÇ║ Colombia vertical slice ÔÇ║ does not create horizontal overflow on mobile service and downloads pages (1.1s)
+  ok 144 [mobile-chrome] ÔÇ║ tests\e2e\vertical-slice.spec.ts:108:7 ÔÇ║ services by market ÔÇ║ keeps Spain / Europe services in EUR and direct WhatsApp Spain (1.3s)
+  ok 147 [mobile-chrome] ÔÇ║ tests\e2e\vertical-slice.spec.ts:212:7 ÔÇ║ services by market ÔÇ║ links confirmed micropigmentation care without applying it to HidraLips (1.4s)
+  ok 149 [mobile-chrome] ÔÇ║ tests\e2e\vertical-slice.spec.ts:276:7 ÔÇ║ professional training ÔÇ║ serves course detail with syllabus, prices, schema and language equivalent (1.5s)
+  ok 150 [mobile-chrome] ÔÇ║ tests\e2e\vertical-slice.spec.ts:349:7 ÔÇ║ results gallery ÔÇ║ opens the results lightbox and returns focus to the tile (897ms)
+  ok 151 [mobile-chrome] ÔÇ║ tests\e2e\vertical-slice.spec.ts:376:7 ÔÇ║ confirmed contact channels ÔÇ║ publishes both WhatsApp targets, official email and social profiles (722ms)
+  ok 152 [mobile-chrome] ÔÇ║ tests\e2e\vertical-slice.spec.ts:403:7 ÔÇ║ journeys and animated map ÔÇ║ serves the Spanish journeys page with correct city WhatsApp targets (1.3s)
+  x  143 [mobile-chrome] ÔÇ║ tests\e2e\vertical-slice.spec.ts:12:7 ÔÇ║ Colombia vertical slice ÔÇ║ serves Colombia services in Spanish with one catalog download and Colombia WhatsApp (6.6s)
+  x  146 [mobile-chrome] ÔÇ║ tests\e2e\vertical-slice.spec.ts:161:7 ÔÇ║ services by market ÔÇ║ serves service detail with contextual data, schema and equivalent language switch (6.4s)
+  x  145 [mobile-chrome] ÔÇ║ tests\e2e\vertical-slice.spec.ts:132:7 ÔÇ║ services by market ÔÇ║ keeps Switzerland services in CHF and excludes non-confirmed services (6.6s)
+(node:19328) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  148 [mobile-chrome] ÔÇ║ tests\e2e\vertical-slice.spec.ts:250:7 ÔÇ║ professional training ÔÇ║ lists courses with PDFs and WhatsApp date CTA (6.6s)
+(node:7796) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:26652) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:10384) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 154 [mobile-chrome] ÔÇ║ tests\visual\visual-smoke.spec.ts:47:9 ÔÇ║ local visual smoke ÔÇ║ home-es can be captured for manual visual review (4.0s)
+  ok 155 [mobile-chrome] ÔÇ║ tests\visual\visual-smoke.spec.ts:47:9 ÔÇ║ local visual smoke ÔÇ║ services-colombia-es can be captured for manual visual review (3.5s)
+  ok 157 [mobile-chrome] ÔÇ║ tests\visual\visual-smoke.spec.ts:47:9 ÔÇ║ local visual smoke ÔÇ║ journeys-es can be captured for manual visual review (2.3s)
+  ok 156 [mobile-chrome] ÔÇ║ tests\visual\visual-smoke.spec.ts:47:9 ÔÇ║ local visual smoke ÔÇ║ training-es can be captured for manual visual review (3.9s)
+  x  153 [mobile-chrome] ÔÇ║ tests\e2e\vertical-slice.spec.ts:460:7 ÔÇ║ journeys and animated map ÔÇ║ keeps journeys responsive, keyboard usable and language-equivalent (6.6s)
+  ok 158 [mobile-chrome] ÔÇ║ tests\visual\visual-smoke.spec.ts:47:9 ÔÇ║ local visual smoke ÔÇ║ contact-es can be captured for manual visual review (1.5s)
+  x  116 [mobile-chrome] ÔÇ║ tests\e2e\foundation.spec.ts:54:7 ÔÇ║ localized foundation ÔÇ║ opens the WhatsApp chooser with Colombia and Spain options (30.4s)
+
+
+  1) [chromium-desktop] ÔÇ║ tests\a11y\home.spec.ts:41:9 ÔÇ║ accessibility smoke ÔÇ║ Spanish Colombia services has no serious axe violations 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  -  1
+    + Received  + 58
+
+    - Array []
+    + Array [
+    +   Object {
+    +     "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+    +     "help": "Elements must meet minimum color contrast ratio thresholds",
+    +     "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=playwright",
+    +     "id": "color-contrast",
+    +     "impact": "serious",
+    +     "nodes": Array [
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "bgColor": "#b76e79",
+    +               "contrastRatio": 3.79,
+    +               "expectedContrastRatio": "4.5:1",
+    +               "fgColor": "#372527",
+    +               "fontSize": "9.0pt (12px)",
+    +               "fontWeight": "normal",
+    +               "messageKey": null,
+    +             },
+    +             "id": "color-contrast",
+    +             "impact": "serious",
+    +             "message": "Element has insufficient color contrast of 3.79 (foreground color: #372527, background color: #b76e79, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<a aria-current=\"page\" class=\"inline-flex min-h-11...\" href=\"/es/servicios/colomb...\">",
+    +                 "target": Array [
+    +                   ".border-primary.focus-visible\\:ring-2.focus-visible\\:ring-ring\\/50",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has insufficient color contrast of 3.79 (foreground color: #372527, background color: #b76e79, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +         "html": "<span class=\"text-xs font-normal uppercase tracking-wide text-primary-foreground/80\">COP</span>",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           ".text-primary-foreground\\/80",
+    +         ],
+    +       },
+    +     ],
+    +     "tags": Array [
+    +       "cat.color",
+    +       "wcag2aa",
+    +       "wcag143",
+    +       "TTv5",
+    +       "TT13.c",
+    +       "EN-301-549",
+    +       "EN-9.1.4.3",
+    +       "ACT",
+    +       "RGAAv4",
+    +       "RGAA-3.2.1",
+    +     ],
+    +   },
+    + ]
+
+      50 |       );
+      51 |
+    > 52 |       expect(seriousViolations).toEqual([]);
+         |                                 ^
+      53 |     });
+      54 |   }
+      55 | });
+        at C:\servicios-cejas\tests\a11y\home.spec.ts:52:33
+
+    attachment #1: screenshot (image/png) ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+    test-results\a11y-home-accessibility-sm-468cd-s-no-serious-axe-violations-chromium-desktop\test-failed-1.png
+    ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+
+    attachment #2: video (video/webm) ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+    test-results\a11y-home-accessibility-sm-468cd-s-no-serious-axe-violations-chromium-desktop\video-1.webm
+    ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+
+    attachment #3: video (video/webm) ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+    test-results\a11y-home-accessibility-sm-468cd-s-no-serious-axe-violations-chromium-desktop\video.webm
+    ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+
+    Error Context: test-results\a11y-home-accessibility-sm-468cd-s-no-serious-axe-violations-chromium-desktop\error-context.md
+
+  2) [chromium-desktop] ÔÇ║ tests\a11y\home.spec.ts:41:9 ÔÇ║ accessibility smoke ÔÇ║ English Colombia services has no serious axe violations 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  -  1
+    + Received  + 58
+
+    - Array []
+    + Array [
+    +   Object {
+    +     "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+    +     "help": "Elements must meet minimum color contrast ratio thresholds",
+    +     "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=playwright",
+    +     "id": "color-contrast",
+    +     "impact": "serious",
+    +     "nodes": Array [
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "bgColor": "#b76e79",
+    +               "contrastRatio": 3.79,
+    +               "expectedContrastRatio": "4.5:1",
+    +               "fgColor": "#372527",
+    +               "fontSize": "9.0pt (12px)",
+    +               "fontWeight": "normal",
+    +               "messageKey": null,
+    +             },
+    +             "id": "color-contrast",
+    +             "impact": "serious",
+    +             "message": "Element has insufficient color contrast of 3.79 (foreground color: #372527, background color: #b76e79, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<a aria-current=\"page\" class=\"inline-flex min-h-11...\" href=\"/en/services/colombi...\">",
+    +                 "target": Array [
+    +                   ".border-primary.focus-visible\\:ring-2.focus-visible\\:ring-ring\\/50",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has insufficient color contrast of 3.79 (foreground color: #372527, background color: #b76e79, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +         "html": "<span class=\"text-xs font-normal uppercase tracking-wide text-primary-foreground/80\">COP</span>",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           ".text-primary-foreground\\/80",
+    +         ],
+    +       },
+    +     ],
+    +     "tags": Array [
+    +       "cat.color",
+    +       "wcag2aa",
+    +       "wcag143",
+    +       "TTv5",
+    +       "TT13.c",
+    +       "EN-301-549",
+    +       "EN-9.1.4.3",
+    +       "ACT",
+    +       "RGAAv4",
+    +       "RGAA-3.2.1",
+    +     ],
+    +   },
+    + ]
+
+      50 |       );
+      51 |
+    > 52 |       expect(seriousViolations).toEqual([]);
+         |                                 ^
+      53 |     });
+      54 |   }
+      55 | });
+        at C:\servicios-cejas\tests\a11y\home.spec.ts:52:33
+
+    attachment #1: screenshot (image/png) ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+    test-results\a11y-home-accessibility-sm-6c037-s-no-serious-axe-violations-chromium-desktop\test-failed-1.png
+    ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+
+    attachment #2: video (video/webm) ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+    test-results\a11y-home-accessibility-sm-6c037-s-no-serious-axe-violations-chromium-desktop\video-1.webm
+    ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+
+    attachment #3: video (video/webm) ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+    test-results\a11y-home-accessibility-sm-6c037-s-no-serious-axe-violations-chromium-desktop\video.webm
+    ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+
+    Error Context: test-results\a11y-home-accessibility-sm-6c037-s-no-serious-axe-violations-chromium-desktop\error-context.md
+
+  3) [chromium-desktop] ÔÇ║ tests\e2e\foundation.spec.ts:11:7 ÔÇ║ localized foundation ÔÇ║ serves the Spanish home and language switcher 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: getByRole('heading', { level: 1 })
+    Expected substring: "Belleza especializada"
+    Received string:    "Micropigmentaci├│n Avanzada, Formaci├│n Profesional y Jornadas Internacionales"
+    Timeout: 5000ms
+
+    Call log:
+      - Expect "toContainText" with timeout 5000ms
+      - waiting for getByRole('heading', { level: 1 })
+        14 ├ù locator resolved to <h1 class="text-balance font-display text-[1.7rem] leading-[1.12] text-foreground sm:text-5xl lg:text-7xl">Micropigmentaci├│n Avanzada, Formaci├│n ProfesionalÔÇª</h1>
+           - unexpected value "Micropigmentaci├│n Avanzada, Formaci├│n Profesional y Jornadas Internacionales"
+
+
+      20 |     await expect(page).toHaveTitle(/Cejas Internacionales/);
+      21 |     await expect(page.locator("html")).toHaveAttribute("lang", "es");
+    > 22 |     await expect(page.getByRole("heading", { level: 1 })).toContainText(
+         |                                                           ^
+      23 |       "Belleza especializada",
+      24 |     );
+      25 |     const viewport = page.viewportSize();
+        at C:\servicios-cejas\tests\e2e\foundation.spec.ts:22:59
+
+    attachment #1: screenshot (image/png) ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+    test-results\e2e-foundation-localized-f-a5eea--home-and-language-switcher-chromium-desktop\test-failed-1.png
+    ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+
+    attachment #2: video (video/webm) ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+    test-results\e2e-foundation-localized-f-a5eea--home-and-language-switcher-chromium-desktop\video.webm
+    ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+
+    Error Context: test-results\e2e-foundation-localized-f-a5eea--home-and-language-switcher-chromium-desktop\error-context.md
+
+  4) [chromium-desktop] ÔÇ║ tests\e2e\foundation.spec.ts:108:7 ÔÇ║ localized foundation ÔÇ║ preserves routed pages through browser back and forward 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: getByRole('heading', { level: 1 })
+    Expected substring: "Elige el mercado"
+    Received string:    "Servicios por pa├¡s"
+    Timeout: 5000ms
+
+    Call log:
+      - Expect "toContainText" with timeout 5000ms
+      - waiting for getByRole('heading', { level: 1 })
+        14 ├ù locator resolved to <h1 id="page-hero-title" class="text-balance font-display text-[1.75rem] leading-[1.1] text-foreground sm:text-6xl sm:leading-[1.02] lg:text-7xl">Servicios por pa├¡s</h1>
+           - unexpected value "Servicios por pa├¡s"
+
+
+      118 |     await page.getByRole("link", { name: "Servicios" }).first().click();
+      119 |     await page.waitForURL(/\/es\/servicios$/);
+    > 120 |     await expect(page.getByRole("heading", { level: 1 })).toContainText(
+          |                                                           ^
+      121 |       "Elige el mercado",
+      122 |     );
+      123 |
+        at C:\servicios-cejas\tests\e2e\foundation.spec.ts:120:59
+
+    attachment #1: screenshot (image/png) ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+    test-results\e2e-foundation-localized-f-c7608-gh-browser-back-and-forward-chromium-desktop\test-failed-1.png
+    ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+
+    attachment #2: video (video/webm) ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+    test-results\e2e-foundation-localized-f-c7608-gh-browser-back-and-forward-chromium-desktop\video.webm
+    ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+
+    Error Context: test-results\e2e-foundation-localized-f-c7608-gh-browser-back-and-forward-chromium-desktop\error-context.md
+
+  5) [chromium-desktop] ÔÇ║ tests\e2e\vertical-slice.spec.ts:12:7 ÔÇ║ Colombia vertical slice ÔÇ║ serves Colombia services in Spanish with one catalog download and Colombia WhatsApp 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: locator('[data-slot="service-card"]').first()
+    Expected pattern: /COP|\$/
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toContainText" with timeout 5000ms
+      - waiting for locator('[data-slot="service-card"]').first()
+
+
+      33 |     await expect(
+      34 |       page.locator('[data-slot="service-card"]').first(),
+    > 35 |     ).toContainText(/COP|\$/);
+         |       ^
+      36 |     await expect(
+      37 |       page.getByRole("link", { name: "Contacta conmigo" }),
+      38 |     ).toHaveAttribute("href", /573167742299/);
+        at C:\servicios-cejas\tests\e2e\vertical-slice.spec.ts:35:7
+
+    attachment #1: screenshot (image/png) ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+    test-results\e2e-vertical-slice-Colombi-de1bc-nload-and-Colombia-WhatsApp-chromium-desktop\test-failed-1.png
+    ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+
+    attachment #2: video (video/webm) ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+    test-results\e2e-vertical-slice-Colombi-de1bc-nload-and-Colombia-WhatsApp-chromium-desktop\video.webm
+    ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+
+    Error Context: test-results\e2e-vertical-slice-Colombi-de1bc-nload-and-Colombia-WhatsApp-chromium-desktop\error-context.md
+
+  6) [chromium-desktop] ÔÇ║ tests\e2e\vertical-slice.spec.ts:132:7 ÔÇ║ services by market ÔÇ║ keeps Switzerland services in CHF and excludes non-confirmed services 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: locator('[data-slot="service-card"]').filter({ hasText: /Refuerzo cejas h[i├¡]bridas/ })
+    Expected pattern: /150\s*CHF|CHF\s*150/
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toContainText" with timeout 5000ms
+      - waiting for locator('[data-slot="service-card"]').filter({ hasText: /Refuerzo cejas h[i├¡]bridas/ })
+
+
+      153 |         .locator('[data-slot="service-card"]')
+      154 |         .filter({ hasText: /Refuerzo cejas h[i├¡]bridas/ }),
+    > 155 |     ).toContainText(/150\s*CHF|CHF\s*150/);
+          |       ^
+      156 |     await expect(
+      157 |       page.getByRole("link", { name: "Contacta conmigo" }),
+      158 |     ).toHaveAttribute("href", /34603804837/);
+        at C:\servicios-cejas\tests\e2e\vertical-slice.spec.ts:155:7
+
+    attachment #1: screenshot (image/png) ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+    test-results\e2e-vertical-slice-service-ec9d3-udes-non-confirmed-services-chromium-desktop\test-failed-1.png
+    ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+
+    attachment #2: video (video/webm) ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+    test-results\e2e-vertical-slice-service-ec9d3-udes-non-confirmed-services-chromium-desktop\video.webm
+    ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+
+    Error Context: test-results\e2e-vertical-slice-service-ec9d3-udes-non-confirmed-services-chromium-desktop\error-context.md
+
+  7) [chromium-desktop] ÔÇ║ tests\e2e\vertical-slice.spec.ts:250:7 ÔÇ║ professional training ÔÇ║ lists courses with PDFs and WhatsApp date CTA 
+
+    Error: expect(locator).toHaveCount(expected) failed
+
+    Locator:  locator('[data-slot="course-card"]')
+    Expected: 5
+    Received: 0
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveCount" with timeout 5000ms
+      - waiting for locator('[data-slot="course-card"]')
+        14 ├ù locator resolved to 0 elements
+           - unexpected value "0"
+
+
+      270 |
+      271 |     const courseCards = page.locator('[data-slot="course-card"]');
+    > 272 |     await expect(courseCards).toHaveCount(5);
+          |                               ^
+      273 |     await expect(courseCards.locator('[data-slot="course-image"]')).toHaveCount(5);
+      274 |   });
+      275 |
+        at C:\servicios-cejas\tests\e2e\vertical-slice.spec.ts:272:31
+
+    attachment #1: screenshot (image/png) ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+    test-results\e2e-vertical-slice-profess-caff1--PDFs-and-WhatsApp-date-CTA-chromium-desktop\test-failed-1.png
+    ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+
+    attachment #2: video (video/webm) ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+    test-results\e2e-vertical-slice-profess-caff1--PDFs-and-WhatsApp-date-CTA-chromium-desktop\video.webm
+    ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+
+    Error Context: test-results\e2e-vertical-slice-profess-caff1--PDFs-and-WhatsApp-date-CTA-chromium-desktop\error-context.md
+
+  8) [chromium-desktop] ÔÇ║ tests\e2e\vertical-slice.spec.ts:460:7 ÔÇ║ journeys and animated map ÔÇ║ keeps journeys responsive, keyboard usable and language-equivalent 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('heading', { name: 'Cali studio and appointments in selected cities', level: 1 })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for getByRole('heading', { name: 'Cali studio and appointments in selected cities', level: 1 })
+
+
+      501 |         name: "Cali studio and appointments in selected cities",
+      502 |       }),
+    > 503 |     ).toBeVisible();
+          |       ^
+      504 |   });
+      505 | });
+      506 |
+        at C:\servicios-cejas\tests\e2e\vertical-slice.spec.ts:503:7
+
+    attachment #1: screenshot (image/png) ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+    test-results\e2e-vertical-slice-journey-92f48-ble-and-language-equivalent-chromium-desktop\test-failed-1.png
+    ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+
+    attachment #2: video (video/webm) ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+    test-results\e2e-vertical-slice-journey-92f48-ble-and-language-equivalent-chromium-desktop\video.webm
+    ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+
+    Error Context: test-results\e2e-vertical-slice-journey-92f48-ble-and-language-equivalent-chromium-desktop\error-context.md
+
+  9) [mobile-chrome] ÔÇ║ tests\a11y\home.spec.ts:41:9 ÔÇ║ accessibility smoke ÔÇ║ Spanish Colombia services has no serious axe violations 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  -  1
+    + Received  + 58
+
+    - Array []
+    + Array [
+    +   Object {
+    +     "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+    +     "help": "Elements must meet minimum color contrast ratio thresholds",
+    +     "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=playwright",
+    +     "id": "color-contrast",
+    +     "impact": "serious",
+    +     "nodes": Array [
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "bgColor": "#b76e79",
+    +               "contrastRatio": 3.79,
+    +               "expectedContrastRatio": "4.5:1",
+    +               "fgColor": "#372527",
+    +               "fontSize": "9.0pt (12px)",
+    +               "fontWeight": "normal",
+    +               "messageKey": null,
+    +             },
+    +             "id": "color-contrast",
+    +             "impact": "serious",
+    +             "message": "Element has insufficient color contrast of 3.79 (foreground color: #372527, background color: #b76e79, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<a aria-current=\"page\" class=\"inline-flex min-h-11...\" href=\"/es/servicios/colomb...\">",
+    +                 "target": Array [
+    +                   ".border-primary.text-primary-foreground.focus-visible\\:ring-2",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has insufficient color contrast of 3.79 (foreground color: #372527, background color: #b76e79, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +         "html": "<span class=\"text-xs font-normal uppercase tracking-wide text-primary-foreground/80\">COP</span>",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           ".text-primary-foreground\\/80",
+    +         ],
+    +       },
+    +     ],
+    +     "tags": Array [
+    +       "cat.color",
+    +       "wcag2aa",
+    +       "wcag143",
+    +       "TTv5",
+    +       "TT13.c",
+    +       "EN-301-549",
+    +       "EN-9.1.4.3",
+    +       "ACT",
+    +       "RGAAv4",
+    +       "RGAA-3.2.1",
+    +     ],
+    +   },
+    + ]
+
+      50 |       );
+      51 |
+    > 52 |       expect(seriousViolations).toEqual([]);
+         |                                 ^
+      53 |     });
+      54 |   }
+      55 | });
+        at C:\servicios-cejas\tests\a11y\home.spec.ts:52:33
+
+    attachment #1: screenshot (image/png) ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+    test-results\a11y-home-accessibility-sm-468cd-s-no-serious-axe-violations-mobile-chrome\test-failed-1.png
+    ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+
+    attachment #2: video (video/webm) ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+    test-results\a11y-home-accessibility-sm-468cd-s-no-serious-axe-violations-mobile-chrome\video-1.webm
+    ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+
+    attachment #3: video (video/webm) ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+    test-results\a11y-home-accessibility-sm-468cd-s-no-serious-axe-violations-mobile-chrome\video.webm
+    ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+
+    Error Context: test-results\a11y-home-accessibility-sm-468cd-s-no-serious-axe-violations-mobile-chrome\error-context.md
+
+  10) [mobile-chrome] ÔÇ║ tests\a11y\home.spec.ts:41:9 ÔÇ║ accessibility smoke ÔÇ║ English Colombia services has no serious axe violations 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  -  1
+    + Received  + 58
+
+    - Array []
+    + Array [
+    +   Object {
+    +     "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+    +     "help": "Elements must meet minimum color contrast ratio thresholds",
+    +     "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=playwright",
+    +     "id": "color-contrast",
+    +     "impact": "serious",
+    +     "nodes": Array [
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "bgColor": "#b76e79",
+    +               "contrastRatio": 3.79,
+    +               "expectedContrastRatio": "4.5:1",
+    +               "fgColor": "#372527",
+    +               "fontSize": "9.0pt (12px)",
+    +               "fontWeight": "normal",
+    +               "messageKey": null,
+    +             },
+    +             "id": "color-contrast",
+    +             "impact": "serious",
+    +             "message": "Element has insufficient color contrast of 3.79 (foreground color: #372527, background color: #b76e79, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<a aria-current=\"page\" class=\"inline-flex min-h-11...\" href=\"/en/services/colombi...\">",
+    +                 "target": Array [
+    +                   ".border-primary.text-primary-foreground.focus-visible\\:ring-2",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has insufficient color contrast of 3.79 (foreground color: #372527, background color: #b76e79, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +         "html": "<span class=\"text-xs font-normal uppercase tracking-wide text-primary-foreground/80\">COP</span>",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           ".text-primary-foreground\\/80",
+    +         ],
+    +       },
+    +     ],
+    +     "tags": Array [
+    +       "cat.color",
+    +       "wcag2aa",
+    +       "wcag143",
+    +       "TTv5",
+    +       "TT13.c",
+    +       "EN-301-549",
+    +       "EN-9.1.4.3",
+    +       "ACT",
+    +       "RGAAv4",
+    +       "RGAA-3.2.1",
+    +     ],
+    +   },
+    + ]
+
+      50 |       );
+      51 |
+    > 52 |       expect(seriousViolations).toEqual([]);
+         |                                 ^
+      53 |     });
+      54 |   }
+      55 | });
+        at C:\servicios-cejas\tests\a11y\home.spec.ts:52:33
+
+    attachment #1: screenshot (image/png) ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+    test-results\a11y-home-accessibility-sm-6c037-s-no-serious-axe-violations-mobile-chrome\test-failed-1.png
+    ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+
+    attachment #2: video (video/webm) ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+    test-results\a11y-home-accessibility-sm-6c037-s-no-serious-axe-violations-mobile-chrome\video-1.webm
+    ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+
+    attachment #3: video (video/webm) ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+    test-results\a11y-home-accessibility-sm-6c037-s-no-serious-axe-violations-mobile-chrome\video.webm
+    ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+
+    Error Context: test-results\a11y-home-accessibility-sm-6c037-s-no-serious-axe-violations-mobile-chrome\error-context.md
+
+  11) [mobile-chrome] ÔÇ║ tests\e2e\foundation.spec.ts:11:7 ÔÇ║ localized foundation ÔÇ║ serves the Spanish home and language switcher 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: getByRole('heading', { level: 1 })
+    Expected substring: "Belleza especializada"
+    Received string:    "Micropigmentaci├│n Avanzada, Formaci├│n Profesional y Jornadas Internacionales"
+    Timeout: 5000ms
+
+    Call log:
+      - Expect "toContainText" with timeout 5000ms
+      - waiting for getByRole('heading', { level: 1 })
+        14 ├ù locator resolved to <h1 class="text-balance font-display text-[1.7rem] leading-[1.12] text-foreground sm:text-5xl lg:text-7xl">Micropigmentaci├│n Avanzada, Formaci├│n ProfesionalÔÇª</h1>
+           - unexpected value "Micropigmentaci├│n Avanzada, Formaci├│n Profesional y Jornadas Internacionales"
+
+
+      20 |     await expect(page).toHaveTitle(/Cejas Internacionales/);
+      21 |     await expect(page.locator("html")).toHaveAttribute("lang", "es");
+    > 22 |     await expect(page.getByRole("heading", { level: 1 })).toContainText(
+         |                                                           ^
+      23 |       "Belleza especializada",
+      24 |     );
+      25 |     const viewport = page.viewportSize();
+        at C:\servicios-cejas\tests\e2e\foundation.spec.ts:22:59
+
+    attachment #1: screenshot (image/png) ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+    test-results\e2e-foundation-localized-f-a5eea--home-and-language-switcher-mobile-chrome\test-failed-1.png
+    ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+
+    attachment #2: video (video/webm) ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+    test-results\e2e-foundation-localized-f-a5eea--home-and-language-switcher-mobile-chrome\video.webm
+    ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+
+    Error Context: test-results\e2e-foundation-localized-f-a5eea--home-and-language-switcher-mobile-chrome\error-context.md
+
+  12) [mobile-chrome] ÔÇ║ tests\e2e\foundation.spec.ts:54:7 ÔÇ║ localized foundation ÔÇ║ opens the WhatsApp chooser with Colombia and Spain options 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('button', { name: 'Contacta conmigo' }).first()
+        - locator resolved to <button type="button" data-size="default" data-state="closed" aria-expanded="false" data-variant="default" aria-haspopup="dialog" data-slot="dialog-trigger" class="group/button inline-flex w-auto shrink-0 items-center justify-center rounded-full border border-transparent bg-clip-padding text-sm font-semibold whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/40 active:not-aria-[haspopup]:translate-y-px disabled:pointer-eventÔÇª>ÔÇª</button>
+      - attempting click action
+        - waiting for element to be visible, enabled and stable
+        - element is visible, enabled and stable
+        - scrolling into view if needed
+        - done scrolling
+        - <div class="relative isolate max-w-full overflow-x-clip before:absolute before:right-0 before:top-0 before:h-36 before:w-36 before:rotate-12 before:bg-primary/30 before:content-[''] after:absolute after:bottom-0 after:left-0 after:h-24 after:w-36 after:-rotate-6 after:bg-primary-soft/70 after:content-[''] md:before:-right-6 md:before:h-32 md:before:w-32 md:before:bg-primary/20 md:after:-left-6 md:after:h-24 md:after:w-40 md:after:bg-primary-soft/55">ÔÇª</div> intercepts pointer events
+      - retrying click action
+        - waiting for element to be visible, enabled and stable
+        - element is visible, enabled and stable
+        - scrolling into view if needed
+        - done scrolling
+        - <button data-slot="button" data-size="default" data-variant="ghost" class="group/button inline-flex w-auto shrink-0 items-center justify-center rounded-full border border-transparent bg-clip-padding text-sm font-semibold whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/40 active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalÔÇª>Configurar</button> from <section role="region" aria-live="polite" aria-labelledby="cookie-consent-title" aria-describedby="cookie-consent-description" class="fixed inset-x-0 bottom-0 z-50 border-t border-primary/20 bg-background/98 px-4 py-3 shadow-soft backdrop-blur sm:py-4">ÔÇª</section> subtree intercepts pointer events
+      - retrying click action
+        - waiting 20ms
+        - waiting for element to be visible, enabled and stable
+        - element is visible, enabled and stable
+        - scrolling into view if needed
+        - done scrolling
+        - <div class="relative isolate max-w-full overflow-x-clip before:absolute before:right-0 before:top-0 before:h-36 before:w-36 before:rotate-12 before:bg-primary/30 before:content-[''] after:absolute after:bottom-0 after:left-0 after:h-24 after:w-36 after:-rotate-6 after:bg-primary-soft/70 after:content-[''] md:before:-right-6 md:before:h-32 md:before:w-32 md:before:bg-primary/20 md:after:-left-6 md:after:h-24 md:after:w-40 md:after:bg-primary-soft/55">ÔÇª</div> intercepts pointer events
+      2 ├ù retrying click action
+          - waiting 100ms
+          - waiting for element to be visible, enabled and stable
+          - element is visible, enabled and stable
+          - scrolling into view if needed
+          - done scrolling
+          - <div class="mx-auto flex max-w-7xl items-center justify-between gap-3 px-5 py-2.5 sm:px-8 sm:py-3">ÔÇª</div> from <header class="sticky top-0 z-40 border-b border-primary/15 bg-background/92 shadow-soft backdrop-blur-xl supports-backdrop-filter:bg-background/86">ÔÇª</header> subtree intercepts pointer events
+      13 ├ù retrying click action
+           - waiting 500ms
+           - waiting for element to be visible, enabled and stable
+           - element is visible, enabled and stable
+           - scrolling into view if needed
+           - done scrolling
+           - <button data-slot="button" data-size="default" data-variant="ghost" class="group/button inline-flex w-auto shrink-0 items-center justify-center rounded-full border border-transparent bg-clip-padding text-sm font-semibold whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/40 active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalÔÇª>Configurar</button> from <section role="region" aria-live="polite" aria-labelledby="cookie-consent-title" aria-describedby="cookie-consent-description" class="fixed inset-x-0 bottom-0 z-50 border-t border-primary/20 bg-background/98 px-4 py-3 shadow-soft backdrop-blur sm:py-4">ÔÇª</section> subtree intercepts pointer events
+         - retrying click action
+           - waiting 500ms
+           - waiting for element to be visible, enabled and stable
+           - element is visible, enabled and stable
+           - scrolling into view if needed
+           - done scrolling
+           - <div class="relative isolate max-w-full overflow-x-clip before:absolute before:right-0 before:top-0 before:h-36 before:w-36 before:rotate-12 before:bg-primary/30 before:content-[''] after:absolute after:bottom-0 after:left-0 after:h-24 after:w-36 after:-rotate-6 after:bg-primary-soft/70 after:content-[''] md:before:-right-6 md:before:h-32 md:before:w-32 md:before:bg-primary/20 md:after:-left-6 md:after:h-24 md:after:w-40 md:after:bg-primary-soft/55">ÔÇª</div> intercepts pointer events
+         - retrying click action
+           - waiting 500ms
+           - waiting for element to be visible, enabled and stable
+           - element is visible, enabled and stable
+           - scrolling into view if needed
+           - done scrolling
+           - <div class="mx-auto flex max-w-7xl items-center justify-between gap-3 px-5 py-2.5 sm:px-8 sm:py-3">ÔÇª</div> from <header class="sticky top-0 z-40 border-b border-primary/15 bg-background/92 shadow-soft backdrop-blur-xl supports-backdrop-filter:bg-background/86">ÔÇª</header> subtree intercepts pointer events
+         - retrying click action
+           - waiting 500ms
+           - waiting for element to be visible, enabled and stable
+           - element is visible, enabled and stable
+           - scrolling into view if needed
+           - done scrolling
+           - <div class="mx-auto flex max-w-7xl items-center justify-between gap-3 px-5 py-2.5 sm:px-8 sm:py-3">ÔÇª</div> from <header class="sticky top-0 z-40 border-b border-primary/15 bg-background/92 shadow-soft backdrop-blur-xl supports-backdrop-filter:bg-background/86">ÔÇª</header> subtree intercepts pointer events
+      - retrying click action
+        - waiting 500ms
+        - waiting for element to be visible, enabled and stable
+        - element is visible, enabled and stable
+        - scrolling into view if needed
+        - done scrolling
+        - <button data-slot="button" data-size="default" data-variant="ghost" class="group/button inline-flex w-auto shrink-0 items-center justify-center rounded-full border border-transparent bg-clip-padding text-sm font-semibold whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/40 active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalÔÇª>Configurar</button> from <section role="region" aria-live="polite" aria-labelledby="cookie-consent-title" aria-describedby="cookie-consent-description" class="fixed inset-x-0 bottom-0 z-50 border-t border-primary/20 bg-background/98 px-4 py-3 shadow-soft backdrop-blur sm:py-4">ÔÇª</section> subtree intercepts pointer events
+      - retrying click action
+        - waiting 500ms
+        - waiting for element to be visible, enabled and stable
+        - element is visible, enabled and stable
+        - scrolling into view if needed
+        - done scrolling
+        - <div class="relative isolate max-w-full overflow-x-clip before:absolute before:right-0 before:top-0 before:h-36 before:w-36 before:rotate-12 before:bg-primary/30 before:content-[''] after:absolute after:bottom-0 after:left-0 after:h-24 after:w-36 after:-rotate-6 after:bg-primary-soft/70 after:content-[''] md:before:-right-6 md:before:h-32 md:before:w-32 md:before:bg-primary/20 md:after:-left-6 md:after:h-24 md:after:w-40 md:after:bg-primary-soft/55">ÔÇª</div> intercepts pointer events
+      - retrying click action
+        - waiting 500ms
+        - waiting for element to be visible, enabled and stable
+        - element is visible, enabled and stable
+        - scrolling into view if needed
+        - done scrolling
+        - <div class="mx-auto flex max-w-7xl items-center justify-between gap-3 px-5 py-2.5 sm:px-8 sm:py-3">ÔÇª</div> from <header class="sticky top-0 z-40 border-b border-primary/15 bg-background/92 shadow-soft backdrop-blur-xl supports-backdrop-filter:bg-background/86">ÔÇª</header> subtree intercepts pointer events
+      - retrying click action
+        - waiting 500ms
+
+
+      56 |   }) => {
+      57 |     await page.goto("/es");
+    > 58 |     await page.getByRole("button", { name: "Contacta conmigo" }).first().click();
+         |                                                                          ^
+      59 |
+      60 |     const dialog = page.getByRole("dialog", {
+      61 |       name: "Elige el WhatsApp de contacto",
+        at C:\servicios-cejas\tests\e2e\foundation.spec.ts:58:74
+
+    attachment #1: screenshot (image/png) ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+    test-results\e2e-foundation-localized-f-de604--Colombia-and-Spain-options-mobile-chrome\test-failed-1.png
+    ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+
+    attachment #2: video (video/webm) ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+    test-results\e2e-foundation-localized-f-de604--Colombia-and-Spain-options-mobile-chrome\video.webm
+    ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+
+    Error Context: test-results\e2e-foundation-localized-f-de604--Colombia-and-Spain-options-mobile-chrome\error-context.md
+
+  13) [mobile-chrome] ÔÇ║ tests\e2e\foundation.spec.ts:108:7 ÔÇ║ localized foundation ÔÇ║ preserves routed pages through browser back and forward 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: getByRole('heading', { level: 1 })
+    Expected substring: "Elige el mercado"
+    Received string:    "Servicios por pa├¡s"
+    Timeout: 5000ms
+
+    Call log:
+      - Expect "toContainText" with timeout 5000ms
+      - waiting for getByRole('heading', { level: 1 })
+        14 ├ù locator resolved to <h1 id="page-hero-title" class="text-balance font-display text-[1.75rem] leading-[1.1] text-foreground sm:text-6xl sm:leading-[1.02] lg:text-7xl">Servicios por pa├¡s</h1>
+           - unexpected value "Servicios por pa├¡s"
+
+
+      118 |     await page.getByRole("link", { name: "Servicios" }).first().click();
+      119 |     await page.waitForURL(/\/es\/servicios$/);
+    > 120 |     await expect(page.getByRole("heading", { level: 1 })).toContainText(
+          |                                                           ^
+      121 |       "Elige el mercado",
+      122 |     );
+      123 |
+        at C:\servicios-cejas\tests\e2e\foundation.spec.ts:120:59
+
+    attachment #1: screenshot (image/png) ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+    test-results\e2e-foundation-localized-f-c7608-gh-browser-back-and-forward-mobile-chrome\test-failed-1.png
+    ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+
+    attachment #2: video (video/webm) ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+    test-results\e2e-foundation-localized-f-c7608-gh-browser-back-and-forward-mobile-chrome\video.webm
+    ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+
+    Error Context: test-results\e2e-foundation-localized-f-c7608-gh-browser-back-and-forward-mobile-chrome\error-context.md
+
+  14) [mobile-chrome] ÔÇ║ tests\e2e\vertical-slice.spec.ts:12:7 ÔÇ║ Colombia vertical slice ÔÇ║ serves Colombia services in Spanish with one catalog download and Colombia WhatsApp 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: locator('[data-slot="service-card"]').first()
+    Expected pattern: /COP|\$/
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toContainText" with timeout 5000ms
+      - waiting for locator('[data-slot="service-card"]').first()
+
+
+      33 |     await expect(
+      34 |       page.locator('[data-slot="service-card"]').first(),
+    > 35 |     ).toContainText(/COP|\$/);
+         |       ^
+      36 |     await expect(
+      37 |       page.getByRole("link", { name: "Contacta conmigo" }),
+      38 |     ).toHaveAttribute("href", /573167742299/);
+        at C:\servicios-cejas\tests\e2e\vertical-slice.spec.ts:35:7
+
+    attachment #1: screenshot (image/png) ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+    test-results\e2e-vertical-slice-Colombi-de1bc-nload-and-Colombia-WhatsApp-mobile-chrome\test-failed-1.png
+    ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+
+    attachment #2: video (video/webm) ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+    test-results\e2e-vertical-slice-Colombi-de1bc-nload-and-Colombia-WhatsApp-mobile-chrome\video.webm
+    ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+
+    Error Context: test-results\e2e-vertical-slice-Colombi-de1bc-nload-and-Colombia-WhatsApp-mobile-chrome\error-context.md
+
+  15) [mobile-chrome] ÔÇ║ tests\e2e\vertical-slice.spec.ts:132:7 ÔÇ║ services by market ÔÇ║ keeps Switzerland services in CHF and excludes non-confirmed services 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: locator('[data-slot="service-card"]').filter({ hasText: /Refuerzo cejas h[i├¡]bridas/ })
+    Expected pattern: /150\s*CHF|CHF\s*150/
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toContainText" with timeout 5000ms
+      - waiting for locator('[data-slot="service-card"]').filter({ hasText: /Refuerzo cejas h[i├¡]bridas/ })
+
+
+      153 |         .locator('[data-slot="service-card"]')
+      154 |         .filter({ hasText: /Refuerzo cejas h[i├¡]bridas/ }),
+    > 155 |     ).toContainText(/150\s*CHF|CHF\s*150/);
+          |       ^
+      156 |     await expect(
+      157 |       page.getByRole("link", { name: "Contacta conmigo" }),
+      158 |     ).toHaveAttribute("href", /34603804837/);
+        at C:\servicios-cejas\tests\e2e\vertical-slice.spec.ts:155:7
+
+    attachment #1: screenshot (image/png) ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+    test-results\e2e-vertical-slice-service-ec9d3-udes-non-confirmed-services-mobile-chrome\test-failed-1.png
+    ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+
+    attachment #2: video (video/webm) ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+    test-results\e2e-vertical-slice-service-ec9d3-udes-non-confirmed-services-mobile-chrome\video.webm
+    ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+
+    Error Context: test-results\e2e-vertical-slice-service-ec9d3-udes-non-confirmed-services-mobile-chrome\error-context.md
+
+  16) [mobile-chrome] ÔÇ║ tests\e2e\vertical-slice.spec.ts:161:7 ÔÇ║ services by market ÔÇ║ serves service detail with contextual data, schema and equivalent language switch 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator:  getByText('Duraci├│n de cita').first()
+    Expected: visible
+    Received: hidden
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for getByText('Duraci├│n de cita').first()
+        13 ├ù locator resolved to <dt class="text-sm font-medium text-muted-foreground">Duraci├│n de cita</dt>
+           - unexpected value "hidden"
+
+
+      170 |       }),
+      171 |     ).toBeVisible();
+    > 172 |     await expect(page.getByText("Duraci├│n de cita").first()).toBeVisible();
+          |                                                              ^
+      173 |     await expect(page.getByText(/COP|\$/).first()).toBeVisible();
+      174 |     await expect(
+      175 |       page.getByRole("link", { name: "Contacta conmigo" }).first(),
+        at C:\servicios-cejas\tests\e2e\vertical-slice.spec.ts:172:62
+
+    attachment #1: screenshot (image/png) ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+    test-results\e2e-vertical-slice-service-f6304--equivalent-language-switch-mobile-chrome\test-failed-1.png
+    ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+
+    attachment #2: video (video/webm) ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+    test-results\e2e-vertical-slice-service-f6304--equivalent-language-switch-mobile-chrome\video.webm
+    ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+
+    Error Context: test-results\e2e-vertical-slice-service-f6304--equivalent-language-switch-mobile-chrome\error-context.md
+
+  17) [mobile-chrome] ÔÇ║ tests\e2e\vertical-slice.spec.ts:250:7 ÔÇ║ professional training ÔÇ║ lists courses with PDFs and WhatsApp date CTA 
+
+    Error: expect(locator).toHaveCount(expected) failed
+
+    Locator:  locator('[data-slot="course-card"]')
+    Expected: 5
+    Received: 0
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveCount" with timeout 5000ms
+      - waiting for locator('[data-slot="course-card"]')
+        14 ├ù locator resolved to 0 elements
+           - unexpected value "0"
+
+
+      270 |
+      271 |     const courseCards = page.locator('[data-slot="course-card"]');
+    > 272 |     await expect(courseCards).toHaveCount(5);
+          |                               ^
+      273 |     await expect(courseCards.locator('[data-slot="course-image"]')).toHaveCount(5);
+      274 |   });
+      275 |
+        at C:\servicios-cejas\tests\e2e\vertical-slice.spec.ts:272:31
+
+    attachment #1: screenshot (image/png) ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+    test-results\e2e-vertical-slice-profess-caff1--PDFs-and-WhatsApp-date-CTA-mobile-chrome\test-failed-1.png
+    ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+
+    attachment #2: video (video/webm) ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+    test-results\e2e-vertical-slice-profess-caff1--PDFs-and-WhatsApp-date-CTA-mobile-chrome\video.webm
+    ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+
+    Error Context: test-results\e2e-vertical-slice-profess-caff1--PDFs-and-WhatsApp-date-CTA-mobile-chrome\error-context.md
+
+  18) [mobile-chrome] ÔÇ║ tests\e2e\vertical-slice.spec.ts:460:7 ÔÇ║ journeys and animated map ÔÇ║ keeps journeys responsive, keyboard usable and language-equivalent 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('heading', { name: 'Cali studio and appointments in selected cities', level: 1 })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for getByRole('heading', { name: 'Cali studio and appointments in selected cities', level: 1 })
+
+
+      501 |         name: "Cali studio and appointments in selected cities",
+      502 |       }),
+    > 503 |     ).toBeVisible();
+          |       ^
+      504 |   });
+      505 | });
+      506 |
+        at C:\servicios-cejas\tests\e2e\vertical-slice.spec.ts:503:7
+
+    attachment #1: screenshot (image/png) ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+    test-results\e2e-vertical-slice-journey-92f48-ble-and-language-equivalent-mobile-chrome\test-failed-1.png
+    ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+
+    attachment #2: video (video/webm) ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+    test-results\e2e-vertical-slice-journey-92f48-ble-and-language-equivalent-mobile-chrome\video.webm
+    ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+
+    Error Context: test-results\e2e-vertical-slice-journey-92f48-ble-and-language-equivalent-mobile-chrome\error-context.md
+
+  18 failed
+    [chromium-desktop] ÔÇ║ tests\a11y\home.spec.ts:41:9 ÔÇ║ accessibility smoke ÔÇ║ Spanish Colombia services has no serious axe violations 
+    [chromium-desktop] ÔÇ║ tests\a11y\home.spec.ts:41:9 ÔÇ║ accessibility smoke ÔÇ║ English Colombia services has no serious axe violations 
+    [chromium-desktop] ÔÇ║ tests\e2e\foundation.spec.ts:11:7 ÔÇ║ localized foundation ÔÇ║ serves the Spanish home and language switcher 
+    [chromium-desktop] ÔÇ║ tests\e2e\foundation.spec.ts:108:7 ÔÇ║ localized foundation ÔÇ║ preserves routed pages through browser back and forward 
+    [chromium-desktop] ÔÇ║ tests\e2e\vertical-slice.spec.ts:12:7 ÔÇ║ Colombia vertical slice ÔÇ║ serves Colombia services in Spanish with one catalog download and Colombia WhatsApp 
+    [chromium-desktop] ÔÇ║ tests\e2e\vertical-slice.spec.ts:132:7 ÔÇ║ services by market ÔÇ║ keeps Switzerland services in CHF and excludes non-confirmed services 
+    [chromium-desktop] ÔÇ║ tests\e2e\vertical-slice.spec.ts:250:7 ÔÇ║ professional training ÔÇ║ lists courses with PDFs and WhatsApp date CTA 
+    [chromium-desktop] ÔÇ║ tests\e2e\vertical-slice.spec.ts:460:7 ÔÇ║ journeys and animated map ÔÇ║ keeps journeys responsive, keyboard usable and language-equivalent 
+    [mobile-chrome] ÔÇ║ tests\a11y\home.spec.ts:41:9 ÔÇ║ accessibility smoke ÔÇ║ Spanish Colombia services has no serious axe violations 
+    [mobile-chrome] ÔÇ║ tests\a11y\home.spec.ts:41:9 ÔÇ║ accessibility smoke ÔÇ║ English Colombia services has no serious axe violations 
+    [mobile-chrome] ÔÇ║ tests\e2e\foundation.spec.ts:11:7 ÔÇ║ localized foundation ÔÇ║ serves the Spanish home and language switcher 
+    [mobile-chrome] ÔÇ║ tests\e2e\foundation.spec.ts:54:7 ÔÇ║ localized foundation ÔÇ║ opens the WhatsApp chooser with Colombia and Spain options 
+    [mobile-chrome] ÔÇ║ tests\e2e\foundation.spec.ts:108:7 ÔÇ║ localized foundation ÔÇ║ preserves routed pages through browser back and forward 
+    [mobile-chrome] ÔÇ║ tests\e2e\vertical-slice.spec.ts:12:7 ÔÇ║ Colombia vertical slice ÔÇ║ serves Colombia services in Spanish with one catalog download and Colombia WhatsApp 
+    [mobile-chrome] ÔÇ║ tests\e2e\vertical-slice.spec.ts:132:7 ÔÇ║ services by market ÔÇ║ keeps Switzerland services in CHF and excludes non-confirmed services 
+    [mobile-chrome] ÔÇ║ tests\e2e\vertical-slice.spec.ts:161:7 ÔÇ║ services by market ÔÇ║ serves service detail with contextual data, schema and equivalent language switch 
+    [mobile-chrome] ÔÇ║ tests\e2e\vertical-slice.spec.ts:250:7 ÔÇ║ professional training ÔÇ║ lists courses with PDFs and WhatsApp date CTA 
+    [mobile-chrome] ÔÇ║ tests\e2e\vertical-slice.spec.ts:460:7 ÔÇ║ journeys and animated map ÔÇ║ keeps journeys responsive, keyboard usable and language-equivalent 
+  140 passed (1.8m)
