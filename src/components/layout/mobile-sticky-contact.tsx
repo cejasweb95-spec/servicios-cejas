@@ -77,11 +77,11 @@ export function MobileStickyContact({
   return (
     <div
       className={cn(
-        "fixed inset-x-0 bottom-0 z-30 border-t border-primary/25 bg-surface-strong/95 shadow-elevated backdrop-blur-xl",
-        "pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-3 xl:hidden",
+        "pointer-events-none fixed inset-x-0 bottom-0 z-30 xl:hidden",
+        "pb-[max(1rem,env(safe-area-inset-bottom))]",
       )}
     >
-      <div className="mx-auto flex max-w-7xl px-5">
+      <div className="mx-auto flex max-w-7xl justify-end px-5 sm:px-8">
         <WhatsAppChooser
           closeLabel={whatsapp.closeLabel}
           description={whatsapp.description}
@@ -89,7 +89,11 @@ export function MobileStickyContact({
           title={whatsapp.title}
           triggerLabel={contactLabel}
         >
-          <Button className="min-h-12 w-full shadow-soft" variant="default">
+          <Button
+            className="pointer-events-auto shadow-elevated"
+            size="sm"
+            variant="default"
+          >
             <MessageCircle aria-hidden="true" data-icon="inline-start" />
             {contactLabel}
           </Button>

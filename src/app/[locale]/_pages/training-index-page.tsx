@@ -1,13 +1,16 @@
 import Image from "next/image";
+import { ArrowUpRight } from "lucide-react";
 import { notFound } from "next/navigation";
 
-import { CourseCard } from "@/components/domain/course-card";
+import { CourseEditorialFeature } from "@/components/domain/course-editorial-feature";
 import { WhatsAppChooser } from "@/components/domain/whatsapp-chooser";
+import { Reveal } from "@/components/motion/reveal";
+import { StaggerList, StaggerListItem } from "@/components/motion/stagger-list";
 import { Breadcrumbs } from "@/components/navigation/breadcrumbs";
 import { Container } from "@/components/primitives/container";
 import { PageHero } from "@/components/primitives/page-hero";
+import { RoseWash } from "@/components/primitives/rose-wash";
 import { Section } from "@/components/primitives/section";
-import { StaggerList, StaggerListItem } from "@/components/motion/stagger-list";
 import { JsonLd } from "@/components/seo/json-ld";
 import type { Locale } from "@/i18n/routing";
 import {
@@ -30,6 +33,7 @@ type TrainingIndexCopy = {
   homeLabel: string;
   masterclassDescription: string;
   masterclassTitle: string;
+  modulesTitle: string;
   nextDateLabel: string;
   professionalDescription: string;
   professionalTitle: string;
@@ -62,11 +66,7 @@ export function TrainingIndexPage({
   const courses = getCourses(locale);
   const heroImage = getMediaAssetById("xiomara-formadora-tablet", locale);
 
-  if (
-    !heroImage?.publicPath ||
-    !heroImage.width ||
-    !heroImage.height
-  ) {
+  if (!heroImage?.publicPath || !heroImage.width || !heroImage.height) {
     notFound();
   }
   const downloads = getDownloads(locale).filter(
@@ -93,7 +93,14 @@ export function TrainingIndexPage({
     title: copy.title,
   });
 
-  const renderCourseCard = (course: (typeof courses)[number]) => {
+  const renderEditorialCourse = (
+    course: (typeof courses)[number],
+    options: {
+      featured?: boolean;
+      reverse?: boolean;
+      variant?: "showcase" | "compact";
+    } = {},
+  ) => {
     const download = downloadByCourseId.get(course.downloadId);
     const image = getMediaAssetById(course.imageId, locale);
 
@@ -102,21 +109,26 @@ export function TrainingIndexPage({
     }
 
     return (
-      <CourseCard
+      <CourseEditorialFeature
         certification={course.certification}
         detailHref={buildCoursePath(locale, course.slug)}
         detailLabel={copy.courseDetailLabel}
         downloadHref={download?.publicPath}
         downloadLabel={download ? copy.downloadLabel : undefined}
         duration={course.duration.label}
+        featured={options.featured}
         image={{
           alt: image.alt,
           height: image.height,
           src: image.publicPath,
           width: image.width,
         }}
+        modules={course.modules}
+        modulesTitle={copy.modulesTitle}
+        reverse={options.reverse}
         summary={course.summary}
         title={course.name}
+        variant={options.variant}
       />
     );
   };
@@ -136,16 +148,21 @@ export function TrainingIndexPage({
           />
         }
         aside={
-          <div className="relative aspect-[3/4] overflow-hidden rounded-2xl bg-surface">
-            <Image
-              alt={heroImage.alt}
-              className="h-full w-full object-cover object-top"
-              height={heroImage.height}
-              priority
-              sizes="(min-width: 1024px) 34vw, 92vw"
-              src={heroImage.publicPath}
-              width={heroImage.width}
-            />
+          <div className="relative overflow-hidden rounded-2xl border border-primary/15 bg-surface shadow-soft">
+            <div className="relative aspect-[3/4]">
+              <Image
+                alt={heroImage.alt}
+                className="h-full w-full object-cover object-top"
+                fill
+                priority
+                sizes="(min-width: 1024px) 34vw, 92vw"
+                src={heroImage.publicPath}
+              />
+              <span
+                aria-hidden="true"
+                className="absolute inset-0 bg-gradient-to-t from-foreground/30 via-transparent to-transparent"
+              />
+            </div>
           </div>
         }
         description={copy.description}
@@ -154,80 +171,105 @@ export function TrainingIndexPage({
       />
 
       <Section tone="muted">
-        <Container className="grid gap-8">
+        <Container className="grid gap-12">
           <Breadcrumbs
             items={[{ label: copy.homeLabel, href: "/" }, { label: copy.title }]}
             label={copy.breadcrumbsLabel}
           />
 
           <section aria-labelledby="professional-training-title">
-            <div className="max-w-3xl">
+            <div className="max-w-3xl border-l-4 border-primary pl-5">
               <h2
-                className="font-display text-4xl leading-tight text-foreground"
+                className="font-display text-4xl leading-tight text-foreground sm:text-5xl"
                 id="professional-training-title"
               >
                 {copy.professionalTitle}
               </h2>
-              <p className="mt-3 text-base leading-7 text-muted-foreground">
+              <p className="mt-4 text-base leading-8 text-muted-foreground">
                 {copy.professionalDescription}
               </p>
             </div>
-            <StaggerList className="mt-7 grid gap-5 lg:grid-cols-2">
-              {professionalCourses.map((course) => (
+            <StaggerList className="mt-10 grid gap-14">
+              {professionalCourses.map((course, index) => (
                 <StaggerListItem key={course.id}>
-                  {renderCourseCard(course)}
+                  <Reveal>
+                    {renderEditorialCourse(course, {
+                      featured: index === 0,
+                      reverse: index % 2 === 1,
+                      variant: "showcase",
+                    })}
+                  </Reveal>
                 </StaggerListItem>
               ))}
             </StaggerList>
-          </section>
-
-          <section aria-labelledby="masterclass-training-title">
-            <div className="max-w-3xl border-t border-primary/30 pt-8">
-              <h2
-                className="font-display text-4xl leading-tight text-foreground"
-                id="masterclass-training-title"
-              >
-                {copy.masterclassTitle}
-              </h2>
-              <p className="mt-3 text-base leading-7 text-muted-foreground">
-                {copy.masterclassDescription}
-              </p>
-            </div>
-            <StaggerList className="mt-7 grid gap-5 lg:grid-cols-2">
-              {masterclasses.map((course) => (
-                <StaggerListItem key={course.id}>
-                  {renderCourseCard(course)}
-                </StaggerListItem>
-              ))}
-            </StaggerList>
-          </section>
-
-          <section
-            aria-labelledby="training-next-date"
-            className="rounded-2xl bg-primary-soft p-6"
-          >
-            <div className="grid gap-5 md:grid-cols-[1fr_auto] md:items-center">
-              <div>
-                <h2
-                  className="font-display text-3xl leading-tight text-foreground"
-                  id="training-next-date"
-                >
-                  {copy.nextDateLabel}
-                </h2>
-                <p className="mt-3 text-sm leading-6 text-muted-foreground">
-                  {copy.description}
-                </p>
-              </div>
-              <WhatsAppChooser
-                closeLabel={whatsapp.closeLabel}
-                description={whatsapp.description}
-                targets={whatsapp.targets}
-                title={whatsapp.title}
-                triggerLabel={copy.nextDateLabel}
-              />
-            </div>
           </section>
         </Container>
+      </Section>
+
+      <Section tone="rose">
+        <RoseWash accent="band-left">
+          <Container className="grid gap-10">
+            <section aria-labelledby="masterclass-training-title">
+              <div className="max-w-3xl border-l-4 border-primary pl-5">
+                <h2
+                  className="font-display text-4xl leading-tight text-foreground sm:text-5xl"
+                  id="masterclass-training-title"
+                >
+                  {copy.masterclassTitle}
+                </h2>
+                <p className="mt-4 text-base leading-8 text-foreground/80">
+                  {copy.masterclassDescription}
+                </p>
+              </div>
+              <StaggerList className="mt-10 grid gap-10">
+                {masterclasses.map((course, index) => (
+                  <StaggerListItem key={course.id}>
+                    <Reveal>
+                      <div
+                        className={
+                          index > 0
+                            ? "border-t border-primary/25 pt-10"
+                            : undefined
+                        }
+                      >
+                        {renderEditorialCourse(course, {
+                          reverse: index % 2 === 1,
+                          variant: "compact",
+                        })}
+                      </div>
+                    </Reveal>
+                  </StaggerListItem>
+                ))}
+              </StaggerList>
+            </section>
+
+            <section
+              aria-labelledby="training-next-date"
+              className="rounded-2xl border border-primary/20 bg-surface/90 p-6 shadow-soft backdrop-blur-sm"
+            >
+              <div className="grid gap-5 md:grid-cols-[1fr_auto] md:items-center">
+                <div className="max-w-2xl">
+                  <h2
+                    className="font-display text-3xl leading-tight text-foreground"
+                    id="training-next-date"
+                  >
+                    {copy.nextDateLabel}
+                  </h2>
+                  <p className="mt-3 text-sm leading-6 text-muted-foreground">
+                    {copy.description}
+                  </p>
+                </div>
+                <WhatsAppChooser
+                  closeLabel={whatsapp.closeLabel}
+                  description={whatsapp.description}
+                  targets={whatsapp.targets}
+                  title={whatsapp.title}
+                  triggerLabel={copy.nextDateLabel}
+                />
+              </div>
+            </section>
+          </Container>
+        </RoseWash>
       </Section>
     </main>
   );

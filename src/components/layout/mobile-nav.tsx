@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowUpRight, Menu } from "lucide-react";
+import { ArrowUpRight, Menu, MessageCircle } from "lucide-react";
 import { useState } from "react";
 
 import { LocaleSwitcher } from "@/components/layout/locale-switcher";
@@ -39,6 +39,8 @@ type MobileNavProps = {
   navLabel: string;
   navItems: ShellNavItem[];
   openLabel: string;
+  secondaryItems: ShellNavItem[];
+  secondaryNavLabel: string;
   title: string;
   whatsapp: {
     closeLabel: string;
@@ -48,6 +50,48 @@ type MobileNavProps = {
   };
 };
 
+function MobileNavLink({
+  active,
+  href,
+  label,
+  onNavigate,
+  size = "primary",
+}: {
+  active: boolean;
+  href: string;
+  label: string;
+  onNavigate: () => void;
+  size?: "primary" | "secondary";
+}) {
+  return (
+    <Link
+      aria-current={active ? "page" : undefined}
+      className={cn(
+        "group flex min-h-10 items-center justify-between gap-3 border-b border-border/80 py-2.5 pl-2.5 pr-1 transition-colors hover:text-primary-text focus-visible:text-primary-text focus-visible:outline-none",
+        size === "primary"
+          ? "font-display text-lg leading-snug"
+          : "text-sm font-medium",
+        active
+          ? "border-l-2 border-l-primary text-primary-text"
+          : "border-l-2 border-l-transparent text-foreground",
+      )}
+      href={href}
+      onClick={onNavigate}
+    >
+      <span>{label}</span>
+      <ArrowUpRight
+        aria-hidden="true"
+        className={cn(
+          "size-4 shrink-0 text-muted-foreground transition-opacity motion-reduce:transition-none",
+          active
+            ? "text-primary opacity-100"
+            : "opacity-35 group-hover:opacity-70",
+        )}
+      />
+    </Link>
+  );
+}
+
 export function MobileNav({
   closeLabel,
   contactLabel,
@@ -56,6 +100,8 @@ export function MobileNav({
   navLabel,
   navItems,
   openLabel,
+  secondaryItems,
+  secondaryNavLabel,
   title,
   whatsapp,
 }: MobileNavProps) {
@@ -63,67 +109,66 @@ export function MobileNav({
   const pathname = usePathname();
 
   const isActive = (href: string) =>
-    href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(`${href}/`);
+    href === "/"
+      ? pathname === "/"
+      : pathname === href || pathname.startsWith(`${href}/`);
+
+  const closeMenu = () => setOpen(false);
 
   return (
-    <Sheet open={open} onOpenChange={setOpen}>
+    <Sheet onOpenChange={setOpen} open={open}>
       <SheetTrigger asChild>
         <Button aria-label={openLabel} size="icon" variant="ghost">
           <Menu aria-hidden="true" />
         </Button>
       </SheetTrigger>
       <SheetContent
-        className="gap-0 bg-surface-strong"
+        className="flex h-full max-h-dvh flex-col gap-0 overflow-hidden bg-surface-strong p-0 sm:max-w-sm"
         closeLabel={closeLabel}
       >
-        <SheetHeader className="px-6 pt-6 pr-16">
-          <p className="text-xs font-bold uppercase tracking-[0.16em] text-primary-text">
-            Cejas Internacionales
-          </p>
-          <SheetTitle className="text-2xl">{title}</SheetTitle>
+        <SheetHeader className="shrink-0 border-b border-border/80 px-5 pt-5 pr-14">
+          <SheetTitle className="text-lg">{title}</SheetTitle>
           <SheetDescription className="sr-only">{navLabel}</SheetDescription>
         </SheetHeader>
 
-        <nav
-          aria-label={navLabel}
-          className="mt-4 flex flex-col px-6"
-        >
-          {navItems.map((item) => {
-            const active = isActive(item.href);
-
-            return (
-              <Link
-                aria-current={active ? "page" : undefined}
-                className={cn(
-                  "group flex items-center justify-between gap-4 border-b border-primary/12 py-4 pl-3 font-display text-2xl leading-tight transition-colors last:border-b-0 hover:text-primary-text focus-visible:text-primary-text focus-visible:outline-none",
-                  active
-                    ? "border-l-4 border-l-primary text-primary-text"
-                    : "border-l-4 border-l-transparent text-foreground",
-                )}
+        <div className="flex-1 overflow-y-auto overscroll-contain px-5">
+          <nav aria-label={navLabel} className="pt-1">
+            {navItems.map((item) => (
+              <MobileNavLink
+                active={isActive(item.href)}
                 href={item.href}
                 key={item.id}
-                onClick={() => setOpen(false)}
-              >
-                <span>{item.label}</span>
-                <ArrowUpRight
-                  aria-hidden="true"
-                  className={cn(
-                    "size-5 shrink-0 -translate-x-1 transition",
-                    active
-                      ? "translate-x-0 text-primary opacity-100"
-                      : "opacity-0 group-hover:translate-x-0 group-hover:opacity-100 motion-reduce:transition-none",
-                  )}
-                />
-              </Link>
-            );
-          })}
-        </nav>
+                label={item.label}
+                onNavigate={closeMenu}
+              />
+            ))}
+          </nav>
 
-        <div className="mt-auto grid gap-4 border-t border-primary/15 px-6 pb-7 pt-6">
+          {secondaryItems.length > 0 ? (
+            <nav aria-label={secondaryNavLabel} className="mt-4 pb-1">
+              <p className="mb-1.5 text-[0.6875rem] font-semibold uppercase tracking-[0.12em] text-muted-foreground">
+                {secondaryNavLabel}
+              </p>
+              {secondaryItems.map((item) => (
+                <MobileNavLink
+                  active={isActive(item.href)}
+                  href={item.href}
+                  key={item.id}
+                  label={item.label}
+                  onNavigate={closeMenu}
+                  size="secondary"
+                />
+              ))}
+            </nav>
+          ) : null}
+        </div>
+
+        <div className="shrink-0 space-y-3 border-t border-border/80 px-5 pb-[max(1.25rem,env(safe-area-inset-bottom))] pt-4">
           <LocaleSwitcher
+            compact
             currentLocale={currentLocale}
             label={languageLabel}
-            onNavigate={() => setOpen(false)}
+            onNavigate={closeMenu}
           />
           <WhatsAppChooser
             closeLabel={whatsapp.closeLabel}
@@ -131,7 +176,12 @@ export function MobileNav({
             targets={whatsapp.targets}
             title={whatsapp.title}
             triggerLabel={contactLabel}
-          />
+          >
+            <Button size="sm" variant="default">
+              <MessageCircle aria-hidden="true" data-icon="inline-start" />
+              {contactLabel}
+            </Button>
+          </WhatsAppChooser>
         </div>
       </SheetContent>
     </Sheet>

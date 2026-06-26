@@ -10,12 +10,19 @@ import { MobileStickyContact } from "@/components/layout/mobile-sticky-contact";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SkipLink } from "@/components/layout/skip-link";
-import { legalNavigation, mainNavigation } from "@/config/navigation";
+import {
+  footerDiscoverNavigationIds,
+  footerResourcesNavigationIds,
+  legalNavigation,
+  mainNavigation,
+  resolveNavItems,
+} from "@/config/navigation";
 import { isLocale, locales, type Locale } from "@/i18n/routing";
 import {
   getLegalProfile,
   getAnalyticsSettings,
   getCookieCategories,
+  getMarkets,
   getMediaAssets,
   getSeoEntry,
   getSocialLinks,
@@ -101,6 +108,24 @@ export default async function LocaleLayout({
     href: item.href[locale],
     label: item.label[locale],
   }));
+  const servicesBase = locale === "es" ? "/servicios" : "/services";
+  const marketItems = getMarkets(locale).map((market) => ({
+    id: market.id,
+    href: `${servicesBase}/${market.slug}`,
+    label: market.shortName,
+  }));
+  const footerNavGroups = [
+    {
+      id: "discover",
+      label: footerT("navGroupDiscover"),
+      items: resolveNavItems(navItems, footerDiscoverNavigationIds),
+    },
+    {
+      id: "resources",
+      label: footerT("navGroupResources"),
+      items: resolveNavItems(navItems, footerResourcesNavigationIds),
+    },
+  ];
   const whatsappTargets = getWhatsAppTargets(locale);
   const whatsapp = {
     closeLabel: whatsappT("close"),
@@ -138,12 +163,14 @@ export default async function LocaleLayout({
                   language: shellT("languageNavigation"),
                   mainNavigation: shellT("mainNavigation"),
                   mobileMenuTitle: shellT("mobileMenuTitle"),
+                  moreNavigation: shellT("moreNavigation"),
                   openMenu: shellT("openMenu"),
+                  secondaryNavigation: shellT("secondaryNavigation"),
                 }}
                 navItems={navItems}
                 whatsapp={whatsapp}
               />
-              <div className="pb-20 xl:pb-0" id="contenido">
+              <div className="pb-6 xl:pb-0" id="contenido">
                 {children}
               </div>
               <SiteFooter
@@ -153,7 +180,7 @@ export default async function LocaleLayout({
                   cookiePreferences: footerT("cookiePreferences"),
                   legal: footerT("legal"),
                   legalData: footerT("legalData"),
-                  navigation: footerT("navigation"),
+                  markets: footerT("markets"),
                   rights: footerT("rights"),
                   social: footerT("social"),
                   studioNote: footerT("studioNote"),
@@ -161,7 +188,8 @@ export default async function LocaleLayout({
                 }}
                 legalItems={legalItems}
                 legalProfile={getLegalProfile(locale)}
-                navItems={navItems}
+                marketItems={marketItems}
+                navGroups={footerNavGroups}
                 socialLinks={getSocialLinks()}
                 whatsappTargets={whatsappTargets}
               />

@@ -7,14 +7,14 @@ import { LocaleSwitcher } from "@/components/layout/locale-switcher";
 import { WhatsAppChooser } from "@/components/domain/whatsapp-chooser";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
+import {
+  primaryNavigationIds,
+  resolveNavItems,
+  secondaryNavigationIds,
+  type ResolvedNavItem,
+} from "@/config/navigation";
 import { type Locale } from "@/i18n/routing";
 import { siteConfig } from "@/config/site";
-
-type ShellNavItem = {
-  id: string;
-  label: string;
-  href: string;
-};
 
 type WhatsAppTarget = {
   id: string;
@@ -39,9 +39,11 @@ type SiteHeaderProps = {
     language: string;
     mainNavigation: string;
     mobileMenuTitle: string;
+    moreNavigation: string;
     openMenu: string;
+    secondaryNavigation: string;
   };
-  navItems: ShellNavItem[];
+  navItems: ResolvedNavItem[];
   whatsapp: {
     closeLabel: string;
     description: string;
@@ -58,22 +60,12 @@ export function SiteHeader({
   navItems,
   whatsapp,
 }: SiteHeaderProps) {
-  // Menú principal reducido a 5 destinos de cliente; cuidados, contacto y
-  // descargas quedan en el footer y en el CTA de WhatsApp.
-  const primaryNavOrder = [
-    "services",
-    "journeys",
-    "training",
-    "results",
-    "about",
-  ] as const;
-  const primaryNavItems = primaryNavOrder
-    .map((id) => navItems.find((item) => item.id === id))
-    .filter((item): item is ShellNavItem => Boolean(item));
+  const primaryNavItems = resolveNavItems(navItems, primaryNavigationIds);
+  const secondaryNavItems = resolveNavItems(navItems, secondaryNavigationIds);
 
   return (
     <header className="sticky top-0 z-40 border-b border-primary/15 bg-background/92 shadow-soft backdrop-blur-xl supports-backdrop-filter:bg-background/86">
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-3 sm:px-8">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-5 py-2.5 sm:px-8 sm:py-3">
         <Link
           aria-label={logo?.alt ?? siteConfig.name}
           className="inline-flex items-center rounded-md focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/40"
@@ -82,7 +74,7 @@ export function SiteHeader({
           {logo ? (
             <Image
               alt={logo.alt}
-              className="h-10 w-auto transition-transform duration-300 motion-reduce:transition-none sm:h-11"
+              className="h-9 w-auto transition-transform duration-300 motion-reduce:transition-none sm:h-10"
               height={logo.height}
               priority
               sizes="220px"
@@ -90,7 +82,7 @@ export function SiteHeader({
               width={logo.width}
             />
           ) : (
-            <span className="font-display text-xl text-foreground">
+            <span className="font-display text-lg text-foreground">
               {siteConfig.name}
             </span>
           )}
@@ -99,6 +91,8 @@ export function SiteHeader({
           currentLocale={currentLocale}
           items={primaryNavItems}
           label={labels.mainNavigation}
+          moreLabel={labels.moreNavigation}
+          secondaryItems={secondaryNavItems}
         />
         <div className="hidden items-center gap-2 xl:flex">
           <LocaleSwitcher currentLocale={currentLocale} label={labels.language} />
@@ -124,6 +118,8 @@ export function SiteHeader({
             navItems={primaryNavItems}
             navLabel={labels.mainNavigation}
             openLabel={labels.openMenu}
+            secondaryItems={secondaryNavItems}
+            secondaryNavLabel={labels.secondaryNavigation}
             title={labels.mobileMenuTitle}
             whatsapp={whatsapp}
           />

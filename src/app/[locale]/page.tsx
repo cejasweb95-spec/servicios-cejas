@@ -4,7 +4,7 @@ import { MapPin } from "lucide-react";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
-import { CourseCard } from "@/components/domain/course-card";
+import { CourseEditorialFeature } from "@/components/domain/course-editorial-feature";
 import { EventMap, type EventMapLocation } from "@/components/domain/event-map";
 import { CountryFlag } from "@/components/primitives/country-flag";
 import { WhatsAppChooser } from "@/components/domain/whatsapp-chooser";
@@ -39,7 +39,7 @@ import {
   getWhatsAppTargets,
 } from "@/lib/content/queries";
 import { buildWhatsAppHref } from "@/lib/whatsapp/build-whatsapp-url";
-import { courseBasePath } from "@/lib/routes/course-routes";
+import { buildCoursePath, courseBasePath } from "@/lib/routes/course-routes";
 import { journeyBasePath } from "@/lib/routes/journey-routes";
 import { aboutBasePath, contactBasePath, resultsBasePath } from "@/lib/routes/static-routes";
 import { buildMarketPath, serviceBasePath } from "@/lib/routes/service-routes";
@@ -413,54 +413,58 @@ export default async function HomePage({ params }: HomePageProps) {
         </Section>
       ) : null}
 
-      <Section id="formaciones" spacing="loose">
-        <Container className="grid gap-8">
-          <div className="max-w-3xl">
-            <Eyebrow className="mb-3 uppercase tracking-[0.14em]">
-              {t("coursesEyebrow")}
-            </Eyebrow>
-            <h2 className="font-display text-4xl leading-tight text-foreground">
-              {t.rich("coursesTitle", { i: italicAccent })}
-            </h2>
-            <p className="mt-4 text-base leading-8 text-muted-foreground">
-              {t("coursesDescription")}
-            </p>
-          </div>
-          <StaggerList className="grid gap-8">
-            {courses.map((course, index) => {
-              const download = courseDownloadById.get(course.downloadId);
+      <Section id="formaciones" spacing="loose" tone="rose">
+        <RoseWash accent="band-right">
+          <Container className="grid gap-10">
+            <div className="max-w-3xl border-l-4 border-primary pl-5">
+              <Eyebrow className="mb-3 uppercase tracking-[0.14em]">
+                {t("coursesEyebrow")}
+              </Eyebrow>
+              <h2 className="font-display text-balance text-4xl leading-tight text-foreground sm:text-5xl">
+                {t.rich("coursesTitle", { i: italicAccent })}
+              </h2>
+              <p className="mt-4 max-w-2xl text-base leading-8 text-foreground/80">
+                {t("coursesDescription")}
+              </p>
+            </div>
+            <StaggerList className="grid gap-12 sm:gap-14">
+              {courses.map((course, index) => {
+                const download = courseDownloadById.get(course.downloadId);
+                const image = getRequiredMedia(course.imageId, locale);
 
-              return (
-                <StaggerListItem key={course.id}>
-                  <div
-                    className={
-                      index % 2 === 1
-                        ? "grid items-center gap-6 border-t border-primary/25 pt-8 lg:grid-cols-[1fr_1.05fr]"
-                        : "grid items-center gap-6 border-t border-primary/25 pt-8 lg:grid-cols-[1.05fr_1fr]"
-                    }
-                  >
-                    <CourseCard
-                      certification={course.certification}
-                      className={index % 2 === 1 ? "lg:order-last" : undefined}
-                      downloadHref={download?.publicPath}
-                      downloadLabel={download ? t("courseDownloadLabel") : undefined}
-                      duration={course.duration.label}
-                      image={getRequiredMedia(course.imageId, locale)}
-                      summary={course.summary}
-                      title={course.name}
-                    />
-                  </div>
-                </StaggerListItem>
-              );
-            })}
-          </StaggerList>
-          <div className="flex flex-wrap gap-3">
-            <WhatsAppChooser {...whatsappProps} triggerLabel={t("coursesCta")} />
-            <ButtonLink href={courseBasePath[locale]} variant="outline">
-              {t("coursesLinkLabel")}
-            </ButtonLink>
-          </div>
-        </Container>
+                return (
+                  <StaggerListItem key={course.id}>
+                    <Reveal>
+                      <CourseEditorialFeature
+                        certification={course.certification}
+                        detailHref={buildCoursePath(locale, course.slug)}
+                        detailLabel={t("courseDetailLabel")}
+                        downloadHref={download?.publicPath}
+                        downloadLabel={
+                          download ? t("courseDownloadLabel") : undefined
+                        }
+                        duration={course.duration.label}
+                        featured={index === 0}
+                        image={image}
+                        modules={course.modules}
+                        modulesTitle={t("courseModulesLabel")}
+                        reverse={index % 2 === 1}
+                        summary={course.summary}
+                        title={course.name}
+                      />
+                    </Reveal>
+                  </StaggerListItem>
+                );
+              })}
+            </StaggerList>
+            <div className="flex flex-wrap gap-3">
+              <WhatsAppChooser {...whatsappProps} triggerLabel={t("coursesCta")} />
+              <ButtonLink href={courseBasePath[locale]} variant="outline">
+                {t("coursesLinkLabel")}
+              </ButtonLink>
+            </div>
+          </Container>
+        </RoseWash>
       </Section>
 
       <Section spacing="loose" tone="muted">

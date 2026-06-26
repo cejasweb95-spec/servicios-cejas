@@ -1,3 +1,4 @@
+import { MessageCircle } from "lucide-react";
 import Image from "next/image";
 
 import { EventMap, type EventMapLocation } from "@/components/domain/event-map";
@@ -6,6 +7,8 @@ import { Breadcrumbs } from "@/components/navigation/breadcrumbs";
 import { Container } from "@/components/primitives/container";
 import { CountryFlag } from "@/components/primitives/country-flag";
 import { PageHero } from "@/components/primitives/page-hero";
+import { RoseWash } from "@/components/primitives/rose-wash";
+import { Reveal } from "@/components/motion/reveal";
 import { Section } from "@/components/primitives/section";
 import { JsonLd } from "@/components/seo/json-ld";
 import { Badge } from "@/components/ui/badge";
@@ -215,7 +218,7 @@ export function JourneysPage({ copy, locale, whatsapp }: JourneysPageProps) {
         title={copy.title}
       />
 
-      <Section id="mapa-jornadas" tone="muted">
+      <Section id="mapa-jornadas" tone="default">
         <Container className="grid gap-8">
           <Breadcrumbs
             items={[{ label: copy.homeLabel, href: "/" }, { label: copy.title }]}
@@ -244,47 +247,60 @@ export function JourneysPage({ copy, locale, whatsapp }: JourneysPageProps) {
         </Container>
       </Section>
 
-      <Section tone="muted">
-        <Container>
-          <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-            <div>
-              <Badge variant="outline">{copy.journeyLabel}</Badge>
-              <h2 className="mt-4 font-display text-4xl leading-tight text-foreground">
-                {copy.availabilityTitle}
-              </h2>
-              <p className="mt-4 text-base leading-7 text-muted-foreground">
-                {copy.availabilityDescription}
-              </p>
-            </div>
-            <div className="grid gap-4 md:grid-cols-2">
-              <section className="rounded-xl border border-primary/15 bg-background p-5">
-                <h3 className="font-display text-2xl leading-tight text-foreground">
-                  {copy.noFixedStudioTitle}
-                </h3>
-                <p className="mt-3 text-sm leading-6 text-muted-foreground">
-                  {copy.noFixedStudioDescription}
-                </p>
-              </section>
-              <section className="rounded-xl border border-primary/15 bg-background p-5">
-                <h3 className="font-display text-2xl leading-tight text-foreground">
-                  {copy.contactLabel}
-                </h3>
-                <p className="mt-3 text-sm leading-6 text-muted-foreground">
-                  {copy.description}
-                </p>
-                <div className="mt-5">
-                  <WhatsAppChooser
-                    closeLabel={whatsapp.closeLabel}
-                    description={whatsapp.description}
-                    targets={getWhatsAppTargets(locale)}
-                    title={whatsapp.title}
-                    triggerLabel={copy.contactLabel}
-                  />
+      <Section tone="rose">
+        <RoseWash accent="band-left">
+          <Container>
+            <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+              <Reveal>
+                <div className="max-w-xl border-l-4 border-primary pl-5">
+                  <Badge variant="outline">{copy.journeyLabel}</Badge>
+                  <h2 className="mt-4 font-display text-4xl leading-tight text-foreground sm:text-5xl">
+                    {copy.availabilityTitle}
+                  </h2>
+                  <p className="mt-4 text-base leading-8 text-foreground/80">
+                    {copy.availabilityDescription}
+                  </p>
                 </div>
-              </section>
+              </Reveal>
+              <Reveal delay={0.06}>
+                <div className="grid gap-0 divide-y divide-primary/20 rounded-2xl border border-primary/20 bg-surface/90 shadow-soft">
+                  <section className="p-6 sm:p-7">
+                    <h3 className="font-display text-2xl leading-tight text-foreground">
+                      {copy.noFixedStudioTitle}
+                    </h3>
+                    <p className="mt-3 text-sm leading-7 text-muted-foreground">
+                      {copy.noFixedStudioDescription}
+                    </p>
+                  </section>
+                  <section className="p-6 sm:p-7">
+                    <div className="flex items-start gap-3">
+                      <span className="grid size-10 shrink-0 place-items-center rounded-full border border-primary/20 bg-primary-soft text-primary-text">
+                        <MessageCircle aria-hidden="true" className="size-4" />
+                      </span>
+                      <div>
+                        <h3 className="font-display text-2xl leading-tight text-foreground">
+                          {copy.contactLabel}
+                        </h3>
+                        <p className="mt-2 text-sm leading-7 text-muted-foreground">
+                          {copy.description}
+                        </p>
+                        <div className="mt-5">
+                          <WhatsAppChooser
+                            closeLabel={whatsapp.closeLabel}
+                            description={whatsapp.description}
+                            targets={getWhatsAppTargets(locale)}
+                            title={whatsapp.title}
+                            triggerLabel={copy.contactLabel}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                </div>
+              </Reveal>
             </div>
-          </div>
-        </Container>
+          </Container>
+        </RoseWash>
       </Section>
     </main>
   );

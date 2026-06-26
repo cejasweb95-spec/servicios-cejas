@@ -3,6 +3,7 @@
 import { motion } from "motion/react";
 import { usePathname } from "next/navigation";
 
+import { DesktopMoreNav } from "@/components/layout/desktop-more-nav";
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
@@ -17,14 +18,28 @@ type DesktopNavProps = {
   currentLocale: Locale;
   items: DesktopNavItem[];
   label: string;
+  moreLabel: string;
+  secondaryItems: DesktopNavItem[];
 };
 
-export function DesktopNav({ currentLocale, items, label }: DesktopNavProps) {
+export function DesktopNav({
+  currentLocale,
+  items,
+  label,
+  moreLabel,
+  secondaryItems,
+}: DesktopNavProps) {
   const pathname = usePathname() || `/${currentLocale}`;
   const localePrefix = `/${currentLocale}`;
   const routePath = pathname.startsWith(localePrefix)
     ? pathname.slice(localePrefix.length) || "/"
     : pathname;
+
+  const secondaryActive = secondaryItems.some(
+    (item) =>
+      routePath === item.href ||
+      (item.href !== "/" && routePath.startsWith(`${item.href}/`)),
+  );
 
   return (
     <nav
@@ -42,7 +57,7 @@ export function DesktopNav({ currentLocale, items, label }: DesktopNavProps) {
               <Link
                 aria-current={active ? "page" : undefined}
                 className={cn(
-                  "relative inline-flex min-h-11 items-center rounded-full px-3 text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/40",
+                  "relative inline-flex min-h-10 items-center rounded-full px-2.5 text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/40",
                   active
                     ? "text-foreground"
                     : "text-muted-foreground hover:bg-muted hover:text-primary-text",
@@ -50,7 +65,7 @@ export function DesktopNav({ currentLocale, items, label }: DesktopNavProps) {
                 href={item.href}
               >
                 {item.label}
-                {active ? (
+                {active && !secondaryActive ? (
                   <motion.span
                     className="absolute inset-x-3 bottom-1 h-0.5 rounded-full bg-primary"
                     layoutId="desktop-navigation-active"
@@ -61,6 +76,15 @@ export function DesktopNav({ currentLocale, items, label }: DesktopNavProps) {
             </li>
           );
         })}
+        {secondaryItems.length > 0 ? (
+          <li className="border-l border-primary/15 pl-0.5">
+            <DesktopMoreNav
+              items={secondaryItems}
+              moreLabel={moreLabel}
+              routePath={routePath}
+            />
+          </li>
+        ) : null}
       </ul>
     </nav>
   );

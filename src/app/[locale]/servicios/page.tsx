@@ -55,6 +55,7 @@ export default async function ServicesPage({ params }: ServicesPageProps) {
         homeLabel: t("homeLabel"),
         title: t("title"),
         description: t("description"),
+        marketCta: t("marketCta"),
         selectorLabel: t("selectorLabel"),
       }}
       locale={locale}

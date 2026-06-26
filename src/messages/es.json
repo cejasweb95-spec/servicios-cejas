@@ -43,6 +43,8 @@
     "coursesTitle": "Formaciones y <i>masterclass</i>",
     "coursesDescription": "Cursos con PDF descargable, duración confirmada y contacto directo por WhatsApp para consultar el programa.",
     "courseDownloadLabel": "Descargar PDF",
+    "courseDetailLabel": "Ver temario",
+    "courseModulesLabel": "Temario",
     "coursesCta": "Consultar por WhatsApp",
     "coursesLinkLabel": "Ver formaciones",
     "downloadsTitle": "Catálogos y PDFs oficiales",
@@ -59,6 +61,7 @@
     "eyebrow": "Catálogo por país",
     "title": "Servicios por país",
     "description": "Cada país tiene su propio catálogo, moneda y precios. Elige tu ubicación para ver los servicios que aplican allí.",
+    "marketCta": "Explorar catálogo",
     "selectorLabel": "Selecciona un país"
   },
   "MarketServices": {
@@ -105,6 +108,7 @@
     "professionalDescription": "Programas intensivos de tres días con teoría, práctica y trabajo con modelo real.",
     "masterclassTitle": "Masterclass de especialización",
     "masterclassDescription": "Formaciones de un día centradas en una técnica concreta, materiales, práctica y desarrollo profesional.",
+    "modulesTitle": "Temario",
     "nextDateLabel": "Consultar próxima fecha"
   },
   "Journeys": {
@@ -465,6 +469,10 @@
     "openMenu": "Abrir menú",
     "closeMenu": "Cerrar menú",
     "mobileMenuTitle": "Menú principal",
+    "mobileMenuSubtitle": "Servicios, formación, jornadas y contacto en un solo lugar.",
+    "moreNavigation": "Más",
+    "secondaryNavigation": "Más secciones",
+    "brandEyebrow": "Cejas Internacionales",
     "contactCta": "Contacta conmigo",
     "cookiesTitle": "Privacidad y cookies",
     "cookiesDescription": "Usamos cookies necesarias para que la web funcione. Las analíticas de GA4 solo se activan si aceptas; puedes rechazar o configurar sin perder acceso.",
@@ -481,10 +489,12 @@
   },
   "Footer": {
     "tagline": "Micropigmentación, belleza especializada y formación profesional.",
+    "navGroupDiscover": "Explorar",
+    "navGroupResources": "Recursos",
+    "markets": "Mercados",
     "legalData": "Datos legales",
     "contact": "Contacto",
     "social": "Redes sociales",
-    "navigation": "Navegación",
     "legal": "Legal",
     "cookiePreferences": "Cambiar preferencias de cookies",
     "studioNote": "Sede física y dirección legal únicamente en Cali, Colombia.",

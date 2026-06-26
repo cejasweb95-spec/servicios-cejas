@@ -61,6 +61,7 @@ export default async function TrainingPage({ params }: TrainingPageProps) {
         homeLabel: t("homeLabel"),
         masterclassDescription: t("masterclassDescription"),
         masterclassTitle: t("masterclassTitle"),
+        modulesTitle: t("modulesTitle"),
         nextDateLabel: t("nextDateLabel"),
         professionalDescription: t("professionalDescription"),
         professionalTitle: t("professionalTitle"),

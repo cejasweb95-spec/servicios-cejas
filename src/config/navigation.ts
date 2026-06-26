@@ -54,6 +54,52 @@ export const mainNavigation = [
   },
 ] satisfies NavigationItem[];
 
+/** Destinos visibles en el header (desktop y hamburguesa). */
+export const primaryNavigationIds = [
+  "services",
+  "journeys",
+  "training",
+  "results",
+  "about",
+] as const;
+
+/** Enlaces secundarios: menú «Más» en desktop y bloque inferior en móvil. */
+export const secondaryNavigationIds = [
+  "aftercare",
+  "contact",
+  "downloads",
+] as const;
+
+export const footerDiscoverNavigationIds = [
+  "home",
+  "services",
+  "training",
+  "journeys",
+  "results",
+  "about",
+] as const;
+
+export const footerResourcesNavigationIds = [
+  "aftercare",
+  "contact",
+  "downloads",
+] as const;
+
+export type ResolvedNavItem = {
+  id: string;
+  label: string;
+  href: string;
+};
+
+export function resolveNavItems(
+  items: ResolvedNavItem[],
+  ids: readonly string[],
+): ResolvedNavItem[] {
+  return ids
+    .map((id) => items.find((item) => item.id === id))
+    .filter((item): item is ResolvedNavItem => Boolean(item));
+}
+
 export const legalNavigation = [
   {
     id: "legal-notice",
