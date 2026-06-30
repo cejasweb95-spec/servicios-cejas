@@ -1,6 +1,8 @@
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test } from "@playwright/test";
 
+import { seedRejectedConsent } from "../helpers/consent";
+
 const routes = [
   { label: "Spanish home", path: "/es" },
   { label: "English home", path: "/en" },
@@ -37,6 +39,10 @@ const routes = [
 ];
 
 test.describe("accessibility smoke", () => {
+  test.beforeEach(async ({ page }) => {
+    await seedRejectedConsent(page);
+  });
+
   for (const route of routes) {
     test(`${route.label} has no serious axe violations`, async ({ page }) => {
       await page.goto(route.path);

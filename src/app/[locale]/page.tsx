@@ -6,14 +6,9 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import { CourseEditorialFeature } from "@/components/domain/course-editorial-feature";
 import { EventMap, type EventMapLocation } from "@/components/domain/event-map";
+import { HomeHero } from "@/components/domain/home-hero";
 import { CountryFlag } from "@/components/primitives/country-flag";
 import { WhatsAppChooser } from "@/components/domain/whatsapp-chooser";
-import {
-  HeroItem,
-  HeroMedia,
-  HeroParallax,
-  HeroStage,
-} from "@/components/motion/hero-reveal";
 import { Reveal } from "@/components/motion/reveal";
 import { StaggerList, StaggerListItem } from "@/components/motion/stagger-list";
 import { Container } from "@/components/primitives/container";
@@ -171,73 +166,22 @@ export default async function HomePage({ params }: HomePageProps) {
         <JsonLd data={data} key={index} />
       ))}
 
-      <Section
-        className="border-b border-primary/20"
-        id="apertura"
-        spacing="loose"
-        tone="strong"
-      >
-        <RoseWash accent="corner">
-          <HeroStage>
-            <Container className="grid min-h-0 items-center gap-8 py-10 sm:gap-10 sm:py-16 lg:min-h-[calc(88dvh-5rem)] lg:grid-cols-[1fr_0.92fr] lg:py-20">
-              <HeroMedia className="relative order-first mx-auto w-full max-w-[20rem] sm:max-w-[26rem] lg:order-none lg:mr-0 lg:max-w-[34rem]">
-                <HeroParallax className="relative aspect-[4/5] overflow-hidden rounded-lg border border-primary/20 bg-surface lg:aspect-[5/6]">
-                  <Image
-                    alt={heroImage.alt}
-                    className="h-full w-full object-cover object-top"
-                    height={heroImage.height}
-                    priority
-                    sizes="(min-width: 1024px) 42vw, 90vw"
-                    src={heroImage.src}
-                    width={heroImage.width}
-                  />
-                </HeroParallax>
-              </HeroMedia>
-
-              <HeroItem className="order-last max-w-3xl lg:order-none">
-                <Eyebrow className="mb-4">{t("heroEyebrow")}</Eyebrow>
-                <h1 className="text-balance font-display text-[1.7rem] leading-[1.12] text-foreground sm:text-5xl lg:text-7xl">
-                  {t("title")}
-                </h1>
-                <p className="mt-5 max-w-2xl text-pretty text-lg leading-8 text-muted-foreground">
-                  {t("heroBio")}
-                </p>
-                <p className="mt-4 max-w-2xl text-pretty text-base leading-7 text-foreground/80">
-                  {t("intro")}
-                </p>
-                <div className="mt-6">
-                  <p className="text-xs font-bold uppercase tracking-[0.14em] text-primary-text">
-                    {t("heroMarketsLabel")}
-                  </p>
-                  <ul className="mt-3 flex flex-wrap gap-2">
-                    {markets.map((market) => (
-                      <li
-                        className="inline-flex min-h-11 items-center gap-2 rounded-full border border-primary/25 bg-surface px-3.5 py-2 text-sm font-semibold text-foreground"
-                        key={market.id}
-                      >
-                        <CountryFlag className="h-3.5 w-5" market={market.id} />
-                        {market.shortName}
-                        <span className="text-xs text-muted-foreground">
-                          {market.currency}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="mt-8 flex flex-wrap gap-3">
-                  <WhatsAppChooser
-                    {...whatsappProps}
-                    triggerLabel={t("primaryCta")}
-                  />
-                  <ButtonLink href={serviceBasePath[locale]} variant="outline">
-                    {t("secondaryCta")}
-                  </ButtonLink>
-                </div>
-              </HeroItem>
-            </Container>
-          </HeroStage>
-        </RoseWash>
-      </Section>
+      <HomeHero
+        aboutHref={aboutBasePath[locale]}
+        copy={{
+          aboutCta: t("heroAboutCta"),
+          bioParagraphs: t.raw("heroBioParagraphs") as string[],
+          eyebrow: t("heroEyebrow"),
+          lead: t("heroLead"),
+          marketsLine: t("heroMarketsLine"),
+          primaryCta: t("primaryCta"),
+          servicesCta: t("secondaryCta"),
+          title: t("heroTitle"),
+        }}
+        heroImage={heroImage}
+        servicesHref={serviceBasePath[locale]}
+        whatsapp={whatsappProps}
+      />
 
       <Section id="jornadas" spacing="loose" tone="muted">
         <Container className="grid gap-10">

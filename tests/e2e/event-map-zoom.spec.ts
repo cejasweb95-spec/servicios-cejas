@@ -1,22 +1,6 @@
 import { expect, test, type Page } from "@playwright/test";
 
-const consentStorageKey = "cejas_cookie_consent_v1";
-
-const rejectedConsent = {
-  analytics: false,
-  marketing: false,
-  preferences: false,
-  updatedAt: "2026-06-18T00:00:00.000Z",
-};
-
-async function seedRejectedConsent(page: Page) {
-  await page.addInitScript(
-    ({ key, value }) => {
-      window.localStorage.setItem(key, JSON.stringify(value));
-    },
-    { key: consentStorageKey, value: rejectedConsent },
-  );
-}
+import { seedRejectedConsent } from "../helpers/consent";
 
 test.describe("event map zoom QA", () => {
   test.beforeEach(async ({ page }) => {

@@ -51,6 +51,7 @@ export function CourseEditorialFeature({
 
   return (
     <article
+      data-slot="course-editorial"
       className={cn(
         "grid items-center gap-8",
         isCompact
@@ -72,6 +73,7 @@ export function CourseEditorialFeature({
             "relative overflow-hidden rounded-2xl border border-primary/15 bg-surface shadow-soft",
             isCompact ? "aspect-[16/11] lg:aspect-[5/4]" : "aspect-[4/5]",
           )}
+          data-slot="course-image"
         >
           <Image
             alt={image.alt}

@@ -40,7 +40,7 @@ export function MarketSelector({ activeId, items, label }: MarketSelectorProps) 
             <span
               className={cn(
                 "text-xs font-normal uppercase tracking-wide",
-                isActive ? "text-primary-foreground/80" : "text-muted-foreground",
+                isActive ? "text-primary-foreground" : "text-muted-foreground",
               )}
             >
               {item.currency}

@@ -1,6 +1,12 @@
 import { expect, test } from "@playwright/test";
 
+import { seedRejectedConsent } from "../helpers/consent";
+
 test.describe("localized foundation", () => {
+  test.beforeEach(async ({ page }) => {
+    await seedRejectedConsent(page);
+  });
+
   test("redirects the root route to the default Spanish locale", async ({
     page,
   }) => {
@@ -20,7 +26,7 @@ test.describe("localized foundation", () => {
     await expect(page).toHaveTitle(/Cejas Internacionales/);
     await expect(page.locator("html")).toHaveAttribute("lang", "es");
     await expect(page.getByRole("heading", { level: 1 })).toContainText(
-      "Belleza especializada",
+      "Xiomara Andrea Sánchez Noreña",
     );
     const viewport = page.viewportSize();
     if (viewport && viewport.width < 1024) {
@@ -35,7 +41,7 @@ test.describe("localized foundation", () => {
     await page.waitForURL(/\/en$/, { timeout: 15_000 });
     await expect(page.locator("html")).toHaveAttribute("lang", "en");
     await expect(page.getByRole("heading", { level: 1 })).toContainText(
-      "Specialized beauty",
+      "Xiomara Andrea Sánchez Noreña",
     );
     expect(consoleErrors).toEqual([]);
   });
@@ -55,7 +61,17 @@ test.describe("localized foundation", () => {
     page,
   }) => {
     await page.goto("/es");
-    await page.getByRole("button", { name: "Contacta conmigo" }).first().click();
+
+    const viewport = page.viewportSize();
+    if (viewport && viewport.width < 1280) {
+      await page.getByRole("button", { name: "Abrir menú" }).click();
+      await page.getByRole("button", { name: "Contacta conmigo" }).click();
+    } else {
+      await page
+        .locator("header")
+        .getByRole("button", { name: "Contacta conmigo" })
+        .click();
+    }
 
     const dialog = page.getByRole("dialog", {
       name: "Elige el WhatsApp de contacto",
@@ -86,19 +102,6 @@ test.describe("localized foundation", () => {
     expect(optionBox?.height).toBeGreaterThanOrEqual(64);
     expect(headerPadding).toBeGreaterThanOrEqual(56);
 
-    const cookieBanner = page.locator(
-      '[aria-labelledby="cookie-consent-title"]',
-    );
-    if (await cookieBanner.isVisible()) {
-      const [dialogZIndex, bannerZIndex] = await Promise.all([
-        dialog.evaluate((element) => Number(getComputedStyle(element).zIndex)),
-        cookieBanner.evaluate((element) =>
-          Number(getComputedStyle(element).zIndex),
-        ),
-      ]);
-      expect(dialogZIndex).toBeGreaterThan(bannerZIndex);
-    }
-
     await page.keyboard.press("Escape");
     await expect(
       page.getByRole("dialog", { name: "Elige el WhatsApp de contacto" }),
@@ -118,7 +121,7 @@ test.describe("localized foundation", () => {
     await page.getByRole("link", { name: "Servicios" }).first().click();
     await page.waitForURL(/\/es\/servicios$/);
     await expect(page.getByRole("heading", { level: 1 })).toContainText(
-      "Elige el mercado",
+      "Servicios por país",
     );
 
     await page.getByRole("link", { name: /Colombia/ }).first().click();
@@ -130,7 +133,7 @@ test.describe("localized foundation", () => {
     await page.goBack();
     await expect(page).toHaveURL(/\/es\/servicios$/);
     await expect(page.getByRole("heading", { level: 1 })).toContainText(
-      "Elige el mercado",
+      "Servicios por país",
     );
 
     await page.goForward();

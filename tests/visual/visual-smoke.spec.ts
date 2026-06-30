@@ -1,6 +1,6 @@
 import { expect, test, type Page } from "@playwright/test";
 
-const consentStorageKey = "cejas_cookie_consent_v1";
+import { seedRejectedConsent } from "../helpers/consent";
 
 const visualRoutes = [
   { label: "home-es", path: "/es" },
@@ -9,23 +9,6 @@ const visualRoutes = [
   { label: "journeys-es", path: "/es/jornadas" },
   { label: "contact-es", path: "/es/contacto" },
 ] as const;
-
-async function seedRejectedConsent(page: Page) {
-  await page.addInitScript(
-    ({ key }) => {
-      window.localStorage.setItem(
-        key,
-        JSON.stringify({
-          analytics: false,
-          marketing: false,
-          preferences: false,
-          updatedAt: "2026-06-18T00:00:00.000Z",
-        }),
-      );
-    },
-    { key: consentStorageKey },
-  );
-}
 
 async function expectNoHorizontalOverflow(page: Page, path: string) {
   const width = await page.evaluate(() => ({

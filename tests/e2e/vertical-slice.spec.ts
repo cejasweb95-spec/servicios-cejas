@@ -1,5 +1,7 @@
 import { expect, test } from "@playwright/test";
 
+import { seedRejectedConsent } from "../helpers/consent";
+
 async function expectNoHorizontalOverflow(page: import("@playwright/test").Page) {
   const hasHorizontalOverflow = await page.evaluate(
     () => document.documentElement.scrollWidth > document.documentElement.clientWidth,
@@ -9,6 +11,10 @@ async function expectNoHorizontalOverflow(page: import("@playwright/test").Page)
 }
 
 test.describe("Colombia vertical slice", () => {
+  test.beforeEach(async ({ page }) => {
+    await seedRejectedConsent(page);
+  });
+
   test("serves Colombia services in Spanish with one catalog download and Colombia WhatsApp", async ({
     page,
   }) => {
@@ -27,17 +33,17 @@ test.describe("Colombia vertical slice", () => {
     await expect(colombiaCatalog).toHaveAttribute("download", "");
     await expect(
       page.locator(
-        '[data-slot="service-card"] a[href$="catalogo-colombia-cejas-internacionales.pdf"]',
+        '[data-slot="service-row"] a[href$="catalogo-colombia-cejas-internacionales.pdf"]',
       ),
     ).toHaveCount(0);
     await expect(
-      page.locator('[data-slot="service-card"]').first(),
+      page.locator('[data-slot="service-row"]').first(),
     ).toContainText(/COP|\$/);
     await expect(
-      page.getByRole("link", { name: "Contacta conmigo" }),
+      page.locator("main").getByRole("link", { name: "Contacta conmigo" }).first(),
     ).toHaveAttribute("href", /573167742299/);
     await expect(
-      page.locator('[data-slot="service-card"]').filter({ hasText: /EUR|CHF/ }),
+      page.locator('[data-slot="service-row"]').filter({ hasText: /EUR|CHF/ }),
     ).toHaveCount(0);
 
     const breadcrumbSchema = await page
@@ -105,6 +111,10 @@ test.describe("Colombia vertical slice", () => {
 });
 
 test.describe("services by market", () => {
+  test.beforeEach(async ({ page }) => {
+    await seedRejectedConsent(page);
+  });
+
   test("keeps Spain / Europe services in EUR and direct WhatsApp Spain", async ({
     page,
   }) => {
@@ -119,13 +129,13 @@ test.describe("services by market", () => {
       ),
     ).toHaveCount(1);
     await expect(
-      page.locator('[data-slot="service-card"]').filter({ hasText: /COP|CHF/ }),
+      page.locator('[data-slot="service-row"]').filter({ hasText: /COP|CHF/ }),
     ).toHaveCount(0);
     await expect(
-      page.locator('[data-slot="service-card"]').filter({ hasText: /Acrílico|Manicure|Peinado social/ }),
+      page.locator('[data-slot="service-row"]').filter({ hasText: /Acrílico|Manicure|Peinado social/ }),
     ).toHaveCount(0);
     await expect(
-      page.getByRole("link", { name: "Contacta conmigo" }),
+      page.locator("main").getByRole("link", { name: "Contacta conmigo" }).first(),
     ).toHaveAttribute("href", /34603804837/);
   });
 
@@ -141,20 +151,20 @@ test.describe("services by market", () => {
       page.locator('a[href$="catalogo-suiza-cejas-internacionales.pdf"]'),
     ).toHaveCount(1);
     await expect(
-      page.locator('[data-slot="service-card"]').filter({ hasText: /COP|EUR/ }),
+      page.locator('[data-slot="service-row"]').filter({ hasText: /COP|EUR/ }),
     ).toHaveCount(0);
     await expect(
       page
-        .locator('[data-slot="service-card"]')
+        .locator('[data-slot="service-row"]')
         .filter({ hasText: /HidraLips|Depilación|Corrección de cejas/ }),
     ).toHaveCount(0);
     await expect(
       page
-        .locator('[data-slot="service-card"]')
+        .locator('[data-slot="service-row"]')
         .filter({ hasText: /Refuerzo cejas h[ií]bridas/ }),
     ).toContainText(/150\s*CHF|CHF\s*150/);
     await expect(
-      page.getByRole("link", { name: "Contacta conmigo" }),
+      page.locator("main").getByRole("link", { name: "Contacta conmigo" }).first(),
     ).toHaveAttribute("href", /34603804837/);
   });
 
@@ -169,10 +179,13 @@ test.describe("services by market", () => {
         name: /Efecto polvo en Colombia/,
       }),
     ).toBeVisible();
-    await expect(page.getByText("Duración de cita").first()).toBeVisible();
-    await expect(page.getByText(/COP|\$/).first()).toBeVisible();
+    const quickDetails = page.locator(
+      'aside[aria-labelledby="service-quick-details"]',
+    );
+    await expect(quickDetails.getByText("Duración de cita")).toBeVisible();
+    await expect(quickDetails.getByText(/COP|\$/)).toBeVisible();
     await expect(
-      page.getByRole("link", { name: "Contacta conmigo" }).first(),
+      page.locator("main").getByRole("link", { name: "Contacta conmigo" }).first(),
     ).toHaveAttribute("href", /573167742299/);
 
     const serviceSchema = await page
@@ -247,6 +260,10 @@ test.describe("services by market", () => {
 });
 
 test.describe("professional training", () => {
+  test.beforeEach(async ({ page }) => {
+    await seedRejectedConsent(page);
+  });
+
   test("lists courses with PDFs and WhatsApp date CTA", async ({ page }) => {
     await page.goto("/es/formaciones");
 
@@ -268,9 +285,9 @@ test.describe("professional training", () => {
     ).toBeVisible();
     await expect(page.getByText(/cupo disponible el/i)).toHaveCount(0);
 
-    const courseCards = page.locator('[data-slot="course-card"]');
-    await expect(courseCards).toHaveCount(5);
-    await expect(courseCards.locator('[data-slot="course-image"]')).toHaveCount(5);
+    const courseFeatures = page.locator('[data-slot="course-editorial"]');
+    await expect(courseFeatures).toHaveCount(5);
+    await expect(courseFeatures.locator('[data-slot="course-image"]')).toHaveCount(5);
   });
 
   test("serves course detail with syllabus, prices, schema and language equivalent", async ({
@@ -346,6 +363,10 @@ test.describe("professional training", () => {
 });
 
 test.describe("results gallery", () => {
+  test.beforeEach(async ({ page }) => {
+    await seedRejectedConsent(page);
+  });
+
   test("opens the results lightbox and returns focus to the tile", async ({
     page,
   }) => {
@@ -373,6 +394,10 @@ test.describe("results gallery", () => {
 });
 
 test.describe("confirmed contact channels", () => {
+  test.beforeEach(async ({ page }) => {
+    await seedRejectedConsent(page);
+  });
+
   test("publishes both WhatsApp targets, official email and social profiles", async ({
     page,
   }) => {
@@ -400,6 +425,10 @@ test.describe("confirmed contact channels", () => {
 });
 
 test.describe("journeys and animated map", () => {
+  test.beforeEach(async ({ page }) => {
+    await seedRejectedConsent(page);
+  });
+
   test("serves the Spanish journeys page with correct city WhatsApp targets", async ({
     page,
   }) => {
@@ -498,7 +527,7 @@ test.describe("journeys and animated map", () => {
     await expect(
       page.getByRole("heading", {
         level: 1,
-        name: "Cali studio and appointments in selected cities",
+        name: "Where to find me",
       }),
     ).toBeVisible();
   });

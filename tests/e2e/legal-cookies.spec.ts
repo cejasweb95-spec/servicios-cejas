@@ -1,13 +1,13 @@
 import { expect, test } from "@playwright/test";
 
-const consentStorageKey = "cejas_cookie_consent_v1";
+import { CONSENT_STORAGE_KEY } from "../helpers/consent";
 
 async function readConsent(page: import("@playwright/test").Page) {
   return page.evaluate((key) => {
     const stored = localStorage.getItem(key);
 
     return stored ? JSON.parse(stored) : null;
-  }, consentStorageKey);
+  }, CONSENT_STORAGE_KEY);
 }
 
 test.describe("legal, aftercare and cookie consent", () => {

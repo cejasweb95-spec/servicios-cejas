@@ -64,14 +64,14 @@ export const mediaAssets = mediaAssetSchema.array().parse([
     id: "xiomara-hero-escritorio",
     type: "photo",
     sourcePath:
-      "docs/cliente/assets-extraidos/xiomara-sesion-profesional/xiomara-sesion-profesional-02.jpeg",
-    publicPath: "/images/xiomara/xiomara-hero-escritorio.jpg",
+      "docs/cliente/assets-extraidos/xiomara-sesion-profesional/xiomara-sesion-profesional-12.jpeg",
+    publicPath: "/images/xiomara/xiomara-hero-home.jpg",
     alt: l(
-      "Xiomara Sánchez, especialista de Cejas Internacionales, en su estudio",
-      "Xiomara Sánchez, Cejas Internacionales specialist, in her studio",
+      "Xiomara Sánchez con uniforme profesional y globo terráqueo, símbolo de las jornadas internacionales de Cejas Internacionales",
+      "Xiomara Sánchez in professional uniform holding a globe, symbol of Cejas Internacionales international appointments",
     ),
-    width: 1400,
-    height: 1329,
+    width: 1366,
+    height: 2048,
   },
   {
     id: "xiomara-formadora-tablet",
