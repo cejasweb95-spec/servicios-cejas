@@ -1,0 +1,40 @@
+---
+description: Push/fetch a GitHub sin prompts — token desde .env.local (agentes y CI local).
+alwaysApply: true
+---
+
+# Git y GitHub sin interacción humana
+
+En este repo, los agentes (Cursor, Claude Code, Codex, etc.) **no deben** usar `git push origin …` a secas: en shells no interactivos se cuelga o falla por falta de credenciales.
+
+## Obligatorio al push o fetch remoto
+
+1. Leer `GIT_ACCESS_TOKEN` y `GIT_REPO_URL` desde `.env.local` (nunca commitear ni imprimir el token en chat, logs ni docs).
+2. Push con URL autenticada (usuario fijo `x-access-token`):
+
+```powershell
+# PowerShell (Windows — entorno por defecto del proyecto)
+$gitToken = (Get-Content .env.local | Where-Object { $_ -match '^GIT_ACCESS_TOKEN=' }) -replace '^GIT_ACCESS_TOKEN=',''
+$repoUrl = (Get-Content .env.local | Where-Object { $_ -match '^GIT_REPO_URL=' }) -replace '^GIT_REPO_URL=',''
+$branch = git branch --show-current
+git push "https://x-access-token:${gitToken}@github.com/cejasweb95-spec/servicios-cejas.git" "${branch}:${branch}"
+```
+
+Si `GIT_REPO_URL` está definido, convertir `https://github.com/org/repo.git` → `https://x-access-token:TOKEN@github.com/org/repo.git` antes del push.
+
+3. Alternativa preferida: `npm run git:push` o `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/git-push-remote.ps1` (misma lógica, menos error).
+
+## Prohibido en agentes
+
+- `git push origin …` sin token embebido.
+- Esperar Credential Manager, navegador o prompt de usuario.
+- Dejar el comando colgado; si hace falta diagnosticar, usar `GIT_TERMINAL_PROMPT=0` y `GCM_INTERACTIVE=never` para fallar rápido.
+
+## Vercel (mismo criterio)
+
+Para deploy CLI: `VERCEL_TOKEN` desde `.env.local`, nunca pedir login interactivo. Ver `npm run vercel:deploy` o `scripts/vercel-deploy-prod.ps1`.
+
+## Seguridad
+
+- No escribir tokens en código fuente, commits, PRs ni respuestas al usuario.
+- `.env.local` ya está en `.gitignore`.

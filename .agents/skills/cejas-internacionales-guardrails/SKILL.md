@@ -161,7 +161,7 @@ Use variants and tokens. `className` is for layout, not repainting components.
 - Cookie banner must offer accept, reject and configure.
 - Analytics category is off by default and activates only after consent.
 - Do not send PII to GA4: no names, phones, emails, photos, health data or WhatsApp message text.
-- Do not use personal GitHub tokens from `.env.local` in source code, docs, or GitHub Actions. Use GitHub Secrets if CI needs secrets later.
+- Never commit or log tokens from `.env.local`. Agents may read `GIT_ACCESS_TOKEN` / `VERCEL_TOKEN` only in the shell for non-interactive `git push` (`npm run git:push`) or Vercel deploy (`npm run vercel:deploy`). Do not embed tokens in source, docs, or GitHub Actions — use GitHub Secrets for CI later.
 - Visual regression starts local for V1; CI is future optional once baselines are stable.
 
 ## QA Senior Rules

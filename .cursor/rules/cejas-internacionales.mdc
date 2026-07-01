@@ -37,3 +37,4 @@ Critical rules:
 - No generic AI UI: no nested cards, no orbs/blobs, no gradient text, no endless identical card grids, no carousel as primary content.
 - Future DB/admin is Supabase; V1 uses typed local data and query functions.
 - If running localhost, use `3000` if free, otherwise next available port and report the URL.
+- Git push/fetch: non-interactive only — `GIT_ACCESS_TOKEN` from `.env.local` or `npm run git:push` (see `.cursor/rules/git-github-noninteractive.mdc`).

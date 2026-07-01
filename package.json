@@ -18,7 +18,9 @@
     "test:responsive:all": "node scripts/audit-responsive.mjs",
     "test:visual": "playwright test tests/visual",
     "test:links": "node scripts/check-links.mjs",
-    "test:lighthouse": "echo \"Lighthouse/PageSpeed se ejecutara cuando existan pantallas finales.\""
+    "test:lighthouse": "echo \"Lighthouse/PageSpeed se ejecutara cuando existan pantallas finales.\"",
+    "git:push": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/git-push-remote.ps1",
+    "vercel:deploy": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/vercel-deploy-prod.ps1"
   },
   "dependencies": {
     "@next/third-parties": "^16.2.9",

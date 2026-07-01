@@ -43,6 +43,19 @@ For implementation, use the phase MDs under `docs/cliente/implementacion-fases/`
 - Do not touch `main` unless Jeffrey explicitly says so.
 - Work on `develop` unless instructed otherwise.
 - Do not edit generated artifacts as source: `.next`, `node_modules`, `dist`, build outputs, or `tsconfig.tsbuildinfo`.
+
+## Git And Remote Operations (agents)
+
+Agents run in **non-interactive** shells. Never use plain `git push origin …` and wait for Credential Manager or a browser login.
+
+When pushing or fetching to GitHub:
+
+1. Read `GIT_ACCESS_TOKEN` and `GIT_REPO_URL` from `.env.local` (never commit, log, or paste tokens in chat, docs, or source).
+2. Push with an authenticated HTTPS URL: `https://x-access-token:TOKEN@github.com/…/repo.git`.
+3. Prefer `npm run git:push` (`scripts/git-push-remote.ps1`) so the pattern stays consistent.
+4. If diagnosing auth failures, set `GIT_TERMINAL_PROMPT=0` and `GCM_INTERACTIVE=never` so Git fails fast instead of hanging.
+
+For Vercel CLI deploys, use `VERCEL_TOKEN` from `.env.local` and prefer `npm run vercel:deploy`. See `.cursor/rules/git-github-noninteractive.mdc`.
 - When frontend work starts, create or use a clean source app; do not rebuild from compiled output.
 - Preserve user/client documentation and assets. Do not delete PDFs, images, transcripts, or MDs unless explicitly requested.
 
