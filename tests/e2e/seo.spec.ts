@@ -156,5 +156,27 @@ test.describe("SEO technical foundation", () => {
       expect(response.status(), asset).toBe(200);
       expect(response.headers()["content-type"]).toContain("image/png");
     }
+
+    const favicon = await request.get("/favicon.ico");
+    expect(favicon.status()).toBe(200);
+    expect(favicon.headers()["content-type"]).toMatch(/image\/(png|x-icon|vnd\.microsoft\.icon)/);
+
+    const iconBody = await (await request.get("/icon.png")).body();
+    const ogBody = await (await request.get("/es/opengraph-image")).body();
+    expect(iconBody.byteLength).toBeGreaterThan(8_000);
+    expect(ogBody.byteLength).toBeGreaterThan(25_000);
+  });
+
+  test("home exposes brand icon links and social preview metadata", async ({ page }) => {
+    await page.goto("/es");
+
+    await expect(page.locator('link[rel="icon"]')).toHaveCount(2);
+    await expect(page.locator('link[rel="apple-touch-icon"]')).toHaveCount(1);
+
+    const ogImage = await getMetaContent(page, 'meta[property="og:image"]');
+    expect(ogImage).toContain("/es/opengraph-image");
+
+    const twitterImage = await getMetaContent(page, 'meta[name="twitter:image"]');
+    expect(twitterImage).toContain("/es/twitter-image");
   });
 });
