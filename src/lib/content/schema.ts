@@ -179,6 +179,30 @@ export const whatsappTargetSchema = z.object({
 });
 export type WhatsAppTarget = z.infer<typeof whatsappTargetSchema>;
 
+export const googleReviewProfileSchema = z.object({
+  id: z.string().min(1),
+  locationId: z.string().min(1),
+  label: localizedStringSchema,
+  placeId: z.string().min(1),
+  writeReviewUrl: z.string().url(),
+  listingUrl: z.string().url(),
+  rating: z.number().min(1).max(5).optional(),
+  reviewCount: z.number().int().positive().optional(),
+  capturedAt: z.string().date(),
+});
+export type GoogleReviewProfile = z.infer<typeof googleReviewProfileSchema>;
+
+export const reviewSchema = z.object({
+  id: z.string().min(1),
+  profileId: z.string().min(1),
+  author: z.string().min(1),
+  rating: z.number().int().min(1).max(5),
+  text: localizedStringSchema,
+  dateLabel: localizedStringSchema,
+  source: z.literal("google"),
+});
+export type Review = z.infer<typeof reviewSchema>;
+
 export const socialLinkSchema = z.object({
   id: z.string().min(1),
   label: z.string().min(1),

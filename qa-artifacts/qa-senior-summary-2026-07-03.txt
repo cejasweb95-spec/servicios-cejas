@@ -1,0 +1,32 @@
+QA senior — 03/07/2026 (rama develop)
+========================================
+
+Alcance: mejoras 04 (reseñas Google) + 08 (recortes galería resultados) + docs reunión 30/06/2026
+
+Capa estática
+- typecheck: PASS
+- eslint: PASS (3 warnings preexistentes, 0 errors)
+- next build: PASS
+- vitest: 32/32 PASS
+
+E2E Playwright (chromium-desktop, workers=1, servidor prod 127.0.0.1:3000)
+- 87/87 PASS — qa-artifacts/e2e-senior-rerun-2026-07-03.txt
+
+Accesibilidad axe (chromium + mobile-chrome, workers=1)
+- 52/52 PASS — qa-artifacts/a11y-senior-rerun-2026-07-03.txt
+
+SEO técnico (chromium + mobile-chrome, workers=1)
+- 40/40 PASS — qa-artifacts/seo-senior-rerun-2026-07-03.txt
+
+Link checker
+- 36 rutas locales OK — qa-artifacts/links-senior-2026-07-03.txt
+
+Visual smoke (incluido en suite E2E chromium)
+- home-es, services-colombia-es, training-es, journeys-es, contact-es: PASS
+
+Nota: la primera corrida paralela (E2E + a11y + SEO + visual simultáneos) falló por saturación del entorno (ERR_NO_BUFFER_SPACE / timeouts). Reejecución secuencial con workers=1: verde.
+
+Cambios funcionales verificados manualmente
+- Sección #opiniones en home ES/EN con 6 reseñas reales de Cali
+- Botones writereview para Cali y Puerto de Sagunto
+- Imágenes de resultados recortadas (6 JPG) con dimensiones actualizadas en media.ts

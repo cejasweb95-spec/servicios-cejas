@@ -6,6 +6,11 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import { CourseEditorialFeature } from "@/components/domain/course-editorial-feature";
 import { EventMap, type EventMapLocation } from "@/components/domain/event-map";
+import {
+  ReviewList,
+  WriteReviewButtons,
+  type ReviewWriteAction,
+} from "@/components/domain/review-section";
 import { HomeHero } from "@/components/domain/home-hero";
 import { CountryFlag } from "@/components/primitives/country-flag";
 import { WhatsAppChooser } from "@/components/domain/whatsapp-chooser";
@@ -22,12 +27,14 @@ import { isLocale, type Locale } from "@/i18n/routing";
 import {
   getCourses,
   getDownloads,
+  getGoogleReviewProfiles,
   getLegalProfile,
   getLocations,
   getMarketById,
   getMarketMediaAsset,
   getMarkets,
   getMediaAssets,
+  getReviewsByProfile,
   getServicesByMarket,
   getSocialLinks,
   getWhatsAppTarget,
@@ -145,6 +152,31 @@ export default async function HomePage({ params }: HomePageProps) {
       .filter((service) => service.featured)
       .slice(0, 3),
   }));
+  const reviewProfiles = getGoogleReviewProfiles(locale);
+  const highlightedReviews = reviewProfiles.flatMap((profile) =>
+    getReviewsByProfile(profile.id, locale),
+  );
+  const reviewWriteActions = reviewProfiles.map(
+    (profile): ReviewWriteAction => ({
+      id: profile.id,
+      label: t("reviewsWriteCta", { location: profile.label }),
+      writeReviewUrl: profile.writeReviewUrl,
+    }),
+  );
+  const ratedProfile = reviewProfiles.find(
+    (profile) => profile.rating !== undefined && profile.reviewCount !== undefined,
+  );
+  const reviewsMeta =
+    ratedProfile && ratedProfile.rating !== undefined && ratedProfile.reviewCount !== undefined
+      ? t("reviewsMetaLabel", {
+          count: ratedProfile.reviewCount,
+          location: ratedProfile.label,
+          rating: ratedProfile.rating.toLocaleString(locale, {
+            minimumFractionDigits: 1,
+            maximumFractionDigits: 1,
+          }),
+        })
+      : null;
   const homeJsonLd = buildHomeJsonLd({
     description: t("intro"),
     legalProfile,
@@ -448,6 +480,49 @@ export default async function HomePage({ params }: HomePageProps) {
           </Reveal>
         </Container>
       </Section>
+
+      {highlightedReviews.length > 0 ? (
+        <Section id="opiniones" spacing="loose">
+          <Container className="grid gap-10">
+            <div className="max-w-3xl border-l-4 border-primary pl-5">
+              <Eyebrow className="mb-3 uppercase tracking-[0.14em]">
+                {t("reviewsEyebrow")}
+              </Eyebrow>
+              <h2 className="font-display text-balance text-4xl leading-tight text-foreground sm:text-5xl">
+                {t.rich("reviewsTitle", { i: italicAccent })}
+              </h2>
+              <p className="mt-4 max-w-2xl text-base leading-8 text-foreground/80">
+                {t("reviewsCopy")}
+              </p>
+              {reviewsMeta ? (
+                <p className="mt-3 text-sm font-semibold text-primary-text">
+                  {reviewsMeta}
+                </p>
+              ) : null}
+            </div>
+            <Reveal>
+              <ReviewList
+                ratingLabel={(rating) => t("reviewsRatingLabel", { rating })}
+                reviews={highlightedReviews}
+                sourceLabel={t("reviewsSourceLabel")}
+              />
+            </Reveal>
+            <div className="flex flex-wrap items-center gap-3">
+              <WriteReviewButtons actions={reviewWriteActions} />
+              {ratedProfile ? (
+                <a
+                  className="inline-flex items-center text-sm font-semibold text-primary-text underline-offset-4 hover:underline focus-visible:underline"
+                  href={ratedProfile.listingUrl}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  {t("reviewsListingCta")}
+                </a>
+              ) : null}
+            </div>
+          </Container>
+        </Section>
+      ) : null}
 
       <Section spacing="compact">
         <Container className="grid gap-5 md:grid-cols-[1fr_auto] md:items-center">

@@ -7,6 +7,7 @@ import { legalPages } from "@/content/legal-pages";
 import { locations } from "@/content/locations";
 import { markets } from "@/content/markets";
 import { mediaAssets, serviceCategoryMediaIds } from "@/content/media";
+import { googleReviewProfiles, reviews } from "@/content/reviews";
 import { seoEntries } from "@/content/seo";
 import { serviceCategories } from "@/content/service-categories";
 import { services } from "@/content/services";
@@ -161,6 +162,26 @@ function assertReferences() {
     }
   }
 
+  const reviewProfileIds = new Set(googleReviewProfiles.map((profile) => profile.id));
+
+  for (const profile of googleReviewProfiles) {
+    if (!locationIds.has(profile.locationId)) {
+      throw new Error(
+        `Review profile ${profile.id} references missing location ${profile.locationId}`,
+      );
+    }
+
+    if (!profile.writeReviewUrl.includes(profile.placeId)) {
+      throw new Error(`Review profile ${profile.id} write URL does not match its place ID`);
+    }
+  }
+
+  for (const review of reviews) {
+    if (!reviewProfileIds.has(review.profileId)) {
+      throw new Error(`Review ${review.id} references missing profile ${review.profileId}`);
+    }
+  }
+
   for (const item of [...downloads, ...mediaAssets]) {
     if (!item.sourcePath) {
       throw new Error(`Asset/download ${item.id} has empty source path`);
@@ -200,6 +221,8 @@ export function validateContent() {
   assertUnique(downloads.map((download) => download.id), "download id");
   assertUnique(locations.map((location) => location.id), "location id");
   assertUnique(whatsappTargets.map((target) => target.id), "WhatsApp target id");
+  assertUnique(googleReviewProfiles.map((profile) => profile.id), "review profile id");
+  assertUnique(reviews.map((review) => review.id), "review id");
   assertUnique(seoEntries.map((entry) => `${entry.locale}:${entry.route}`), "SEO entry");
   assertMarketOfferRules({ services });
   assertReferences();

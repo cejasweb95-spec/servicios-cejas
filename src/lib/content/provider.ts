@@ -8,6 +8,7 @@ import { legalProfile } from "@/content/legal-profile";
 import { locations } from "@/content/locations";
 import { markets } from "@/content/markets";
 import { mediaAssets } from "@/content/media";
+import { googleReviewProfiles, reviews } from "@/content/reviews";
 import { seoEntries } from "@/content/seo";
 import { serviceCategories } from "@/content/service-categories";
 import { services } from "@/content/services";
@@ -25,7 +26,9 @@ export type ContentProvider = {
   legalProfile: typeof legalProfile;
   locations: typeof locations;
   markets: typeof markets;
+  googleReviewProfiles: typeof googleReviewProfiles;
   mediaAssets: typeof mediaAssets;
+  reviews: typeof reviews;
   seoEntries: typeof seoEntries;
   serviceCategories: typeof serviceCategories;
   services: typeof services;
@@ -44,7 +47,9 @@ export const localContentProvider: ContentProvider = {
   legalProfile,
   locations,
   markets,
+  googleReviewProfiles,
   mediaAssets,
+  reviews,
   seoEntries,
   serviceCategories,
   services,

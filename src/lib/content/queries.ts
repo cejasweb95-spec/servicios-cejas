@@ -21,11 +21,13 @@ const {
   courses,
   downloads,
   events,
+  googleReviewProfiles,
   legalPages,
   legalProfile,
   locations,
   markets,
   mediaAssets,
+  reviews,
   seoEntries,
   serviceCategories,
   services,
@@ -270,6 +272,23 @@ export function getMarketMediaAsset(marketId: string, locale: Locale) {
   const mediaId = marketMediaIds[marketId];
 
   return mediaId ? getMediaAssetById(mediaId, locale) : null;
+}
+
+export function getGoogleReviewProfiles(locale: Locale) {
+  return googleReviewProfiles.map((profile) => ({
+    ...profile,
+    label: text(profile.label, locale),
+  }));
+}
+
+export function getReviewsByProfile(profileId: string, locale: Locale) {
+  return reviews
+    .filter((review) => review.profileId === profileId)
+    .map((review) => ({
+      ...review,
+      text: text(review.text, locale),
+      dateLabel: text(review.dateLabel, locale),
+    }));
 }
 
 export function getSocialLinks() {

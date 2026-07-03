@@ -234,7 +234,7 @@ export const mediaAssets = mediaAssetSchema.array().parse([
       "Lip micropigmentation with a luminous, symmetrical finish",
     ),
     width: 1000,
-    height: 1331,
+    height: 1080,
   },
   {
     id: "result-cejas-01",
@@ -246,7 +246,7 @@ export const mediaAssets = mediaAssetSchema.array().parse([
       "Brow micropigmentation result with a natural effect on the face",
     ),
     width: 1000,
-    height: 1245,
+    height: 1015,
   },
   {
     id: "result-cejas-02",
@@ -258,7 +258,7 @@ export const mediaAssets = mediaAssetSchema.array().parse([
       "Micropigmented brow design adapted to the face features",
     ),
     width: 1000,
-    height: 1778,
+    height: 1555,
   },
   {
     id: "result-cejas-03",
@@ -381,8 +381,8 @@ export const mediaAssets = mediaAssetSchema.array().parse([
       "Diseño de cejas pelo a pelo en detalle",
       "Hair-stroke brow design in detail",
     ),
-    width: 943,
-    height: 2048,
+    width: 903,
+    height: 1320,
   },
   {
     id: "result-labios-03",
@@ -406,7 +406,7 @@ export const mediaAssets = mediaAssetSchema.array().parse([
       "Enhanced-gaze result with defined brows and lashes",
     ),
     width: 1000,
-    height: 1778,
+    height: 908,
   },
   {
     id: "result-cicatrizado-cejas",
@@ -417,8 +417,8 @@ export const mediaAssets = mediaAssetSchema.array().parse([
       "Cejas micropigmentadas ya cicatrizadas con resultado natural y estable",
       "Healed micropigmented brows with a natural, stable result",
     ),
-    width: 900,
-    height: 1955,
+    width: 870,
+    height: 1285,
   },
   {
     id: "result-cicatrizado-labios",

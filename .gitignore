@@ -37,5 +37,8 @@ tsconfig.tsbuildinfo
 
 # Adjuntos scratch de sesiones de agente (capturas de referencia móvil)
 .codex-remote-attachments/
+
+# Herramientas locales de transcripción (whisper.cpp + modelos)
+.tools-whisper/
 .vercel
 .env*
