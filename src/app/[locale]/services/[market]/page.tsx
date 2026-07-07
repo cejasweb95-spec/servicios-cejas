@@ -74,6 +74,9 @@ export default async function MarketPage({ params }: MarketPageProps) {
         servicesLabel: t("servicesLabel"),
         selectorLabel: t("selectorLabel"),
         serviceDetailLabel: t("serviceDetailLabel"),
+        studioBannerCta: t("studioBannerCta"),
+        studioBannerDescription: t("studioBannerDescription"),
+        studioBannerTitle: t("studioBannerTitle"),
       }}
       locale={locale}
       marketSlug={market}

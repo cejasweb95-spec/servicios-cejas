@@ -78,7 +78,7 @@ export function HomeHero({
                 <div className="relative aspect-[2/3] overflow-hidden rounded-2xl border border-primary/20 bg-surface shadow-[0_24px_60px_-28px_rgba(0,0,0,0.35)] ring-1 ring-primary/10">
                   <Image
                     alt={heroImage.alt}
-                    className="h-full w-full object-cover object-[center_18%]"
+                    className="h-full w-full object-cover object-[center_28%]"
                     height={heroImage.height}
                     priority
                     sizes="(min-width: 1280px) 28vw, (min-width: 640px) 42vw, 88vw"

@@ -34,6 +34,7 @@ import {
   getMarketMediaAsset,
   getMarkets,
   getMediaAssets,
+  getPhysicalStudios,
   getReviewsByProfile,
   getServicesByMarket,
   getSocialLinks,
@@ -44,6 +45,7 @@ import { buildWhatsAppHref } from "@/lib/whatsapp/build-whatsapp-url";
 import { buildCoursePath, courseBasePath } from "@/lib/routes/course-routes";
 import { journeyBasePath } from "@/lib/routes/journey-routes";
 import { aboutBasePath, contactBasePath, resultsBasePath } from "@/lib/routes/static-routes";
+import { puertoSaguntoStudioBasePath } from "@/lib/routes/studio-routes";
 import { buildMarketPath, serviceBasePath } from "@/lib/routes/service-routes";
 import { buildHomeJsonLd } from "@/lib/seo/structured-data";
 
@@ -90,13 +92,6 @@ export default async function HomePage({ params }: HomePageProps) {
   const journeysT = await getTranslations({ locale, namespace: "Journeys" });
   const markets = getMarkets(locale);
   const whatsappTargets = getWhatsAppTargets(locale);
-  const colombiaWhatsapp = getWhatsAppTarget("colombia", locale);
-  const studioWhatsappHref = colombiaWhatsapp
-    ? buildWhatsAppHref(
-        colombiaWhatsapp.phoneE164,
-        colombiaWhatsapp.defaultMessage,
-      )
-    : "https://wa.me/573167742299";
   const downloads = getDownloads(locale);
   const catalogDownloads = downloads.filter((download) => download.type === "catalog");
   const courseDownloads = downloads.filter((download) => download.type === "course_pdf");
@@ -105,7 +100,46 @@ export default async function HomePage({ params }: HomePageProps) {
   );
   const courses = getCourses(locale).slice(0, 3);
   const locations = getLocations(locale);
-  const caliStudio = locations.find((location) => location.id === "cali");
+  const physicalStudios = getPhysicalStudios(locale).flatMap((studio) => {
+    const media = studio.mediaId
+      ? getMediaAssets().find((item) => item.id === studio.mediaId)
+      : null;
+
+    if (!media?.publicPath || !media.width || !media.height) {
+      return [];
+    }
+
+    const market = getMarketById(studio.marketId, locale);
+    const target = market ? getWhatsAppTarget(market.whatsappTargetId, locale) : null;
+    const label = [studio.city, studio.region, studio.country].filter(Boolean).join(", ");
+
+    return [
+      {
+        image: {
+          alt: media.alt[locale],
+          height: media.height,
+          src: media.publicPath,
+          width: media.width,
+        },
+        roleLabel:
+          studio.studioRole === "primary"
+            ? t("studioPrimaryLabel")
+            : t("studioSecondaryLabel"),
+        showLegalNote: studio.studioRole === "primary",
+        studio,
+        studioPageHref:
+          studio.id === "puerto-sagunto"
+            ? puertoSaguntoStudioBasePath[locale]
+            : undefined,
+        whatsappHref: target
+          ? buildWhatsAppHref(
+              target.phoneE164,
+              journeysT("whatsappMessage", { location: label }),
+            )
+          : "https://wa.me/573167742299",
+      },
+    ];
+  });
   const eventMapLocations = locations.map((location): EventMapLocation => {
     const market = getMarketById(location.marketId, locale);
     const target = market
@@ -140,7 +174,6 @@ export default async function HomePage({ params }: HomePageProps) {
   });
   const heroImage = getRequiredMedia("xiomara-hero-escritorio", locale);
   const journeysImage = getRequiredMedia("jornadas-globo", locale);
-  const studioImage = getRequiredMedia("estudio-cabina-certificados", locale);
   const resultsImage = getRequiredMedia("resultados-cejas-labios-pared", locale);
   const logo = getRequiredMedia("logo-oficial", locale);
   const legalProfile = getLegalProfile(locale);
@@ -328,62 +361,89 @@ export default async function HomePage({ params }: HomePageProps) {
         </Container>
       </Section>
 
-      {caliStudio ? (
+      {physicalStudios.length > 0 ? (
         <Section id="punto-fisico" spacing="loose" tone="rose">
           <RoseWash accent="band-left">
-            <Container className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
+            <Container className="grid gap-10">
               <Reveal>
-                <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-primary/20 bg-surface">
-                  <Image
-                    alt={studioImage.alt}
-                    className="h-full w-full object-cover"
-                    height={studioImage.height}
-                    sizes="(min-width: 1024px) 42vw, 92vw"
-                    src={studioImage.src}
-                    width={studioImage.width}
-                  />
-                </div>
-              </Reveal>
-              <Reveal delay={0.05}>
-                <div className="max-w-xl">
+                <div className="max-w-3xl">
                   <Eyebrow className="mb-3 uppercase tracking-[0.14em]">
                     {t("studioEyebrow")}
                   </Eyebrow>
-                  <h2 className="font-display text-4xl leading-tight text-foreground">
+                  <h2 className="font-display text-4xl leading-tight text-foreground sm:text-5xl">
                     {t.rich("studioTitle", { i: italicAccent })}
                   </h2>
-                  <p className="mt-4 text-base leading-8 text-foreground/85">
+                  <p className="mt-4 max-w-2xl text-base leading-8 text-foreground/85">
                     {t("studioCopy")}
                   </p>
-                  <div className="mt-6 flex items-start gap-3 rounded-xl border border-primary/25 bg-surface/80 p-4">
-                    <MapPin
-                      aria-hidden="true"
-                      className="mt-0.5 size-5 shrink-0 text-primary-text"
-                    />
-                    <div>
-                      <p className="font-semibold text-foreground">
-                        {caliStudio.city}, {caliStudio.country}
-                      </p>
-                      {caliStudio.address ? (
-                        <p className="mt-1 text-sm leading-6 text-muted-foreground">
-                          {caliStudio.address}
-                        </p>
-                      ) : null}
-                      <p className="mt-2 text-xs font-semibold text-primary-text">
-                        {legalProfile.note}
-                      </p>
-                    </div>
-                  </div>
-                  <div className="mt-7 flex flex-wrap gap-3">
-                    <ButtonLink href={studioWhatsappHref}>
-                      {t("studioCta")}
-                    </ButtonLink>
-                    <ButtonLink href={contactBasePath[locale]} variant="outline">
-                      {t("studioContactLabel")}
-                    </ButtonLink>
-                  </div>
                 </div>
               </Reveal>
+              <div className="grid gap-10 lg:grid-cols-2">
+                {physicalStudios.map((entry, index) => (
+                  <Reveal delay={index * 0.04} key={entry.studio.id}>
+                    <article className="grid items-center gap-8 md:grid-cols-[0.95fr_1.05fr]">
+                      <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-primary/20 bg-surface">
+                        <Image
+                          alt={entry.image.alt}
+                          className="h-full w-full object-cover object-center"
+                          height={entry.image.height}
+                          sizes="(min-width: 1024px) 42vw, 92vw"
+                          src={entry.image.src}
+                          width={entry.image.width}
+                        />
+                      </div>
+                      <div className="max-w-xl">
+                        <Badge variant="outline">{entry.roleLabel}</Badge>
+                        <h3 className="mt-4 font-display text-3xl leading-tight text-foreground">
+                          {entry.studio.city}
+                          {entry.studio.region ? `, ${entry.studio.region}` : ""}
+                        </h3>
+                        <p className="mt-2 text-sm font-semibold uppercase tracking-[0.12em] text-muted-foreground">
+                          {entry.studio.country}
+                        </p>
+                        <p className="mt-4 text-base leading-8 text-foreground/85">
+                          {entry.studio.notes}
+                        </p>
+                        <div className="mt-6 flex items-start gap-3 rounded-xl border border-primary/25 bg-surface/80 p-4">
+                          <MapPin
+                            aria-hidden="true"
+                            className="mt-0.5 size-5 shrink-0 text-primary-text"
+                          />
+                          <div>
+                            <p className="font-semibold text-foreground">
+                              {journeysT("addressLabel")}
+                            </p>
+                            {entry.studio.address ? (
+                              <p className="mt-1 text-sm leading-6 text-muted-foreground">
+                                {entry.studio.address}
+                              </p>
+                            ) : null}
+                            {entry.showLegalNote ? (
+                              <p className="mt-2 text-xs font-semibold text-primary-text">
+                                {legalProfile.note}
+                              </p>
+                            ) : null}
+                          </div>
+                        </div>
+                        <div className="mt-7 flex flex-wrap gap-3">
+                          <ButtonLink href={entry.whatsappHref}>
+                            {t("studioCta")}
+                          </ButtonLink>
+                          {entry.studioPageHref ? (
+                            <ButtonLink href={entry.studioPageHref} variant="outline">
+                              {t("studioPageLinkLabel")}
+                            </ButtonLink>
+                          ) : (
+                            <ButtonLink href={contactBasePath[locale]} variant="outline">
+                              {t("studioContactLabel")}
+                            </ButtonLink>
+                          )}
+                        </div>
+                      </div>
+                    </article>
+                  </Reveal>
+                ))}
+              </div>
             </Container>
           </RoseWash>
         </Section>

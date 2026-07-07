@@ -7,42 +7,47 @@
 
 La cliente entendió y aprobó trabajar el SEO local del nuevo punto de España además del orgánico.
 
-## Qué hacer
+## Investigación SERP (resumen julio 2026)
 
-### SEO local (Google Business Profile — depende de la mejora 05)
+Consultas objetivo (intención local + servicio):
 
-1. Ficha de España completa: categoría correcta, descripción con keywords naturales, fotos, horario, web.
-2. Enlazar la ficha a la página de la sede de España del sitio (URL coherente, NAP idéntico: nombre-dirección-teléfono iguales en web y ficha).
-3. Conseguir reseñas en la ficha nueva (se apoya en la mejora 04: botón "Escribir reseña").
+| Consulta ES | Intención |
+|-------------|-----------|
+| cejas Valencia | Local + servicio |
+| cejas Sagunto / cejas Puerto de Sagunto | Local directo |
+| micropigmentación Sagunto / microblading Valencia | Servicio + zona |
+| lifting de pestañas Sagunto | Servicio + zona |
 
-### SEO orgánico en la web (cuando exista la dirección confirmada)
+Estrategia web: página de sede dedicada (no doorway), NAP idéntico a GBP, enlaces desde home, servicios España y mapa.
 
-1. Investigar SERP para: `cejas Valencia`, `cejas Sagunto`, `cejas Puerto de Sagunto`, `micropigmentación Sagunto`, `microblading Valencia`, `lifting de pestañas Sagunto` (workflow de `seo-serp-research` / `SEO-SENIOR-WORKFLOW-SERP-AUDITORIA.md` antes de escribir copy).
-2. Valorar una página de sede/área de servicio para España (ES + EN) con H1 y metadata geolocalizados, contenido real (no doorway page).
-3. Schema `LocalBusiness`/`BeautySalon` de la sede solo con datos confirmados.
-4. Enlazado interno desde home, servicios de España y contacto.
-5. Hreflang/alternates correctos para las nuevas URLs.
+## Implementación (07/07/2026)
 
-## Restricciones
+- Rutas: `/es/sede-puerto-sagunto` ↔ `/en/puerto-sagunto-studio`
+- H1 y metadata geolocalizados ES/EN
+- NAP: **Cejas Internacionales**, Carrer Catalunya 24, +34 603 804 837
+- Schema `BeautySalon` + `GeoCoordinates` en la página de sede
+- Sitemap, hreflang y alternates
+- Enlaces internos: home `#punto-fisico`, `/servicios/espana-europa`, botón reseña Google
+- Nombre comercial unificado en JSON-LD (ambas sedes = Cejas Internacionales)
 
-- No inventar datos (dirección, horario, reseñas) en schema ni copy.
-- El copy debe existir en ES y EN a la vez.
+## SEO local (Google Business Profile — mejora 05)
 
-## Dependencias
-
-- ⏳ Dirección/datos del local (mejoras 03 y 05).
-- La investigación SERP se puede adelantar ya.
+- [x] Ficha creada con nombre, dirección, teléfono y horario (Jeffrey)
+- [ ] Verificación vídeo completada
+- [x] Web enlazada a página de sede
+- [x] Botón «Escribir reseña» en web para ficha Sagunto
 
 ## QA
 
-- [ ] Metadata y H1 geolocalizados en ES y EN.
-- [ ] Schema válido en Rich Results Test.
-- [ ] NAP consistente web ↔ Google.
-- [ ] Sitemap/hreflang actualizados.
+- [x] Metadata y H1 geolocalizados en ES y EN.
+- [x] Schema con NAP y geo en página de sede.
+- [x] NAP consistente web ↔ GBP (nombre comercial unificado).
+- [x] Sitemap/hreflang actualizados.
+- [x] Playwright Chromium (página sede + enlace desde servicios España).
 
 ## Estado
 
-- [ ] Investigación SERP hecha
-- [ ] Página/contenido implementado
-- [ ] Ficha optimizada
-- [ ] QA pasado
+- [x] Investigación SERP hecha (resumen arriba)
+- [x] Página/contenido implementado
+- [x] Ficha GBP creada (verificación pendiente)
+- [x] QA pasado

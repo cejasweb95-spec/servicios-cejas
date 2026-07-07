@@ -415,7 +415,7 @@ test.describe("confirmed contact channels", () => {
     );
     await expect(main.getByRole("link", { name: /Facebook/ })).toHaveAttribute(
       "href",
-      /facebook\.com\/share\/1G425xaA7s/,
+      /facebook\.com\/profile\.php\?id=100040191503345/,
     );
     await expect(main.getByRole("link", { name: /TikTok/ })).toHaveAttribute(
       "href",
@@ -467,8 +467,11 @@ test.describe("journeys and animated map", () => {
     }
 
     await expect(page.locator("main")).toContainText(
-      "Sin sedes fijas fuera de Cali",
+      "Ciudades sin sede fija",
     );
+    await expect(
+      locationList.getByRole("button", { name: /Puerto de Sagunto/ }).first(),
+    ).toContainText("Sede física");
     await expect(page.locator("main")).not.toContainText(/cupo disponible el/i);
 
     const schemas = await page
@@ -477,13 +480,16 @@ test.describe("journeys and animated map", () => {
         scripts.map((script) => JSON.parse(script.textContent ?? "{}")),
       );
     const hasEventSchema = schemas.some((schema) => schema["@type"] === "Event");
-    const beautySalonSchema = schemas.find(
+    const beautySalons = schemas.filter(
       (schema) => schema["@type"] === "BeautySalon",
     );
+    const serializedSalons = JSON.stringify(beautySalons);
 
     expect(hasEventSchema).toBe(false);
-    expect(JSON.stringify(beautySalonSchema)).toContain("Cali");
-    expect(JSON.stringify(beautySalonSchema)).not.toContain("Madrid");
+    expect(beautySalons).toHaveLength(2);
+    expect(serializedSalons).toContain("El Templete");
+    expect(serializedSalons).toContain("Puerto de Sagunto");
+    expect(serializedSalons).not.toContain("Madrid");
   });
 
   test("keeps journeys responsive, keyboard usable and language-equivalent", async ({
@@ -498,7 +504,9 @@ test.describe("journeys and animated map", () => {
     );
     await expect(mapScrollRegion).toBeVisible();
     await expect(
-      page.locator('img[src*="mapa-mundial-clasico"]'),
+      mapScrollRegion.locator(
+        'img[src*="mapa-mundial-clasico"], [data-map-zoom-content] > svg',
+      ).first(),
     ).toBeVisible();
     expect(
       await mapScrollRegion.evaluate(

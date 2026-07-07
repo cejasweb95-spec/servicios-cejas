@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Marcellus, Manrope } from "next/font/google";
+import { Marcellus, Manrope, Oswald } from "next/font/google";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
@@ -42,6 +42,13 @@ const marcellus = Marcellus({
   subsets: ["latin"],
   weight: "400",
   variable: "--font-marcellus",
+  display: "swap",
+});
+
+const oswald = Oswald({
+  subsets: ["latin"],
+  weight: ["500", "600"],
+  variable: "--font-oswald",
   display: "swap",
 });
 
@@ -147,7 +154,7 @@ export default async function LocaleLayout({
     <html
       lang={locale}
       data-scroll-behavior="smooth"
-      className={`${manrope.variable} ${marcellus.variable}`}
+      className={`${manrope.variable} ${marcellus.variable} ${oswald.variable}`}
     >
       <body className="bg-background text-foreground antialiased">
         <NextIntlClientProvider messages={messages}>
@@ -157,7 +164,11 @@ export default async function LocaleLayout({
               <SiteHeader
                 contactLabel={shellT("contactCta")}
                 currentLocale={locale}
-                logo={logo}
+                wordmark={{
+                  ariaLabel: shellT("headerWordmarkAriaLabel"),
+                  brandLine: shellT("headerBrandLine"),
+                  byline: shellT("headerByline"),
+                }}
                 labels={{
                   closeMenu: shellT("closeMenu"),
                   language: shellT("languageNavigation"),

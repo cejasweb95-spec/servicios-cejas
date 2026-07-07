@@ -1,7 +1,7 @@
 {
   "Meta": {
     "title": "Cejas Internacionales | Micropigmentation and training",
-    "description": "Cejas Internacionales offers micropigmentation, specialized beauty and professional training, based in Cali with international service in Spain and Switzerland."
+    "description": "Cejas Internacionales offers micropigmentation, specialized beauty and professional training, with physical studios in Cali and Puerto de Sagunto and by-appointment service in other cities."
   },
   "Home": {
     "heroEyebrow": "Cejas Internacionales",
@@ -10,7 +10,7 @@
     "heroLead": "Advanced micropigmentation specialist, technician and international trainer",
     "heroBioParagraphs": [
       "I am Xiomara Andrea Sánchez Noreña, a micropigmentation specialist with more than five years of professional experience helping clients enhance their natural beauty through precise, safe and personalized techniques.",
-      "I have carried out around 2,000 procedures in Colombia and Spain, and I take part in international appointments that keep me up to date with the latest techniques in the field. Cejas Internacionales is based in Cali and also serves Spain and Switzerland."
+      "I have carried out around 2,000 procedures in Colombia and Spain, and I take part in international appointments that keep me up to date with the latest techniques in the field. Cejas Internacionales has physical studios in Cali and Puerto de Sagunto, and also serves other cities by appointment."
     ],
     "heroAboutCta": "About me",
     "heroMarketsLine": "Colombia · Spain/Europe · Switzerland",
@@ -35,11 +35,14 @@
     "journeysTitle": "Where to <i>find me</i>",
     "journeysDescription": "Discover the places where you can find me and view the details for each location.",
     "journeysLinkLabel": "View locations",
-    "studioEyebrow": "Physical studio",
-    "studioTitle": "Studio in <i>Cali</i>",
-    "studioCopy": "The physical studio and legal address of Cejas Internacionales is in Cali. This is where you receive personal care, in-person training and the same standard I bring to my international appointments.",
+    "studioEyebrow": "Physical studios",
+    "studioTitle": "Physical <i>studios</i>",
+    "studioCopy": "In-person service in Cali (main studio and legal address) and in Puerto de Sagunto, Valencia. Madrid, Palma de Mallorca, Restrepo and Geneva are coordinated by appointment on WhatsApp.",
+    "studioPrimaryLabel": "Main studio",
+    "studioSecondaryLabel": "Spain studio",
     "studioCta": "Message on WhatsApp",
     "studioContactLabel": "View contact",
+    "studioPageLinkLabel": "View Puerto de Sagunto studio",
     "resultsCta": "View full gallery",
     "aboutLinkLabel": "Meet Xiomara",
     "studioLabel": "Physical studio",
@@ -47,7 +50,7 @@
     "resultsTitle": "Real <i>results</i> that inspire confidence",
     "resultsCopy": "Explore real brow, lip and eye-area work, including healed results, without stock imagery or guaranteed-outcome claims.",
     "aboutTitle": "Xiomara, <i>specialist and trainer</i>",
-    "aboutCopy": "Cejas Internacionales brings together specialized beauty services, professional training and appointments in selected cities, with its only physical and legal studio in Cali.",
+    "aboutCopy": "Cejas Internacionales brings together specialized beauty services, professional training and by-appointment service in selected cities, with physical studios in Cali and Puerto de Sagunto. The legal address remains Cali only.",
     "coursesTitle": "Training and <i>masterclasses</i>",
     "coursesDescription": "Courses with downloadable PDFs, confirmed duration and direct WhatsApp contact to ask about the programme.",
     "courseDownloadLabel": "Download PDF",
@@ -96,7 +99,10 @@
     "catalogDownloadLabel": "Download catalog PDF",
     "contactLabel": "Contact me",
     "emptyTitle": "No services published",
-    "emptyDescription": "There are no confirmed services for this market yet."
+    "emptyDescription": "There are no confirmed services for this market yet.",
+    "studioBannerTitle": "Physical studio in Puerto de Sagunto, Valencia",
+    "studioBannerDescription": "In-person appointments at Carrer Catalunya 24 with prior booking via WhatsApp. Browse services priced in euros and how to reach the studio.",
+    "studioBannerCta": "View Puerto de Sagunto studio"
   },
   "Downloads": {
     "metaTitle": "Catalog and training downloads | Cejas Internacionales",
@@ -129,15 +135,15 @@
   },
   "Journeys": {
     "metaTitle": "Appointments by city | Cejas Internacionales",
-    "metaDescription": "View the Cali studio and the cities where I work internationally across Colombia, Spain and Switzerland. Booking is confirmed through WhatsApp.",
+    "metaDescription": "View the Cali and Puerto de Sagunto studios and the cities where I work by appointment across Colombia, Spain and Switzerland. Booking is confirmed through WhatsApp.",
     "breadcrumbsLabel": "Breadcrumbs",
     "homeLabel": "Home",
     "eyebrow": "International appointments",
     "title": "Where to find me",
-    "description": "Cejas Internacionales has its physical studio and legal address in Cali, Colombia. I also work internationally in Restrepo, Madrid, Palma de Mallorca, Puerto de Sagunto and Geneva. Message me on WhatsApp for more information.",
+    "description": "Cejas Internacionales has physical studios in Cali (main studio and legal address) and in Puerto de Sagunto, Valencia. I also work by appointment in Restrepo, Madrid, Palma de Mallorca and Geneva. Message me on WhatsApp for more information.",
     "primaryCta": "View locations map",
     "mapTitle": "Where to find me",
-    "mapAriaLabel": "Editorial map showing the physical studio in Cali and the cities where I work internationally.",
+    "mapAriaLabel": "Editorial map showing the physical studios in Cali and Puerto de Sagunto and the cities where I work by appointment.",
     "mapLegendHint": "The dot on the country marks the city; the outer pin and arrow point to the selectable location.",
     "mapInteractionHint": "Zoom in with +/−, the mouse wheel or a two-finger pinch; drag to move. Double-tap resets the view.",
     "mapZoomControlsLabel": "Map zoom controls",
@@ -148,14 +154,14 @@
     "selectedLocationLabel": "Selected location details",
     "selectLocationLabel": "Select location",
     "physicalStudioLabel": "Physical studio",
-    "physicalStudioDescription": "The only physical studio and legal address are in Cali, Valle del Cauca, Colombia.",
+    "physicalStudioDescription": "Confirmed physical studios are in Cali (main studio and legal address) and in Puerto de Sagunto, Valencia.",
     "journeyLabel": "By appointment",
     "addressLabel": "Address",
     "contactLabel": "Contact me",
     "availabilityTitle": "How city appointments are confirmed",
     "availabilityDescription": "Dates are confirmed on WhatsApp when ready. Message me to coordinate your appointment in the city you need.",
-    "noFixedStudioTitle": "No fixed studios outside Cali",
-    "noFixedStudioDescription": "Spain, Switzerland and Restrepo are appointment locations, not offices, salons or permanent studios.",
+    "noFixedStudioTitle": "Cities without a fixed studio",
+    "noFixedStudioDescription": "Madrid, Palma de Mallorca, Restrepo and Geneva are shown as by-appointment locations. They should not be read as offices, salons or permanent studios.",
     "whatsappMessage": "Hello, I would like information about services or appointments in {location}. I would like to continue on WhatsApp."
   },
   "ResultsPage": {
@@ -184,10 +190,10 @@
     "homeLabel": "Home",
     "eyebrow": "About Xiomara",
     "title": "Xiomara Andrea Sánchez Noreña",
-    "description": "Micropigmentation specialist, technician and trainer, with a physical studio in Cali and international service in selected cities.",
+    "description": "Micropigmentation specialist, technician and trainer, with physical studios in Cali and Puerto de Sagunto and by-appointment service in other cities.",
     "contactLabel": "Contact me",
     "trajectoryTitle": "International trajectory with a Colombian studio",
-    "trajectoryText": "Cejas Internacionales is based in Cali and works internationally in Restrepo, Madrid, Palma de Mallorca, Puerto de Sagunto and Geneva.",
+    "trajectoryText": "Cejas Internacionales keeps its main studio in Cali, its second physical studio in Puerto de Sagunto and works by appointment in Restrepo, Madrid, Palma de Mallorca and Geneva.",
     "certificationTitle": "Professional training and continuous development",
     "bio": [
       "I am Xiomara Andrea Sánchez Noreña, a micropigmentation specialist with more than five years of professional experience helping clients enhance their natural beauty through precise, safe and personalized techniques.",
@@ -224,6 +230,36 @@
     "mapHint": "Tapping this will load Google Maps",
     "mapDirectionsLabel": "Open in Google Maps",
     "socialLabel": "Social media"
+  },
+  "PuertoSaguntoStudioPage": {
+    "metaTitle": "Brow micropigmentation in Puerto de Sagunto | Cejas Internacionales",
+    "metaDescription": "Cejas Internacionales physical studio at Carrer Catalunya 24, Puerto de Sagunto (Valencia). Brow and lip micropigmentation, lash services and more by WhatsApp appointment.",
+    "breadcrumbsLabel": "Breadcrumbs",
+    "homeLabel": "Home",
+    "eyebrow": "Spain studio",
+    "title": "Brow micropigmentation in Puerto de Sagunto, Valencia",
+    "description": "Cejas Internacionales welcomes clients at its second physical studio in Spain, in Puerto de Sagunto, with brow, lip and lash services for Valencia and wider Europe.",
+    "introParagraphs": [
+      "If you are looking for brows in Puerto de Sagunto, micropigmentation in Sagunto or specialist beauty services in the Valencia area, this is the confirmed in-person studio of Cejas Internacionales in Spain.",
+      "The treatment room is at Carrer Catalunya 24, inside a shared premises, with appointments booked in advance via WhatsApp. I also coordinate sessions in Madrid, Palma de Mallorca and other cities, but Puerto de Sagunto is the confirmed fixed studio in Spain.",
+      "The Spain/Europe catalogue is priced in euros and includes confirmed brow and lip micropigmentation, lamination, henna, lash lifting and other services for this market."
+    ],
+    "businessNameLabel": "Trading name",
+    "addressLabel": "Address",
+    "phoneLabel": "Phone / WhatsApp",
+    "napNote": "The trading name, address and phone number match the public Google Business Profile listing for this studio. The legal address published on the website remains Cali, Colombia only.",
+    "whatsappCta": "Contact me",
+    "whatsappMessage": "Hello, I would like information about the Cejas Internacionales studio in Puerto de Sagunto and to check availability on WhatsApp.",
+    "journeysLinkLabel": "View locations map",
+    "servicesTitle": "Services in Spain and Europe",
+    "servicesDescription": "Browse prices in euros, appointment duration and the full catalogue of confirmed services for Spain and Europe.",
+    "servicesCta": "View Spain/Europe services",
+    "mapTitle": "How to reach the Puerto de Sagunto studio",
+    "mapLoadLabel": "View the map",
+    "mapHint": "Tapping this will load Google Maps",
+    "directionsLabel": "Open in Google Maps",
+    "reviewTitle": "Google reviews",
+    "reviewCta": "If you have already visited the Puerto de Sagunto studio, you can leave a review on the Google listing for this location."
   },
   "AftercarePage": {
     "metaTitle": "Micropigmentation aftercare | Cejas Internacionales",
@@ -331,8 +367,8 @@
       {
         "title": "Studio and city appointments",
         "items": [
-          "The published physical studio and legal address correspond only to Cali, Colombia.",
-          "Spain, Switzerland and other cities are listed for appointments by prior arrangement, not as permanent offices or studios.",
+          "The published legal address corresponds only to Cali, Colombia.",
+          "Cali and Puerto de Sagunto (Valencia) are confirmed physical studios; Madrid, Palma de Mallorca, Restrepo, Geneva and other cities are coordinated by appointment.",
           "Prices, dates, spots and availability are confirmed through WhatsApp."
         ]
       },
@@ -489,6 +525,9 @@
     "moreNavigation": "More",
     "secondaryNavigation": "More sections",
     "brandEyebrow": "Cejas Internacionales",
+    "headerBrandLine": "Cejas Internacionales",
+    "headerByline": "by Xiomara",
+    "headerWordmarkAriaLabel": "Cejas Internacionales by Xiomara, home",
     "contactCta": "Contact me",
     "cookiesTitle": "Privacy and cookies",
     "cookiesDescription": "We use necessary cookies so the website works. GA4 analytics only activate if you accept them; you can reject or configure without losing access.",

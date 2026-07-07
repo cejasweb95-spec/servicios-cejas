@@ -51,7 +51,7 @@ export function AboutXiomaraPage({
   whatsapp,
 }: AboutXiomaraPageProps) {
   const portrait = getMediaAssets().find(
-    (asset) => asset.id === "xiomara-retrato-rosa",
+    (asset) => asset.id === "xiomara-retrato-mundo",
   );
   const certificationsImage = getMediaAssets().find(
     (asset) => asset.id === "xiomara-certificaciones-estudio",
@@ -86,7 +86,7 @@ export function AboutXiomaraPage({
             <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-primary/15 bg-surface">
               <Image
                 alt={portrait.alt[locale]}
-                className="h-full w-full object-cover"
+                className="h-full w-full object-cover object-[center_22%]"
                 height={portrait.height}
                 priority
                 sizes="(min-width: 1024px) 34vw, 90vw"

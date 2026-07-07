@@ -6,6 +6,7 @@ import {
   getDownloads,
   getDownloadsByMarket,
   getMediaAssets,
+  getPhysicalStudios,
   getServicesByMarket,
 } from "@/lib/content/queries";
 import { assertMarketOfferRules, validateContent } from "@/lib/content/validators";
@@ -105,6 +106,16 @@ describe("content data layer", () => {
       expect(existsSync(filePath), `${media.publicPath} should exist`).toBe(true);
       expect(statSync(filePath).size).toBeGreaterThan(0);
     }
+  });
+
+  it("models Cali and Puerto de Sagunto as physical studios", () => {
+    const studios = getPhysicalStudios("es");
+
+    expect(studios).toHaveLength(2);
+    expect(studios[0]?.id).toBe("cali");
+    expect(studios[1]?.id).toBe("puerto-sagunto");
+    expect(studios[1]?.address).toContain("Carrer Catalunya, 24");
+    expect(studios[1]?.mediaId).toBe("estudio-puerto-sagunto-portada");
   });
 
   it("builds encoded WhatsApp links", () => {

@@ -72,6 +72,7 @@
   --color-surface-strong: var(--surface-strong);
   --font-sans: var(--font-manrope);
   --font-display: var(--font-marcellus);
+  --font-header-brand: var(--font-oswald);
   --shadow-soft: var(--shadow-soft);
   --shadow-elevated: var(--shadow-elevated);
   --font-heading: var(--font-marcellus);

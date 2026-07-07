@@ -9,11 +9,11 @@ export const socialLinks = socialLinkSchema.array().parse([
   {
     id: "facebook",
     label: "Facebook",
-    href: "https://www.facebook.com/share/1G425xaA7s/?mibextid=wwXIfr",
+    href: "https://www.facebook.com/profile.php?id=100040191503345",
   },
   {
     id: "tiktok",
     label: "TikTok",
-    href: "https://www.tiktok.com/@cejasinternacionales?_r=1&_t=ZS-97EwJJASFNc",
+    href: "https://www.tiktok.com/@cejasinternacionales",
   },
 ] satisfies SocialLink[]);

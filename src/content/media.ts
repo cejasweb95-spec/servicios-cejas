@@ -64,8 +64,21 @@ export const mediaAssets = mediaAssetSchema.array().parse([
     id: "xiomara-hero-escritorio",
     type: "photo",
     sourcePath:
-      "docs/cliente/assets-extraidos/xiomara-sesion-profesional/xiomara-sesion-profesional-12.jpeg",
+      "docs/cliente/assets-extraidos/xiomara-sesion-profesional/xiomara-sesion-profesional-07.jpeg",
     publicPath: "/images/xiomara/xiomara-hero-home.jpg",
+    alt: l(
+      "Xiomara Sánchez en su estudio de Cali con diplomas y certificaciones profesionales en la pared",
+      "Xiomara Sánchez at her Cali studio with professional diplomas and certifications on the wall",
+    ),
+    width: 1000,
+    height: 1500,
+  },
+  {
+    id: "xiomara-retrato-mundo",
+    type: "photo",
+    sourcePath:
+      "docs/cliente/assets-extraidos/xiomara-sesion-profesional/xiomara-sesion-profesional-12.jpeg",
+    publicPath: "/images/xiomara/xiomara-retrato-mundo.jpg",
     alt: l(
       "Xiomara Sánchez con uniforme profesional y globo terráqueo, símbolo de las jornadas internacionales de Cejas Internacionales",
       "Xiomara Sánchez in professional uniform holding a globe, symbol of Cejas Internacionales international appointments",
@@ -187,6 +200,34 @@ export const mediaAssets = mediaAssetSchema.array().parse([
     ),
     width: 890,
     height: 1267,
+  },
+  {
+    id: "estudio-puerto-sagunto-portada",
+    type: "photo",
+    sourcePath:
+      "docs/cliente/assets-extraidos/estudio-puerto-sagunto/01-portada-cabina-letras-cejas-internacionales.jpeg",
+    publicPath:
+      "/images/estudio/puerto-sagunto/01-portada-cabina-letras-cejas-internacionales.jpeg",
+    alt: l(
+      "Cabina de Cejas Internacionales en Puerto de Sagunto con letras del estudio",
+      "Cejas Internacionales treatment room in Puerto de Sagunto with studio lettering",
+    ),
+    width: 1536,
+    height: 2048,
+  },
+  {
+    id: "estudio-puerto-sagunto-interior",
+    type: "photo",
+    sourcePath:
+      "docs/cliente/assets-extraidos/estudio-puerto-sagunto/02-interior-vista-general-local.jpeg",
+    publicPath:
+      "/images/estudio/puerto-sagunto/02-interior-vista-general-local.jpeg",
+    alt: l(
+      "Interior del estudio de Cejas Internacionales en Puerto de Sagunto",
+      "Interior of the Cejas Internacionales studio in Puerto de Sagunto",
+    ),
+    width: 1536,
+    height: 2048,
   },
   {
     id: "resultados-cejas-labios-pared",

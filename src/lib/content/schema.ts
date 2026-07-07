@@ -126,6 +126,8 @@ export const locationSchema = z.object({
   city: localizedStringSchema,
   region: localizedStringSchema.optional(),
   type: z.enum(["physical_studio", "journey_availability"]),
+  studioRole: z.enum(["primary", "secondary"]).optional(),
+  mediaId: z.string().min(1).optional(),
   address: localizedStringSchema.optional(),
   coordinates: z
     .object({

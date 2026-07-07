@@ -83,7 +83,9 @@ test.describe("SEO technical foundation", () => {
     });
   }
 
-  test("home schema uses only the confirmed Cali studio address", async ({ page }) => {
+  test("home schema lists confirmed physical studios in Cali and Puerto de Sagunto", async ({
+    page,
+  }) => {
     await page.goto("/es");
 
     const schemas = await getJsonLd(page);
@@ -92,9 +94,12 @@ test.describe("SEO technical foundation", () => {
       expect.arrayContaining(["Organization", "BeautySalon", "WebSite", "WebPage"]),
     );
 
-    const beautySalon = schemas.find((schema) => schema["@type"] === "BeautySalon");
-    const serialized = JSON.stringify(beautySalon);
-    expect(serialized).toContain("Cali");
+    const beautySalons = schemas.filter((schema) => schema["@type"] === "BeautySalon");
+    const serialized = JSON.stringify(beautySalons);
+    expect(beautySalons).toHaveLength(2);
+    expect(serialized).toContain("El Templete");
+    expect(serialized).toContain("Puerto de Sagunto");
+    expect(serialized).toContain("Carrer Catalunya, 24");
     expect(serialized).not.toContain("Madrid");
     expect(serialized).not.toContain("Ginebra");
     expect(serialized).not.toContain("Palma de Mallorca");

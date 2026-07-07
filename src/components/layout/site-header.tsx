@@ -1,6 +1,6 @@
-import Image from "next/image";
 import { MessageCircle } from "lucide-react";
 
+import { HeaderWordmark } from "@/components/layout/header-wordmark";
 import { MobileNav } from "@/components/layout/mobile-nav";
 import { DesktopNav } from "@/components/layout/desktop-nav";
 import { LocaleSwitcher } from "@/components/layout/locale-switcher";
@@ -14,7 +14,6 @@ import {
   type ResolvedNavItem,
 } from "@/config/navigation";
 import { type Locale } from "@/i18n/routing";
-import { siteConfig } from "@/config/site";
 
 type WhatsAppTarget = {
   id: string;
@@ -23,17 +22,16 @@ type WhatsAppTarget = {
   defaultMessage: string;
 };
 
-type SiteLogo = {
-  alt: string;
-  height: number;
-  src: string;
-  width: number;
+type HeaderWordmarkContent = {
+  ariaLabel: string;
+  brandLine: string;
+  byline: string;
 };
 
 type SiteHeaderProps = {
   contactLabel: string;
   currentLocale: Locale;
-  logo: SiteLogo | null;
+  wordmark: HeaderWordmarkContent;
   labels: {
     closeMenu: string;
     language: string;
@@ -55,7 +53,7 @@ type SiteHeaderProps = {
 export function SiteHeader({
   contactLabel,
   currentLocale,
-  logo,
+  wordmark,
   labels,
   navItems,
   whatsapp,
@@ -67,27 +65,12 @@ export function SiteHeader({
     <header className="sticky top-0 z-40 border-b border-primary/15 bg-background/92 shadow-soft backdrop-blur-xl supports-backdrop-filter:bg-background/86">
       <div className="mx-auto flex min-h-[4.75rem] max-w-7xl items-center justify-between gap-4 px-5 py-3.5 sm:min-h-20 sm:px-8 sm:py-4 xl:min-h-[4.75rem] xl:py-3.5">
         <Link
-          aria-label={logo?.alt ?? siteConfig.name}
+          aria-label={wordmark.ariaLabel}
           className="inline-flex min-h-14 shrink-0 items-center rounded-md focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/40"
           data-slot="site-logo-link"
           href="/"
         >
-          {logo ? (
-            <Image
-              alt={logo.alt}
-              className="h-14 w-auto max-w-[min(18rem,calc(100vw-8rem))] motion-safe:transition-[height,max-width] motion-reduce:transition-none sm:h-16 sm:max-w-[min(20rem,calc(100vw-9.5rem))] xl:h-14 xl:max-w-64"
-              data-slot="site-logo"
-              height={logo.height}
-              priority
-              sizes="(max-width: 1279px) 360px, 300px"
-              src={logo.src}
-              width={logo.width}
-            />
-          ) : (
-            <span className="font-display text-lg text-foreground">
-              {siteConfig.name}
-            </span>
-          )}
+          <HeaderWordmark brandLine={wordmark.brandLine} byline={wordmark.byline} />
         </Link>
         <DesktopNav
           currentLocale={currentLocale}

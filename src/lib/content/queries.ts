@@ -183,6 +183,34 @@ export function getLocations(locale: Locale) {
   }));
 }
 
+export function getPhysicalStudios(locale: Locale) {
+  return getLocations(locale)
+    .filter((location) => location.type === "physical_studio")
+    .sort((left, right) => {
+      if (left.studioRole === "primary") return -1;
+      if (right.studioRole === "primary") return 1;
+      return 0;
+    });
+}
+
+export function getLocationById(id: string, locale: Locale) {
+  const location = locations.find((item) => item.id === id);
+  return location ? getLocations(locale).find((item) => item.id === id) ?? null : null;
+}
+
+export function getGoogleReviewProfileByLocationId(locationId: string, locale: Locale) {
+  const profile = googleReviewProfiles.find((item) => item.locationId === locationId);
+
+  if (!profile) {
+    return null;
+  }
+
+  return {
+    ...profile,
+    label: text(profile.label, locale),
+  };
+}
+
 export function getEvents(locale: Locale) {
   return events.map((event) => ({
     ...event,

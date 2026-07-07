@@ -1,7 +1,7 @@
 {
   "Meta": {
     "title": "Cejas Internacionales | Micropigmentación y formaciones",
-    "description": "Cejas Internacionales ofrece micropigmentación, belleza especializada y formación profesional, con sede en Cali y atención internacional en España y Suiza."
+    "description": "Cejas Internacionales ofrece micropigmentación, belleza especializada y formación profesional, con sedes físicas en Cali y Puerto de Sagunto y atención por cita en otras ciudades."
   },
   "Home": {
     "heroEyebrow": "Cejas Internacionales",
@@ -10,7 +10,7 @@
     "heroLead": "Especialista en micropigmentación avanzada, técnica y formadora internacional",
     "heroBioParagraphs": [
       "Soy Xiomara Andrea Sánchez Noreña, especialista en micropigmentación con más de cinco años de experiencia ayudando a realzar la belleza natural con técnicas precisas, seguras y personalizadas.",
-      "He realizado cerca de 2.000 procedimientos en Colombia y España, y participo en jornadas internacionales que me mantienen actualizada con las últimas técnicas del sector. Cejas Internacionales tiene su sede física en Cali y atiende también en España y Suiza."
+      "He realizado cerca de 2.000 procedimientos en Colombia y España, y participo en jornadas internacionales que me mantienen actualizada con las últimas técnicas del sector. Cejas Internacionales tiene sede física en Cali y en Puerto de Sagunto, y también atiende por cita en otras ciudades."
     ],
     "heroAboutCta": "Sobre mí",
     "heroMarketsLine": "Colombia · España/Europa · Suiza",
@@ -35,11 +35,15 @@
     "journeysTitle": "Dónde me <i>encuentras</i>",
     "journeysDescription": "Conoce los lugares donde puedes encontrarme y consulta la información de cada ubicación.",
     "journeysLinkLabel": "Ver ubicaciones",
-    "studioEyebrow": "Punto físico",
-    "studioTitle": "Estudio en <i>Cali</i>",
-    "studioCopy": "La sede física y dirección legal de Cejas Internacionales está en Cali. Aquí recibes atención personalizada, formación presencial y el estándar que también llevo a mis jornadas internacionales.",
+    "aboutCopy": "Cejas Internacionales combina servicios de belleza especializada, formación profesional y atención por cita en distintas ciudades, con sedes físicas en Cali y Puerto de Sagunto. La dirección legal sigue siendo solo Cali.",
+    "studioEyebrow": "Puntos físicos",
+    "studioTitle": "Sedes <i>físicas</i>",
+    "studioCopy": "Atención presencial en Cali (sede principal y dirección legal) y en Puerto de Sagunto, Valencia. En Madrid, Palma de Mallorca, Restrepo y Ginebra la cita se coordina por WhatsApp.",
+    "studioPrimaryLabel": "Sede principal",
+    "studioSecondaryLabel": "Sede España",
     "studioCta": "Escribir por WhatsApp",
     "studioContactLabel": "Ver contacto",
+    "studioPageLinkLabel": "Ver sede en Puerto de Sagunto",
     "resultsCta": "Ver galería completa",
     "aboutLinkLabel": "Conocer a Xiomara",
     "studioLabel": "Sede física",
@@ -47,7 +51,7 @@
     "resultsTitle": "Resultados <i>reales</i> que inspiran confianza",
     "resultsCopy": "Explora trabajos reales de cejas, labios y mirada, incluidos resultados cicatrizados, sin imágenes de stock ni promesas garantizadas.",
     "aboutTitle": "Xiomara, <i>técnica y formadora</i>",
-    "aboutCopy": "Cejas Internacionales combina servicios de belleza especializada, formación profesional y jornadas en distintas ciudades, siempre con la sede física y legal ubicada en Cali.",
+    "aboutCopy": "Cejas Internacionales combina servicios de belleza especializada, formación profesional y atención por cita en distintas ciudades, con sedes físicas en Cali y Puerto de Sagunto. La dirección legal sigue siendo solo Cali.",
     "coursesTitle": "Formaciones y <i>masterclass</i>",
     "coursesDescription": "Cursos con PDF descargable, duración confirmada y contacto directo por WhatsApp para consultar el programa.",
     "courseDownloadLabel": "Descargar PDF",
@@ -96,7 +100,10 @@
     "catalogDownloadLabel": "Descargar catálogo PDF",
     "contactLabel": "Contacta conmigo",
     "emptyTitle": "Sin servicios publicados",
-    "emptyDescription": "Todavía no hay servicios confirmados para este mercado."
+    "emptyDescription": "Todavía no hay servicios confirmados para este mercado.",
+    "studioBannerTitle": "Sede física en Puerto de Sagunto, Valencia",
+    "studioBannerDescription": "Atención presencial en Carrer Catalunya 24 con cita previa por WhatsApp. Consulta servicios en euros y cómo llegar al estudio.",
+    "studioBannerCta": "Ver sede en Puerto de Sagunto"
   },
   "Downloads": {
     "metaTitle": "Descargas de catálogos y formaciones | Cejas Internacionales",
@@ -129,15 +136,15 @@
   },
   "Journeys": {
     "metaTitle": "Jornadas por ciudad | Cejas Internacionales",
-    "metaDescription": "Consulta la sede física de Cali y las ciudades donde atiendo internacionalmente en Colombia, España y Suiza. Reservas solo por WhatsApp.",
+    "metaDescription": "Consulta las sedes físicas de Cali y Puerto de Sagunto y las ciudades donde atiendo por cita en Colombia, España y Suiza. Reservas solo por WhatsApp.",
     "breadcrumbsLabel": "Migas de pan",
     "homeLabel": "Inicio",
     "eyebrow": "Jornadas internacionales",
     "title": "Dónde me encuentras",
-    "description": "Cejas Internacionales tiene sede física y dirección legal en Cali, Colombia. También atiendo internacionalmente en Restrepo, Madrid, Palma de Mallorca, Puerto de Sagunto y Ginebra. Escríbeme por WhatsApp para más información.",
+    "description": "Cejas Internacionales tiene sedes físicas en Cali (principal y dirección legal) y en Puerto de Sagunto, Valencia. También atiendo por cita en Restrepo, Madrid, Palma de Mallorca y Ginebra. Escríbeme por WhatsApp para más información.",
     "primaryCta": "Ver mapa de jornadas",
     "mapTitle": "Dónde me encuentras",
-    "mapAriaLabel": "Mapa editorial con la sede física en Cali y las ciudades donde atiendo internacionalmente.",
+    "mapAriaLabel": "Mapa editorial con las sedes físicas de Cali y Puerto de Sagunto y las ciudades donde atiendo por cita.",
     "mapLegendHint": "El punto sobre el país marca la ciudad; el pin exterior y la flecha señalan la ubicación seleccionable.",
     "mapInteractionHint": "Acércate con +/−, la rueda del ratón o pellizcando con dos dedos; arrastra para mover. Doble toque restablece la vista.",
     "mapZoomControlsLabel": "Controles de zoom del mapa",
@@ -148,14 +155,14 @@
     "selectedLocationLabel": "Detalle de ubicación seleccionada",
     "selectLocationLabel": "Seleccionar ubicación",
     "physicalStudioLabel": "Sede física",
-    "physicalStudioDescription": "La única sede física y dirección legal se encuentran en Cali, Valle del Cauca, Colombia.",
+    "physicalStudioDescription": "Las sedes físicas confirmadas están en Cali (principal y dirección legal) y en Puerto de Sagunto, Valencia.",
     "journeyLabel": "Atención por cita",
     "addressLabel": "Dirección",
     "contactLabel": "Contacta conmigo",
     "availabilityTitle": "Cómo se consultan las jornadas",
     "availabilityDescription": "Las fechas se confirman por WhatsApp cuando están listas. Escríbeme para coordinar tu cita en la ciudad que te interese.",
-    "noFixedStudioTitle": "Sin sedes fijas fuera de Cali",
-    "noFixedStudioDescription": "España, Suiza y Restrepo aparecen como ciudades de atención por jornada. No deben leerse como oficinas, locales o sedes permanentes.",
+    "noFixedStudioTitle": "Ciudades sin sede fija",
+    "noFixedStudioDescription": "Madrid, Palma de Mallorca, Restrepo y Ginebra aparecen como atención por cita. No deben leerse como locales o sedes permanentes.",
     "whatsappMessage": "Hola, quiero información sobre servicios o citas en {location}. Me gustaría continuar por WhatsApp."
   },
   "ResultsPage": {
@@ -184,10 +191,10 @@
     "homeLabel": "Inicio",
     "eyebrow": "Sobre Xiomara",
     "title": "Xiomara Andrea Sánchez Noreña",
-    "description": "Especialista en micropigmentación, técnica y formadora, con sede física en Cali y atención internacional en distintas ciudades.",
+    "description": "Especialista en micropigmentación, técnica y formadora, con sedes físicas en Cali y Puerto de Sagunto y atención por cita en otras ciudades.",
     "contactLabel": "Contacta conmigo",
     "trajectoryTitle": "Trayectoria internacional con sede en Colombia",
-    "trajectoryText": "Cejas Internacionales mantiene su sede física en Cali y atiende internacionalmente en Restrepo, Madrid, Palma de Mallorca, Puerto de Sagunto y Ginebra.",
+    "trajectoryText": "Cejas Internacionales mantiene su sede principal en Cali, su segunda sede física en Puerto de Sagunto y atiende por cita en Restrepo, Madrid, Palma de Mallorca y Ginebra.",
     "certificationTitle": "Formación y actualización profesional",
     "bio": [
       "Soy Xiomara Andrea Sánchez Noreña, especialista en micropigmentación con más de cinco años de experiencia profesional ayudando a realzar la belleza natural de mis clientas a través de técnicas precisas, seguras y personalizadas.",
@@ -224,6 +231,36 @@
     "mapHint": "Al pulsar se cargará Google Maps",
     "mapDirectionsLabel": "Abrir en Google Maps",
     "socialLabel": "Redes sociales"
+  },
+  "PuertoSaguntoStudioPage": {
+    "metaTitle": "Micropigmentación de cejas en Puerto de Sagunto | Cejas Internacionales",
+    "metaDescription": "Sede física de Cejas Internacionales en Carrer Catalunya 24, Puerto de Sagunto (Valencia). Micropigmentación, diseño de cejas, labios y pestañas con cita previa por WhatsApp.",
+    "breadcrumbsLabel": "Migas de pan",
+    "homeLabel": "Inicio",
+    "eyebrow": "Sede España",
+    "title": "Micropigmentación de cejas en Puerto de Sagunto, Valencia",
+    "description": "Cejas Internacionales atiende en su segunda sede física de España, en Puerto de Sagunto, con servicios de micropigmentación, cejas, labios y pestañas para clientas de Valencia y toda Europa.",
+    "introParagraphs": [
+      "Si buscas cejas en Puerto de Sagunto, micropigmentación en Sagunto o servicios de belleza especializada en la provincia de Valencia, esta es la sede presencial de Cejas Internacionales en España.",
+      "La cabina está en Carrer Catalunya 24, dentro de un local compartido, con atención con cita previa por WhatsApp. También coordino citas en Madrid, Palma de Mallorca y otras ciudades, pero Puerto de Sagunto es la sede fija confirmada en España.",
+      "El catálogo de España y Europa se publica en euros e incluye micropigmentación de cejas y labios, laminado, henna, lifting de pestañas y otros servicios confirmados para este mercado."
+    ],
+    "businessNameLabel": "Nombre comercial",
+    "addressLabel": "Dirección",
+    "phoneLabel": "Teléfono / WhatsApp",
+    "napNote": "El nombre comercial, la dirección y el teléfono coinciden con la ficha pública de Google Business Profile de esta sede. La dirección legal del sitio web sigue siendo solo Cali, Colombia.",
+    "whatsappCta": "Contacta conmigo",
+    "whatsappMessage": "Hola, me gustaría información sobre la sede de Cejas Internacionales en Puerto de Sagunto y consultar disponibilidad por WhatsApp.",
+    "journeysLinkLabel": "Ver mapa de ubicaciones",
+    "servicesTitle": "Servicios en España y Europa",
+    "servicesDescription": "Consulta precios en euros, duración de cita y el catálogo completo de servicios confirmados para España y Europa.",
+    "servicesCta": "Ver servicios en España/Europa",
+    "mapTitle": "Cómo llegar a la sede de Puerto de Sagunto",
+    "mapLoadLabel": "Ver el mapa",
+    "mapHint": "Al pulsar se cargará Google Maps",
+    "directionsLabel": "Abrir en Google Maps",
+    "reviewTitle": "Reseñas en Google",
+    "reviewCta": "Si ya has visitado la sede de Puerto de Sagunto, puedes dejar tu reseña en la ficha de Google de esta ubicación."
   },
   "AftercarePage": {
     "metaTitle": "Cuidados de micropigmentación | Cejas Internacionales",
@@ -331,8 +368,8 @@
       {
         "title": "Sedes y jornadas",
         "items": [
-          "La sede física y dirección legal publicada corresponde únicamente a Cali, Colombia.",
-          "España, Suiza y otras ciudades se muestran como jornadas por disponibilidad, no como oficinas o sedes permanentes.",
+          "La dirección legal publicada corresponde únicamente a Cali, Colombia.",
+          "Cali y Puerto de Sagunto (Valencia) son sedes físicas confirmadas; Madrid, Palma de Mallorca, Restrepo, Ginebra y otras ciudades se coordinan por cita.",
           "Precios, fechas, cupos y disponibilidad se confirman por WhatsApp."
         ]
       },
@@ -489,6 +526,9 @@
     "moreNavigation": "Más",
     "secondaryNavigation": "Más secciones",
     "brandEyebrow": "Cejas Internacionales",
+    "headerBrandLine": "Cejas Internacionales",
+    "headerByline": "by Xiomara",
+    "headerWordmarkAriaLabel": "Cejas Internacionales by Xiomara, inicio",
     "contactCta": "Contacta conmigo",
     "cookiesTitle": "Privacidad y cookies",
     "cookiesDescription": "Usamos cookies necesarias para que la web funcione. Las analíticas de GA4 solo se activan si aceptas; puedes rechazar o configurar sin perder acceso.",

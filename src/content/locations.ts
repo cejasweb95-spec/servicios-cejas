@@ -10,14 +10,16 @@ export const locations = locationSchema.array().parse([
     city: l("Cali", "Cali"),
     region: l("Valle del Cauca", "Valle del Cauca"),
     type: "physical_studio",
+    studioRole: "primary",
+    mediaId: "estudio-cabina-certificados",
     address: l(
       "Calle 9 # 32 A 16, local 118, barrio El Templete",
       "Calle 9 # 32 A 16, local 118, El Templete neighborhood",
     ),
     coordinates: { lat: 3.4516, lng: -76.532 },
     notes: l(
-      "Sede física y dirección legal.",
-      "Physical studio and legal address.",
+      "Sede principal y dirección legal.",
+      "Main studio and legal address.",
     ),
   },
   {
@@ -63,11 +65,17 @@ export const locations = locationSchema.array().parse([
     country: l("España", "Spain"),
     city: l("Puerto de Sagunto", "Puerto de Sagunto"),
     region: l("Valencia", "Valencia"),
-    type: "journey_availability",
+    type: "physical_studio",
+    studioRole: "secondary",
+    mediaId: "estudio-puerto-sagunto-portada",
+    address: l(
+      "Carrer Catalunya, 24, 46520 Puerto de Sagunto, Valencia",
+      "Carrer Catalunya, 24, 46520 Puerto de Sagunto, Valencia",
+    ),
     coordinates: { lat: 39.659, lng: -0.2202 },
     notes: l(
-      "Atención internacional por cita previa vía WhatsApp.",
-      "International appointments by prior contact via WhatsApp.",
+      "Segunda sede física en España. Cabina dentro de un local compartido; atención con cita previa por WhatsApp.",
+      "Second physical studio in Spain. Treatment room inside a shared premises; appointments via WhatsApp.",
     ),
   },
   {

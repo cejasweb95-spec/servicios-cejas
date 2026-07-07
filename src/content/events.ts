@@ -9,7 +9,6 @@ export const events = eventAvailabilitySchema.array().parse([
   "restrepo-valle",
   "madrid",
   "palma-mallorca",
-  "puerto-sagunto",
   "ginebra",
 ].map((locationId) => ({
   id: `availability-${locationId}`,

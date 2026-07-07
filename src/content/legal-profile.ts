@@ -13,7 +13,7 @@ export const legalProfile = legalProfileSchema.parse({
   email: "contacto@cejasinternacionales.com",
   phoneColombia: "3167742299",
   note: l(
-      "La dirección legal y física publicada corresponde únicamente a Cali, Colombia.",
-    "The published legal and physical address is only the Cali, Colombia location.",
+    "La dirección legal publicada corresponde únicamente a Cali, Colombia.",
+    "The published legal address is only in Cali, Colombia.",
   ),
 } satisfies LegalProfile);

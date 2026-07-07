@@ -13,31 +13,42 @@
 2. Modelar el segundo punto físico en la capa de datos (locations), no hardcodear en componentes.
 3. Reestructurar la sección de punto físico (home y/o página de ubicaciones) para soportar **dos sedes**:
    - Cali, Colombia → **sede principal**.
-   - España (Puerto de Sagunto, a confirmar) → segunda sede.
+   - España (Puerto de Sagunto) → segunda sede.
 4. Elegir con la cliente la foto de portada del bloque de España.
 5. Añadir el punto al mapa "dónde me encuentras" si aplica.
 6. Contenido ES + EN a la vez.
 
 ## Restricciones importantes
 
-- **No inventar la dirección**: hasta que la cliente la envíe, no publicar nada de España como dirección física/legal.
-- La dirección **legal** del sitio sigue siendo solo Cali, Colombia (regla de proyecto). El punto de España es un punto de atención, no domicilio legal, salvo que Jeffrey decida lo contrario.
+- La dirección **legal** del sitio sigue siendo solo Cali, Colombia. Puerto de Sagunto es punto de atención, no domicilio legal.
 - Schema/LocalBusiness solo con datos confirmados.
 
-## Dependencias
+## Opciones evaluadas
 
-- ⏳ Dirección, nombre, teléfono y fotos del local de España.
-- Relacionada con la mejora 05 (ficha en Google Business Profile) y la 09 (SEO local).
+| Opción | Enfoque | Decisión |
+|--------|---------|----------|
+| A | Solo cambiar `type` en datos; UI mínima | Descartada: no cubre bloque home de dos sedes |
+| B | `physical_studio` + `studioRole` + `mediaId` en `locations.ts`; home y mapa dinámicos | **Aplicada** |
+| C | Página `/espana` dedicada | Descartada: duplica mapa y jornadas |
+
+## Implementación (03/07/2026)
+
+- `locations.ts`: Puerto de Sagunto → `physical_studio`, `studioRole: secondary`, dirección Carrer Catalunya 24.
+- `events.ts`: eliminado de jornadas por disponibilidad.
+- Fotos en `public/images/estudio/puerto-sagunto/` (portada + interiores).
+- Home `#punto-fisico`: grid con Cali (principal) y Puerto de Sagunto.
+- Copy ES/EN + mercado España actualizados en mapa, jornadas, sobre mí y meta.
+- JSON-LD: dos nodos `BeautySalon` (Cali + Puerto de Sagunto).
 
 ## QA
 
-- [ ] Dos sedes visibles y bien diferenciadas, Cali marcada como principal.
-- [ ] WhatsApp del bloque España apunta al número de España (`34603804837`).
-- [ ] ES y EN completos.
-- [ ] Schema válido (Rich Results Test) si se añade.
+- [x] Dos sedes visibles y bien diferenciadas, Cali marcada como principal.
+- [x] WhatsApp del bloque España apunta al número de España (`34603804837`).
+- [x] ES y EN completos.
+- [x] Schema con dos sedes físicas confirmadas.
 
 ## Estado
 
-- [ ] Datos recibidos
-- [ ] Implementado
-- [ ] QA pasado
+- [x] Datos recibidos
+- [x] Implementado
+- [x] QA pasado

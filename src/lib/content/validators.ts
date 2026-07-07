@@ -220,6 +220,19 @@ export function validateContent() {
   assertUnique(courses.map((course) => course.id), "course id");
   assertUnique(downloads.map((download) => download.id), "download id");
   assertUnique(locations.map((location) => location.id), "location id");
+
+  for (const location of locations) {
+    if (location.type !== "physical_studio" || !location.mediaId) {
+      continue;
+    }
+
+    const media = mediaAssets.find((asset) => asset.id === location.mediaId);
+    if (!media) {
+      throw new Error(
+        `Location ${location.id} references missing media ${location.mediaId}`,
+      );
+    }
+  }
   assertUnique(whatsappTargets.map((target) => target.id), "WhatsApp target id");
   assertUnique(googleReviewProfiles.map((profile) => profile.id), "review profile id");
   assertUnique(reviews.map((review) => review.id), "review id");

@@ -25,8 +25,8 @@ export const markets = marketSchema.array().parse([
     currency: "EUR",
     whatsappTargetId: "europa",
     description: l(
-      "Servicios y catálogo con precios en euros para España y Europa.",
-      "Services and catalogue priced in euros for Spain and Europe.",
+      "Atención en las sedes físicas de Cali y Puerto de Sagunto, y catálogo completo con precios en euros para España y Europa.",
+      "In-person service at the Cali and Puerto de Sagunto studios, with the full catalogue priced in euros for Spain and Europe.",
     ),
   },
   {

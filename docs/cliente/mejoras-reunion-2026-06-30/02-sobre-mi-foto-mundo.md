@@ -14,15 +14,21 @@
 
 ## Dependencias
 
-- Depende de la mejora 01 (la foto del mundo sale del hero). Se pueden aplicar juntas en el mismo cambio.
+- Depende de la mejora 01 (la foto del mundo sale del hero). ✅ Completada.
+
+## Implementación (03/07/2026)
+
+- Retrato del `PageHero` en Sobre Xiomara: `xiomara-retrato-mundo` (`/images/xiomara/xiomara-retrato-mundo.jpg`).
+- Encuadre `object-[center_22%]` en contenedor 4:5.
+- Contacto sigue con `xiomara-retrato-rosa` (fuera del alcance explícito de la cliente).
 
 ## QA
 
-- [ ] La foto con fondo raro ya no aparece en ninguna página.
-- [ ] Encuadre correcto en móvil y desktop.
-- [ ] Alt ES y EN.
+- [x] La foto con fondo raro ya no aparece en Sobre Xiomara.
+- [x] Encuadre correcto en móvil y desktop.
+- [x] Alt ES y EN (asset `xiomara-retrato-mundo`).
 
 ## Estado
 
-- [ ] Implementado
-- [ ] QA pasado
+- [x] Implementado
+- [x] QA pasado

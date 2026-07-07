@@ -2,49 +2,53 @@ import { expect, test, type Page } from "@playwright/test";
 
 import { seedRejectedConsent } from "../helpers/consent";
 
-const LOGO_ALT = /Logo de Cejas Internacionales|Cejas Internacionales logo/;
+const WORDMARK_ARIA =
+  /Cejas Internacionales by Xiomara, (inicio|home)/i;
 
 async function gotoHomeEs(page: Page) {
   await page.goto("/es");
   await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
 }
 
-async function logoMetrics(page: Page) {
-  const logo = page.locator('[data-slot="site-logo"]');
+async function wordmarkMetrics(page: Page) {
+  const wordmark = page.locator('[data-slot="site-wordmark"]');
   const menuButton = page.getByRole("button", { name: /Abrir menú|Open menu/i });
 
-  await expect(logo).toBeVisible();
+  await expect(wordmark).toBeVisible();
   await expect(menuButton).toBeVisible();
 
-  const [logoBox, menuBox, logoHeight] = await Promise.all([
-    logo.boundingBox(),
+  const [wordmarkBox, menuBox, wordmarkHeight] = await Promise.all([
+    wordmark.boundingBox(),
     menuButton.boundingBox(),
-    logo.evaluate((node) => node.getBoundingClientRect().height),
+    wordmark.evaluate((node) => node.getBoundingClientRect().height),
   ]);
 
-  if (!logoBox || !menuBox) {
-    throw new Error("Expected logo and mobile menu button bounding boxes.");
+  if (!wordmarkBox || !menuBox) {
+    throw new Error("Expected wordmark and mobile menu button bounding boxes.");
   }
 
-  return { logo, logoBox, menuBox, logoHeight };
+  return { wordmark, wordmarkBox, menuBox, wordmarkHeight };
 }
 
-test.describe("site header logo", () => {
+test.describe("site header wordmark", () => {
   test.beforeEach(async ({ page }) => {
     await seedRejectedConsent(page);
   });
 
-  test("renders at 56px on narrow mobile without overlapping the menu", async ({
+  test("renders legibly on narrow mobile without overlapping the menu", async ({
     page,
   }) => {
     await page.setViewportSize({ width: 390, height: 844 });
     await gotoHomeEs(page);
 
-    const { logoBox, menuBox, logoHeight } = await logoMetrics(page);
+    const { wordmark, wordmarkBox, menuBox, wordmarkHeight } = await wordmarkMetrics(page);
 
-    expect(logoHeight).toBeGreaterThanOrEqual(55);
-    expect(logoHeight).toBeLessThanOrEqual(58);
-    expect(logoBox.x + logoBox.width).toBeLessThanOrEqual(menuBox.x - 8);
+    expect(wordmarkHeight).toBeGreaterThanOrEqual(12);
+    expect(wordmarkHeight).toBeLessThanOrEqual(28);
+    expect(wordmarkBox.x + wordmarkBox.width).toBeLessThanOrEqual(menuBox.x - 8);
+
+    await expect(wordmark.getByText("Cejas Internacionales", { exact: true })).toBeVisible();
+    await expect(wordmark.getByText("by Xiomara", { exact: true })).toBeVisible();
 
     const overflow = await page.evaluate(
       () => document.documentElement.scrollWidth > document.documentElement.clientWidth,
@@ -52,17 +56,17 @@ test.describe("site header logo", () => {
     expect(overflow).toBe(false);
   });
 
-  test("renders at 64px on tablet without overlapping the menu", async ({
+  test("renders legibly on tablet without overlapping the menu", async ({
     page,
   }) => {
     await page.setViewportSize({ width: 768, height: 1024 });
     await gotoHomeEs(page);
 
-    const { logoBox, menuBox, logoHeight } = await logoMetrics(page);
+    const { wordmark, wordmarkBox, menuBox, wordmarkHeight } = await wordmarkMetrics(page);
 
-    expect(logoHeight).toBeGreaterThanOrEqual(63);
-    expect(logoHeight).toBeLessThanOrEqual(66);
-    expect(logoBox.x + logoBox.width).toBeLessThanOrEqual(menuBox.x - 8);
+    expect(wordmarkHeight).toBeGreaterThanOrEqual(12);
+    expect(wordmarkHeight).toBeLessThanOrEqual(30);
+    expect(wordmarkBox.x + wordmarkBox.width).toBeLessThanOrEqual(menuBox.x - 8);
 
     const overflow = await page.evaluate(
       () => document.documentElement.scrollWidth > document.documentElement.clientWidth,
@@ -76,21 +80,23 @@ test.describe("site header logo", () => {
     await page.setViewportSize({ width: 1440, height: 1000 });
     await gotoHomeEs(page);
 
-    const logo = page.locator('[data-slot="site-logo"]');
-    await expect(logo).toBeVisible();
+    const wordmark = page.locator('[data-slot="site-wordmark"]');
+    await expect(wordmark).toBeVisible();
 
-    const logoHeight = await logo.evaluate((node) => node.getBoundingClientRect().height);
-    expect(logoHeight).toBeGreaterThanOrEqual(55);
-    expect(logoHeight).toBeLessThanOrEqual(58);
+    const wordmarkHeight = await wordmark.evaluate(
+      (node) => node.getBoundingClientRect().height,
+    );
+    expect(wordmarkHeight).toBeGreaterThanOrEqual(12);
+    expect(wordmarkHeight).toBeLessThanOrEqual(28);
 
     await expect(page.getByRole("button", { name: /Abrir menú|Open menu/i })).toHaveCount(0);
 
     const logoLink = page.locator('[data-slot="site-logo-link"]');
     await expect(logoLink).toHaveAttribute("href", "/es");
-    await expect(logoLink).toHaveAccessibleName(LOGO_ALT);
+    await expect(logoLink).toHaveAccessibleName(WORDMARK_ARIA);
   });
 
-  test("logo home link meets minimum touch height on mobile", async ({ page }) => {
+  test("wordmark home link meets minimum touch height on mobile", async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 });
     await gotoHomeEs(page);
 
@@ -101,17 +107,31 @@ test.describe("site header logo", () => {
     expect(linkBox!.height).toBeGreaterThanOrEqual(56);
   });
 
-  test("logo remains visible on a market services page at tablet width", async ({
+  test("wordmark remains visible on a market services page at tablet width", async ({
     page,
   }) => {
     await page.setViewportSize({ width: 768, height: 1024 });
     await page.goto("/es/servicios/espana-europa");
 
-    const logo = page.locator('[data-slot="site-logo"]');
-    await expect(logo).toBeVisible();
+    const wordmark = page.locator('[data-slot="site-wordmark"]');
+    await expect(wordmark).toBeVisible();
 
-    const logoHeight = await logo.evaluate((node) => node.getBoundingClientRect().height);
-    expect(logoHeight).toBeGreaterThanOrEqual(63);
-    expect(logoHeight).toBeLessThanOrEqual(66);
+    const wordmarkHeight = await wordmark.evaluate(
+      (node) => node.getBoundingClientRect().height,
+    );
+    expect(wordmarkHeight).toBeGreaterThanOrEqual(12);
+    expect(wordmarkHeight).toBeLessThanOrEqual(30);
+  });
+
+  test("footer keeps the official logo image", async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 1000 });
+    await gotoHomeEs(page);
+
+    const footerLogo = page.locator("footer img").first();
+    await expect(footerLogo).toBeVisible();
+    await expect(footerLogo).toHaveAttribute(
+      "src",
+      /logo-oficial-sin-fondo\.png/,
+    );
   });
 });

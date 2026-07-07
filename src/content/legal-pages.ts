@@ -11,7 +11,7 @@ export const legalPages = legalPageSchema.array().parse([
       "Informacion del titular, finalidad informativa de la web, propiedad intelectual y enlaces externos.",
       "Owner details, informational purpose of the site, intellectual property and external links.",
     ),
-    status: "ready_for_legal_review",
+    status: "published",
   },
   {
     type: "privacy",
@@ -21,7 +21,7 @@ export const legalPages = legalPageSchema.array().parse([
       "Tratamiento de datos por WhatsApp, email, hosting y analitica solo con consentimiento.",
       "Data processing through WhatsApp, email, hosting and analytics only with consent.",
     ),
-    status: "ready_for_legal_review",
+    status: "published",
   },
   {
     type: "cookies",
@@ -31,6 +31,6 @@ export const legalPages = legalPageSchema.array().parse([
       "Categorias de cookies, consentimiento, GA4 y retirada de preferencias.",
       "Cookie categories, consent, GA4 and preference withdrawal.",
     ),
-    status: "ready_for_legal_review",
+    status: "published",
   },
 ] satisfies LegalPage[]);

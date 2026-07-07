@@ -14,18 +14,23 @@
 
 ## Dependencias
 
-- ⏳ Foto de los diplomas enviada por la cliente.
 - Encadena con la mejora 02 (la foto del mundo pasa a "Sobre mí").
+
+## Implementación (03/07/2026)
+
+- Hero home: `xiomara-sesion-profesional-07` → `/images/xiomara/xiomara-hero-home.jpg` (mismo material que `xiomara-certificaciones-estudio`).
+- Foto del mundo preservada en asset `xiomara-retrato-mundo` → `/images/xiomara/xiomara-retrato-mundo.jpg` (pendiente de usar en mejora 02).
+- Alt ES/EN del hero actualizado; encuadre `object-[center_28%]` en `HomeHero`.
 
 ## QA
 
-- [ ] Hero correcto en 390 / 430 / 768 / 1024 / 1440 / 1920.
-- [ ] LCP sin regresión (imagen con `priority` y dimensiones estables).
-- [ ] Alt ES y EN.
-- [ ] Sin CLS al cargar.
+- [x] Hero correcto en 390 / 430 / 768 / 1024 / 1440 / 1920.
+- [x] LCP sin regresión (imagen con `priority` y dimensiones estables).
+- [x] Alt ES y EN.
+- [x] Sin CLS al cargar.
 
 ## Estado
 
-- [ ] Foto recibida
-- [ ] Implementado
-- [ ] QA pasado
+- [x] Foto recibida (asset existente `07` confirmado por Jeffrey)
+- [x] Implementado
+- [x] QA pasado

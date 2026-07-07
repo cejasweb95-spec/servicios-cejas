@@ -1,4 +1,5 @@
 import { siteConfig } from "@/config/site";
+import { locations } from "@/content/locations";
 import type { Locale } from "@/i18n/routing";
 import type { LegalProfile, SocialLink } from "@/lib/content/schema";
 
@@ -6,6 +7,40 @@ type BreadcrumbItem = {
   name: string;
   path: string;
 };
+
+function localizedField<T extends { es: string; en: string }>(value: T, locale: Locale) {
+  return value[locale];
+}
+
+function buildPhysicalStudioJsonLdNodes({
+  legalProfile,
+  locale,
+  logoUrl,
+}: {
+  legalProfile: Pick<LegalProfile, "brandName" | "email" | "ownerName" | "taxId"> & {
+    address: string;
+  };
+  locale: Locale;
+  logoUrl: string;
+}) {
+  return locations
+    .filter((location) => location.type === "physical_studio")
+    .map((location) => ({
+      "@context": "https://schema.org",
+      "@type": "BeautySalon" as const,
+      name: legalProfile.brandName,
+      image: logoUrl,
+      url: siteConfig.url,
+      telephone:
+        location.marketId === "colombia"
+          ? `+${siteConfig.whatsapp.colombia}`
+          : `+${siteConfig.whatsapp.europe}`,
+      email: legalProfile.email,
+      address: location.address
+        ? localizedField(location.address, locale)
+        : legalProfile.address,
+    }));
+}
 
 export function buildBreadcrumbListJsonLd(items: BreadcrumbItem[]) {
   return {
@@ -170,16 +205,7 @@ export function buildHomeJsonLd({
       taxID: legalProfile.taxId,
       sameAs,
     },
-    {
-      "@context": "https://schema.org",
-      "@type": "BeautySalon",
-      name: legalProfile.brandName,
-      image: logoUrl,
-      url: siteConfig.url,
-      telephone: `+${siteConfig.whatsapp.colombia}`,
-      email: legalProfile.email,
-      address: legalProfile.address,
-    },
+    ...buildPhysicalStudioJsonLdNodes({ legalProfile, locale, logoUrl }),
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
@@ -193,6 +219,75 @@ export function buildHomeJsonLd({
       name: title,
       description,
       url: homeUrl,
+      inLanguage: locale,
+      isPartOf: {
+        "@type": "WebSite",
+        name: siteConfig.name,
+        url: siteConfig.url,
+      },
+    },
+  ];
+}
+
+type PhysicalStudioPageJsonLdInput = {
+  locale: Locale;
+  title: string;
+  description: string;
+  path: string;
+  legalProfile: Pick<
+    LegalProfile,
+    "brandName" | "email" | "ownerName" | "taxId"
+  > & { address: string };
+  logoPath: string;
+  studio: {
+    marketId: string;
+    address: string;
+    coordinates: { lat: number; lng: number } | null;
+  };
+};
+
+export function buildPhysicalStudioPageJsonLd({
+  description,
+  legalProfile,
+  locale,
+  logoPath,
+  path,
+  studio,
+  title,
+}: PhysicalStudioPageJsonLdInput) {
+  const pageUrl = new URL(`/${locale}${path}`, siteConfig.url).toString();
+  const logoUrl = new URL(logoPath, siteConfig.url).toString();
+  const telephone =
+    studio.marketId === "colombia"
+      ? `+${siteConfig.whatsapp.colombia}`
+      : `+${siteConfig.whatsapp.europe}`;
+
+  return [
+    {
+      "@context": "https://schema.org",
+      "@type": "BeautySalon",
+      name: legalProfile.brandName,
+      image: logoUrl,
+      url: pageUrl,
+      telephone,
+      email: legalProfile.email,
+      address: studio.address,
+      ...(studio.coordinates
+        ? {
+            geo: {
+              "@type": "GeoCoordinates",
+              latitude: studio.coordinates.lat,
+              longitude: studio.coordinates.lng,
+            },
+          }
+        : {}),
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      name: title,
+      description,
+      url: pageUrl,
       inLanguage: locale,
       isPartOf: {
         "@type": "WebSite",
@@ -237,16 +332,7 @@ export function buildJourneysJsonLd({
       email: legalProfile.email,
       taxID: legalProfile.taxId,
     },
-    {
-      "@context": "https://schema.org",
-      "@type": "BeautySalon",
-      name: legalProfile.brandName,
-      image: logoUrl,
-      url: siteConfig.url,
-      telephone: `+${siteConfig.whatsapp.colombia}`,
-      email: legalProfile.email,
-      address: legalProfile.address,
-    },
+    ...buildPhysicalStudioJsonLdNodes({ legalProfile, locale, logoUrl }),
     {
       "@context": "https://schema.org",
       "@type": "WebPage",

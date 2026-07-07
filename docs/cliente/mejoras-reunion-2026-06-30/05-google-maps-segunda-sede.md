@@ -1,6 +1,6 @@
 # 05 — Google Business Profile: añadir la segunda sede (España)
 
-> Tarea **externa a la web** (Google Business Profile), pero registrada aquí porque salió en la reunión y alimenta las mejoras 03, 04 y 09.
+> Tarea **externa a la web** (Google Business Profile), registrada aquí porque salió en la reunión y alimenta las mejoras 03, 04 y 09.
 
 ## Lo que se acordó
 
@@ -9,26 +9,29 @@
 
 **Responsable: Jeffrey** (tiene acceso al correo/cuenta). La cliente envía los datos.
 
-## Checklist de datos a pedir a la cliente
+## Datos confirmados (julio 2026)
 
-- [ ] Nombre comercial del local para la ficha
-- [ ] Dirección completa (calle, número, CP, ciudad)
-- [ ] Teléfono (previsiblemente `+34 603 804 837`)
-- [ ] Horario de atención
-- [ ] Fotos del interior (la cabina está dentro de otro negocio; el letrero es interno)
-- [ ] Categoría (coherente con la de Cali, p. ej. micropigmentación / belleza de cejas)
+| Campo | Valor |
+|-------|--------|
+| Nombre comercial (ambas sedes) | **Cejas Internacionales** |
+| Dirección Sagunto | Carrer Catalunya, 24, 46520 Puerto de Sagunto, Valencia |
+| Teléfono ES | +34 603 804 837 |
+| Horario | Configurado en GBP por Jeffrey |
+| Place ID | `ChIJ97PZB9gXYA0R3HuqKedSjM0` |
+
+Detalle operativo: `docs/cliente/seo-local-organico/GOOGLE-MAPS-PUERTO-SAGUNTO.md`
 
 ## Pasos
 
 1. Pedir/confirmar permiso de administración sobre el perfil de la cuenta.
 2. Crear la segunda ficha (nueva ubicación) en la misma cuenta de Google Business Profile.
-3. Rellenar datos + fotos + web (`URL` del sitio, idealmente a la página de la sede de España).
+3. Rellenar datos + fotos + web (URL del sitio → `/es/sede-puerto-sagunto` / `/en/puerto-sagunto-studio`).
 4. Completar la verificación que pida Google.
 5. Al estar activa, recuperar el **enlace de reseñas** de la ficha para la mejora 04 y coordinar keywords con la mejora 09.
 
 ## Estado
 
-- [ ] Datos recibidos de la cliente
-- [ ] Ficha creada
-- [ ] Verificada y publicada
-- [ ] Enlace de reseñas registrado para la mejora 04
+- [x] Datos recibidos de la cliente
+- [x] Ficha creada (Jeffrey, julio 2026)
+- [ ] Verificada y publicada (vídeo pendiente según doc GBP)
+- [x] Enlace de reseñas registrado en web (`reviews.ts` → `google-puerto-sagunto`)

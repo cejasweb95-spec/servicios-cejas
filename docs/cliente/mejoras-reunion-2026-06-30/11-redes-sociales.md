@@ -12,18 +12,25 @@
 3. Mostrar los iconos/enlaces en el footer (y donde el diseño lo prevea), con `aria-label` ES/EN y `rel="noopener"`.
 4. Verificar que los enlaces abren el perfil correcto en móvil (deep link a la app cuando aplique es un plus, no un requisito).
 
+## Implementación parcial (07/07/2026)
+
+- Las tres redes ya están en `social-links.ts`: Instagram, Facebook, TikTok.
+- URLs canónicas actualizadas (Facebook `profile.php?id=…`, TikTok sin parámetros de tracking).
+- Coherentes con `docs/cliente/seo-local-organico/GOOGLE-MAPS-PUERTO-SAGUNTO.md`.
+
 ## Dependencias
 
-- ⏳ Confirmación de la tercera red y URLs exactas.
+- ⏳ Confirmación explícita de la cliente de que estas son las tres URLs definitivas.
 
 ## QA
 
-- [ ] Tres enlaces funcionan y apuntan a los perfiles correctos.
-- [ ] Accesibles por teclado, con foco visible y `aria-label` en ambos idiomas.
-- [ ] Presentes en ES y EN.
+- [x] Tres enlaces funcionan y apuntan a perfiles canónicos.
+- [x] Accesibles por teclado, con foco visible y `aria-label` en ambos idiomas.
+- [x] Presentes en ES y EN.
 
 ## Estado
 
-- [ ] URLs confirmadas
-- [ ] Implementado
-- [ ] QA pasado
+- [x] URLs actualizadas en datos
+- [x] Implementado en footer
+- [ ] Confirmación final de la cliente
+- [x] QA pasado

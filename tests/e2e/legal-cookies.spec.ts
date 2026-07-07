@@ -34,8 +34,11 @@ test.describe("legal, aftercare and cookie consent", () => {
     await expect(
       page.getByRole("heading", { level: 1, name: "Aviso legal" }),
     ).toBeVisible();
+    await expect(page.locator("main")).toContainText("Xiomara Andrea Sánchez Noreña");
+    await expect(page.locator("main")).toContainText("1.144.186.472-5");
     await expect(page.locator("main")).toContainText("Cali, Colombia");
-    await expect(page.locator("main")).not.toContainText("sede física en España");
+    await expect(page.locator("main")).toContainText("contacto@cejasinternacionales.com");
+    await expect(page.locator("main")).toContainText("Puerto de Sagunto");
 
     await page.goto("/en/privacy");
     await expect(
