@@ -26,6 +26,8 @@ type CookieConsentCopy = {
   bannerDescription: string;
   bannerTitle: string;
   configureLabel: string;
+  cookiesPolicyHref?: string;
+  cookiesPolicyLabel?: string;
   rejectLabel: string;
   saveLabel: string;
 };
@@ -165,8 +167,9 @@ export function CookieConsentBanner({
   const [isConfiguring, setIsConfiguring] = useState(false);
   const [draft, setDraft] = useState<ConsentState>(() => emptyConsent());
 
-  const optionalCategories = useMemo(
-    () => categories.filter((category) => !category.required),
+  // Only show analytics in the configurator — marketing is not used, preferences has no effect.
+  const configuratorCategories = useMemo(
+    () => categories.filter((category) => category.id === "analytics"),
     [categories],
   );
 
@@ -245,19 +248,26 @@ export function CookieConsentBanner({
             <span id="cookie-consent-description">
               {copy.bannerDescription}
             </span>
+            {copy.cookiesPolicyHref && copy.cookiesPolicyLabel && (
+              <>
+                {" "}
+                <a
+                  className="underline underline-offset-2 hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                  href={copy.cookiesPolicyHref}
+                >
+                  {copy.cookiesPolicyLabel}
+                </a>
+              </>
+            )}
           </p>
           {isConfiguring ? (
-            <div className="mt-4 grid gap-2 sm:grid-cols-3">
-              {optionalCategories.map((category) => {
-                const disabled = category.id === "marketing";
+            <div className="mt-4 grid gap-2 sm:grid-cols-2">
+              {configuratorCategories.map((category) => {
+                const disabled = false;
                 const checkboxId = `cookie-consent-${category.id}`;
                 const descriptionId = `${checkboxId}-description`;
                 const checked =
-                  category.id === "analytics"
-                    ? draft.analytics
-                    : category.id === "preferences"
-                      ? draft.preferences
-                      : false;
+                  category.id === "analytics" ? draft.analytics : false;
 
                 return (
                   <label
@@ -290,9 +300,7 @@ export function CookieConsentBanner({
                       className="mt-2 block leading-6 text-muted-foreground"
                       id={descriptionId}
                     >
-                      {disabled
-                        ? `${category.description} ${copy.analyticsUnavailableLabel}`
-                        : category.description}
+                      {category.description}
                     </span>
                   </label>
                 );
@@ -300,19 +308,21 @@ export function CookieConsentBanner({
             </div>
           ) : null}
         </div>
+        {/* AEPD order: Reject → Accept → Configure. Reject and Accept share equal visual weight. */}
         <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap">
-          <Button
-            className="min-h-11"
-            onClick={() => commit({ ...emptyConsent(), analytics: true })}
-          >
-            {copy.acceptLabel}
-          </Button>
           <Button
             className="min-h-11"
             onClick={() => commit(emptyConsent())}
             variant="outline"
           >
             {copy.rejectLabel}
+          </Button>
+          <Button
+            className="min-h-11"
+            onClick={() => commit({ ...emptyConsent(), analytics: true })}
+            variant="outline"
+          >
+            {copy.acceptLabel}
           </Button>
           {isConfiguring ? (
             <Button onClick={() => commit(draft)} variant="secondary">

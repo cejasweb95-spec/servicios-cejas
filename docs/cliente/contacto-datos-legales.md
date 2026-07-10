@@ -62,7 +62,7 @@ https://wa.me/34603804837?text=Hola,%20quiero%20informaci%C3%B3n%20sobre%20Cejas
 
 ## Criterio para la web
 
-- **España / Europa:** no mostrar sede física fija. Enfocar como atención por jornadas y contacto por WhatsApp España.
+- **España / Europa:** Puerto de Sagunto (Valencia) es sede física confirmada. Madrid, Palma de Mallorca y otras ciudades son jornadas por disponibilidad. La dirección legal sigue siendo solo Cali, Colombia.
 - **Colombia:** mostrar sede física de Cali y contacto por WhatsApp Colombia.
 - **WhatsApp:** la web debe ofrecer contacto por ambos números, Colombia y España. Pendiente definir cómo se presentará en interfaz.
 - **Citas/reservas:** siempre por WhatsApp.
@@ -81,6 +81,6 @@ https://wa.me/34603804837?text=Hola,%20quiero%20informaci%C3%B3n%20sobre%20Cejas
 - **España 🇪🇸**
   - Madrid *(jornadas)*
   - Palma de Mallorca *(jornadas)*
-  - Puerto de Sagunto, Valencia *(jornadas)*
+  - Puerto de Sagunto, Valencia *(sede física confirmada)*
 - **Suiza 🇨🇭**
   - Ginebra *(jornadas)*

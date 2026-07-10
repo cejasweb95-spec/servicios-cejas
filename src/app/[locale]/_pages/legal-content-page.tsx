@@ -16,6 +16,10 @@ import {
   buildBreadcrumbListJsonLd,
   buildWebPageJsonLd,
 } from "@/lib/seo/structured-data";
+import {
+  getCookieCategoryLabel,
+  getCookieInventory,
+} from "@/content/cookie-inventory";
 
 type LegalSection = {
   title: string;
@@ -32,6 +36,12 @@ type LegalContentCopy = {
     addressLabel: string;
     brandLabel: string;
     cookieCategoriesTitle: string;
+    cookieTableTitle?: string;
+    cookieTableColName?: string;
+    cookieTableColProvider?: string;
+    cookieTableColPurpose?: string;
+    cookieTableColDuration?: string;
+    cookieTableColCategory?: string;
     emailLabel: string;
     ownerLabel: string;
     taxIdLabel: string;
@@ -45,16 +55,19 @@ type LegalContentPageProps = {
   copy: LegalContentCopy;
   locale: Locale;
   path: string;
+  showCookieInventory?: boolean;
 };
 
 export function LegalContentPage({
   copy,
   locale,
   path,
+  showCookieInventory = false,
 }: LegalContentPageProps) {
   const legalProfile = getLegalProfile(locale);
   const whatsappTargets = getWhatsAppTargets(locale);
   const cookieCategories = getCookieCategories(locale);
+  const cookieInventory = showCookieInventory ? getCookieInventory(locale) : [];
   const breadcrumbJsonLd = buildBreadcrumbListJsonLd([
     { name: copy.homeLabel, path: `/${locale}` },
     { name: copy.title, path: `/${locale}${path}` },
@@ -187,6 +200,85 @@ export function LegalContentPage({
                   ))}
                 </div>
               </section>
+
+              {showCookieInventory && cookieInventory.length > 0 && (
+                <section
+                  aria-labelledby="cookie-inventory"
+                  className="rounded-xl border border-border bg-background p-5"
+                >
+                  <h2
+                    className="font-display text-3xl leading-tight text-foreground"
+                    id="cookie-inventory"
+                  >
+                    {copy.labels.cookieTableTitle}
+                  </h2>
+                  <div className="mt-4 overflow-x-auto">
+                    <table className="min-w-full text-sm leading-6">
+                      <caption className="sr-only">
+                        {copy.labels.cookieTableTitle}
+                      </caption>
+                      <thead>
+                        <tr className="border-b border-border text-left">
+                          <th
+                            className="pb-3 pr-4 font-semibold text-foreground"
+                            scope="col"
+                          >
+                            {copy.labels.cookieTableColName}
+                          </th>
+                          <th
+                            className="pb-3 pr-4 font-semibold text-foreground"
+                            scope="col"
+                          >
+                            {copy.labels.cookieTableColProvider}
+                          </th>
+                          <th
+                            className="pb-3 pr-4 font-semibold text-foreground"
+                            scope="col"
+                          >
+                            {copy.labels.cookieTableColPurpose}
+                          </th>
+                          <th
+                            className="pb-3 pr-4 font-semibold text-foreground"
+                            scope="col"
+                          >
+                            {copy.labels.cookieTableColDuration}
+                          </th>
+                          <th
+                            className="pb-3 font-semibold text-foreground"
+                            scope="col"
+                          >
+                            {copy.labels.cookieTableColCategory}
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {cookieInventory.map((entry) => (
+                          <tr
+                            className="border-b border-border/50 last:border-0"
+                            key={entry.name}
+                          >
+                            <td className="py-3 pr-4 font-mono text-xs text-foreground">
+                              {entry.name}
+                            </td>
+                            <td className="py-3 pr-4 text-muted-foreground">
+                              {entry.provider}
+                            </td>
+                            <td className="py-3 pr-4 text-muted-foreground">
+                              {entry.purpose}
+                            </td>
+                            <td className="py-3 pr-4 text-muted-foreground">
+                              {entry.duration}
+                            </td>
+                            <td className="py-3 text-muted-foreground">
+                              {getCookieCategoryLabel(entry.category, locale)}
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </section>
+              )}
             </div>
           </div>
         </Container>

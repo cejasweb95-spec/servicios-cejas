@@ -397,7 +397,7 @@
         "title": "Data that may be processed",
         "items": [
           "Data voluntarily sent by the user through WhatsApp or email.",
-          "Technical browsing data managed by the hosting provider.",
+          "Technical browsing data (IP address, HTTP headers) managed by the hosting provider.",
           "GA4 analytics data only if the user accepts analytics cookies.",
           "Non-sensitive events such as WhatsApp clicks, PDF downloads, language changes, market selection or map location selection."
         ]
@@ -408,15 +408,69 @@
           "Answer enquiries and manage appointments or reservations through WhatsApp.",
           "Provide catalog and training PDF downloads.",
           "Measure website performance and improve SEO/UX only with analytics consent.",
+          "Ensure the technical security of the website.",
           "Comply with legal obligations where applicable."
         ]
       },
       {
-        "title": "Rights and providers",
+        "title": "Legal bases for processing",
         "items": [
-          "You may request access, updates, rectification, erasure or other applicable rights by writing to the official email address.",
-          "Providers such as Hostinger, Google Analytics if consent is granted, WhatsApp/Meta when the user opens WhatsApp, and social platforms when clicked may be involved.",
-          "GA4 events do not receive names, phone numbers, emails, photos, written messages or sensitive data."
+          "Consent: for GA4 analytics cookies (Art. 6.1.a GDPR).",
+          "Pre-contractual or contractual measures: when the user contacts via WhatsApp or email to arrange an appointment (Art. 6.1.b GDPR).",
+          "Legitimate interest: server security logs and protection against unauthorised access (Art. 6.1.f GDPR).",
+          "Legal obligation: where required by applicable law (Art. 6.1.c GDPR; Law 1581/2012 Colombia)."
+        ]
+      },
+      {
+        "title": "Retention periods",
+        "items": [
+          "WhatsApp or email enquiries: retained for as long as needed to respond and manage the appointment, then deleted or anonymised.",
+          "Hosting technical logs: in accordance with the provider's policy, typically up to 90 days.",
+          "GA4 data: according to the retention period configured in Google Analytics (14 months by default).",
+          "In all cases, data is retained only as long as necessary for its purpose or to comply with legal obligations."
+        ]
+      },
+      {
+        "title": "Recipients and international transfers",
+        "items": [
+          "Hostinger or the active hosting provider: manages servers and access logs.",
+          "Google LLC (Google Analytics): only if the user accepts analytics; Google acts as a data processor under the EU–US Data Privacy Framework (DPF).",
+          "Meta Platforms / WhatsApp: when the user clicks a wa.me link and opens WhatsApp, Meta processes data under its own terms.",
+          "Social networks (Instagram, Facebook, TikTok): only if the user clicks the relevant links; each platform applies its own policy.",
+          "International transfers outside the European Economic Area (EEA) may occur with providers that have adequate safeguards in place (Standard Contractual Clauses or other recognised mechanisms)."
+        ]
+      },
+      {
+        "title": "WhatsApp contact",
+        "items": [
+          "When you click a wa.me link and start a conversation, the message content, phone number and associated metadata are processed by Meta Platforms Inc. under its terms of service.",
+          "Cejas Internacionales uses those messages solely to respond to enquiries and manage appointments.",
+          "WhatsApp conversations are not stored outside the application itself."
+        ]
+      },
+      {
+        "title": "User rights",
+        "items": [
+          "Colombia (Law 1581/2012): right to know, update, rectify, erase your data and revoke consent. Contact: contacto@cejasinternacionales.com. You may also file a complaint with the SIC (Superintendencia de Industria y Comercio).",
+          "Spain / European Union (GDPR): rights of access, rectification, erasure, objection, restriction of processing and data portability. Contact: contacto@cejasinternacionales.com. You may also lodge a complaint with the AEPD (www.aepd.es).",
+          "Switzerland (revFADP): rights of access, rectification, erasure and, where applicable, portability. Contact: contacto@cejasinternacionales.com.",
+          "We will respond to any request within a maximum of one month (GDPR Art. 12.3) or within the legally established period for the applicable jurisdiction."
+        ]
+      },
+      {
+        "title": "Minors",
+        "items": [
+          "This website is not directed at children under 14 years of age.",
+          "We do not intentionally collect or process information from minors.",
+          "If you believe a minor has provided personal data, please contact us so we can delete it."
+        ]
+      },
+      {
+        "title": "Providers and no sensitive data",
+        "items": [
+          "GA4 does not receive names, phone numbers, emails, photos, written messages or sensitive data.",
+          "Permitted GA4 events (WhatsApp clicks, downloads, language changes, market selection) do not directly identify the user.",
+          "You can view the list of permitted events and the Consent Mode configuration in our Cookie policy."
         ]
       }
     ]
@@ -435,17 +489,43 @@
       {
         "title": "How we use cookies",
         "items": [
-          "Necessary cookies support the basic operation of the website.",
-          "Analytics cookies help measure visits and clicks only with consent.",
-          "Remarketing and Google Ads advertising are not currently used."
+          "Necessary cookies ensure the basic operation of the website (storing your cookie preferences).",
+          "Analytics cookies help measure visits and clicks only with your explicit consent.",
+          "Remarketing and Google Ads advertising are not currently used.",
+          "You can accept, reject or configure cookies from the banner shown on your first visit, or change them at any time using the link in the footer."
         ]
       },
       {
         "title": "Google Analytics 4",
         "items": [
-          "GA4 does not load before analytics are accepted.",
-          "Allowed events do not include personally identifiable data.",
-          "You can withdraw or change your consent from the permanent footer link."
+          "GA4 does not load or run before you accept analytics cookies.",
+          "Google Consent Mode v2 is applied: analytics_storage and ad_storage remain in denied mode by default.",
+          "Allowed events do not include personally identifiable data: WhatsApp clicks, catalog downloads, language changes and market selection.",
+          "You can withdraw or change your consent at any time from the permanent footer link."
+        ]
+      },
+      {
+        "title": "Locally stored preferences",
+        "items": [
+          "The website stores your cookie choice in your own browser using localStorage, under the key cejas_cookie_consent_v1.",
+          "This information is not transmitted to any external server.",
+          "If you clear your browser's local storage, the cookie banner will reappear on your next visit."
+        ]
+      },
+      {
+        "title": "Google Maps",
+        "items": [
+          "The website uses Google Maps. The map does not load automatically; it only loads when you click the button to view the location.",
+          "When Google Maps loads, Google may set its own and third-party cookies (NID, CONSENT, SOCS, among others) in accordance with its privacy policy.",
+          "You can prevent Google Maps from loading simply by not clicking the map button."
+        ]
+      },
+      {
+        "title": "Consent validity and updates",
+        "items": [
+          "Your consent is valid for approximately 12 months from the date you grant it.",
+          "If we add new cookies or the inventory changes significantly, we will ask for your consent again.",
+          "See the cookie table below for the full and up-to-date inventory."
         ]
       }
     ]
@@ -456,7 +536,13 @@
     "taxIdLabel": "NIT",
     "emailLabel": "Email",
     "addressLabel": "Address",
-    "cookieCategoriesTitle": "Cookies and preferences"
+    "cookieCategoriesTitle": "Cookies and preferences",
+    "cookieTableTitle": "Cookie and local storage inventory",
+    "cookieTableColName": "Name",
+    "cookieTableColProvider": "Provider",
+    "cookieTableColPurpose": "Purpose",
+    "cookieTableColDuration": "Duration",
+    "cookieTableColCategory": "Category"
   },
   "ServiceDetail": {
     "metaTitle": "{service} in {market} | Cejas Internacionales",
@@ -535,7 +621,8 @@
     "cookiesReject": "Reject",
     "cookiesConfigure": "Configure",
     "cookiesSave": "Save preferences",
-    "cookiesUnavailable": "This category is not currently used."
+    "cookiesUnavailable": "This category is not currently used.",
+    "cookiesPolicyLink": "Cookie policy"
   },
   "WhatsApp": {
     "title": "Choose a WhatsApp contact",

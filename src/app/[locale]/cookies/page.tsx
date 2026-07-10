@@ -61,6 +61,12 @@ export default async function Route({ params }: RouteProps) {
           addressLabel: legalContentT("addressLabel"),
           brandLabel: legalContentT("brandLabel"),
           cookieCategoriesTitle: legalContentT("cookieCategoriesTitle"),
+          cookieTableTitle: legalContentT("cookieTableTitle"),
+          cookieTableColName: legalContentT("cookieTableColName"),
+          cookieTableColProvider: legalContentT("cookieTableColProvider"),
+          cookieTableColPurpose: legalContentT("cookieTableColPurpose"),
+          cookieTableColDuration: legalContentT("cookieTableColDuration"),
+          cookieTableColCategory: legalContentT("cookieTableColCategory"),
           emailLabel: legalContentT("emailLabel"),
           ownerLabel: legalContentT("ownerLabel"),
           taxIdLabel: legalContentT("taxIdLabel"),
@@ -71,6 +77,7 @@ export default async function Route({ params }: RouteProps) {
       }}
       locale={locale}
       path={cookiesBasePath[locale]}
+      showCookieInventory
     />
   );
 }

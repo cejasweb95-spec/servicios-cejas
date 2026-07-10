@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/dialog";
 import { buildWhatsAppHref } from "@/lib/whatsapp/build-whatsapp-url";
 import { formatPhoneNumber } from "@/lib/format/phone";
+import { trackConsentEvent } from "@/lib/analytics/track-consent-event";
 
 type WhatsAppChooserTarget = {
   id: string;
@@ -64,6 +65,11 @@ export function WhatsAppChooser({
             >
               <a
                 href={buildWhatsAppHref(target.phoneE164, target.defaultMessage)}
+                onClick={() =>
+                  trackConsentEvent("whatsapp_click", {
+                    whatsapp_target: target.id,
+                  })
+                }
                 rel="noreferrer"
                 target="_blank"
               >

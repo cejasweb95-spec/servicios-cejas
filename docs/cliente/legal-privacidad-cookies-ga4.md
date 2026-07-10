@@ -64,16 +64,17 @@ Contenido minimo:
 - WhatsApp Colombia y WhatsApp Espana/Europa/Suiza.
 - Finalidad del sitio: web informativa de servicios, jornadas, formaciones y contacto por WhatsApp.
 - Aclaracion: no hay tienda online, checkout, carrito ni reserva propia.
-- Aclaracion: Espana y Suiza son jornadas por disponibilidad, no sedes fisicas.
+- Aclaracion: La direccion legal publicada es solo Cali, Colombia. Puerto de Sagunto (Valencia) es sede fisica confirmada. El resto de ciudades en Espana, Europa y Suiza son jornadas por disponibilidad.
 - Propiedad intelectual: marca, textos, imagenes, logos, PDFs y contenidos.
 - Enlaces externos: WhatsApp, Instagram, Facebook, TikTok, Google/Maps si se usa.
 - Limitacion razonable: la informacion puede actualizarse y las reservas/precios/disponibilidad se confirman por WhatsApp.
 
 No incluir:
 
-- Sede en Espana o Suiza.
 - Empresa espanola si no existe.
 - Representante legal adicional no confirmado.
+- Sede en Suiza (es jornadas).
+- Sede en Espana distinta de Puerto de Sagunto.
 - Condiciones de compra, devoluciones o checkout, porque no hay ecommerce.
 
 ### 3.2 Politica de privacidad / tratamiento de datos

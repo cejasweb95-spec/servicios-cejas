@@ -28,6 +28,7 @@ import {
   getSocialLinks,
   getWhatsAppTargets,
 } from "@/lib/content/queries";
+import { cookiesBasePath } from "@/lib/routes/static-routes";
 import { buildPageMetadata } from "@/lib/seo/build-page-metadata";
 
 import "../globals.css";
@@ -216,6 +217,8 @@ export default async function LocaleLayout({
                   bannerDescription: shellT("cookiesDescription"),
                   bannerTitle: shellT("cookiesTitle"),
                   configureLabel: shellT("cookiesConfigure"),
+                  cookiesPolicyHref: `/${locale}${cookiesBasePath[locale]}`,
+                  cookiesPolicyLabel: shellT("cookiesPolicyLink"),
                   rejectLabel: shellT("cookiesReject"),
                   saveLabel: shellT("cookiesSave"),
                 }}

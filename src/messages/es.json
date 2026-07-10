@@ -398,7 +398,7 @@
         "title": "Datos que pueden tratarse",
         "items": [
           "Datos que la usuaria envíe voluntariamente por WhatsApp o email.",
-          "Datos técnicos de navegación gestionados por el hosting.",
+          "Datos técnicos de navegación (dirección IP, cabeceras HTTP) gestionados por el proveedor de hosting.",
           "Datos analíticos de GA4 solo si la usuaria acepta cookies analíticas.",
           "Eventos no sensibles como clics en WhatsApp, descargas PDF, cambio de idioma, selección de mercado o ubicación del mapa."
         ]
@@ -409,15 +409,69 @@
           "Responder consultas y gestionar citas o reservas por WhatsApp.",
           "Facilitar descargas de catálogos y PDFs de formación.",
           "Medir rendimiento de la web y mejorar SEO/UX solo con consentimiento analítico.",
+          "Garantizar la seguridad técnica del sitio.",
           "Cumplir obligaciones legales cuando aplique."
         ]
       },
       {
-        "title": "Derechos y proveedores",
+        "title": "Bases de legitimación",
         "items": [
-          "Puedes solicitar acceso, actualización, rectificación, supresión u otros derechos aplicables escribiendo al email oficial.",
-          "Pueden intervenir proveedores como Hostinger, Google Analytics si hay consentimiento, WhatsApp/Meta si la usuaria abre WhatsApp y redes sociales si hace clic.",
-          "No se envían a GA4 nombres, teléfonos, emails, fotos, mensajes escritos ni datos sensibles."
+          "Consentimiento de la usuaria: para cookies analíticas de GA4 (art. 6.1.a RGPD).",
+          "Ejecución de medidas precontractuales o contractuales: cuando la usuaria contacta por WhatsApp o email para gestionar una cita (art. 6.1.b RGPD).",
+          "Interés legítimo: logs de seguridad técnica del servidor, protección frente a accesos no autorizados (art. 6.1.f RGPD).",
+          "Cumplimiento de obligación legal: cuando la normativa lo requiera (art. 6.1.c RGPD; Ley 1581/2012 Colombia)."
+        ]
+      },
+      {
+        "title": "Plazos de conservación",
+        "items": [
+          "Consultas por WhatsApp o email: el tiempo necesario para responder y gestionar la cita; luego eliminadas o anonimizadas.",
+          "Logs técnicos del hosting: conforme a la política del proveedor, habitualmente hasta 90 días.",
+          "Datos de GA4: según la configuración de retención establecida en Google Analytics (por defecto, 14 meses).",
+          "En todo caso, los datos se conservan solo mientras sea necesario para la finalidad o para cumplir obligaciones legales."
+        ]
+      },
+      {
+        "title": "Transferencias internacionales y destinatarios",
+        "items": [
+          "Hostinger o el proveedor de hosting activo: gestiona servidores y logs de acceso.",
+          "Google LLC (Google Analytics): solo si la usuaria acepta analíticas; Google actúa como encargado del tratamiento bajo el Marco UE–EE.UU. de Privacidad de Datos (DPF).",
+          "Meta Platforms / WhatsApp: cuando la usuaria pulsa un enlace wa.me y abre WhatsApp, Meta trata los datos según sus propias condiciones.",
+          "Redes sociales (Instagram, Facebook, TikTok): solo si la usuaria hace clic en los enlaces; cada plataforma aplica su propia política.",
+          "Puede haber transferencias internacionales a países fuera del Espacio Económico Europeo (EEE) con proveedores que disponen de salvaguardas adecuadas (Cláusulas Contractuales Tipo u otros mecanismos reconocidos)."
+        ]
+      },
+      {
+        "title": "Contacto por WhatsApp",
+        "items": [
+          "Al pulsar un enlace wa.me e iniciar una conversación, los datos del mensaje, el número de teléfono y los metadatos asociados son tratados por Meta Platforms Inc. según sus condiciones de servicio.",
+          "Cejas Internacionales utiliza esos mensajes únicamente para responder consultas y gestionar citas.",
+          "No se almacenan registros de conversaciones de WhatsApp fuera de la propia aplicación."
+        ]
+      },
+      {
+        "title": "Derechos de las usuarias",
+        "items": [
+          "Colombia (Ley 1581/2012): derecho a conocer, actualizar, rectificar, suprimir los datos y revocar la autorización. Canal: contacto@cejasinternacionales.com. Puedes presentar consultas o reclamos ante la SIC (Superintendencia de Industria y Comercio).",
+          "España / Unión Europea (RGPD): derechos de acceso, rectificación, supresión, oposición, limitación del tratamiento y portabilidad. Canal: contacto@cejasinternacionales.com. También puedes presentar una reclamación ante la AEPD (www.aepd.es).",
+          "Suiza (nFADP): derechos de acceso, rectificación, supresión y, cuando proceda, portabilidad. Canal: contacto@cejasinternacionales.com.",
+          "Responderemos a cualquier solicitud en un plazo máximo de un mes (RGPD art. 12.3) o en el plazo legalmente establecido según la jurisdicción aplicable."
+        ]
+      },
+      {
+        "title": "Menores de edad",
+        "items": [
+          "Esta web no está dirigida a menores de 14 años.",
+          "No se recaba ni se trata intencionadamente información de menores.",
+          "Si tienes constancia de que un menor ha facilitado datos, contacta con nosotras para suprimirlos."
+        ]
+      },
+      {
+        "title": "Proveedores y no envío de datos sensibles",
+        "items": [
+          "No se envían a GA4 nombres, teléfonos, emails, fotos, mensajes escritos ni datos sensibles.",
+          "Los eventos de GA4 permitidos (clics en WhatsApp, descargas, cambio de idioma, selección de mercado) no contienen información que identifique directamente a la usuaria.",
+          "Puedes consultar la lista de eventos permitidos y la configuración de Consent Mode en nuestra Política de cookies."
         ]
       }
     ]
@@ -436,17 +490,43 @@
       {
         "title": "Cómo usamos cookies",
         "items": [
-          "Las cookies necesarias permiten el funcionamiento básico de la web.",
-          "Las cookies analíticas ayudan a medir visitas y clics solo si hay consentimiento.",
-          "Actualmente no se utiliza remarketing ni publicidad de Google Ads."
+          "Las cookies necesarias garantizan el funcionamiento básico de la web (almacenamiento de tus preferencias de cookies).",
+          "Las cookies analíticas ayudan a medir visitas y clics solo si das tu consentimiento expreso.",
+          "Actualmente no se utiliza remarketing ni publicidad de Google Ads.",
+          "Puedes aceptar, rechazar o configurar las cookies desde el banner que aparece en tu primera visita, o cambiarlas en cualquier momento desde el enlace del pie de página."
         ]
       },
       {
         "title": "Google Analytics 4",
         "items": [
-          "GA4 no se carga antes de aceptar analíticas.",
-          "Los eventos permitidos no incluyen datos personales identificables.",
-          "Puedes retirar o cambiar tu consentimiento desde el enlace permanente del footer."
+          "GA4 no se carga ni se ejecuta antes de que aceptes las cookies analíticas.",
+          "Se aplica Google Consent Mode v2: analytics_storage y ad_storage se mantienen en modo denied por defecto.",
+          "Los eventos permitidos no incluyen datos personales identificables: clics en WhatsApp, descargas de catálogos, cambio de idioma y selección de mercado.",
+          "Puedes retirar o cambiar tu consentimiento en cualquier momento desde el enlace permanente del footer."
+        ]
+      },
+      {
+        "title": "Preferencias almacenadas localmente",
+        "items": [
+          "La web almacena tu elección de cookies en tu propio navegador mediante localStorage, bajo la clave cejas_cookie_consent_v1.",
+          "Esta información no se transmite a ningún servidor externo.",
+          "Si borras el almacenamiento local de tu navegador, el banner de cookies volverá a aparecer en tu próxima visita."
+        ]
+      },
+      {
+        "title": "Google Maps",
+        "items": [
+          "El mapa de la web usa Google Maps. El mapa no se carga automáticamente; solo lo hace cuando pulsas el botón para ver la ubicación.",
+          "Al cargar Google Maps, Google puede establecer cookies propias y de terceros (NID, CONSENT, SOCS, entre otras) según su política de privacidad.",
+          "Puedes evitar que Google Maps cargue simplemente no pulsando el botón del mapa."
+        ]
+      },
+      {
+        "title": "Vigencia del consentimiento y actualizaciones",
+        "items": [
+          "Tu consentimiento es válido durante aproximadamente 12 meses desde que lo otorgas.",
+          "Si añadimos nuevas cookies o cambia el inventario de forma relevante, te solicitaremos de nuevo el consentimiento.",
+          "Consulta la tabla de cookies más abajo para ver el inventario completo y actualizado."
         ]
       }
     ]
@@ -457,7 +537,13 @@
     "taxIdLabel": "NIT",
     "emailLabel": "Email",
     "addressLabel": "Dirección",
-    "cookieCategoriesTitle": "Cookies y preferencias"
+    "cookieCategoriesTitle": "Cookies y preferencias",
+    "cookieTableTitle": "Inventario de cookies y almacenamiento local",
+    "cookieTableColName": "Nombre",
+    "cookieTableColProvider": "Proveedor",
+    "cookieTableColPurpose": "Finalidad",
+    "cookieTableColDuration": "Duración",
+    "cookieTableColCategory": "Categoría"
   },
   "ServiceDetail": {
     "metaTitle": "{service} en {market} | Cejas Internacionales",
@@ -536,7 +622,8 @@
     "cookiesReject": "Rechazar",
     "cookiesConfigure": "Configurar",
     "cookiesSave": "Guardar preferencias",
-    "cookiesUnavailable": "Esta categoría no se utiliza actualmente."
+    "cookiesUnavailable": "Esta categoría no se utiliza actualmente.",
+    "cookiesPolicyLink": "Política de cookies"
   },
   "WhatsApp": {
     "title": "Elige el WhatsApp de contacto",
