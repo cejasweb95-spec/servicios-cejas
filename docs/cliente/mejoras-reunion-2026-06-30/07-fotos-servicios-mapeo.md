@@ -527,6 +527,13 @@ Refuerzos (4), uñas (13), peinados/maquillaje (3): detalle **sin** bloque image
 - [x] QA diseño actual documentado
 - [x] Fotos recibidas en repo (`docs/cliente/fotos-servicios-2026/`)
 - [x] QA implementación servicio por servicio documentado
-- [ ] `mediaId` por servicio en datos
-- [ ] Assets en `public/images/servicios/`
-- [ ] QA visual pasado
+- [x] `mediaId` por servicio en datos (`serviceMediaIds` en `src/content/media.ts` + `getServiceMediaAsset` en queries; validado en `validators.ts`)
+- [x] Assets en `public/images/servicios/` (26 WebP, 8–98 KB, recortes ~4:3 vía `scripts/process-service-photos.mjs`)
+- [x] Fotos de reserva añadidas a la galería de resultados (9 assets `gallery` en `public/images/resultados/`)
+- [x] QA visual pasado (build OK, lint/typecheck OK, capturas 390/1440 en detalle HidraLips, relleno, corrección, set 5D y resultados)
+
+### Notas de la implementación (2026-07-10)
+
+- Cuchilla reutiliza el WebP de cera; HidraLips 1 y 3 sesiones comparten foto; por punto reutilizan ruso 2D / mega volumen; refuerzos híbridas/microlips/línea de ojos apuntan a la foto del servicio principal; el resto de refuerzos y uñas/peinados usan el fallback de categoría existente.
+- Los 9 sets de extensiones se recortaron del collage 3×3 (celda 128×96 reescalada a 576×432); calidad limitada por el original — si la clienta pasa fotos individuales, basta reemplazar el WebP.
+- Reservas en galería: lifting A/D, laminado collage + close-up, microlips grid + dúo, neutralización A/D, henna collage, efecto polvo procedimiento, relleno A/D vertical.

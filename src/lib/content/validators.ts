@@ -6,7 +6,7 @@ import { events } from "@/content/events";
 import { legalPages } from "@/content/legal-pages";
 import { locations } from "@/content/locations";
 import { markets } from "@/content/markets";
-import { mediaAssets, serviceCategoryMediaIds } from "@/content/media";
+import { mediaAssets, serviceCategoryMediaIds, serviceMediaIds } from "@/content/media";
 import { googleReviewProfiles, reviews } from "@/content/reviews";
 import { seoEntries } from "@/content/seo";
 import { serviceCategories } from "@/content/service-categories";
@@ -87,6 +87,16 @@ function assertReferences() {
 
     if (!mediaIds.has(mediaId)) {
       throw new Error(`Unknown service category media asset: ${mediaId}`);
+    }
+  }
+
+  for (const [serviceId, mediaId] of Object.entries(serviceMediaIds)) {
+    if (!serviceIds.has(serviceId)) {
+      throw new Error(`Unknown service media key: ${serviceId}`);
+    }
+
+    if (!mediaIds.has(mediaId)) {
+      throw new Error(`Unknown service media asset: ${mediaId}`);
     }
   }
 

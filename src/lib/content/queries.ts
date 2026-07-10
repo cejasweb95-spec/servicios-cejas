@@ -1,5 +1,5 @@
 import { localContentProvider } from "@/lib/content/provider";
-import { marketMediaIds, serviceCategoryMediaIds } from "@/content/media";
+import { marketMediaIds, serviceCategoryMediaIds, serviceMediaIds } from "@/content/media";
 import type {
   Course,
   Download,
@@ -294,6 +294,25 @@ export function getServiceCategoryMediaAsset(
   const mediaId = serviceCategoryMediaIds[categoryId];
 
   return mediaId ? getMediaAssetById(mediaId, locale) : null;
+}
+
+/**
+ * Foto del detalle de servicio: primero la foto propia del servicio;
+ * si no existe (refuerzos), cae a la foto de su categoría; si la categoría
+ * tampoco tiene (uñas, peinados), devuelve null y el detalle no pinta imagen.
+ */
+export function getServiceMediaAsset(
+  serviceId: string,
+  categoryId: string,
+  locale: Locale,
+) {
+  const mediaId = serviceMediaIds[serviceId];
+
+  if (mediaId) {
+    return getMediaAssetById(mediaId, locale);
+  }
+
+  return getServiceCategoryMediaAsset(categoryId, locale);
 }
 
 export function getMarketMediaAsset(marketId: string, locale: Locale) {

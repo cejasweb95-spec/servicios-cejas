@@ -473,6 +473,457 @@ export const mediaAssets = mediaAssetSchema.array().parse([
     width: 484,
     height: 638,
   },
+  // --- Fotos por servicio (lote clienta 2026-07-09) ---
+  {
+    id: "servicio-laminado-cejas",
+    type: "photo",
+    sourcePath: "docs/cliente/fotos-servicios-2026/laminado-cejas/laminado-cejas-original.png",
+    publicPath: "/images/servicios/laminado-cejas.webp",
+    alt: l(
+      "Resultado de laminado de cejas con pelo peinado hacia arriba",
+      "Brow lamination result with hairs brushed upward",
+    ),
+    width: 814,
+    height: 610,
+  },
+  {
+    id: "servicio-sombreado-henna",
+    type: "photo",
+    sourcePath: "docs/cliente/fotos-servicios-2026/sombreado-henna/sombreado-henna-original.png",
+    publicPath: "/images/servicios/sombreado-henna.webp",
+    alt: l(
+      "Cejas con sombreado en henna y diseño definido",
+      "Brows with henna shading and a defined design",
+    ),
+    width: 676,
+    height: 507,
+  },
+  {
+    id: "servicio-depilacion-cejas-cera",
+    type: "photo",
+    sourcePath:
+      "docs/cliente/fotos-servicios-2026/depilacion-cejas-cera/depilacion-cejas-cera-original.png",
+    publicPath: "/images/servicios/depilacion-cejas-cera.webp",
+    alt: l(
+      "Aplicación de cera para perfilar la ceja",
+      "Wax application to shape the brow",
+    ),
+    width: 1024,
+    height: 768,
+  },
+  {
+    id: "servicio-efecto-polvo",
+    type: "photo",
+    sourcePath: "docs/cliente/fotos-servicios-2026/efecto-polvo/efecto-polvo-original.png",
+    publicPath: "/images/servicios/efecto-polvo.webp",
+    alt: l(
+      "Ceja cicatrizada con micropigmentación efecto polvo en tono natural",
+      "Healed brow with powder-effect micropigmentation in a natural tone",
+    ),
+    width: 774,
+    height: 580,
+  },
+  {
+    id: "servicio-efecto-maquillaje",
+    type: "photo",
+    sourcePath:
+      "docs/cliente/fotos-servicios-2026/efecto-maquillaje/efecto-maquillaje-original.jpeg",
+    publicPath: "/images/servicios/efecto-maquillaje.webp",
+    alt: l(
+      "Resultado de micropigmentación efecto maquillaje en cejas",
+      "Makeup-effect brow micropigmentation result",
+    ),
+    width: 1156,
+    height: 867,
+  },
+  {
+    id: "servicio-cejas-hibridas",
+    type: "photo",
+    sourcePath: "docs/cliente/fotos-servicios-2026/cejas-hibridas/cejas-hibridas-original.jpeg",
+    publicPath: "/images/servicios/cejas-hibridas.webp",
+    alt: l(
+      "Cejas híbridas con trazos pelo a pelo y sombreado",
+      "Hybrid brows combining hair strokes and shading",
+    ),
+    width: 1169,
+    height: 877,
+  },
+  {
+    id: "servicio-correccion-cejas",
+    type: "photo",
+    sourcePath:
+      "docs/cliente/fotos-servicios-2026/correccion-cejas/01-antes-despues-correccion-cejas.png",
+    publicPath: "/images/servicios/correccion-cejas.webp",
+    alt: l(
+      "Cejas corregidas y rediseñadas tras una micropigmentación previa",
+      "Brows corrected and redesigned after previous micropigmentation work",
+    ),
+    width: 663,
+    height: 497,
+  },
+  {
+    id: "servicio-neutralizacion-labios",
+    type: "photo",
+    sourcePath:
+      "docs/cliente/fotos-servicios-2026/neutralizacion-labios/neutralizacion-labios-original.jpeg",
+    publicPath: "/images/servicios/neutralizacion-labios.webp",
+    alt: l(
+      "Labios neutralizados con tono rosa natural y uniforme",
+      "Neutralized lips with an even, natural pink tone",
+    ),
+    width: 1179,
+    height: 884,
+  },
+  {
+    id: "servicio-microlips",
+    type: "photo",
+    sourcePath: "docs/cliente/fotos-servicios-2026/microlips/microlips-original.png",
+    publicPath: "/images/servicios/microlips.webp",
+    alt: l(
+      "Micropigmentación labial Microlips con color intenso y definido",
+      "Microlips lip micropigmentation with intense, defined color",
+    ),
+    width: 636,
+    height: 477,
+  },
+  {
+    id: "servicio-hidralips",
+    type: "photo",
+    sourcePath: "docs/cliente/fotos-servicios-2026/hidralips/hidralips-original.png",
+    publicPath: "/images/servicios/hidralips.webp",
+    alt: l(
+      "Labios hidratados tras la primera sesión de HidraLips",
+      "Hydrated lips after the first HidraLips session",
+    ),
+    width: 471,
+    height: 353,
+  },
+  {
+    id: "servicio-linea-ojos",
+    type: "photo",
+    sourcePath: "docs/cliente/fotos-servicios-2026/linea-ojos/linea-ojos-original.png",
+    publicPath: "/images/servicios/linea-ojos.webp",
+    alt: l(
+      "Línea de ojos micropigmentada sobre la línea de pestañas superior",
+      "Micropigmented eyeliner along the upper lash line",
+    ),
+    width: 768,
+    height: 576,
+  },
+  {
+    id: "servicio-relleno-pestanas",
+    type: "photo",
+    sourcePath:
+      "docs/cliente/fotos-servicios-2026/relleno-pestanas/03-antes-despues-horizontal.png",
+    publicPath: "/images/servicios/relleno-pestanas.webp",
+    alt: l(
+      "Relleno de pestañas con línea de agua maquillada y efecto de mayor densidad",
+      "Lash line enhancement with a tinted waterline and fuller-lash effect",
+    ),
+    width: 450,
+    height: 338,
+  },
+  {
+    id: "servicio-lifting-pestanas",
+    type: "photo",
+    sourcePath:
+      "docs/cliente/fotos-servicios-2026/lifting-pestanas/lifting-pestanas-original.png",
+    publicPath: "/images/servicios/lifting-pestanas.webp",
+    alt: l(
+      "Pestañas naturales onduladas tras un lifting con tinte",
+      "Natural lashes curled after a lash lift with tint",
+    ),
+    width: 660,
+    height: 495,
+  },
+  {
+    id: "servicio-depilacion-axilas",
+    type: "photo",
+    sourcePath:
+      "docs/cliente/fotos-servicios-2026/depilacion-axilas/depilacion-axilas-original.png",
+    publicPath: "/images/servicios/depilacion-axilas.webp",
+    alt: l(
+      "Aplicación de cera durante una depilación de axilas",
+      "Wax application during underarm hair removal",
+    ),
+    width: 576,
+    height: 432,
+  },
+  {
+    id: "servicio-depilacion-bigote-bozo",
+    type: "photo",
+    sourcePath:
+      "docs/cliente/fotos-servicios-2026/depilacion-bigote-bozo/depilacion-bigote-bozo-original.png",
+    publicPath: "/images/servicios/depilacion-bigote-bozo.webp",
+    alt: l(
+      "Depilación con cera del bozo en el labio superior",
+      "Upper-lip waxing in progress",
+    ),
+    width: 417,
+    height: 313,
+  },
+  {
+    id: "servicio-depilacion-nariz",
+    type: "photo",
+    sourcePath:
+      "docs/cliente/fotos-servicios-2026/depilacion-nariz/depilacion-nariz-original.png",
+    publicPath: "/images/servicios/depilacion-nariz.webp",
+    alt: l(
+      "Depilación de nariz con cera aplicada en la fosa nasal",
+      "Nose waxing with wax applied to the nostril",
+    ),
+    width: 846,
+    height: 635,
+  },
+  {
+    id: "servicio-depilacion-media-pierna",
+    type: "photo",
+    sourcePath:
+      "docs/cliente/fotos-servicios-2026/depilacion-media-pierna/depilacion-media-pierna-original.png",
+    publicPath: "/images/servicios/depilacion-media-pierna.webp",
+    alt: l(
+      "Aplicación de cera durante una depilación de media pierna",
+      "Wax application during half-leg hair removal",
+    ),
+    width: 682,
+    height: 512,
+  },
+  // Sets de extensiones de pestañas (recortes del collage 3×3 de la clienta).
+  {
+    id: "servicio-set-rimel",
+    type: "photo",
+    sourcePath:
+      "docs/cliente/fotos-servicios-2026/extensiones-pestanas/00-collage-sets-3x3-maestro.png",
+    publicPath: "/images/servicios/set-rimel.webp",
+    alt: l(
+      "Extensiones de pestañas set rímel con efecto de máscara natural",
+      "Mascara-look lash extension set with a natural mascara effect",
+    ),
+    width: 576,
+    height: 432,
+  },
+  {
+    id: "servicio-volumen-ligero",
+    type: "photo",
+    sourcePath:
+      "docs/cliente/fotos-servicios-2026/extensiones-pestanas/00-collage-sets-3x3-maestro.png",
+    publicPath: "/images/servicios/volumen-ligero.webp",
+    alt: l(
+      "Extensiones de pestañas de volumen ligero con acabado suave",
+      "Light volume lash extensions with a soft finish",
+    ),
+    width: 576,
+    height: 432,
+  },
+  {
+    id: "servicio-wispy",
+    type: "photo",
+    sourcePath:
+      "docs/cliente/fotos-servicios-2026/extensiones-pestanas/00-collage-sets-3x3-maestro.png",
+    publicPath: "/images/servicios/wispy.webp",
+    alt: l(
+      "Extensiones de pestañas wispy con picos de distintas longitudes",
+      "Wispy lash extensions with spiked, varied lengths",
+    ),
+    width: 576,
+    height: 432,
+  },
+  {
+    id: "servicio-volumen-ruso-2d",
+    type: "photo",
+    sourcePath:
+      "docs/cliente/fotos-servicios-2026/extensiones-pestanas/00-collage-sets-3x3-maestro.png",
+    publicPath: "/images/servicios/volumen-ruso-2d.webp",
+    alt: l(
+      "Extensiones de pestañas volumen ruso 2D con densidad completa",
+      "Russian volume 2D lash extensions with full density",
+    ),
+    width: 576,
+    height: 432,
+  },
+  {
+    id: "servicio-mega-volumen",
+    type: "photo",
+    sourcePath:
+      "docs/cliente/fotos-servicios-2026/extensiones-pestanas/00-collage-sets-3x3-maestro.png",
+    publicPath: "/images/servicios/mega-volumen.webp",
+    alt: l(
+      "Extensiones de pestañas mega volumen con efecto dramático",
+      "Mega volume lash extensions with a dramatic effect",
+    ),
+    width: 576,
+    height: 432,
+  },
+  {
+    id: "servicio-volumen-aura-2d",
+    type: "photo",
+    sourcePath:
+      "docs/cliente/fotos-servicios-2026/extensiones-pestanas/00-collage-sets-3x3-maestro.png",
+    publicPath: "/images/servicios/volumen-aura-2d.webp",
+    alt: l(
+      "Extensiones de pestañas volumen aura 2D con acabado uniforme",
+      "Aura volume 2D lash extensions with an even finish",
+    ),
+    width: 576,
+    height: 432,
+  },
+  {
+    id: "servicio-volumen-aura-5d",
+    type: "photo",
+    sourcePath:
+      "docs/cliente/fotos-servicios-2026/extensiones-pestanas/00-collage-sets-3x3-maestro.png",
+    publicPath: "/images/servicios/volumen-aura-5d.webp",
+    alt: l(
+      "Extensiones de pestañas volumen aura 5D con alta densidad",
+      "Aura volume 5D lash extensions with high density",
+    ),
+    width: 576,
+    height: 432,
+  },
+  {
+    id: "servicio-volumen-griego-3d",
+    type: "photo",
+    sourcePath:
+      "docs/cliente/fotos-servicios-2026/extensiones-pestanas/00-collage-sets-3x3-maestro.png",
+    publicPath: "/images/servicios/volumen-griego-3d.webp",
+    alt: l(
+      "Extensiones de pestañas volumen griego 3D con textura marcada",
+      "Greek volume 3D lash extensions with a textured look",
+    ),
+    width: 576,
+    height: 432,
+  },
+  {
+    id: "servicio-volumen-griego-5d",
+    type: "photo",
+    sourcePath:
+      "docs/cliente/fotos-servicios-2026/extensiones-pestanas/00-collage-sets-3x3-maestro.png",
+    publicPath: "/images/servicios/volumen-griego-5d.webp",
+    alt: l(
+      "Extensiones de pestañas volumen griego 5D con máxima densidad",
+      "Greek volume 5D lash extensions with maximum density",
+    ),
+    width: 576,
+    height: 432,
+  },
+  // --- Reservas del lote 2026-07-09 → galería de resultados ---
+  {
+    id: "result-lifting-antes-despues",
+    type: "gallery",
+    sourcePath:
+      "docs/cliente/fotos-servicios-2026/lifting-pestanas/incoming-lote-2026-07-09/03-antes-despues.png",
+    publicPath: "/images/resultados/result-lifting-antes-despues.webp",
+    alt: l(
+      "Antes y después de un lifting de pestañas con tinte",
+      "Before and after of a lash lift with tint",
+    ),
+    width: 768,
+    height: 1024,
+  },
+  {
+    id: "result-laminado-collage",
+    type: "gallery",
+    sourcePath:
+      "docs/cliente/fotos-servicios-2026/laminado-cejas/incoming-lote-2026-07-09/03-collage-antes-despues-laminado-henna.png",
+    publicPath: "/images/resultados/result-laminado-collage.webp",
+    alt: l(
+      "Antes y después de laminado de cejas con henna y depilación",
+      "Before and after of brow lamination with henna and waxing",
+    ),
+    width: 642,
+    height: 1024,
+  },
+  {
+    id: "result-laminado-closeup",
+    type: "gallery",
+    sourcePath:
+      "docs/cliente/fotos-servicios-2026/laminado-cejas/incoming-lote-2026-07-09/01-closeup-resultado-piercing.png",
+    publicPath: "/images/resultados/result-laminado-closeup.webp",
+    alt: l(
+      "Detalle de cejas laminadas con acabado peinado y natural",
+      "Close-up of laminated brows with a brushed, natural finish",
+    ),
+    width: 762,
+    height: 1024,
+  },
+  {
+    id: "result-microlips-collage",
+    type: "gallery",
+    sourcePath:
+      "docs/cliente/fotos-servicios-2026/microlips/incoming-lote-2026-07-09/02-collage-grid-antes-despues.png",
+    publicPath: "/images/resultados/result-microlips-collage.webp",
+    alt: l(
+      "Collage de antes y después de micropigmentación labial Microlips",
+      "Before-and-after collage of Microlips lip micropigmentation",
+    ),
+    width: 588,
+    height: 1024,
+  },
+  {
+    id: "result-microlips-duo",
+    type: "gallery",
+    sourcePath:
+      "docs/cliente/fotos-servicios-2026/microlips/incoming-lote-2026-07-09/01-collage-dos-labios.png",
+    publicPath: "/images/resultados/result-microlips-duo.webp",
+    alt: l(
+      "Dos resultados de micropigmentación labial con tonos rosados",
+      "Two lip micropigmentation results with rosy tones",
+    ),
+    width: 577,
+    height: 1024,
+  },
+  {
+    id: "result-neutralizacion-antes-despues",
+    type: "gallery",
+    sourcePath:
+      "docs/cliente/fotos-servicios-2026/neutralizacion-labios/incoming-lote-2026-07-09/collage-antes-despues-logo.png",
+    publicPath: "/images/resultados/result-neutralizacion-antes-despues.webp",
+    alt: l(
+      "Antes y después de neutralización de labios oscuros",
+      "Before and after of dark lip neutralization",
+    ),
+    width: 775,
+    height: 1024,
+  },
+  {
+    id: "result-henna-collage",
+    type: "gallery",
+    sourcePath:
+      "docs/cliente/fotos-servicios-2026/sombreado-henna/incoming-lote-2026-07-09/02-collage-sombreado-henna.png",
+    publicPath: "/images/resultados/result-henna-collage.webp",
+    alt: l(
+      "Resultado de sombreado de cejas en henna con diseño a medida",
+      "Henna brow shading result with a tailored design",
+    ),
+    width: 652,
+    height: 1024,
+  },
+  {
+    id: "result-efecto-polvo-procedimiento",
+    type: "gallery",
+    sourcePath:
+      "docs/cliente/fotos-servicios-2026/efecto-polvo/incoming-lote-2026-07-09/01-procedimiento-vista-invertida.png",
+    publicPath: "/images/resultados/result-efecto-polvo-procedimiento.webp",
+    alt: l(
+      "Micropigmentación efecto polvo recién realizada en el estudio",
+      "Powder-effect micropigmentation freshly done at the studio",
+    ),
+    width: 825,
+    height: 1024,
+  },
+  {
+    id: "result-relleno-antes-despues",
+    type: "gallery",
+    sourcePath:
+      "docs/cliente/fotos-servicios-2026/relleno-pestanas/01-antes-despues-linea-pestanas.png",
+    publicPath: "/images/resultados/result-relleno-antes-despues.webp",
+    alt: l(
+      "Antes y después de un relleno de pestañas en la línea de agua",
+      "Before and after of a lash line enhancement",
+    ),
+    width: 831,
+    height: 1024,
+  },
 ]);
 
 export const marketMediaIds: Record<string, string> = {
@@ -487,4 +938,46 @@ export const serviceCategoryMediaIds: Record<string, string> = {
   labios: "result-labios-01",
   "mirada-pestanas": "result-mirada-01",
   "extensiones-pestanas": "sets-pestanas-panel",
+};
+
+/**
+ * Foto propia por servicio (lote clienta jul 2026).
+ * Reglas: refuerzos, uñas y peinados no tienen foto (fallback de categoría o
+ * ninguna); cuchilla reutiliza la foto de cera; HidraLips comparte foto entre
+ * 1 y 3 sesiones; los servicios «por punto» reutilizan el set más parecido.
+ */
+export const serviceMediaIds: Record<string, string> = {
+  "laminado-cejas": "servicio-laminado-cejas",
+  "sombreado-henna": "servicio-sombreado-henna",
+  "depilacion-cejas-cera": "servicio-depilacion-cejas-cera",
+  "depilacion-cejas-cuchilla": "servicio-depilacion-cejas-cera",
+  "efecto-polvo": "servicio-efecto-polvo",
+  "efecto-maquillaje": "servicio-efecto-maquillaje",
+  "cejas-hibridas": "servicio-cejas-hibridas",
+  "correccion-cejas": "servicio-correccion-cejas",
+  "neutralizacion-labios": "servicio-neutralizacion-labios",
+  microlips: "servicio-microlips",
+  "hidralips-una-sesion": "servicio-hidralips",
+  "hidralips-tres-sesiones": "servicio-hidralips",
+  "linea-ojos": "servicio-linea-ojos",
+  "relleno-pestanas": "servicio-relleno-pestanas",
+  "lifting-pestanas": "servicio-lifting-pestanas",
+  "depilacion-axilas": "servicio-depilacion-axilas",
+  "depilacion-bigote-bozo": "servicio-depilacion-bigote-bozo",
+  "depilacion-nariz": "servicio-depilacion-nariz",
+  "depilacion-media-pierna": "servicio-depilacion-media-pierna",
+  "set-rimel": "servicio-set-rimel",
+  "volumen-ligero": "servicio-volumen-ligero",
+  wispy: "servicio-wispy",
+  "volumen-ruso-2d": "servicio-volumen-ruso-2d",
+  "mega-volumen": "servicio-mega-volumen",
+  "volumen-aura-2d": "servicio-volumen-aura-2d",
+  "volumen-aura-5d": "servicio-volumen-aura-5d",
+  "volumen-griego-3d": "servicio-volumen-griego-3d",
+  "volumen-griego-5d": "servicio-volumen-griego-5d",
+  "por-punto-efecto-volumen": "servicio-volumen-ruso-2d",
+  "por-punto-mega-volumen": "servicio-mega-volumen",
+  "refuerzo-cejas-hibridas": "servicio-cejas-hibridas",
+  "refuerzo-microlips": "servicio-microlips",
+  "refuerzo-linea-ojos": "servicio-linea-ojos",
 };

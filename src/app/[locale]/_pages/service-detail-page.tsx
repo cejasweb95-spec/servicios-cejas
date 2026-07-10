@@ -18,7 +18,7 @@ import {
   getServiceBySlug,
   getServiceCategories,
   getServiceCategoryById,
-  getServiceCategoryMediaAsset,
+  getServiceMediaAsset,
   getServicesByMarket,
   getWhatsAppTarget,
 } from "@/lib/content/queries";
@@ -114,7 +114,7 @@ export function ServiceDetailPage({
     getServiceCategoryById(service.categoryId, locale) ??
     getServiceCategories(locale)[0];
   const whatsappTarget = getWhatsAppTarget(market.whatsappTargetId, locale);
-  const serviceImage = getServiceCategoryMediaAsset(service.categoryId, locale);
+  const serviceImage = getServiceMediaAsset(service.id, service.categoryId, locale);
 
   if (!whatsappTarget) {
     notFound();
