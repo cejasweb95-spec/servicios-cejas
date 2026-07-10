@@ -23,6 +23,7 @@ import {
   getDownloadsByMarket,
   getMarketBySlug,
   getMarketMediaAsset,
+  getMarketSecondaryMediaAsset,
   getMarkets,
   getMediaAssetById,
   getServiceCategories,
@@ -135,7 +136,7 @@ export function MarketServicesPage({
   const primaryImage =
     getMarketMediaAsset(market.id, locale) ??
     getMediaAssetById("result-cejas-01", locale);
-  const secondaryImage = getMediaAssetById("result-labios-01", locale);
+  const secondaryImage = getMarketSecondaryMediaAsset(market.id, locale);
   const groups = buildGroups(
     market.id,
     market.slug,

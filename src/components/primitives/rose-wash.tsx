@@ -25,7 +25,7 @@ export function RoseWash({
   return (
     <div
       className={cn(
-        "relative isolate max-w-full overflow-x-clip",
+        "relative isolate max-w-full overflow-x-clip before:pointer-events-none after:pointer-events-none",
         accentMap[accent],
         className,
       )}

@@ -6,7 +6,7 @@ import { events } from "@/content/events";
 import { legalPages } from "@/content/legal-pages";
 import { locations } from "@/content/locations";
 import { markets } from "@/content/markets";
-import { mediaAssets, serviceCategoryMediaIds, serviceMediaIds } from "@/content/media";
+import { mediaAssets, marketMediaIds, marketSecondaryMediaIds, serviceCategoryMediaIds, serviceMediaIds } from "@/content/media";
 import { googleReviewProfiles, reviews } from "@/content/reviews";
 import { seoEntries } from "@/content/seo";
 import { serviceCategories } from "@/content/service-categories";
@@ -97,6 +97,26 @@ function assertReferences() {
 
     if (!mediaIds.has(mediaId)) {
       throw new Error(`Unknown service media asset: ${mediaId}`);
+    }
+  }
+
+  for (const [marketId, mediaId] of Object.entries(marketMediaIds)) {
+    if (!marketIds.has(marketId as MarketId)) {
+      throw new Error(`Unknown market media key: ${marketId}`);
+    }
+
+    if (!mediaIds.has(mediaId)) {
+      throw new Error(`Unknown market media asset: ${mediaId}`);
+    }
+  }
+
+  for (const [marketId, mediaId] of Object.entries(marketSecondaryMediaIds)) {
+    if (!marketIds.has(marketId as MarketId)) {
+      throw new Error(`Unknown market secondary media key: ${marketId}`);
+    }
+
+    if (!mediaIds.has(mediaId)) {
+      throw new Error(`Unknown market secondary media asset: ${mediaId}`);
     }
   }
 

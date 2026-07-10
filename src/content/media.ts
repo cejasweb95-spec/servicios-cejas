@@ -928,8 +928,13 @@ export const mediaAssets = mediaAssetSchema.array().parse([
 
 export const marketMediaIds: Record<string, string> = {
   colombia: "mercado-colombia",
-  "espana-europa": "mercado-espana-europa",
+  "espana-europa": "estudio-puerto-sagunto-portada",
   suiza: "mercado-suiza",
+};
+
+/** Imagen pequeña del par editorial en la ficha de mercado (hero lateral). */
+export const marketSecondaryMediaIds: Record<string, string> = {
+  "espana-europa": "estudio-puerto-sagunto-interior",
 };
 
 export const serviceCategoryMediaIds: Record<string, string> = {

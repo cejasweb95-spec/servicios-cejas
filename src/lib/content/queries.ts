@@ -1,5 +1,5 @@
 import { localContentProvider } from "@/lib/content/provider";
-import { marketMediaIds, serviceCategoryMediaIds, serviceMediaIds } from "@/content/media";
+import { marketMediaIds, marketSecondaryMediaIds, serviceCategoryMediaIds, serviceMediaIds } from "@/content/media";
 import type {
   Course,
   Download,
@@ -319,6 +319,13 @@ export function getMarketMediaAsset(marketId: string, locale: Locale) {
   const mediaId = marketMediaIds[marketId];
 
   return mediaId ? getMediaAssetById(mediaId, locale) : null;
+}
+
+export function getMarketSecondaryMediaAsset(marketId: string, locale: Locale) {
+  const mediaId =
+    marketSecondaryMediaIds[marketId] ?? "result-labios-01";
+
+  return getMediaAssetById(mediaId, locale);
 }
 
 export function getGoogleReviewProfiles(locale: Locale) {
