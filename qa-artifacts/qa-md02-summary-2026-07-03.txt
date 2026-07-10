@@ -1,0 +1,23 @@
+MD 02 — Sobre Xiomara: foto del mundo
+Fecha: 2026-07-03
+
+Implementación:
+- about-xiomara-page.tsx: retrato PageHero → xiomara-retrato-mundo
+- E2E nuevo: tests/e2e/about-xiomara-portrait.spec.ts
+
+QA senior:
+- typecheck: OK
+- lint: OK (3 warnings preexistentes)
+- build: OK (218 páginas)
+- vitest: 32/32
+- Playwright Chromium (desktop 1440 + mobile Pixel 7), workers=1:
+  - a11y: 52/52 (incl. /es/sobre-xiomara y /en/about-xiomara)
+  - e2e home-hero: 4/4
+  - e2e about-xiomara-portrait: 4/4
+  - Total: 60/60
+
+Responsive (Chromium, 6 viewports x 210 URLs = 1260 renders):
+- /es/sobre-xiomara y /en/about-xiomara: sin incidencias en ningún viewport
+- 8 issues preexistentes (controles mapa 40px en home/jornadas móvil 390/430) — no relacionadas con MD 02
+
+Verificación visual: http://127.0.0.1:3000/es/sobre-xiomara — retrato con globo, sin retrato-rosa

@@ -8,7 +8,7 @@ import { siteConfig } from "@/config/site";
 import { isLocale, type Locale } from "@/i18n/routing";
 
 export const alt =
-  "Cejas Internacionales - micropigmentación, belleza especializada y formación";
+  "Cejas Internacionales — micropigmentation & brow design / micropigmentación y diseño de cejas";
 export const size = {
   width: 1200,
   height: 630,

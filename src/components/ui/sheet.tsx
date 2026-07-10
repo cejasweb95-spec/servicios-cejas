@@ -48,7 +48,7 @@ function SheetOverlay({
 function SheetContent({
   className,
   children,
-  closeLabel = "Close",
+  closeLabel,
   side = "right",
   showCloseButton = true,
   ...props

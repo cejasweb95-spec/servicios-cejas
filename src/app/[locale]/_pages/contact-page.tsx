@@ -40,10 +40,17 @@ type ContactPageCopy = {
   whatsappLabel: string;
 };
 
-// URL oficial del iframe de Google Maps del estudio físico en Cali (dato
-// confirmado por el negocio). Solo se carga tras la interacción del usuario.
-const GOOGLE_MAPS_EMBED_SRC =
-  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d995.6705292416235!2d-76.537424!3d3.4273577!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e30a7737d12df83%3A0xd8e8aad2dad12003!2scejas%20internacionales!5e0!3m2!1ses!2ses!4v1781878647481!5m2!1ses!2ses";
+// URL base del iframe de Google Maps del estudio físico en Cali (dato
+// confirmado por el negocio). El parámetro hl/gl se parametriza con el locale
+// del usuario para que la UI de Maps se muestre en su idioma.
+const GOOGLE_MAPS_EMBED_BASE =
+  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d995.6705292416235!2d-76.537424!3d3.4273577!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e30a7737d12df83%3A0xd8e8aad2dad12003!2scejas%20internacionales!5e0";
+
+function buildMapsEmbedSrc(locale: Locale): string {
+  const hl = locale === "en" ? "en" : "es";
+  const gl = locale === "en" ? "us" : "es";
+  return `${GOOGLE_MAPS_EMBED_BASE}!3m2!1i${hl}!2i${gl}!4v1781878647481!5m2!1i${hl}!2i${gl}`;
+}
 
 type ContactPageProps = {
   copy: ContactPageCopy;
@@ -168,7 +175,7 @@ export function ContactPage({ copy, locale, path }: ContactPageProps) {
                   directionsLabel={copy.mapDirectionsLabel}
                   hint={copy.mapHint}
                   loadLabel={copy.mapLoadLabel}
-                  src={GOOGLE_MAPS_EMBED_SRC}
+                  src={buildMapsEmbedSrc(locale)}
                   title={copy.mapTitle}
                 />
               </section>

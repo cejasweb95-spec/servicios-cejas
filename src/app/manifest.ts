@@ -8,8 +8,8 @@ export default function manifest(): MetadataRoute.Manifest {
     name: siteConfig.name,
     short_name: "Cejas",
     description:
-      "Micropigmentacion, belleza especializada y formaciones profesionales.",
-    start_url: "/es",
+      "Micropigmentation, specialized beauty and professional training / Micropigmentación, belleza especializada y formaciones profesionales.",
+    start_url: "/",
     display: "standalone",
     background_color: brandColors.background,
     theme_color: brandColors.primary,

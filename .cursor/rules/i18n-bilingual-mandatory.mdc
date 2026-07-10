@@ -1,0 +1,154 @@
+---
+description: >
+  Regla de internacionalización obligatoria para Cejas Internacionales.
+  Se aplica siempre que el agente cree o modifique páginas públicas, componentes,
+  metadatos, schema JSON-LD, rutas, copy, CTAs, alt text, aria-labels o contenido.
+globs:
+  - "src/**/*.tsx"
+  - "src/**/*.ts"
+  - "src/messages/*.json"
+  - "src/content/*.ts"
+---
+
+# Bilingüismo obligatorio — Regla de internacionalización (ES + EN)
+
+## Principio fundamental
+
+**Todo texto visible al usuario DEBE existir en español e inglés simultáneamente.**
+No puede crearse, editarse ni aprobarse ningún contenido público si solo existe en un idioma.
+
+## Qué cuenta como "texto visible"
+
+- Copy de página: títulos, descripciones, párrafos, listas, notas
+- CTAs y botones: etiquetas, tooltips
+- Metadatos SEO: `<title>`, `<meta name="description">`, Open Graph (`og:title`, `og:description`), Twitter Card
+- Alt text de imágenes (`alt="..."`)
+- `aria-label`, `aria-describedby`, `placeholder`, `title` de elementos interactivos
+- Schema JSON-LD: `name`, `description`, `areaServed`, `knowsLanguage`, FAQ answers
+- Labels de navegación: menú principal, pie de página, breadcrumbs
+- Textos de error, estados vacíos, mensajes de validación
+- Nombres y descripciones de servicios, cursos, mercados, categorías
+- Títulos y resúmenes de páginas legales (aviso legal, privacidad, cookies)
+- Mensajes de WhatsApp por defecto
+- Labels del conmutador de idioma
+- Confirmaciones, toasts, notificaciones al usuario
+
+## Reglas de implementación
+
+### 1. Páginas y componentes — siempre `getTranslations()` o props `copy`
+
+```tsx
+// CORRECTO — el componente recibe copy localizado como prop
+export function MyPage({ copy }: { copy: MyPageCopy }) {
+  return <h1>{copy.title}</h1>
+}
+
+// INCORRECTO — string hardcodeado
+export function MyPage() {
+  return <h1>Bienvenida</h1>
+}
+```
+
+### 2. Archivos de mensajes — es.json y en.json siempre en par
+
+Al añadir o editar una clave en `src/messages/es.json`:
+- Añadir la clave equivalente en `src/messages/en.json` en el mismo commit/PR.
+- Si se elimina una clave, eliminarla en ambos archivos.
+- Verificar paridad con: `diff <(jq 'keys[]' src/messages/es.json | sort) <(jq 'keys[]' src/messages/en.json | sort)` (Unix) o revisar manualmente.
+
+### 3. Content layer (`src/content/*.ts`) — siempre `l(es, en)`
+
+```ts
+// CORRECTO
+const l = (es: string, en: string) => ({ es, en });
+name: l("Diseño de cejas", "Brow design"),
+
+// INCORRECTO — solo un idioma
+name: "Diseño de cejas",
+```
+
+### 4. Rutas — siempre slug en ES y EN
+
+```ts
+// CORRECTO
+slug: l("mis-servicios", "my-services"),
+
+// INCORRECTO — slug monolingüe
+slug: "mis-servicios",
+```
+
+### 5. Metadatos (`generateMetadata`) — siempre bifurcados por locale
+
+```ts
+// CORRECTO
+export async function generateMetadata({ params }: Props) {
+  const t = await getTranslations({ locale, namespace: "MyPage" })
+  return { title: t("metaTitle"), description: t("metaDescription") }
+}
+
+// INCORRECTO — string hardcodeado
+export async function generateMetadata() {
+  return { title: "Mis servicios | Cejas Internacionales" }
+}
+```
+
+### 6. Alt text — siempre localizado
+
+```tsx
+// CORRECTO — alt viene del content layer o de messages
+<Image src={img.publicPath} alt={img.alt[locale]} ... />
+
+// INCORRECTO — alt hardcodeado
+<Image src="/foto.jpg" alt="Xiomara maquillando" ... />
+```
+
+### 7. aria-label, placeholder, title — siempre localizado
+
+```tsx
+// CORRECTO
+<button aria-label={copy.closeLabel}>...</button>
+
+// INCORRECTO — solo inglés como fallback
+<button aria-label="Close">...</button>
+```
+
+### 8. Schema JSON-LD — usar datos localizados del content layer
+
+Los JSON-LD se construyen con datos que ya vienen localizados desde las páginas.
+No hardcodear textos en las funciones `buildXxxJsonLd`.
+
+### 9. PWA manifest — descripción neutral o bifurcada
+
+El archivo `manifest.ts` es monolingüe por especificación W3C.
+Usar descripción neutral (incluye ambos idiomas separados por `/`) o el idioma más amplio.
+`start_url` debe ser `/` (raíz), nunca `/es` o `/en`.
+
+## Checklist de revisión antes de commit
+
+Al implementar cualquier página o componente público, responder:
+
+- [ ] ¿Todas las claves de texto están en `es.json` Y `en.json`?
+- [ ] ¿El componente recibe `copy` localizado, no strings hardcodeados?
+- [ ] ¿Los alt text de imágenes vienen del content layer con `l(es, en)` o de messages?
+- [ ] ¿Los aria-label y placeholder se pasan como prop, no hardcodeados?
+- [ ] ¿Los metadatos `<title>` y `<meta description>` usan `t("metaTitle")` de messages?
+- [ ] ¿Las rutas tienen slug ES y EN definidos en `static-routes.ts` o `l(es, en)`?
+- [ ] ¿El schema JSON-LD usa datos ya localizados, sin strings literales?
+- [ ] ¿Los labels de navegación están en `navigation.ts` con `{ es, en }` o en messages?
+
+## Excepcionalmente permitido sin traducción
+
+- Nombres de marca: "Cejas Internacionales", "Xiomara"
+- Emails, teléfonos, NIFs/NIT, direcciones postales
+- Números de versión, fechas técnicas
+- Slugs de URLs cuando son idénticos en ambos idiomas (ej: `cookies`)
+- Nombres propios de plataformas: Instagram, WhatsApp, TikTok, Google Maps
+- Strings técnicos (IDs, claves de evento GA4, claves de localStorage)
+
+## Referencia
+
+Ver también:
+- `docs/cliente/i18n-es-en-plan.md`
+- `src/i18n/routing.ts`
+- `src/messages/es.json` y `src/messages/en.json`
+- `src/content/*.ts` — patrón `l(es, en)`

@@ -78,7 +78,7 @@ export const serviceCategories = serviceCategorySchema.array().parse([
     slug: l("peinados-maquillaje", "hair-makeup"),
     name: l("Peinados y maquillaje", "Hair and makeup"),
     description: l(
-      "Servicios sociales con cotizacion por referencia cuando aplica.",
+      "Servicios sociales con cotización por referencia cuando aplica.",
       "Social hair and makeup services, quoted by reference when needed.",
     ),
     order: 80,
