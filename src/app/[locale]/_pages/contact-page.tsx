@@ -91,6 +91,11 @@ export function ContactPage({ copy, locale, path }: ContactPageProps) {
         }
         description={copy.description}
         eyebrow={copy.eyebrow}
+        roseAccent={
+          primaryImage?.publicPath && secondaryImage?.publicPath
+            ? "none"
+            : "corner"
+        }
         title={copy.title}
       />
       <Section tone="muted">

@@ -148,34 +148,34 @@ export const mediaAssets = mediaAssetSchema.array().parse([
       "Detalle de ceja utilizado en la Master Class de laminado de cejas",
       "Brow detail used in the brow lamination masterclass",
     ),
-    width: 992,
-    height: 744,
+    width: 1152,
+    height: 864,
   },
   {
     id: "curso-lifting-pestanas",
     type: "course",
     sourcePath:
-      "docs/cliente/assets-extraidos/formaciones-pdfs/master-class-lifting/page-02-image-01.jpg",
+      "docs/cliente/assets-extraidos/xiomara-sesion-profesional/xiomara-sesion-profesional-09.jpeg",
     publicPath: "/images/formaciones/curso-lifting-pestanas.jpg",
     alt: l(
-      "Detalle de pestañas utilizado en la Master Class de lifting",
-      "Lash detail used in the lash lift masterclass",
+      "Xiomara Sánchez en la camilla de su estudio con su equipo profesional, formadora de la Master Class",
+      "Xiomara Sánchez at her studio treatment chair with her professional tools, masterclass trainer",
     ),
-    width: 992,
-    height: 744,
+    width: 1366,
+    height: 1025,
   },
   {
     id: "curso-cejas-henna",
     type: "course",
     sourcePath:
-      "docs/cliente/assets-extraidos/fotos-instagram/cejas/cejas-10.jpeg",
+      "docs/cliente/fotos-servicios-2026/sombreado-henna/incoming-lote-2026-07-09/02-collage-sombreado-henna.png",
     publicPath: "/images/formaciones/curso-cejas-henna.jpg",
     alt: l(
-      "Detalle de diseño de cejas utilizado en la Master Class de henna",
-      "Brow design detail used in the henna brow masterclass",
+      "Cejas con diseño sombreado en henna, resultado de la Master Class",
+      "Brows with henna shading design, masterclass result",
     ),
-    width: 992,
-    height: 744,
+    width: 675,
+    height: 507,
   },
   {
     id: "xiomara-uniforme-dermografo",
@@ -363,6 +363,35 @@ export const mediaAssets = mediaAssetSchema.array().parse([
     height: 1600,
   },
   {
+    // Tarjeta de mercado Colombia: retrato de Xiomara (pedido clienta 16/07/2026,
+    // para no repetir en la home las fotos de las sedes físicas).
+    id: "mercado-colombia-retrato",
+    type: "photo",
+    sourcePath:
+      "docs/cliente/assets-extraidos/xiomara-sesion-profesional/xiomara-sesion-profesional-02.jpeg",
+    publicPath: "/images/mercados/mercado-colombia-retrato.jpg",
+    alt: l(
+      "Xiomara Sánchez en su escritorio con pigmentos y dermógrafo, lista para atender en Colombia",
+      "Xiomara Sánchez at her desk with pigments and PMU device, ready to serve clients in Colombia",
+    ),
+    width: 1200,
+    height: 1600,
+  },
+  {
+    // Tarjeta de mercado España/Europa: retrato profesional de Xiomara (pedido clienta 16/07/2026).
+    id: "mercado-espana-retrato",
+    type: "photo",
+    sourcePath:
+      "docs/cliente/assets-extraidos/xiomara-sesion-profesional/xiomara-sesion-profesional-03.jpeg",
+    publicPath: "/images/mercados/mercado-espana-retrato.jpg",
+    alt: l(
+      "Retrato profesional de Xiomara Sánchez con uniforme de trabajo",
+      "Professional portrait of Xiomara Sánchez in her work uniform",
+    ),
+    width: 1200,
+    height: 1600,
+  },
+  {
     id: "mercado-espana-europa",
     type: "photo",
     sourcePath:
@@ -484,7 +513,7 @@ export const mediaAssets = mediaAssetSchema.array().parse([
       "Brow lamination result with hairs brushed upward",
     ),
     width: 814,
-    height: 610,
+    height: 1024,
   },
   {
     id: "servicio-sombreado-henna",
@@ -496,7 +525,7 @@ export const mediaAssets = mediaAssetSchema.array().parse([
       "Brows with henna shading and a defined design",
     ),
     width: 676,
-    height: 507,
+    height: 1024,
   },
   {
     id: "servicio-depilacion-cejas-cera",
@@ -509,7 +538,7 @@ export const mediaAssets = mediaAssetSchema.array().parse([
       "Wax application to shape the brow",
     ),
     width: 1024,
-    height: 768,
+    height: 1024,
   },
   {
     id: "servicio-efecto-polvo",
@@ -520,8 +549,8 @@ export const mediaAssets = mediaAssetSchema.array().parse([
       "Ceja cicatrizada con micropigmentación efecto polvo en tono natural",
       "Healed brow with powder-effect micropigmentation in a natural tone",
     ),
-    width: 774,
-    height: 580,
+    width: 640,
+    height: 480,
   },
   {
     id: "servicio-efecto-maquillaje",
@@ -533,8 +562,8 @@ export const mediaAssets = mediaAssetSchema.array().parse([
       "Resultado de micropigmentación efecto maquillaje en cejas",
       "Makeup-effect brow micropigmentation result",
     ),
-    width: 1156,
-    height: 867,
+    width: 1180,
+    height: 2048,
   },
   {
     id: "servicio-cejas-hibridas",
@@ -546,7 +575,7 @@ export const mediaAssets = mediaAssetSchema.array().parse([
       "Hybrid brows combining hair strokes and shading",
     ),
     width: 1169,
-    height: 877,
+    height: 1600,
   },
   {
     id: "servicio-correccion-cejas",
@@ -558,21 +587,21 @@ export const mediaAssets = mediaAssetSchema.array().parse([
       "Cejas corregidas y rediseñadas tras una micropigmentación previa",
       "Brows corrected and redesigned after previous micropigmentation work",
     ),
-    width: 663,
-    height: 497,
+    width: 727,
+    height: 1024,
   },
   {
     id: "servicio-neutralizacion-labios",
     type: "photo",
     sourcePath:
-      "docs/cliente/fotos-servicios-2026/neutralizacion-labios/neutralizacion-labios-original.jpeg",
+      "docs/cliente/fotos-servicios-2026/neutralizacion-labios/incoming-lote-2026-07-09/collage-neutralizacion-texto.png",
     publicPath: "/images/servicios/neutralizacion-labios.webp",
     alt: l(
       "Labios neutralizados con tono rosa natural y uniforme",
       "Neutralized lips with an even, natural pink tone",
     ),
-    width: 1179,
-    height: 884,
+    width: 658,
+    height: 410,
   },
   {
     id: "servicio-microlips",
@@ -584,7 +613,7 @@ export const mediaAssets = mediaAssetSchema.array().parse([
       "Microlips lip micropigmentation with intense, defined color",
     ),
     width: 636,
-    height: 477,
+    height: 1024,
   },
   {
     id: "servicio-hidralips",
@@ -592,36 +621,36 @@ export const mediaAssets = mediaAssetSchema.array().parse([
     sourcePath: "docs/cliente/fotos-servicios-2026/hidralips/hidralips-original.png",
     publicPath: "/images/servicios/hidralips.webp",
     alt: l(
-      "Labios hidratados tras la primera sesión de HidraLips",
-      "Hydrated lips after the first HidraLips session",
+      "Antes y después de la primera sesión de HidraLips con labios hidratados",
+      "Before and after of the first HidraLips session with hydrated lips",
     ),
     width: 471,
-    height: 353,
+    height: 843,
   },
   {
     id: "servicio-linea-ojos",
     type: "photo",
-    sourcePath: "docs/cliente/fotos-servicios-2026/linea-ojos/linea-ojos-original.png",
+    sourcePath:
+      "docs/cliente/fotos-servicios-2026/relleno-pestanas/01-antes-despues-linea-pestanas.png",
     publicPath: "/images/servicios/linea-ojos.webp",
     alt: l(
-      "Línea de ojos micropigmentada sobre la línea de pestañas superior",
-      "Micropigmented eyeliner along the upper lash line",
+      "Antes y después de línea de ojos micropigmentada sobre la línea de pestañas superior",
+      "Before and after of a micropigmented eyeliner along the upper lash line",
     ),
-    width: 768,
-    height: 576,
+    width: 831,
+    height: 1024,
   },
   {
     id: "servicio-relleno-pestanas",
     type: "photo",
-    sourcePath:
-      "docs/cliente/fotos-servicios-2026/relleno-pestanas/03-antes-despues-horizontal.png",
+    sourcePath: "docs/cliente/fotos-servicios-2026/linea-ojos/linea-ojos-original.png",
     publicPath: "/images/servicios/relleno-pestanas.webp",
     alt: l(
       "Relleno de pestañas con línea de agua maquillada y efecto de mayor densidad",
       "Lash line enhancement with a tinted waterline and fuller-lash effect",
     ),
-    width: 450,
-    height: 338,
+    width: 768,
+    height: 1024,
   },
   {
     id: "servicio-lifting-pestanas",
@@ -634,7 +663,7 @@ export const mediaAssets = mediaAssetSchema.array().parse([
       "Natural lashes curled after a lash lift with tint",
     ),
     width: 660,
-    height: 495,
+    height: 1024,
   },
   {
     id: "servicio-depilacion-axilas",
@@ -647,7 +676,7 @@ export const mediaAssets = mediaAssetSchema.array().parse([
       "Wax application during underarm hair removal",
     ),
     width: 576,
-    height: 432,
+    height: 1024,
   },
   {
     id: "servicio-depilacion-bigote-bozo",
@@ -660,7 +689,7 @@ export const mediaAssets = mediaAssetSchema.array().parse([
       "Upper-lip waxing in progress",
     ),
     width: 417,
-    height: 313,
+    height: 626,
   },
   {
     id: "servicio-depilacion-nariz",
@@ -673,7 +702,7 @@ export const mediaAssets = mediaAssetSchema.array().parse([
       "Nose waxing with wax applied to the nostril",
     ),
     width: 846,
-    height: 635,
+    height: 1024,
   },
   {
     id: "servicio-depilacion-media-pierna",
@@ -686,7 +715,7 @@ export const mediaAssets = mediaAssetSchema.array().parse([
       "Wax application during half-leg hair removal",
     ),
     width: 682,
-    height: 512,
+    height: 1024,
   },
   // Sets de extensiones de pestañas (recortes del collage 3×3 de la clienta).
   {
@@ -927,8 +956,10 @@ export const mediaAssets = mediaAssetSchema.array().parse([
 ]);
 
 export const marketMediaIds: Record<string, string> = {
-  colombia: "mercado-colombia",
-  "espana-europa": "estudio-puerto-sagunto-portada",
+  // Retratos de Xiomara distintos por país; las fotos de sede quedan solo en
+  // la sección de sedes físicas (pedido clienta 16/07/2026).
+  colombia: "mercado-colombia-retrato",
+  "espana-europa": "mercado-espana-retrato",
   suiza: "mercado-suiza",
 };
 
@@ -948,14 +979,16 @@ export const serviceCategoryMediaIds: Record<string, string> = {
 /**
  * Foto propia por servicio (lote clienta jul 2026).
  * Reglas: refuerzos, uñas y peinados no tienen foto (fallback de categoría o
- * ninguna); cuchilla reutiliza la foto de cera; HidraLips comparte foto entre
- * 1 y 3 sesiones; los servicios «por punto» reutilizan el set más parecido.
+ * ninguna); cuchilla va SIN foto por pedido de la clienta (reunión 12/07/2026):
+ * `null` explícito = no mostrar imagen ni caer al fallback de categoría;
+ * HidraLips comparte foto entre 1 y 3 sesiones; los servicios «por punto»
+ * reutilizan el set más parecido.
  */
-export const serviceMediaIds: Record<string, string> = {
+export const serviceMediaIds: Record<string, string | null> = {
   "laminado-cejas": "servicio-laminado-cejas",
   "sombreado-henna": "servicio-sombreado-henna",
   "depilacion-cejas-cera": "servicio-depilacion-cejas-cera",
-  "depilacion-cejas-cuchilla": "servicio-depilacion-cejas-cera",
+  "depilacion-cejas-cuchilla": null,
   "efecto-polvo": "servicio-efecto-polvo",
   "efecto-maquillaje": "servicio-efecto-maquillaje",
   "cejas-hibridas": "servicio-cejas-hibridas",
@@ -971,17 +1004,20 @@ export const serviceMediaIds: Record<string, string> = {
   "depilacion-bigote-bozo": "servicio-depilacion-bigote-bozo",
   "depilacion-nariz": "servicio-depilacion-nariz",
   "depilacion-media-pierna": "servicio-depilacion-media-pierna",
-  "set-rimel": "servicio-set-rimel",
-  "volumen-ligero": "servicio-volumen-ligero",
-  wispy: "servicio-wispy",
-  "volumen-ruso-2d": "servicio-volumen-ruso-2d",
-  "mega-volumen": "servicio-mega-volumen",
-  "volumen-aura-2d": "servicio-volumen-aura-2d",
-  "volumen-aura-5d": "servicio-volumen-aura-5d",
-  "volumen-griego-3d": "servicio-volumen-griego-3d",
-  "volumen-griego-5d": "servicio-volumen-griego-5d",
-  "por-punto-efecto-volumen": "servicio-volumen-ruso-2d",
-  "por-punto-mega-volumen": "servicio-mega-volumen",
+  // Extensiones CO: el collage maestro es de baja resolución y los recortes
+  // por celda se ven pixelados/«mochos»; la clienta aceptó (12/07/2026) mostrar
+  // el panel completo tal cual hasta tener fotos individuales por set.
+  "set-rimel": "sets-pestanas-panel",
+  "volumen-ligero": "sets-pestanas-panel",
+  wispy: "sets-pestanas-panel",
+  "volumen-ruso-2d": "sets-pestanas-panel",
+  "mega-volumen": "sets-pestanas-panel",
+  "volumen-aura-2d": "sets-pestanas-panel",
+  "volumen-aura-5d": "sets-pestanas-panel",
+  "volumen-griego-3d": "sets-pestanas-panel",
+  "volumen-griego-5d": "sets-pestanas-panel",
+  "por-punto-efecto-volumen": "sets-pestanas-panel",
+  "por-punto-mega-volumen": "sets-pestanas-panel",
   "refuerzo-cejas-hibridas": "servicio-cejas-hibridas",
   "refuerzo-microlips": "servicio-microlips",
   "refuerzo-linea-ojos": "servicio-linea-ojos",

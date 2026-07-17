@@ -70,9 +70,11 @@ test.describe("puerto sagunto studio page", () => {
     ).toHaveAttribute("href", /\/sede-puerto-sagunto$/);
   });
 
-  test("shows Puerto de Sagunto studio photos in Spain market hero", async ({
+  test("shows Xiomara portrait and Puerto de Sagunto interior in Spain market hero", async ({
     page,
   }) => {
+    // La tarjeta/hero de mercado España usa el retrato de Xiomara para no
+    // repetir las fotos de la sección «Sedes físicas» (pedido clienta 16/07/2026).
     await page.goto("/es/servicios/espana-europa");
 
     const heroImages = page.locator('section[aria-labelledby="page-hero-title"] img');
@@ -81,13 +83,10 @@ test.describe("puerto sagunto studio page", () => {
     const primary = heroImages.nth(0);
     const secondary = heroImages.nth(1);
 
-    await expect(primary).toHaveAttribute(
-      "src",
-      /01-portada-cabina-letras-cejas-internacionales/,
-    );
+    await expect(primary).toHaveAttribute("src", /mercado-espana-retrato/);
     await expect(primary).toHaveAttribute(
       "alt",
-      /Cabina de Cejas Internacionales en Puerto de Sagunto/i,
+      /Retrato profesional de Xiomara Sánchez/i,
     );
 
     await expect(secondary).toHaveAttribute(

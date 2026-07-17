@@ -98,6 +98,7 @@ export function AboutXiomaraPage({
         }
         description={copy.description}
         eyebrow={copy.eyebrow}
+        roseAccent={portrait?.publicPath ? "none" : "corner"}
         title={copy.title}
       />
       <Section tone="muted">

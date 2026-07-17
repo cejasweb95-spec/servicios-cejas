@@ -348,6 +348,8 @@ Por cada foto que pases:
 
 **Nota 2026-07-09 (depilación cejas):** 1 foto. Muestra **cera** → asignada a `depilacion-cejas-cera`. Para `depilacion-cejas-cuchilla` reutilizamos de momento la misma (cliente pasó un solo ítem); ideal pedir foto con cuchilla si quieren diferenciarlas en web.
 
+**Nota 2026-07-12 (decisión clienta):** cuchilla = 🚫 **sin foto** (solo texto), en todos los mercados. `serviceMediaIds["depilacion-cejas-cuchilla"] = null` (sin fallback a categoría). Ver `docs/cliente/mejoras-reunion-2026-07-12/03-cuchilla-sin-foto.md`.
+
 **Nota 2026-07-09 (depilación nariz):** 1 foto. Depilación nasal con cera — clara y profesional, buena para marco 4:3.
 
 **Nota 2026-07-09 (depilación bigote):** 1 foto. Cera en labio superior — encaja con `depilacion-bigote-bozo` (ES/CO).

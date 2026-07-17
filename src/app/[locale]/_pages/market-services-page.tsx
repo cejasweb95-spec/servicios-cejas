@@ -191,6 +191,11 @@ export function MarketServicesPage({
             {copy.heroEyebrow}
           </span>
         }
+        roseAccent={
+          primaryImage?.publicPath && secondaryImage?.publicPath
+            ? "none"
+            : "corner"
+        }
         title={title}
       />
       <Section tone="muted">

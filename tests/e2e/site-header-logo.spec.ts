@@ -3,7 +3,7 @@ import { expect, test, type Page } from "@playwright/test";
 import { seedRejectedConsent } from "../helpers/consent";
 
 const WORDMARK_ARIA =
-  /Cejas Internacionales by Xiomara, (inicio|home)/i;
+  /Cejas Internacionales by Xiomara Sánchez, (inicio|home)/i;
 
 async function gotoHomeEs(page: Page) {
   await page.goto("/es");
@@ -43,12 +43,13 @@ test.describe("site header wordmark", () => {
 
     const { wordmark, wordmarkBox, menuBox, wordmarkHeight } = await wordmarkMetrics(page);
 
-    expect(wordmarkHeight).toBeGreaterThanOrEqual(12);
-    expect(wordmarkHeight).toBeLessThanOrEqual(28);
+    expect(wordmarkHeight).toBeGreaterThanOrEqual(18);
+    expect(wordmarkHeight).toBeLessThanOrEqual(40);
     expect(wordmarkBox.x + wordmarkBox.width).toBeLessThanOrEqual(menuBox.x - 8);
 
     await expect(wordmark.getByText("Cejas Internacionales", { exact: true })).toBeVisible();
     await expect(wordmark.getByText("by Xiomara", { exact: true })).toBeVisible();
+    await expect(wordmark.getByText("Sánchez", { exact: true })).toBeVisible();
 
     const overflow = await page.evaluate(
       () => document.documentElement.scrollWidth > document.documentElement.clientWidth,
@@ -64,8 +65,8 @@ test.describe("site header wordmark", () => {
 
     const { wordmark, wordmarkBox, menuBox, wordmarkHeight } = await wordmarkMetrics(page);
 
-    expect(wordmarkHeight).toBeGreaterThanOrEqual(12);
-    expect(wordmarkHeight).toBeLessThanOrEqual(30);
+    expect(wordmarkHeight).toBeGreaterThanOrEqual(18);
+    expect(wordmarkHeight).toBeLessThanOrEqual(40);
     expect(wordmarkBox.x + wordmarkBox.width).toBeLessThanOrEqual(menuBox.x - 8);
 
     const overflow = await page.evaluate(
@@ -86,8 +87,8 @@ test.describe("site header wordmark", () => {
     const wordmarkHeight = await wordmark.evaluate(
       (node) => node.getBoundingClientRect().height,
     );
-    expect(wordmarkHeight).toBeGreaterThanOrEqual(12);
-    expect(wordmarkHeight).toBeLessThanOrEqual(28);
+    expect(wordmarkHeight).toBeGreaterThanOrEqual(18);
+    expect(wordmarkHeight).toBeLessThanOrEqual(40);
 
     await expect(page.getByRole("button", { name: /Abrir menú|Open menu/i })).toHaveCount(0);
 
@@ -119,8 +120,8 @@ test.describe("site header wordmark", () => {
     const wordmarkHeight = await wordmark.evaluate(
       (node) => node.getBoundingClientRect().height,
     );
-    expect(wordmarkHeight).toBeGreaterThanOrEqual(12);
-    expect(wordmarkHeight).toBeLessThanOrEqual(30);
+    expect(wordmarkHeight).toBeGreaterThanOrEqual(18);
+    expect(wordmarkHeight).toBeLessThanOrEqual(40);
   });
 
   test("footer keeps the official logo image", async ({ page }) => {

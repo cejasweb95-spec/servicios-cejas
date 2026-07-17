@@ -120,6 +120,18 @@ export function ServiceDetailPage({
     notFound();
   }
 
+  // La foto se muestra completa (proporción original). En verticales muy altas
+  // se acota la altura a un máximo elegante limitando el ancho del marco, sin
+  // recortar la imagen, y se centra. maxWidth = maxHeightRem * ratio.
+  const serviceImageRatio =
+    serviceImage?.width && serviceImage.height
+      ? serviceImage.width / serviceImage.height
+      : null;
+  const serviceImageMaxWidth =
+    serviceImageRatio && serviceImageRatio < 1
+      ? `${(30 * serviceImageRatio).toFixed(2)}rem`
+      : undefined;
+
   const marketPath = buildMarketPath(locale, market.slug);
   const servicePath = buildServicePath(locale, market.slug, service.slug);
   const title = copy.heroTitle(service.name, market.name);
@@ -187,7 +199,13 @@ export function ServiceDetailPage({
         aside={
           <div className="grid gap-4">
             {serviceImage?.publicPath && serviceImage.width && serviceImage.height ? (
-              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-primary/15 bg-surface">
+              <div
+                className="relative mx-auto w-full overflow-hidden rounded-2xl border border-primary/15 bg-surface"
+                style={{
+                  aspectRatio: `${serviceImage.width} / ${serviceImage.height}`,
+                  maxWidth: serviceImageMaxWidth,
+                }}
+              >
                 <Image
                   alt={serviceImage.alt}
                   className="h-full w-full object-cover"
@@ -195,6 +213,11 @@ export function ServiceDetailPage({
                   priority
                   sizes="(min-width: 1024px) 34vw, 92vw"
                   src={serviceImage.publicPath}
+                  style={
+                    serviceImage.objectPosition
+                      ? { objectPosition: serviceImage.objectPosition }
+                      : undefined
+                  }
                   width={serviceImage.width}
                 />
               </div>
@@ -205,6 +228,7 @@ export function ServiceDetailPage({
         description={service.shortDescription}
         eyebrow={`${copy.heroEyebrow} · ${category.name}`}
         mobileAsideFirst={false}
+        roseAccent={serviceImage ? "none" : "corner"}
         title={title}
       />
 

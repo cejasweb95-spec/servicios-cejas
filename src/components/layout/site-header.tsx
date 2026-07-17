@@ -26,6 +26,7 @@ type HeaderWordmarkContent = {
   ariaLabel: string;
   brandLine: string;
   byline: string;
+  surname: string;
 };
 
 type SiteHeaderProps = {
@@ -70,7 +71,11 @@ export function SiteHeader({
           data-slot="site-logo-link"
           href="/"
         >
-          <HeaderWordmark brandLine={wordmark.brandLine} byline={wordmark.byline} />
+          <HeaderWordmark
+            brandLine={wordmark.brandLine}
+            byline={wordmark.byline}
+            surname={wordmark.surname}
+          />
         </Link>
         <DesktopNav
           currentLocale={currentLocale}

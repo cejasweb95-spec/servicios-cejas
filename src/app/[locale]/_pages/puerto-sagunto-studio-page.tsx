@@ -129,6 +129,7 @@ export function PuertoSaguntoStudioPage({
         }
         description={copy.description}
         eyebrow={copy.eyebrow}
+        roseAccent={portada?.publicPath ? "none" : "corner"}
         title={copy.title}
       />
       <Section tone="muted">

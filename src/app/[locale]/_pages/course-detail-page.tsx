@@ -234,14 +234,14 @@ export function CourseDetailPage({
           </>
         }
         aside={
-          <div className="grid gap-4">
+          <div className="mx-auto grid w-full max-w-[28rem] gap-4 lg:mx-0 lg:ml-auto">
             <div className="relative aspect-[4/3] overflow-hidden rounded-lg border border-border bg-surface">
               <Image
                 alt={courseImage.alt}
                 className="h-full w-full object-cover"
                 height={courseImage.height}
                 priority
-                sizes="(min-width: 1024px) 34vw, 92vw"
+                sizes="(min-width: 1024px) 28rem, 92vw"
                 src={courseImage.publicPath}
                 width={courseImage.width}
               />
@@ -258,6 +258,7 @@ export function CourseDetailPage({
         }
         description={course.summary}
         eyebrow={copy.heroEyebrow}
+        roseAccent="none"
         title={course.name}
       />
 

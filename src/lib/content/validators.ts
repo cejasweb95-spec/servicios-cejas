@@ -95,7 +95,7 @@ function assertReferences() {
       throw new Error(`Unknown service media key: ${serviceId}`);
     }
 
-    if (!mediaIds.has(mediaId)) {
+    if (mediaId !== null && !mediaIds.has(mediaId)) {
       throw new Error(`Unknown service media asset: ${mediaId}`);
     }
   }

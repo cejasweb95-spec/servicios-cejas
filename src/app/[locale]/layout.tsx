@@ -169,6 +169,7 @@ export default async function LocaleLayout({
                   ariaLabel: shellT("headerWordmarkAriaLabel"),
                   brandLine: shellT("headerBrandLine"),
                   byline: shellT("headerByline"),
+                  surname: shellT("headerSurname"),
                 }}
                 labels={{
                   closeMenu: shellT("closeMenu"),

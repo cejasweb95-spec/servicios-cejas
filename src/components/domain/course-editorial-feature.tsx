@@ -56,12 +56,12 @@ export function CourseEditorialFeature({
         "grid items-center gap-8",
         isCompact
           ? "gap-6 lg:grid-cols-[minmax(0,0.38fr)_1fr] lg:gap-10"
-          : "lg:grid-cols-[1.05fr_1fr] lg:gap-12",
+          : "lg:grid-cols-[minmax(0,26rem)_1fr] lg:gap-12",
         reverse && "lg:[&>*:first-child]:order-2",
         className,
       )}
     >
-      <div className="relative">
+      <div className="relative mx-auto w-full max-w-[26rem] lg:mx-0">
         {featured ? (
           <span
             aria-hidden="true"

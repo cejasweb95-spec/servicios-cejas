@@ -11,7 +11,8 @@ export const locations = locationSchema.array().parse([
     region: l("Valle del Cauca", "Valle del Cauca"),
     type: "physical_studio",
     studioRole: "primary",
-    mediaId: "estudio-cabina-certificados",
+    // Reutiliza la foto de camillas de la tarjeta de mercado Colombia (pedido Jeffrey 16/07/2026).
+    mediaId: "mercado-colombia",
     address: l(
       "Calle 9 # 32 A 16, local 118, barrio El Templete",
       "Calle 9 # 32 A 16, local 118, El Templete neighborhood",

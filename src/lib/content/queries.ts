@@ -298,18 +298,20 @@ export function getServiceCategoryMediaAsset(
 
 /**
  * Foto del detalle de servicio: primero la foto propia del servicio;
- * si no existe (refuerzos), cae a la foto de su categoría; si la categoría
- * tampoco tiene (uñas, peinados), devuelve null y el detalle no pinta imagen.
+ * `null` explícito en el mapa significa «sin imagen» (sin fallback, p. ej.
+ * cuchilla por pedido de la clienta); si el servicio no está en el mapa
+ * (refuerzos), cae a la foto de su categoría; si la categoría tampoco tiene
+ * (uñas, peinados), devuelve null y el detalle no pinta imagen.
  */
 export function getServiceMediaAsset(
   serviceId: string,
   categoryId: string,
   locale: Locale,
 ) {
-  const mediaId = serviceMediaIds[serviceId];
+  if (serviceId in serviceMediaIds) {
+    const mediaId = serviceMediaIds[serviceId];
 
-  if (mediaId) {
-    return getMediaAssetById(mediaId, locale);
+    return mediaId ? getMediaAssetById(mediaId, locale) : null;
   }
 
   return getServiceCategoryMediaAsset(categoryId, locale);

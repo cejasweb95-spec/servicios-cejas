@@ -14,6 +14,8 @@ type PageHeroProps = {
   className?: string;
   /** When true (default), the aside (usually a photo) appears above copy on mobile. */
   mobileAsideFirst?: boolean;
+  /** Acento rosa del hero; usar "none" cuando el aside es una foto para no taparla. */
+  roseAccent?: "band-right" | "band-left" | "corner" | "none";
 };
 
 export function PageHero({
@@ -23,6 +25,7 @@ export function PageHero({
   description,
   eyebrow,
   mobileAsideFirst = true,
+  roseAccent = "corner",
   title,
 }: PageHeroProps) {
   return (
@@ -30,7 +33,7 @@ export function PageHero({
       aria-labelledby="page-hero-title"
       className={cn("border-b border-primary/20 bg-surface-strong", className)}
     >
-      <RoseWash accent="corner">
+      <RoseWash accent={roseAccent}>
         <Container
           className={cn(
             "grid min-h-0 content-center gap-8 py-10 sm:gap-10 sm:py-16 lg:min-h-[52dvh] lg:py-20",

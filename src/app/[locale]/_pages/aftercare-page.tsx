@@ -140,6 +140,9 @@ export function AftercarePage({
         }
         description={copy.description}
         eyebrow={copy.eyebrow}
+        roseAccent={
+          browsImage?.publicPath && lipsImage?.publicPath ? "none" : "corner"
+        }
         title={copy.title}
       />
       <Section tone="muted">

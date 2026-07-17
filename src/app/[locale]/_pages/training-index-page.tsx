@@ -167,6 +167,7 @@ export function TrainingIndexPage({
         }
         description={copy.description}
         eyebrow={copy.eyebrow}
+        roseAccent="none"
         title={copy.title}
       />
 

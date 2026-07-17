@@ -215,6 +215,7 @@ export function JourneysPage({ copy, locale, whatsapp }: JourneysPageProps) {
         }
         description={copy.description}
         eyebrow={copy.eyebrow}
+        roseAccent={globeImage?.publicPath ? "none" : "corner"}
         title={copy.title}
       />
 

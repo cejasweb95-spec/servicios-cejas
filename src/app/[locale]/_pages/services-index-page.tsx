@@ -78,6 +78,11 @@ export function ServicesIndexPage({ copy, locale }: ServicesIndexPageProps) {
         }
         description={copy.description}
         eyebrow={copy.eyebrow}
+        roseAccent={
+          primaryImage?.publicPath && secondaryImage?.publicPath
+            ? "none"
+            : "corner"
+        }
         title={copy.title}
       />
       <Section tone="muted">

@@ -170,6 +170,8 @@ export const mediaAssetSchema = z.object({
   alt: localizedStringSchema,
   width: z.number().int().positive().optional(),
   height: z.number().int().positive().optional(),
+  /** Valor CSS de object-position para encuadrar el sujeto dentro de marcos recortados (p. ej. "center 40%"). */
+  objectPosition: z.string().min(1).optional(),
 });
 export type MediaAsset = z.infer<typeof mediaAssetSchema>;
 
