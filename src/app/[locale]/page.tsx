@@ -307,7 +307,7 @@ export default async function HomePage({ params }: HomePageProps) {
 
       <Section id="servicios-por-pais" spacing="loose">
         <Container className="grid gap-12">
-          <div className="max-w-3xl border-l-4 border-primary pl-5">
+          <div className="mx-auto max-w-2xl text-center">
             <Eyebrow className="mb-3 uppercase tracking-[0.14em]">
               {t("servicesEyebrow")}
             </Eyebrow>
@@ -366,14 +366,14 @@ export default async function HomePage({ params }: HomePageProps) {
           <RoseWash accent="band-left">
             <Container className="grid gap-10">
               <Reveal>
-                <div className="max-w-3xl">
+                <div className="mx-auto max-w-2xl text-center">
                   <Eyebrow className="mb-3 uppercase tracking-[0.14em]">
                     {t("studioEyebrow")}
                   </Eyebrow>
                   <h2 className="font-display text-4xl leading-tight text-foreground sm:text-5xl">
                     {t.rich("studioTitle", { i: italicAccent })}
                   </h2>
-                  <p className="mt-4 max-w-2xl text-base leading-8 text-foreground/85">
+                  <p className="mt-4 text-base leading-8 text-foreground/85">
                     {t("studioCopy")}
                   </p>
                 </div>
@@ -452,7 +452,7 @@ export default async function HomePage({ params }: HomePageProps) {
       <Section id="formaciones" spacing="loose" tone="rose">
         <RoseWash accent="band-right">
           <Container className="grid gap-10">
-            <div className="max-w-3xl border-l-4 border-primary pl-5">
+            <div className="mx-auto max-w-2xl text-center">
               <Eyebrow className="mb-3 uppercase tracking-[0.14em]">
                 {t("coursesEyebrow")}
               </Eyebrow>
@@ -544,7 +544,7 @@ export default async function HomePage({ params }: HomePageProps) {
       {highlightedReviews.length > 0 ? (
         <Section id="opiniones" spacing="loose">
           <Container className="grid gap-10">
-            <div className="max-w-3xl border-l-4 border-primary pl-5">
+            <div className="mx-auto max-w-2xl text-center">
               <Eyebrow className="mb-3 uppercase tracking-[0.14em]">
                 {t("reviewsEyebrow")}
               </Eyebrow>

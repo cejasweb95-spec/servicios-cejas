@@ -95,7 +95,7 @@ export function ServicesIndexPage({ copy, locale }: ServicesIndexPageProps) {
             label={copy.breadcrumbsLabel}
           />
 
-          <div className="max-w-3xl border-l-4 border-primary pl-5">
+          <div className="mx-auto max-w-2xl text-center">
             <h2 className="font-display text-3xl leading-tight text-foreground sm:text-4xl">
               {copy.selectorLabel}
             </h2>

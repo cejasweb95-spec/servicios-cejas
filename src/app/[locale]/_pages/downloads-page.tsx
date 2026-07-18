@@ -66,7 +66,7 @@ export function DownloadsPage({ copy, locale }: DownloadsPageProps) {
           />
           <Reveal>
           <section aria-labelledby="catalog-downloads">
-            <div className="mb-5 flex items-center gap-3">
+            <div className="mb-5 flex items-center justify-center gap-3">
               <h2
                 className="font-display text-3xl leading-tight text-foreground"
                 id="catalog-downloads"
@@ -92,7 +92,7 @@ export function DownloadsPage({ copy, locale }: DownloadsPageProps) {
 
           <Reveal delay={0.05}>
           <section aria-labelledby="course-downloads">
-            <div className="mb-5 flex items-center gap-3">
+            <div className="mb-5 flex items-center justify-center gap-3">
               <h2
                 className="font-display text-3xl leading-tight text-foreground"
                 id="course-downloads"

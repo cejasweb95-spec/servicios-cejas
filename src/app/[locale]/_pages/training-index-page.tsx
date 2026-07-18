@@ -179,7 +179,7 @@ export function TrainingIndexPage({
           />
 
           <section aria-labelledby="professional-training-title">
-            <div className="max-w-3xl border-l-4 border-primary pl-5">
+            <div className="mx-auto max-w-2xl text-center">
               <h2
                 className="font-display text-4xl leading-tight text-foreground sm:text-5xl"
                 id="professional-training-title"
@@ -211,7 +211,7 @@ export function TrainingIndexPage({
         <RoseWash accent="band-left">
           <Container className="grid gap-10">
             <section aria-labelledby="masterclass-training-title">
-              <div className="max-w-3xl border-l-4 border-primary pl-5">
+              <div className="mx-auto max-w-2xl text-center">
                 <h2
                   className="font-display text-4xl leading-tight text-foreground sm:text-5xl"
                   id="masterclass-training-title"
