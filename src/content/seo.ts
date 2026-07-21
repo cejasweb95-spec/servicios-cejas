@@ -19,7 +19,7 @@ export const seoEntries = seoEntrySchema.array().parse([
     locale: "en",
     title: "Cejas Internacionales | Micropigmentation and training",
     description:
-      "Specialized micropigmentation, beauty services and professional training from the Cali and Puerto de Sagunto studios, with by-appointment service in selected cities across Colombia, Spain and Switzerland.",
+      "Micropigmentation, beauty services and professional training from studios in Cali and Puerto de Sagunto, with appointments in selected cities.",
     keywords: [
       "brow micropigmentation Cali",
       "brow micropigmentation Madrid",

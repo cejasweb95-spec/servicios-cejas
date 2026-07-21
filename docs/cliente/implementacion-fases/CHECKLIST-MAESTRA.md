@@ -1,6 +1,6 @@
 # Checklist maestra de implementacion V1
 
-Ultima actualizacion: 19/06/2026.
+Ultima actualizacion: 21/07/2026.
 
 Esta checklist resume las fases. El detalle operativo vive en cada MD de `docs/cliente/implementacion-fases/`.
 
@@ -65,7 +65,7 @@ Esta checklist resume las fases. El detalle operativo vive en cada MD de `docs/c
 - [x] Tablet 768px.
 - [x] Mobile 430px.
 - [x] Mobile 390px.
-- [x] Auditoria automatizada integral: 210 URLs x 390/430/768/1024/1440/1920 sin incidencias.
+- [x] Auditoria automatizada integral: 212 URLs x 390/430/768/1024/1440/1920 sin incidencias.
 - [x] Chromium.
 - [x] Firefox.
 - [x] WebKit/Safari.

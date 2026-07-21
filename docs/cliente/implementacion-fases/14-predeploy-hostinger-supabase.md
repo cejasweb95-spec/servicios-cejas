@@ -1,6 +1,6 @@
 # Fase 14 - Predeploy Hostinger y ruta futura Supabase
 
-Estado: Pendiente
+Estado: En ejecucion - predeploy aprobado; publicacion y QA en dominio real pendientes.
 
 Objetivo: dejar la web lista para publicar en Hostinger y documentar la ruta futura a Supabase/admin sin mezclar esa V2 con la V1 informativa.
 
@@ -32,38 +32,38 @@ Uso: preparar deploy real en Hostinger y dejar el diseno de datos compatible con
 
 ## Hostinger
 
-- [ ] Confirmar tipo de plan Hostinger.
-- [ ] Confirmar si soporta Node.js para Next SSR/standalone.
-- [ ] Si no soporta Node, evaluar export estatico solo si no rompe requisitos.
-- [ ] Definir output recomendado.
-- [ ] Configurar variables de entorno si existen.
-- [ ] Preparar build command.
-- [ ] Preparar start command si aplica.
-- [ ] Confirmar dominio.
-- [ ] Confirmar HTTPS.
+- [x] Confirmar tipo de plan Hostinger: Business activo.
+- [x] Confirmar si soporta Node.js para Next SSR/standalone: Next.js administrado compatible.
+- [x] Si no soporta Node, evaluar export estatico solo si no rompe requisitos: no aplica; Node esta soportado.
+- [x] Definir output recomendado: `.next` administrado por Hostinger.
+- [x] Configurar variables de entorno si existen: no hay variables publicas obligatorias para V1.
+- [x] Preparar build command: `npm run build`.
+- [x] Preparar start command si aplica: Next.js administrado / `npm run start`.
+- [x] Confirmar dominio: `cejasinternacionales.com`.
+- [x] Confirmar HTTPS.
 - [ ] Confirmar redirecciones www/no-www.
-- [ ] Confirmar redirects idioma/base si aplica.
+- [x] Confirmar redirects idioma/base si aplica.
 
 ---
 
 ## Predeploy tecnico
 
-- [ ] `npm run lint`.
-- [ ] `npm run typecheck`.
-- [ ] `npm run build`.
-- [ ] `npm run test`.
-- [ ] `npm run test:e2e`.
-- [ ] Revisar `.env.example` si hay variables.
-- [ ] Revisar que no se suben secretos.
-- [ ] Revisar `robots` para produccion.
-- [ ] Revisar `sitemap` con dominio final.
-- [ ] Revisar metadata con dominio final.
-- [ ] Revisar HTTPS y redireccion final.
-- [ ] Revisar que no exista mixed content.
-- [ ] Revisar cabeceras de seguridad: CSP viable, `X-Content-Type-Options`, `Referrer-Policy`, `Permissions-Policy` y HSTS si aplica.
-- [ ] Revisar que Search Console, canonical, sitemap y OG no apunten a localhost.
-- [ ] Revisar que `NEXT_PUBLIC_GA_MEASUREMENT_ID` no falte si GA4 queda activo.
-- [ ] Revisar que ningun token personal de GitHub se usa ni se publica desde `.env.local`.
+- [x] `npm run lint`: 0 errores; 4 avisos no bloqueantes.
+- [x] `npm run typecheck`.
+- [x] `npm run build`: 220 paginas generadas.
+- [x] `npm run test`: 33/33.
+- [x] `npm run test:e2e`: matriz aprobada; timeouts cross-browser repetidos en serie y aprobados.
+- [x] Revisar `.env.example` si hay variables.
+- [x] Revisar que no se suben secretos.
+- [x] Revisar `robots` para produccion.
+- [x] Revisar `sitemap` con dominio final.
+- [x] Revisar metadata con dominio final.
+- [x] Revisar HTTPS y redireccion final en configuracion local; falta repetir en dominio real.
+- [x] Revisar que no exista mixed content en las pruebas automatizadas.
+- [x] Revisar cabeceras de seguridad: `X-Content-Type-Options`, `Referrer-Policy`, `Permissions-Policy`, framing y HSTS.
+- [x] Revisar que Search Console, canonical, sitemap y OG no apunten a localhost.
+- [x] Confirmar que GA4 queda inactivo mientras no exista un `NEXT_PUBLIC_GA_MEASUREMENT_ID` autorizado.
+- [x] Revisar que ningun token personal de GitHub se usa ni se publica desde `.env.local`.
 
 ---
 
@@ -95,31 +95,31 @@ Tareas que puede hacer el agente si el usuario da acceso:
 
 No implementar admin en V1 salvo instruccion nueva. Dejar preparado:
 
-- [ ] Query layer local.
-- [ ] Tipos estables.
-- [ ] IDs/slugs estables.
-- [ ] Content models compatibles.
-- [ ] `Provider` futuro: local/supabase.
-- [ ] Downloads preparados para futuro Supabase Storage.
-- [ ] Media preparada para futuro Storage/CDN.
-- [ ] `/admin` reservado y no indexable cuando exista.
+- [x] Query layer local.
+- [x] Tipos estables.
+- [x] IDs/slugs estables.
+- [x] Content models compatibles.
+- [x] `Provider` futuro local/Supabase documentado sin implementarlo en V1.
+- [x] Downloads preparados para futuro Supabase Storage.
+- [x] Media preparada para futuro Storage/CDN.
+- [x] `/admin` reservado y no indexable cuando exista.
 
 Tablas futuras probables:
 
-- [ ] `markets`.
-- [ ] `services`.
-- [ ] `service_offers`.
-- [ ] `service_categories`.
-- [ ] `courses`.
-- [ ] `course_modules`.
-- [ ] `locations`.
-- [ ] `events`.
-- [ ] `downloads`.
-- [ ] `media_assets`.
-- [ ] `seo_entries`.
-- [ ] `whatsapp_targets`.
-- [ ] `translations` o columnas JSON localizadas.
-- [ ] `site_settings`.
+- [x] `markets`.
+- [x] `services`.
+- [x] `service_offers`.
+- [x] `service_categories`.
+- [x] `courses`.
+- [x] `course_modules`.
+- [x] `locations`.
+- [x] `events`.
+- [x] `downloads`.
+- [x] `media_assets`.
+- [x] `seo_entries`.
+- [x] `whatsapp_targets`.
+- [x] `translations` o columnas JSON localizadas.
+- [x] `site_settings`.
 
 ---
 
@@ -155,8 +155,8 @@ Tablas futuras probables:
 
 ## Done cuando
 
-- [ ] Deploy plan cerrado.
-- [ ] Build listo para Hostinger.
-- [ ] Tareas manuales post-publicacion listadas.
-- [ ] Supabase futuro documentado sin implementarlo aun.
+- [x] Deploy plan cerrado en `docs/cliente/PRODUCCION-HOSTINGER-2026-07-21.md`.
+- [x] Build listo para Hostinger.
+- [x] Tareas manuales post-publicacion listadas.
+- [x] Supabase futuro documentado sin implementarlo aun.
 - [ ] Fase 14 marcada en `CHECKLIST-MAESTRA.md`.

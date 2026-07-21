@@ -12,7 +12,7 @@ test.describe("puerto sagunto studio page", () => {
   }) => {
     await page.goto("/es/sede-puerto-sagunto");
 
-    await expect(page).toHaveTitle(/Micropigmentación de cejas en Puerto de Sagunto/);
+    await expect(page).toHaveTitle(/Micropigmentación en Puerto de Sagunto/);
     await expect(
       page.getByRole("heading", {
         level: 1,
@@ -44,7 +44,7 @@ test.describe("puerto sagunto studio page", () => {
   test("serves English equivalent with hreflang alternates", async ({ page }) => {
     await page.goto("/en/puerto-sagunto-studio");
 
-    await expect(page).toHaveTitle(/Brow micropigmentation in Puerto de Sagunto/);
+    await expect(page).toHaveTitle(/Puerto de Sagunto brow studio/);
     await expect(
       page.getByRole("heading", {
         level: 1,

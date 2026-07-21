@@ -1,5 +1,7 @@
 import { defaultLocale, locales, type Locale } from "@/i18n/routing";
 
+const productionSiteUrl = "https://cejasinternacionales.com";
+
 function resolveSiteUrl(): string {
   if (process.env.NEXT_PUBLIC_SITE_URL) {
     return process.env.NEXT_PUBLIC_SITE_URL;
@@ -13,7 +15,9 @@ function resolveSiteUrl(): string {
     return `https://${vercelHost}`;
   }
 
-  return "http://localhost:3000";
+  return process.env.NODE_ENV === "production"
+    ? productionSiteUrl
+    : "http://localhost:3000";
 }
 
 export const siteConfig = {

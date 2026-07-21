@@ -1,4 +1,10 @@
-# Runbook — Mostrar la web nueva en producción (main) y volver a "próximamente" al día siguiente
+# Runbook histórico — demo temporal del 20/06/2026
+
+> **Documento archivado:** no usar para el despliegue definitivo. El plan vigente es
+> `docs/cliente/PRODUCCION-HOSTINGER-2026-07-21.md`. Los SHA y las instrucciones de
+> restauración de este documento pertenecen únicamente a la demo de junio.
+
+## Procedimiento histórico
 
 Objetivo: **hoy** publicar la web nueva en `main` (producción Hostinger) para enseñársela al
 cliente y **mañana** devolver `main` exactamente al estado actual.

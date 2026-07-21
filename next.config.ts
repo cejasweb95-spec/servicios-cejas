@@ -2,6 +2,21 @@ import createNextIntlPlugin from "next-intl/plugin";
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  async redirects() {
+    return [
+      {
+        destination: "https://cejasinternacionales.com/:path*",
+        has: [
+          {
+            type: "host",
+            value: "www.cejasinternacionales.com",
+          },
+        ],
+        permanent: true,
+        source: "/:path*",
+      },
+    ];
+  },
   async headers() {
     return [
       {
@@ -22,6 +37,10 @@ const nextConfig: NextConfig = {
           {
             key: "X-Frame-Options",
             value: "SAMEORIGIN",
+          },
+          {
+            key: "Strict-Transport-Security",
+            value: "max-age=31536000",
           },
         ],
         source: "/:path*",

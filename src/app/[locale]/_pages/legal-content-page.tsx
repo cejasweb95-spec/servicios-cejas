@@ -154,11 +154,11 @@ export function LegalContentPage({
               </section>
             </aside>
 
-            <div className="grid gap-5">
+            <div className="grid min-w-0 gap-5">
               {copy.sections.map((section, index) => (
                 <section
                   aria-labelledby={`legal-section-${index}`}
-                  className="rounded-xl border border-border bg-background p-5"
+                  className="min-w-0 rounded-xl border border-border bg-background p-5"
                   key={section.title}
                 >
                   <h2
@@ -204,7 +204,7 @@ export function LegalContentPage({
               {showCookieInventory && cookieInventory.length > 0 && (
                 <section
                   aria-labelledby="cookie-inventory"
-                  className="rounded-xl border border-border bg-background p-5"
+                  className="min-w-0 rounded-xl border border-border bg-background p-5"
                 >
                   <h2
                     className="font-display text-3xl leading-tight text-foreground"
@@ -212,7 +212,7 @@ export function LegalContentPage({
                   >
                     {copy.labels.cookieTableTitle}
                   </h2>
-                  <div className="mt-4 overflow-x-auto">
+                  <div className="mt-4 max-w-full overflow-x-auto">
                     <table className="min-w-full text-sm leading-6">
                       <caption className="sr-only">
                         {copy.labels.cookieTableTitle}

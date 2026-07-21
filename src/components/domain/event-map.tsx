@@ -535,7 +535,7 @@ export function EventMap({
                     aria-pressed={isSelected}
                     data-map-pin=""
                     className={cn(
-                      "group/pin relative grid min-h-10 min-w-10 place-items-center rounded-full border-2 shadow-soft outline-none sm:min-h-11 sm:min-w-11",
+                      "group/pin relative grid min-h-11 min-w-11 place-items-center rounded-full border-2 shadow-soft outline-none",
                       "transition-[background-color,border-color,box-shadow] duration-300",
                       "focus-visible:ring-3 focus-visible:ring-ring/40",
                       "motion-safe:hover:-translate-y-0.5 motion-safe:active:scale-[0.98]",
