@@ -34,7 +34,7 @@ Publicar en el dominio principal exactamente el código validado de `develop`, m
 
 ## 3. Cambios de endurecimiento incluidos
 
-- Declaración de runtime `node >=20.19.0` en `package.json` y lockfile.
+- Declaración de runtime `node 22.x` en `package.json` y lockfile para alinear detección, build y ejecución.
 - Next.js actualizado al último parche estable validado (`16.2.11`).
 - `shadcn` movido a dependencias de desarrollo: no forma parte del paquete runtime.
 - URL de producción segura por defecto: `https://cejasinternacionales.com` cuando no exista una variable explícita.

@@ -4,6 +4,7 @@ param(
   [string]$ProductionBranch = "main",
   [ValidateRange(5, 120)][int]$BuildTimeoutMinutes = 30,
   [switch]$ConfirmProduction,
+  [switch]$IncidentRecovery,
   [switch]$AllowUntracked,
   [switch]$PlanOnly
 )
@@ -16,6 +17,7 @@ $root = Get-ReleaseRepositoryRoot
 $envFile = Join-Path $root ".env.local"
 $qaScript = Join-Path $PSScriptRoot "Invoke-ReleaseQa.ps1"
 $monitorScript = Join-Path $PSScriptRoot "Watch-HostingerBuild.ps1"
+$readinessScript = Join-Path $PSScriptRoot "Wait-ProductionReady.ps1"
 $smokeScript = Join-Path $PSScriptRoot "Test-ProductionSmoke.ps1"
 $evidenceRoot = Join-Path $root "output\production-release"
 $timestamp = (Get-Date).ToUniversalTime().ToString("yyyyMMdd-HHmmss")
@@ -24,14 +26,15 @@ if ($PlanOnly) {
   Write-Host @"
 Plan de publicacion:
 1. Exigir una rama fuente distinta de $ProductionBranch y un arbol limpio.
-2. Verificar que la rama contiene el $ProductionBranch remoto actual.
-3. Ejecutar todas las compuertas de QA sobre el commit exacto.
-4. Subir la rama fuente y verificar su SHA remoto.
-5. Crear y subir un tag de respaldo de produccion.
-6. Crear un worktree temporal, hacer merge --no-ff y subir $ProductionBranch.
-7. Esperar un build Git nuevo de Hostinger con Node 22 hasta estado completed.
-8. Validar el dominio publico, SEO y seis viewports.
-9. Crear un tag de release y confirmar que la rama de trabajo nunca cambio.
+2. Verificar que la rama contiene el $ProductionBranch remoto actual y que produccion parte de HTTP 200.
+3. Si produccion ya esta caida, bloquear el release normal y exigir -IncidentRecovery.
+4. Ejecutar todas las compuertas de QA sobre el commit exacto.
+5. Subir la rama fuente y verificar su SHA remoto.
+6. Crear y subir un tag de respaldo de produccion.
+7. Crear un worktree temporal, hacer merge --no-ff y subir $ProductionBranch.
+8. Detectar un unico build Git nuevo, fijar su UUID y exigir Node 22 hasta completed.
+9. Esperar runtime estable; permitir un solo reinicio y validar el dominio, SEO y seis viewports.
+10. Crear un tag de release y confirmar que la rama de trabajo nunca cambio.
 "@
   exit 0
 }
@@ -47,6 +50,8 @@ $previousMainSha = $null
 $mergeSha = $null
 $backupTag = $null
 $releaseTag = $null
+$productionBuildId = $null
+$baselineStatus = $null
 $worktreePath = $null
 $status = "failed"
 $failure = $null
@@ -103,6 +108,16 @@ try {
     throw "$sourceBranch no contiene el $ProductionBranch remoto actual. Integra main en la rama fuente, resuelve conflictos, prueba y repite."
   }
 
+  $hostinger = Get-HostingerContext -EnvFile $envFile -Domain $Domain
+  $baselineProbe = Get-ReleaseHttpProbe -Uri "https://$Domain/es?release-baseline=$timestamp"
+  $baselineStatus = $baselineProbe.status
+  if ($baselineStatus -ne 200 -and -not $IncidentRecovery) {
+    throw "Produccion ya parte de HTTP $baselineStatus. Se bloquea el release normal para no confundir una incidencia previa con una regresion; diagnostica primero o repite conscientemente con -IncidentRecovery."
+  }
+  if ($baselineStatus -ne 200) {
+    Write-Warning "Modo incidente: produccion parte de HTTP $baselineStatus. La release no se considerara recuperada hasta aprobar readiness y smoke externos."
+  }
+
   if ([string]::IsNullOrWhiteSpace($CommitMessage)) {
     $CommitMessage = "release: merge $sourceBranch into $ProductionBranch ($timestamp UTC)"
   }
@@ -114,7 +129,6 @@ try {
   $remoteSourceSha = if ($remoteSourceLine) { ($remoteSourceLine -split "\s+")[0] } else { "" }
   if ($remoteSourceSha -ne $sourceSha) { throw "La rama remota $sourceBranch no coincide con el commit certificado." }
 
-  $hostinger = Get-HostingerContext -EnvFile $envFile -Domain $Domain
   $idleDeadline = (Get-Date).AddMinutes($BuildTimeoutMinutes)
   do {
     $activeBuilds = @(Get-HostingerBuilds -Context $hostinger | Where-Object { $_.state -in @("pending", "running") })
@@ -123,6 +137,7 @@ try {
     Start-Sleep -Seconds 10
   } while ((Get-Date) -lt $idleDeadline)
   if ($activeBuilds.Count -gt 0) { throw "Hostinger no quedo libre para iniciar una release aislada." }
+  $knownBuildIds = @(Get-HostingerBuilds -Context $hostinger | ForEach-Object { $_.uuid })
 
   $backupTag = "production-backup-$timestamp-$($previousMainSha.Substring(0, 8))"
   Invoke-ReleaseGit -Arguments @("tag", "-a", $backupTag, $previousMainSha, "-m", "Backup before $sourceBranch production release") -Quiet | Out-Null
@@ -161,7 +176,10 @@ try {
   $publishedSha = if ($publishedLine) { ($publishedLine -split "\s+")[0] } else { "" }
   if ($publishedSha -ne $mergeSha) { throw "$ProductionBranch remoto no coincide con el merge de release." }
 
-  & $monitorScript -Domain $Domain -NotBeforeUtc $releaseStartedAt.ToString("o") -SourceType "git" -ExpectedNodeVersion 22 -TimeoutMinutes $BuildTimeoutMinutes
+  $monitorJson = & $monitorScript -Domain $Domain -NotBeforeUtc $releaseStartedAt.ToString("o") -KnownBuildIds $knownBuildIds -SourceType "git" -ExpectedNodeVersion 22 -TimeoutMinutes $BuildTimeoutMinutes | Select-Object -Last 1
+  $monitorResult = $monitorJson | ConvertFrom-Json
+  $productionBuildId = $monitorResult.uuid
+  & $readinessScript -Domain $Domain -BuildId $productionBuildId -ExpectedNodeVersion 22 -AllowSingleRestart
   & $smokeScript -Domain $Domain
 
   $releaseTag = "production-release-$timestamp-$($mergeSha.Substring(0, 8))"
@@ -185,6 +203,9 @@ try {
     source_commit = $sourceSha
     previous_main_commit = $previousMainSha
     production_commit = $mergeSha
+    production_build_id = $productionBuildId
+    baseline_http_status = $baselineStatus
+    incident_recovery = [bool]$IncidentRecovery
     backup_tag = $backupTag
     release_tag = $releaseTag
     started_at = $startedAt.ToString("o")

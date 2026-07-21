@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "engines": {
-    "node": ">=20.19.0"
+    "node": "22.x"
   },
   "scripts": {
     "dev": "next dev",
@@ -27,6 +27,8 @@
     "release:plan": "powershell -NoProfile -ExecutionPolicy Bypass -File .agents/skills/deploy-production-hostinger/scripts/Publish-Production.ps1 -PlanOnly",
     "release:production": "powershell -NoProfile -ExecutionPolicy Bypass -File .agents/skills/deploy-production-hostinger/scripts/Publish-Production.ps1",
     "release:monitor": "powershell -NoProfile -ExecutionPolicy Bypass -File .agents/skills/deploy-production-hostinger/scripts/Watch-HostingerBuild.ps1",
+    "release:status": "powershell -NoProfile -ExecutionPolicy Bypass -File .agents/skills/deploy-production-hostinger/scripts/Get-HostingerDeploymentStatus.ps1",
+    "release:ready": "powershell -NoProfile -ExecutionPolicy Bypass -File .agents/skills/deploy-production-hostinger/scripts/Wait-ProductionReady.ps1",
     "release:smoke": "powershell -NoProfile -ExecutionPolicy Bypass -File .agents/skills/deploy-production-hostinger/scripts/Test-ProductionSmoke.ps1",
     "git:push": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/git-push-remote.ps1",
     "vercel:deploy": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/vercel-deploy-prod.ps1"

@@ -150,10 +150,22 @@ function Get-HostingerContext {
 function Get-HostingerBuilds {
   param([Parameter(Mandatory = $true)]$Context)
 
-  $uri = "https://developers.hostinger.com/api/hosting/v1/accounts/$($Context.Username)/websites/$($Context.Domain)/nodejs/builds?per_page=50"
+  $cacheBuster = [DateTimeOffset]::UtcNow.ToUnixTimeMilliseconds()
+  $uri = "https://developers.hostinger.com/api/hosting/v1/accounts/$($Context.Username)/websites/$($Context.Domain)/nodejs/builds?per_page=50&_=$cacheBuster"
   $response = Invoke-RestMethod -Uri $uri -Headers $Context.Headers
   $items = if ($response.data) { $response.data } else { $response }
   return @($items)
+}
+
+function Get-HostingerBuildById {
+  param(
+    [Parameter(Mandatory = $true)]$Context,
+    [Parameter(Mandatory = $true)][string]$BuildId
+  )
+
+  return @(Get-HostingerBuilds -Context $Context) |
+    Where-Object { $_.uuid -eq $BuildId } |
+    Select-Object -First 1
 }
 
 function Get-HostingerBuildLogs {
@@ -164,6 +176,50 @@ function Get-HostingerBuildLogs {
 
   $uri = "https://developers.hostinger.com/api/hosting/v1/accounts/$($Context.Username)/websites/$($Context.Domain)/nodejs/builds/$BuildId/logs"
   return Invoke-RestMethod -Uri $uri -Headers $Context.Headers
+}
+
+function Restart-HostingerServer {
+  param([Parameter(Mandatory = $true)]$Context)
+
+  $uri = "https://developers.hostinger.com/api/hosting/v1/accounts/$($Context.Username)/websites/$($Context.Domain)/nodejs/server/restart"
+  return Invoke-RestMethod -Method Post -Uri $uri -Headers $Context.Headers -ContentType "application/json" -Body "{}"
+}
+
+function Get-ReleaseHttpProbe {
+  param(
+    [Parameter(Mandatory = $true)][string]$Uri,
+    [ValidateRange(5, 120)][int]$TimeoutSeconds = 30
+  )
+
+  $response = $null
+  $errorMessage = $null
+  $started = Get-Date
+  try {
+    $response = Invoke-WebRequest -Uri $Uri -UseBasicParsing -TimeoutSec $TimeoutSeconds
+  } catch {
+    $response = $_.Exception.Response
+    $errorMessage = $_.Exception.Message
+  }
+
+  $statusCode = 0
+  $headers = $null
+  if ($response) {
+    if ($response.StatusCode) { $statusCode = [int]$response.StatusCode }
+    $headers = $response.Headers
+  }
+
+  return [pscustomobject]@{
+    uri = $Uri
+    status = $statusCode
+    elapsed_ms = [int]((Get-Date) - $started).TotalMilliseconds
+    server = if ($headers) { [string]$headers["Server"] } else { "" }
+    platform = if ($headers) { [string]$headers["platform"] } else { "" }
+    cache_control = if ($headers) { [string]$headers["Cache-Control"] } else { "" }
+    request_id = if ($headers) { [string]$headers["x-hcdn-request-id"] } else { "" }
+    location = if ($headers) { [string]$headers["Location"] } else { "" }
+    error = $errorMessage
+    checked_at = (Get-Date).ToUniversalTime().ToString("o")
+  }
 }
 
 function Write-ReleaseJson {
