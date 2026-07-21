@@ -142,14 +142,14 @@ export const mediaAssets = mediaAssetSchema.array().parse([
     id: "curso-laminado-cejas",
     type: "course",
     sourcePath:
-      "docs/cliente/assets-extraidos/fotos-instagram/cejas/cejas-05.jpeg",
+      "docs/cliente/fotos-servicios-2026/laminado-cejas/incoming-lote-2026-07-21/curso-laminado-cejas-cliente.png",
     publicPath: "/images/formaciones/curso-laminado-cejas.jpg",
     alt: l(
-      "Detalle de ceja utilizado en la Master Class de laminado de cejas",
-      "Brow detail used in the brow lamination masterclass",
+      "Resultado de laminado de cejas con pelo peinado hacia arriba, Master Class",
+      "Brow lamination result with hairs brushed upward, masterclass",
     ),
-    width: 1152,
-    height: 864,
+    width: 1003,
+    height: 1024,
   },
   {
     id: "curso-lifting-pestanas",
@@ -543,27 +543,28 @@ export const mediaAssets = mediaAssetSchema.array().parse([
   {
     id: "servicio-efecto-polvo",
     type: "photo",
-    sourcePath: "docs/cliente/fotos-servicios-2026/efecto-polvo/efecto-polvo-original.png",
+    sourcePath:
+      "docs/cliente/fotos-servicios-2026/efecto-polvo/incoming-lote-2026-07-20/procedimiento-pelirroja-vista-invertida.png",
     publicPath: "/images/servicios/efecto-polvo.webp",
     alt: l(
-      "Ceja cicatrizada con micropigmentación efecto polvo en tono natural",
-      "Healed brow with powder-effect micropigmentation in a natural tone",
+      "Micropigmentación efecto polvo recién realizada, con ambas cejas visibles",
+      "Fresh powder-effect micropigmentation with both brows fully visible",
     ),
-    width: 640,
-    height: 480,
+    width: 825,
+    height: 1024,
   },
   {
     id: "servicio-efecto-maquillaje",
     type: "photo",
     sourcePath:
-      "docs/cliente/fotos-servicios-2026/efecto-maquillaje/efecto-maquillaje-original.jpeg",
+      "docs/cliente/fotos-servicios-2026/efecto-maquillaje/incoming-lote-2026-07-20/resultado-ambas-cejas-vista-invertida.png",
     publicPath: "/images/servicios/efecto-maquillaje.webp",
     alt: l(
-      "Resultado de micropigmentación efecto maquillaje en cejas",
-      "Makeup-effect brow micropigmentation result",
+      "Resultado de micropigmentación efecto maquillaje con ambas cejas completas",
+      "Makeup-effect brow micropigmentation result with both brows fully visible",
     ),
-    width: 1180,
-    height: 2048,
+    width: 1000,
+    height: 993,
   },
   {
     id: "servicio-cejas-hibridas",
@@ -594,14 +595,14 @@ export const mediaAssets = mediaAssetSchema.array().parse([
     id: "servicio-neutralizacion-labios",
     type: "photo",
     sourcePath:
-      "docs/cliente/fotos-servicios-2026/neutralizacion-labios/incoming-lote-2026-07-09/collage-neutralizacion-texto.png",
+      "docs/cliente/fotos-servicios-2026/neutralizacion-labios/incoming-lote-2026-07-20/antes-despues-lado-a-lado-xiomara.png",
     publicPath: "/images/servicios/neutralizacion-labios.webp",
     alt: l(
-      "Labios neutralizados con tono rosa natural y uniforme",
-      "Neutralized lips with an even, natural pink tone",
+      "Antes y después de neutralización labial: labios oscuros frente a tono rosa uniforme",
+      "Before and after lip neutralization: dark lips versus an even pink tone",
     ),
-    width: 658,
-    height: 410,
+    width: 747,
+    height: 1024,
   },
   {
     id: "servicio-microlips",

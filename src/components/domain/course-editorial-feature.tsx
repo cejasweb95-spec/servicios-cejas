@@ -70,14 +70,17 @@ export function CourseEditorialFeature({
         ) : null}
         <div
           className={cn(
-            "relative overflow-hidden rounded-2xl border border-primary/15 bg-surface shadow-soft",
-            isCompact ? "aspect-[16/11] lg:aspect-[5/4]" : "aspect-[4/5]",
+            "relative mx-auto w-full overflow-hidden rounded-2xl border border-primary/15 bg-surface shadow-soft",
+            image.width / image.height <= 1 ? "max-w-sm" : "max-w-md",
           )}
           data-slot="course-image"
+          style={{
+            aspectRatio: `${image.width} / ${image.height}`,
+          }}
         >
           <Image
             alt={image.alt}
-            className="object-cover transition-transform duration-700 motion-reduce:transition-none"
+            className="object-contain"
             fill
             sizes={
               isCompact
@@ -85,10 +88,6 @@ export function CourseEditorialFeature({
                 : "(min-width: 1024px) 42vw, 92vw"
             }
             src={image.src}
-          />
-          <span
-            aria-hidden="true"
-            className="pointer-events-none absolute inset-0 bg-gradient-to-t from-foreground/25 via-transparent to-transparent"
           />
         </div>
       </div>

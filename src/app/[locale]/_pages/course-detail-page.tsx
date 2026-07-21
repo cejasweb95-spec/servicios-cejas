@@ -174,6 +174,11 @@ export function CourseDetailPage({
     notFound();
   }
 
+  // Foto completa a proporción nativa (sin object-cover que recorte/zoom).
+  const courseImageRatio = courseImage.width / courseImage.height;
+  const courseImageMaxWidthClass =
+    courseImageRatio <= 1 ? "max-w-md" : "max-w-[28rem]";
+
   const coursePath = buildCoursePath(locale, course.slug);
   const courseWhatsAppTargets = whatsapp.targets.map((target) => ({
     ...target,
@@ -235,15 +240,19 @@ export function CourseDetailPage({
         }
         aside={
           <div className="mx-auto grid w-full max-w-[28rem] gap-4 lg:mx-0 lg:ml-auto">
-            <div className="relative aspect-[4/3] overflow-hidden rounded-lg border border-border bg-surface">
+            <div
+              className={`relative mx-auto w-full overflow-hidden rounded-lg border border-border bg-surface ${courseImageMaxWidthClass}`}
+              style={{
+                aspectRatio: `${courseImage.width} / ${courseImage.height}`,
+              }}
+            >
               <Image
                 alt={courseImage.alt}
-                className="h-full w-full object-cover"
-                height={courseImage.height}
+                className="object-contain"
+                fill
                 priority
                 sizes="(min-width: 1024px) 28rem, 92vw"
                 src={courseImage.publicPath}
-                width={courseImage.width}
               />
             </div>
             <ResponsiveDataList

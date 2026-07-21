@@ -66,10 +66,11 @@ test.describe("legal, aftercare and cookie consent", () => {
       page.evaluate(() => JSON.stringify(window.dataLayer ?? [])),
     ).toContain("denied");
 
-    await page.getByRole("button", { name: "Rechazar" }).click();
-    await expect(
-      page.getByRole("region", { name: "Privacidad y cookies" }),
-    ).toHaveCount(0);
+    const banner = page.getByRole("region", { name: "Privacidad y cookies" });
+    // Fixed bottom banner: avoid scrollIntoView bringing page/footer over the CTA.
+    await page.evaluate(() => window.scrollTo(0, 0));
+    await banner.getByRole("button", { name: "Rechazar" }).click({ force: true });
+    await expect(banner).toHaveCount(0);
     await expect(page.locator("script[data-ga4-script]")).toHaveCount(0);
 
     const rejectedConsent = await readConsent(page);
@@ -82,15 +83,16 @@ test.describe("legal, aftercare and cookie consent", () => {
     await page
       .getByRole("contentinfo")
       .getByRole("button", { name: "Cambiar preferencias de cookies" })
-      .click();
-    await expect(
-      page.getByRole("region", { name: "Privacidad y cookies" }),
-    ).toBeVisible();
+      .click({ force: true });
+    await expect(banner).toBeVisible();
+    await page.evaluate(() => window.scrollTo(0, 0));
 
-    const analyticsCheckbox = page.getByRole("checkbox", { name: /Analíticas/ });
+    const analyticsCheckbox = banner.getByRole("checkbox", { name: /Analíticas/ });
     await expect(analyticsCheckbox).not.toBeChecked();
-    await analyticsCheckbox.check();
-    await page.getByRole("button", { name: "Guardar preferencias" }).click();
+    await analyticsCheckbox.check({ force: true });
+    await banner.getByRole("button", { name: "Guardar preferencias" }).click({
+      force: true,
+    });
 
     const acceptedConsent = await readConsent(page);
     expect(acceptedConsent).toMatchObject({

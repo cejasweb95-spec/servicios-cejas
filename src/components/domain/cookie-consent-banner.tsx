@@ -233,7 +233,7 @@ export function CookieConsentBanner({
       aria-describedby="cookie-consent-description"
       aria-labelledby="cookie-consent-title"
       aria-live="polite"
-      className="fixed inset-x-0 bottom-0 z-50 border-t border-primary/20 bg-background/98 px-4 py-3 shadow-soft backdrop-blur sm:py-4"
+      className="fixed inset-x-0 bottom-0 z-[100] isolate border-t border-primary/20 bg-background/98 px-4 py-3 shadow-soft backdrop-blur sm:py-4"
       role="region"
     >
       <div className="mx-auto grid max-w-7xl gap-4 md:grid-cols-[1fr_auto] md:items-end">

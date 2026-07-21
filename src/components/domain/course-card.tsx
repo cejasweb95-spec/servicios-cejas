@@ -40,15 +40,22 @@ export function CourseCard({
       data-slot="course-card"
       className={cn("group flex h-full flex-col", className)}
     >
-      <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-surface-muted">
+      <div
+        className={cn(
+          "relative mx-auto w-full overflow-hidden rounded-2xl border border-border/60 bg-surface-muted",
+          image.width / image.height <= 1 ? "max-w-xs" : undefined,
+        )}
+        data-slot="course-image"
+        style={{
+          aspectRatio: `${image.width} / ${image.height}`,
+        }}
+      >
         <Image
-          data-slot="course-image"
           alt={image.alt}
-          className="h-full w-full object-cover transition-transform duration-300 motion-reduce:transition-none group-hover:scale-[1.02] group-focus-within:scale-[1.02]"
-          height={image.height}
+          className="object-contain"
+          fill
           sizes="(min-width: 1280px) 30vw, (min-width: 768px) 46vw, 92vw"
           src={image.src}
-          width={image.width}
         />
       </div>
       <div className="flex flex-1 flex-col pt-4">

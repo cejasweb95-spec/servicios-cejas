@@ -120,17 +120,16 @@ export function ServiceDetailPage({
     notFound();
   }
 
-  // La foto se muestra completa (proporción original). En verticales muy altas
-  // se acota la altura a un máximo elegante limitando el ancho del marco, sin
-  // recortar la imagen, y se centra. maxWidth = maxHeightRem * ratio.
+  // Foto completa (proporción original). Se acota la altura a ~30rem limitando
+  // el ancho del marco (maxWidth = maxHeightRem * ratio), sin recortar, y se
+  // centra. Aplica a verticales y casi-cuadradas para tamaño homogéneo.
   const serviceImageRatio =
     serviceImage?.width && serviceImage.height
       ? serviceImage.width / serviceImage.height
       : null;
-  const serviceImageMaxWidth =
-    serviceImageRatio && serviceImageRatio < 1
-      ? `${(30 * serviceImageRatio).toFixed(2)}rem`
-      : undefined;
+  const serviceImageMaxWidth = serviceImageRatio
+    ? `${(30 * serviceImageRatio).toFixed(2)}rem`
+    : undefined;
 
   const marketPath = buildMarketPath(locale, market.slug);
   const servicePath = buildServicePath(locale, market.slug, service.slug);
@@ -208,10 +207,10 @@ export function ServiceDetailPage({
               >
                 <Image
                   alt={serviceImage.alt}
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-contain"
                   height={serviceImage.height}
                   priority
-                  sizes="(min-width: 1024px) 34vw, 92vw"
+                  sizes="(min-width: 1024px) 30rem, 92vw"
                   src={serviceImage.publicPath}
                   style={
                     serviceImage.objectPosition
