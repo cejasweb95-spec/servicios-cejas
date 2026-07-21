@@ -69,8 +69,9 @@ When Jeffrey explicitly asks to upload, publish, promote or deploy a branch to p
 4. Review and commit intentional work without staging secrets, generated output or ambiguous temporary files.
 5. Run `npm run release:check`; do not promote a commit with any failed gate.
 6. Use `npm run release:production -- -ConfirmProduction -CommitMessage "release: ..."`; do not replace it with an improvised direct push.
-7. Do not report success until the new Hostinger build is `completed` with Node 22 and the public smoke, SEO and responsive checks pass.
-8. On failure, keep working through the skill's fix-forward/rollback policy; never hide a partial release or claim it is ready.
+7. Run `npm run release:status` first. A pre-existing 5xx requires explicit incident-recovery mode; do not treat it as a normal release baseline.
+8. Do not report success until the exact Hostinger build UUID is `completed` with Node 22, the runtime returns stable HTTP 200, and the public smoke, SEO and responsive checks pass.
+9. Build logs prove compilation only. For a green build followed by 5xx, use runtime logs, one controlled restart and the skill's incident/rollback policy.
 
 ## Product Rules
 

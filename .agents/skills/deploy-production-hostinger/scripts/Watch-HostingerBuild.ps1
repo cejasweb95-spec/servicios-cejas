@@ -1,6 +1,8 @@
 param(
   [string]$Domain = "cejasinternacionales.com",
-  [Parameter(Mandatory = $true)][string]$NotBeforeUtc,
+  [Parameter(Mandatory = $true, ParameterSetName = "ByTime")][string]$NotBeforeUtc,
+  [Parameter(Mandatory = $true, ParameterSetName = "ById")][string]$BuildId,
+  [Parameter(ParameterSetName = "ByTime")][string[]]$KnownBuildIds = @(),
   [ValidateSet("git", "archive")][string]$SourceType = "git",
   [ValidateSet(18, 20, 22, 24)][int]$ExpectedNodeVersion = 22,
   [ValidateRange(1, 120)][int]$TimeoutMinutes = 30,
@@ -15,10 +17,15 @@ Set-StrictMode -Version Latest
 $root = Get-ReleaseRepositoryRoot
 $envFile = Join-Path $root ".env.local"
 $evidenceRoot = Join-Path $root "output\production-release"
-$threshold = [datetime]::Parse($NotBeforeUtc).ToUniversalTime().AddSeconds(-5)
+$threshold = if ($PSCmdlet.ParameterSetName -eq "ByTime") {
+  [datetime]::Parse($NotBeforeUtc).ToUniversalTime().AddSeconds(-5)
+} else {
+  [datetime]::MinValue
+}
 
 if ($PlanOnly) {
-  Write-Host "Esperaria un build $SourceType creado desde $($threshold.ToString('o')), exigiria Node $ExpectedNodeVersion y lo seguiria durante $TimeoutMinutes minutos."
+  $target = if ($PSCmdlet.ParameterSetName -eq "ById") { "UUID $BuildId" } else { "un build nuevo desde $($threshold.ToString('o'))" }
+  Write-Host "Esperaria $target, exigiria fuente $SourceType y Node $ExpectedNodeVersion, y lo seguiria durante $TimeoutMinutes minutos."
   exit 0
 }
 
@@ -31,17 +38,31 @@ $lastState = $null
 Write-Host "[Hostinger] Esperando el build nuevo de $Domain..."
 do {
   $builds = Get-HostingerBuilds -Context $context
-  $build = @($builds) |
-    Where-Object {
-      $_.options.source_type -eq $SourceType -and
-      ([datetime]$_.created_at).ToUniversalTime() -ge $threshold
-    } |
-    Sort-Object { [datetime]$_.created_at } -Descending |
-    Select-Object -First 1
+  if ($PSCmdlet.ParameterSetName -eq "ById") {
+    $build = @($builds) | Where-Object { $_.uuid -eq $BuildId } | Select-Object -First 1
+  } else {
+    $candidates = @($builds) |
+      Where-Object {
+        $_.options.source_type -eq $SourceType -and
+        ([datetime]$_.created_at).ToUniversalTime() -ge $threshold -and
+        $_.uuid -notin $KnownBuildIds
+      } |
+      Sort-Object { [datetime]$_.created_at }
+
+    if ($candidates.Count -gt 1) {
+      $candidateIds = ($candidates | ForEach-Object { $_.uuid }) -join ", "
+      throw "Hostinger creo varios builds $SourceType durante la misma release ($candidateIds). No se elige uno a ciegas; inspecciona y repite por UUID."
+    }
+    $build = $candidates | Select-Object -First 1
+  }
 
   if (-not $build) {
     Start-Sleep -Seconds $PollSeconds
     continue
+  }
+
+  if ($build.options.source_type -ne $SourceType) {
+    throw "El build $($build.uuid) usa fuente $($build.options.source_type), pero se esperaba $SourceType."
   }
 
   if ([int]$build.options.node_version -ne $ExpectedNodeVersion) {
@@ -58,7 +79,8 @@ do {
 } while ((Get-Date) -lt $deadline)
 
 if (-not $build) {
-  throw "Hostinger no creo un build $SourceType nuevo dentro de $TimeoutMinutes minutos. No se declara la release como completada."
+  $target = if ($PSCmdlet.ParameterSetName -eq "ById") { "con UUID $BuildId" } else { "$SourceType nuevo" }
+  throw "Hostinger no registro un build $target dentro de $TimeoutMinutes minutos. No se declara la release como completada."
 }
 
 if ($build.state -notin @("completed", "failed")) {

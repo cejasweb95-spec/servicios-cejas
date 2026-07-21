@@ -1,4 +1,4 @@
 interface:
-  display_name: "Desplegar a producci髇"
-  short_description: "Publicaci髇 segura y monitorizada en Hostinger"
-  default_prompt: "Usa $deploy-production-hostinger para validar esta rama y publicarla en producci髇 con seguimiento completo."
+  display_name: "Desplegar a producci贸n"
+  short_description: "Publicaci贸n y recuperaci贸n verificable en Hostinger"
+  default_prompt: "Usa $deploy-production-hostinger para validar esta rama, publicarla o recuperar producci贸n, comprobando el UUID y el runtime p煤blico."

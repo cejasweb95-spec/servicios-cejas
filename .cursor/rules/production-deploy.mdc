@@ -12,4 +12,4 @@ Cuando el usuario pida subir, publicar, promover o desplegar a produccion, leer 
 - `.agents/skills/deploy-production-hostinger/SKILL.md`
 - `.agents/skills/deploy-production-hostinger/references/failure-and-rollback.md` cuando exista un fallo o sea necesario revertir
 
-La skill y sus scripts son la fuente canonica. No usar un push directo a `main`, no saltar pruebas, no mostrar tokens y no considerar terminada la operacion hasta que Hostinger marque el build nuevo como `completed` con Node 22 y el smoke publico apruebe.
+La skill y sus scripts son la fuente canonica. No usar un push directo a `main`, no saltar pruebas, no mostrar tokens y no considerar terminada la operacion hasta fijar el UUID, confirmar el Node real, obtener runtime estable tras el build y aprobar el smoke publico. Un estado `completed` con HTTP 5xx es un incidente, no un despliegue correcto.

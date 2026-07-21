@@ -34,7 +34,7 @@ Publicar en el dominio principal exactamente el código validado de `develop`, m
 
 ## 3. Cambios de endurecimiento incluidos
 
-- Declaración de runtime `node >=20.19.0` en `package.json` y lockfile.
+- Declaración de runtime `node 22.x` en `package.json` y lockfile para alinear detección, build y ejecución.
 - Next.js actualizado al último parche estable validado (`16.2.11`).
 - `shadcn` movido a dependencias de desarrollo: no forma parte del paquete runtime.
 - URL de producción segura por defecto: `https://cejasinternacionales.com` cuando no exista una variable explícita.
@@ -98,7 +98,7 @@ Evidencia local final previa al despliegue:
 - Cross-browser: 29 aprobadas, 9 omisiones esperadas; los 2 timeouts por saturación aprobaron al repetirse en serie.
 - Responsive final: 1.272 renderizados, 0 incidencias.
 - Lighthouse local de escritorio: Performance 98, Accessibility 100, Best Practices 100, LCP 1,1 s, CLS 0 y TBT 30 ms. SEO local marca 92 únicamente porque el canonical correcto apunta al dominio público y no al origen localhost de la auditoría.
-- Dependencias runtime: 0 altas, 0 críticas. Permanece un aviso moderado transitivo de PostCSS incluido por Next estable; la web no procesa CSS aportado por usuarios y no se adopta una versión canary ni el downgrade incorrecto sugerido por npm.
+- Dependencias runtime: 0 vulnerabilidades. Mientras Next 16.2.11 publica una corrección propia, los overrides fuerzan PostCSS 8.5.21 y sharp 0.35.3, versiones parcheadas, sin aceptar el downgrade incorrecto sugerido por npm.
 
 ## 6. Procedimiento de publicación
 

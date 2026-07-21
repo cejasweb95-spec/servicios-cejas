@@ -6,7 +6,8 @@
 2. Matriz de decision
 3. Rollback sin reescribir historial
 4. Fallback de Hostinger por archivo
-5. Condicion final de exito
+5. Incidente de runtime despues de un build verde
+6. Condicion final de exito
 
 ## 1. Principios
 
@@ -26,6 +27,9 @@
 | Build Hostinger falla | Normalmente queda la version anterior | Guardar logs, decidir fix-forward; no declarar exito |
 | Build usa Node distinto de 22 | No certificado | Corregir hPanel y reimplementar |
 | Build completa pero smoke falla | Posible impacto | Rollback inmediato y verificado |
+| Build completa pero HTTP sigue 502/503/504 | Runtime no activo | Esperar activacion, reiniciar una vez, revisar Runtime logs y escalar con UUID/request ID |
+| hPanel queda cargando y no aparece UUID | No hubo build | No asumir despliegue; reintentar el flujo y comprobar la API |
+| ZIP usa Node 22 pero Git usa Node 18 | Fuentes desacopladas | Corregir especificamente la configuracion Git y certificar un build Git nuevo |
 | API no responde pero la web parece sana | Estado desconocido | Reintentar API; no afirmar exito solo por HTTP 200 |
 | Dominio/SSL/DNS falla | Impacto externo | No cambiar codigo a ciegas; diagnosticar proveedor |
 
@@ -58,13 +62,26 @@ Usarlo solo si la integracion Git no crea builds y el acceso por API funciona.
 
 No convertir el fallback en la ruta normal: arreglar despues la integracion Git para que `main` vuelva a ser la fuente operativa.
 
-## 5. Condicion final de exito
+Un `archive_path` previo puede haber sido consumido aunque hPanel conserve la opcion visual **Usar archivos anteriores**. No reutilizar a ciegas una ruta interna devuelta por otro build; crear/subir un archivo nuevo o usar el redeploy soportado por hPanel. Si la subida TUS o `from-archive` devuelve 403/504, conservar el correlation ID y escalar: no improvisar endpoints no documentados.
+
+## 5. Incidente de runtime despues de un build verde
+
+1. Fijar el UUID exacto y confirmar `completed`, Node 22 y fuente esperada por API.
+2. Probar una URL con nonce desde Internet. Registrar estado, `Server`, `platform`, `Cache-Control` y `x-hcdn-request-id`.
+3. Si Hostinger devuelve 502/503/504, esperar la ventana de activacion y comprobar que no existe un build mas nuevo o activo.
+4. Reiniciar el servidor una sola vez mediante la API oficial y exigir varias respuestas 200 consecutivas.
+5. Si sigue fallando, abrir **Dashboard -> Runtime logs**. Los Build logs solo demuestran compilacion; los Runtime logs muestran errores de inicio, variables, puerto y stack traces.
+6. Escalar a soporte con dominio, UUID, horas UTC, Node, source type y request IDs. No limpiar cache si la respuesta declara `no-cache/no-store`.
+7. Hacer rollback solo si existe una ruta de despliegue certificada que pueda activarlo. No lanzar un rollback Git por un flujo que todavia fuerza Node 18.
+
+## 6. Condicion final de exito
 
 La release solo esta lista cuando coinciden estas pruebas:
 
 - rama fuente remota = SHA probado;
 - `main` remoto = SHA del merge registrado;
 - build nuevo de Hostinger = `completed`, Node 22 y fuente esperada;
+- UUID de build fijado y runtime con varias respuestas 200 consecutivas;
 - dominio HTTPS y redirecciones correctos;
 - home nueva, ES/EN, sitemap, robots y canonical correctos;
 - SEO y responsive publicos aprobados;
