@@ -155,10 +155,12 @@ Después del despliegue, quedan como tareas manuales no bloqueantes: verificar G
 
 ## 9. Resultado real
 
-Pendiente de completar tras el despliegue:
-
-- SHA publicado: pendiente.
-- Build Hostinger: pendiente.
-- Verificación pública: pendiente.
-- Hora de cierre: pendiente.
-- Rollback requerido: pendiente.
+- SHA funcional publicado: `a725f51f5c45ef8b359fff8439be6645768b8bf1`.
+- Rama remota: `main` promovida por fast-forward desde `develop`.
+- Respaldo remoto: `production-backup-2026-07-21` -> `3289fa66ed4cf91e0ad3cbecdfad9efefb35256e`.
+- Build Hostinger final: `019f867c-7c15-71e3-97bd-5f2931e590cc`, estado `completed`, Node 22, fuente archive.
+- Autodeploy Git: se dispara correctamente, pero la configuración persistida de Hostinger todavía intenta Node 18 y falla antes del build. Se usó el mecanismo oficial de archivo con Node 22. Debe cambiarse el runtime conectado a Git a Node 22 en hPanel antes del próximo release.
+- Verificación pública: portada nueva visible, HTTPS y `www` correctos, 212 URLs SEO sin errores, smoke funcional de 12 rutas, mercados, PDF, WhatsApp, cookies, idioma y consola aprobado.
+- Lighthouse móvil real: Performance 82, Accessibility 100, Best Practices 100, SEO 100; LCP 3,6 s, CLS 0.
+- Hora de cierre técnico: 21/07/2026 23:05 CEST.
+- Rollback requerido: no.

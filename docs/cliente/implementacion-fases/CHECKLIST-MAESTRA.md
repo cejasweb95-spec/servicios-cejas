@@ -22,14 +22,14 @@ Esta checklist resume las fases. El detalle operativo vive en cada MD de `docs/c
 - [x] 11 - Resultados, Sobre, Cuidados, Contacto y Legal.
 - [x] 12 - SEO, schema y performance.
 - [x] 13 - QA cross-browser, accesibilidad y E2E.
-- [ ] 14 - Predeploy Hostinger y ruta futura Supabase.
+- [x] 14 - Predeploy Hostinger y ruta futura Supabase.
 
 ---
 
 ## QA transversal obligatorio
 
 - [x] Rama actual verificada: `develop`.
-- [x] `main` no tocada.
+- [x] `main` promovida desde `develop` solo tras QA completa y tag remoto de rollback.
 - [x] No hay edits en artefactos generados.
 - [x] Cada pagina publica creada hasta ahora tiene ES y EN.
 - [x] Paridad profunda ES/EN, placeholders y rutas equivalentes verificados por tests unitarios.

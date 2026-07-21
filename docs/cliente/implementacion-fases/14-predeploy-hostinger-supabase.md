@@ -1,6 +1,6 @@
 # Fase 14 - Predeploy Hostinger y ruta futura Supabase
 
-Estado: En ejecucion - predeploy aprobado; publicacion y QA en dominio real pendientes.
+Estado: Completada el 21/07/2026.
 
 Objetivo: dejar la web lista para publicar en Hostinger y documentar la ruta futura a Supabase/admin sin mezclar esa V2 con la V1 informativa.
 
@@ -41,7 +41,7 @@ Uso: preparar deploy real en Hostinger y dejar el diseno de datos compatible con
 - [x] Preparar start command si aplica: Next.js administrado / `npm run start`.
 - [x] Confirmar dominio: `cejasinternacionales.com`.
 - [x] Confirmar HTTPS.
-- [ ] Confirmar redirecciones www/no-www.
+- [x] Confirmar redirecciones www/no-www: `www` -> apex con HTTP 308 y conserva ruta/query.
 - [x] Confirmar redirects idioma/base si aplica.
 
 ---
@@ -125,21 +125,21 @@ Tablas futuras probables:
 
 ## QA produccion/staging
 
-- [ ] Home ES carga.
-- [ ] Home EN carga.
-- [ ] Servicios por mercado cargan.
-- [ ] Descargas funcionan.
-- [ ] WhatsApp abre.
-- [ ] Mapa funciona.
-- [ ] Formaciones funcionan.
-- [ ] Legal visible.
-- [ ] Banner cookies funciona.
-- [ ] Preferencias de cookies se pueden cambiar.
-- [ ] Sitemap accesible.
-- [ ] Robots accesible.
-- [ ] PageSpeed en URL real.
-- [ ] No errores 404 en assets.
-- [ ] No errores de consola.
+- [x] Home ES carga.
+- [x] Home EN carga.
+- [x] Servicios por mercado cargan.
+- [x] Descargas y PDF funcionan.
+- [x] WhatsApp abre con los numeros correctos.
+- [x] Mapa funciona.
+- [x] Formaciones funcionan.
+- [x] Legal visible.
+- [x] Banner cookies funciona.
+- [x] Preferencias de cookies se pueden cambiar.
+- [x] Sitemap accesible.
+- [x] Robots accesible.
+- [x] Lighthouse en URL real: 82/100/100/100 en movil.
+- [x] No errores 404 en assets esenciales.
+- [x] No errores de consola en el smoke final.
 
 ---
 
@@ -159,4 +159,8 @@ Tablas futuras probables:
 - [x] Build listo para Hostinger.
 - [x] Tareas manuales post-publicacion listadas.
 - [x] Supabase futuro documentado sin implementarlo aun.
-- [ ] Fase 14 marcada en `CHECKLIST-MAESTRA.md`.
+- [x] Fase 14 marcada en `CHECKLIST-MAESTRA.md`.
+
+Resultado productivo: `docs/cliente/PRODUCCION-HOSTINGER-2026-07-21.md`.
+
+Pendiente operativo no bloqueante: cambiar en hPanel el runtime persistido del autodeploy Git de Node 18 a Node 22. El release final ya esta publicado con Node 22 mediante la API oficial.
