@@ -59,6 +59,19 @@ For Vercel CLI deploys, use `VERCEL_TOKEN` from `.env.local` and prefer `npm run
 - When frontend work starts, create or use a clean source app; do not rebuild from compiled output.
 - Preserve user/client documentation and assets. Do not delete PDFs, images, transcripts, or MDs unless explicitly requested.
 
+## Production Release Workflow
+
+When Jeffrey explicitly asks to upload, publish, promote or deploy a branch to production:
+
+1. Read and follow `.agents/skills/deploy-production-hostinger/SKILL.md` completely.
+2. Treat the explicit request as authorization to update `main` only for that release.
+3. Keep the current non-`main` branch as the source and return to it; prefer the provided temporary-worktree workflow.
+4. Review and commit intentional work without staging secrets, generated output or ambiguous temporary files.
+5. Run `npm run release:check`; do not promote a commit with any failed gate.
+6. Use `npm run release:production -- -ConfirmProduction -CommitMessage "release: ..."`; do not replace it with an improvised direct push.
+7. Do not report success until the new Hostinger build is `completed` with Node 22 and the public smoke, SEO and responsive checks pass.
+8. On failure, keep working through the skill's fix-forward/rollback policy; never hide a partial release or claim it is ready.
+
 ## Product Rules
 
 - The site is for Cejas Internacionales / Xiomara.
