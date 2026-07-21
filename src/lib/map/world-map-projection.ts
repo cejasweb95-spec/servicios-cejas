@@ -12,7 +12,7 @@ const TRANSLATE_Y = 282.2057031303402;
 
 /** Distancia mínima pin → ciudad en px del viewBox (evita tapar el país). */
 export const PIN_LEADER_LENGTH = 88;
-const MIN_PIN_DISTANCE = 76;
+const MIN_PIN_DISTANCE = 120;
 
 export type MapPoint = { x: number; y: number };
 

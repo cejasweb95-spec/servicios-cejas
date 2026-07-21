@@ -2,8 +2,7 @@ import { expect, test, type Page } from "@playwright/test";
 
 import { seedRejectedConsent } from "../helpers/consent";
 
-const WORDMARK_ARIA =
-  /Cejas Internacionales by Xiomara Sánchez, (inicio|home)/i;
+const WORDMARK_ARIA = /Cejas Internacionales by Xiomara Sánchez/i;
 
 async function gotoHomeEs(page: Page) {
   await page.goto("/es");

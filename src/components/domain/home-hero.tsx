@@ -79,6 +79,7 @@ export function HomeHero({
                   <Image
                     alt={heroImage.alt}
                     className="h-full w-full object-cover object-[center_28%]"
+                    fetchPriority="high"
                     height={heroImage.height}
                     priority
                     sizes="(min-width: 1280px) 28vw, (min-width: 640px) 42vw, 88vw"

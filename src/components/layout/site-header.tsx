@@ -66,7 +66,6 @@ export function SiteHeader({
     <header className="sticky top-0 z-40 border-b border-primary/15 bg-background/92 shadow-soft backdrop-blur-xl supports-backdrop-filter:bg-background/86">
       <div className="mx-auto flex min-h-[4.75rem] max-w-7xl items-center justify-between gap-4 px-5 py-3.5 sm:min-h-20 sm:px-8 sm:py-4 xl:min-h-[4.75rem] xl:py-3.5">
         <Link
-          aria-label={wordmark.ariaLabel}
           className="inline-flex min-h-14 shrink-0 items-center rounded-md focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/40"
           data-slot="site-logo-link"
           href="/"

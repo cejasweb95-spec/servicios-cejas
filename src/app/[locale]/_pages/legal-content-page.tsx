@@ -212,7 +212,12 @@ export function LegalContentPage({
                   >
                     {copy.labels.cookieTableTitle}
                   </h2>
-                  <div className="mt-4 max-w-full overflow-x-auto">
+                  <div
+                    aria-labelledby="cookie-inventory"
+                    className="mt-4 max-w-full overflow-x-auto rounded-sm focus-visible:ring-3 focus-visible:ring-ring/40"
+                    role="region"
+                    tabIndex={0}
+                  >
                     <table className="min-w-full text-sm leading-6">
                       <caption className="sr-only">
                         {copy.labels.cookieTableTitle}
