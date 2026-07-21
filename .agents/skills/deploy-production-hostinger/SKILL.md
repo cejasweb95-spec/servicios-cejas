@@ -22,7 +22,7 @@ Ejecutar una promocion verificable de una rama distinta de `main`. No declarar e
 4. Crear un commit descriptivo en la rama fuente.
 5. Si `main` remoto no es ancestro de la rama fuente, integrarlo primero en la rama fuente, resolver conflictos, volver a guardar y empezar las pruebas desde cero.
 
-La publicacion automatizada exige un arbol limpio para certificar exactamente el commit que se sube.
+La publicacion automatizada exige que no existan cambios tracked o staged sin guardar. Si solo permanecen archivos untracked locales ya revisados y deliberadamente excluidos, usar `-AllowUntracked`; el script los registra y no los borra ni publica.
 
 ## 3. Ejecutar las compuertas
 
@@ -48,6 +48,12 @@ Tras las compuertas aprobadas, ejecutar con un mensaje de merge claro:
 
 ```powershell
 npm run release:production -- -ConfirmProduction -CommitMessage "release: publicar <resumen>"
+```
+
+Si permanecen unicamente artefactos locales revisados:
+
+```powershell
+npm run release:production -- -ConfirmProduction -AllowUntracked -CommitMessage "release: publicar <resumen>"
 ```
 
 El script debe:

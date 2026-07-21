@@ -4,6 +4,7 @@ param(
   [string]$ProductionBranch = "main",
   [ValidateRange(5, 120)][int]$BuildTimeoutMinutes = 30,
   [switch]$ConfirmProduction,
+  [switch]$AllowUntracked,
   [switch]$PlanOnly
 )
 
@@ -56,9 +57,17 @@ try {
   if ([string]::IsNullOrWhiteSpace($sourceBranch)) { throw "HEAD esta desacoplado; no se publica desde detached HEAD." }
   if ($sourceBranch -eq $ProductionBranch) { throw "La rama fuente no puede ser $ProductionBranch." }
 
-  $statusLines = @(Invoke-ReleaseGit -Arguments @("status", "--porcelain") -Quiet)
-  if (($statusLines -join "").Trim()) {
-    throw "El arbol no esta limpio. El agente debe revisar, excluir temporales/secretos, guardar el trabajo intencional y volver a ejecutar.`n$($statusLines -join "`n")"
+  $statusLines = @(Invoke-ReleaseGit -Arguments @("status", "--porcelain") -Quiet | Where-Object { -not [string]::IsNullOrWhiteSpace($_) })
+  $untrackedLines = @($statusLines | Where-Object { $_ -match '^\?\?' })
+  $trackedChanges = @($statusLines | Where-Object { $_ -notmatch '^\?\?' })
+  if ($trackedChanges.Count -gt 0) {
+    throw "Existen cambios tracked o staged sin guardar. La release solo certifica commits completos.`n$($trackedChanges -join "`n")"
+  }
+  if ($untrackedLines.Count -gt 0 -and -not $AllowUntracked) {
+    throw "Existen archivos nuevos sin versionar. Revisalos y guardalos, ignoralos de forma justificada o repite con -AllowUntracked.`n$($untrackedLines -join "`n")"
+  }
+  if ($untrackedLines.Count -gt 0) {
+    Write-Warning "Se conservaran fuera de la release $($untrackedLines.Count) rutas untracked revisadas."
   }
 
   foreach ($marker in @("MERGE_HEAD", "REBASE_HEAD", "CHERRY_PICK_HEAD")) {
