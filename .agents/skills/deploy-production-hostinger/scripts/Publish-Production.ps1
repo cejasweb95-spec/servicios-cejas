@@ -3,6 +3,7 @@ param(
   [string]$Domain = "cejasinternacionales.com",
   [string]$ProductionBranch = "main",
   [ValidateRange(5, 120)][int]$BuildTimeoutMinutes = 30,
+  [ValidateRange(1, 15)][int]$GitDetectionTimeoutMinutes = 5,
   [switch]$ConfirmProduction,
   [switch]$IncidentRecovery,
   [switch]$AllowUntracked,
@@ -17,6 +18,7 @@ $root = Get-ReleaseRepositoryRoot
 $envFile = Join-Path $root ".env.local"
 $qaScript = Join-Path $PSScriptRoot "Invoke-ReleaseQa.ps1"
 $monitorScript = Join-Path $PSScriptRoot "Watch-HostingerBuild.ps1"
+$archiveDeployScript = Join-Path $PSScriptRoot "Deploy-HostingerArchive.ps1"
 $readinessScript = Join-Path $PSScriptRoot "Wait-ProductionReady.ps1"
 $smokeScript = Join-Path $PSScriptRoot "Test-ProductionSmoke.ps1"
 $evidenceRoot = Join-Path $root "output\production-release"
@@ -32,8 +34,8 @@ Plan de publicacion:
 5. Subir la rama fuente y verificar su SHA remoto.
 6. Crear y subir un tag de respaldo de produccion.
 7. Crear un worktree temporal, hacer merge --no-ff y subir $ProductionBranch.
-8. Detectar un unico build Git nuevo, fijar su UUID y exigir Node 22 hasta completed.
-9. Esperar runtime estable; permitir un solo reinicio y validar el dominio, SEO y seis viewports.
+8. Detectar un unico build Git nuevo y exigir Node 22; si la configuracion Git persistida usa otro Node o no crea build, desplegar el mismo SHA por el flujo de archivo oficial.
+9. Esperar runtime estable; permitir un solo reinicio y ejecutar un smoke publico representativo sin saturar el WAF.
 10. Crear un tag de release y confirmar que la rama de trabajo nunca cambio.
 "@
   exit 0
@@ -51,6 +53,8 @@ $mergeSha = $null
 $backupTag = $null
 $releaseTag = $null
 $productionBuildId = $null
+$productionSourceType = $null
+$gitBuildFailure = $null
 $baselineStatus = $null
 $worktreePath = $null
 $status = "failed"
@@ -176,9 +180,26 @@ try {
   $publishedSha = if ($publishedLine) { ($publishedLine -split "\s+")[0] } else { "" }
   if ($publishedSha -ne $mergeSha) { throw "$ProductionBranch remoto no coincide con el merge de release." }
 
-  $monitorJson = & $monitorScript -Domain $Domain -NotBeforeUtc $releaseStartedAt.ToString("o") -KnownBuildIds $knownBuildIds -SourceType "git" -ExpectedNodeVersion 22 -TimeoutMinutes $BuildTimeoutMinutes | Select-Object -Last 1
-  $monitorResult = $monitorJson | ConvertFrom-Json
-  $productionBuildId = $monitorResult.uuid
+  try {
+    $monitorJson = & $monitorScript -Domain $Domain -NotBeforeUtc $releaseStartedAt.ToString("o") -KnownBuildIds $knownBuildIds -SourceType "git" -ExpectedNodeVersion 22 -TimeoutMinutes $GitDetectionTimeoutMinutes | Select-Object -Last 1
+    $monitorResult = $monitorJson | ConvertFrom-Json
+    $productionBuildId = $monitorResult.uuid
+    $productionSourceType = "git"
+  } catch {
+    $gitBuildFailure = $_.Exception.Message
+    $fallbackAllowed =
+      $gitBuildFailure -match 'pero la release exige Node 22' -or
+      $gitBuildFailure -match 'no registro un build git nuevo'
+    if (-not $fallbackAllowed) { throw }
+
+    Write-Warning "La ruta Git de Hostinger no puede certificar Node 22. Se usara el fallback oficial por archivo desde el SHA exacto de main."
+    $archiveJson = & $archiveDeployScript -Domain $Domain -Commitish $mergeSha -ExpectedNodeVersion 22 | Select-Object -Last 1
+    $archiveResult = $archiveJson | ConvertFrom-Json
+    $productionBuildId = $archiveResult.build.uuid
+    $productionSourceType = "archive"
+    $monitorJson = & $monitorScript -Domain $Domain -BuildId $productionBuildId -SourceType "archive" -ExpectedNodeVersion 22 -TimeoutMinutes $BuildTimeoutMinutes | Select-Object -Last 1
+    $null = $monitorJson | ConvertFrom-Json
+  }
   & $readinessScript -Domain $Domain -BuildId $productionBuildId -ExpectedNodeVersion 22 -AllowSingleRestart
   & $smokeScript -Domain $Domain
 
@@ -204,6 +225,8 @@ try {
     previous_main_commit = $previousMainSha
     production_commit = $mergeSha
     production_build_id = $productionBuildId
+    production_source_type = $productionSourceType
+    git_build_failure = $gitBuildFailure
     baseline_http_status = $baselineStatus
     incident_recovery = [bool]$IncidentRecovery
     backup_tag = $backupTag

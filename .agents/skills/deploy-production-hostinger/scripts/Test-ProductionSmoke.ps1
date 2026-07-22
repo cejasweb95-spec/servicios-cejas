@@ -15,7 +15,7 @@ $evidencePath = Join-Path $root "output\production-release\smoke-$timestamp.json
 $checks = @()
 
 if ($PlanOnly) {
-  Write-Host "Comprobaria HTTPS, www, cabeceras, ES/EN, sitemap, robots, canonical, SEO y responsive en $baseUrl."
+  Write-Host "Comprobaria HTTPS, www, cabeceras, ES/EN, rutas representativas, PDF, sitemap, robots y canonical en $baseUrl sin ejecutar rastreos masivos."
   exit 0
 }
 
@@ -72,20 +72,25 @@ try {
   $wwwRedirect = (& curl.exe -sS -o NUL -w "%{http_code}|%{redirect_url}" "https://www.$Domain/en/services?market=switzerland") -split '\|', 2
   Add-Check -Name "www a apex" -Passed ($wwwRedirect[0] -in @("301", "308") -and $wwwRedirect[1] -eq "$baseUrl/en/services?market=switzerland") -Detail ($wwwRedirect -join " -> ")
 
-  $previousSeo = $env:SEO_BASE_URL
-  $previousResponsive = $env:RESPONSIVE_BASE_URL
-  try {
-    $env:SEO_BASE_URL = $baseUrl
-    Invoke-ReleaseNative -FilePath "npm.cmd" -Arguments @("run", "test:seo:all") | Out-Null
-    Add-Check -Name "SEO completo" -Passed $true -Detail "Rastreo publico aprobado."
-
-    $env:RESPONSIVE_BASE_URL = $baseUrl
-    Invoke-ReleaseNative -FilePath "npm.cmd" -Arguments @("run", "test:responsive:all") | Out-Null
-    Add-Check -Name "Responsive completo" -Passed $true -Detail "Seis viewports publicos aprobados."
-  } finally {
-    $env:SEO_BASE_URL = $previousSeo
-    $env:RESPONSIVE_BASE_URL = $previousResponsive
+  $representativePaths = @(
+    "/es/servicios/colombia",
+    "/es/servicios/espana-europa",
+    "/es/servicios/suiza",
+    "/en/services/colombia",
+    "/en/services/spain-europe",
+    "/en/services/switzerland",
+    "/es/formaciones-profesionales",
+    "/en/professional-training"
+  )
+  foreach ($path in $representativePaths) {
+    $response = Invoke-ReadyRequest -Uri "$baseUrl$path?release-smoke=$timestamp"
+    Add-Check -Name "Ruta $path" -Passed ([int]$response.StatusCode -eq 200 -and $response.Content -match '<main[\s>]') -Detail "status=$([int]$response.StatusCode), main=$($response.Content -match '<main[\s>]')"
+    Start-Sleep -Milliseconds 250
   }
+
+  $pdfPath = "/descargas/catalogos/catalogo-suiza-cejas-internacionales.pdf"
+  $pdf = Invoke-WebRequest -Uri "$baseUrl$pdfPath" -Method Head -UseBasicParsing -TimeoutSec 30
+  Add-Check -Name "PDF Suiza" -Passed ([int]$pdf.StatusCode -eq 200 -and $pdf.Headers["Content-Type"] -match 'application/pdf') -Detail "status=$([int]$pdf.StatusCode), content-type=$($pdf.Headers['Content-Type'])"
 
   $result = [pscustomobject]@{
     schema = 1
