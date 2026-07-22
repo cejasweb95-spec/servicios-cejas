@@ -79,11 +79,11 @@ try {
     "/en/services/colombia",
     "/en/services/spain-europe",
     "/en/services/switzerland",
-    "/es/formaciones-profesionales",
+    "/es/formaciones",
     "/en/professional-training"
   )
   foreach ($path in $representativePaths) {
-    $response = Invoke-ReadyRequest -Uri "$baseUrl$path?release-smoke=$timestamp"
+    $response = Invoke-ReadyRequest -Uri "$baseUrl${path}?release-smoke=$timestamp"
     Add-Check -Name "Ruta $path" -Passed ([int]$response.StatusCode -eq 200 -and $response.Content -match '<main[\s>]') -Detail "status=$([int]$response.StatusCode), main=$($response.Content -match '<main[\s>]')"
     Start-Sleep -Milliseconds 250
   }
