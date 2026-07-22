@@ -41,13 +41,13 @@ do {
   if ($PSCmdlet.ParameterSetName -eq "ById") {
     $build = @($builds) | Where-Object { $_.uuid -eq $BuildId } | Select-Object -First 1
   } else {
-    $candidates = @($builds) |
+    $candidates = @(@($builds) |
       Where-Object {
         $_.options.source_type -eq $SourceType -and
         ([datetime]$_.created_at).ToUniversalTime() -ge $threshold -and
         $_.uuid -notin $KnownBuildIds
       } |
-      Sort-Object { [datetime]$_.created_at }
+      Sort-Object { [datetime]$_.created_at })
 
     if ($candidates.Count -gt 1) {
       $candidateIds = ($candidates | ForEach-Object { $_.uuid }) -join ", "

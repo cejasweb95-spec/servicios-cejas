@@ -29,7 +29,7 @@
 | Build completa pero smoke falla | Posible impacto | Rollback inmediato y verificado |
 | Build completa pero HTTP sigue 502/503/504 | Runtime no activo | Esperar activacion, reiniciar una vez, revisar Runtime logs y escalar con UUID/request ID |
 | hPanel queda cargando y no aparece UUID | No hubo build | No asumir despliegue; reintentar el flujo y comprobar la API |
-| ZIP usa Node 22 pero Git usa Node 18 | Fuentes desacopladas | Corregir especificamente la configuracion Git y certificar un build Git nuevo |
+| ZIP usa Node 22 pero Git usa Node 18 | Fuentes desacopladas | Publicar el mismo SHA por el fallback oficial, recuperar trafico y corregir despues la configuracion Git |
 | API no responde pero la web parece sana | Estado desconocido | Reintentar API; no afirmar exito solo por HTTP 200 |
 | Dominio/SSL/DNS falla | Impacto externo | No cambiar codigo a ciegas; diagnosticar proveedor |
 
@@ -56,13 +56,13 @@ Usarlo solo si la integracion Git no crea builds y el acceso por API funciona.
 2. Crear el archivo con `git archive` desde ese SHA, nunca desde el working tree.
 3. Incluir `package.json`, lockfile, configuracion, `src` y `public`; excluir `.env*`, `.git`, `node_modules`, `.next`, docs, tests, outputs e informes.
 4. Confirmar que el archivo no supera 50 MB.
-5. Usar el endpoint oficial `POST /api/hosting/v1/accounts/{username}/websites/{domain}/nodejs/builds/from-archive` o el flujo de archivo vigente en el OpenAPI de Hostinger.
-6. Forzar Node 22, npm, script `build` y salida `.next` cuando la API lo permita.
+5. Usar `Deploy-HostingerArchive.ps1`, que replica el flujo del conector oficial de Hostinger: credenciales temporales, `X-Auth`, `X-Auth-Rest`, TUS en bloques, deteccion de ajustes y creacion del build.
+6. Conservar `root_directory` autodetectado (`null` puede mostrarse como `./` en hPanel) y forzar unicamente Node 22. Forzar literalmente `./` puede producir un build verde cuyo runtime no se activa.
 7. Vigilar el UUID hasta `completed`, conservar logs y repetir el smoke.
 
 No convertir el fallback en la ruta normal: arreglar despues la integracion Git para que `main` vuelva a ser la fuente operativa.
 
-Un `archive_path` previo puede haber sido consumido aunque hPanel conserve la opcion visual **Usar archivos anteriores**. No reutilizar a ciegas una ruta interna devuelta por otro build; crear/subir un archivo nuevo o usar el redeploy soportado por hPanel. Si la subida TUS o `from-archive` devuelve 403/504, conservar el correlation ID y escalar: no improvisar endpoints no documentados.
+Un `archive_path` previo puede haber sido consumido aunque hPanel conserve la opcion visual **Usar archivos anteriores**. No reutilizarlo: cada intento usa un nombre nuevo. Un 403 del proxy de archivos suele indicar que falta o esta mal escrito `X-Auth-Rest`; no confundirlo con `X-Rest-Auth`. Si el flujo oficial sigue fallando, conservar correlation ID y escalar.
 
 ## 5. Incidente de runtime despues de un build verde
 
@@ -84,6 +84,6 @@ La release solo esta lista cuando coinciden estas pruebas:
 - UUID de build fijado y runtime con varias respuestas 200 consecutivas;
 - dominio HTTPS y redirecciones correctos;
 - home nueva, ES/EN, sitemap, robots y canonical correctos;
-- SEO y responsive publicos aprobados;
+- QA local exhaustivo aprobado y smoke publico representativo aprobado sin activar limites del proveedor;
 - rama local activa igual a la rama fuente;
 - backup y evidencia disponibles.

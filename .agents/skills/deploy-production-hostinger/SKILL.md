@@ -67,9 +67,10 @@ El script debe:
 - hacer merge `--no-ff` del commit probado y subir `main` sin force push;
 - registrar los UUID existentes antes del push y aislar un unico build Git nuevo;
 - comprobar el Node real que devuelve la API para ese UUID, sin confiar en el valor que muestra por defecto el formulario;
+- si la fuente Git persiste en Node 18 o no crea UUID, generar un ZIP limpio desde el SHA exacto de `main` y usar el flujo oficial del conector Hostinger (`X-Auth`, `X-Auth-Rest`, subida TUS por bloques, autodeteccion y build por archivo) con Node 22;
 - esperar el build exacto hasta `completed`, luego exigir tres HTTP 200 consecutivos;
 - ante `502/503/504` de Hostinger, permitir como maximo un reinicio del servidor y volver a comprobar estabilidad;
-- ejecutar HTTPS, redirecciones, cabeceras, ES/EN, sitemap, robots, canonical, SEO y responsive en el dominio publico;
+- ejecutar HTTPS, redirecciones, cabeceras, ES/EN, sitemap, robots, canonical, rutas representativas y PDF en el dominio publico;
 - crear un tag `production-release-*` solo despues del smoke aprobado;
 - dejar activa la rama fuente.
 
@@ -78,13 +79,14 @@ El script debe:
 No parar en el primer fallo ni afirmar que la web esta lista.
 
 - Fallo de codigo o build: leer el log saneado bajo `output/production-release`, corregir en la rama fuente, guardar, repetir QA y volver a publicar.
-- Node distinto de 22: corregir hPanel, guardar y reimplementar; no aceptar un build 18/20/24 para esta aplicacion sin una nueva certificacion explicita.
+- Node distinto de 22 en Git: el modo automatico usa el fallback oficial por archivo desde el SHA publicado. Corregir despues la configuracion Git de hPanel; nunca aceptar un build 18/20/24 como release activa.
 - Build no creado: comprobar conexion GitHub, rama `main`, auto-deploy y estado de Hostinger. Usar despliegue por archivo mediante la API oficial solo como recuperacion y siempre desde el SHA remoto de `main`.
 - Smoke publico fallido: proteger el trafico y aplicar la politica de rollback antes de seguir corrigiendo.
 - `502/503/504` transitorio tras un redeploy: distinguir compilacion de activacion. Esperar readiness, reiniciar una sola vez si no existe otro build activo y, si agota la ventana, tratarlo como fallo de runtime.
 - Build `completed` pero 5xx: consultar **Runtime logs**, no solo Build logs. Registrar `platform`, `server`, `Cache-Control` y `x-hcdn-request-id`; escalar a Hostinger con UUID y request ID si el proceso no arranca.
 - Redeploy solicitado pero sin UUID nuevo: el clic no entro en la cola. No esperar indefinidamente una pantalla; reintentar desde hPanel o corregir la fuente, y verificar de nuevo por API.
 - No atribuir a cache un 503 generado por Hostinger con `Cache-Control: no-cache/no-store`; limpiar cache no repara un proceso Node detenido.
+- No lanzar 1.272 navegaciones contra produccion durante la ventana critica. El SEO, E2E, cross-browser y seis viewports se certifican localmente; el smoke publico es deliberadamente representativo para no activar el WAF.
 - Bloqueo externo: continuar con diagnosticos seguros. Solo pedir intervencion cuando falten permisos, Hostinger este caido o exista una decision de negocio imposible de inferir.
 
 Leer [failure-and-rollback.md](references/failure-and-rollback.md) antes de revertir o usar el fallback por archivo.
@@ -101,6 +103,7 @@ Leer [failure-and-rollback.md](references/failure-and-rollback.md) antes de reve
 
 ```powershell
 npm run release:smoke
+npm run release:deploy:archive -- -Commitish "refs/remotes/origin/main"
 npm run release:status
 npm run release:monitor -- -NotBeforeUtc "2026-01-01T00:00:00Z"
 npm run release:ready -- -BuildId "<uuid>" -AllowSingleRestart
