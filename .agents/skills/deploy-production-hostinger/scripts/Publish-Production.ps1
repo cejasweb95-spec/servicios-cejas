@@ -193,6 +193,17 @@ try {
     if (-not $fallbackAllowed) { throw }
 
     Write-Warning "La ruta Git de Hostinger no puede certificar Node 22. Se usara el fallback oficial por archivo desde el SHA exacto de main."
+    $fallbackDeadline = (Get-Date).AddMinutes($BuildTimeoutMinutes)
+    do {
+      $activeFallbackBuilds = @(Get-HostingerBuilds -Context $hostinger | Where-Object { $_.state -in @("pending", "running") })
+      if ($activeFallbackBuilds.Count -eq 0) { break }
+      Write-Host "[Hostinger] Esperando a que termine el build Git incompatible antes del fallback..."
+      Start-Sleep -Seconds 10
+    } while ((Get-Date) -lt $fallbackDeadline)
+    if ($activeFallbackBuilds.Count -gt 0) {
+      throw "Hostinger no quedo libre para ejecutar el fallback por archivo sin carreras."
+    }
+
     $archiveJson = & $archiveDeployScript -Domain $Domain -Commitish $mergeSha -ExpectedNodeVersion 22 | Select-Object -Last 1
     $archiveResult = $archiveJson | ConvertFrom-Json
     $productionBuildId = $archiveResult.build.uuid
